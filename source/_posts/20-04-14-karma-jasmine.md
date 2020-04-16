@@ -20,7 +20,7 @@ vim karma.conf.js
  
      // list of files / patterns to load in the browser
      files: [
-+      'src/**/*.Spec.js'
++      'src/**/*.js'
      ],
  
 +    client: {
@@ -79,8 +79,12 @@ karma start
 可行的一种方案,目前把`files`的配置写成
 
 ```js
-[{pattern:'src/**/*.Spec.js',type:'module'}]
+[{pattern:'src/**/*.js',type:'module'}]
 ```
+
+## files
+
+需要包括源代码 和 测试代码
 
 # refs
 
