@@ -155,9 +155,21 @@ letsencrypt['contact_emails'] = ['你的email']
 
 再`gitlab-ctl reconfigure`就可以自动生成证书并且 启用https了
  
+# 内存占用过大
+
+```
+unicorn['worker_timeout'] = 60
+unicorn['worker_processes'] = 2
+```
+
+也有其它git server :`https://gogs.io/`
 
 # 参考
 
 https://about.gitlab.com/
 
 https://hub.docker.com/r/gitlab/gitlab-ce/
+
+https://gitlab.com/gitlab-org/gitlab-foss/-/issues/25840
+
+https://docs.gitlab.com/omnibus/settings/unicorn.html

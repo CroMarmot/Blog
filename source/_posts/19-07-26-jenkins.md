@@ -248,3 +248,4 @@ https://github.com/Microsoft/WSL/issues/14
 
 https://stackoverflow.com/questions/42743201/npm-install-fails-in-jenkins-pipeline-in-docker/42957034
 
+所有默认功能:`http://localhost:8083/job/yarnwebpipedocker/pipeline-syntax/html`

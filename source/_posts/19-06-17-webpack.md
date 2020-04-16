@@ -370,7 +370,74 @@ npx webpack-cli init
 +      },
        {
          test: /.(js|jsx)$/,
-         include: [],
 ```
 
 然后新建文件`index.ts`
+
+# plugins
+
+用已有的就见文档了
+
+说说自定义plugins:
+
+https://webpack.js.org/contribute/writing-a-plugin/#creating-a-plugin
+
+你需要实现
+
+```js
+class MyExampleWebpackPlugin {
+  // Define `apply` as its prototype method which is supplied with compiler as its argument
+  // 你需要一个带apply的类 或者说 prototype里有 apply方法
+  apply(compiler) {
+    // 在这里 监听 comipler的钩子并处理
+
+    // https://webpack.js.org/api/plugins/#tapable
+    // 这里的tap是同步函数 有替代函数 包括 tapAsync, tapPromise 
+    compiler.hooks["事件名称"].tap('你的插件名称',处理函数); // 处理函数会传递 compilation
+
+    //https://webpack.js.org/api/plugins/#custom-hooks
+    // 也可以自定义同步钩子事件 require('tapable').SyncHook
+    // https://github.com/webpack/tapable
+    compiler.hooks.myCustomHook = new SyncHook(['a', 'b', 'c']); // 拟定的参数名
+    // 调用自定义钩子
+    compiler.hooks.myCustomHook.call(a, b, c);
+  }
+}
+```
+
+关于所有hook可以看`https://webpack.js.org/api/compiler-hooks/` 也可以输出 `compiler.hooks`的key
+
+Compiler 和 Compilation 源码
+
+`https://github.com/webpack/webpack/blob/master/lib/Compiler.js`
+
+`https://github.com/webpack/webpack/blob/master/lib/Compilation.js`
+
+一个既有`compiler`也有`compilation`的
+
+```js
+function HelloCompilationPlugin(options) {}
+
+HelloCompilationPlugin.prototype.apply = function(compiler) {
+
+  // 设置回调来访问 compilation 对象：
+  compiler.plugin("compilation", function(compilation) {
+
+    // 现在，设置回调来访问 compilation 中的步骤：
+    compilation.plugin("optimize", function() {
+      console.log("Assets are being optimized.");
+    });
+  });
+};
+```
+
+
+
+# 坑
+
+如果使用 init 生成，在填写entry point的时候不是文件夹，则在你生成的`webpack.config.js`的 loader的include有问题可能为`[]`
+
+例如实现代码见`~/.npm_global/lib/node_modules/@webpack-cli/init/node_modules/@webpack-cli/generators/utils/languageSupport.js`的 `getTypescriptLoader` 等的include实现，也就是`getEntryFolders`返回为空
+
+`https://github.com/webpack/webpack-cli/pull/817/files`
+
