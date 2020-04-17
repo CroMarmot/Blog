@@ -86,8 +86,13 @@ karma start
 
 需要包括源代码 和 测试代码
 
+# Repo
+
+https://github.com/CroMarmot/karma.jasmine.demo
+
 # refs
 
 http://karma-runner.github.io/4.0/config/files.html
 
 http://karma-runner.github.io/4.0/intro/how-it-works.html
+
