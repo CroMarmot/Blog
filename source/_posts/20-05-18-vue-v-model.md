@@ -21,6 +21,8 @@ category: [frontend]
 
 看到`v2.6.1`修复了`v-model: add value to $attrs if not defined in props`
 
+看`pull requests 9331`和`9330`似乎很多人也都遇到了
+
 果然`XD`
 
 内部测试发布的版本已经在生产使用，当然是锁版本不会改了，把开发用的vue调试版换回了`2.5.13`，然后对应组件增加`props`的`value`和 `value`的传递。// 还好是新组建
