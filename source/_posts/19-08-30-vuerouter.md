@@ -1173,6 +1173,112 @@ emmmmm 经过调试 都在 createRouteMap中把 nameMap做好了,在 下面 `rec
 
 那么在 取的时候 根据props的name 去`matched.components[name]`中获得
 
+# 和vue实例生命周期顺序
+
+打开`codesandbox.io` 把`main.js`替换为下面,记得引入`vue-router`依赖
+
+```js
+import Vue from "vue";
+import VueRouter from "vue-router";
+Vue.config.productionTip = false;
+
+Vue.use(VueRouter);
+
+const Foo = {
+  template:
+    '<div><h1>foo</h1><router-link to="/bar">Go to Bar</router-link></div>',
+
+  beforeRouteEnter(to, from, next) {
+    console.log("foo inner beforeRouteEnter");
+    next();
+  },
+  beforeRouteUpdate(to, from, next) {
+    console.log("foo inner beforeRouteUpdate");
+    next();
+  },
+  beforeRouteLeave(to, from, next) {
+    console.log("foo inner beforeRouteLeave");
+    next();
+  },
+
+  beforeCreated() {
+    console.log("foo beforeCreated");
+  },
+  created() {
+    console.log("foo created");
+  },
+  beforeMount() {
+    console.log("foo beforeMount");
+  },
+  mounted() {
+    console.log("foo mounted");
+  },
+  beforeDestroy() {
+    console.log("foo beforeDestroy");
+  },
+  destroyed() {
+    console.log("foo destroyed");
+  }
+};
+const Bar = {
+  template:
+    '<div><h1>bar</h1><router-link to="/foo">Go to foo</router-link></div>'
+};
+
+const routes = [
+  {
+    path: "/foo",
+    component: Foo,
+    beforeEnter: (to, from, next) => {
+      console.log("Foo beforeEnter");
+      next();
+    }
+  },
+  { path: "/bar", component: Bar }
+];
+
+const router = new VueRouter({
+  routes
+});
+
+router.beforeEach((to, from, next) => {
+  console.log("global beforeEach");
+  next();
+});
+
+router.afterEach((to, from) => {
+  console.log("global afterEach");
+});
+
+new Vue({
+  template: '<div id="app"><router-view /></div>',
+  router
+}).$mount("#app");
+```
+
+查看`console`
+
+```
+global beforeEach 
+Foo beforeEnter 
+foo inner beforeRouteEnter 
+global afterEach 
+foo created 
+foo beforeMount 
+foo mounted 
+
+
+
+
+
+foo inner beforeRouteLeave 
+global beforeEach 
+global afterEach 
+foo beforeDestroy 
+foo destroyed 
+```
+
+验证了我们上面阅读的源码，`router-view` 来管理了组件的渲染，虽然有的函数从代码视角写在组件内部，但实际上是`vuer-router`确定要渲染组件以后，才会调用`vue`提供的产生`VNode`的方法，因此，给`router`用的是由`router`来用，也就自然早于`vue`本身的生命周期了
 
 # 个人其它收获
 
