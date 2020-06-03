@@ -1,5 +1,5 @@
 ---
-title: rust really fast
+title: rust真的快
 date: 20-06-03 11:20:14
 tags: [rust,cplusplus]
 category: [backend]
@@ -9,7 +9,9 @@ category: [backend]
 
 https://projecteuler.net/problem=74
 
-用rust写了一遍再换成C++的
+用rust写了一遍,觉得根据常识1e6数据量，应该1s内随便跑，结果5s+，
+
+就换成C++写了一遍，发现是因为rust没开O2？开了以后还真就和C++差不多的时间
 
 ## rust 版本
 
