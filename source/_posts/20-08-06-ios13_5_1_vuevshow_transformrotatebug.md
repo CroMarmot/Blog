@@ -110,6 +110,8 @@ h2 {
 
 如果把`v-show`设置成始终显示也没有问题。
 
+可能和vue关系不大，因为通过把v-show换成 纯js对的display操作也能重现
+
 没有可以直接调试ios webview的工具。猜测是ios的 webview和 vue 的 `v-show` 某些处理出现了问题
 
 # 在线demo
