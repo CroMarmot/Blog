@@ -38,3 +38,9 @@ https://stackoverflow.com/questions/25915634/difference-between-microtask-and-ma
 
 对于不应该阻塞事件循环的耗时长的繁重计算任务，我们可以使用 Web Workers。https://html.spec.whatwg.org/multipage/workers.html
 
+这是在另一个并行线程中运行代码的方式。
+
+Web Workers 可以与主线程交换消息，但是它们具有自己的变量和事件循环。
+
+Web Workers 没有访问 DOM 的权限，因此，它们对于同时使用多个 CPU 内核的计算非常有用。
+
