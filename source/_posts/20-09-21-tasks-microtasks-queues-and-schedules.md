@@ -6,16 +6,6 @@ category: [frontend]
 mathjax: true
 ---
 
-# 参考
-
-https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
-
-有精力建议，直接看上面原文，作者的demo做得很好的！
-
-以外的话 还有mdn的文档看
-
-https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide
-
 # 总结
 
 setTimeout 启动的宏任务
@@ -31,4 +21,20 @@ promise(以及await的写法) 和 observer 都是微任务
  - 代码调用子元素点击事件，也会触发冒泡，但是对于js的任务是 这个调用代码。
 
 因此上面两种看似相同的点击会有不同的执行顺序。
+
+# 参考
+
+https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
+
+有精力建议，直接看上面原文，作者的demo做得很好的！
+
+以外的话 还有mdn的文档看
+
+https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide
+
+https://zh.javascript.info/event-loop
+
+https://stackoverflow.com/questions/25915634/difference-between-microtask-and-macrotask-within-an-event-loop-context
+
+对于不应该阻塞事件循环的耗时长的繁重计算任务，我们可以使用 Web Workers。https://html.spec.whatwg.org/multipage/workers.html
 
