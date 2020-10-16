@@ -1175,7 +1175,7 @@ emmmmm 经过调试 都在 createRouteMap中把 nameMap做好了,在 下面 `rec
 
 # 和vue实例生命周期顺序
 
-打开`codesandbox.io` 把`main.js`替换为下面
+打开`codesandbox.io` 把`main.js`替换为下面,记得引入`vue-router`依赖
 
 ```js
 import Vue from "vue";
