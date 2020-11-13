@@ -49,5 +49,11 @@ Installed as /<your path>/Sdk/platform-tools/adb
 
 https://developer.android.com/studio/command-line/adb
 
-之前看了一些国内发的文章，可能是android studio会自动调用connect？所以都没有`adb connect`命令这一步
+之前看了一些国内发的文章，很多缺少`adb connect`这一步骤,可能是android studio会自动调用connect？
+
+另外就是无线调试并不是android 11 才有的，看官方文档在10以及以下一直可以，只是授权过程和启动手机上调试端口更麻烦一些
+
+可以先usb连接后 通过 adb tcpip 5555 再 adb connect ip:5555 这样进入无线调试
+
+
 
