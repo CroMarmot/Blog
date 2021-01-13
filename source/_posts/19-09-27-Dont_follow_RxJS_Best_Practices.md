@@ -1,5 +1,5 @@
 ---
-title: Don't follow RxJS Best Practices
+title: 别遵循RxJS的最佳实践
 mathjax: true
 date: 2019-09-27 01:01:01
 categories: frontend
@@ -14,11 +14,13 @@ tags: [rxjs,observable]
 
 # 摘要
 
-Nowadays more and more developers learn RxJS and use it properly with best practices in mind. But we shouldn't. All those so-called best practices require to learn something new and to add additional code in your projects.
-Moreover, using the best practices we're risking to create a good code base and make your teammates happy! 🌈
-Stop being a gray mass! Break the rules! Stop using best practices!
+如今,越来越多开发者开始学 RxJs, 并跟随最佳实践正确使用它。但是完全不必要,那些所谓的最佳实践，需要学一些新的内容，并且在你的项目中增加额外的代码。
 
-Here are my suggestions to you on how to deal with those so-called RxJS best practices in Angular:
+更多的是，使用最佳实践，是冒着创建好的代码库和让你的队友高兴的风险! 🌈
+
+Stop being a gray mass! 打破常规，停止使用最佳实践
+
+下面我将想你介绍，怎么改造那些所谓的最佳实践代码.
 
 * 不要unsubscribe
 * 嵌套使用Subscribe
@@ -30,11 +32,11 @@ Here are my suggestions to you on how to deal with those so-called RxJS best pra
 
 # 不要unsubscribe
 
-Everybody says that we have to always unsubscribe from observables to prevent memory leaks.
+所有人都说，我们始终需要取消订阅observables来防止内存泄漏
 
-But I can't agree with it. Seriously, who decided that you have to unsubscribe from observables? You don't have to do that. Let's play a game! Which unsubscribe implementation of those Angular components is the best?
+但，我觉得不行。认真的吗，谁决定你需要 取消订阅 observables? 没必要，我们来玩个游戏，下面哪个取消订阅的实现最好。
 
-That one with takeUntil operator?
+有`takeUntil`操作符的吗?
 
 ```js
 @Component({ ... })
@@ -55,7 +57,7 @@ That one with takeUntil operator?
   }
 ```
 
-Or that one with takeWhile operator?
+还是使用`takeWhile`操作符的?
 
 ```js
 @Component({ ... })
@@ -72,7 +74,7 @@ Or that one with takeWhile operator?
   }
 ```
 
-Exactly! Neither! Both takeWhile and takeUntil operators are implicit and may be hard to read 🤓 (sarcasm). The best solution is to store each subscription in a separate variable and then unsubscribe on component destroy in an explicit way:
+显然！都不是，`takeWhile`和`takeUntil`操作符有隐含意义，并且可能比较难以阅读 🤓 (sarcasm). 最好的解决方案，是用显示的方式用不同的变量分别保存每个subscription，在destroy中unsubscribe.
 
 ```js
 @Component({ ... })
@@ -91,7 +93,7 @@ Exactly! Neither! Both takeWhile and takeUntil operators are implicit and may be
   }
 ```
 
-That works especially good in cases when you have multiple subscriptions:
+这个方案在有很多 subscriptions的时候工作得十分优秀
 
 ```js
 Component({ ... })
@@ -126,8 +128,9 @@ Component({ ... })
   }
 ```
 
-But that solution is not perfect yet. What could be done better? How do you feel? How could we make that code more clean and readable?
-Yeah, I have the answer for you! Let's remove all that ugly unsubscribe statements at all.
+但方案还不完美。怎么样能做得更好呢? 你感觉呢? 怎么能让代码更加干净易读?
+
+没错，我们给你的答案是，把那些丑陋的取消订阅删了呗
 
 ```js
 @Component({ ... })
@@ -140,15 +143,15 @@ Yeah, I have the answer for you! Let's remove all that ugly unsubscribe statemen
   }
 ```
 
-Excellent! We've removed all the redundant code and now it looks simpler and even saves us a bit of memory on our hard drives. But what will happen with myInfiniteStream$ subscription?
+非常棒! 我们删除了冗余的代码，现在看起来清爽，并且节约了一些硬盘空间。 But what will happen with myInfiniteStream$ subscription?
 
-Forget about it! 😅 Let's leave that job for the garbage collector, otherwise, why does it exist, right?
+别管他! 😅 让我们让垃圾回收器去做那些工作，不然它们有啥存在意义，对吧!
 
 # 嵌套使用Subscribe
 
-Everybody says that we should use `*Map` operators to chain observables instead of subscribing inside subscribes to prevent callback hell.
+其它人说我们应该用 `*Map` 操作符来链接observables 而不是层级订阅它来防止回调地狱。
 
-But I can't agree with it. Seriously, why not? Why should we use all those switchMap/mergeMap operators? How do you feel about that code? Easy to read? Do you really like your teammates so much?
+但，我又觉得不行. 认真吗，为啥? 为啥我们都要用`switchMap/mergeMap`操作符号? 你觉得下面代码易读吗？你真的喜欢你的队友吗？
 
 ```js
   getUser().pipe(
@@ -158,7 +161,7 @@ But I can't agree with it. Seriously, why not? Why should we use all those switc
   )
 ```
 
-  Don't you think it too neat and cute? You shouldn't write code that way! You have another choice, take a look here:
+你觉不觉得它过于整洁可爱，你有别的选择，看一看。
 
 ```js
   getUser().subscribe(user => {
@@ -172,15 +175,15 @@ But I can't agree with it. Seriously, why not? Why should we use all those switc
   })
 ```
 
-Much better, huh?! Always write code this way if you hate your teammates and don't want to learn new RxJS operators.
+这样更好吧，如果你恨你的队友，而且不想学新的RxJS operators操作符号，就这么写代码吧.
 
-Be bright! Let your team members feel a bit of nostalgia with callback hell.
+做个聪明人! 让你的队友感受到一些回调地域的怀念之情。
 
 # 不要使用 纯函数
 
-Everybody says that we should use pure functions to make our code predictable and easier to test.
+其它人说，纯函数让代码可预测，且易测试
 
-But I can't agree with it. Seriously, why should you use pure functions? Testability? Composability? It's hard, it would be much easier to affect the global world. Let's take a look at the example:
+我双觉得不行。为啥要用纯函数？ 测试友好的？ 组合友好的？ 麻烦了，影响global让编码更加简单,看个例子。
 
 ```js
 function calculateTax(tax: number, productPrice: number) {
@@ -188,7 +191,7 @@ function calculateTax(tax: number, productPrice: number) {
 }
 ```
 
-For instance, we have a function which calculates a tax - it's a pure function it will always return the same result for the same parameters. It's easy to test and compose with other functions. But, do we really need that behavior? I don't think so. It would be easier to use a function without parameters:
+对于实例，我们有一个计算tax的函数，一个纯函数，如果入参相同，返回始终相同，很容易测试和组合。但我们真的需要这些行为吗？我觉得大可不必，不带参数的函数更加易于使用:
 
 ```js
 window.tax = 20;
@@ -199,13 +202,13 @@ function calculateTax() {
 }
 ```
 
-Indeed, what can go wrong? 😉
+事实上，我们又能弄错什么呢？ 😉
 
 # 手动subscribe，不要使用 async pipe
 
-Everybody says that we have to use async pipe in Angular templates to facilitate subscriptions management in components.
+其它人说我们需要在angular 模板中使用 async pipe 来帮助在components中管理subscriptions
 
-But I can't agree with it. We've already discussed subscriptions management with takeUntil and takeWhile and agreed that these operators are from an evil one. Though, why should we treat async pipe another way?
+但我觉得不行，我们上面已经讨论了`takeUntil`和`takeWhile`,并一致认可这些操作符来自邪恶。因此为什么我们不用另一种方式来处理async pipe.
 
 ```js
 @Component({  
@@ -223,7 +226,7 @@ export class MyComponent implements OnInit {
 }
 ```
 
-Do you see that? Clean, readable, easy to maintain code! Argh. It's not allowed. As for me, it would be much better to put the data in local variable and just use that variable in the template.
+你看到了吗，干净，可读，容易维护的代码。但它不被允许，对于我来说，放到本地变量再在template里用不是更好吗。
 
 ```js
 @Component({  
@@ -243,7 +246,7 @@ export class MyComponent implements OnInit {
 
 # 向你的服务暴露subjects
 
-There is a pretty common practice to use Observable Data Services in Angular:
+在 Angular中使用 Observable Data Services 是非常常见的事件。
 
 ```js
 @Injectable({ providedIn: 'root' })
@@ -263,11 +266,11 @@ export class DataService {
 }
 ```
 
-Here we're exposing data stream as observable. Just to make sure it can be changed only through a data service interface. But it confuses people.
+这里我们以observable的形式暴露了一个数据流, 能保证只能通过 数据服务接口来修改它。但它令人困惑。
 
-You want to change the data - you have to change the data.
+你想改变数据的时候，你必须真的改变数据。
 
-Why add additional methods if we can change the data on the place? Let's rewrite the service to make it easier to use;
+为什么不增加一个方法能够就地改变数据呢？让我们重写这个服务让它更加易用。
 
 ```js
 @Injectable({ providedIn: 'root' })
@@ -276,11 +279,11 @@ export class DataService {
 }
 ```
 
-Yeah! Do you see that? Our data service became smaller and easier to read! Also, now we can put almost anything in our data stream! Awesome, don't you think so?🔥
+Yeah!你看到了吗，我们的数据服务变得更加小且易读，现在我们可以任意的操作数据流了。完美！你也觉得是吧?🔥
 
 # 始终对子组件传递流
 
-Have you ever heard about Smart/Dump components pattern, that can help us to decouple components from each other? Also, that pattern prevents child component from triggering actions in parent components:
+你有没有听说过 Smart/Dump components pattern, 它能帮助, 解构组件之间? 同样的，这样的模式，能够阻止子组件触发父组件的行为。
 
 ```js
 @Component({
@@ -306,7 +309,7 @@ class ChildComponent {
 }
 ```
 
-Do you like it? Your teammates also like it. In case you want to revenge them, you need to rewrite your code in the following way:
+你喜欢这样写吗？你的队友也喜欢它。在这种情况下，你想报复他们，你需要这样重写你的代码。
 
 ```js
 @Component({
@@ -336,14 +339,15 @@ data: Data;
 }
 ```
 
-Do you see that? We're not handling subscriptions in the parent component anymore. We're just passing subscription to the child component.
-If you follow that practice your team members will cry tears of blood during debugging, believe me.
+看到了吗，我们不再在父组件中处理subscriptions. 我们直接把它丢给子组件去处理.
+
+如果你这样写，你的队友保证可以debug到 哭到流血，信我。
 
 # 宝石图? 并不适合你
 
-Do you know what are marble diagrams? No? It's good for you!
+你知道宝石图吗？不，它不适合你。
 
-Let's assume we wrote the following function and going to test it:
+让我们假设写了下面的函数，并且要测试。
 
 ```js
 export function numTwoTimes(obs: Observable<number>) {
@@ -351,7 +355,7 @@ export function numTwoTimes(obs: Observable<number>) {
 }
 ```
 
-Many of us will use marble diagrams to test the function:
+很多人，会使用宝石图来测试这个函数：
 
 ```js
 it('multiplies each number by 2', () => { 
@@ -364,7 +368,7 @@ it('multiplies each number by 2', () => {
   })
 ```
 
-But, who the hell wants to learn a new concept of marble diagrams? Who wants to write clean and laconic code? Let's rewrite the test in a common manner.
+但是，谁又会想学新的宝石图的部分呢。谁想写clean and laconic 的代码呢? 让我们用更常规的方式写测试代码。
 
 ```js
 it('multiplies each number by 2', done => {
@@ -393,7 +397,7 @@ it('multiplies each number by 2', done => {
 })
 ```
 
-Yeah! It looks one hundred times better now!
+Yeah! 现在看起来100倍好了。
 
 # 总结
 
@@ -407,5 +411,52 @@ I just decided to cheer you up and make your day a little bit better. Hopefully,
 
 Stay tuned and let me know if you have any particular Angular topics you would like to hear about!
 
-看到第一个就满脸疑惑，然后看到pipe那里觉得有问题，然后看到纯函数就觉得很不对,然后我把文章拉到了最后,XD 果然是prank
+# 读后补充
+
+看到第一个就满脸疑惑，然后看到pipe那里觉得很有问题，然后看到纯函数就觉得很不对,然后我把文章拉到了最后,XD 果然是prank
+
+这个原作者是个大佬，每个内容反着看就是代码如何优化，举例的都是十分常见的场景。
+
+下面说说每个对应的场景，和一些能想到的例子。
+
+## 页面与页面内异步的生命周期
+
+常见的就是，页面内有异步事件，如后台调用等。这种情况如果回调会触发一些全局的事情，但是并不会因为页面销毁而中止。通过`takeUntil`和生命周期挂钩，就能简单的解决这类问题。想对于自己去做逻辑显然更少的逻辑需要管理，更不容易出错。
+
+其二是页面上的一些无限observable。这类主要是内存泄漏相关的问题。
+
+## 回调地狱
+
+在 promise里有  `promise.then(函数).then(函数).then(函数)` 的方式把地狱变为链式。
+
+不过就我看来，有的人依然用了 promise.then, 依然在promise.then 里面去地狱函数。。。。。。。自闭
+
+
+## 纯函数
+
+其实和rxjs关系不大，毕竟不论任何一个提供全局的语言，总有滥用全局变量的。
+
+有时觉得vue angular里面，很容易因为写页面写习惯了，毕竟本身页面之类的就是类/结构体，很多会用this点去取值。
+
+然后去做纯函数时就会看到“全局变量”，也是难受，不过有框架，基本上在window上定义变量的人少了。
+
+## Async Pipe
+
+这个是angular 提供的，在上面例子只有一个可能还没多少感觉，当内容多了，每个尾部都会多出subscribe。这块，在说上第一部分讲的内存泄漏，也是可能因为没有取消订阅发生，而有了 async pipe，即少了代码，又不会泄漏？
+
+## 封装与暴露
+
+像vue之类的，关于这种数据，更多的是“同步写+开发时校验提醒”，但这一切，还是不够强制，毕竟仍然有不少的人，直接操作改变数据而不遵守流程。
+
+我一直相信一句话，只要没有从工具上限制死，有多少内容，人始终会越界操作。
+
+这里本质上，封装了具体的Subject，向外提供readonly的 observable。利用了typescript的修饰。
+
+## 父向子组件传递不应使用 ob
+
+对于一个组件的传递过程是 原始数据类型的更好？不是特别理解感受这一块。
+
+## 测试 observables处理函数
+
+利用已有的测试封装工具，把测试代码做到易读，易维护
 
