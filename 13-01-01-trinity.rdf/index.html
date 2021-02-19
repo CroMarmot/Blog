@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next muse use-motion" lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.3.0" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/Blog/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '複製',
+      copy_success: '複製成功',
+      copy_failure: '複製失敗'
+    }
+  };
+</script>
+
+  <meta name="description" content="dgraph engine for web scale rdf dataABSTRACT  现有的对于网络范围的RDF数据现有依然不是高效的,内部存储不用bitmap,other operations,INTRODUCTION挑战:可扩展性(急切)和普遍性,需要分布式,现有依然三元组,join巨大中间结果,过大的开销 通常指数级 ,现有不支持更有意义的查询 仅仅对SPARQL优化">
+<meta name="keywords" content="rdf,graph">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Trinity RDF">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/13-01-01-trinity.rdf/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="dgraph engine for web scale rdf dataABSTRACT  现有的对于网络范围的RDF数据现有依然不是高效的,内部存储不用bitmap,other operations,INTRODUCTION挑战:可扩展性(急切)和普遍性,需要分布式,现有依然三元组,join巨大中间结果,过大的开销 通常指数级 ,现有不支持更有意义的查询 仅仅对SPARQL优化">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2020-04-17T05:01:32.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Trinity RDF">
+<meta name="twitter:description" content="dgraph engine for web scale rdf dataABSTRACT  现有的对于网络范围的RDF数据现有依然不是高效的,内部存储不用bitmap,other operations,INTRODUCTION挑战:可扩展性(急切)和普遍性,需要分布式,现有依然三元组,join巨大中间结果,过大的开销 通常指数级 ,现有不支持更有意义的查询 仅仅对SPARQL优化">
+  <link rel="canonical" href="https://cromarmot.github.io/Blog/13-01-01-trinity.rdf/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Trinity RDF | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  <div class="container sidebar-position-right">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/Blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cro-Marmot's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/Blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/Blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup">
+  <div class="search-header">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <div class="search-input-wrapper">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none"
+             placeholder="搜尋..." spellcheck="false"
+             type="text" id="search-input">
+    </div>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+  <div id="search-result"></div>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+    
+
+  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/13-01-01-trinity.rdf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">Trinity RDF
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              
+                
+              
+
+              <time title="創建時間：2013-01-01 01:01:01" itemprop="dateCreated datePublished" datetime="2013-01-01T01:01:01+08:00">2013-01-01</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-04-17 13:01:32" itemprop="dateModified" datetime="2020-04-17T13:01:32+08:00">2020-04-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/post/" itemprop="url" rel="index"><span itemprop="name">post</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/13-01-01-trinity.rdf/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="13-01-01-trinity.rdf/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>dgraph engine for web scale rdf data</p><h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><p>  现有的对于网络范围的RDF数据现有依然不是高效的,内部存储不用bitmap,other operations,</p><h1 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h1><p>挑战:可扩展性(急切)和普遍性,需要分布式,现有依然三元组,join巨大中间结果,过大的开销 通常指数级 ,现有不支持更有意义的查询 仅仅对SPARQL优化</p><a id="more"></a>
+
+
+<p>作者的成就:分布式,处理billion even trillion triples ,不用 relational tables and bitmap matrices,build on top of a memory cloud,首先说 随机访问的情况下 用硬盘储存三元组不够优良 ,就算有好的索引也会因为额外的join操作,作为主要的查询中 耗时,in-memory graph exploration instead of join operations for SPARQL processing ,作为对比 之前的系统 孤立使用自己划分的三元组 没有用已有的 造成了很大的中间额外开销,介绍如何降低join 数量 如何降低中间过程的大小,并且就算没有足够好的划分 也有优秀的性能,我们允许大范围的图分析</p>
+<ol>
+<li>新的基于图表的管理RDF数据 ,有对于RDf 高效基于图查询 和 图分析 的可能性</li>
+<li>新的查询规范(相对于SPARQL)有效的提高性能 减少总监结果 和提高系统可扩展性</li>
+<li>新的价值模型 新的基数估计基数 分布式查询生成的优化算法 ,这些成果提供 在web 范围 RDF数据上 出色的性能</li>
+</ol>
+<p>Section 2  join操作 和 图探索 的区别. Section 3 Trinity.RDF 系统的架构. Section 4 how we model RDF data as native graphs. Section 5 describes SPARQL query processing techniques. Section 6 shows experimental results. We conclude in Section 8.</p>
+<h1 id="Join-vs-Graph-Exploration"><a href="#Join-vs-Graph-Exploration" class="headerlink" title="Join vs. Graph Exploration"></a>Join vs. Graph Exploration</h1><p>RDF and SPARQL 的介绍 和 缺点(join 耗费高 中间无用结果大)</p>
+<p>图探索 介绍方法 并说需要更高效的储存方式来适应这种方法 用native graph 会把原来的每次 读入O(log N)的时间复杂度降低为O(1) 需要搜索的顺序优化来 </p>
+<h1 id="System-Architecture"><a href="#System-Architecture" class="headerlink" title="System Architecture"></a>System Architecture</h1><p>就是图储存,并且完全存在内存里 (因为是分布式的所以才可以储存这么多)</p>
+<p>架构client,proxy,string server,trinity machine [看来陈榕老师就是按照这样的思路改的代码</p>
+<h1 id="Data-Modeling"><a href="#Data-Modeling" class="headerlink" title="Data Modeling"></a>Data Modeling</h1><p>(node-id, in-adjacency-list, out-adjacency-listi)</p>
+<p>讲图分割问题 对于自然图 用大度的点 连接点来决定放置未知 以及使用 in out<strong>间接id</strong>  可以有效减少发送数据交流量</p>
+<p>但是对于邻点少的来说用另一种方法更好 同一个点的in和out放在同一个机器上的方法</p>
+<p>还用了</p>
+<ul>
+<li>本地 谓词索引 sort all (predicate, node-id )</li>
+<li>全局的 谓词索引 (predicate, hsubject-list i , object-list i i)</li>
+</ul>
+<p>提供基本图操作</p>
+<ol>
+<li>LoadNodes(predicate, direction): Return nodes that have an incoming or outgoing edge labeled as predicate. 使用全局谓词索引</li>
+<li>LoadNeighborsOnMachine(node, direction, machine i): For a given node, return its incoming or outgoing neighbors that reside on machine i. 返回的是上面的间接id</li>
+<li>SelectByPredicate(nid, predicate): From a given partial adjacency list specified by nid, return nodes that are labeled with the given predicate.<br>Figure 4.<br>LoadNodes(l2 , out) finds n2 on machine 1, and n3 on machine 2. LoadNeighborsOnMachine(n0 , in, 1) returns the partial adjacency list’s id in1 , and SelectByP redicate(in1 , l2 ) returns n2 .</li>
+</ol>
+<h1 id="Query-Processing"><a href="#Query-Processing" class="headerlink" title="Query Processing"></a>Query Processing</h1><p>先把 查询Q拆分为 q1 q2 q3…qn，然后让它们并行寻找 再最后再和并</p>
+<h2 id="单个q的匹配方式"><a href="#单个q的匹配方式" class="headerlink" title="单个q的匹配方式"></a>单个q的匹配方式</h2><p>For a triple pattern q, our goal is to find all its matches R(q). Let P denote the predicate in q, V denote the variables in q, and B(V ) denote the binding of V . If V is a free variable (not bound), we also use B(V ) to denote all possible values V can take.</p>
+<p>从 S 去找 O ,写作q→</p>
+<p>从 O 去找 S ,写作q←</p>
+<p>分为两个阶段</p>
+<p>src</p>
+<p>用LoadNodes(本机)找到基于 所有可能predicate 的所有可能的src </p>
+<p>对于所有可能src  在所有机器LoadNeighborsOnMachine(有远端操作)找<code>nid_i</code> 把结果M再发给所有机器</p>
+<p>tgt</p>
+<p>对于收到的结果M 的每一个(src,nid)</p>
+<p>找所有的可能的predicate</p>
+<p>用 SelectByPredicate(本机) 交 所有可能的tgt 得到R</p>
+<p>方案是 合并相邻 的操作来减少中间过程的损耗</p>
+<p>然后讲优化 也就是顺序优化</p>
+<p>注意到用了合并以后 前面j个操作 只要集合相同 那么结果与前面j个的内部顺序无关</p>
+<p>我们使用 启发式算法</p>
+<p>Heuristic 1. We expand a subgraph from its exploration point. We combine two subgraphs by connecting their exploration points.</p>
+<p>Property 1. We expand a subgraph or combine two subgraphs through an edge. The two nodes on both ends of the edge are valid exploration points in the new graph.</p>
+<p>Theorem 1. For a query graph G(V, E), the DP has time complexity O(n·|V |·|E|) where n is the number of connected subgraphs in G.</p>
+<p>Theorem 2. Any acyclic query Q with query graph G is guaranteed to have an exploration plan.</p>
+<p>Discussion. There are two cases we have not considered formally: i) G is cyclic, and ii) G contains a join on predicates.</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/Blog/tags/rdf/" rel="tag"># rdf</a>
+            
+              <a href="/Blog/tags/graph/" rel="tag"># graph</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/Blog/13-01-01-us-15-Seaborn-Exploiting-The-DRAM-Rowhammer-Bug-To-Gain-Kernel-Privileges/" rel="next" title="Exploiting-The-DRAM-Rowhammer">
+                  <i class="fa fa-chevron-left"></i> Exploiting-The-DRAM-Rowhammer
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/Blog/13-01-01-survey/" rel="prev" title="survey">
+                  survey <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/Blog/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">分類</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-name">標籤</span>
+        
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/CroMarmot" title="GitHub &rarr; https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces &rarr; https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-bug"></i>Codeforces</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ABSTRACT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRACT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#INTRODUCTION"><span class="nav-number">2.</span> <span class="nav-text">INTRODUCTION</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Join-vs-Graph-Exploration"><span class="nav-number">3.</span> <span class="nav-text">Join vs. Graph Exploration</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-Architecture"><span class="nav-number">4.</span> <span class="nav-text">System Architecture</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Modeling"><span class="nav-number">5.</span> <span class="nav-text">Data Modeling</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Query-Processing"><span class="nav-number">6.</span> <span class="nav-text">Query Processing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单个q的匹配方式"><span class="nav-number">6.1.</span> <span class="nav-text">单个q的匹配方式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/Blog/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/Blog/js/utils.js?v=7.3.0"></script>
+  <script src="/Blog/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/Blog/js/schemes/muse.js?v=7.3.0"></script>
+
+
+<script src="/Blog/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/Blog/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+
+  
+  <script src="/Blog/js/scrollspy.js?v=7.3.0"></script>
+<script src="/Blog/js/post-details.js?v=7.3.0"></script>
+
+
+    
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://cromarmot.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://cromarmot.github.io/Blog/13-01-01-trinity.rdf/";
+    this.page.identifier = "13-01-01-trinity.rdf/";
+    this.page.title = 'Trinity RDF';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://cromarmot.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
+
+</body>
+</html>

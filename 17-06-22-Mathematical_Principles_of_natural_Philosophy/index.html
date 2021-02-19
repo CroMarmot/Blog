@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next muse use-motion" lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.3.0" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/Blog/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '複製',
+      copy_success: '複製成功',
+      copy_failure: '複製失敗'
+    }
+  };
+</script>
+
+  <meta name="description" content="总评整理开始日期:2017-06-22整理结束日期:[整理中 感觉技不如人甘拜下风 是不是用google翻译的啊]ISBN 978-7-214-06747-0千万不要买这本书，定义，证明的翻译看得我好难受,整理的时候心一万个草泥马飞过,感觉需要再搞一本英文版对着看绪论   序号 定义     1 质量 物质的量就是物质的度量，可以通过物体的密度和体积而算出   2 动量 运动的量即是运动的度量，是">
+<meta name="keywords" content="数学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自然哲学的数学原理个人整理(Give up)">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/17-06-22-Mathematical_Principles_of_natural_Philosophy/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="总评整理开始日期:2017-06-22整理结束日期:[整理中 感觉技不如人甘拜下风 是不是用google翻译的啊]ISBN 978-7-214-06747-0千万不要买这本书，定义，证明的翻译看得我好难受,整理的时候心一万个草泥马飞过,感觉需要再搞一本英文版对着看绪论   序号 定义     1 质量 物质的量就是物质的度量，可以通过物体的密度和体积而算出   2 动量 运动的量即是运动的度量，是">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2020-04-17T05:01:32.884Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自然哲学的数学原理个人整理(Give up)">
+<meta name="twitter:description" content="总评整理开始日期:2017-06-22整理结束日期:[整理中 感觉技不如人甘拜下风 是不是用google翻译的啊]ISBN 978-7-214-06747-0千万不要买这本书，定义，证明的翻译看得我好难受,整理的时候心一万个草泥马飞过,感觉需要再搞一本英文版对着看绪论   序号 定义     1 质量 物质的量就是物质的度量，可以通过物体的密度和体积而算出   2 动量 运动的量即是运动的度量，是">
+  <link rel="canonical" href="https://cromarmot.github.io/Blog/17-06-22-Mathematical_Principles_of_natural_Philosophy/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>自然哲学的数学原理个人整理(Give up) | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  <div class="container sidebar-position-right">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/Blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cro-Marmot's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/Blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/Blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup">
+  <div class="search-header">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <div class="search-input-wrapper">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none"
+             placeholder="搜尋..." spellcheck="false"
+             type="text" id="search-input">
+    </div>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+  <div id="search-result"></div>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+    
+
+  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/17-06-22-Mathematical_Principles_of_natural_Philosophy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">自然哲学的数学原理个人整理(Give up)
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              
+                
+              
+
+              <time title="創建時間：2017-06-22 01:01:01" itemprop="dateCreated datePublished" datetime="2017-06-22T01:01:01+08:00">2017-06-22</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-04-17 13:01:32" itemprop="dateModified" datetime="2020-04-17T13:01:32+08:00">2020-04-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/17-06-22-Mathematical_Principles_of_natural_Philosophy/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-06-22-Mathematical_Principles_of_natural_Philosophy/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="总评"><a href="#总评" class="headerlink" title="总评"></a>总评</h1><p>整理开始日期:2017-06-22</p><p>整理结束日期:[整理中 感觉技不如人甘拜下风 是不是用google翻译的啊]</p><p>ISBN 978-7-214-06747-0</p><p>千万不要买这本书，定义，证明的翻译看得我好难受,整理的时候心一万个草泥马飞过,感觉需要再搞一本英文版对着看</p><h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>质量 物质的量就是物质的度量，可以通过物体的密度和体积而算出</td>
+</tr>
+<tr>
+<td>2</td>
+<td>动量 运动的量即是运动的度量，是由其速度和物质的量共同算出的</td>
+</tr>
+<tr>
+<td>3</td>
+<td>惯性 vis insita，或称为物体本身固有的力，是一种起抵抗作用的力。它存在于每一个物体之中，并始终使物体保持现有的静止或匀速直线运动的状态</td>
+</tr>
+<tr>
+<td>4</td>
+<td>施加在物体上的外力，其作用是使物体改变静止或匀速直线运动的状态。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>向心力迫使物体趋向一个中心点，并对任何倾向于该点的物体起作用。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>用向心力的绝对度量来量度向心力，它与由中心导致产生，并且通过周围空间传递出来的效能成正比</td>
+</tr>
+<tr>
+<td>7</td>
+<td>用向心力的加速度度量来量度向心力，它与向心力在一个给定时间里产生的速度成正比</td>
+</tr>
+<tr>
+<td>8</td>
+<td>用向心力的运动度量来量度向心力，它与向心力在一个给定时间里产生的运动量成正比</td>
+</tr>
+</tbody>
+</table><a id="more"></a>
+
+
+
+
+<p>运动公理或定律</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>定律</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>对于任何一个物体，除非有外力作用于它并改变其状态，否则它将保持静止或匀速直线的运动状态。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>运动的变化与外力成正比，且沿着外力作用的直线方向进行变化</td>
+</tr>
+<tr>
+<td>3</td>
+<td>每一种作用都有一个与之方向相反的反作用，并且，两个物体间的相互作用总是相等的。</td>
+</tr>
+<tr>
+<td>推论1</td>
+<td>当两个力同时作用于一个物体时，这个物体将沿着平时四边形的对角线运动，所需时间等于两个力分别沿两边运动所用的时间之和。</td>
+</tr>
+<tr>
+<td>推论2</td>
+<td>由此，可以得到以下结论：一个直线力AD可以由任何两个倾斜力AC和CD合成。反之，任何一个直线力AD又可以分解成AC和CD两个倾斜力。</td>
+</tr>
+<tr>
+<td>推论3</td>
+<td>运动的量，是由同一方向的运动的和以及相反方向运动的差所得出，并且在物体间的相互作用保持不变</td>
+</tr>
+<tr>
+<td>推论4</td>
+<td>两个或多个物体共同的重力中心不会因为物体间的相互作用而改变其运动或静止的状态。如果将外力和阻碍作用排除在外，那么，所有相互作用的物体的公共重心不是静止就是处于匀速直线运动状态</td>
+</tr>
+<tr>
+<td>推论5</td>
+<td>在一个给定的空间中，物体的运动和它们自身之间的运动是一样的，无论此空间是静止的还是在做不含任何旋转运动的匀速直线运动。</td>
+</tr>
+<tr>
+<td>推论6</td>
+<td>无论物体相互之间以何种形式运动，在平行方向上，被相同的加速力加速时，都会继续之前相互间的运动，就如同没有加速力时一样</td>
+</tr>
+</tbody>
+</table>
+<p>其它 插图</p>
+<p>四种基本力：万有引力 电磁力维持原子 弱作用力释放射线 强作用力维持原子核</p>
+<hr>
+<ul>
+<li>物体的运动<ul>
+<li>通过量的初值与终值的比率(引理1-11)</li>
+<li>向心力的确定</li>
+<li>物体在偏心圆锥曲线上的运动</li>
+<li>通过已知焦点求椭圆、抛物线和双曲线的轨道</li>
+<li>由未知焦点求曲线轨道</li>
+<li>如何求已知轨道上物体的运动</li>
+<li>物体的直线上升或下落</li>
+<li>如何确定物体受任意类型向心力作用运动的轨道</li>
+<li>物体沿运动轨道进行运动以及在回归点的运动</li>
+<li>物体在给定表面上的运动以及物体的摆动运动</li>
+<li>球体的吸引力</li>
+<li>非球状物体的吸引力</li>
+<li>受指向极大物体上各部分的向心力推动的极小物体的运动</li>
+</ul>
+</li>
+<li>物体在阻滞介质中的运动<ul>
+<li>受与速度成正比的阻力作用的物体的运动</li>
+<li>受与速度平方成正比的阻力作用的物体的运动</li>
+<li>受部分与速度成正比而部分与速度平方成正比的阻力作用的物体的运动</li>
+<li>物体在阻碍介质中的圆运动</li>
+<li>流体密度和压力 流体静力学</li>
+<li>摆体的运动及其受到的阻力</li>
+<li>流体的运动；流体施加于抛体的阻力</li>
+<li>通过流体传播的运动</li>
+<li>流体的圆运动</li>
+</ul>
+</li>
+<li>宇宙体系 使用数学的论述<ul>
+<li>哲学中的推理规则</li>
+<li>现象</li>
+<li>命题</li>
+<li>月球交汇点的运动</li>
+</ul>
+</li>
+</ul>
+<p>1.1.1 </p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/Blog/tags/数学/" rel="tag"># 数学</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/Blog/17-06-20-bilibilimath88461692/" rel="next" title="3Blue1Brown">
+                  <i class="fa fa-chevron-left"></i> 3Blue1Brown
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/Blog/17-06-22-Discrete-Mathematics-Tutorial-scu/" rel="prev" title="离散数学教程四川大学出版个人整理">
+                  离散数学教程四川大学出版个人整理 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/Blog/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">分類</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-name">標籤</span>
+        
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/CroMarmot" title="GitHub &rarr; https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces &rarr; https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-bug"></i>Codeforces</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#总评"><span class="nav-number">1.</span> <span class="nav-text">总评</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绪论"><span class="nav-number">1.1.</span> <span class="nav-text">绪论</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/Blog/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/Blog/js/utils.js?v=7.3.0"></script>
+  <script src="/Blog/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/Blog/js/schemes/muse.js?v=7.3.0"></script>
+
+
+<script src="/Blog/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/Blog/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+
+  
+  <script src="/Blog/js/scrollspy.js?v=7.3.0"></script>
+<script src="/Blog/js/post-details.js?v=7.3.0"></script>
+
+
+    
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://cromarmot.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://cromarmot.github.io/Blog/17-06-22-Mathematical_Principles_of_natural_Philosophy/";
+    this.page.identifier = "17-06-22-Mathematical_Principles_of_natural_Philosophy/";
+    this.page.title = '自然哲学的数学原理个人整理(Give up)';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://cromarmot.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
+
+</body>
+</html>

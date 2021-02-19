@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next muse use-motion" lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.3.0" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/Blog/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '複製',
+      copy_success: '複製成功',
+      copy_failure: '複製失敗'
+    }
+  };
+</script>
+
+  <meta name="description" content="mongodb 学习记录本文依赖nodejsmongodbangularjs记录工作总图Detailnodejs事件驱动可扩展性，端到端 npm install  npm search  npm install -g  npm install -g npm-check  npm-check -u -g">
+<meta name="keywords" content="node,angular,mongo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodejs mongodb angularjs 个人笔记">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/17-01-21-node-mongo-angularjs/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="mongodb 学习记录本文依赖nodejsmongodbangularjs记录工作总图Detailnodejs事件驱动可扩展性，端到端 npm install  npm search  npm install -g  npm install -g npm-check  npm-check -u -g">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2020-04-17T05:01:32.880Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nodejs mongodb angularjs 个人笔记">
+<meta name="twitter:description" content="mongodb 学习记录本文依赖nodejsmongodbangularjs记录工作总图Detailnodejs事件驱动可扩展性，端到端 npm install  npm search  npm install -g  npm install -g npm-check  npm-check -u -g">
+  <link rel="canonical" href="https://cromarmot.github.io/Blog/17-01-21-node-mongo-angularjs/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>nodejs mongodb angularjs 个人笔记 | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  <div class="container sidebar-position-right">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/Blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cro-Marmot's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/Blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/Blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup">
+  <div class="search-header">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <div class="search-input-wrapper">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none"
+             placeholder="搜尋..." spellcheck="false"
+             type="text" id="search-input">
+    </div>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+  <div id="search-result"></div>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+    
+
+  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/17-01-21-node-mongo-angularjs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">nodejs mongodb angularjs 个人笔记
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              
+                
+              
+
+              <time title="創建時間：2017-01-21 01:01:01" itemprop="dateCreated datePublished" datetime="2017-01-21T01:01:01+08:00">2017-01-21</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-04-17 13:01:32" itemprop="dateModified" datetime="2020-04-17T13:01:32+08:00">2020-04-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/17-01-21-node-mongo-angularjs/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-01-21-node-mongo-angularjs/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="mongodb-学习记录"><a href="#mongodb-学习记录" class="headerlink" title="mongodb 学习记录"></a>mongodb 学习记录</h1><h2 id="本文依赖"><a href="#本文依赖" class="headerlink" title="本文依赖"></a>本文依赖</h2><p><code>nodejs</code></p><p><code>mongodb</code></p><p><code>angularjs</code></p><h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p><a href="P7">工作总图</a></p><h2 id="Detail"><a href="#Detail" class="headerlink" title="Detail"></a>Detail</h2><h3 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h3><p>事件驱动可扩展性，端到端</p><blockquote>
+<p>npm install</p>
+</blockquote><blockquote>
+<p>npm search</p>
+</blockquote><blockquote>
+<p>npm install -g</p>
+</blockquote><blockquote>
+<p>npm install -g npm-check</p>
+</blockquote><blockquote>
+<p>npm-check -u -g</p>
+</blockquote><a id="more"></a>
+
+
+
+
+
+
+
+
+
+<p><a href="P43-45">模块封装</a></p>
+<p><a href="P51-P55">事件模型 阻塞I/O</a></p>
+<h4 id="发送接受P59"><a href="#发送接受P59" class="headerlink" title="发送接受P59"></a>发送接受P59</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">"events"</span>);</span><br><span class="line"><span class="keyword">var</span> emitter=events.EventEmitter();</span><br><span class="line">emitter.emit(eventName,data);</span><br><span class="line">.addListener(eventName,callback(data))</span><br><span class="line">.on(eventName,callback(data))</span><br><span class="line">.once(eventName,callback(data))</span><br></pre></td></tr></table></figure>
+<p>json/buffer/stream(网页流数据/压缩解压) -P90</p>
+<p>文件系统 -P107</p>
+<p>require(“fs”)</p>
+<p>HTTP:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">require(&quot;http&quot;)</span><br><span class="line">require(&quot;url&quot;)</span><br><span class="line">require(&quot;querystring&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>HTTPS:P127-<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">openssl genrsa -out server.pem 2048</span></span><br><span class="line"><span class="comment">openssl req -new -key server.pem -out server.csr</span></span><br><span class="line"><span class="comment">openssl x509 -req -days 365 -in server.csr -signkey server.pem -out server.crt</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> https = <span class="built_in">require</span>(<span class="string">"https"</span>);                                                                                                                          </span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">var</span> options = &#123;</span><br><span class="line">  key: fs.readFileSync(<span class="string">"./server.pem"</span>),</span><br><span class="line">  cert: fs.readFileSync(<span class="string">"./server.crt"</span>)</span><br><span class="line">&#125;;</span><br><span class="line">https.createServer(options,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">  res.writeHead(<span class="number">200</span>);</span><br><span class="line">  res.end(<span class="string">"Hello Secure World\n"</span>);</span><br><span class="line">&#125;).listen(<span class="number">8128</span>);</span><br></pre></td></tr></table></figure></p>
+<p>socket P132-</p>
+<p>多处理器</p>
+<p><code>process</code></p>
+<p><code>child_process</code></p>
+<p><code>cluster,worker</code>实现多个”线程”监听一个port并可自动处理<code>cluster_server.js /cluster_worker.js/cluster_client.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">process.stdin.on(&quot;data&quot;,function(data)&#123;;&#125;);</span><br><span class="line">process.on(&quot;SIGINT&quot;,function()&#123;;&#125;);</span><br><span class="line">process.on(&quot;SIGBREAK&quot;,function()&#123;;&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>https://raw.githubusercontent.com/bwdbooks/nodejs-mongodb-angularjs-web-development/master/ch09/process_info.js</code></p>
+<p><code>exec() / execFile()/spawn()</code></p>
+<p>其它模块介绍,runnoob上也有<a href="https://nodejs.org/api/" target="_blank" rel="noopener">https://nodejs.org/api/</a></p>
+<p><code>os</code>见<code>os_info.js</code></p>
+<p><code>util</code>有<code>format,log,debug,checktype,转对象为字串</code>原型继承见<code>util_inherit.js</code></p>
+<p><code>dns</code>有lookup不同level的resolve</p>
+<h4 id="Express-server"><a href="#Express-server" class="headerlink" title="Express(server)"></a>Express(server)</h4><p>npm install express</p>
+<p>route,Error handle,易于集成,cookie,会话缓存</p>
+<p><code>_http_https.js</code> <code>require(&#39;url&#39;)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(&apos;/user/:userid&apos;,function(req.res)&#123;</span><br><span class="line">	res.send(&quot;Get User: &quot;+ req.param(&quot;userid&quot;));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>express_routes.js</code> 路由demo/req.params/正则/Request对象/Response对象</p>
+<p><code>express_json.js/express_send_file.js/res.download([path])/res.redirect()</code></p>
+<p>模板引擎<code>ejs+jade</code>,<code>express_templates.js and other files</code></p>
+<p>中间件大法</p>
+<p><code>app.use(path,bodyParser()).use(path,bodyParser()).use(path,bodyParser());</code></p>
+<p><code>app.get(path,bodyParser(),function(req,res){});</code></p>
+<ul>
+<li><code>static 内置 流式处理静态文件访问</code></li>
+<li><code>express-logger</code></li>
+<li><code>basic-auth-connect基本身份验证</code></li>
+<li><code>cookie-parser读取设置cookie</code></li>
+<li><code>cookie-session/会话支持</code></li>
+<li><code>express-session,相当强大会话实现</code></li>
+<li><code>body-parser req正文中的JSON解析为req.body</code></li>
+<li><code>compression 对客户端大响应提供Gzip支持</code></li>
+<li><code>csurf 跨站点请求 伪造保护</code></li>
+</ul>
+<p>res.query. 用于查询把url转化为json</p>
+<p>静态文件服务</p>
+<p><code>app.use(pathurl,express.static(path_file_or_dir_local)[,config]);//maxAge hidden redirect index</code></p>
+<p><code>auth_session.js</code> 会话+验证</p>
+<h3 id="mongodb-NoSQL"><a href="#mongodb-NoSQL" class="headerlink" title="mongodb(NoSQL)"></a>mongodb(NoSQL)</h3><p>针对文档，高性能，高可用性，高可扩展性</p>
+<p><a href="https://docs.mongodb.com/manual/installation/" target="_blank" rel="noopener">安装</a></p>
+<p><a href="https://docs.mongodb.com/manual/reference/bson-types/" target="_blank" rel="noopener">mongodb类型</a></p>
+<p><a href="http://www.runoob.com/mongodb/mongodb-tutorial.html" target="_blank" rel="noopener">基础教程</a></p>
+<p>封顶集合(capped collection) 超过大小以旧的替代新的</p>
+<p>索引？分片？复制？</p>
+<p>生命周期？应用程序代码控制或者TTL</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">help &lt;option&gt;</span><br><span class="line">use &lt;database&gt;</span><br><span class="line">show &lt;option&gt; (such as dbs,collections,profile,log)</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+<p>用户管理身份验证-P196</p>
+<p>数据库管理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">db.copyDatabase(origin,destination)</span><br><span class="line">db.dropDatabase()</span><br><span class="line">db.createCollection(&quot;collectionname&quot;)</span><br><span class="line">coll =db.getCollection(&quot;collectionname&quot;)</span><br><span class="line">coll.drop()</span><br><span class="line">coll.find(&#123;&apos;key&apos;:&apos;value&apos;&#125;)</span><br><span class="line">coll.insert(&#123;&apos;key&apos;:&apos;value&apos;&#125;)</span><br><span class="line">coll.remove(&#123;&apos;key&apos;:&apos;value&apos;&#125;)</span><br><span class="line">coll.update(where,set,other option) //inc set push sort等update运算符</span><br></pre></td></tr></table></figure>
+<p>mongo+nodejs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install mongo</span><br><span class="line">npm install mongoose</span><br></pre></td></tr></table></figure>
+<p>见 <code>db_connect_object.js</code></p>
+<p><a href="http://www.cnblogs.com/zhongweiv/p/node_mongodb.html#node_mongodb" target="_blank" rel="noopener">demo</a></p>
+<p><code>db,Admin,Collection,Cursor</code>对象</p>
+<p><code>atomically:findAndModify()/findAndRemove()</code></p>
+<p><code>upsert()/save()/remove()</code></p>
+<p>mongo可以直接执行js :<code>generate_data.js</code></p>
+<p>count / limit</p>
+<p><code>aggregate([{$match:{tasdf:X&quot;}},{$group:{asdf:&quot;agqwe&quot;,sdfo:{$sum:&quot;agqwe&quot;}}}])</code> //mapreduce? 聚合</p>
+<p>mongoose结构化模式与验证 </p>
+<p><code>mongoose/schema/query/Document</code></p>
+<p><code>mongoose_find.js/_create.js/_save/_update_one</code></p>
+<p><code>***.validate(function(value){;})</code></p>
+<p>中间件</p>
+<p><code>pre/post</code></p>
+<p>mongoDB高级</p>
+<p>ensureIndex /MongoClient</p>
+<p>分片集群等等 GridFS/GridStore</p>
+<p>修复 备份</p>
+<h3 id="angularjs"><a href="#angularjs" class="headerlink" title="angularjs"></a>angularjs</h3><p> 数据绑定，可扩展性，整洁，可重用，整洁，支持，兼容性</p>
+<p>MVC</p>
+<p><code>node_server.js</code>simple demo</p>
+<p>专有对象提供器<code>animation,controller,filter,directive</code></p>
+<p>服务提供器<code>value,constant,factory,service,provider</code></p>
+<p>注入<code>21 injector.js</code></p>
+<p>作用域+<code>广播emit/broadcast/on</code>-&gt;<code>event</code>的属性<code>targetScope/currentScope/name/stopPropagation/preventDefault/defaultPrevented</code></p>
+<p><code>ng-model,data-ng-model,x-ng:model,ng_model</code> 都被规范化为<code>ngModel</code></p>
+<p>内置过滤器<code>currency,filter:exp:compare,json,limitTo:limit,lowercase,uppercase,number[:fraction],orderBy:exp:reverse,date[:format]</code></p>
+<p>DIY过滤器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">angular.module(***).filter(&apos;fff&apos;,function()&#123;return function(leftinput,argument)&#123;return result;&#125;&#125;)</span><br><span class="line">controller(&apos;aController&apos;,[&apos;$scope&apos;,&apos;fffFilter&apos;,function($scope,fffFilter)&#123;</span><br><span class="line">	;//直接在html上用 或者 用作函数也行</span><br><span class="line">&#125;])</span><br></pre></td></tr></table></figure></p>
+<p>支持AngularJS模板功能的指令/表单 P411-419</p>
+<p>24<code>directive_custom.js/html</code></p>
+<ul>
+<li><code>template</code>允许你定义插入指令的元素的AngularJS模板</li>
+<li><code>templateUrl</code>同上但是是url</li>
+<li><code>restrict</code>允许你指定该指令 <code>A</code>属性名<code>E</code>元素名<code>C</code>类名</li>
+<li><code>replace</code>取代元素</li>
+<li><code>transclude</code>内部是否可以访问内部作用域以外的作用域</li>
+<li><code>scope</code>指定内部作用域，<code>{}</code>隔离 <code>@funcname</code>/<code>@</code> 绑定到DOM <code>=</code> 双向绑定 <code>&amp;</code> 局部绑定到指定scope</li>
+<li><code>link</code>指定 作用域 DOM元素 和其它能操作DOM属性的链接函数</li>
+<li><code>controller</code></li>
+<li><code>require</code>所需要的其它指令</li>
+</ul>
+<p>内置常用服务</p>
+<p><code>animate(css),cacheFactory,compile,cookies,document,http,interval,locale,location,resource,rootElement,rootScope,route,sce,templateCache,timeout/interval,window.alert,</code></p>
+<p><code>$http</code> 请求<code>delete/get/head/jsonp/post/put</code></p>
+<p>26章完整登陆注册验证实例</p>
+<p>社交媒体账户作为身份验证来源 <code>npm install passport/passport-google/passport-facebook/passport-twitter</code> 已验证后的序列化和反序列化 <code>google_auth.js</code></p>
+<p>27定义评论回复照片和页面模型 /mongoose model schema的应用 更复杂的控制实现 和 angularJS的service应用/</p>
+<p>28购物车 mongoose model schema的应用</p>
+<p>建议的代码文件结构方式,代码编码顺序[bg(node)/view(html[css])/fg(angularJS)]</p>
+<p>29 选项卡 天气服务 可拖动组件 交互表格数据</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/Blog/tags/node/" rel="tag"># node</a>
+            
+              <a href="/Blog/tags/angular/" rel="tag"># angular</a>
+            
+              <a href="/Blog/tags/mongo/" rel="tag"># mongo</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/Blog/16-06-02-Hello-World/" rel="next" title="Hello world">
+                  <i class="fa fa-chevron-left"></i> Hello world
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/Blog/17-02-15-Why-Linux-Is-More-Secure-Than-Windows/" rel="prev" title="linux 为什么比 windows 更安全">
+                  linux 为什么比 windows 更安全 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/Blog/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">分類</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-name">標籤</span>
+        
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/CroMarmot" title="GitHub &rarr; https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces &rarr; https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-bug"></i>Codeforces</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mongodb-学习记录"><span class="nav-number">1.</span> <span class="nav-text">mongodb 学习记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文依赖"><span class="nav-number">1.1.</span> <span class="nav-text">本文依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#记录"><span class="nav-number">1.2.</span> <span class="nav-text">记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detail"><span class="nav-number">1.3.</span> <span class="nav-text">Detail</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nodejs"><span class="nav-number">1.3.1.</span> <span class="nav-text">nodejs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#发送接受P59"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">发送接受P59</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Express-server"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Express(server)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mongodb-NoSQL"><span class="nav-number">1.3.2.</span> <span class="nav-text">mongodb(NoSQL)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angularjs"><span class="nav-number">1.3.3.</span> <span class="nav-text">angularjs</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/Blog/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/Blog/js/utils.js?v=7.3.0"></script>
+  <script src="/Blog/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/Blog/js/schemes/muse.js?v=7.3.0"></script>
+
+
+<script src="/Blog/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/Blog/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+
+  
+  <script src="/Blog/js/scrollspy.js?v=7.3.0"></script>
+<script src="/Blog/js/post-details.js?v=7.3.0"></script>
+
+
+    
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://cromarmot.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://cromarmot.github.io/Blog/17-01-21-node-mongo-angularjs/";
+    this.page.identifier = "17-01-21-node-mongo-angularjs/";
+    this.page.title = 'nodejs mongodb angularjs 个人笔记';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://cromarmot.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
+
+</body>
+</html>

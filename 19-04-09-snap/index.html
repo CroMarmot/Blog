@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next muse use-motion" lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.3.0" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/Blog/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '複製',
+      copy_success: '複製成功',
+      copy_failure: '複製失敗'
+    }
+  };
+</script>
+
+  <meta name="description" content="Ubuntu推出的 软件管理程序(类似debian系列是apt，arch系列是pacman)，跨linux的InstallArch1234sudo pacman -S snapd# enable the snapd systemd service:sudo systemctl enable --now snapd.socket">
+<meta property="og:type" content="article">
+<meta property="og:title" content="snap">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/19-04-09-snap/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="Ubuntu推出的 软件管理程序(类似debian系列是apt，arch系列是pacman)，跨linux的InstallArch1234sudo pacman -S snapd# enable the snapd systemd service:sudo systemctl enable --now snapd.socket">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://tutorials.ubuntu.com/es6-bundled/src/codelabs/basic-snap-usage/img/f9f287c2e1980df1.png">
+<meta property="og:updated_time" content="2020-04-17T05:01:32.892Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="snap">
+<meta name="twitter:description" content="Ubuntu推出的 软件管理程序(类似debian系列是apt，arch系列是pacman)，跨linux的InstallArch1234sudo pacman -S snapd# enable the snapd systemd service:sudo systemctl enable --now snapd.socket">
+<meta name="twitter:image" content="https://tutorials.ubuntu.com/es6-bundled/src/codelabs/basic-snap-usage/img/f9f287c2e1980df1.png">
+  <link rel="canonical" href="https://cromarmot.github.io/Blog/19-04-09-snap/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>snap | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  <div class="container sidebar-position-right">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/Blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cro-Marmot's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/Blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/Blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup">
+  <div class="search-header">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <div class="search-input-wrapper">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none"
+             placeholder="搜尋..." spellcheck="false"
+             type="text" id="search-input">
+    </div>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+  <div id="search-result"></div>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+    
+
+  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-04-09-snap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">snap
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              
+                
+              
+
+              <time title="創建時間：2019-04-09 11:20:14" itemprop="dateCreated datePublished" datetime="2019-04-09T11:20:14+08:00">2019-04-09</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-04-17 13:01:32" itemprop="dateModified" datetime="2020-04-17T13:01:32+08:00">2020-04-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/snap/" itemprop="url" rel="index"><span itemprop="name">snap</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/snap/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-04-09-snap/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-04-09-snap/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Ubuntu推出的 软件管理程序(类似debian系列是apt，arch系列是pacman)，跨linux的</p><p><img src="https://tutorials.ubuntu.com/es6-bundled/src/codelabs/basic-snap-usage/img/f9f287c2e1980df1.png" alt="linuxs"></p><h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><p>Arch</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S snapd</span><br><span class="line"></span><br><span class="line"><span class="comment"># enable the snapd systemd service:</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> --now snapd.socket</span><br></pre></td></tr></table></figure><a id="more"></a>
+
+
+
+<p>Debian (Sid only)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install snapd</span><br></pre></td></tr></table></figure>
+<p><strong>注</strong>Ubuntu &gt;16.04默认安装了 </p>
+<p>Fedora</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install snapd</span><br></pre></td></tr></table></figure>
+<p>Gentoo</p>
+<p>Install the <a href="https://github.com/zyga/gentoo-snappy" target="_blank" rel="noopener">gentoo-snappy overlay.</a><br>OpenEmbedded/Yocto<br>Install the <a href="https://github.com/morphis/meta-snappy/blob/master/README.md" target="_blank" rel="noopener">snap meta layer.</a></p>
+<p>openSuSE</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo zypper addrepo http://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_42.2/ snappy</span><br><span class="line">sudo zypper install snapd</span><br></pre></td></tr></table></figure>
+<h1 id="start-using"><a href="#start-using" class="headerlink" title="start using"></a>start using</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">snap find hello</span><br><span class="line">sudo snap install hello</span><br><span class="line">hello</span><br><span class="line">snap list</span><br><span class="line">sudo snap refresh &lt;snap name&gt;</span><br><span class="line">sudo snap refresh</span><br><span class="line">sudo snap remove</span><br></pre></td></tr></table></figure>
+<p>好消息是snap每日自动在后台更新</p>
+<p>软件默认安装的是stable版本</p>
+<p>如果要其他版本则通过指定channel</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo snap refresh hello --channel=beta</span><br><span class="line">sudo snap refresh hello --beta</span><br></pre></td></tr></table></figure>
+<p>可选的channel有 <code>stable</code>稳定,<code>candidate</code>稍早于稳定版的版本,<code>beta</code>未完成但是一个里程碑的版本,<code>edge</code>每日构建的冒烟测试</p>
+<p>版本回滚</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap revert hello</span><br></pre></td></tr></table></figure>
+<h1 id="进阶snap用法"><a href="#进阶snap用法" class="headerlink" title="进阶snap用法"></a>进阶snap用法</h1><p>首先申请个账号<a href="https://login.ubuntu.com/" target="_blank" rel="noopener">https://login.ubuntu.com/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap login</span><br></pre></td></tr></table></figure>
+<p>登陆以后，你再使用snap就不需要sudo了，除非你执行了<code>snap logout</code></p>
+<p>可以看snap使用历史记录，以及一个历史记录的细节</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">snap changes</span><br><span class="line">snap change &lt;changes ID&gt;</span><br><span class="line">snap watch &lt;changes ID&gt;</span><br><span class="line">snap abort &lt;changes ID&gt;</span><br></pre></td></tr></table></figure>
+<p>snap安装的流程</p>
+<p>下载-&gt;验证-&gt;mount-&gt;备份老版本的一些data到另一个文件夹-&gt;The security profiles are set and snapd checks which interfaces to connect to.-&gt;添加到$PATH-&gt;设置aliases-&gt;运行snap中定义的services-&gt; 运行snap中定义的 configure钩子</p>
+<p>类似的可以查看refresh remove revert的过程</p>
+<h2 id="离线安装例子"><a href="#离线安装例子" class="headerlink" title="离线安装例子"></a>离线安装例子</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">snap download nethack</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<p>会下载本身的(.snap)包以及对应(.assert)文件</p>
+<p>直接 <code>snap install XXXX.snap</code>会报错 cannot find signatures</p>
+<p>解决方案(误，如果你勇敢或疯狂 想无视assertion的install)<code>snap install --dangerous XXXX.snap</code></p>
+<p><strong>注</strong><code>--devmode</code>内涵了<code>--dangerous</code></p>
+<p>正确的安装方式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">snap ack XXX.assert</span><br><span class="line">snap install XXX.snap</span><br></pre></td></tr></table></figure>
+<p>关于assert(大概了解 account-key, account, snap-declaration, snap-revision 各个部分的元数组)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat XXX.assert</span><br></pre></td></tr></table></figure>
+<p>查看已知(即是ack 过的)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap known snap-declaration snap-name=nethack</span><br></pre></td></tr></table></figure>
+<p>所有stable channel的是confined，相对的devmode是unconfined，意味有访问系统的权限，所以要么这个开发者是你，要么是你信任的</p>
+<h2 id="interfaces"><a href="#interfaces" class="headerlink" title="interfaces"></a>interfaces</h2><p>先安装<code>chuck-norris-webserver</code></p>
+<p>interfaces是可插拔插槽模式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap interfaces</span><br></pre></td></tr></table></figure>
+<p>你可以看到，<code>chuck-norris-webserver</code>绑定到了<code>nextwork-bind</code> 上,</p>
+<p>但有一些连接的Slot是空的(如camera)，这种 是认为非安全的，访问用户的摄像机</p>
+<p>执行<code>chuck-norris-webserver.cli</code> 你可以看到 有一些权限访问是被拒绝了的</p>
+<p>授权camera</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap connect chuck-norris-webserver:camera :camera</span><br></pre></td></tr></table></figure>
+<p>我们再执行<code>snap interfaces</code>可以看到camera被连接上了</p>
+<p>取消连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap disconnect chuck-norris-webserver:camera</span><br></pre></td></tr></table></figure>
+<p>例如,服务和cli请求访问不同的接口定义:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">node-service:</span><br><span class="line">   command: bin/chuck-norris-app</span><br><span class="line">   daemon: simple</span><br><span class="line">   restart-condition: always</span><br><span class="line">   plugs: [network-bind]</span><br><span class="line"> cli:</span><br><span class="line">   command: bin/chuck-norris-cli</span><br><span class="line">   plugs: [network, camera]</span><br></pre></td></tr></table></figure>
+<p>读写network，使用camera</p>
+<p>devmode 是用于开发者的不是 devil 23333</p>
+<p>保证devmode的不会在stable里，也就不会被snap find到</p>
+<p>你如果要安装，可以强制–beta,–devmode,前提是你信任它</p>
+<p>安装后你会在snap list的notes中看到 它的channel</p>
+<p>一种看法是把它看成container式的样子，在它上面运行的未授权的看不到根目录, 重定位</p>
+<p><code>--classic</code>强制使用 未重定位的包，这种classic的包和重定位的包不兼容，这种classic的包是能够读到宿主系统的目录的</p>
+<p>综上这么多模式虽然你可能不是开发者也可以了解一下，主要还是为开发设计的，</p>
+<ol>
+<li>先用classic模式开发</li>
+<li>再用重定位dev模式</li>
+<li>最后用严格模式包</li>
+</ol>
+<h2 id="snaps-amp-services的可用性，日志，状态"><a href="#snaps-amp-services的可用性，日志，状态" class="headerlink" title="snaps&amp;services的可用性，日志，状态"></a>snaps&amp;services的可用性，日志，状态</h2><ol>
+<li>当一个snap被安装，意味着，该snap命令在用户$PATH中可访问</li>
+<li>snap中包括的services都被启动，它们会跟随系统启动和关闭，而启动关闭，当它们crash可以自动重启</li>
+</ol>
+<p>你可以<code>snap enable</code>,<code>snap restart</code>,<code>snap disable</code>控制这些服务</p>
+<p>[原来我机器上有apache，然后安了这个用来讲例子的webserver，需要先stop apache再重启这个webserver]</p>
+<p><code>ll /etc/systemd/system/snap*</code></p>
+<p><code>cat /etc/systemd/system/snap.chuck-norris-webserver.node-service.service</code></p>
+<p>所以snap用的还是系统的systemd的工具来管理服务，所以可以用传统的systemctl来管理</p>
+<p><code>systemctl status -l snap.chuck-norris-webserver.node-service</code></p>
+<p>这里在讲systemctl就不记了</p>
+<p>同样可以查看日志<code>sudo journalctl -fu snap.chuck-norris-webserver.node-service</code></p>
+<h2 id="管理snap配置"><a href="#管理snap配置" class="headerlink" title="管理snap配置"></a>管理snap配置</h2><p><code>snap set</code></p>
+<p><code>snap set chuck-norris-webserver title=&quot;I can bind Chuck Norris to my will&quot;</code></p>
+<p><code>snap set chuck-norris-webserver port=81</code></p>
+<p>这应该是看具体应用提供的key和value范围了</p>
+<p><code>snap set &lt;snap-name&gt; key1=value1 [key2=value2...]</code></p>
+<p>与set对应的就是 get，可以获取值 <code>snap get &lt;snap-name&gt; key</code></p>
+<p><code>snap run --shell chuck-norris-webserver.cli</code></p>
+<p>中<code>--shell</code>会提供一个subshell</p>
+<p>subshell的环境<code>env | grep SNAP</code></p>
+<p>直接cd 和 touch都会无权,能够操作的是 <code>ls $SNAP</code>(可读 不可写),<code>touch $SNAP_USER_DATA/foo</code>(读+写),<code>$SNAP_USER_COMMON</code> (读+写)</p>
+<p>实际路径<code>echo $SNAP_USER_COMMON</code> =&gt; <code>/home/didrocks/snap/chuck-norris-webserver/common</code></p>
+<p>你通过snap set配置的值在<code>$SNAP_DATA/config</code></p>
+<p><code>snap info chuck-norris-webserver</code> ,相对于snap find可以看stable以及非stable的channel</p>
+<p>这里举例如果1.0.3(–beta)版本的revision是22(–edge)</p>
+<p>然后得到了一些反馈，修复了一些issues</p>
+<p>作者再提交，则还是1.0.3(–beta),但revision会变化可能就成了24(–edge)</p>
+<p><code>snap find --section</code></p>
+<h1 id="创建发布snap-TODO"><a href="#创建发布snap-TODO" class="headerlink" title="创建发布snap TODO"></a>创建发布snap TODO</h1><h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>总有人想搞统一 :-)</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://tutorials.ubuntu.com/tutorial/basic-snap-usage" target="_blank" rel="noopener">https://tutorials.ubuntu.com/tutorial/basic-snap-usage</a></p>
+<p><a href="https://tutorials.ubuntu.com/tutorial/advanced-snap-usage" target="_blank" rel="noopener">https://tutorials.ubuntu.com/tutorial/advanced-snap-usage</a></p>
+<p><a href="https://tutorials.ubuntu.com/tutorial/create-your-first-snap" target="_blank" rel="noopener">https://tutorials.ubuntu.com/tutorial/create-your-first-snap</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/Blog/19-04-01-vue-custom-v-model/" rel="next" title="vue custom v-model">
+                  <i class="fa fa-chevron-left"></i> vue custom v-model
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/Blog/19-04-19-jsmore1/" rel="prev" title="js 基础&进阶 速查笔记">
+                  js 基础&进阶 速查笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/Blog/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">分類</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-name">標籤</span>
+        
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/CroMarmot" title="GitHub &rarr; https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces &rarr; https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-bug"></i>Codeforces</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Install"><span class="nav-number">1.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#start-using"><span class="nav-number">2.</span> <span class="nav-text">start using</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进阶snap用法"><span class="nav-number">3.</span> <span class="nav-text">进阶snap用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装例子"><span class="nav-number">3.1.</span> <span class="nav-text">离线安装例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interfaces"><span class="nav-number">3.2.</span> <span class="nav-text">interfaces</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snaps-amp-services的可用性，日志，状态"><span class="nav-number">3.3.</span> <span class="nav-text">snaps&amp;services的可用性，日志，状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理snap配置"><span class="nav-number">3.4.</span> <span class="nav-text">管理snap配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建发布snap-TODO"><span class="nav-number">4.</span> <span class="nav-text">创建发布snap TODO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总"><span class="nav-number">5.</span> <span class="nav-text">总</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/Blog/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/Blog/js/utils.js?v=7.3.0"></script>
+  <script src="/Blog/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/Blog/js/schemes/muse.js?v=7.3.0"></script>
+
+
+<script src="/Blog/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/Blog/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/Blog/js/scrollspy.js?v=7.3.0"></script>
+<script src="/Blog/js/post-details.js?v=7.3.0"></script>
+
+
+    
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://cromarmot.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://cromarmot.github.io/Blog/19-04-09-snap/";
+    this.page.identifier = "19-04-09-snap/";
+    this.page.title = 'snap';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://cromarmot.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
+
+</body>
+</html>

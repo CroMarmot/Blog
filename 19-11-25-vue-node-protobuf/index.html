@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next muse use-motion" lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.3.0" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/Blog/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '複製',
+      copy_success: '複製成功',
+      copy_failure: '複製失敗'
+    }
+  };
+</script>
+
+  <meta name="description" content="步骤yarn add protobuf cors protobufjs生成jspbjs -t static-module -w es6 -o ./proto/msgProto.js ./proto/message.proto运行server:node index.js代码清单proto/message.proto">
+<meta name="keywords" content="frontend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-node-protobuf">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/19-11-25-vue-node-protobuf/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="步骤yarn add protobuf cors protobufjs生成jspbjs -t static-module -w es6 -o ./proto/msgProto.js ./proto/message.proto运行server:node index.js代码清单proto/message.proto">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2020-04-17T05:01:32.904Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-node-protobuf">
+<meta name="twitter:description" content="步骤yarn add protobuf cors protobufjs生成jspbjs -t static-module -w es6 -o ./proto/msgProto.js ./proto/message.proto运行server:node index.js代码清单proto/message.proto">
+  <link rel="canonical" href="https://cromarmot.github.io/Blog/19-11-25-vue-node-protobuf/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>vue-node-protobuf | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  <div class="container sidebar-position-right">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/Blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cro-Marmot's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/Blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/Blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup">
+  <div class="search-header">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <div class="search-input-wrapper">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none"
+             placeholder="搜尋..." spellcheck="false"
+             type="text" id="search-input">
+    </div>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+  <div id="search-result"></div>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+    
+
+  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-11-25-vue-node-protobuf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">vue-node-protobuf
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              
+                
+              
+
+              <time title="創建時間：2019-11-25 11:20:14" itemprop="dateCreated datePublished" datetime="2019-11-25T11:20:14+08:00">2019-11-25</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-04-17 13:01:32" itemprop="dateModified" datetime="2020-04-17T13:01:32+08:00">2020-04-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/js/json/" itemprop="url" rel="index"><span itemprop="name">json</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/js/json/protobuf/" itemprop="url" rel="index"><span itemprop="name">protobuf</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-11-25-vue-node-protobuf/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-11-25-vue-node-protobuf/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><p><code>yarn add protobuf cors protobufjs</code></p><p>生成js</p><p><code>pbjs -t static-module -w es6 -o ./proto/msgProto.js ./proto/message.proto</code></p><p>运行server:<code>node index.js</code></p><h1 id="代码清单"><a href="#代码清单" class="headerlink" title="代码清单"></a>代码清单</h1><h2 id="proto-message-proto"><a href="#proto-message-proto" class="headerlink" title="proto/message.proto"></a>proto/message.proto</h2><a id="more"></a>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">message Message &#123;</span><br><span class="line">    required string text = 1;</span><br><span class="line">    required string lang = 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="server代码index-js"><a href="#server代码index-js" class="headerlink" title="server代码index.js"></a>server代码index.js</h2><p>注意修改<code>let protoFolderName = &#39;../&#39;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">// https://protobufjs.github.io/protobuf.js/</span><br><span class="line"></span><br><span class="line">const path = require(&apos;path&apos;)</span><br><span class="line">const express = require(&apos;express&apos;)</span><br><span class="line">const cors = require(&apos;cors&apos;)</span><br><span class="line">const app = express()</span><br><span class="line">app.use(cors())</span><br><span class="line">const messages = [</span><br><span class="line">  &#123;text: &apos;hey&apos;, lang: &apos;english&apos;&#125;,</span><br><span class="line">  &#123;text: &apos;isänme&apos;, lang: &apos;tatar&apos;&#125;,</span><br><span class="line">  &#123;text: &apos;hej&apos;, lang: &apos;swedish&apos;&#125;</span><br><span class="line">];</span><br><span class="line">let protoFolderName = &apos;../&apos;</span><br><span class="line">app.use (function(req, res, next) &#123;</span><br><span class="line">  if (!req.is(&apos;application/octet-stream&apos;))&#123;</span><br><span class="line">    return next()</span><br><span class="line">  &#125;</span><br><span class="line">  var data = [] // List of Buffer objects</span><br><span class="line">  req.on(&apos;data&apos;, function(chunk) &#123;</span><br><span class="line">    data.push(chunk) // Append Buffer object</span><br><span class="line">  &#125;)</span><br><span class="line">  req.on(&apos;end&apos;, function() &#123;</span><br><span class="line">    if (data.length &lt;= 0 ) return next()</span><br><span class="line">    data = Buffer.concat(data) // Make one large Buffer of it</span><br><span class="line">    console.log(&apos;Received buffer&apos;, data)</span><br><span class="line">    req.raw = data</span><br><span class="line">    next()</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">let ProtoBuf = require(&apos;protobufjs&apos;)</span><br><span class="line">let root = ProtoBuf.loadSync(</span><br><span class="line">  path.join(__dirname,</span><br><span class="line">    protoFolderName,</span><br><span class="line">    &apos;message.proto&apos;)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">let Message = root.lookupType(&quot;Message&quot;);</span><br><span class="line"></span><br><span class="line">app.get(&apos;/api/messages&apos;, (req, res, next)=&gt;&#123;</span><br><span class="line">  let msg = Message.create(messages[Math.round(Math.random()*2)])</span><br><span class="line">  console.log(&apos;Encode and decode: &apos;, Message.decode(Message.encode(msg).finish()))</span><br><span class="line">  console.log(&apos;Buffer we are sending: &apos;, Message.encode(msg).finish())</span><br><span class="line">  // res.send(msg.encode().toBuffer(), &apos;binary&apos;) // alternative</span><br><span class="line">  res.send(Message.encode(msg).finish())</span><br><span class="line">  // res.send(Buffer.from(msg.toArrayBuffer()), &apos;binary&apos;) // alternative</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.post(&apos;/api/messages&apos;, (req, res, next)=&gt;&#123;</span><br><span class="line">  if (req.raw) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">      // Decode the Message</span><br><span class="line">      let msg = Message.decode(req.raw)</span><br><span class="line">      console.log(&apos;Received &quot;%s&quot; in %s&apos;, msg.text, msg.lang)</span><br><span class="line">      console.log(&apos;Received :&apos;,msg);</span><br><span class="line"></span><br><span class="line">      msg = Message.create(messages[Math.round(Math.random()*2)])</span><br><span class="line">      console.log(&apos;Encode and decode: &apos;, Message.decode(Message.encode(msg).finish()))</span><br><span class="line">      console.log(&apos;Buffer we are sending: &apos;, Message.encode(msg).finish())</span><br><span class="line">      // res.send(msg.encode().toBuffer(), &apos;binary&apos;) // alternative</span><br><span class="line">      res.send(Message.encode(msg).finish())</span><br><span class="line">    &#125; catch (err) &#123;</span><br><span class="line">      console.log(&apos;Processing failed:&apos;, err)</span><br><span class="line">      next(err)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    console.log(&quot;Not binary data&quot;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.all(&apos;*&apos;, (req, res)=&gt;&#123;</span><br><span class="line">  res.status(400).send(&apos;Not supported&apos;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const PORT=3001;</span><br><span class="line">app.listen(PORT,()=&gt;&#123;</span><br><span class="line">  console.log(`app listening on port $&#123;PORT&#125;!`);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="vue-代码"><a href="#vue-代码" class="headerlink" title="vue 代码"></a>vue 代码</h2><pre><code>&lt;template&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    {{ msg }}
+    &lt;button @click=&quot;postProtobuf()&quot;&gt;
+      post
+    &lt;/button&gt;
+    &lt;button @click=&quot;getProtobuf()&quot;&gt;
+      get
+    &lt;/button&gt;
+    &lt;code&gt;
+      proto生成js &quot;proto2js&quot;: &quot;pbjs -t static-module -w es6 -o ./proto/msgProto.js ./proto/message.proto&quot;,
+    &lt;/code&gt;
+    &lt;code&gt;
+      proto生成ts &quot;js2ts&quot;: &quot;pbts -o ./proto/msgProto.d.ts ./proto/msgProto.js&quot;,
+    &lt;/code&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+/* eslint-disable new-cap */
+import * as msgProto from &apos;~/proto/msgProto.js&apos;
+
+export default {
+  components: {},
+  data() {
+    return {
+      val: process.env.baseUrl,
+      msg: {}
+    }
+  },
+  mounted() {
+  },
+  methods: {
+    getProtobuf() {
+      this.$axios.get(
+        &apos;http://127.0.0.1:3001/api/messages&apos;,
+        { responseType: &apos;arraybuffer&apos; }
+      ).then((response) =&gt; {
+        console.log(&apos;Response from the server: &apos;, response)
+        const data = new Uint8Array(response.data) // important !
+        const ret = msgProto.Message.decode(data)
+        console.log(&apos;Decoded message&apos;, ret)
+        this.msg = ret.toJSON()
+      })
+    },
+    postProtobuf() {
+      const msg = new msgProto.Message({ text: &apos;yx xr&apos;, lang: &apos;slang&apos; })
+      const buffer = msgProto.Message.encode(msg).finish()
+      console.log(&apos;de(en(msg))&apos;, msgProto.Message.decode(buffer))
+      console.log(&apos;send:&apos;, msg)
+      console.log(&apos;send buffer:&apos;, buffer)
+      this.$axios.$post(
+        &apos;http://127.0.0.1:3001/api/messages&apos;,
+        buffer,
+        {
+          headers: { &apos;Content-Type&apos;: &apos;application/octet-stream&apos; },
+          responseType: &apos;arraybuffer&apos;
+        }
+      ).then((response) =&gt; {
+        console.log(&apos;Response from the server: &apos;, response)
+        const data = new Uint8Array(response) // important !
+        const ret = msgProto.Message.decode(data)
+        console.log(&apos;Decoded message&apos;, ret)
+        this.msg = ret.toJSON()
+      }).catch(function(response) {
+        console.log(response)
+      })
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-family: &apos;Quicksand&apos;, &apos;Source Sans Pro&apos;, -apple-system, BlinkMacSystemFont,
+  &apos;Segoe UI&apos;, Roboto, &apos;Helvetica Neue&apos;, Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 42px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+}
+
+.links {
+  padding-top: 15px;
+}
+&lt;/style&gt;
+</code></pre>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/Blog/tags/frontend/" rel="tag"># frontend</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/Blog/19-10-29-gulp/" rel="next" title="gulp 文档学习">
+                  <i class="fa fa-chevron-left"></i> gulp 文档学习
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/Blog/19-12-16-mpaas-password/" rel="prev" title="mpaas password">
+                  mpaas password <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/Blog/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">分類</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-name">標籤</span>
+        
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/CroMarmot" title="GitHub &rarr; https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces &rarr; https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-bug"></i>Codeforces</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#步骤"><span class="nav-number">1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码清单"><span class="nav-number">2.</span> <span class="nav-text">代码清单</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#proto-message-proto"><span class="nav-number">2.1.</span> <span class="nav-text">proto/message.proto</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#server代码index-js"><span class="nav-number">2.2.</span> <span class="nav-text">server代码index.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-代码"><span class="nav-number">2.3.</span> <span class="nav-text">vue 代码</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/Blog/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/Blog/js/utils.js?v=7.3.0"></script>
+  <script src="/Blog/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/Blog/js/schemes/muse.js?v=7.3.0"></script>
+
+
+<script src="/Blog/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/Blog/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/Blog/js/scrollspy.js?v=7.3.0"></script>
+<script src="/Blog/js/post-details.js?v=7.3.0"></script>
+
+
+    
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://cromarmot.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://cromarmot.github.io/Blog/19-11-25-vue-node-protobuf/";
+    this.page.identifier = "19-11-25-vue-node-protobuf/";
+    this.page.title = 'vue-node-protobuf';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://cromarmot.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
+
+</body>
+</html>

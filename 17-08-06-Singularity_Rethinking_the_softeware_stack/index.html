@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next muse use-motion" lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.3.0" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/Blog/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '複製',
+      copy_success: '複製成功',
+      copy_failure: '複製失敗'
+    }
+  };
+</script>
+
+  <meta name="description" content="Singularity: Rethinking the Software Stack software-isolated processes for protection of programs and system services contract-based channels for communication manifest-based programs for verification">
+<meta name="keywords" content="csp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Singularity:Rethinking the Software Stack">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/17-08-06-Singularity_Rethinking_the_softeware_stack/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="Singularity: Rethinking the Software Stack software-isolated processes for protection of programs and system services contract-based channels for communication manifest-based programs for verification">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2020-04-17T05:01:32.884Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Singularity:Rethinking the Software Stack">
+<meta name="twitter:description" content="Singularity: Rethinking the Software Stack software-isolated processes for protection of programs and system services contract-based channels for communication manifest-based programs for verification">
+  <link rel="canonical" href="https://cromarmot.github.io/Blog/17-08-06-Singularity_Rethinking_the_softeware_stack/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Singularity:Rethinking the Software Stack | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  <div class="container sidebar-position-right">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/Blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cro-Marmot's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/Blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/Blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup">
+  <div class="search-header">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <div class="search-input-wrapper">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none"
+             placeholder="搜尋..." spellcheck="false"
+             type="text" id="search-input">
+    </div>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+  <div id="search-result"></div>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+    
+
+  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/17-08-06-Singularity_Rethinking_the_softeware_stack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">Singularity:Rethinking the Software Stack
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              
+                
+              
+
+              <time title="創建時間：2017-07-22 01:01:01" itemprop="dateCreated datePublished" datetime="2017-07-22T01:01:01+08:00">2017-07-22</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-04-17 13:01:32" itemprop="dateModified" datetime="2020-04-17T13:01:32+08:00">2020-04-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/17-08-06-Singularity_Rethinking_the_softeware_stack/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-08-06-Singularity_Rethinking_the_softeware_stack/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Singularity-Rethinking-the-Software-Stack"><a href="#Singularity-Rethinking-the-Software-Stack" class="headerlink" title="Singularity: Rethinking the Software Stack"></a>Singularity: Rethinking the Software Stack</h1><ol>
+<li>software-isolated processes for protection of programs and system services</li>
+<li>contract-based channels for communication</li>
+<li>manifest-based programs for verification of system properties</li>
+</ol><a id="more"></a>
+<p>现有的系统在一些结构上还是采取老的方法,这个Singularity项目就是要复审现有的软件的常见问题 widespread security vulnerabilities; unexpected interactions among applications; failures caused by errant extensions, plug-ins, and drivers, and a perceived lack of robustness.</p>
+<h2 id="1-new-os-new-program-language-Sing-extension-of-C-and-new-software-verification-tools，安全的编程语言能避免许多安全问题，verification-tool也能提前检测出一些，增强的系统架构，作者也说这个Singularity在它们看来是个过程和意见-不是最终的一个完善的系统。"><a href="#1-new-os-new-program-language-Sing-extension-of-C-and-new-software-verification-tools，安全的编程语言能避免许多安全问题，verification-tool也能提前检测出一些，增强的系统架构，作者也说这个Singularity在它们看来是个过程和意见-不是最终的一个完善的系统。" class="headerlink" title="1 new os ,new program language(Sing#(extension of C#)) and new software verification tools，安全的编程语言能避免许多安全问题，verification tool也能提前检测出一些，增强的系统架构，作者也说这个Singularity在它们看来是个过程和意见 不是最终的一个完善的系统。"></a>1 new os ,new program language(Sing#(extension of C#)) and new software verification tools，安全的编程语言能避免许多安全问题，verification tool也能提前检测出一些，增强的系统架构，作者也说这个Singularity在它们看来是个过程和意见 不是最终的一个完善的系统。</h2><h2 id="2-提供简易但能根据简易的实现更丰富的实现"><a href="#2-提供简易但能根据简易的实现更丰富的实现" class="headerlink" title="2 提供简易但能根据简易的实现更丰富的实现"></a>2 提供简易但能根据简易的实现更丰富的实现</h2><h3 id="2-1-Software-Isolated-Processes"><a href="#2-1-Software-Isolated-Processes" class="headerlink" title="2.1 Software-Isolated Processes"></a>2.1 Software-Isolated Processes</h3><p>利用现代编程语言的类型和内存安全来说动态减少用于隔离的代码,两个程序间不能直接的内存操作，要么信号传递要么用特殊的交换heap，这样设计的sip是自动运行的，每一个sip有它自己的数据框架，运行时系统，垃圾回收，不能运行时加代码，新建sip和host的sip是隔离开的，易于去分析，最近也有paper对这种sealed processes的好处和trade-off进行分析.基于语言类型和内存安全用软件静态+运行时分析？？？这么吊？不需要硬件？通过这样多个程序甚至可以使用同一个大的虚拟地址，因为每个都不会超过它自己的SIP的范围，Aiken比较了硬件和软件用来孤立的trade-off，SIP减少page table切换 TLB，这个实验的关键就是建立一个用SIP的系统并论证它更加可靠..</p>
+<h3 id="2-2-Contract-Based-Channels"><a href="#2-2-Contract-Based-Channels" class="headerlink" title="2.2 Contract-Based Channels"></a>2.2 Contract-Based Channels</h3><p>通过合约channel (In the Sing# language, the endpoints are distinguished by types C.Imp and C.Exp , respectively,), 这里给的是状态来表示 以及状态转移所要进行的操作的伪代码 总之细节也记不很清，如果以后要做相关的可以来参考，这里这样是表达了所有的操作按照一个Contrat，这样是高效并且在SIP之间的交流是可以分析的，之后结合上线性类型Singularity也支持了SIP之间进行大数据的零拷贝的channel,作者说验证器开发了很久，因为它无法预测输入的数据不足的情况，并且这个bug也存在了很久，(最后的解决办法是在可能触发的几秒钟内再进行判断？？？) 总之通过channel 提供了分离 易于静态分析 减少一定的动态检测  并且动态也能去检测故障</p>
+<h3 id="2-3-Manifest-Based-Programs"><a href="#2-3-Manifest-Based-Programs" class="headerlink" title="2.3 Manifest-Based Programs"></a>2.3 Manifest-Based Programs</h3><p>用户需要执行的时候不是给一个exe一样的而是给系统一个manifest，它包含source程序的位置以及要依赖的程序的信息(感觉就和Android中的权限需要 先在manifest的样子很像)，通过manifest的提供 可以静态动态的分析 依赖，以及检测是否可以支持,总之MBP很强 是MSIL的一个扩展=。= 有助于 各种检查</p>
+<h2 id="3-SINGULARITY-KERNEL"><a href="#3-SINGULARITY-KERNEL" class="headerlink" title="3. SINGULARITY KERNEL"></a>3. SINGULARITY KERNEL</h2><p>提供最基本的 software-isolated processes, contract-based channels, and manifest-based programs的抽象,To each SIP, the kernel provides a pure execution environment with threads, memory, and access to other MBPs via channels. 主要90% 使用Sing# 类型安全的语言写的 有垃圾回收机制，最主要的unsafe的代码是是实现垃圾回收的=。= 并不懂它这种48%的计量方式是什么 以及这么具体干嘛=。=<code>_(:з」∠)_</code> 这也就不继续说语言组成的细节 具体看paper，总的说它是microkernel 所有的protocol 文件系统都是在核外,</p>
+<h2 id="3-1-ABI"><a href="#3-1-ABI" class="headerlink" title="3.1 ABI"></a>3.1 ABI</h2><p>Application Binary Interface (ABI) 确保最小 安全的 孤立的 每一个SIP的计算环境,ABI通过 终端的channel进行信息交流,ABI 将 accessing primitive和process-local operations 区分开，这种区分在进过通道时作为一个参数，静态分析可以利用这个信息进行分析，……比如静态分析可以知道没有使用网络channel的就没有能力发送DDOS攻击……</p>
+<p>不是很懂这一段 怎么设计的功能有192个 又很多 又不包括一些类似win和linux的复杂的,ABI保证任何SIP不能通过ABI函数‘直接’改变另一个SIP的状态，保证了每一个SIP自己的控制权，这样让每个SIP依赖与软件层面的孤立而不是硬件的保护,然后它们的消耗比普通的函数调用消耗更大</p>
+<p>3.1.1 Privileged Code 由于类型安全和内存安全，SIP提供了权限指令更加宽松的 执行范围，SIP并利用这种safe in-line技术 来优化channel 交流</p>
+<p>3.1.2 Handle Table 通过强类型控制表保证SIP的跨ABI的操作例如 mutexes和threads不会被篡改，</p>
+<h3 id="3-2-Memory-Management"><a href="#3-2-Memory-Management" class="headerlink" title="3.2 Memory Management"></a>3.2 Memory Management</h3><p>又是说以往的内存的虚拟内存每个SIP一个管理,就算是分享 也是 指向自己的虚拟地址，不会指向其它SIP的虚拟地址，因此易于垃圾回收。</p>
+<p>3.2.1 Exchange Heap 每一个SIP之间交换的数据需要放在交换heap中(Figure 3),交换heap中的指针只会指向交换heap中，在运行时同一个heap在一个时间最多被一个SIP拥有，静态分析能确保SIP不会访问一个dangling pointer.为了能静态分析….在执行时一个SIP最多有一个指向block的指针，Singularity保证一个SIP在发送一个block数据后不再拥有修改它的能力</p>
+<h3 id="3-3-Threads"><a href="#3-3-Threads" class="headerlink" title="3.3 Threads"></a>3.3 Threads</h3><p>所有tread是内核tread ，也就是内核可调度的,性能差不多 因为不需要内核权限和protected mode</p>
+<p>3.3.1 Linked Stacks</p>
+<p>3.3.2 Scheduler 用一个 unblocked list 和一个preempted list来,和普通发信息一样它也是发送信息，block等待返回，Singularity允许 一个SIP中的线程切换到另一个SIP上的线程，需要394个周期</p>
+<p>3.4 Garbage Collection</p>
+<p>大多safe language 中都有垃圾回收，Singularity的每个SIP有它自己的垃圾回收功能，又pointer不会跨SIP等前面的限定让系统能够很好的垃圾回收。现在运行时的垃圾回收有五种 generational semi-space, generational sliding compacting, an adaptive combination of the previous two collectors, mark-sweep, and concurrent mark-sweep.现在系统用的是concurrent mark-sweep collector</p>
+<p>3.5 Channel Implementation</p>
+<p>0allocated ,用Sing#实现，状态转换的每个周期至少一次发送和一次读取，这样保证了不会有终端无限发送而不等待，看上去这个规则过于严格，但实践没发现有放宽的需要,预申请终端的queues并把指针指向exchange heap 很自然的能够实现0拷贝的多SIP子系统</p>
+<h3 id="3-6-Principals-and-Access-Control"><a href="#3-6-Principals-and-Access-Control" class="headerlink" title="3.6 Principals and Access Control"></a>3.6 Principals and Access Control</h3><h1 id="4-DESIGN-SPACE-EXPLORATION"><a href="#4-DESIGN-SPACE-EXPLORATION" class="headerlink" title="4. DESIGN SPACE EXPLORATION"></a>4. DESIGN SPACE EXPLORATION</h1><p> Singularity’s principled architecture, amenability to sound static analysis, and relatively small code base make it an excellent vehicle for exploring new options. In the following subsections, we describe four explorations in Singularity:</p>
+<ul>
+<li>compile-time reflection for generative programming, </li>
+<li>support for hardware protection domains to augment SIPs, </li>
+<li>hardware-agnostic heterogeneous multiprocessing, </li>
+<li>typed assembly language.</li>
+</ul>
+<h2 id="4-1-Compile-Time-Reflection"><a href="#4-1-Compile-Time-Reflection" class="headerlink" title="4.1 Compile-Time Reflection"></a>4.1 Compile-Time Reflection</h2><p>The Java 有运行时的反射,We have developed a new compile-time reflection (CTR) facility . Compile-time reflection (CTR) is a partial substitute for the CLR’s (common language runtime) full reflection capability. The core feature of CTR is a high-level construct in Sing#, called a transform, which allows programmers to write inspection and generation code in a pattern matching and template style. The generated code and metadata can be statically verified to ensure it is well-formed, type-safe, and not violate system safety properties. At the same time, a programmer can avoid the complexities of reflection APIs.</p>
+<h2 id="4-2-Hardware-Protection-Domains"><a href="#4-2-Hardware-Protection-Domains" class="headerlink" title="4.2 Hardware Protection Domains"></a>4.2 Hardware Protection Domains</h2><p>大多的os用cpu的mmu 硬件来孤立进程通过两种机制 ——1.进程只能访问具体的一些物理地址，2.使用privilege levels保护 执行权限指令的不可信代码.</p>
+<p>主要讲的还是 权限的分配</p>
+<h2 id="4-3-Heterogeneous-Multiprocessing"><a href="#4-3-Heterogeneous-Multiprocessing" class="headerlink" title="4.3 Heterogeneous Multiprocessing"></a>4.3 Heterogeneous Multiprocessing</h2><h1 id="5-CONCLUSIONS"><a href="#5-CONCLUSIONS" class="headerlink" title="5. CONCLUSIONS"></a>5. CONCLUSIONS</h1><ul>
+<li>how to make more dependable software systems</li>
+<li>software isolated processes (SIPs), </li>
+<li>contract-based channels, and </li>
+<li>manifest-based programs (MBPs).</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>读后感 首先其的设计方法 还是让我有新的获取，</p>
+<p>依然是对type-safe 的语言 一脸懵逼 问了问ssj，他说开学给我说<code>_(:з」∠)_</code>向大佬低头</p>
+<p>然后就是一点感悟，不知道其它学科 往研究方向是怎么走的，至少目前看到 系统相关的 很多东西都不是”站在巨人的肩上“ 更多的像是”听了巨人说的话“，毕竟它和实际的联系会有更紧密一些，向文中的很多驱动啊什么之类的都是巨大的工作量，当对底层有修改想法的时候，还需要去考虑对上层的支持，因此这样一个就算十分优秀的想法，想要实现，想要验证，甚至想要应用都需要大量的时间和物力去支持。</p>
+<p>我不知道未来会怎样，不知道如果我去研究会做出多少贡献，又能有多少支持。如果梦想养不活你，就挣钱养活梦想吧。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/Blog/tags/csp/" rel="tag"># csp</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/Blog/17-07-08-Computer-Graphics-with-OpenGL/" rel="next" title="计算机图形学个人整理">
+                  <i class="fa fa-chevron-left"></i> 计算机图形学个人整理
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/Blog/17-07-22-Unikernels_Library_Operating_Systems_for_the_Cloud/" rel="prev" title="Unikernels">
+                  Unikernels <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/Blog/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">分類</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-name">標籤</span>
+        
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/CroMarmot" title="GitHub &rarr; https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces &rarr; https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-bug"></i>Codeforces</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Singularity-Rethinking-the-Software-Stack"><span class="nav-number">1.</span> <span class="nav-text">Singularity: Rethinking the Software Stack</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-new-os-new-program-language-Sing-extension-of-C-and-new-software-verification-tools，安全的编程语言能避免许多安全问题，verification-tool也能提前检测出一些，增强的系统架构，作者也说这个Singularity在它们看来是个过程和意见-不是最终的一个完善的系统。"><span class="nav-number">1.1.</span> <span class="nav-text">1 new os ,new program language(Sing#(extension of C#)) and new software verification tools，安全的编程语言能避免许多安全问题，verification tool也能提前检测出一些，增强的系统架构，作者也说这个Singularity在它们看来是个过程和意见 不是最终的一个完善的系统。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-提供简易但能根据简易的实现更丰富的实现"><span class="nav-number">1.2.</span> <span class="nav-text">2 提供简易但能根据简易的实现更丰富的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Software-Isolated-Processes"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 Software-Isolated Processes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Contract-Based-Channels"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 Contract-Based Channels</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Manifest-Based-Programs"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 Manifest-Based Programs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-SINGULARITY-KERNEL"><span class="nav-number">1.3.</span> <span class="nav-text">3. SINGULARITY KERNEL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-ABI"><span class="nav-number">1.4.</span> <span class="nav-text">3.1 ABI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Memory-Management"><span class="nav-number">1.4.1.</span> <span class="nav-text">3.2 Memory Management</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-Threads"><span class="nav-number">1.4.2.</span> <span class="nav-text">3.3 Threads</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-Principals-and-Access-Control"><span class="nav-number">1.4.3.</span> <span class="nav-text">3.6 Principals and Access Control</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-DESIGN-SPACE-EXPLORATION"><span class="nav-number">2.</span> <span class="nav-text">4. DESIGN SPACE EXPLORATION</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Compile-Time-Reflection"><span class="nav-number">2.1.</span> <span class="nav-text">4.1 Compile-Time Reflection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Hardware-Protection-Domains"><span class="nav-number">2.2.</span> <span class="nav-text">4.2 Hardware Protection Domains</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-Heterogeneous-Multiprocessing"><span class="nav-number">2.3.</span> <span class="nav-text">4.3 Heterogeneous Multiprocessing</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-CONCLUSIONS"><span class="nav-number">3.</span> <span class="nav-text">5. CONCLUSIONS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/Blog/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/Blog/js/utils.js?v=7.3.0"></script>
+  <script src="/Blog/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/Blog/js/schemes/muse.js?v=7.3.0"></script>
+
+
+<script src="/Blog/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/Blog/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+
+  
+  <script src="/Blog/js/scrollspy.js?v=7.3.0"></script>
+<script src="/Blog/js/post-details.js?v=7.3.0"></script>
+
+
+    
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://cromarmot.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://cromarmot.github.io/Blog/17-08-06-Singularity_Rethinking_the_softeware_stack/";
+    this.page.identifier = "17-08-06-Singularity_Rethinking_the_softeware_stack/";
+    this.page.title = 'Singularity:Rethinking the Software Stack';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://cromarmot.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
+
+</body>
+</html>

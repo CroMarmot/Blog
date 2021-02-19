@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next muse use-motion" lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.3.0" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/Blog/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '複製',
+      copy_success: '複製成功',
+      copy_failure: '複製失敗'
+    }
+  };
+</script>
+
+  <meta name="description" content="css3图片载入动画练习">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css背景切换练习">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/15-06-12-switchbackground/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="css3图片载入动画练习">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2019-05-19T14:27:44.676Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css背景切换练习">
+<meta name="twitter:description" content="css3图片载入动画练习">
+  <link rel="canonical" href="https://cromarmot.github.io/Blog/15-06-12-switchbackground/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>css背景切换练习 | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  <div class="container sidebar-position-right">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/Blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cro-Marmot's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/Blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/Blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup">
+  <div class="search-header">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <div class="search-input-wrapper">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none"
+             placeholder="搜尋..." spellcheck="false"
+             type="text" id="search-input">
+    </div>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+  <div id="search-result"></div>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+    
+
+  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/15-06-12-switchbackground/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">css背景切换练习
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              
+                
+              
+
+              <time title="創建時間：2015-06-12 00:00:00" itemprop="dateCreated datePublished" datetime="2015-06-12T00:00:00+08:00">2015-06-12</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2019-05-19 22:27:44" itemprop="dateModified" datetime="2019-05-19T22:27:44+08:00">2019-05-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/Unarranged/" itemprop="url" rel="index"><span itemprop="name">Unarranged</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/15-06-12-switchbackground/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="15-06-12-switchbackground/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          
+            <div class="post-description">css3图片载入动画练习</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;htmllang=&quot;en-US&quot;&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    	&lt;title&gt;CSS3 Full Background Slider &lt;/title&gt;</span><br><span class="line">        &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">            @importurl(&quot;http://www.w3cplus.com/demo/css3/base.css&quot;);</span><br><span class="line">            @importurl(&quot;http://fonts.googleapis.com/css?family=Yesteryear&quot;);</span><br><span class="line">            html,body &#123;</span><br><span class="line">            height: 100%;</span><br><span class="line">            margin:0px;</span><br><span class="line">            &#125;</span><br><span class="line">            /*设置背景图片全屏显示，并且居中*/</span><br><span class="line">            img.bg &#123;</span><br><span class="line">            min-height: 100%;</span><br><span class="line">            min-width: 1024px;</span><br><span class="line">            width: 100%;</span><br><span class="line">            height: auto !important;</span><br><span class="line">            height: 100%;</span><br><span class="line">            position: fixed;</span><br><span class="line">            top: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            z-index:1;</span><br><span class="line">            &#125;</span><br><span class="line">            /*设置背景图片从左向右移入显示的动画效果*/</span><br><span class="line">            /* Slide Left */</span><br><span class="line">            </span><br><span class="line">            @-webkit-keyframes &apos;slideLeft&apos; &#123;</span><br><span class="line">            	0% &#123; left: -100%; &#125;</span><br><span class="line">            	100% &#123; left: 0; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-moz-keyframes &apos;slideLeft&apos; &#123;</span><br><span class="line">            	0% &#123; left: -100%; &#125;</span><br><span class="line">            	100% &#123; left: 0; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-o-keyframes &apos;slideLeft&apos; &#123;</span><br><span class="line">            	0% &#123; left: -100%; &#125;</span><br><span class="line">            	100% &#123; left: 0; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-ms-keyframes &apos;slideLeft&apos; &#123;</span><br><span class="line">            	0% &#123; left: -100%; &#125;</span><br><span class="line">            	100% &#123; left: 0; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @keyframes &apos;slideLeft&apos; &#123;</span><br><span class="line">            	0% &#123; left: -100%; &#125;</span><br><span class="line">            	100% &#123; left: 0; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            /*设置背景图像从底部向顶部移入的动画效果*/</span><br><span class="line">             /* Slide Bottom */</span><br><span class="line">            </span><br><span class="line">            @-webkit-keyframes &apos;slideBottom&apos; &#123;</span><br><span class="line">            	0% &#123; top: 350px; &#125;</span><br><span class="line">            	100% &#123; top: 0; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-moz-keyframes &apos;slideBottom&apos; &#123;</span><br><span class="line">            	0% &#123; top: 350px; &#125;</span><br><span class="line">            	100% &#123; top: 0; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-ms-keyframes &apos;slideBottom&apos; &#123;</span><br><span class="line">            	0% &#123; top: 350px; &#125;</span><br><span class="line">            	100% &#123; top: 0; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-o-keyframes &apos;slideBottom&apos; &#123;</span><br><span class="line">            	0% &#123; top: 350px; &#125;</span><br><span class="line">            	100% &#123; top: 0; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @keyframes &apos;slideBottom&apos; &#123;</span><br><span class="line">            	0% &#123; top: 350px; &#125;</span><br><span class="line">            	100% &#123; top: 0; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            /*设置背景图片由小到大放大动画效果*/</span><br><span class="line">            /* Zoom In */</span><br><span class="line">            </span><br><span class="line">            @-webkit-keyframes &apos;zoomIn&apos; &#123;</span><br><span class="line">            	0% &#123; -webkit-transform: scale(0.1); &#125;</span><br><span class="line">            	100% &#123; -webkit-transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-moz-keyframes &apos;zoomIn&apos; &#123;</span><br><span class="line">            	0% &#123; -moz-transform: scale(0.1); &#125;</span><br><span class="line">            	100% &#123; -moz-transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-ms-keyframes &apos;zoomIn&apos; &#123;</span><br><span class="line">            	0% &#123; -ms-transform: scale(0.1); &#125;</span><br><span class="line">            	100% &#123; -ms-transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-o-keyframes &apos;zoomIn&apos; &#123;</span><br><span class="line">            	0% &#123; -o-transform: scale(0.1); &#125;</span><br><span class="line">            	100% &#123; -o-transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @keyframes &apos;zoomIn&apos; &#123;</span><br><span class="line">            	0% &#123; transform: scale(0.1); &#125;</span><br><span class="line">            	100% &#123; transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            /*设置背景图像由大到小缩小动画效果*/</span><br><span class="line">            /* Zoom Out */</span><br><span class="line">            </span><br><span class="line">            @-webkit-keyframes &apos;zoomOut&apos; &#123;</span><br><span class="line">            	0% &#123; -webkit-transform: scale(2); &#125;</span><br><span class="line">            	100% &#123; -webkit-transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-moz-keyframes &apos;zoomOut&apos; &#123;</span><br><span class="line">            	0% &#123; -moz-transform: scale(2); &#125;</span><br><span class="line">            	100% &#123; -moz-transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-ms-keyframes &apos;zoomOut&apos; &#123;</span><br><span class="line">            	0% &#123; -ms-transform: scale(2); &#125;</span><br><span class="line">            	100% &#123; -ms-transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-o-keyframes &apos;zoomOut&apos; &#123;</span><br><span class="line">            	0% &#123; -o-transform: scale(2); &#125;</span><br><span class="line">            	100% &#123; -o-transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @keyframes &apos;zoomOut&apos; &#123;</span><br><span class="line">            	0% &#123; transform: scale(2); &#125;</span><br><span class="line">            	100% &#123; transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            /*背景图像旋转出现动画效果*/</span><br><span class="line">            /* Rotate */</span><br><span class="line">            </span><br><span class="line">            @-webkit-keyframes &apos;rotate&apos; &#123;</span><br><span class="line">            	0% &#123; -webkit-transform: rotate(-360deg) scale(0.1); &#125;</span><br><span class="line">            	100% &#123; -webkit-transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-moz-keyframes &apos;rotate&apos; &#123;</span><br><span class="line">            	0% &#123; -moz-transform: rotate(-360deg) scale(0.1); &#125;</span><br><span class="line">            	100% &#123; -moz-transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-ms-keyframes &apos;rotate&apos; &#123;</span><br><span class="line">            	0% &#123; -ms-transform: rotate(-360deg) scale(0.1); &#125;</span><br><span class="line">            	100% &#123; -ms-transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-o-keyframes &apos;rotate&apos; &#123;</span><br><span class="line">            	0% &#123; -o-transform: rotate(-360deg) scale(0.1); &#125;</span><br><span class="line">            	100% &#123; -o-transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @keyframes &apos;rotate&apos; &#123;</span><br><span class="line">            	0% &#123; transform: rotate(-360deg) scale(0.1); &#125;</span><br><span class="line">            	100% &#123; transform: none; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            /*设置背景图像不显示动画效果*/</span><br><span class="line">            @-webkit-keyframes &apos;notTarget&apos; &#123;</span><br><span class="line">            	0% &#123; z-index: 75; &#125;</span><br><span class="line">            	100% &#123; z-index: 75; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-moz-keyframes &apos;notTarget&apos; &#123;</span><br><span class="line">            	0% &#123; z-index: 75; &#125;</span><br><span class="line">            	100% &#123; z-index: 75; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-ms-keyframes &apos;notTarget&apos; &#123;</span><br><span class="line">            	0% &#123; z-index: 75; &#125;</span><br><span class="line">            	100% &#123; z-index: 75; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @-o-keyframes &apos;notTarget&apos; &#123;</span><br><span class="line">            	0% &#123; z-index: 75; &#125;</span><br><span class="line">            	100% &#123; z-index: 75; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            @keyframes &apos;notTarget&apos; &#123;</span><br><span class="line">            	0% &#123; z-index: 75; &#125;</span><br><span class="line">            	100% &#123; z-index: 75; &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">            .slider &#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            width: 100%;</span><br><span class="line">            text-align: center;</span><br><span class="line">            z-index: 9999;</span><br><span class="line">            bottom: 100px;</span><br><span class="line">            &#125;</span><br><span class="line">            .slider li &#123;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            width: 170px;</span><br><span class="line">            height: 130px;</span><br><span class="line">            margin-right: 15px;</span><br><span class="line">            &#125;</span><br><span class="line">            .slider a &#123;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            width: 170px;</span><br><span class="line">            padding-top: 70px;</span><br><span class="line">            padding-bottom: 20px;</span><br><span class="line">            position: relative;</span><br><span class="line">            cursor: pointer;</span><br><span class="line">            border: 2px solid #fff;</span><br><span class="line">            border-radius: 5px;</span><br><span class="line">            vertical-align: top;</span><br><span class="line">            color: #fff;</span><br><span class="line">            text-decoration: none;</span><br><span class="line">            font-size: 22px;</span><br><span class="line">            font-family: &apos;Yesteryear&apos;, cursive;</span><br><span class="line">            text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.8),-2px -2px 1px rgba(0, 0, 0, 0.3),-3px -3px 1px rgba(0, 0, 0, 0.3);</span><br><span class="line">            &#125;</span><br><span class="line">            /*任务一、设置不同列表的背景色*/</span><br><span class="line">            </span><br><span class="line">            .slider ul li:nth-of-type(1) a&#123;</span><br><span class="line">            background-color: #02646e;</span><br><span class="line">            &#125;</span><br><span class="line">            .slider ul li:nth-of-type(2) a&#123;</span><br><span class="line">            background-color: #eb0837;</span><br><span class="line">            &#125;</span><br><span class="line">            .slider ul li:nth-of-type(3) a&#123;</span><br><span class="line">            background-color: #67b374;</span><br><span class="line">            &#125;</span><br><span class="line">            .slider ul li:nth-of-type(4) a&#123;</span><br><span class="line">            background-color: #e6674a;</span><br><span class="line">            &#125;    </span><br><span class="line">            .slider ul li:nth-of-type(5) a&#123;</span><br><span class="line">            background-color: #e61061;</span><br><span class="line">            &#125;</span><br><span class="line">            /*任务二、设置缩略图形状*/</span><br><span class="line">            .slider li a::after&#123;</span><br><span class="line">            content:&quot;&quot;;</span><br><span class="line">            display: block;</span><br><span class="line">            height: 120px;</span><br><span class="line">            width: 120px;</span><br><span class="line">            border: 5px solid #fff;</span><br><span class="line">            border-radius: 50%;</span><br><span class="line">            position: absolute;</span><br><span class="line">            left: 50%;</span><br><span class="line">            margin-left: -60px;</span><br><span class="line">            z-index: 9999;</span><br><span class="line">            top: -80px;</span><br><span class="line">            &#125;</span><br><span class="line">            /*任务三、设置缩略图背景图像*/</span><br><span class="line">            .slider li:nth-of-type(1) a::after&#123;</span><br><span class="line">            background: url(http://p4.gexing.com/G1/M00/FB/8B/rBACFFI7u2uAcq4hAAEv1xanw5U252_200x200_3.png) no-repeat center;</span><br><span class="line">            &#125;</span><br><span class="line">            .slider li:nth-of-type(2) a::after&#123;</span><br><span class="line">            background: url(http://p3.gexing.com/G1/M00/69/21/rBACE1IHPUqBNBNYAAAU5l5wy0A616_200x200_3.jpg) no-repeat center;</span><br><span class="line">            &#125;</span><br><span class="line">            .slider li:nth-of-type(3) a::after&#123;</span><br><span class="line">            background: url(http://p2.gexing.com/G1/M00/67/3B/rBACFFIHj6fDFir7AAAhiX6dWfU282_200x200_3.jpg) no-repeat center;</span><br><span class="line">            &#125;</span><br><span class="line">            .slider li:nth-of-type(4) a::after&#123;</span><br><span class="line">            background: url(http://p3.gexing.com/G1/M00/34/D7/rBACE1H571HghyoyAAAVy0AOsB4191_200x200_3.jpg) no-repeat center;</span><br><span class="line">            &#125;</span><br><span class="line">            .slider li:nth-of-type(5) a::after&#123;</span><br><span class="line">            background: url(http://p3.gexing.com/G1/M00/A2/33/rBACFFIXQTazRAqrAAAWv2gMpjs851_200x200_3.jpg) no-repeat center;</span><br><span class="line">            &#125;</span><br><span class="line">            /*任务四、给缩略图添加蒙板效果*/</span><br><span class="line">            .slider li a::before&#123;</span><br><span class="line">            content:&quot;&quot;;</span><br><span class="line">            display: block;</span><br><span class="line">            height: 120px;</span><br><span class="line">            width: 120px;</span><br><span class="line">            border: 5px solid #fff;</span><br><span class="line">            border-radius: 50%;</span><br><span class="line">            position: absolute;</span><br><span class="line">            left: 50%;</span><br><span class="line">            margin-left: -60px;</span><br><span class="line">            z-index: 99999;</span><br><span class="line">            top: -80px;</span><br><span class="line">            background: rgba(0,0,0,0.3);</span><br><span class="line">            &#125;</span><br><span class="line">            /*任务五、鼠标悬浮时，修改缩略图蒙板透明度*/</span><br><span class="line">            .slider li:hover a::before&#123;</span><br><span class="line">            opacity:0;</span><br><span class="line">            &#125;</span><br><span class="line">            /*任务六、点击综略图，切换背景图*/</span><br><span class="line">            /*背景图从左向右出现*/</span><br><span class="line">            :target[class*=slideLeft]&#123;</span><br><span class="line">            	z-index: 100;</span><br><span class="line">            	-webkit-animation-name: slideLeft;</span><br><span class="line">            	-webkit-animation-duration: 1s;</span><br><span class="line">            	-webkit-animation-iteration-count: 1;</span><br><span class="line">            	-moz-animation-name: slideLeft;</span><br><span class="line">            	-moz-animation-duration: 1s;</span><br><span class="line">            	-moz-animation-iteration-count: 1;</span><br><span class="line">            	-ms-animation-name: slideLeft;</span><br><span class="line">            	-ms-animation-duration: 1s;</span><br><span class="line">            	-ms-animation-iteration-count: 1;</span><br><span class="line">            	-o-animation-name: slideLeft;</span><br><span class="line">            	-o-animation-duration: 1s;</span><br><span class="line">            	-o-animation-iteration-count: 1;</span><br><span class="line">            	animation-name: slideLeft;</span><br><span class="line">            	animation-duration: 1s;</span><br><span class="line">            	animation-iteration-count: 1;</span><br><span class="line">            &#125;</span><br><span class="line">            /*背景图从下向上出现*/</span><br><span class="line">            :target[class*=slideBottom]&#123;</span><br><span class="line">            	z-index: 100;</span><br><span class="line">            </span><br><span class="line">            	-webkit-animation-name: slideBottom;</span><br><span class="line">            	-webkit-animation-duration: 1s;</span><br><span class="line">            	-webkit-animation-iteration-count: 1;</span><br><span class="line">            	-moz-animation-name: slideBottom;</span><br><span class="line">            	-moz-animation-duration: 1s;</span><br><span class="line">            	-moz-animation-iteration-count: 1;</span><br><span class="line">            	-ms-animation-name: slideBottom;</span><br><span class="line">            	-ms-animation-duration: 1s;</span><br><span class="line">            	-ms-animation-iteration-count: 1;</span><br><span class="line">            	-o-animation-name: slideBottom;</span><br><span class="line">            	-o-animation-duration: 1s;</span><br><span class="line">            	-o-animation-iteration-count: 1;</span><br><span class="line">            animation-name: slideBottom;</span><br><span class="line">            	animation-duration: 1s;</span><br><span class="line">            	animation-iteration-count: 1;</span><br><span class="line">            &#125;</span><br><span class="line">            /*背景图由小到大出现*/</span><br><span class="line">            :target[class*=zoomIn]&#123;</span><br><span class="line">            	z-index: 100;</span><br><span class="line">            	-webkit-animation-name: zoomIn;</span><br><span class="line">            	-webkit-animation-duration: 1s;</span><br><span class="line">            	-webkit-animation-iteration-count: 1;</span><br><span class="line">            	-moz-animation-name: zoomIn;</span><br><span class="line">            	-moz-animation-duration: 1s;</span><br><span class="line">            	-moz-animation-iteration-count: 1;</span><br><span class="line">            	-ms-animation-name: zoomIn;</span><br><span class="line">            	-ms-animation-duration: 1s;</span><br><span class="line">            	-ms-animation-iteration-count: 1;</span><br><span class="line">            	-o-animation-name: zoomIn;</span><br><span class="line">            	-o-animation-duration: 1s;</span><br><span class="line">            	-o-animation-iteration-count: 1;</span><br><span class="line">            	animation-name: zoomIn;</span><br><span class="line">            	animation-duration: 1s;</span><br><span class="line">            	animation-iteration-count: 1;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            /*背景图由大到小出现*/</span><br><span class="line">            :target[class*=zoomOut]&#123;</span><br><span class="line">            	z-index: 100;</span><br><span class="line">            	-webkit-animation-name: zoomOut;</span><br><span class="line">            	-webkit-animation-duration: 1s;</span><br><span class="line">            	-webkit-animation-iteration-count: 1;</span><br><span class="line">            	-moz-animation-name: zoomOut;</span><br><span class="line">            	-moz-animation-duration: 1s;</span><br><span class="line">            	-moz-animation-iteration-count: 1;</span><br><span class="line">            	-ms-animation-name: zoomOut;</span><br><span class="line">            	-ms-animation-duration: 1s;</span><br><span class="line">            	-ms-animation-iteration-count: 1;</span><br><span class="line">            	-o-animation-name: zoomOut;</span><br><span class="line">            	-o-animation-duration: 1s;</span><br><span class="line">            	-o-animation-iteration-count: 1;</span><br><span class="line">            	animation-name: zoomOut;</span><br><span class="line">            	animation-duration: 1s;</span><br><span class="line">            	animation-iteration-count: 1;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            /*背景图旋转出现*/</span><br><span class="line">            :target[class*=rotate]&#123;</span><br><span class="line">            	z-index: 100;</span><br><span class="line">            	-webkit-animation-name: rotate;</span><br><span class="line">            	-webkit-animation-duration: 1s;</span><br><span class="line">            	-webkit-animation-iteration-count: 1;</span><br><span class="line">            	-moz-animation-name: rotate;</span><br><span class="line">            	-moz-animation-duration: 1s;</span><br><span class="line">            	-moz-animation-iteration-count: 1;</span><br><span class="line">            	-ms-animation-name: rotate;</span><br><span class="line">            	-ms-animation-duration: 1s;</span><br><span class="line">            	-ms-animation-iteration-count: 1;</span><br><span class="line">            	-o-animation-name: rotate;</span><br><span class="line">            	-o-animation-duration: 1s;</span><br><span class="line">            	-o-animation-iteration-count: 1;</span><br><span class="line">            	animation-name: rotate;</span><br><span class="line">            	animation-duration: 1s;</span><br><span class="line">            	animation-iteration-count: 1;</span><br><span class="line">            &#125;</span><br><span class="line">            /*任务七、设置不显示的背景图层级*/</span><br><span class="line">            /* Not Target */</span><br><span class="line">            </span><br><span class="line">            img:not(:target)&#123;</span><br><span class="line">            	-webkit-animation-name: notTarget;</span><br><span class="line">            	-webkit-animation-duration: 1s;</span><br><span class="line">            	-webkit-animation-iteration-count: 1;</span><br><span class="line">            	-moz-animation-name: notTarget;</span><br><span class="line">            	-moz-animation-duration: 1s;</span><br><span class="line">            	-moz-animation-iteration-count: 1;</span><br><span class="line">            	-ms-animation-name: notTarget;</span><br><span class="line">            	-ms-animation-duration: 1s;</span><br><span class="line">            	-ms-animation-iteration-count: 1;</span><br><span class="line">            	-o-animation-name: notTarget;</span><br><span class="line">            	-o-animation-duration: 1s;</span><br><span class="line">            	-o-animation-iteration-count: 1;</span><br><span class="line">            	animation-name: notTarget;</span><br><span class="line">            	animation-duration: 1s;</span><br><span class="line">            	animation-iteration-count: 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class=&quot;slider&quot;&gt;</span><br><span class="line">            &lt;ul class=&quot;clearfix&quot;&gt;</span><br><span class="line">            	&lt;li&gt;&lt;a href=&quot;#bg1&quot;&gt;_(:з」∠)_&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        		&lt;li&gt;&lt;a href=&quot;#bg2&quot;&gt;(●´∀‘●)&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        		&lt;li&gt;&lt;a href=&quot;#bg3&quot;&gt;(。・`ω´・)&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        		&lt;li&gt;&lt;a href=&quot;#bg4&quot;&gt;(〃∇〃)&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        		&lt;li&gt;&lt;a href=&quot;#bg5&quot;&gt;（╯&apos; - &apos;)╯︵ ┻━┻&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        	&lt;/ul&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;img src=&quot;http://img4.duitang.com/uploads/item/201404/10/20140410201316_4shKU.jpeg&quot; alt=&quot;&quot; class=&quot;bg slideLeft&quot; id=&quot;bg1&quot; /&gt;</span><br><span class="line">        &lt;img src=&quot;http://img5q.duitang.com/uploads/item/201406/01/20140601100050_afKZt.jpeg&quot; alt=&quot;&quot; class=&quot;bg slideBottom&quot; id=&quot;bg2&quot; /&gt;</span><br><span class="line">        &lt;img src=&quot;http://cdn.duitang.com/uploads/item/201404/10/20140410101759_8Wd4T.jpeg&quot; alt=&quot;&quot; class=&quot;bg zoomIn&quot; id=&quot;bg3&quot; /&gt;</span><br><span class="line">        &lt;img src=&quot;http://img5.duitang.com/uploads/item/201404/10/20140410095203_Ey8z3.jpeg&quot; alt=&quot;&quot; class=&quot;bg zoomOut&quot; id=&quot;bg4&quot; /&gt;</span><br><span class="line">        &lt;img src=&quot;http://cdn.duitang.com/uploads/item/201404/10/20140410102139_ZQdPU.jpeg&quot; alt=&quot;&quot; class=&quot;bg rotate&quot; id=&quot;bg5&quot; /&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/Blog/tags/css/" rel="tag"># css</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/Blog/15-06-11-aoyoulogo/" rel="next" title="aoyoulogo">
+                  <i class="fa fa-chevron-left"></i> aoyoulogo
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/Blog/15-07-24-Rowhammer.js_A_Remote_Software-Induced_Fault_Attack_in_JavaScript/" rel="prev" title="Rowhammer.js">
+                  Rowhammer.js <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/Blog/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">分類</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-name">標籤</span>
+        
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/CroMarmot" title="GitHub &rarr; https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces &rarr; https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-bug"></i>Codeforces</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/Blog/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/Blog/js/utils.js?v=7.3.0"></script>
+  <script src="/Blog/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/Blog/js/schemes/muse.js?v=7.3.0"></script>
+
+
+<script src="/Blog/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/Blog/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/Blog/js/scrollspy.js?v=7.3.0"></script>
+<script src="/Blog/js/post-details.js?v=7.3.0"></script>
+
+
+    
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://cromarmot.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://cromarmot.github.io/Blog/15-06-12-switchbackground/";
+    this.page.identifier = "15-06-12-switchbackground/";
+    this.page.title = 'css背景切换练习';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://cromarmot.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
+
+</body>
+</html>
