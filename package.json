@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "s": "hexo s",
     "g": "hexo g"
   },
   "hexo": {

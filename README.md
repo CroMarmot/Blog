@@ -1,40 +1,15 @@
-Blog
+# [Blog](https://cromarmot.github.io/Blog)
+
 ====
 
-## INIT
-
-> DOWNLOAD
-
-`git clone git@github.com:CroMarmot/Blog.git -b gh-pages-dev`
-
-> INSTALL DEP
-
-`npm install`
-
-> clone theme
-
-`git clone https://github.com/theme-next/hexo-theme-next themes/next`
-
-> repo for gh-pages
-
 ```
-mkdir public
-cd public
-git add origin git@github.com:CroMarmot/Blog.git
-git fetch
-git checkout -b gh-pages origin/gh-pages
+yarn
 ```
 
-## USE
+# local server
 
-> local server
+`yarn s`
 
-`hexo s`
+# generate static pages
 
-> generate
-
-`hexo g`
-
-> update code & generate
-
-`./update.sh`
+`yarn g`
