@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next muse use-motion" lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.3.0" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/Blog/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '複製',
+      copy_success: '複製成功',
+      copy_failure: '複製失敗'
+    }
+  };
+</script>
+
+  <meta name="description" content="个人其实建议阅读下方的参考链接zh.javascript.info,本篇整理的主要是基于个人已有经验进行提要，简化和再解释，不够完整使用Promise 和简单解释例子123456let promise = new Promise(function(resolve, reject) &amp;#123;  // executor (生产者代码，&quot;singer&quot;)  // 根据你自己的逻辑  //   调用r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="promises分析">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/19-03-22-promise/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="个人其实建议阅读下方的参考链接zh.javascript.info,本篇整理的主要是基于个人已有经验进行提要，简化和再解释，不够完整使用Promise 和简单解释例子123456let promise = new Promise(function(resolve, reject) &amp;#123;  // executor (生产者代码，&quot;singer&quot;)  // 根据你自己的逻辑  //   调用r">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://zh.javascript.info/article/promise-basics/promise-resolve-reject.png">
+<meta property="og:image" content="https://zh.javascript.info/article/promise-chaining/promise-then-many.png">
+<meta property="og:image" content="https://zh.javascript.info/article/promise-chaining/promise-handler-variants.png">
+<meta property="og:updated_time" content="2021-02-23T08:55:29.714Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="promises分析">
+<meta name="twitter:description" content="个人其实建议阅读下方的参考链接zh.javascript.info,本篇整理的主要是基于个人已有经验进行提要，简化和再解释，不够完整使用Promise 和简单解释例子123456let promise = new Promise(function(resolve, reject) &amp;#123;  // executor (生产者代码，&quot;singer&quot;)  // 根据你自己的逻辑  //   调用r">
+<meta name="twitter:image" content="https://zh.javascript.info/article/promise-basics/promise-resolve-reject.png">
+  <link rel="canonical" href="https://cromarmot.github.io/Blog/19-03-22-promise/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>promises分析 | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  <div class="container sidebar-position-right">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/Blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cro-Marmot's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/Blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/Blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup">
+  <div class="search-header">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <div class="search-input-wrapper">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none"
+             placeholder="搜尋..." spellcheck="false"
+             type="text" id="search-input">
+    </div>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+  <div id="search-result"></div>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+    
+
+  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-03-22-promise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">promises分析
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              
+                
+              
+
+              <time title="創建時間：2019-03-22 11:20:14" itemprop="dateCreated datePublished" datetime="2019-03-22T11:20:14+08:00">2019-03-22</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-02-23 16:55:29" itemprop="dateModified" datetime="2021-02-23T16:55:29+08:00">2021-02-23</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/js/promises/" itemprop="url" rel="index"><span itemprop="name">promises</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-03-22-promise/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-03-22-promise/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>个人其实建议阅读下方的参考链接<code>zh.javascript.info</code>,本篇整理的主要是基于个人已有经验进行提要，简化和再解释，不够完整</p><h1 id="使用Promise-和简单解释"><a href="#使用Promise-和简单解释" class="headerlink" title="使用Promise 和简单解释"></a>使用Promise 和简单解释</h1><h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// executor (生产者代码，"singer")</span></span><br><span class="line">  <span class="comment">// 根据你自己的逻辑</span></span><br><span class="line">  <span class="comment">//   调用resolve(value)</span></span><br><span class="line">  <span class="comment">//   或者调用reject(error)</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><a id="more"></a>
+
+<h2 id="Promise的内部状态"><a href="#Promise的内部状态" class="headerlink" title="Promise的内部状态"></a>Promise的内部状态</h2><ul>
+<li>state —— 最初是 “pending”，然后被改为 “fulfilled” 或 “rejected”，</li>
+<li>result —— 一个任意值，最初是 undefined。</li>
+</ul>
+<p>当 executor 完成任务时，应调用下列之一：</p>
+<ul>
+<li>resolve(value) —— 说明任务已经完成：<ul>
+<li>将 state 设置为 “fulfilled”，</li>
+<li>sets result to value。</li>
+</ul>
+</li>
+<li>reject(error) —— 表明有错误发生：<ul>
+<li>将 state 设置为 “rejected”，</li>
+<li>将 result 设置为 error。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://zh.javascript.info/article/promise-basics/promise-resolve-reject.png" alt="状态图"></p>
+<p>总之，executor 应该完成任务（通常会需要时间），然后调用 resolve 或 reject 来改变 promise 对象的对应状态。</p>
+<p><strong>注意的是</strong> 状态一旦从pending变化后， 其它代码都会被忽略</p>
+<p>let promise = new Promise(function(resolve, reject) {<br>  resolve(“done”);</p>
+<p>  reject(new Error(“…”)); // 被忽略<br>  setTimeout(() =&gt; resolve(“…”)); // 被忽略<br>});</p>
+<h2 id="then-catch-结果处理"><a href="#then-catch-结果处理" class="headerlink" title="then/catch 结果处理"></a>then/catch 结果处理</h2><p>then返回的是一个promise对象（准确的说是带有then方法的对象）</p>
+<p>then(处理resolve的结果的函数,处理reject状态的函数)</p>
+<p>then(处理resolve的结果的函数)</p>
+<p>then(null,处理reject状态的函数) || .catch(处理reject状态的函数)</p>
+<blockquote>
+<p>更确切地说，当<code>.then/catch</code> 处理器应该执行时，它会首先进入内部队列。<code>JavaScript</code> 引擎从队列中提取处理器，并在当前代码完成时执行 <code>setTimeout(..., 0)</code>。</p>
+</blockquote>
+<blockquote>
+<p>换句话说，<code>.then(handler)</code> 会被触发，会执行类似于 <code>setTimeout(handler, 0)</code> 的动作。</p>
+</blockquote>
+<p>在下述示例中，<code>promise</code> 被立即 <code>resolved</code>，因此 <code>.then(alert)</code> 被立即触发：<code>alert</code> 会进入队列，在代码完成之后立即执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> // an immediately resolved promise</span><br><span class="line">let promise = new Promise(resolve =&gt; resolve(&quot;done!&quot;));</span><br><span class="line"></span><br><span class="line">promise.then(alert); // 完成！（在当前代码完成之后）</span><br><span class="line"></span><br><span class="line">alert(&quot;code finished&quot;); // 这个 alert 会最先显示</span><br></pre></td></tr></table></figure>
+<p>因此在 <code>.then</code> 之后的代码总是在处理器之前被执行（即使实在预先解决 promise 的情况下）。通常这并不重要，只会在特定情况下才会重要。</p>
+<h2 id="Promise-链"><a href="#Promise-链" class="headerlink" title="Promise 链"></a>Promise 链</h2><p>首先因为then返回的是promise对象(准确说是带有then方法的对象)，和原来的不同，从api角度看是一个新的对象，其中return改变了 结果值</p>
+<p>和原来的不同，不会覆盖原来的</p>
+<p><img src="https://zh.javascript.info/article/promise-chaining/promise-then-many.png" alt="图意"></p>
+<p>然后处理程序的返回值里也可以 返回promise</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">1</span>), <span class="number">1000</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">  alert(result); <span class="comment">// 1</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123; <span class="comment">// (*)</span></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(result * <span class="number">2</span>), <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>所以假设<code>loadScript = function(url){ return Promise ...; }</code></p>
+<p>那么可以,来顺序加载脚本</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">loadScript(<span class="string">"/article/promise-chaining/one.js"</span>)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">script</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> loadScript(<span class="string">"/article/promise-chaining/two.js"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">script</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> loadScript(<span class="string">"/article/promise-chaining/three.js"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">script</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//  work on one two three</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="链上的错误处理"><a href="#链上的错误处理" class="headerlink" title="链上的错误处理"></a>链上的错误处理</h3><p>promise 链在这方面做的很棒。当一个 promise reject 时，代码控制流程跳到链中最近的 rejection 处理程序。这在实践中非常方便。</p>
+<p>隐式 try…catch ,如果在execute中出现 throw，那么会和 reject方法传递的类似，被promise丢入catch里,所以这里意味着非同步的代码不会被处理，例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Whoops!"</span>);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;).catch(alert);</span><br></pre></td></tr></table></figure>
+<p>同样 如果在过程中 throw 或发生错误，也就意味着返回一个rejected promise</p>
+<p>在catch块中可以重新再抛出错误，也可以处理掉错误</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">XXX</span><br><span class="line">.catch(<span class="function"><span class="params">e</span>=&gt;</span>&#123;<span class="comment">/*处理*/</span>&#125;)</span><br><span class="line">.then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="comment">/*如果上面catch正常处理*/</span>&#125;)</span><br></pre></td></tr></table></figure>
+<p>这里的建议是 继承实现你希望的Error类，在处理过程中控制错误对象的类型</p>
+<p>如果没有错误处理，浏览器中 通过<code>unhandledrejection</code>捕获它</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;unhandledrejection&apos;, function(event) &#123;</span><br><span class="line">  // the event object has two special properties:</span><br><span class="line">  alert(event.promise); // [object Promise] - the promise that generated the error</span><br><span class="line">  alert(event.reason); // Error: Whoops! - the unhandled error object</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">new Promise(function() &#123;</span><br><span class="line">  throw new Error(&quot;Whoops!&quot;);</span><br><span class="line">&#125;); // no catch to handle the error</span><br></pre></td></tr></table></figure>
+<h1 id="js-promise-cache-example"><a href="#js-promise-cache-example" class="headerlink" title="js+promise+cache example"></a>js+promise+cache example</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function loadCached(url) &#123;</span><br><span class="line">  let cache = loadCached.cache || (loadCached.cache = new Map());</span><br><span class="line"></span><br><span class="line">  if (cache.has(url)) &#123;</span><br><span class="line">    return Promise.resolve(cache.get(url)); // (*)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return fetch(url)</span><br><span class="line">    .then(response =&gt; response.text())</span><br><span class="line">    .then(text =&gt; &#123;</span><br><span class="line">      cache[url] = text;</span><br><span class="line">      return text;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>之后使用<code>loadCached(url).then(…)</code></p>
+<h1 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">1</span>), <span class="number">3000</span>)), <span class="comment">// 1</span></span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">2</span>), <span class="number">2000</span>)), <span class="comment">// 2</span></span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">3</span>), <span class="number">1000</span>))  <span class="comment">// 3</span></span><br><span class="line">]).then(alert); <span class="comment">// 1,2,3 when promises are ready: each promise contributes an array member</span></span><br></pre></td></tr></table></figure>
+<p>在 3 秒之后被处理，然后它的结果就是一个<code>[1, 2, 3]</code>数组：</p>
+<p>它们的相对顺序是相同的。尽管第一个 promise 需要很长的时间来解决，但它仍然是结果数组中的第一个。</p>
+<p>这里可以看到，不同处理之间是并行的，结果位置是对应插槽的</p>
+<p>实例，并行获取资源，统一等待结束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let urls = [</span><br><span class="line">  &apos;https://api.github.com/users/iliakan&apos;,</span><br><span class="line">  &apos;https://api.github.com/users/remy&apos;,</span><br><span class="line">  &apos;https://api.github.com/users/jeresig&apos;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">// map every url to the promise fetch(github url)</span><br><span class="line">let requests = urls.map(url =&gt; fetch(url));</span><br><span class="line"></span><br><span class="line">// Promise.all waits until all jobs are resolved</span><br><span class="line">Promise.all(requests)</span><br><span class="line">  .then(responses =&gt; responses.forEach(</span><br><span class="line">    response =&gt; alert(`$&#123;response.url&#125;: $&#123;response.status&#125;`)</span><br><span class="line">  ));</span><br></pre></td></tr></table></figure>
+<p>如果任何 promise 为 rejected，Promise.all 就会立即以 error reject。重要的细节是 promise 没有提供 “cancel” 或 “abort” 执行方法。因此，其他 promise 会继续执行，并最终为 settle，但它们的结果会被忽略。</p>
+<p>所以建议的是，如果要使用all，那么在每个处理内部把错误处理掉，这样就不会单个的错误导致整个promise结束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Promise.all(</span><br><span class="line">  fetch(&apos;https://api.github.com/users/iliakan&apos;).catch(err =&gt; err),</span><br><span class="line">  fetch(&apos;https://api.github.com/users/remy&apos;).catch(err =&gt; err),</span><br><span class="line">  fetch(&apos;http://no-such-url&apos;).catch(err =&gt; err)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>原始</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">let urls = [</span><br><span class="line">  &apos;https://api.github.com/users/iliakan&apos;,</span><br><span class="line">  &apos;https://api.github.com/users/remy&apos;,</span><br><span class="line">  &apos;https://api.github.com/users/jeresig&apos;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">// make fetch requests</span><br><span class="line">Promise.all(urls.map(url =&gt; fetch(url)))</span><br><span class="line">  // map each response to response.json()</span><br><span class="line">  .then(responses =&gt; Promise.all(</span><br><span class="line">    responses.map(r =&gt; r.json())</span><br><span class="line">  ))</span><br><span class="line">  // show name of each user</span><br><span class="line">  .then(users =&gt; &#123;  // (*)</span><br><span class="line">    for(let user of users) &#123;</span><br><span class="line">      alert(user.name);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>改进</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">let urls = [</span><br><span class="line">  &apos;https://api.github.com/users/iliakan&apos;,</span><br><span class="line">  &apos;/&apos;,</span><br><span class="line">  &apos;http://no-such-url&apos;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">Promise.all(</span><br><span class="line">    urls.map(url =&gt; fetch(url).catch(err =&gt; err))</span><br><span class="line">  )</span><br><span class="line">  .then(responses =&gt; Promise.all(</span><br><span class="line">    // if it&apos;s an error then pass on</span><br><span class="line">    // otherwise response.json() and catch errors as results</span><br><span class="line">    responses.map(r =&gt; r instanceof Error ? r : r.json().catch(err =&gt; err))</span><br><span class="line">  ))</span><br><span class="line">  .then(results =&gt; &#123;</span><br><span class="line">    alert(results[0].name); // Ilya Kantor</span><br><span class="line">    alert(results[1]); // SyntaxError: Unexpected token &lt; in JSON at position 0</span><br><span class="line">    alert(results[2]); // TypeError: failed to fetch (text may vary)</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h2><p>相对于<code>Promise.all</code>类似,区别是只会等最快的完成</p>
+<h1 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h1><p>更舒适的方法使用promise</p>
+<h2 id="async"><a href="#async" class="headerlink" title="async"></a>async</h2><p>放在函数前，总会返回promise,如果不是则会把函数封装成promise</p>
+<h2 id="await"><a href="#await" class="headerlink" title="await"></a>await</h2><p>await 关键字使 JavaScript 等待，直到 promise 得到解决并返回其结果。</p>
+<p>不能在常规函数中使用 await,await 在顶层代码中无效, 我们需要将 await 代码封装在一个async 函数中</p>
+<p>await + promise/thenable函数</p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>正常的话 返回结果，否则抛出error</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="https://zh.javascript.info/article/promise-chaining/promise-handler-variants.png" alt="img"></p>
+<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="http://www.ituring.com.cn/article/66566" target="_blank" rel="noopener">【翻译】Promises/A+规范</a></p>
+<p><a href="https://zh.javascript.info/promise-basics" target="_blank" rel="noopener">Promise Tutorial</a></p>
+<p><a href="https://zh.javascript.info/promise-chaining" target="_blank" rel="noopener">Promise chaining</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/Blog/19-03-21-vuex/" rel="next" title="vuex 源码阅读">
+                  <i class="fa fa-chevron-left"></i> vuex 源码阅读
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/Blog/19-04-01-vue-custom-v-model/" rel="prev" title="vue custom v-model">
+                  vue custom v-model <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/Blog/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">分類</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-name">標籤</span>
+        
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/CroMarmot" title="GitHub &rarr; https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces &rarr; https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-bug"></i>Codeforces</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Promise-和简单解释"><span class="nav-number">1.</span> <span class="nav-text">使用Promise 和简单解释</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#例子"><span class="nav-number">1.1.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise的内部状态"><span class="nav-number">1.2.</span> <span class="nav-text">Promise的内部状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#then-catch-结果处理"><span class="nav-number">1.3.</span> <span class="nav-text">then/catch 结果处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-链"><span class="nav-number">1.4.</span> <span class="nav-text">Promise 链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链上的错误处理"><span class="nav-number">1.4.1.</span> <span class="nav-text">链上的错误处理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js-promise-cache-example"><span class="nav-number">2.</span> <span class="nav-text">js+promise+cache example</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Promise-all"><span class="nav-number">3.</span> <span class="nav-text">Promise.all</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-race"><span class="nav-number">3.1.</span> <span class="nav-text">Promise.race</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#async-await"><span class="nav-number">4.</span> <span class="nav-text">async/await</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#async"><span class="nav-number">4.1.</span> <span class="nav-text">async</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#await"><span class="nav-number">4.2.</span> <span class="nav-text">await</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果"><span class="nav-number">4.3.</span> <span class="nav-text">结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ref"><span class="nav-number">6.</span> <span class="nav-text">ref</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/Blog/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/Blog/js/utils.js?v=7.3.0"></script>
+  <script src="/Blog/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/Blog/js/schemes/muse.js?v=7.3.0"></script>
+
+
+<script src="/Blog/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/Blog/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/Blog/js/scrollspy.js?v=7.3.0"></script>
+<script src="/Blog/js/post-details.js?v=7.3.0"></script>
+
+
+    
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://cromarmot.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://cromarmot.github.io/Blog/19-03-22-promise/";
+    this.page.identifier = "19-03-22-promise/";
+    this.page.title = 'promises分析';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://cromarmot.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
+
+</body>
+</html>
