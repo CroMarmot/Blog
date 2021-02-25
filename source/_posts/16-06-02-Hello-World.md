@@ -3,7 +3,7 @@ title: Hello world
 mathjax: true
 date: 2016-06-22 01:01:01
 categories: daily
-tags: [test,markdown]
+tags: [markdown]
 ---
 
 [点击这里查看在github上的效果](https://github.com/CroMarmot/Blog/blob/gh-pages/_posts/2016-06-02-Hello-World.md)

@@ -2,8 +2,8 @@
 title: 设计模式 阅读笔记
 mathjax: true
 date: 2019-08-26 15:09:01
-categories: code
 tags: [design pattern]
+categories: [code]
 ---
 
 > 19-08-26 -> 19-

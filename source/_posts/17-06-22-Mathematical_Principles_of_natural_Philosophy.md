@@ -3,7 +3,7 @@ title: 自然哲学的数学原理个人整理(Give up)
 mathjax: true
 date: 2017-06-22 01:01:01
 categories: note
-tags: [数学]
+tags: [math]
 ---
 
 # 总评

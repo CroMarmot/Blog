@@ -1,8 +1,8 @@
 ---
 title: select/poll/epoll
 date: 2019-12-27 11:20:14
-tags: backend
-category: [computer,system,同步多路IO复用]
+tags: [computer,backend,io,system]
+category: [system,backend]
 ---
 
 同步多路IO复用

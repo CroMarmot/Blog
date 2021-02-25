@@ -1,8 +1,8 @@
 ---
 title: git subtree vs submodule
 date: 2019-09-02 11:20:14
-tags: git
-category: [code,git]
+tags: [git]
+category: [git]
 ---
 
 # 常用命令

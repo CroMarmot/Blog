@@ -1,7 +1,7 @@
 ---
 title: vue 强制生产可调试
 date: 2020-08-23 16:58:14
-tags: [vue]
+tags: [vue2]
 category: [frontend]
 mathjax: true
 ---

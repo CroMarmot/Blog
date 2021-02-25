@@ -3,7 +3,7 @@ title: 编程之美个人整理
 mathjax: true
 date: 2017-06-21 01:01:01
 categories: note
-tags: [算法,code,c++]
+tags: [algorithm,code,c++]
 ---
 
 # 总评

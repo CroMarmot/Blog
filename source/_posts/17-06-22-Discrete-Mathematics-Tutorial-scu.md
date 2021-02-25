@@ -3,7 +3,7 @@ title: 离散数学教程四川大学出版个人整理
 mathjax: true
 date: 2017-06-22 01:01:01
 categories: note
-tags: [算法]
+tags: [algorithm]
 ---
 
 # 总评

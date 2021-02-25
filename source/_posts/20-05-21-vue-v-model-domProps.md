@@ -1,7 +1,7 @@
 ---
 title: vue vmodel domprops
 date: 2020-05-21 11:20:14
-tags: [js,vue]
+tags: [js,vue2]
 category: [frontend]
 ---
 

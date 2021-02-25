@@ -1,7 +1,7 @@
 ---
 title: v-for, ngFor, react(for) 列表真的需要key吗
 date: 2021-02-18 21:58:14
-tags: [vue,angular,react,for]
+tags: [vue2,angular,react,for]
 category: [frontend]
 mathjax: true
 ---
