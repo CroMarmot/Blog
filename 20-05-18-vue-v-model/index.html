@@ -22,16 +22,16 @@
   </script>
 
   <meta name="description" content="起因新做了个输入框，在三次封装时用 $attrs，本地一切正常，内部测试环境出现bug:输入不了值。 解决版本都查过，一样的代码，最后猜是不是vue的问题。 查了一下在线的vue版本是2.6.11而内部发布版本是2.5.13。 把调试的vue换成指定版本2.5.13重现了bug。 顺着官方https://github.com/vuejs/vue/releases看 看到v2.6.1修复了v-mod">
-<meta name="keywords" content="js,vue,v-model">
+<meta name="keywords" content="js,vue2,v-model">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue vmodel 一次版本管理问题">
+<meta property="og:title" content="vue2 vmodel 版本管理问题">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/20-05-18-vue-v-model/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
 <meta property="og:description" content="起因新做了个输入框，在三次封装时用 $attrs，本地一切正常，内部测试环境出现bug:输入不了值。 解决版本都查过，一样的代码，最后猜是不是vue的问题。 查了一下在线的vue版本是2.6.11而内部发布版本是2.5.13。 把调试的vue换成指定版本2.5.13重现了bug。 顺着官方https://github.com/vuejs/vue/releases看 看到v2.6.1修复了v-mod">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-02-25T08:17:35.257Z">
+<meta property="og:updated_time" content="2021-02-25T08:38:55.139Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue vmodel 一次版本管理问题">
+<meta name="twitter:title" content="vue2 vmodel 版本管理问题">
 <meta name="twitter:description" content="起因新做了个输入框，在三次封装时用 $attrs，本地一切正常，内部测试环境出现bug:输入不了值。 解决版本都查过，一样的代码，最后猜是不是vue的问题。 查了一下在线的vue版本是2.6.11而内部发布版本是2.5.13。 把调试的vue换成指定版本2.5.13重现了bug。 顺着官方https://github.com/vuejs/vue/releases看 看到v2.6.1修复了v-mod">
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/20-05-18-vue-v-model/">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>vue vmodel 一次版本管理问题 | Cro-Marmot's Blog</title>
+  <title>vue2 vmodel 版本管理问题 | Cro-Marmot's Blog</title>
   
 
 
@@ -195,7 +195,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          vue vmodel 一次版本管理问题
+          vue2 vmodel 版本管理问题
         </h1>
 
         <div class="post-meta">
@@ -212,7 +212,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
+                <time title="修改時間：2021-02-25 16:38:55" itemprop="dateModified" datetime="2021-02-25T16:38:55+08:00">2021-02-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -273,7 +273,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/Blog/tags/js/" rel="tag"># js</a>
-              <a href="/Blog/tags/vue/" rel="tag"># vue</a>
+              <a href="/Blog/tags/vue2/" rel="tag"># vue2</a>
               <a href="/Blog/tags/v-model/" rel="tag"># v-model</a>
           </div>
 
@@ -374,11 +374,11 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-count">91</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>
@@ -487,7 +487,7 @@
   var disqus_config = function() {
     this.page.url = "https://cromarmot.github.io/Blog/20-05-18-vue-v-model/";
     this.page.identifier = "20-05-18-vue-v-model/";
-    this.page.title = "vue vmodel 一次版本管理问题";
+    this.page.title = "vue2 vmodel 版本管理问题";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

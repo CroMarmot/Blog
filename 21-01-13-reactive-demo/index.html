@@ -22,16 +22,16 @@
   </script>
 
   <meta name="description" content="总以下代码均可以在nodejs和chrome的console里运行 以下均未考虑兼容,空判断,父类属性,解除绑定, 多层关系, 循环调用,多次调用等 Step 1 接管赋值和取值12345678910111213const demo = &amp;#123;&amp;#125;;demo._dAtA = &amp;#123;&amp;#125;;Object.defineProperty(demo, &apos;x&apos;, &amp;#123;  g">
-<meta name="keywords" content="vue">
+<meta name="keywords" content="vue2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue reactive基本原理demo">
+<meta property="og:title" content="vue2 reactive基本原理demo">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/21-01-13-reactive-demo/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
 <meta property="og:description" content="总以下代码均可以在nodejs和chrome的console里运行 以下均未考虑兼容,空判断,父类属性,解除绑定, 多层关系, 循环调用,多次调用等 Step 1 接管赋值和取值12345678910111213const demo = &amp;#123;&amp;#125;;demo._dAtA = &amp;#123;&amp;#125;;Object.defineProperty(demo, &apos;x&apos;, &amp;#123;  g">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-02-25T08:17:35.261Z">
+<meta property="og:updated_time" content="2021-02-25T08:38:55.139Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue reactive基本原理demo">
+<meta name="twitter:title" content="vue2 reactive基本原理demo">
 <meta name="twitter:description" content="总以下代码均可以在nodejs和chrome的console里运行 以下均未考虑兼容,空判断,父类属性,解除绑定, 多层关系, 循环调用,多次调用等 Step 1 接管赋值和取值12345678910111213const demo = &amp;#123;&amp;#125;;demo._dAtA = &amp;#123;&amp;#125;;Object.defineProperty(demo, &apos;x&apos;, &amp;#123;  g">
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/21-01-13-reactive-demo/">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>vue reactive基本原理demo | Cro-Marmot's Blog</title>
+  <title>vue2 reactive基本原理demo | Cro-Marmot's Blog</title>
   
 
 
@@ -195,7 +195,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          vue reactive基本原理demo
+          vue2 reactive基本原理demo
         </h1>
 
         <div class="post-meta">
@@ -212,7 +212,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
+                <time title="修改時間：2021-02-25 16:38:55" itemprop="dateModified" datetime="2021-02-25T16:38:55+08:00">2021-02-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -268,7 +268,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/Blog/tags/vue/" rel="tag"># vue</a>
+              <a href="/Blog/tags/vue2/" rel="tag"># vue2</a>
           </div>
 
         
@@ -368,11 +368,11 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-count">91</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>
@@ -534,7 +534,7 @@
   var disqus_config = function() {
     this.page.url = "https://cromarmot.github.io/Blog/21-01-13-reactive-demo/";
     this.page.identifier = "21-01-13-reactive-demo/";
-    this.page.title = "vue reactive基本原理demo";
+    this.page.title = "vue2 reactive基本原理demo";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

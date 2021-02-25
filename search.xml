@@ -22,7 +22,7 @@
             
             <tag> angular </tag>
             
-            <tag> vue </tag>
+            <tag> vue2 </tag>
             
             <tag> react </tag>
             
@@ -53,7 +53,7 @@
             
             <tag> angular </tag>
             
-            <tag> vue </tag>
+            <tag> vue2 </tag>
             
             <tag> react </tag>
             
@@ -66,7 +66,7 @@
     
     
     <entry>
-      <title>vue reactive基本原理demo</title>
+      <title>vue2 reactive基本原理demo</title>
       <link href="/Blog/21-01-13-reactive-demo/"/>
       <url>/Blog/21-01-13-reactive-demo/</url>
       
@@ -82,7 +82,7 @@
       
         <tags>
             
-            <tag> vue </tag>
+            <tag> vue2 </tag>
             
         </tags>
       
@@ -163,11 +163,11 @@
       
         <tags>
             
-            <tag> this </tag>
-            
-            <tag> context </tag>
+            <tag> js </tag>
             
             <tag> scroll </tag>
+            
+            <tag> context </tag>
             
         </tags>
       
@@ -192,11 +192,7 @@
       
         <tags>
             
-            <tag> this </tag>
-            
-            <tag> call </tag>
-            
-            <tag> context </tag>
+            <tag> js </tag>
             
         </tags>
       
@@ -275,7 +271,7 @@
       
         <tags>
             
-            <tag> vue </tag>
+            <tag> vue2 </tag>
             
         </tags>
       
@@ -325,11 +321,11 @@
       
         <tags>
             
+            <tag> vue2 </tag>
+            
             <tag> ios13.5.1 </tag>
             
             <tag> ios </tag>
-            
-            <tag> vue2 </tag>
             
             <tag> bug </tag>
             
@@ -383,9 +379,9 @@
       
         <tags>
             
-            <tag> rsa </tag>
-            
             <tag> math </tag>
+            
+            <tag> rsa </tag>
             
         </tags>
       
@@ -497,7 +493,7 @@
             
             <tag> js </tag>
             
-            <tag> vue </tag>
+            <tag> vue2 </tag>
             
         </tags>
       
@@ -506,7 +502,7 @@
     
     
     <entry>
-      <title>vue vmodel 一次版本管理问题</title>
+      <title>vue2 vmodel 版本管理问题</title>
       <link href="/Blog/20-05-18-vue-v-model/"/>
       <url>/Blog/20-05-18-vue-v-model/</url>
       
@@ -524,7 +520,7 @@
             
             <tag> js </tag>
             
-            <tag> vue </tag>
+            <tag> vue2 </tag>
             
             <tag> v-model </tag>
             
@@ -631,18 +627,16 @@
       
       <categories>
           
-          <category> computer </category>
+          <category> ide </category>
           
-          <category> system </category>
-          
-          <category> vscode </category>
+          <category> backend </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> backend </tag>
+            <tag> vscode </tag>
             
         </tags>
       
@@ -660,11 +654,9 @@
       
       <categories>
           
-          <category> computer </category>
-          
           <category> system </category>
           
-          <category> 同步多路IO复用 </category>
+          <category> backend </category>
           
       </categories>
       
@@ -672,6 +664,12 @@
         <tags>
             
             <tag> backend </tag>
+            
+            <tag> system </tag>
+            
+            <tag> computer </tag>
+            
+            <tag> io </tag>
             
         </tags>
       
@@ -689,11 +687,9 @@
       
       <categories>
           
-          <category> computer </category>
+          <category> backend </category>
           
           <category> system </category>
-          
-          <category> virus </category>
           
       </categories>
       
@@ -701,6 +697,8 @@
         <tags>
             
             <tag> backend </tag>
+            
+            <tag> virus </tag>
             
         </tags>
       
@@ -718,18 +716,18 @@
       
       <categories>
           
-          <category> code </category>
-          
-          <category> js </category>
-          
-          <category> encrypt </category>
+          <category> backend </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> backend </tag>
+            <tag> js </tag>
+            
+            <tag> code </tag>
+            
+            <tag> encrypt </tag>
             
         </tags>
       
@@ -747,20 +745,22 @@
       
       <categories>
           
-          <category> code </category>
+          <category> vue2 </category>
           
-          <category> js </category>
-          
-          <category> json </category>
-          
-          <category> protobuf </category>
+          <category> frontend </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> frontend </tag>
+            <tag> js </tag>
+            
+            <tag> code </tag>
+            
+            <tag> json </tag>
+            
+            <tag> protobuf </tag>
             
         </tags>
       
@@ -1081,8 +1081,6 @@
       
       <categories>
           
-          <category> code </category>
-          
           <category> git </category>
           
       </categories>
@@ -1246,8 +1244,6 @@
             
             <tag> nodejs </tag>
             
-            <tag> vsc </tag>
-            
             <tag> vscode </tag>
             
             <tag> extension </tag>
@@ -1354,7 +1350,7 @@
       
         <tags>
             
-            <tag> vue </tag>
+            <tag> vue2 </tag>
             
         </tags>
       
@@ -1456,9 +1452,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> crawler </tag>
+            
+            <tag> python </tag>
             
         </tags>
       
@@ -1591,18 +1587,20 @@
       
       <categories>
           
-          <category> code </category>
-          
-          <category> vue </category>
-          
-          <category> js </category>
+          <category> vue2 </category>
           
       </categories>
       
       
         <tags>
             
+            <tag> js </tag>
+            
             <tag> frontend </tag>
+            
+            <tag> code </tag>
+            
+            <tag> vue </tag>
             
         </tags>
       
@@ -1792,7 +1790,7 @@
       
         <tags>
             
-            <tag> 算法 </tag>
+            <tag> algorithm </tag>
             
         </tags>
       
@@ -1817,7 +1815,7 @@
       
         <tags>
             
-            <tag> 算法 </tag>
+            <tag> algorithm </tag>
             
         </tags>
       
@@ -1842,7 +1840,7 @@
       
         <tags>
             
-            <tag> 算法 </tag>
+            <tag> algorithm </tag>
             
         </tags>
       
@@ -1867,7 +1865,7 @@
       
         <tags>
             
-            <tag> 数学 </tag>
+            <tag> math </tag>
             
         </tags>
       
@@ -1917,7 +1915,7 @@
             
             <tag> code </tag>
             
-            <tag> 算法 </tag>
+            <tag> algorithm </tag>
             
         </tags>
       
@@ -1935,12 +1933,18 @@
       
       <categories>
           
-          <category> code </category>
-          
-          <category> emacs </category>
+          <category> ide </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> code </tag>
+            
+            <tag> emacs </tag>
+            
+        </tags>
       
     </entry>
     
@@ -2106,7 +2110,7 @@
       
         <tags>
             
-            <tag> 爬虫 </tag>
+            <tag> crawler </tag>
             
         </tags>
       
@@ -2211,8 +2215,6 @@
       
       
         <tags>
-            
-            <tag> test </tag>
             
             <tag> markdown </tag>
             
@@ -2385,9 +2387,9 @@
       
         <tags>
             
-            <tag> rdf </tag>
-            
             <tag> sparql </tag>
+            
+            <tag> rdf </tag>
             
         </tags>
       
