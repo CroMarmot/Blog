@@ -399,20 +399,20 @@
       
       <categories>
           
-          <category> code </category>
-          
-          <category> js </category>
-          
-          <category> karma </category>
-          
-          <category> test </category>
+          <category> frontend </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> frontend </tag>
+            <tag> js </tag>
+            
+            <tag> code </tag>
+            
+            <tag> test </tag>
+            
+            <tag> karma </tag>
             
         </tags>
       
@@ -1641,7 +1641,7 @@
       
       <categories>
           
-          <category> news </category>
+          <category> backend </category>
           
       </categories>
       
@@ -2052,10 +2052,16 @@
       
       <categories>
           
-          <category> Unarranged </category>
+          <category> lib </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
       
     </entry>
     
@@ -2084,10 +2090,16 @@
       
       <categories>
           
-          <category> Unarranged </category>
+          <category> demo </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
       
     </entry>
     
@@ -2103,7 +2115,7 @@
       
       <categories>
           
-          <category> Unarranged </category>
+          <category> backend </category>
           
       </categories>
       
@@ -2111,6 +2123,8 @@
         <tags>
             
             <tag> crawler </tag>
+            
+            <tag> python </tag>
             
         </tags>
       
@@ -2234,10 +2248,18 @@
       
       <categories>
           
-          <category> Unarranged </category>
+          <category> blog </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> blog </tag>
+            
+            <tag> links </tag>
+            
+        </tags>
       
     </entry>
     
@@ -2253,7 +2275,7 @@
       
       <categories>
           
-          <category> Unarranged </category>
+          <category> lang </category>
           
       </categories>
       
@@ -2303,7 +2325,7 @@
       
       <categories>
           
-          <category> Unarranged </category>
+          <category> frontend </category>
           
       </categories>
       
@@ -2328,7 +2350,7 @@
       
       <categories>
           
-          <category> Unarranged </category>
+          <category> frontend </category>
           
       </categories>
       
@@ -2380,16 +2402,16 @@
       
       <categories>
           
-          <category> post </category>
+          <category> note </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> sparql </tag>
-            
             <tag> rdf </tag>
+            
+            <tag> sparql </tag>
             
         </tags>
       
@@ -2407,7 +2429,7 @@
       
       <categories>
           
-          <category> post </category>
+          <category> note </category>
           
       </categories>
       
@@ -2432,7 +2454,7 @@
       
       <categories>
           
-          <category> post </category>
+          <category> note </category>
           
       </categories>
       
@@ -2459,39 +2481,20 @@
       
       <categories>
           
-          <category> post </category>
+          <category> node </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> js </tag>
             
             <tag> rowhammer </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>TEMPLATE</title>
-      <link href="/Blog/00-01-01-template/"/>
-      <url>/Blog/00-01-01-template/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>markdown here</p></blockquote><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"code here!\n"</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>$ latex_{here} $</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> post </category>
-          
-      </categories>
-      
-      
-        <tags>
+            <tag> security </tag>
             
-            <tag> post </tag>
+            <tag> ram </tag>
             
         </tags>
       
