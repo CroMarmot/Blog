@@ -1,60 +1,25 @@
 <!DOCTYPE html>
-
-
-
-
-
-<html class="theme-next muse use-motion" lang="zh-TW">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
   <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
 
-<link rel="stylesheet" href="/Blog/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/Blog/',
-    scheme: 'Muse',
-    version: '7.3.0',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
-    back2top: {"enable":true,"sidebar":true,"scrollpercent":false},
-    save_scroll: false,
-    copycode: {"enable":false,"show_result":false,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '複製',
-      copy_success: '複製成功',
-      copy_failure: '複製失敗'
-    }
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="Cro-Marmot&#39;s Blog">
@@ -63,17 +28,17 @@
 <meta property="og:locale" content="zh-TW">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cro-Marmot&#39;s Blog">
-  <link rel="canonical" href="https://cromarmot.github.io/Blog/page/6/">
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/page/6/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
-    isPage: false,
-    isArchive: false
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-TW'
   };
 </script>
 
@@ -85,11 +50,8 @@
 
 
 
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -98,9 +60,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -114,194 +75,165 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
-
-  <div class="container sidebar-position-right">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-
-    <div class="custom-logo-site-title">
-      <a href="/Blog/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Cro-Marmot's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切換導航欄">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Cro-Marmot's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
+
 
 
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-      
-      
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/Blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/Blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
-        
-          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
       </li>
-    
   </ul>
-
-    
-
 </nav>
-  <div class="site-search">
-    
-  <div class="popup search-popup">
-  <div class="search-header">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none"
-             placeholder="搜尋..." spellcheck="false"
-             type="text" id="search-input">
-    </div>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
   </div>
-  <div id="search-result"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-
+    </div>
   </div>
+
 </div>
     </header>
 
     
 
-    
 
-  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>
+  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>
+  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
-    <main id="main" class="main">
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content page-home">
-            
-  <section id="posts" class="posts-expand">
-      
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+          <div class="content index posts-expand">
+            
+      
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-06-10-TDD/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-06-10-TDD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/19-06-10-TDD/" class="post-title-link" itemprop="url">TDD 测试驱动开发</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-06-10-TDD/" class="post-title-link" itemprop="url">TDD 测试驱动开发</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2019-06-10 01:01:01" itemprop="dateCreated datePublished" datetime="2019-06-10T01:01:01+08:00">2019-06-10</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/test/" itemprop="url" rel="index"><span itemprop="name">test</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/test/" itemprop="url" rel="index"><span itemprop="name">test</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-06-10-TDD/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/19-06-10-TDD/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-06-10-TDD/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -312,17 +244,60 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.cigniti.com/blog/7-best-practices-for-agile-test-driven-development/" target="_blank" rel="noopener">https://www.cigniti.com/blog/7-best-practices-for-agile-test-driven-development/</a></p><p><a href="https://www.freecodecamp.org/news/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2/" target="_blank" rel="noopener">https://www.freecodecamp.org/news/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2/</a></p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/19-06-10-TDD/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.cigniti.com/blog/7-best-practices-for-agile-test-driven-development/" target="_blank" rel="noopener">https://www.cigniti.com/blog/7-best-practices-for-agile-test-driven-development/</a></p>
+<p><a href="https://www.freecodecamp.org/news/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2/" target="_blank" rel="noopener">https://www.freecodecamp.org/news/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2/</a></p>
+<h1 id="避免过于复杂的函数"><a href="#避免过于复杂的函数" class="headerlink" title="避免过于复杂的函数"></a>避免过于复杂的函数</h1><p>保持每个函数 自扫门前雪,与团队讨论保证每个测试用例覆盖了所有期望的函数功能</p>
+<h1 id="聚焦于你真正需要实现的"><a href="#聚焦于你真正需要实现的" class="headerlink" title="聚焦于你真正需要实现的"></a>聚焦于你真正需要实现的</h1><p>测试用例要清晰描述 期望的 最终实现的功能，并按照这个原则编写。</p>
+<h1 id="Maintain-code-austerity"><a href="#Maintain-code-austerity" class="headerlink" title="Maintain code austerity"></a>Maintain code austerity</h1><p>在通过测试样例的前提下，尽可能保持代码可读，可迭代。</p>
+<h1 id="Test-repeatedly"><a href="#Test-repeatedly" class="headerlink" title="Test repeatedly"></a>Test repeatedly</h1><p>…编写过程中持续测试，CI等工具都可以</p>
+<h1 id="Maintain-code-sanctity"><a href="#Maintain-code-sanctity" class="headerlink" title="Maintain code sanctity"></a>Maintain code sanctity</h1><p>用git，Jenkins等工具…….?????</p>
+<h1 id="Application-knowledge"><a href="#Application-knowledge" class="headerlink" title="Application knowledge"></a>Application knowledge</h1><p>文档维护，</p>
+<p>In TDD, coding needs to be limited but effective in that it achieves its purpose without breaking anything else. Also, the new code should ideally pass the test case in the very first run. Maintaining adequate system documentation, including a repository of test cases and engaging team members with good application knowledge can ensure a smooth and successful project execution.</p>
+<h1 id="Know-when-to-use-TDD"><a href="#Know-when-to-use-TDD" class="headerlink" title="Know when to use TDD"></a>Know when to use TDD</h1><p>任何延长或复杂的测试都会破坏TDD的目的。</p>
+<h1 id="TDD-rules"><a href="#TDD-rules" class="headerlink" title="TDD rules"></a>TDD rules</h1><ul>
+<li><p>你不被允许编写任何让单元测试挂掉的代码</p>
+</li>
+<li><p>Write only enough of a unit test to fail.</p>
+</li>
+<li><p>Write only enough production code to make the failing unit test pass.</p>
+</li>
+</ul>
+<p>就是说，不论是测试代码还是业务代码，都是足量，但又尽量少，【例子 红绿灯</p>
+<h2 id="red-phase"><a href="#red-phase" class="headerlink" title="red phase"></a>red phase</h2><p>首先 写一些 用户会需要的 ’需求‘ 而不是 ’测试‘</p>
+<p>所以 你考虑的角度是类似BDD(行为驱动开发)的,你会在开发前首先写代码，假设它已经完成了</p>
+<p>这个阶段你需要考虑代码的出入参数 如何被使用，需要注意的是再该阶段 关注你核心需要的，而不是写大量的</p>
+<h2 id="green-phase"><a href="#green-phase" class="headerlink" title="green phase"></a>green phase</h2><p>编码</p>
+<p>注意的是，这部分主要关注的是按照 red phase部分的 代码，实现，在这部分，不需要过度关注 性能，代码复用，也不要改测试</p>
+<p>代码的优化应该在todolist 或 重构的时候清理 整理</p>
+<p>但你应该写 直接实现，且可迭代的代码</p>
+<p>新的feature只要还没有测试，就不应该先实现</p>
+<h2 id="refactor-phase"><a href="#refactor-phase" class="headerlink" title="refactor phase"></a>refactor phase</h2><p>代码抽象 去重 等等</p>
+<h2 id="Final-considerations-Q-amp-A"><a href="#Final-considerations-Q-amp-A" class="headerlink" title="Final considerations Q&amp;A"></a>Final considerations Q&amp;A</h2><blockquote>
+<p>TDD 需要很多 多于普通编码的时间</p>
+</blockquote>
+<p>当你熟练了 不会多很多，而在后续的持续开发中，将省时间</p>
+<blockquote>
+<p>需要写多少</p>
+</blockquote>
+<p>足够你测试开发的代码，的最少量，因为每个测试都会拖慢重构，但重构需要测试来支撑</p>
+<blockquote>
+<p>分析设计框架</p>
+</blockquote>
+<p>你依然需要，TDD无法替代，在TDD之前，应该先分析设计。</p>
+<p>这个是我具体实践起来感觉 很重要也有难度的，如果你对业务和功能，没有实践过，那么你可能分析得设计得不全面，这样的情况下你的测试样例也实现的 有缺失。一个可能就是编码的过程可能发现测试不够，这样一个办法就是继续走cycle再改。而我之前的写python的实践时，就直接把测试ban掉了XD。还是走了先代码后测试的老路</p>
+<blockquote>
+<p>100% coverage</p>
+</blockquote>
+<p>不必，视图等常变的微量逻辑毫无必要写TDD测试</p>
+<blockquote>
+<p>TDD 在examples上 工作得号，但实际代码上 很多代码未被测试</p>
+</blockquote>
+<p>emmmmmmm….. 作者用TDD方法 写了一个俄罗斯方块</p>
+<blockquote>
+<p>TDD 谁来写</p>
+</blockquote>
+<p>这里的观点是TDD是开发写，而真正的<code>测试</code>是测试人员来写</p>
+
       
     </div>
 
@@ -330,103 +305,75 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-06-06-angular/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-06-06-angular/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/19-06-06-angular/" class="post-title-link" itemprop="url">angular</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-06-06-angular/" class="post-title-link" itemprop="url">angular</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2019-06-06 01:01:01" itemprop="dateCreated datePublished" datetime="2019-06-06T01:01:01+08:00">2019-06-06</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-06-06-angular/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/19-06-06-angular/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-06-06-angular/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -457,13 +404,11 @@
 <li>universal</li>
 </ul>
           <!--noindex-->
-          
-            <div class="post-button text-center">
+            <div class="post-button">
               <a class="btn" href="/Blog/19-06-06-angular/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -473,103 +418,75 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-05-03-oiTerminal/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-05-03-oiTerminal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/19-05-03-oiTerminal/" class="post-title-link" itemprop="url">oiTerminal</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-05-03-oiTerminal/" class="post-title-link" itemprop="url">oiTerminal</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2019-05-03 01:01:01" itemprop="dateCreated datePublished" datetime="2019-05-03T01:01:01+08:00">2019-05-03</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-05-03-oiTerminal/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/19-05-03-oiTerminal/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-05-03-oiTerminal/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -594,13 +511,11 @@
 <p><a href="https://github.com/VirtualJudge/spider" target="_blank" rel="noopener">spider</a></p>
 <h1 id="开发过程中的一些想法"><a href="#开发过程中的一些想法" class="headerlink" title="开发过程中的一些想法"></a>开发过程中的一些想法</h1><p>首先 cfTerminal 是基于idne开发的</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
+            <div class="post-button">
               <a class="btn" href="/Blog/19-05-03-oiTerminal/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -610,103 +525,75 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-04-12-principles/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-04-12-principles/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/19-04-12-principles/" class="post-title-link" itemprop="url">原则</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-04-12-principles/" class="post-title-link" itemprop="url">原则</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2019-05-01 11:20:14" itemprop="dateCreated datePublished" datetime="2019-05-01T11:20:14+08:00">2019-05-01</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/life/" itemprop="url" rel="index"><span itemprop="name">life</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/life/" itemprop="url" rel="index"><span itemprop="name">life</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-04-12-principles/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/19-04-12-principles/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-04-12-principles/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -721,13 +608,11 @@
 <h2 id="生活原则"><a href="#生活原则" class="headerlink" title="生活原则"></a>生活原则</h2><p>这一部分本身是在 xmind上写的，但是图太大pdf也很大，xmind提供了自动转换为markdown的功能，感谢！</p>
 <h3 id="拥抱现实，应对现实"><a href="#拥抱现实，应对现实" class="headerlink" title="拥抱现实，应对现实"></a>拥抱现实，应对现实</h3>
           <!--noindex-->
-          
-            <div class="post-button text-center">
+            <div class="post-button">
               <a class="btn" href="/Blog/19-04-12-principles/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -737,110 +622,79 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-04-19-jsmore1/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-04-19-jsmore1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/19-04-19-jsmore1/" class="post-title-link" itemprop="url">js 基础&进阶 速查笔记</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-04-19-jsmore1/" class="post-title-link" itemprop="url">js 基础&进阶 速查笔记</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2019-04-19 11:20:14" itemprop="dateCreated datePublished" datetime="2019-04-19T11:20:14+08:00">2019-04-19</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-04-19-jsmore1/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/19-04-19-jsmore1/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-04-19-jsmore1/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -863,13 +717,11 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sayHi(<span class="string">"John"</span>); <span class="comment">// Hello, John</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  alert( <span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>`</span> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>声明还是有代码块的问题</p>
           <!--noindex-->
-          
-            <div class="post-button text-center">
+            <div class="post-button">
               <a class="btn" href="/Blog/19-04-19-jsmore1/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -879,117 +731,83 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-04-09-snap/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-04-09-snap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/19-04-09-snap/" class="post-title-link" itemprop="url">snap</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-04-09-snap/" class="post-title-link" itemprop="url">snap</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2019-04-09 11:20:14" itemprop="dateCreated datePublished" datetime="2019-04-09T11:20:14+08:00">2019-04-09</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/snap/" itemprop="url" rel="index"><span itemprop="name">snap</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/snap/" itemprop="url" rel="index"><span itemprop="name">snap</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/snap/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/snap/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-04-09-snap/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/19-04-09-snap/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-04-09-snap/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -1000,17 +818,107 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Ubuntu推出的 软件管理程序(类似debian系列是apt，arch系列是pacman)，跨linux的</p><p><img src="https://tutorials.ubuntu.com/es6-bundled/src/codelabs/basic-snap-usage/img/f9f287c2e1980df1.png" alt="linuxs"></p><h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><p>Arch</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S snapd</span><br><span class="line"></span><br><span class="line"><span class="comment"># enable the snapd systemd service:</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> --now snapd.socket</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/19-04-09-snap/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <p>Ubuntu推出的 软件管理程序(类似debian系列是apt，arch系列是pacman)，跨linux的</p>
+<p><img src="https://tutorials.ubuntu.com/es6-bundled/src/codelabs/basic-snap-usage/img/f9f287c2e1980df1.png" alt="linuxs"></p>
+<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><p>Arch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S snapd</span><br><span class="line"></span><br><span class="line"><span class="comment"># enable the snapd systemd service:</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> --now snapd.socket</span><br></pre></td></tr></table></figure>
+<p>Debian (Sid only)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install snapd</span><br></pre></td></tr></table></figure>
+<p><strong>注</strong>Ubuntu &gt;16.04默认安装了 </p>
+<p>Fedora</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install snapd</span><br></pre></td></tr></table></figure>
+<p>Gentoo</p>
+<p>Install the <a href="https://github.com/zyga/gentoo-snappy" target="_blank" rel="noopener">gentoo-snappy overlay.</a><br>OpenEmbedded/Yocto<br>Install the <a href="https://github.com/morphis/meta-snappy/blob/master/README.md" target="_blank" rel="noopener">snap meta layer.</a></p>
+<p>openSuSE</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo zypper addrepo http://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_42.2/ snappy</span><br><span class="line">sudo zypper install snapd</span><br></pre></td></tr></table></figure>
+<h1 id="start-using"><a href="#start-using" class="headerlink" title="start using"></a>start using</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">snap find hello</span><br><span class="line">sudo snap install hello</span><br><span class="line">hello</span><br><span class="line">snap list</span><br><span class="line">sudo snap refresh &lt;snap name&gt;</span><br><span class="line">sudo snap refresh</span><br><span class="line">sudo snap remove</span><br></pre></td></tr></table></figure>
+<p>好消息是snap每日自动在后台更新</p>
+<p>软件默认安装的是stable版本</p>
+<p>如果要其他版本则通过指定channel</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo snap refresh hello --channel=beta</span><br><span class="line">sudo snap refresh hello --beta</span><br></pre></td></tr></table></figure>
+<p>可选的channel有 <code>stable</code>稳定,<code>candidate</code>稍早于稳定版的版本,<code>beta</code>未完成但是一个里程碑的版本,<code>edge</code>每日构建的冒烟测试</p>
+<p>版本回滚</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap revert hello</span><br></pre></td></tr></table></figure>
+<h1 id="进阶snap用法"><a href="#进阶snap用法" class="headerlink" title="进阶snap用法"></a>进阶snap用法</h1><p>首先申请个账号<a href="https://login.ubuntu.com/" target="_blank" rel="noopener">https://login.ubuntu.com/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap login</span><br></pre></td></tr></table></figure>
+<p>登陆以后，你再使用snap就不需要sudo了，除非你执行了<code>snap logout</code></p>
+<p>可以看snap使用历史记录，以及一个历史记录的细节</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">snap changes</span><br><span class="line">snap change &lt;changes ID&gt;</span><br><span class="line">snap watch &lt;changes ID&gt;</span><br><span class="line">snap abort &lt;changes ID&gt;</span><br></pre></td></tr></table></figure>
+<p>snap安装的流程</p>
+<p>下载-&gt;验证-&gt;mount-&gt;备份老版本的一些data到另一个文件夹-&gt;The security profiles are set and snapd checks which interfaces to connect to.-&gt;添加到$PATH-&gt;设置aliases-&gt;运行snap中定义的services-&gt; 运行snap中定义的 configure钩子</p>
+<p>类似的可以查看refresh remove revert的过程</p>
+<h2 id="离线安装例子"><a href="#离线安装例子" class="headerlink" title="离线安装例子"></a>离线安装例子</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">snap download nethack</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<p>会下载本身的(.snap)包以及对应(.assert)文件</p>
+<p>直接 <code>snap install XXXX.snap</code>会报错 cannot find signatures</p>
+<p>解决方案(误，如果你勇敢或疯狂 想无视assertion的install)<code>snap install --dangerous XXXX.snap</code></p>
+<p><strong>注</strong><code>--devmode</code>内涵了<code>--dangerous</code></p>
+<p>正确的安装方式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">snap ack XXX.assert</span><br><span class="line">snap install XXX.snap</span><br></pre></td></tr></table></figure>
+<p>关于assert(大概了解 account-key, account, snap-declaration, snap-revision 各个部分的元数组)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat XXX.assert</span><br></pre></td></tr></table></figure>
+<p>查看已知(即是ack 过的)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap known snap-declaration snap-name=nethack</span><br></pre></td></tr></table></figure>
+<p>所有stable channel的是confined，相对的devmode是unconfined，意味有访问系统的权限，所以要么这个开发者是你，要么是你信任的</p>
+<h2 id="interfaces"><a href="#interfaces" class="headerlink" title="interfaces"></a>interfaces</h2><p>先安装<code>chuck-norris-webserver</code></p>
+<p>interfaces是可插拔插槽模式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap interfaces</span><br></pre></td></tr></table></figure>
+<p>你可以看到，<code>chuck-norris-webserver</code>绑定到了<code>nextwork-bind</code> 上,</p>
+<p>但有一些连接的Slot是空的(如camera)，这种 是认为非安全的，访问用户的摄像机</p>
+<p>执行<code>chuck-norris-webserver.cli</code> 你可以看到 有一些权限访问是被拒绝了的</p>
+<p>授权camera</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap connect chuck-norris-webserver:camera :camera</span><br></pre></td></tr></table></figure>
+<p>我们再执行<code>snap interfaces</code>可以看到camera被连接上了</p>
+<p>取消连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap disconnect chuck-norris-webserver:camera</span><br></pre></td></tr></table></figure>
+<p>例如,服务和cli请求访问不同的接口定义:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">node-service:</span><br><span class="line">   command: bin/chuck-norris-app</span><br><span class="line">   daemon: simple</span><br><span class="line">   restart-condition: always</span><br><span class="line">   plugs: [network-bind]</span><br><span class="line"> cli:</span><br><span class="line">   command: bin/chuck-norris-cli</span><br><span class="line">   plugs: [network, camera]</span><br></pre></td></tr></table></figure>
+<p>读写network，使用camera</p>
+<p>devmode 是用于开发者的不是 devil 23333</p>
+<p>保证devmode的不会在stable里，也就不会被snap find到</p>
+<p>你如果要安装，可以强制–beta,–devmode,前提是你信任它</p>
+<p>安装后你会在snap list的notes中看到 它的channel</p>
+<p>一种看法是把它看成container式的样子，在它上面运行的未授权的看不到根目录, 重定位</p>
+<p><code>--classic</code>强制使用 未重定位的包，这种classic的包和重定位的包不兼容，这种classic的包是能够读到宿主系统的目录的</p>
+<p>综上这么多模式虽然你可能不是开发者也可以了解一下，主要还是为开发设计的，</p>
+<ol>
+<li>先用classic模式开发</li>
+<li>再用重定位dev模式</li>
+<li>最后用严格模式包</li>
+</ol>
+<h2 id="snaps-amp-services的可用性，日志，状态"><a href="#snaps-amp-services的可用性，日志，状态" class="headerlink" title="snaps&amp;services的可用性，日志，状态"></a>snaps&amp;services的可用性，日志，状态</h2><ol>
+<li>当一个snap被安装，意味着，该snap命令在用户$PATH中可访问</li>
+<li>snap中包括的services都被启动，它们会跟随系统启动和关闭，而启动关闭，当它们crash可以自动重启</li>
+</ol>
+<p>你可以<code>snap enable</code>,<code>snap restart</code>,<code>snap disable</code>控制这些服务</p>
+<p>[原来我机器上有apache，然后安了这个用来讲例子的webserver，需要先stop apache再重启这个webserver]</p>
+<p><code>ll /etc/systemd/system/snap*</code></p>
+<p><code>cat /etc/systemd/system/snap.chuck-norris-webserver.node-service.service</code></p>
+<p>所以snap用的还是系统的systemd的工具来管理服务，所以可以用传统的systemctl来管理</p>
+<p><code>systemctl status -l snap.chuck-norris-webserver.node-service</code></p>
+<p>这里在讲systemctl就不记了</p>
+<p>同样可以查看日志<code>sudo journalctl -fu snap.chuck-norris-webserver.node-service</code></p>
+<h2 id="管理snap配置"><a href="#管理snap配置" class="headerlink" title="管理snap配置"></a>管理snap配置</h2><p><code>snap set</code></p>
+<p><code>snap set chuck-norris-webserver title=&quot;I can bind Chuck Norris to my will&quot;</code></p>
+<p><code>snap set chuck-norris-webserver port=81</code></p>
+<p>这应该是看具体应用提供的key和value范围了</p>
+<p><code>snap set &lt;snap-name&gt; key1=value1 [key2=value2...]</code></p>
+<p>与set对应的就是 get，可以获取值 <code>snap get &lt;snap-name&gt; key</code></p>
+<p><code>snap run --shell chuck-norris-webserver.cli</code></p>
+<p>中<code>--shell</code>会提供一个subshell</p>
+<p>subshell的环境<code>env | grep SNAP</code></p>
+<p>直接cd 和 touch都会无权,能够操作的是 <code>ls $SNAP</code>(可读 不可写),<code>touch $SNAP_USER_DATA/foo</code>(读+写),<code>$SNAP_USER_COMMON</code> (读+写)</p>
+<p>实际路径<code>echo $SNAP_USER_COMMON</code> =&gt; <code>/home/didrocks/snap/chuck-norris-webserver/common</code></p>
+<p>你通过snap set配置的值在<code>$SNAP_DATA/config</code></p>
+<p><code>snap info chuck-norris-webserver</code> ,相对于snap find可以看stable以及非stable的channel</p>
+<p>这里举例如果1.0.3(–beta)版本的revision是22(–edge)</p>
+<p>然后得到了一些反馈，修复了一些issues</p>
+<p>作者再提交，则还是1.0.3(–beta),但revision会变化可能就成了24(–edge)</p>
+<p><code>snap find --section</code></p>
+<h1 id="创建发布snap-TODO"><a href="#创建发布snap-TODO" class="headerlink" title="创建发布snap TODO"></a>创建发布snap TODO</h1><h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>总有人想搞统一 :-)</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://tutorials.ubuntu.com/tutorial/basic-snap-usage" target="_blank" rel="noopener">https://tutorials.ubuntu.com/tutorial/basic-snap-usage</a></p>
+<p><a href="https://tutorials.ubuntu.com/tutorial/advanced-snap-usage" target="_blank" rel="noopener">https://tutorials.ubuntu.com/tutorial/advanced-snap-usage</a></p>
+<p><a href="https://tutorials.ubuntu.com/tutorial/create-your-first-snap" target="_blank" rel="noopener">https://tutorials.ubuntu.com/tutorial/create-your-first-snap</a></p>
+
       
     </div>
 
@@ -1018,117 +926,83 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-04-01-vue-custom-v-model/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-04-01-vue-custom-v-model/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/19-04-01-vue-custom-v-model/" class="post-title-link" itemprop="url">vue custom v-model</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-04-01-vue-custom-v-model/" class="post-title-link" itemprop="url">vue custom v-model</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2019-04-01 11:20:14" itemprop="dateCreated datePublished" datetime="2019-04-01T11:20:14+08:00">2019-04-01</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/js/promises/" itemprop="url" rel="index"><span itemprop="name">promises</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/js/promises/" itemprop="url" rel="index"><span itemprop="name">promises</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-04-01-vue-custom-v-model/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/19-04-01-vue-custom-v-model/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-04-01-vue-custom-v-model/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -1139,17 +1013,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component" target="_blank" rel="noopener">https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component</a></p><p>To let our component support v-model two-way binding, I stated earlier that the component needs to accept a <code>value</code> prop and emit an <code>input</code> event.</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/19-04-01-vue-custom-v-model/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component" target="_blank" rel="noopener">https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component</a></p>
+<p>To let our component support v-model two-way binding, I stated earlier that the component needs to accept a <code>value</code> prop and emit an <code>input</code> event.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;input @input=<span class="string">"handleInput"</span> /&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  prop: ['value'],</span></span><br><span class="line"><span class="regexp">  data () &#123;</span></span><br><span class="line"><span class="regexp">    return &#123;</span></span><br><span class="line"><span class="regexp">      content: this.value</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  methods: &#123;</span></span><br><span class="line"><span class="regexp">    handleInput (e) &#123;</span></span><br><span class="line"><span class="regexp">      this.$emit('input', this.content)</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -1157,117 +1024,83 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-03-22-promise/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-03-22-promise/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/19-03-22-promise/" class="post-title-link" itemprop="url">promises分析</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-03-22-promise/" class="post-title-link" itemprop="url">promises分析</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2019-03-22 11:20:14" itemprop="dateCreated datePublished" datetime="2019-03-22T11:20:14+08:00">2019-03-22</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/js/promises/" itemprop="url" rel="index"><span itemprop="name">promises</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/js/promises/" itemprop="url" rel="index"><span itemprop="name">promises</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-03-22-promise/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/19-03-22-promise/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-03-22-promise/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -1278,17 +1111,87 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>个人其实建议阅读下方的参考链接<code>zh.javascript.info</code>,本篇整理的主要是基于个人已有经验进行提要，简化和再解释，不够完整</p><h1 id="使用Promise-和简单解释"><a href="#使用Promise-和简单解释" class="headerlink" title="使用Promise 和简单解释"></a>使用Promise 和简单解释</h1><h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// executor (生产者代码，"singer")</span></span><br><span class="line">  <span class="comment">// 根据你自己的逻辑</span></span><br><span class="line">  <span class="comment">//   调用resolve(value)</span></span><br><span class="line">  <span class="comment">//   或者调用reject(error)</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/19-03-22-promise/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <p>个人其实建议阅读下方的参考链接<code>zh.javascript.info</code>,本篇整理的主要是基于个人已有经验进行提要，简化和再解释，不够完整</p>
+<h1 id="使用Promise-和简单解释"><a href="#使用Promise-和简单解释" class="headerlink" title="使用Promise 和简单解释"></a>使用Promise 和简单解释</h1><h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// executor (生产者代码，"singer")</span></span><br><span class="line">  <span class="comment">// 根据你自己的逻辑</span></span><br><span class="line">  <span class="comment">//   调用resolve(value)</span></span><br><span class="line">  <span class="comment">//   或者调用reject(error)</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Promise的内部状态"><a href="#Promise的内部状态" class="headerlink" title="Promise的内部状态"></a>Promise的内部状态</h2><ul>
+<li>state —— 最初是 “pending”，然后被改为 “fulfilled” 或 “rejected”，</li>
+<li>result —— 一个任意值，最初是 undefined。</li>
+</ul>
+<p>当 executor 完成任务时，应调用下列之一：</p>
+<ul>
+<li>resolve(value) —— 说明任务已经完成：<ul>
+<li>将 state 设置为 “fulfilled”，</li>
+<li>sets result to value。</li>
+</ul>
+</li>
+<li>reject(error) —— 表明有错误发生：<ul>
+<li>将 state 设置为 “rejected”，</li>
+<li>将 result 设置为 error。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://zh.javascript.info/article/promise-basics/promise-resolve-reject.png" alt="状态图"></p>
+<p>总之，executor 应该完成任务（通常会需要时间），然后调用 resolve 或 reject 来改变 promise 对象的对应状态。</p>
+<p><strong>注意的是</strong> 状态一旦从pending变化后， 其它代码都会被忽略</p>
+<p>let promise = new Promise(function(resolve, reject) {<br>  resolve(“done”);</p>
+<p>  reject(new Error(“…”)); // 被忽略<br>  setTimeout(() =&gt; resolve(“…”)); // 被忽略<br>});</p>
+<h2 id="then-catch-结果处理"><a href="#then-catch-结果处理" class="headerlink" title="then/catch 结果处理"></a>then/catch 结果处理</h2><p>then返回的是一个promise对象（准确的说是带有then方法的对象）</p>
+<p>then(处理resolve的结果的函数,处理reject状态的函数)</p>
+<p>then(处理resolve的结果的函数)</p>
+<p>then(null,处理reject状态的函数) || .catch(处理reject状态的函数)</p>
+<blockquote>
+<p>更确切地说，当<code>.then/catch</code> 处理器应该执行时，它会首先进入内部队列。<code>JavaScript</code> 引擎从队列中提取处理器，并在当前代码完成时执行 <code>setTimeout(..., 0)</code>。</p>
+</blockquote>
+<blockquote>
+<p>换句话说，<code>.then(handler)</code> 会被触发，会执行类似于 <code>setTimeout(handler, 0)</code> 的动作。</p>
+</blockquote>
+<p>在下述示例中，<code>promise</code> 被立即 <code>resolved</code>，因此 <code>.then(alert)</code> 被立即触发：<code>alert</code> 会进入队列，在代码完成之后立即执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> // an immediately resolved promise</span><br><span class="line">let promise = new Promise(resolve =&gt; resolve(&quot;done!&quot;));</span><br><span class="line"></span><br><span class="line">promise.then(alert); // 完成！（在当前代码完成之后）</span><br><span class="line"></span><br><span class="line">alert(&quot;code finished&quot;); // 这个 alert 会最先显示</span><br></pre></td></tr></table></figure>
+<p>因此在 <code>.then</code> 之后的代码总是在处理器之前被执行（即使实在预先解决 promise 的情况下）。通常这并不重要，只会在特定情况下才会重要。</p>
+<h2 id="Promise-链"><a href="#Promise-链" class="headerlink" title="Promise 链"></a>Promise 链</h2><p>首先因为then返回的是promise对象(准确说是带有then方法的对象)，和原来的不同，从api角度看是一个新的对象，其中return改变了 结果值</p>
+<p>和原来的不同，不会覆盖原来的</p>
+<p><img src="https://zh.javascript.info/article/promise-chaining/promise-then-many.png" alt="图意"></p>
+<p>然后处理程序的返回值里也可以 返回promise</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">1</span>), <span class="number">1000</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">  alert(result); <span class="comment">// 1</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123; <span class="comment">// (*)</span></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(result * <span class="number">2</span>), <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>所以假设<code>loadScript = function(url){ return Promise ...; }</code></p>
+<p>那么可以,来顺序加载脚本</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">loadScript(<span class="string">"/article/promise-chaining/one.js"</span>)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">script</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> loadScript(<span class="string">"/article/promise-chaining/two.js"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">script</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> loadScript(<span class="string">"/article/promise-chaining/three.js"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">script</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//  work on one two three</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="链上的错误处理"><a href="#链上的错误处理" class="headerlink" title="链上的错误处理"></a>链上的错误处理</h3><p>promise 链在这方面做的很棒。当一个 promise reject 时，代码控制流程跳到链中最近的 rejection 处理程序。这在实践中非常方便。</p>
+<p>隐式 try…catch ,如果在execute中出现 throw，那么会和 reject方法传递的类似，被promise丢入catch里,所以这里意味着非同步的代码不会被处理，例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Whoops!"</span>);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;).catch(alert);</span><br></pre></td></tr></table></figure>
+<p>同样 如果在过程中 throw 或发生错误，也就意味着返回一个rejected promise</p>
+<p>在catch块中可以重新再抛出错误，也可以处理掉错误</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">XXX</span><br><span class="line">.catch(<span class="function"><span class="params">e</span>=&gt;</span>&#123;<span class="comment">/*处理*/</span>&#125;)</span><br><span class="line">.then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="comment">/*如果上面catch正常处理*/</span>&#125;)</span><br></pre></td></tr></table></figure>
+<p>这里的建议是 继承实现你希望的Error类，在处理过程中控制错误对象的类型</p>
+<p>如果没有错误处理，浏览器中 通过<code>unhandledrejection</code>捕获它</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;unhandledrejection&apos;, function(event) &#123;</span><br><span class="line">  // the event object has two special properties:</span><br><span class="line">  alert(event.promise); // [object Promise] - the promise that generated the error</span><br><span class="line">  alert(event.reason); // Error: Whoops! - the unhandled error object</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">new Promise(function() &#123;</span><br><span class="line">  throw new Error(&quot;Whoops!&quot;);</span><br><span class="line">&#125;); // no catch to handle the error</span><br></pre></td></tr></table></figure>
+<h1 id="js-promise-cache-example"><a href="#js-promise-cache-example" class="headerlink" title="js+promise+cache example"></a>js+promise+cache example</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function loadCached(url) &#123;</span><br><span class="line">  let cache = loadCached.cache || (loadCached.cache = new Map());</span><br><span class="line"></span><br><span class="line">  if (cache.has(url)) &#123;</span><br><span class="line">    return Promise.resolve(cache.get(url)); // (*)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return fetch(url)</span><br><span class="line">    .then(response =&gt; response.text())</span><br><span class="line">    .then(text =&gt; &#123;</span><br><span class="line">      cache[url] = text;</span><br><span class="line">      return text;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>之后使用<code>loadCached(url).then(…)</code></p>
+<h1 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">1</span>), <span class="number">3000</span>)), <span class="comment">// 1</span></span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">2</span>), <span class="number">2000</span>)), <span class="comment">// 2</span></span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">3</span>), <span class="number">1000</span>))  <span class="comment">// 3</span></span><br><span class="line">]).then(alert); <span class="comment">// 1,2,3 when promises are ready: each promise contributes an array member</span></span><br></pre></td></tr></table></figure>
+<p>在 3 秒之后被处理，然后它的结果就是一个<code>[1, 2, 3]</code>数组：</p>
+<p>它们的相对顺序是相同的。尽管第一个 promise 需要很长的时间来解决，但它仍然是结果数组中的第一个。</p>
+<p>这里可以看到，不同处理之间是并行的，结果位置是对应插槽的</p>
+<p>实例，并行获取资源，统一等待结束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let urls = [</span><br><span class="line">  &apos;https://api.github.com/users/iliakan&apos;,</span><br><span class="line">  &apos;https://api.github.com/users/remy&apos;,</span><br><span class="line">  &apos;https://api.github.com/users/jeresig&apos;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">// map every url to the promise fetch(github url)</span><br><span class="line">let requests = urls.map(url =&gt; fetch(url));</span><br><span class="line"></span><br><span class="line">// Promise.all waits until all jobs are resolved</span><br><span class="line">Promise.all(requests)</span><br><span class="line">  .then(responses =&gt; responses.forEach(</span><br><span class="line">    response =&gt; alert(`$&#123;response.url&#125;: $&#123;response.status&#125;`)</span><br><span class="line">  ));</span><br></pre></td></tr></table></figure>
+<p>如果任何 promise 为 rejected，Promise.all 就会立即以 error reject。重要的细节是 promise 没有提供 “cancel” 或 “abort” 执行方法。因此，其他 promise 会继续执行，并最终为 settle，但它们的结果会被忽略。</p>
+<p>所以建议的是，如果要使用all，那么在每个处理内部把错误处理掉，这样就不会单个的错误导致整个promise结束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Promise.all(</span><br><span class="line">  fetch(&apos;https://api.github.com/users/iliakan&apos;).catch(err =&gt; err),</span><br><span class="line">  fetch(&apos;https://api.github.com/users/remy&apos;).catch(err =&gt; err),</span><br><span class="line">  fetch(&apos;http://no-such-url&apos;).catch(err =&gt; err)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>原始</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">let urls = [</span><br><span class="line">  &apos;https://api.github.com/users/iliakan&apos;,</span><br><span class="line">  &apos;https://api.github.com/users/remy&apos;,</span><br><span class="line">  &apos;https://api.github.com/users/jeresig&apos;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">// make fetch requests</span><br><span class="line">Promise.all(urls.map(url =&gt; fetch(url)))</span><br><span class="line">  // map each response to response.json()</span><br><span class="line">  .then(responses =&gt; Promise.all(</span><br><span class="line">    responses.map(r =&gt; r.json())</span><br><span class="line">  ))</span><br><span class="line">  // show name of each user</span><br><span class="line">  .then(users =&gt; &#123;  // (*)</span><br><span class="line">    for(let user of users) &#123;</span><br><span class="line">      alert(user.name);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>改进</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">let urls = [</span><br><span class="line">  &apos;https://api.github.com/users/iliakan&apos;,</span><br><span class="line">  &apos;/&apos;,</span><br><span class="line">  &apos;http://no-such-url&apos;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">Promise.all(</span><br><span class="line">    urls.map(url =&gt; fetch(url).catch(err =&gt; err))</span><br><span class="line">  )</span><br><span class="line">  .then(responses =&gt; Promise.all(</span><br><span class="line">    // if it&apos;s an error then pass on</span><br><span class="line">    // otherwise response.json() and catch errors as results</span><br><span class="line">    responses.map(r =&gt; r instanceof Error ? r : r.json().catch(err =&gt; err))</span><br><span class="line">  ))</span><br><span class="line">  .then(results =&gt; &#123;</span><br><span class="line">    alert(results[0].name); // Ilya Kantor</span><br><span class="line">    alert(results[1]); // SyntaxError: Unexpected token &lt; in JSON at position 0</span><br><span class="line">    alert(results[2]); // TypeError: failed to fetch (text may vary)</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h2><p>相对于<code>Promise.all</code>类似,区别是只会等最快的完成</p>
+<h1 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h1><p>更舒适的方法使用promise</p>
+<h2 id="async"><a href="#async" class="headerlink" title="async"></a>async</h2><p>放在函数前，总会返回promise,如果不是则会把函数封装成promise</p>
+<h2 id="await"><a href="#await" class="headerlink" title="await"></a>await</h2><p>await 关键字使 JavaScript 等待，直到 promise 得到解决并返回其结果。</p>
+<p>不能在常规函数中使用 await,await 在顶层代码中无效, 我们需要将 await 代码封装在一个async 函数中</p>
+<p>await + promise/thenable函数</p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>正常的话 返回结果，否则抛出error</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="https://zh.javascript.info/article/promise-chaining/promise-handler-variants.png" alt="img"></p>
+<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="http://www.ituring.com.cn/article/66566" target="_blank" rel="noopener">【翻译】Promises/A+规范</a></p>
+<p><a href="https://zh.javascript.info/promise-basics" target="_blank" rel="noopener">Promise Tutorial</a></p>
+<p><a href="https://zh.javascript.info/promise-chaining" target="_blank" rel="noopener">Promise chaining</a></p>
+
       
     </div>
 
@@ -1296,117 +1199,83 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-03-21-vuex/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-03-21-vuex/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/19-03-21-vuex/" class="post-title-link" itemprop="url">vuex 源码阅读</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-03-21-vuex/" class="post-title-link" itemprop="url">vuex 源码阅读</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2019-03-21 11:20:14" itemprop="dateCreated datePublished" datetime="2019-03-21T11:20:14+08:00">2019-03-21</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/vue/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/vue/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-03-21-vuex/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/19-03-21-vuex/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-03-21-vuex/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -1417,19 +1286,186 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>本文对应版本 <code>b58d3d6a6426e901175a04bf6dcf206561cc82f5</code></p><blockquote>
+          <p>本文对应版本 <code>b58d3d6a6426e901175a04bf6dcf206561cc82f5</code></p>
+<blockquote>
 <p>获得代码</p>
-</blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin https://github.com/vuejs/vuex.git</span><br><span class="line">git fetch origin</span><br><span class="line">git checkout b58d3d6a6426e901175a04bf6dcf206561cc82f5</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/19-03-21-vuex/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin https://github.com/vuejs/vuex.git</span><br><span class="line">git fetch origin</span><br><span class="line">git checkout b58d3d6a6426e901175a04bf6dcf206561cc82f5</span><br></pre></td></tr></table></figure>
+<h1 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h1><p>是个啥，状态管理工具</p>
+<p>先了解如何用</p>
+<p>前置知识</p>
+<p><a href="https://cn.vuejs.org/v2/guide/mixins.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/mixins.html</a></p>
+<p><a href="https://cn.vuejs.org/v2/guide/plugins.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/plugins.html</a></p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">./</span><br><span class="line">├── helpers.js 简化 一些映射代码的编写，建议最后看【以下文档写的是按照我的阅读顺序写的】</span><br><span class="line">├── index.esm.js 为了注入Vue</span><br><span class="line">├── index.js 为了注入Vue</span><br><span class="line">├── mixin.js 为了注入Vue</span><br><span class="line">├── module</span><br><span class="line">│   ├── module-collection.js 模块化的树状结构，主要对原来json配置的改为内部的实现结构</span><br><span class="line">│   └── module.js 模块化的实现 单个模块</span><br><span class="line">├── plugins</span><br><span class="line">│   ├── devtool.js 辅助</span><br><span class="line">│   └── logger.js 辅助</span><br><span class="line">├── store.js 核心实现，实现commit，dispatch 等，对module分析结果 进行再解构，让访问简洁，同时做一些 访问保护检测</span><br><span class="line">└── util.js 单纯工具与vuex 关系性极小</span><br></pre></td></tr></table></figure>
+<h2 id="依赖-表面的"><a href="#依赖-表面的" class="headerlink" title="依赖(表面的)"></a>依赖(表面的)</h2><table>
+<thead>
+<tr>
+<th>文件</th>
+<th>import 依赖</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mixin</td>
+<td></td>
+</tr>
+<tr>
+<td>util</td>
+<td></td>
+</tr>
+<tr>
+<td>helpers</td>
+<td></td>
+</tr>
+<tr>
+<td>store.js</td>
+<td>依赖见下方</td>
+</tr>
+<tr>
+<td>index.js/index.esm.js</td>
+<td>store.js &amp; helpers.js</td>
+</tr>
+<tr>
+<td>plugins/devtool</td>
+<td></td>
+</tr>
+<tr>
+<td>plugins/logger</td>
+<td>util:deepCopy</td>
+</tr>
+<tr>
+<td>module/module</td>
+<td>util:forEachValue</td>
+</tr>
+<tr>
+<td>module/module-collection</td>
+<td>module:Module , util:{ assert, forEachValue }</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注</strong> 之所以说是表面的，实际上比如logger是有调用store里面的方法的，比如subscribe</p>
+<h1 id="代码阅读"><a href="#代码阅读" class="headerlink" title="代码阅读"></a>代码阅读</h1><h2 id="index-index-esm-js"><a href="#index-index-esm-js" class="headerlink" title="index/index.esm.js"></a>index/index.esm.js</h2><p>主要是方法导出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Store, install &#125; from &apos;./store&apos;</span><br><span class="line">import &#123; mapState, mapMutations, mapGetters, mapActions, createNamespacedHelpers &#125; from &apos;./helpers&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="mixin-js"><a href="#mixin-js" class="headerlink" title="mixin.js"></a>mixin.js</h2><p>主要是按照vue的mixin规则，根绝vue版本，向vue里注入 vuex，也就是$store</p>
+<p>规则是,有this.$options.store则 this.$store= $options.store/store() 根据是不是函数</p>
+<p>没有的话，用this.$options.parent.$store</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">vuexInit</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> options = <span class="keyword">this</span>.$options</span><br><span class="line">  <span class="comment">// store injection</span></span><br><span class="line">  <span class="keyword">if</span> (options.store) &#123;</span><br><span class="line">    <span class="keyword">this</span>.$store = <span class="keyword">typeof</span> options.store === <span class="string">'function'</span></span><br><span class="line">      ? options.store()</span><br><span class="line">      : options.store</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (options.parent &amp;&amp; options.parent.$store) &#123;</span><br><span class="line">    <span class="keyword">this</span>.$store = options.parent.$store</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="util-js"><a href="#util-js" class="headerlink" title="util.js"></a>util.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">find</span> (<span class="params">list, f</span>) //<span class="title">list</span>中<span class="title">f</span>函数返回<span class="title">true</span>的第一个值</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">export</span> <span class="title">function</span> <span class="title">deepCopy</span> (<span class="params">obj, cache = []</span>) // 带有处理指针循环结构的 <span class="title">deepCopy</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">export</span> <span class="title">function</span> <span class="title">forEachValue</span> (<span class="params">obj, fn</span>) // 遍历<span class="title">obj</span>的所有<span class="title">k</span>-<span class="title">v</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">export</span> <span class="title">function</span> <span class="title">isObject</span> (<span class="params">obj</span>)</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">export</span> <span class="title">function</span> <span class="title">isPromise</span> (<span class="params">val</span>)</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">export</span> <span class="title">function</span> <span class="title">assert</span> (<span class="params">condition, msg</span>)</span></span><br></pre></td></tr></table></figure>
+<h2 id="plugins"><a href="#plugins" class="headerlink" title="plugins/"></a>plugins/</h2><h3 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a>devtool</h3><p>目测是一些调试相关的钩子挂载，TODO</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target = <span class="keyword">typeof</span> <span class="built_in">window</span> !== <span class="string">'undefined'</span></span><br><span class="line">  ? <span class="built_in">window</span></span><br><span class="line">  : <span class="keyword">typeof</span> global !== <span class="string">'undefined'</span></span><br><span class="line">    ? global</span><br><span class="line">    : &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> devtoolHook = target.__VUE_DEVTOOLS_GLOBAL_HOOK__</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">devtoolPlugin</span> (<span class="params">store</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!devtoolHook) <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">  store._devtoolHook = devtoolHook</span><br><span class="line"></span><br><span class="line">  devtoolHook.emit(<span class="string">'vuex:init'</span>, store)</span><br><span class="line"></span><br><span class="line">  devtoolHook.on(<span class="string">'vuex:travel-to-state'</span>, targetState =&gt; &#123;</span><br><span class="line">    store.replaceState(targetState)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  store.subscribe(<span class="function">(<span class="params">mutation, state</span>) =&gt;</span> &#123;</span><br><span class="line">    devtoolHook.emit(<span class="string">'vuex:mutation'</span>, mutation, state)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="logger"><a href="#logger" class="headerlink" title="logger"></a>logger</h3><p>嗯 第一行 <code>// Credits: borrowed code from fcomb/redux-logger</code></p>
+<p>借来的代码，依赖上 只用了util的deepCopy</p>
+<p>基本上是输出 state状况用于调试的</p>
+<h2 id="module"><a href="#module" class="headerlink" title="module/"></a>module/</h2><h3 id="module-1"><a href="#module-1" class="headerlink" title="module"></a>module</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Module:</span><br><span class="line">  constructor (rawModule, runtime) &#123;</span><br><span class="line">    this.runtime = runtime</span><br><span class="line">    this._children = Object.create(null)</span><br><span class="line">    this._rawModule = rawModule</span><br><span class="line">    const rawState = rawModule.state</span><br><span class="line">    this.state = (typeof rawState === &apos;function&apos; ? rawState() : rawState) || &#123;&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>child 操作:对<code>this._children</code>的增删</p>
+<p>update(rawModule):对namespaced,actions,mutations,getters 有则覆盖的更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">update (rawModule) &#123;</span><br><span class="line">  this._rawModule.namespaced = rawModule.namespaced</span><br><span class="line">  if (rawModule.actions) &#123;</span><br><span class="line">    this._rawModule.actions = rawModule.actions</span><br><span class="line">  &#125;</span><br><span class="line">  if (rawModule.mutations) &#123;</span><br><span class="line">    this._rawModule.mutations = rawModule.mutations</span><br><span class="line">  &#125;</span><br><span class="line">  if (rawModule.getters) &#123;</span><br><span class="line">    this._rawModule.getters = rawModule.getters</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>除此以外就是 在该class上 foreach再封装了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">forEachChild (fn) </span><br><span class="line">forEachGetter (fn) </span><br><span class="line">forEachAction (fn) </span><br><span class="line">forEachMutation (fn)</span><br></pre></td></tr></table></figure>
+<h3 id="module-collection"><a href="#module-collection" class="headerlink" title="module-collection"></a>module-collection</h3><p>export:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export default class ModuleCollection &#123;</span><br><span class="line">  constructor (rawRootModule) &#123;</span><br><span class="line">    // register root module (Vuex.Store options)</span><br><span class="line">    this.register([], rawRootModule, false)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>这边一个runtime有啥用,这里传的false，下面默不传是true，在Module里只是存一下，TODO</p>
+<p>function makeAssertionMessage // 生成 assert错误message</p>
+<p>使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> functionAssert = &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> objectAssert = &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> assertTypes = &#123;</span><br><span class="line">  getters: functionAssert,</span><br><span class="line">  mutations: functionAssert,</span><br><span class="line">  actions: objectAssert</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">assertRawModule</span> (<span class="params">path, rawModule</span>) </span>&#123;</span><br></pre></td></tr></table></figure>
+<p>来检测是否是个合法的RawModule</p>
+<p>这里实现可以看到，rawModule也可以不含getters/mutations/actions，如果含有则需要分别是function/function/object(function / obj.handler == function)</p>
+<p>然后发现一个有点意思的东西，之前没看过源码还不知道， <code>process.env.NODE_ENV !== &#39;production&#39;</code>才会assert</p>
+<p>也就是开发环境才会assert，产品环境去掉</p>
+<p>get:按照 从this.root开始，按照上面设计的Module Class的层级访问, <code>this.root._children[path[0]]._children[path[1]]...</code></p>
+<p>解释register</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">register (path, rawModule, runtime = true) &#123;</span><br></pre></td></tr></table></figure>
+<p>靠外部传来的rawModule，作用是把 rawModule中描述的层级关系的modules，递归的解析成为内部实现的Module，这里的path只是配合内部实现的get，方便查找树状上的Module，是临时生成的一个传递变量</p>
+<p>这里也可以看到，实现过程中重名的话是后者覆盖前者.</p>
+<p>unregister (path) {//通过path定位 也就是上面get的办法，然后删除，需要满足 路径上的runtime都为true TODO</p>
+<blockquote>
+<p>getNamespace (path) { </p>
+</blockquote>
+<p>看起来像是 <code>path.join(&#39;/&#39;)</code>实际上，是只会join有namespaced的每一层</p>
+<blockquote>
+<p>update (rawRootModule) / function update (path, targetModule, newModule) {</p>
+</blockquote>
+<p>这两个update的作用就是在已经建立Module树上，进行更新，其中如果遇到树的结构不同则忽略掉，更新的过程不会变更树结构，只会对namespaced、actions、mutations、getters进行替换(更新)</p>
+<h2 id="helpers"><a href="#helpers" class="headerlink" title="helpers"></a>helpers</h2><p>export:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export const createNamespacedHelpers = (namespace) =&gt; (&#123;</span><br><span class="line">  mapState: mapState.bind(null, namespace),</span><br><span class="line">  mapGetters: mapGetters.bind(null, namespace),</span><br><span class="line">  mapMutations: mapMutations.bind(null, namespace),</span><br><span class="line">  mapActions: mapActions.bind(null, namespace)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><code>function normalizeMap (map)</code> 把array，obj转化成<code>[{&#39;key&#39;:,&#39;val&#39;:},...]</code></p>
+<p><code>function normalizeNamespace (fn) { // 函数参数预处理(namespace,map) -&gt; fn(namespace,map)</code></p>
+<p><code>function getModuleByNamespace (store, helper, namespace) { return store._modulesNamespaceMap[namespace]</code></p>
+<p>上面封了一层以后，每个<code>map×××</code> 被export出的都是单参数了</p>
+<p>看了具体实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mapState: .vuex=true &#123;支持devtools&#125;</span><br><span class="line">mapMutations: </span><br><span class="line">mapActions: </span><br><span class="line">mapGetters: .vuex=true &#123;支持devtools&#125;</span><br></pre></td></tr></table></figure>
+<p>除了getter，其它都是有namespace用namespace所指的，没有就用全局的<code>this.$store</code>里的</p>
+<p>getter 特殊在全是在<code>this.$store.getters[]</code>里，如果有namespace则是<code>namespace+val</code>构成新的<code>val</code></p>
+<h2 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h2><p>最后，最大的一个,505行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import applyMixin from &apos;./mixin&apos;</span><br><span class="line">import devtoolPlugin from &apos;./plugins/devtool&apos;</span><br><span class="line">import ModuleCollection from &apos;./module/module-collection&apos;</span><br><span class="line">import &#123; forEachValue, isObject, isPromise, assert &#125; from &apos;./util&apos;</span><br></pre></td></tr></table></figure>
+<p>export:</p>
+<p><code>install &amp;&amp; Class Store</code></p>
+<p>先看install，也就是调用applyMixin(Vue)进行注入</p>
+<p>Store上这里分析源码，省略一些错误判断的解释了，只要说说逻辑</p>
+<p>Store:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">constructor (options = &#123;&#125;) &#123;</span><br><span class="line">  const &#123;</span><br><span class="line">    plugins = [],</span><br><span class="line">    strict = false</span><br><span class="line">  &#125; = options</span><br><span class="line"></span><br><span class="line">  // store internal state</span><br><span class="line">  this._committing = false</span><br><span class="line">  this._actions = Object.create(null)</span><br><span class="line">  this._actionSubscribers = []</span><br><span class="line">  this._mutations = Object.create(null)</span><br><span class="line">  this._wrappedGetters = Object.create(null)</span><br><span class="line">  this._modules = new ModuleCollection(options) // 这里调用前面实现的 递归解析options中的modules</span><br><span class="line">  this._modulesNamespaceMap = Object.create(null)</span><br><span class="line">  this._subscribers = []</span><br><span class="line">  this._watcherVM = new Vue() // TODO 这个是什么用</span><br><span class="line"></span><br><span class="line">  // bind commit and dispatch to self // 这一段没有看懂，是为了兼容哪个版本的js吗，这两个本身已经实现了在下面了啊 怎么还要再绑定一次 TODO</span><br><span class="line">  const store = this</span><br><span class="line">  const &#123; dispatch, commit &#125; = this</span><br><span class="line">  this.dispatch = function boundDispatch (type, payload) &#123;</span><br><span class="line">    return dispatch.call(store, type, payload)</span><br><span class="line">  &#125;</span><br><span class="line">  this.commit = function boundCommit (type, payload, options) &#123;</span><br><span class="line">    return commit.call(store, type, payload, options)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // strict mode //控制是否启用StrictMode store._vm.$watch(function () &#123; return this._data.$$state &#125;, 严格要求禁止在mutation handler以外的地方修改_data.$$state</span><br><span class="line"></span><br><span class="line">  实现原理是 利用vue进行watch</span><br><span class="line"></span><br><span class="line">  在允许的函数修改的时候修改`_committing 为 true` 环绕 见`_withCommit`</span><br><span class="line">  </span><br><span class="line">  当watch到修改时，判断是否`_committing=true`这样就可以判断是否被外部修改</span><br><span class="line"></span><br><span class="line">  this.strict = strict</span><br><span class="line"></span><br><span class="line">  const state = this._modules.root.state // 获取的是 生成的module的根部的state</span><br><span class="line"></span><br><span class="line">  // 递归初始化 root module 以及所有子modules.</span><br><span class="line">  // 并且收集所有module getters mutation等  到store._下面 比如`_wrappedGetters`</span><br><span class="line">  installModule(this, state, [], this._modules.root)</span><br><span class="line"></span><br><span class="line">  // 初始化 store._vm , 作为回调的使用</span><br><span class="line">  // (also registers _wrappedGetters as computed properties)</span><br><span class="line">  resetStoreVM(this, state)</span><br><span class="line"></span><br><span class="line">  // 使用插件</span><br><span class="line">  plugins.forEach(plugin =&gt; plugin(this))</span><br><span class="line"></span><br><span class="line">  const useDevtools = options.devtools !== undefined ? options.devtools : Vue.config.devtools</span><br><span class="line">  if (useDevtools) &#123;</span><br><span class="line">    devtoolPlugin(this)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>function unifyObjectStyle (type, payload, options) { //感觉是特殊处理type的情况 返回{type,payload,options}</p>
+<h3 id="makeLocalContext-store-namespace-path"><a href="#makeLocalContext-store-namespace-path" class="headerlink" title="makeLocalContext(store,namespace,path)"></a>makeLocalContext(store,namespace,path)</h3><p>如果没有namespace 就用root上的</p>
+<p>如果有则建立 本地化 的 dispatch commit getters 和 state</p>
+<p>建立的实现过程 一个是调用unifyObjectStyle处理type的特殊情况，另一个就是给type 加上namespace</p>
+<p>getters和state，使用defineProperties写到local上，注释说是因为它们会被vm更新，应该lazily的获取</p>
+<p>其中getters的makeLocalGetters的原理是 namespace对比，和从<code>store.getters[type]</code>中读取</p>
+<p>makeLocalContext的结果会写入到module.context</p>
+<h3 id="installModule"><a href="#installModule" class="headerlink" title="installModule"></a>installModule</h3><p>如果当前路径有namespace， 那把它丢到<code>store._modulesNamespaceMap[namespace]</code> 和之前的获取对应</p>
+<p>有点没看懂 set state，按理说 在 new ModuleCollection(options)就应该已经 在 new Module的部分设置了state，这里是为了触发Vue.set()?</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.forEachMutation(<span class="function">(<span class="params">mutation, key</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> namespacedType = namespace + key</span><br><span class="line">  registerMutation(store, namespacedType, mutation, local)</span><br><span class="line">  <span class="comment">// 简单的讲 就是把 所有mutations压入 `store._mutations[namespace+mutationname]，之所以是压入，是因为 可能出现多个相同的 namespace+mutationname</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.forEachAction(<span class="function">(<span class="params">action, key</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> type = action.root ? key : namespace + key</span><br><span class="line">  <span class="keyword">const</span> handler = action.handler || action</span><br><span class="line">  registerAction(store, type, handler, local)</span><br><span class="line">  <span class="comment">// 入口参数和上面还是类似，这个是塞入 store._actions</span></span><br><span class="line">  <span class="comment">// 但是看了源码才知道，action的交付的第二个参数</span></span><br><span class="line">  <span class="comment">// &#123;</span></span><br><span class="line">  <span class="comment">//  dispatch: local.dispatch,</span></span><br><span class="line">  <span class="comment">//  commit: local.commit,</span></span><br><span class="line">  <span class="comment">//  getters: local.getters,</span></span><br><span class="line">  <span class="comment">//  state: local.state,</span></span><br><span class="line">  <span class="comment">//  rootGetters: store.getters,</span></span><br><span class="line">  <span class="comment">//  rootState: store.state &#125;</span></span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.forEachGetter(<span class="function">(<span class="params">getter, key</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> namespacedType = namespace + key</span><br><span class="line">  registerGetter(store, namespacedType, getter, local)</span><br><span class="line">  <span class="comment">// 入口参数和上面还是类似，这个是塞入 store._wrappedGetters</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">并对所有子<span class="built_in">module</span> installModule()</span><br></pre></td></tr></table></figure>
+<p>整个install就是把 构建出的module 拆出所有的 操作函数</p>
+<h3 id="resetStoreVM"><a href="#resetStoreVM" class="headerlink" title="resetStoreVM"></a>resetStoreVM</h3><p><code>store._vm = new Vue({data:{$$state:state},computed})</code> 其中 computed是 上面 提取出的<code>_wrappedGetters</code>改动的，改动出的computed将 有和getters相同的keys，区别是 它会从<code>store._vm[key]</code>的方式去读数据</p>
+<p>在这一步设置<code>_vm</code>时，临时设置Vue.config.silent</p>
+<p>如果原来有<code>._vm</code>则调用销毁</p>
+<h2 id="vuex-API"><a href="#vuex-API" class="headerlink" title="vuex API"></a>vuex API</h2><p>至此 内部的基本结构就结束了，来看看调用api对应的实现</p>
+<p>先看 官网的图 <a href="https://raw.githubusercontent.com/vuejs/vuex/dev/docs/.vuepress/public/vuex.png" target="_blank" rel="noopener">VUEX</a></p>
+<h3 id="store-state-xxx"><a href="#store-state-xxx" class="headerlink" title="store.state.xxx"></a>store.state.xxx</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">get</span> state () &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>._vm._data.$$state</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="commit-type-payload-options"><a href="#commit-type-payload-options" class="headerlink" title="commit(type,payload,options)"></a>commit(type,payload,options)</h3><p>这里实现的过程，通过解构出的<code>this._mutations[type]</code>得到type对应的mutations 的函数句柄，</p>
+<p>然后调用有withcommit包围的，进行 函数 执行</p>
+<p>所有执行以后，对所有<code>_subscribers</code> 通知<code>(mutation,new state)</code> , 简单的订阅模式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">"subscribe"</span> *</span><br><span class="line">plugins/logger.js:    store.subscribe((mutation, state) =&gt; &#123;</span><br><span class="line">plugins/devtool.js:  store.subscribe((mutation, state) =&gt; &#123;</span><br></pre></td></tr></table></figure>
+<h3 id="dispatch-type-payload"><a href="#dispatch-type-payload" class="headerlink" title="dispatch (type, payload)"></a>dispatch (type, payload)</h3><p>同理 通过解构出的<code>this._actions[type]</code>获得actions</p>
+<p>区别是 action的订阅者 可以指定 before 和 after，分别会在action发生前后调用，</p>
+<p><code>subscribeAction (fn)</code> 如果fn是函数则 默认变为订阅action发生前 ,否则fn应该是类似<code>{&#39;before&#39;:()=&gt;{},&#39;after&#39;:()=&gt;{}}</code>的格式</p>
+<p>关于订阅的调用，目前只在测试里看到有，其它部分没有调用</p>
+<p>除了环绕的订阅以外，就是执行对应的action,entry,如果是多个 调用Promise.all(),如果是一个直接entry<a href="payload">0</a></p>
+<h2 id="剩余的"><a href="#剩余的" class="headerlink" title="剩余的"></a>剩余的</h2><p>剩余的 hotUpdate，replaceState等 应该属于调试时使用的不属于核心功能了,watch 基本是靠的Vue的$watch</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol start="0">
+<li>整个源码阅读完后，才发现原来根本没有用到<a href="`https://vuex.vuejs.org/guide/modules.html`">module</a>这一部分，甚至都不知道，看来是没仔细读文档，原来这一块已经实现好了。</li>
+<li>从Module部分可以看到，实现rawModule相关 过程是 加了一层套把rawModule套了一层，保护了树的结构，做到期望内的更新</li>
+<li>潜在bug？ 从外部传入rawModule 的第一次构建是 <code>_rawModule=rawModule</code>,而在后面update的过程中是修改<code>_rawModule</code>的字段，可能导致 期望外的修改？ 不过根据代码，这一部分只会发生在hotUpdate</li>
+</ol>
+<h2 id="个人其它收获"><a href="#个人其它收获" class="headerlink" title="个人其它收获"></a>个人其它收获</h2><ol start="0">
+<li>实际实现的代码 除了实现想法外还有很多细节，这些细节感觉也蛮庞大？的</li>
+<li>这样path的写法? 省一些指针?感觉每次get代价会大一些</li>
+<li>reduce 的用法(<a href="http://www.runoob.com/jsref/jsref-reduce.html" target="_blank" rel="noopener">http://www.runoob.com/jsref/jsref-reduce.html</a>)</li>
+<li>bind的用法(<a href="https://blog.csdn.net/kongjunchao159/article/details/59113129" target="_blank" rel="noopener">https://blog.csdn.net/kongjunchao159/article/details/59113129</a>)</li>
+<li>es6 destructuring (<a href="https://www.deadcoderising.com/2017-03-28-es6-destructuring-an-elegant-way-of-extracting-data-from-arrays-and-objects-in-javascript/" target="_blank" rel="noopener">https://www.deadcoderising.com/2017-03-28-es6-destructuring-an-elegant-way-of-extracting-data-from-arrays-and-objects-in-javascript/</a>)</li>
+<li>get,defineProperties , 都是在调用时才计算，区别是get在原型上，而defineProperties 是在实例上(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get#Smart_self-overwriting_lazy_getters" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get#Smart_self-overwriting_lazy_getters</a>)</li>
+<li>同时 其中实现，有些注释错误，有些函数的默认参数没有设置 =false，不过个人对js不太熟，要是c++的强迫症话 感觉还是要加的</li>
+<li>getters ,函数-&gt;计算属性</li>
+<li>普通对象变化不会影响刷新，需要有getter和setter的，简单的方法就是用 new Vue({data:{xxx}});来包裹会自动加上 getter和setter</li>
+<li>发布订阅</li>
+<li>strict通过 包裹限制 只有mutation改动数据， 但建议仅在开发时使用,在发布时为了性能不使用strict</li>
+</ol>
+<p>其他:</p>
+<p>感觉要去看看Promise的源码 以及 Vue的源码了</p>
+<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><p>Module 里的runtime有啥用</p>
+<p>重复注册state、mutation等等? 有文章说是 因为module的原因，</p>
+<p>modules使用</p>
+<p>modules{<br>  模块名:{<br>    state{<br>      x:1,<br>      y:1<br>    }<br>  },<br>  模块名2:{</p>
+<p>  }<br>}</p>
+<p>模块内的mutations,getters,actions 不同层级都会被调用!? 都会被合并到根上</p>
+<p>所以要做的是方法映射出来，但是 把每个方法的所属模块的state绑定过去</p>
+<p>但是 只有mutations和actions是数组，getters是由 defineProperties来的所以只会有一个</p>
+<h1 id="TODO-1"><a href="#TODO-1" class="headerlink" title="TODO"></a>TODO</h1><p>namespace:true 可以让模块化，不让actions等绑定在global上 通过<code>module/module</code>路径访问,实现就是 根下的 map[ 拼接的module namespace路径实现的]</p>
+<p>registerModule 动态注册模块</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">registerModule (path, rawModule, options = &#123;&#125;) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>._modules.register(path, rawModule)</span><br><span class="line">    installModule(<span class="keyword">this</span>, <span class="keyword">this</span>.state, path, <span class="keyword">this</span>._modules.get(path), options.preserveState)</span><br><span class="line">    <span class="comment">// reset store to update getters...</span></span><br><span class="line">    resetStoreVM(<span class="keyword">this</span>, <span class="keyword">this</span>.state)</span><br></pre></td></tr></table></figure>
+<p>store.subscribe() vuex中间件?? ,也是发布订阅模式</p>
+<p>注册的是 和 函数指针放入数组，返回移出数组的函数，这个和vue-router里的registerHooks一样</p>
+<p>commit后</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">commit里</span><br><span class="line">    <span class="keyword">this</span>._withCommit(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      entry.forEach(<span class="function"><span class="keyword">function</span> <span class="title">commitIterator</span> (<span class="params">handler</span>) </span>&#123;</span><br><span class="line">        handler(payload)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 提交后 调用 所有订阅</span></span><br><span class="line">    <span class="keyword">this</span>._subscribers.forEach(<span class="function"><span class="params">sub</span> =&gt;</span> sub(mutation, <span class="keyword">this</span>.state))</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -1437,117 +1473,83 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-03-20-vueslot/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-03-20-vueslot/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/19-03-20-vueslot/" class="post-title-link" itemprop="url">vue slot</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-03-20-vueslot/" class="post-title-link" itemprop="url">vue slot</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2019-03-20 11:20:14" itemprop="dateCreated datePublished" datetime="2019-03-20T11:20:14+08:00">2019-03-20</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/vue/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/vue/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-03-20-vueslot/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/19-03-20-vueslot/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-03-20-vueslot/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -1558,17 +1560,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>参考:<a href="https://blog.csdn.net/qq_38128179/article/details/85273522" target="_blank" rel="noopener">https://blog.csdn.net/qq_38128179/article/details/85273522</a></p><p>父组件</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Child</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"header"</span>&gt;</span>我是header<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"footer"</span>&gt;</span>我是footer<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"abcdef"</span>&gt;</span>我是abcdef<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Child</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/19-03-20-vueslot/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <p>参考:<a href="https://blog.csdn.net/qq_38128179/article/details/85273522" target="_blank" rel="noopener">https://blog.csdn.net/qq_38128179/article/details/85273522</a></p>
+<p>父组件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Child</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"header"</span>&gt;</span>我是header<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"footer"</span>&gt;</span>我是footer<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"abcdef"</span>&gt;</span>我是abcdef<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Child</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Child<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"abcdef"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"header"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是子组件<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"footer"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>父组件中没有标注<code>slot=&quot;&quot;</code>的会被插入到 没有标注的子组件的<code>&lt;slot&gt;&lt;/slot&gt;</code></p>
+<hr>
+<p>父组件反过来解构<code>slot-scope</code></p>
+<p>Child</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span> <span class="attr">:data</span>=<span class="string">"data"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">  data() &#123;</span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">      data: [<span class="string">'Neinei'</span>,<span class="string">'Laoba'</span>,<span class="string">'Demi'</span>,<span class="string">'Feiyan'</span>]</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>父组件 这里的<code>.data</code> 和子组件的<code>:data</code>对应<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 循环数据列表 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Child</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot-scope</span>=<span class="string">"msg"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-for</span>=<span class="string">"item in msg.data"</span>&gt;</span>&#123;&#123;item&#125;&#125; <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Child</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">&lt;!-- 直接显示数据 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Child</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot-scope</span>=<span class="string">"msg"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;msg.data&#125;&#125; <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Child</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">&lt;!-- 不使用其提供的数据, 作用域插槽退变成匿名插槽 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Child</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是插槽<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Child</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -1576,17 +1578,13 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-  </section>
 
   
   <nav class="pagination">
@@ -1594,381 +1592,98 @@
   </nav>
 
 
+
           </div>
           
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
 
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Cro-Marmot</p>
-  <div class="site-description motion-element" itemprop="description"></div>
+  <div class="site-description" itemprop="description"></div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/Blog/archives/">
         
           <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">分類</span>
-        
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-count">89</span>
         <span class="site-state-item-name">標籤</span>
-        
       </div>
-    
   </nav>
+</div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/CroMarmot" title="GitHub &rarr; https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/CroMarmot" title="GitHub → https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces &rarr; https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-bug"></i>Codeforces</a>
+        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces → https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>Codeforces</a>
       </span>
-    
   </div>
 
 
 
-        </div>
       </div>
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
-          
+          <span>0%</span>
         </div>
-      
 
     </div>
   </aside>
@@ -1978,17 +1693,23 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
 
         
 
@@ -1999,28 +1720,17 @@
 
 
 
-        
       </div>
     </footer>
-
-    
-
   </div>
 
   
-  <script src="/Blog/lib/jquery/index.js?v=3.4.1"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-<script src="/Blog/js/utils.js?v=7.3.0"></script>
-  <script src="/Blog/js/motion.js?v=7.3.0"></script>
-
-
-  <script src="/Blog/js/schemes/muse.js?v=7.3.0"></script>
-
-
-<script src="/Blog/js/next-boot.js?v=7.3.0"></script>
-
+  <script src="/Blog/lib/anime.min.js"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
+<script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script>
+<script src="/Blog/js/schemes/muse.js"></script>
+<script src="/Blog/js/next-boot.js"></script>
 
 
 
@@ -2029,20 +1739,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  <script src="/Blog/js/local-search.js?v=7.3.0"></script>
-
-
+  <script src="/Blog/js/local-search.js"></script>
 
 
 
@@ -2058,88 +1755,62 @@
   
 
   
-    
       
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-    
-      
-<script type="text/x-mathjax-config">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
 <script>
-  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML', () => {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
 </script>
 
     
-  
 
   
 
-  
-
-
-  
-    
 <script>
   function loadCount() {
     var d = document, s = d.createElement('script');

@@ -1,83 +1,48 @@
 <!DOCTYPE html>
-
-
-
-
-
-<html class="theme-next muse use-motion" lang="zh-TW">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
   <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
 
-<link rel="stylesheet" href="/Blog/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/Blog/',
-    scheme: 'Muse',
-    version: '7.3.0',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
-    back2top: {"enable":true,"sidebar":true,"scrollpercent":false},
-    save_scroll: false,
-    copycode: {"enable":false,"show_result":false,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '複製',
-      copy_success: '複製成功',
-      copy_failure: '複製失敗'
-    }
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
-  <meta name="description" content="本文对应版本 638278b334199f17e052a54a0837c97624940c0c 获得代码 1234git initgit remote add origin https://github.com/vuejs/vue-router.gitgit fetch origin 638278b334199f17e052a54a0837c97624940c0cgit reset --hard">
+  <meta name="description" content="本文对应版本 638278b334199f17e052a54a0837c97624940c0c  获得代码  1234git initgit remote add origin https://github.com/vuejs/vue-router.gitgit fetch origin 638278b334199f17e052a54a0837c97624940c0cgit reset --har">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue router 源码阅读">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/19-08-30-vuerouter/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
-<meta property="og:description" content="本文对应版本 638278b334199f17e052a54a0837c97624940c0c 获得代码 1234git initgit remote add origin https://github.com/vuejs/vue-router.gitgit fetch origin 638278b334199f17e052a54a0837c97624940c0cgit reset --hard">
+<meta property="og:description" content="本文对应版本 638278b334199f17e052a54a0837c97624940c0c  获得代码  1234git initgit remote add origin https://github.com/vuejs/vue-router.gitgit fetch origin 638278b334199f17e052a54a0837c97624940c0cgit reset --har">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-02-23T09:27:03.824Z">
+<meta property="og:updated_time" content="2021-02-25T08:17:35.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue router 源码阅读">
-<meta name="twitter:description" content="本文对应版本 638278b334199f17e052a54a0837c97624940c0c 获得代码 1234git initgit remote add origin https://github.com/vuejs/vue-router.gitgit fetch origin 638278b334199f17e052a54a0837c97624940c0cgit reset --hard">
-  <link rel="canonical" href="https://cromarmot.github.io/Blog/19-08-30-vuerouter/">
+<meta name="twitter:description" content="本文对应版本 638278b334199f17e052a54a0837c97624940c0c  获得代码  1234git initgit remote add origin https://github.com/vuejs/vue-router.gitgit fetch origin 638278b334199f17e052a54a0837c97624940c0cgit reset --har">
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/19-08-30-vuerouter/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
   };
 </script>
 
@@ -89,11 +54,8 @@
 
 
 
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -102,9 +64,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -118,215 +79,177 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
-
-  <div class="container sidebar-position-right">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-
-    <div class="custom-logo-site-title">
-      <a href="/Blog/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Cro-Marmot's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切換導航欄">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Cro-Marmot's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
+
 
 
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-      
-      
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/Blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/Blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
-        
-          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
       </li>
-    
   </ul>
-
-    
-
 </nav>
-  <div class="site-search">
-    
-  <div class="popup search-popup">
-  <div class="search-header">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none"
-             placeholder="搜尋..." spellcheck="false"
-             type="text" id="search-input">
-    </div>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
   </div>
-  <div id="search-result"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-
+    </div>
   </div>
+
 </div>
     </header>
 
     
 
-    
 
-  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>
+  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>
+  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
-    <main id="main" class="main">
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content page-post-detail">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-08-30-vuerouter/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-08-30-vuerouter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">vue router 源码阅读
-
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          vue router 源码阅读
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2019-08-30 11:20:14" itemprop="dateCreated datePublished" datetime="2019-08-30T11:20:14+08:00">2019-08-30</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/vue/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/vue/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/vue/js/router/" itemprop="url" rel="index"><span itemprop="name">router</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/vue/js/router/" itemprop="url" rel="index"><span itemprop="name">router</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-08-30-vuerouter/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/19-08-30-vuerouter/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-08-30-vuerouter/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -337,11 +260,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本文对应版本 <code>638278b334199f17e052a54a0837c97624940c0c</code></p><blockquote>
+        <p>本文对应版本 <code>638278b334199f17e052a54a0837c97624940c0c</code></p>
+<blockquote>
 <p>获得代码</p>
-</blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin https://github.com/vuejs/vue-router.git</span><br><span class="line">git fetch origin 638278b334199f17e052a54a0837c97624940c0c</span><br><span class="line">git reset --hard FETCH_HEAD</span><br></pre></td></tr></table></figure><a id="more"></a>
-
-
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin https://github.com/vuejs/vue-router.git</span><br><span class="line">git fetch origin 638278b334199f17e052a54a0837c97624940c0c</span><br><span class="line">git reset --hard FETCH_HEAD</span><br></pre></td></tr></table></figure>
 <h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><p><a href="https://cn.vuejs.org/v2/guide/mixins.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/mixins.html</a></p>
 <p><a href="https://cn.vuejs.org/v2/guide/plugins.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/plugins.html</a></p>
 <h1 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h1><table>
@@ -879,454 +802,131 @@ base: __dirname,
     
     
     
-        
-      
 
       <footer class="post-footer">
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/Blog/19-08-26-design-pattern/" rel="next" title="设计模式 阅读笔记">
-                  <i class="fa fa-chevron-left"></i> 设计模式 阅读笔记
-                </a>
-              
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/Blog/19-09-02-git_subtree_vs_submodule/" rel="prev" title="git subtree vs submodule">
-                  git subtree vs submodule <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
-          </div>
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Blog/19-08-26-design-pattern/" rel="prev" title="设计模式 阅读笔记">
+      <i class="fa fa-chevron-left"></i> 设计模式 阅读笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Blog/19-09-02-git_subtree_vs_submodule/" rel="next" title="git subtree vs submodule">
+      git subtree vs submodule <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-  </div>
 
 
           </div>
           
     
-    
-  <div class="comments" id="comments">
+  <div class="comments">
     <div id="disqus_thread">
       <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
   </div>
   
-  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目錄
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            本站概要
-          </li>
-        </ul>
-      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前置知识"><span class="nav-number">1.</span> <span class="nav-text">前置知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总览"><span class="nav-number">2.</span> <span class="nav-text">总览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">2.1.</span> <span class="nav-text">目录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备"><span class="nav-number">3.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#src"><span class="nav-number">4.</span> <span class="nav-text">src/</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码阅读"><span class="nav-number">4.1.</span> <span class="nav-text">代码阅读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#components"><span class="nav-number">4.2.</span> <span class="nav-text">components</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#link-js"><span class="nav-number">4.2.1.</span> <span class="nav-text">link.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#view-js"><span class="nav-number">4.2.2.</span> <span class="nav-text">view.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-matcher-js"><span class="nav-number">4.3.</span> <span class="nav-text">create-matcher.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-route-map-js"><span class="nav-number">4.4.</span> <span class="nav-text">create-route-map.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#history"><span class="nav-number">4.5.</span> <span class="nav-text">history</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract-js"><span class="nav-number">4.5.1.</span> <span class="nav-text">abstract.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base-js"><span class="nav-number">4.5.2.</span> <span class="nav-text">base.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#errors-js"><span class="nav-number">4.5.3.</span> <span class="nav-text">errors.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hash-js"><span class="nav-number">4.5.4.</span> <span class="nav-text">hash.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html5-js"><span class="nav-number">4.5.5.</span> <span class="nav-text">html5.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index-js"><span class="nav-number">4.6.</span> <span class="nav-text">index.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-js"><span class="nav-number">4.7.</span> <span class="nav-text">install.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#util"><span class="nav-number">4.8.</span> <span class="nav-text">util</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#async-js"><span class="nav-number">4.8.1.</span> <span class="nav-text">async.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dom-js"><span class="nav-number">4.8.2.</span> <span class="nav-text">dom.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#location-js"><span class="nav-number">4.8.3.</span> <span class="nav-text">location.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#misc-js"><span class="nav-number">4.8.4.</span> <span class="nav-text">misc.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#params-js"><span class="nav-number">4.8.5.</span> <span class="nav-text">params.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#path-js"><span class="nav-number">4.8.6.</span> <span class="nav-text">path.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#push-state-js"><span class="nav-number">4.8.7.</span> <span class="nav-text">push-state.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#query-js"><span class="nav-number">4.8.8.</span> <span class="nav-text">query.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#resolve-components-js"><span class="nav-number">4.8.9.</span> <span class="nav-text">resolve-components.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#route-js"><span class="nav-number">4.8.10.</span> <span class="nav-text">route.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scroll-js"><span class="nav-number">4.8.11.</span> <span class="nav-text">scroll.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#state-key-js"><span class="nav-number">4.8.12.</span> <span class="nav-text">state-key.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#warn-js"><span class="nav-number">4.8.13.</span> <span class="nav-text">warn.js</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#examples"><span class="nav-number">6.</span> <span class="nav-text">examples</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic"><span class="nav-number">6.1.</span> <span class="nav-text">basic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hash-mode"><span class="nav-number">6.2.</span> <span class="nav-text">hash-mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nested-routes"><span class="nav-number">6.3.</span> <span class="nav-text">nested-routes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#named-routes"><span class="nav-number">6.4.</span> <span class="nav-text">named-routes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#named-view"><span class="nav-number">6.5.</span> <span class="nav-text">named-view</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#和vue实例生命周期顺序"><span class="nav-number">7.</span> <span class="nav-text">和vue实例生命周期顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个人其它收获"><span class="nav-number">8.</span> <span class="nav-text">个人其它收获</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">9.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TODO"><span class="nav-number">10.</span> <span class="nav-text">TODO</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Cro-Marmot</p>
-  <div class="site-description motion-element" itemprop="description"></div>
+  <div class="site-description" itemprop="description"></div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/Blog/archives/">
         
           <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">分類</span>
-        
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-count">89</span>
         <span class="site-state-item-name">標籤</span>
-        
       </div>
-    
   </nav>
+</div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/CroMarmot" title="GitHub &rarr; https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/CroMarmot" title="GitHub → https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces &rarr; https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-bug"></i>Codeforces</a>
+        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces → https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>Codeforces</a>
       </span>
-    
   </div>
 
 
 
-        </div>
       </div>
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前置知识"><span class="nav-number">1.</span> <span class="nav-text">前置知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总览"><span class="nav-number">2.</span> <span class="nav-text">总览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">2.1.</span> <span class="nav-text">目录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备"><span class="nav-number">3.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#src"><span class="nav-number">4.</span> <span class="nav-text">src/</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码阅读"><span class="nav-number">4.1.</span> <span class="nav-text">代码阅读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#components"><span class="nav-number">4.2.</span> <span class="nav-text">components</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#link-js"><span class="nav-number">4.2.1.</span> <span class="nav-text">link.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#view-js"><span class="nav-number">4.2.2.</span> <span class="nav-text">view.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-matcher-js"><span class="nav-number">4.3.</span> <span class="nav-text">create-matcher.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-route-map-js"><span class="nav-number">4.4.</span> <span class="nav-text">create-route-map.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#history"><span class="nav-number">4.5.</span> <span class="nav-text">history</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract-js"><span class="nav-number">4.5.1.</span> <span class="nav-text">abstract.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base-js"><span class="nav-number">4.5.2.</span> <span class="nav-text">base.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#errors-js"><span class="nav-number">4.5.3.</span> <span class="nav-text">errors.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hash-js"><span class="nav-number">4.5.4.</span> <span class="nav-text">hash.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html5-js"><span class="nav-number">4.5.5.</span> <span class="nav-text">html5.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index-js"><span class="nav-number">4.6.</span> <span class="nav-text">index.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-js"><span class="nav-number">4.7.</span> <span class="nav-text">install.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#util"><span class="nav-number">4.8.</span> <span class="nav-text">util</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#async-js"><span class="nav-number">4.8.1.</span> <span class="nav-text">async.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dom-js"><span class="nav-number">4.8.2.</span> <span class="nav-text">dom.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#location-js"><span class="nav-number">4.8.3.</span> <span class="nav-text">location.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#misc-js"><span class="nav-number">4.8.4.</span> <span class="nav-text">misc.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#params-js"><span class="nav-number">4.8.5.</span> <span class="nav-text">params.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#path-js"><span class="nav-number">4.8.6.</span> <span class="nav-text">path.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#push-state-js"><span class="nav-number">4.8.7.</span> <span class="nav-text">push-state.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#query-js"><span class="nav-number">4.8.8.</span> <span class="nav-text">query.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#resolve-components-js"><span class="nav-number">4.8.9.</span> <span class="nav-text">resolve-components.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#route-js"><span class="nav-number">4.8.10.</span> <span class="nav-text">route.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scroll-js"><span class="nav-number">4.8.11.</span> <span class="nav-text">scroll.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#state-key-js"><span class="nav-number">4.8.12.</span> <span class="nav-text">state-key.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#warn-js"><span class="nav-number">4.8.13.</span> <span class="nav-text">warn.js</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#examples"><span class="nav-number">6.</span> <span class="nav-text">examples</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic"><span class="nav-number">6.1.</span> <span class="nav-text">basic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hash-mode"><span class="nav-number">6.2.</span> <span class="nav-text">hash-mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nested-routes"><span class="nav-number">6.3.</span> <span class="nav-text">nested-routes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#named-routes"><span class="nav-number">6.4.</span> <span class="nav-text">named-routes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#named-view"><span class="nav-number">6.5.</span> <span class="nav-text">named-view</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#和vue实例生命周期顺序"><span class="nav-number">7.</span> <span class="nav-text">和vue实例生命周期顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个人其它收获"><span class="nav-number">8.</span> <span class="nav-text">个人其它收获</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">9.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TODO"><span class="nav-number">10.</span> <span class="nav-text">TODO</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
-          
+          <span>0%</span>
         </div>
-      
 
     </div>
   </aside>
@@ -1336,17 +936,23 @@ base: __dirname,
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
 
         
 
@@ -1357,28 +963,17 @@ base: __dirname,
 
 
 
-        
       </div>
     </footer>
-
-    
-
   </div>
 
   
-  <script src="/Blog/lib/jquery/index.js?v=3.4.1"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-<script src="/Blog/js/utils.js?v=7.3.0"></script>
-  <script src="/Blog/js/motion.js?v=7.3.0"></script>
-
-
-  <script src="/Blog/js/schemes/muse.js?v=7.3.0"></script>
-
-
-<script src="/Blog/js/next-boot.js?v=7.3.0"></script>
-
+  <script src="/Blog/lib/anime.min.js"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
+<script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script>
+<script src="/Blog/js/schemes/muse.js"></script>
+<script src="/Blog/js/next-boot.js"></script>
 
 
 
@@ -1387,20 +982,7 @@ base: __dirname,
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  <script src="/Blog/js/local-search.js?v=7.3.0"></script>
-
-
+  <script src="/Blog/js/local-search.js"></script>
 
 
 
@@ -1419,15 +1001,6 @@ base: __dirname,
 
   
 
-  
-
-
-  
-  <script src="/Blog/js/scrollspy.js?v=7.3.0"></script>
-<script src="/Blog/js/post-details.js?v=7.3.0"></script>
-
-
-    
 <script>
   function loadCount() {
     var d = document, s = d.createElement('script');
@@ -1439,11 +1012,12 @@ base: __dirname,
   window.addEventListener('load', loadCount, false);
 </script>
 <script>
-  function disqus_config() {
+  var disqus_config = function() {
     this.page.url = "https://cromarmot.github.io/Blog/19-08-30-vuerouter/";
     this.page.identifier = "19-08-30-vuerouter/";
-    this.page.title = 'vue router 源码阅读';};
-  function loadComments() {
+    this.page.title = "vue router 源码阅读";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
       DISQUS.reset({
         reload: true,
@@ -1455,9 +1029,7 @@ base: __dirname,
       s.setAttribute('data-timestamp', '' + +new Date());
       (d.head || d.body).appendChild(s);
     }
-  }
-    window.addEventListener('load', loadComments, false);
-  
+  });
 </script>
 
 </body>

@@ -1,60 +1,25 @@
 <!DOCTYPE html>
-
-
-
-
-
-<html class="theme-next muse use-motion" lang="zh-TW">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
   <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
 
-<link rel="stylesheet" href="/Blog/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/Blog/',
-    scheme: 'Muse',
-    version: '7.3.0',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
-    back2top: {"enable":true,"sidebar":true,"scrollpercent":false},
-    save_scroll: false,
-    copycode: {"enable":false,"show_result":false,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '複製',
-      copy_success: '複製成功',
-      copy_failure: '複製失敗'
-    }
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="编译原理课程 我的语言的范式">
 <meta name="keywords" content="c++">
@@ -64,21 +29,21 @@
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
 <meta property="og:description" content="编译原理课程 我的语言的范式">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-02-23T09:27:03.816Z">
+<meta property="og:updated_time" content="2021-02-25T08:17:35.253Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ml_ver2.md">
 <meta name="twitter:description" content="编译原理课程 我的语言的范式">
-  <link rel="canonical" href="https://cromarmot.github.io/Blog/15-10-15-ml_ver2/">
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/15-10-15-ml_ver2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
   };
 </script>
 
@@ -90,11 +55,8 @@
 
 
 
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -103,9 +65,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -119,196 +80,166 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
-
-  <div class="container sidebar-position-right">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-
-    <div class="custom-logo-site-title">
-      <a href="/Blog/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Cro-Marmot's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切換導航欄">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Cro-Marmot's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
+
 
 
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-      
-      
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/Blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/Blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
-        
-          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
       </li>
-    
   </ul>
-
-    
-
 </nav>
-  <div class="site-search">
-    
-  <div class="popup search-popup">
-  <div class="search-header">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none"
-             placeholder="搜尋..." spellcheck="false"
-             type="text" id="search-input">
-    </div>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
   </div>
-  <div id="search-result"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-
+    </div>
   </div>
+
 </div>
     </header>
 
     
 
-    
 
-  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>
+  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>
+  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
-    <main id="main" class="main">
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content page-post-detail">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/15-10-15-ml_ver2/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/15-10-15-ml_ver2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">ml_ver2.md
-
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          ml_ver2.md
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2015-10-15 00:00:00" itemprop="dateCreated datePublished" datetime="2015-10-15T00:00:00+08:00">2015-10-15</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/Unarranged/" itemprop="url" rel="index"><span itemprop="name">Unarranged</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/Unarranged/" itemprop="url" rel="index"><span itemprop="name">Unarranged</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/15-10-15-ml_ver2/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/15-10-15-ml_ver2/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="15-10-15-ml_ver2/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
             <div class="post-description">编译原理课程 我的语言的范式</div>
-          
 
         </div>
       </header>
@@ -321,17 +252,17 @@
       
         <blockquote>
 <p><strong>吐槽</strong></p>
-</blockquote><blockquote>
+</blockquote>
+<blockquote>
 <p>竟然不能被jekyll 解析</p>
-</blockquote><blockquote>
+</blockquote>
+<blockquote>
 <p>收到邮件说 两个花括号内的不能被解析</p>
-</blockquote><blockquote>
+</blockquote>
+<blockquote>
 <p>然后我把所有三层括号换成了1个{</p>
-</blockquote><h1 id="词法"><a href="#词法" class="headerlink" title="词法"></a>词法</h1><h2 id="字符和字符串"><a href="#字符和字符串" class="headerlink" title="字符和字符串"></a>字符和字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;single character&gt; ::= &lt;input character&gt; except &apos; and \</span><br><span class="line">&lt;character literal&gt; ::= &apos; &lt;single character&gt; &apos; | &apos; &lt;escape sequence&gt; &apos;</span><br><span class="line">&lt;string character&gt; ::= &lt;input character&gt; except &quot; and \ | &lt;escape character&gt;</span><br><span class="line">&lt;string characters&gt; ::= &lt;string character&gt; | &lt;string characters&gt; &lt;string character&gt;</span><br><span class="line">&lt;string literal&gt; ::= &quot; &lt;string characters&gt;? &quot;</span><br></pre></td></tr></table></figure><a id="more"></a>
-
-
-
-
+</blockquote>
+<h1 id="词法"><a href="#词法" class="headerlink" title="词法"></a>词法</h1><h2 id="字符和字符串"><a href="#字符和字符串" class="headerlink" title="字符和字符串"></a>字符和字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;single character&gt; ::= &lt;input character&gt; except &apos; and \</span><br><span class="line">&lt;character literal&gt; ::= &apos; &lt;single character&gt; &apos; | &apos; &lt;escape sequence&gt; &apos;</span><br><span class="line">&lt;string character&gt; ::= &lt;input character&gt; except &quot; and \ | &lt;escape character&gt;</span><br><span class="line">&lt;string characters&gt; ::= &lt;string character&gt; | &lt;string characters&gt; &lt;string character&gt;</span><br><span class="line">&lt;string literal&gt; ::= &quot; &lt;string characters&gt;? &quot;</span><br></pre></td></tr></table></figure>
 <h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;sign&gt; ::= &apos;+&apos; | &apos;-&apos;</span><br><span class="line">&lt;digit&gt; ::= &apos;0&apos; | &apos;1&apos; | &apos;2&apos; | &apos;3&apos; | &apos;4&apos; | &apos;5&apos; | &apos;6&apos; | &apos;7&apos; | &apos;8&apos; | &apos;9&apos; </span><br><span class="line">&lt;digits&gt; ::= &lt;digit&gt; &#123; &lt;digit&gt; &#125;</span><br><span class="line">&lt;unsigned integer&gt; ::= &lt;digits&gt;</span><br><span class="line">&lt;unsigned floating point literal&gt; ::= &lt;digits&gt; . &lt;digits&gt;</span><br><span class="line">&lt;unsigned number&gt; = &lt;unsigned integer&gt; | &lt;unsigned floating point literal&gt;</span><br><span class="line">&lt;signed integer&gt; ::= &lt;sign&gt;? &lt;unsigned integer&gt;</span><br><span class="line">&lt;signed floating point literal&gt; = &lt;sign&gt;? &lt;unsigned floating point literal&gt;</span><br><span class="line">&lt;signed number&gt; = &lt;signed integer&gt; | &lt;signed floating point literal&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;null literal&gt; ::= &apos;_null&apos;</span><br><span class="line">&lt;boolean literal&gt; ::= &apos;_true&apos; | &apos;_false&apos;</span><br><span class="line">&lt;word symbol&gt; ::= &apos;_and&apos; | &apos;_or&apos; | &apos;_not&apos; | &apos;_public&apos; | &apos;_const&apos; | &apos;_class&apos; | &apos;_para&apos; | &apos;_var&apos; | &apos;_pro&apos; | &apos;_while&apos;| &apos;_for&apos; | &apos;_foreach&apos; | &apos;_func&apos; | &apos;_if&apos; | &apos;_in&apos; | &apos;_return&apos; | &apos;_beark&apos; | &apos;_papa&apos; | &lt;null literal&gt; | &lt;boolean literal&gt; | &lt;basic type&gt;</span><br><span class="line">&lt;special symbol&gt; = &apos;+&apos; | &apos;-&apos; | &apos;*&apos; | &apos;/&apos; | &apos;\&apos; | &apos;%&apos; | &apos;=&apos; | &apos;&lt;&apos; | &apos;&gt;&apos; | &apos;&lt;=&apos; | &apos;&gt;=&apos; | &apos;==&apos; | &apos;&lt;&gt;&apos; | &apos;(&apos; | &apos;)&apos; | &apos;[&apos; | &apos;]&apos; | &apos;&#123;&apos; | &apos;&#125;&apos; | &apos;.&apos; | &apos;,&apos; | &apos;;&apos; | &apos;&quot;&apos; | &lt;word symbol&gt;</span><br><span class="line">&lt;letter&gt; = &apos;a&apos; | &apos;b&apos; | &apos;c&apos; | &apos;d&apos; | &apos;e&apos; | &apos;f&apos; | &apos;g&apos; | &apos;h&apos; | &apos;i&apos; | &apos;j&apos; | &apos;k&apos; | &apos;l&apos; | &apos;m&apos; | &apos;n&apos; | &apos;o&apos; | &apos;p&apos; | &apos;q&apos; | &apos;r&apos; | &apos;s&apos; | &apos;t&apos; | &apos;u&apos; | &apos;v&apos; | &apos;w&apos; | &apos;x&apos; | &apos;y&apos; | &apos;z&apos; | &apos;A&apos; | &apos;B&apos; | &apos;C&apos; | &apos;D&apos; | &apos;E&apos; | &apos;F&apos; | &apos;G&apos; | &apos;H&apos; | &apos;I&apos; | &apos;J&apos; | &apos;K&apos; | &apos;L&apos; | &apos;M&apos; | &apos;N&apos; | &apos;O&apos; | &apos;P&apos; | &apos;Q&apos; | &apos;R&apos; | &apos;S&apos; | &apos;T&apos; | &apos;U&apos; | &apos;V&apos; | &apos;W&apos; | &apos;X&apos; | &apos;Y&apos; | &apos;Z&apos;</span><br><span class="line">&lt;identifier&gt; = &lt;letter&gt; &#123; &lt;letter&gt; | &lt;digit&gt; &#125;</span><br><span class="line">&lt;directive&gt; = &lt;letter&gt; &#123; &lt;letter&gt; | &lt;digit&gt; &#125;</span><br><span class="line">&lt;user type&gt; ::= &lt;identifier&gt;</span><br><span class="line">&lt;simple type name&gt; ::= &lt;identifier&gt;</span><br><span class="line">&lt;expression name&gt; ::= &lt;identifier&gt; | &lt;ambiguous name&gt; . &lt;identifier&gt;</span><br><span class="line">&lt;method name&gt; ::= &lt;identifier&gt; | &lt;ambiguous name&gt;. &lt;identifier&gt;</span><br><span class="line">&lt;ambiguous name&gt;::= &lt;identifier&gt; | &lt;ambiguous name&gt;. &lt;identifier&gt;</span><br><span class="line">&lt;unsigned literal&gt; ::= &lt;unsigned number&gt; | &lt;boolean literal&gt; | &lt;character literal&gt; | &lt;string literal&gt; | &lt;null literal&gt;</span><br><span class="line">&lt;literal&gt; ::= &lt;signed number&gt; | &lt;boolean literal&gt; | &lt;character literal&gt; | &lt;string literal&gt; | &lt;null literal&gt;</span><br></pre></td></tr></table></figure>
 <p>#句法</p>
@@ -422,463 +353,134 @@
     
     
     
-        
-      
 
       <footer class="post-footer">
-          
-            
-          
           <div class="post-tags">
-            
               <a href="/Blog/tags/c/" rel="tag"># c++</a>
-            
           </div>
-        
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/Blog/15-07-24-Rowhammer.js_A_Remote_Software-Induced_Fault_Attack_in_JavaScript/" rel="next" title="Rowhammer.js">
-                  <i class="fa fa-chevron-left"></i> Rowhammer.js
-                </a>
-              
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/Blog/16-01-01-cuw.js/" rel="prev" title="CUW">
-                  CUW <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
-          </div>
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Blog/15-07-24-Rowhammer.js_A_Remote_Software-Induced_Fault_Attack_in_JavaScript/" rel="prev" title="Rowhammer.js">
+      <i class="fa fa-chevron-left"></i> Rowhammer.js
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Blog/16-01-01-cuw.js/" rel="next" title="CUW">
+      CUW <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-  </div>
 
 
           </div>
           
     
-    
-  <div class="comments" id="comments">
+  <div class="comments">
     <div id="disqus_thread">
       <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
   </div>
   
-  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目錄
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            本站概要
-          </li>
-        </ul>
-      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#词法"><span class="nav-number">1.</span> <span class="nav-text">词法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符和字符串"><span class="nav-number">1.1.</span> <span class="nav-text">字符和字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字"><span class="nav-number">1.2.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#符号"><span class="nav-number">1.3.</span> <span class="nav-text">符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制"><span class="nav-number">1.4.</span> <span class="nav-text">控制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类型"><span class="nav-number">2.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Booleans"><span class="nav-number">2.1.</span> <span class="nav-text">Booleans</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Numbers"><span class="nav-number">2.2.</span> <span class="nav-text">Numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Characters"><span class="nav-number">2.3.</span> <span class="nav-text">Characters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Strings"><span class="nav-number">2.4.</span> <span class="nav-text">Strings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Void"><span class="nav-number">2.5.</span> <span class="nav-text">Void</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Null"><span class="nav-number">2.6.</span> <span class="nav-text">Null</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lists"><span class="nav-number">2.7.</span> <span class="nav-text">lists</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Symbols"><span class="nav-number">3.</span> <span class="nav-text">Symbols</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算"><span class="nav-number">4.</span> <span class="nav-text">运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制块"><span class="nav-number">5.</span> <span class="nav-text">控制块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择块"><span class="nav-number">5.1.</span> <span class="nav-text">选择块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环块"><span class="nav-number">5.2.</span> <span class="nav-text">循环块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#break-from-for-or-while"><span class="nav-number">5.2.1.</span> <span class="nav-text">break from _for or _while</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语句块"><span class="nav-number">6.</span> <span class="nav-text">语句块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#const"><span class="nav-number">6.1.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#var"><span class="nav-number">6.2.</span> <span class="nav-text">var</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行部分"><span class="nav-number">6.3.</span> <span class="nav-text">执行部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Functions"><span class="nav-number">6.4.</span> <span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">6.4.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用"><span class="nav-number">6.5.</span> <span class="nav-text">调用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类"><span class="nav-number">7.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-1"><span class="nav-number">7.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明变量"><span class="nav-number">7.2.</span> <span class="nav-text">声明变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用-1"><span class="nav-number">7.3.</span> <span class="nav-text">调用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注释"><span class="nav-number">8.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#空语句"><span class="nav-number">9.</span> <span class="nav-text">空语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例程序"><span class="nav-number">10.</span> <span class="nav-text">样例程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#快排"><span class="nav-number">10.1.</span> <span class="nav-text">快排</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Cro-Marmot</p>
-  <div class="site-description motion-element" itemprop="description"></div>
+  <div class="site-description" itemprop="description"></div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/Blog/archives/">
         
           <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">分類</span>
-        
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-count">89</span>
         <span class="site-state-item-name">標籤</span>
-        
       </div>
-    
   </nav>
+</div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/CroMarmot" title="GitHub &rarr; https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/CroMarmot" title="GitHub → https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces &rarr; https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-bug"></i>Codeforces</a>
+        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces → https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>Codeforces</a>
       </span>
-    
   </div>
 
 
 
-        </div>
       </div>
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#词法"><span class="nav-number">1.</span> <span class="nav-text">词法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符和字符串"><span class="nav-number">1.1.</span> <span class="nav-text">字符和字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字"><span class="nav-number">1.2.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#符号"><span class="nav-number">1.3.</span> <span class="nav-text">符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制"><span class="nav-number">1.4.</span> <span class="nav-text">控制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类型"><span class="nav-number">2.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Booleans"><span class="nav-number">2.1.</span> <span class="nav-text">Booleans</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Numbers"><span class="nav-number">2.2.</span> <span class="nav-text">Numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Characters"><span class="nav-number">2.3.</span> <span class="nav-text">Characters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Strings"><span class="nav-number">2.4.</span> <span class="nav-text">Strings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Void"><span class="nav-number">2.5.</span> <span class="nav-text">Void</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Null"><span class="nav-number">2.6.</span> <span class="nav-text">Null</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lists"><span class="nav-number">2.7.</span> <span class="nav-text">lists</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Symbols"><span class="nav-number">3.</span> <span class="nav-text">Symbols</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算"><span class="nav-number">4.</span> <span class="nav-text">运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制块"><span class="nav-number">5.</span> <span class="nav-text">控制块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择块"><span class="nav-number">5.1.</span> <span class="nav-text">选择块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环块"><span class="nav-number">5.2.</span> <span class="nav-text">循环块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#break-from-for-or-while"><span class="nav-number">5.2.1.</span> <span class="nav-text">break from _for or _while</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语句块"><span class="nav-number">6.</span> <span class="nav-text">语句块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#const"><span class="nav-number">6.1.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#var"><span class="nav-number">6.2.</span> <span class="nav-text">var</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行部分"><span class="nav-number">6.3.</span> <span class="nav-text">执行部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Functions"><span class="nav-number">6.4.</span> <span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">6.4.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用"><span class="nav-number">6.5.</span> <span class="nav-text">调用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类"><span class="nav-number">7.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-1"><span class="nav-number">7.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明变量"><span class="nav-number">7.2.</span> <span class="nav-text">声明变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用-1"><span class="nav-number">7.3.</span> <span class="nav-text">调用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注释"><span class="nav-number">8.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#空语句"><span class="nav-number">9.</span> <span class="nav-text">空语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例程序"><span class="nav-number">10.</span> <span class="nav-text">样例程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#快排"><span class="nav-number">10.1.</span> <span class="nav-text">快排</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
-          
+          <span>0%</span>
         </div>
-      
 
     </div>
   </aside>
@@ -888,17 +490,23 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
 
         
 
@@ -909,28 +517,17 @@
 
 
 
-        
       </div>
     </footer>
-
-    
-
   </div>
 
   
-  <script src="/Blog/lib/jquery/index.js?v=3.4.1"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-<script src="/Blog/js/utils.js?v=7.3.0"></script>
-  <script src="/Blog/js/motion.js?v=7.3.0"></script>
-
-
-  <script src="/Blog/js/schemes/muse.js?v=7.3.0"></script>
-
-
-<script src="/Blog/js/next-boot.js?v=7.3.0"></script>
-
+  <script src="/Blog/lib/anime.min.js"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
+<script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script>
+<script src="/Blog/js/schemes/muse.js"></script>
+<script src="/Blog/js/next-boot.js"></script>
 
 
 
@@ -939,20 +536,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  <script src="/Blog/js/local-search.js?v=7.3.0"></script>
-
-
+  <script src="/Blog/js/local-search.js"></script>
 
 
 
@@ -971,15 +555,6 @@
 
   
 
-  
-
-
-  
-  <script src="/Blog/js/scrollspy.js?v=7.3.0"></script>
-<script src="/Blog/js/post-details.js?v=7.3.0"></script>
-
-
-    
 <script>
   function loadCount() {
     var d = document, s = d.createElement('script');
@@ -991,11 +566,12 @@
   window.addEventListener('load', loadCount, false);
 </script>
 <script>
-  function disqus_config() {
+  var disqus_config = function() {
     this.page.url = "https://cromarmot.github.io/Blog/15-10-15-ml_ver2/";
     this.page.identifier = "15-10-15-ml_ver2/";
-    this.page.title = 'ml_ver2.md';};
-  function loadComments() {
+    this.page.title = "ml_ver2.md";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
       DISQUS.reset({
         reload: true,
@@ -1007,9 +583,7 @@
       s.setAttribute('data-timestamp', '' + +new Date());
       (d.head || d.body).appendChild(s);
     }
-  }
-    window.addEventListener('load', loadComments, false);
-  
+  });
 </script>
 
 </body>

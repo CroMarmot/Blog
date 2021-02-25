@@ -1,60 +1,25 @@
 <!DOCTYPE html>
-
-
-
-
-
-<html class="theme-next muse use-motion" lang="zh-TW">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
   <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
 
-<link rel="stylesheet" href="/Blog/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/Blog/',
-    scheme: 'Muse',
-    version: '7.3.0',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
-    back2top: {"enable":true,"sidebar":true,"scrollpercent":false},
-    save_scroll: false,
-    copycode: {"enable":false,"show_result":false,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '複製',
-      copy_success: '複製成功',
-      copy_failure: '複製失敗'
-    }
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="Cro-Marmot&#39;s Blog">
@@ -63,17 +28,17 @@
 <meta property="og:locale" content="zh-TW">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cro-Marmot&#39;s Blog">
-  <link rel="canonical" href="https://cromarmot.github.io/Blog/page/2/">
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/page/2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
-    isPage: false,
-    isArchive: false
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-TW'
   };
 </script>
 
@@ -85,11 +50,8 @@
 
 
 
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -98,9 +60,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -114,194 +75,165 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
-
-  <div class="container sidebar-position-right">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-
-    <div class="custom-logo-site-title">
-      <a href="/Blog/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Cro-Marmot's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切換導航欄">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Cro-Marmot's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
+
 
 
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-      
-      
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/Blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/Blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
-        
-          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
       </li>
-    
   </ul>
-
-    
-
 </nav>
-  <div class="site-search">
-    
-  <div class="popup search-popup">
-  <div class="search-header">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none"
-             placeholder="搜尋..." spellcheck="false"
-             type="text" id="search-input">
-    </div>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
   </div>
-  <div id="search-result"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-
+    </div>
   </div>
+
 </div>
     </header>
 
     
 
-    
 
-  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>
+  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>
+  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
-    <main id="main" class="main">
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content page-home">
-            
-  <section id="posts" class="posts-expand">
-      
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+          <div class="content index posts-expand">
+            
+      
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/20-08-10-pyramidprinciple/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-08-10-pyramidprinciple/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/20-08-10-pyramidprinciple/" class="post-title-link" itemprop="url">《金字塔原理》笔记</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-08-10-pyramidprinciple/" class="post-title-link" itemprop="url">《金字塔原理》笔记</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2020-08-10 16:58:14" itemprop="dateCreated datePublished" datetime="2020-08-10T16:58:14+08:00">2020-08-10</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/book/" itemprop="url" rel="index"><span itemprop="name">book</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/book/" itemprop="url" rel="index"><span itemprop="name">book</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/20-08-10-pyramidprinciple/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/20-08-10-pyramidprinciple/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-08-10-pyramidprinciple/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -312,17 +244,77 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>有收获但不推荐 4/10推荐度，如果要看，看附录3就好了。</p><h1 id="书"><a href="#书" class="headerlink" title="书"></a>书</h1><h2 id="表达的逻辑"><a href="#表达的逻辑" class="headerlink" title="表达的逻辑"></a>表达的逻辑</h2><p>人单次记忆7+-2左右事物，如果更多会自动去抽象范畴高级归类</p><p>讲解从顶向下，直接讲解联系，否则听取的人是自己脑补的联系，很大可能是和讲解意图不同。</p><p>另一个角度，先承认人脑在处理记忆的时候会自动做的事情，对于其中有误差和负担的部分，先直接的讲解清楚。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/20-08-10-pyramidprinciple/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>有收获但不推荐 4/10推荐度，如果要看，看附录3就好了。</p>
+<h1 id="书"><a href="#书" class="headerlink" title="书"></a>书</h1><h2 id="表达的逻辑"><a href="#表达的逻辑" class="headerlink" title="表达的逻辑"></a>表达的逻辑</h2><p>人单次记忆7+-2左右事物，如果更多会自动去抽象范畴高级归类</p>
+<p>讲解从顶向下，直接讲解联系，否则听取的人是自己脑补的联系，很大可能是和讲解意图不同。</p>
+<p>另一个角度，先承认人脑在处理记忆的时候会自动做的事情，对于其中有误差和负担的部分，先直接的讲解清楚。</p>
+<blockquote>
+<p>提示</p>
+</blockquote>
+<p>读者会将读到的细想进行归类分组和总结，以便记住，如果作者传达给读者的思想已经实现进行了归类和概括，并且按自上而下的顺序呈现，读者就能更容易理解作者表达的思想。以上会所名，条例清晰的文章应当具有金字塔结构，并且不断“自上而下”地向读者传递信息，虽然在开始写作时作者的西路是“自下而上”的。</p>
+<blockquote>
+<p>提示</p>
+</blockquote>
+<p>金字塔中的思想以3种方式互相关联——向上、向下和横向。位于一组思想的上一个层次的思想是对这一组思想的概。这一组思想则是对其上一层次的思想的解释和支持。</p>
+<p>文章中的思想必须符合以下规则。</p>
+<ol>
+<li>纵向：文章中任一层次上的思想必须是其下一层次思想的概括。</li>
+<li>横向：每组中的思想必须属于同一逻辑范畴</li>
+<li>横向：每组中的思想必须按逻辑顺序组织</li>
+</ol>
+<blockquote>
+<p>组织思想基本上只可能有4种顺序</p>
+</blockquote>
+<p>演绎顺序: 大前提，小前提，结论</p>
+<p>时间（步骤）顺序：第一第二第三</p>
+<p>结构（空间）顺序：波士顿，纽约，华盛顿</p>
+<p>程度（重要性）顺序：最重要，次重要，等等</p>
+<p>通过 产生疑问吸引读者，逐级提问引导再提问，读者不一定会同意作者从地一个表述到最后一个表述的思维进展方式，但至少能够明确了解作者的思路，而这是所有作者期望的最好结果。（在我看来这里在尽力保证人与人之间的传达准确性，但传达虽然准确了，其中有不少是“作者的，不必要的信息”</p>
+<p>序言应当介绍4要素：介绍背景，指出冲突，引发疑问，给出答案。</p>
+<blockquote>
+<p>提示</p>
+</blockquote>
+<p>自上而下法构建金字塔的步骤</p>
+<ol>
+<li>提出主题思想</li>
+<li>设想受众的主要疑问</li>
+<li>写序言，背景-冲突-疑问-回答</li>
+<li>与受众进行疑问/回答式对话</li>
+<li>对受众的新疑问，重复进行疑问/回答式对话。</li>
+</ol>
+<p>子节点之间 演绎关系，归纳关系</p>
+<p>“日本商人正在增加对中国市场的投资”</p>
+<p>演绎关系“美国商人将很快进入中国市场，必将进一步促进日商的行动”</p>
+<p>归纳关系“美国商人正在增加对中国市场的投资” （主语不变改变谓语，谓语不变改变主语）</p>
+<p>演绎推理（第二点是对第一点主语或谓语的论述）归纳推理（同组中的思想具有类似的主语或谓语）</p>
+<h2 id="思考的逻辑"><a href="#思考的逻辑" class="headerlink" title="思考的逻辑"></a>思考的逻辑</h2><p>分类方法：因果/整体部分/重要性</p>
+<p>时间顺序/阶段划分/步骤</p>
+<p>结构顺序</p>
+<p>程度顺序/重要性</p>
+<p>以及对一个不合理的金字塔结构如何调整</p>
+<p>各组思想有效概括</p>
+<p>原始资料被概括后，包含传达者的意图，真的好吗？</p>
+<p>“总是要概括？”</p>
+<p>的确固定习惯可能发现新的提炼和思想，但习惯分类也会导致分类的固定死，和无真实意义。</p>
+<p>事物之间可能本来没有意义关系是人类强加的，有时需要弄清，有时甚至是错的不该加以关系，现在要强制清晰这些联系，还做了个数限制，不太实际吧。</p>
+<h2 id="解决问题的逻辑"><a href="#解决问题的逻辑" class="headerlink" title="解决问题的逻辑"></a>解决问题的逻辑</h2><p>界定问题：背景，当前，目标，方法</p>
+<p>结构化分析：手机信息，描述发现，得出结论，提出方案</p>
+<p>既定的表只适用于其特定的问题分析。如果是持续可能出问题的，可以维护这样一个分析结构，但感觉这是给不熟悉的人的，熟悉的人应该有一个快速问题的hash表</p>
+<p>作者反复说了几次相互独立，完全穷尽。。。。可以尽量，但太不现实</p>
+<p>使用诊断框架的意义，我感觉更多是，持续维护和更新框架，减少每一次或者重复出现过的思考，不熟悉的人对框架的思考，最好能再增加具体操作描述</p>
+<h2 id="演示的逻辑"><a href="#演示的逻辑" class="headerlink" title="演示的逻辑"></a>演示的逻辑</h2><p>ppt教学？？？？感觉很多理所应当，不过我有不少事情感觉理所应当有不少人做不到，只能说作者写得细致？</p>
+<p>关于图标，突然意识到，其实结论，文字就足够了，而为了“人类容易理解和记忆”，会辅助以图标和文字，但这个图标有多少人会去“校验”，和值得到文字结论的相比，都是不拥有原始数据的，像是五十步和百步。</p>
+<p>图标幻灯片90%，文字幻灯片10%。。。</p>
+<p>减少不必要术语创造所带来的理解代价</p>
+<p>文章/ppt等： 你收集了各种知识，通过一个通道线性的输出，读者线性的接受，自己组装成一个架构</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>有时结构不存在，无形的，不能解释的结果</p>
+<p>任何推理涉及3个实体：规则（关于世界组成方式的看法），情况（世界上存在的已知事实），结果（如果把规则用于该情况，预期将发生的事情）</p>
+<p>提出假设，设计实验</p>
+<p><strong>搬运附录3 TODO</strong></p>
+<h1 id="结"><a href="#结" class="headerlink" title="结"></a>结</h1><p>建议大家平时自己 多读写xmind，ppt，wiki，tutorial等 很多东西就自然而然了，或者每件事情写完后，多几遍自己阅读</p>
+<p>收获有的，吐槽一下，例如上面作者说了好几遍 不重不漏这种不现实的，自己写书不同章节重复的不知有多少，例如子节点和父节点，有时平摊到一个层级 能更好的扁平化。</p>
+<p>感受是 整体针对的是一个“想法传递的准确性保障”，但实践的步骤会因为各种奇怪的理由强制抽象（比如强调7+-2），有不少在现有工具优秀表现上显得过时，例如分类的维护性等。令我很怀疑这个title XD</p>
+
       
     </div>
 
@@ -330,103 +322,75 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/20-08-06-ios13_5_1_vuevshow_transformrotatebug/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-08-06-ios13_5_1_vuevshow_transformrotatebug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/20-08-06-ios13_5_1_vuevshow_transformrotatebug/" class="post-title-link" itemprop="url">ios13.5.1+, vue2 vShow,css transform rotate, BUG</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-08-06-ios13_5_1_vuevshow_transformrotatebug/" class="post-title-link" itemprop="url">ios13.5.1+, vue2 vShow,css transform rotate, BUG</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2020-08-06 10:37:14" itemprop="dateCreated datePublished" datetime="2020-08-06T10:37:14+08:00">2020-08-06</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/20-08-06-ios13_5_1_vuevshow_transformrotatebug/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/20-08-06-ios13_5_1_vuevshow_transformrotatebug/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-08-06-ios13_5_1_vuevshow_transformrotatebug/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -437,17 +401,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><p>期望</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">点击按钮</span><br><span class="line">显示div</span><br><span class="line">旋转4.5秒</span><br><span class="line">隐藏div</span><br></pre></td></tr></table></figure><p>BUG:</p><p>在android和ios(系统版本&lt;=12)上正常的代码，在ios(&gt;=13.5.1)上 如果前后角度相同会无法旋转</p><h1 id="代码vue"><a href="#代码vue" class="headerlink" title="代码vue"></a>代码vue</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div</span><br><span class="line">    class=&quot;container&quot;</span><br><span class="line">  &gt;</span><br><span class="line">    &lt;div</span><br><span class="line">      v-show=&quot;display&quot;</span><br><span class="line">      :style=&quot;&#123; transform: angle &#125;&quot;</span><br><span class="line">      class=&quot;demo-div&quot;</span><br><span class="line">    &gt;Hey</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h1&gt;expect: show div, rotate div. rotate angle(&#123;&#123; rotateA &#125;&#125;), hide div&lt;/h1&gt;</span><br><span class="line">    &lt;div v-if=&quot;!unClickable&quot;&gt;</span><br><span class="line">      &lt;h2 @click=&quot;onClick(0)&quot;&gt;Same angle(bug)&lt;/h2&gt;</span><br><span class="line">      &lt;h2 @click=&quot;onClick(60)&quot;&gt;+60 angle&lt;/h2&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">// rotate stuck on ios ( &gt;=13.5.1 ) , works well on android and ios ( &lt;= 12 )</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      unClickable: false,</span><br><span class="line">      display: false,</span><br><span class="line">      angle: &apos;rotate(0deg)&apos;,</span><br><span class="line">      rotateA: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    onClick(deg) &#123;</span><br><span class="line">      if (this.unClickable) &#123;</span><br><span class="line">        return</span><br><span class="line">      &#125;</span><br><span class="line">      this.unClickable = true</span><br><span class="line">      this.display = true</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        // if rotate don&apos;t change the rotation will stucked</span><br><span class="line">        this.rotateA = (this.rotateA + deg) % 360</span><br><span class="line">        this.angle = `rotate($&#123;(6 * 360 + this.rotateA)&#125;deg)`</span><br><span class="line">      &#125;, 100)</span><br><span class="line">      // change 100 to 1000 works well</span><br><span class="line"></span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        this.angle = &apos;rotate(0deg)&apos;</span><br><span class="line">        this.display = false</span><br><span class="line">        this.unClickable = false</span><br><span class="line">      &#125;, 5500)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.container &#123;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  min-height: 100vh;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-direction: column;</span><br><span class="line">  justify-content: center;</span><br><span class="line">  align-items: center;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">h2 &#123;</span><br><span class="line">  background-color: lightgrey;</span><br><span class="line">  padding: 1em;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.demo-div &#123;</span><br><span class="line">  transition: transform ease-out 4.5s;</span><br><span class="line">  width: 50vw;</span><br><span class="line">  height: 50vh;</span><br><span class="line">  background-color: lightblue;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/20-08-06-ios13_5_1_vuevshow_transformrotatebug/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><p>期望</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">点击按钮</span><br><span class="line">显示div</span><br><span class="line">旋转4.5秒</span><br><span class="line">隐藏div</span><br></pre></td></tr></table></figure>
+<p>BUG:</p>
+<p>在android和ios(系统版本&lt;=12)上正常的代码，在ios(&gt;=13.5.1)上 如果前后角度相同会无法旋转</p>
+<h1 id="代码vue"><a href="#代码vue" class="headerlink" title="代码vue"></a>代码vue</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div</span><br><span class="line">    class=&quot;container&quot;</span><br><span class="line">  &gt;</span><br><span class="line">    &lt;div</span><br><span class="line">      v-show=&quot;display&quot;</span><br><span class="line">      :style=&quot;&#123; transform: angle &#125;&quot;</span><br><span class="line">      class=&quot;demo-div&quot;</span><br><span class="line">    &gt;Hey</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h1&gt;expect: show div, rotate div. rotate angle(&#123;&#123; rotateA &#125;&#125;), hide div&lt;/h1&gt;</span><br><span class="line">    &lt;div v-if=&quot;!unClickable&quot;&gt;</span><br><span class="line">      &lt;h2 @click=&quot;onClick(0)&quot;&gt;Same angle(bug)&lt;/h2&gt;</span><br><span class="line">      &lt;h2 @click=&quot;onClick(60)&quot;&gt;+60 angle&lt;/h2&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">// rotate stuck on ios ( &gt;=13.5.1 ) , works well on android and ios ( &lt;= 12 )</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      unClickable: false,</span><br><span class="line">      display: false,</span><br><span class="line">      angle: &apos;rotate(0deg)&apos;,</span><br><span class="line">      rotateA: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    onClick(deg) &#123;</span><br><span class="line">      if (this.unClickable) &#123;</span><br><span class="line">        return</span><br><span class="line">      &#125;</span><br><span class="line">      this.unClickable = true</span><br><span class="line">      this.display = true</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        // if rotate don&apos;t change the rotation will stucked</span><br><span class="line">        this.rotateA = (this.rotateA + deg) % 360</span><br><span class="line">        this.angle = `rotate($&#123;(6 * 360 + this.rotateA)&#125;deg)`</span><br><span class="line">      &#125;, 100)</span><br><span class="line">      // change 100 to 1000 works well</span><br><span class="line"></span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        this.angle = &apos;rotate(0deg)&apos;</span><br><span class="line">        this.display = false</span><br><span class="line">        this.unClickable = false</span><br><span class="line">      &#125;, 5500)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.container &#123;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  min-height: 100vh;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-direction: column;</span><br><span class="line">  justify-content: center;</span><br><span class="line">  align-items: center;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">h2 &#123;</span><br><span class="line">  background-color: lightgrey;</span><br><span class="line">  padding: 1em;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.demo-div &#123;</span><br><span class="line">  transition: transform ease-out 4.5s;</span><br><span class="line">  width: 50vw;</span><br><span class="line">  height: 50vh;</span><br><span class="line">  background-color: lightblue;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="一些调试结果"><a href="#一些调试结果" class="headerlink" title="一些调试结果"></a>一些调试结果</h1><p>如果和上一次结束的角度不同，则可以旋转。</p>
+<p>如果把setTimeout调整到1000则可以旋转。</p>
+<p>如果把<code>v-show</code>设置成始终显示也没有问题。</p>
+<p>可能和vue关系不大，因为通过把v-show换成 纯js对的display操作也能重现</p>
+<p>没有可以直接调试ios webview的工具。猜测是ios的 webview和 vue 的 <code>v-show</code> 某些处理出现了问题</p>
+<h1 id="在线demo"><a href="#在线demo" class="headerlink" title="在线demo"></a>在线demo</h1><p><a href="https://42zc6.csb.app" target="_blank" rel="noopener">https://42zc6.csb.app</a></p>
+<iframe src="https://codesandbox.io/embed/naughty-nobel-42zc6?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="naughty-nobel-42zc6" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+
+
       
     </div>
 
@@ -455,103 +422,75 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/20-07-14-md5/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-07-14-md5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/20-07-14-md5/" class="post-title-link" itemprop="url">md5</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-07-14-md5/" class="post-title-link" itemprop="url">md5</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2020-07-14 10:37:14" itemprop="dateCreated datePublished" datetime="2020-07-14T10:37:14+08:00">2020-07-14</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/20-07-14-md5/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/20-07-14-md5/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-07-14-md5/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -562,17 +501,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="数学事实"><a href="#数学事实" class="headerlink" title="数学事实"></a>数学事实</h1><p>反复线性和非线性交替计算</p><h1 id="代码js"><a href="#代码js" class="headerlink" title="代码js"></a>代码js</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">md5</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">RotateLeft</span>(<span class="params">lValue, iShiftBits</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((lValue &lt;&lt; iShiftBits) | (lValue &gt;&gt;&gt; (<span class="number">32</span> - iShiftBits))) &amp; <span class="number">0xFFFFFFFF</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">unsignAdd</span>(<span class="params">lX, lY</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((lX &amp; <span class="number">0xFFFFFFFF</span>) + (lY &amp; <span class="number">0xFFFFFFFF</span>) ) &amp; <span class="number">0xFFFFFFFF</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// (a,b,c,d) = (d, ((a+f(b,c,d) + data + Ki)&lt;&lt;&lt; s)+b, b, c)</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a, b, c, d, x, s, ac, Fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> unsignAdd(RotateLeft(unsignAdd(a, unsignAdd(unsignAdd(Fn(b, c, d), x), ac)), s), b);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">ConvertToWordArray</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> lWordCount;</span><br><span class="line">    <span class="keyword">let</span> lMessageLength = string.length;</span><br><span class="line">    <span class="comment">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER</span></span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords_temp1 = lMessageLength + <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords_temp2 = (lNumberOfWords_temp1 - (lNumberOfWords_temp1 % <span class="number">64</span>)) / <span class="number">64</span>;</span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords = (lNumberOfWords_temp2 + <span class="number">1</span>) * <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">let</span> lWordArray = <span class="built_in">Array</span>(lNumberOfWords - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">let</span> lBytePosition = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> lByteCount = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (lByteCount &lt; lMessageLength) &#123;</span><br><span class="line">      lWordCount = (lByteCount - (lByteCount % <span class="number">4</span>)) / <span class="number">4</span>;</span><br><span class="line">      lBytePosition = (lByteCount % <span class="number">4</span>) * <span class="number">8</span>;</span><br><span class="line">      lWordArray[lWordCount] = (lWordArray[lWordCount] | (string.charCodeAt(lByteCount) &lt;&lt; lBytePosition));</span><br><span class="line">      lByteCount++;</span><br><span class="line">    &#125;</span><br><span class="line">    lWordCount = (lByteCount - (lByteCount % <span class="number">4</span>)) / <span class="number">4</span>;</span><br><span class="line">    lBytePosition = (lByteCount % <span class="number">4</span>) * <span class="number">8</span>;</span><br><span class="line">    lWordArray[lWordCount] = lWordArray[lWordCount] | (<span class="number">0x80</span> &lt;&lt; lBytePosition);</span><br><span class="line">    lWordArray[lNumberOfWords - <span class="number">2</span>] = lMessageLength &lt;&lt; <span class="number">3</span>;</span><br><span class="line">    lWordArray[lNumberOfWords - <span class="number">1</span>] = lMessageLength &gt;&gt;&gt; <span class="number">29</span>;</span><br><span class="line">    <span class="keyword">return</span> lWordArray;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">WordToHex</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> WordToHexValue = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">      WordToHexValue += <span class="string">`0<span class="subst">$&#123;((v &gt;&gt;&gt; (i * <span class="number">8</span>)) &amp; <span class="number">0xFF</span>).toString(<span class="number">16</span>)&#125;</span>`</span>.substr(<span class="number">-2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> WordToHexValue;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Utf8Encode</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> utftext = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> n = <span class="number">0</span>; n &lt; string.length; n++) &#123;</span><br><span class="line">      <span class="keyword">let</span> c = string.charCodeAt(n);</span><br><span class="line">      <span class="keyword">if</span> (c &lt; <span class="number">128</span>) &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode(c);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> ((c &gt; <span class="number">127</span>) &amp;&amp; (c &lt; <span class="number">2048</span>)) &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &gt;&gt; <span class="number">6</span>) | <span class="number">192</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &gt;&gt; <span class="number">12</span>) | <span class="number">224</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode(((c &gt;&gt; <span class="number">6</span>) &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> utftext;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">let</span> x = ConvertToWordArray(Utf8Encode(string));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> funcs = [</span><br><span class="line">    (x,y,z) =&gt; ((x &amp; y) | ((~x) &amp; z) ),</span><br><span class="line">    (x,y,z) =&gt; ((x &amp; z) | (y &amp; (~z))),</span><br><span class="line">    (x,y,z) =&gt; (x ^ y ^ z),</span><br><span class="line">    (x,y,z) =&gt; (y ^ (x | (~z)))</span><br><span class="line">  ];</span><br><span class="line">  <span class="comment">// K = abs(sin(i+1))*(2^32) int part</span></span><br><span class="line">  <span class="comment">// https://softwareengineering.stackexchange.com/questions/89694/md5-implementation-notes</span></span><br><span class="line">  <span class="keyword">const</span> K = [ <span class="number">0xD76AA478</span> ,<span class="number">0xE8C7B756</span> ,<span class="number">0x242070DB</span> ,<span class="number">0xC1BDCEEE</span> ,<span class="number">0xF57C0FAF</span> ,<span class="number">0x4787C62A</span> ,<span class="number">0xA8304613</span> ,<span class="number">0xFD469501</span> ,<span class="number">0x698098D8</span> ,<span class="number">0x8B44F7AF</span> ,<span class="number">0xFFFF5BB1</span> ,<span class="number">0x895CD7BE</span> ,<span class="number">0x6B901122</span> ,<span class="number">0xFD987193</span> ,<span class="number">0xA679438E</span> ,<span class="number">0x49B40821</span> ,<span class="number">0xF61E2562</span> ,<span class="number">0xC040B340</span> ,<span class="number">0x265E5A51</span> ,<span class="number">0xE9B6C7AA</span> ,<span class="number">0xD62F105D</span> ,<span class="number">0x02441453</span> ,<span class="number">0xD8A1E681</span> ,<span class="number">0xE7D3FBC8</span> ,<span class="number">0x21E1CDE6</span> ,<span class="number">0xC33707D6</span> ,<span class="number">0xF4D50D87</span> ,<span class="number">0x455A14ED</span> ,<span class="number">0xA9E3E905</span> ,<span class="number">0xFCEFA3F8</span> ,<span class="number">0x676F02D9</span> ,<span class="number">0x8D2A4C8A</span> ,<span class="number">0xFFFA3942</span> ,<span class="number">0x8771F681</span> ,<span class="number">0x6D9D6122</span> ,<span class="number">0xFDE5380C</span> ,<span class="number">0xA4BEEA44</span> ,<span class="number">0x4BDECFA9</span> ,<span class="number">0xF6BB4B60</span> ,<span class="number">0xBEBFBC70</span> ,<span class="number">0x289B7EC6</span> ,<span class="number">0xEAA127FA</span> ,<span class="number">0xD4EF3085</span> ,<span class="number">0x04881D05</span> ,<span class="number">0xD9D4D039</span> ,<span class="number">0xE6DB99E5</span> ,<span class="number">0x1FA27CF8</span> ,<span class="number">0xC4AC5665</span> ,<span class="number">0xF4292244</span> ,<span class="number">0x432AFF97</span> ,<span class="number">0xAB9423A7</span> ,<span class="number">0xFC93A039</span> ,<span class="number">0x655B59C3</span> ,<span class="number">0x8F0CCC92</span> ,<span class="number">0xFFEFF47D</span> ,<span class="number">0x85845DD1</span> ,<span class="number">0x6FA87E4F</span> ,<span class="number">0xFE2CE6E0</span> ,<span class="number">0xA3014314</span> ,<span class="number">0x4E0811A1</span> ,<span class="number">0xF7537E82</span> ,<span class="number">0xBD3AF235</span> ,<span class="number">0x2AD7D2BB</span> ,<span class="number">0xEB86D391</span> ] ;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> S = [[<span class="number">7</span>,<span class="number">12</span>,<span class="number">17</span>,<span class="number">22</span>],[<span class="number">5</span>,<span class="number">9</span>,<span class="number">14</span>,<span class="number">20</span>],[<span class="number">4</span>,<span class="number">11</span>,<span class="number">16</span>,<span class="number">23</span>],[<span class="number">6</span>,<span class="number">10</span>,<span class="number">15</span>,<span class="number">21</span>]];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> offset = [[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">5</span>,<span class="number">1</span>],[<span class="number">3</span>,<span class="number">5</span>],[<span class="number">7</span>,<span class="number">0</span>]];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 01234567 89abcdef fedcba98 76543210</span></span><br><span class="line">  <span class="keyword">let</span> abcd = [<span class="number">0x67452301</span>,<span class="number">0xEFCDAB89</span>,<span class="number">0x98BADCFE</span>,<span class="number">0x10325476</span>];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// http://www.faqs.org/rfcs/rfc1321.html</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> idx = <span class="number">0</span>; idx &lt; x.length; idx += <span class="number">16</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> ABCD = [...abcd];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; <span class="number">4</span>;i ++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>;j &lt; <span class="number">4</span>;j ++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> k = <span class="number">0</span>;k &lt; <span class="number">4</span>;k ++)&#123;</span><br><span class="line">          abcd = [abcd[<span class="number">3</span>],f(...abcd, x[idx + ((offset[i][<span class="number">0</span>]*(j*<span class="number">4</span>+k) + offset[i][<span class="number">1</span>] ) %<span class="number">16</span>)], S[i][k], K[(i*<span class="number">4</span>+j)*<span class="number">4</span>+k], funcs[i]),abcd[<span class="number">1</span>],abcd[<span class="number">2</span>]];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    abcd = ABCD.map(<span class="function">(<span class="params">item,idx</span>)=&gt;</span> unsignAdd(item,abcd[idx]));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> abcd.map(<span class="function"><span class="params">item</span>=&gt;</span>WordToHex(item)).join(<span class="string">''</span>).toLowerCase();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(md5(<span class="string">""</span>))</span><br><span class="line"><span class="built_in">console</span>.log(md5(<span class="string">"demo"</span>))</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/20-07-14-md5/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <h1 id="数学事实"><a href="#数学事实" class="headerlink" title="数学事实"></a>数学事实</h1><p>反复线性和非线性交替计算</p>
+<h1 id="代码js"><a href="#代码js" class="headerlink" title="代码js"></a>代码js</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">md5</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">RotateLeft</span>(<span class="params">lValue, iShiftBits</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((lValue &lt;&lt; iShiftBits) | (lValue &gt;&gt;&gt; (<span class="number">32</span> - iShiftBits))) &amp; <span class="number">0xFFFFFFFF</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">unsignAdd</span>(<span class="params">lX, lY</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((lX &amp; <span class="number">0xFFFFFFFF</span>) + (lY &amp; <span class="number">0xFFFFFFFF</span>) ) &amp; <span class="number">0xFFFFFFFF</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// (a,b,c,d) = (d, ((a+f(b,c,d) + data + Ki)&lt;&lt;&lt; s)+b, b, c)</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a, b, c, d, x, s, ac, Fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> unsignAdd(RotateLeft(unsignAdd(a, unsignAdd(unsignAdd(Fn(b, c, d), x), ac)), s), b);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">ConvertToWordArray</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> lWordCount;</span><br><span class="line">    <span class="keyword">let</span> lMessageLength = string.length;</span><br><span class="line">    <span class="comment">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER</span></span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords_temp1 = lMessageLength + <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords_temp2 = (lNumberOfWords_temp1 - (lNumberOfWords_temp1 % <span class="number">64</span>)) / <span class="number">64</span>;</span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords = (lNumberOfWords_temp2 + <span class="number">1</span>) * <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">let</span> lWordArray = <span class="built_in">Array</span>(lNumberOfWords - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">let</span> lBytePosition = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> lByteCount = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (lByteCount &lt; lMessageLength) &#123;</span><br><span class="line">      lWordCount = (lByteCount - (lByteCount % <span class="number">4</span>)) / <span class="number">4</span>;</span><br><span class="line">      lBytePosition = (lByteCount % <span class="number">4</span>) * <span class="number">8</span>;</span><br><span class="line">      lWordArray[lWordCount] = (lWordArray[lWordCount] | (string.charCodeAt(lByteCount) &lt;&lt; lBytePosition));</span><br><span class="line">      lByteCount++;</span><br><span class="line">    &#125;</span><br><span class="line">    lWordCount = (lByteCount - (lByteCount % <span class="number">4</span>)) / <span class="number">4</span>;</span><br><span class="line">    lBytePosition = (lByteCount % <span class="number">4</span>) * <span class="number">8</span>;</span><br><span class="line">    lWordArray[lWordCount] = lWordArray[lWordCount] | (<span class="number">0x80</span> &lt;&lt; lBytePosition);</span><br><span class="line">    lWordArray[lNumberOfWords - <span class="number">2</span>] = lMessageLength &lt;&lt; <span class="number">3</span>;</span><br><span class="line">    lWordArray[lNumberOfWords - <span class="number">1</span>] = lMessageLength &gt;&gt;&gt; <span class="number">29</span>;</span><br><span class="line">    <span class="keyword">return</span> lWordArray;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">WordToHex</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> WordToHexValue = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">      WordToHexValue += <span class="string">`0<span class="subst">$&#123;((v &gt;&gt;&gt; (i * <span class="number">8</span>)) &amp; <span class="number">0xFF</span>).toString(<span class="number">16</span>)&#125;</span>`</span>.substr(<span class="number">-2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> WordToHexValue;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Utf8Encode</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> utftext = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> n = <span class="number">0</span>; n &lt; string.length; n++) &#123;</span><br><span class="line">      <span class="keyword">let</span> c = string.charCodeAt(n);</span><br><span class="line">      <span class="keyword">if</span> (c &lt; <span class="number">128</span>) &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode(c);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> ((c &gt; <span class="number">127</span>) &amp;&amp; (c &lt; <span class="number">2048</span>)) &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &gt;&gt; <span class="number">6</span>) | <span class="number">192</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &gt;&gt; <span class="number">12</span>) | <span class="number">224</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode(((c &gt;&gt; <span class="number">6</span>) &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> utftext;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">let</span> x = ConvertToWordArray(Utf8Encode(string));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> funcs = [</span><br><span class="line">    (x,y,z) =&gt; ((x &amp; y) | ((~x) &amp; z) ),</span><br><span class="line">    (x,y,z) =&gt; ((x &amp; z) | (y &amp; (~z))),</span><br><span class="line">    (x,y,z) =&gt; (x ^ y ^ z),</span><br><span class="line">    (x,y,z) =&gt; (y ^ (x | (~z)))</span><br><span class="line">  ];</span><br><span class="line">  <span class="comment">// K = abs(sin(i+1))*(2^32) int part</span></span><br><span class="line">  <span class="comment">// https://softwareengineering.stackexchange.com/questions/89694/md5-implementation-notes</span></span><br><span class="line">  <span class="keyword">const</span> K = [ <span class="number">0xD76AA478</span> ,<span class="number">0xE8C7B756</span> ,<span class="number">0x242070DB</span> ,<span class="number">0xC1BDCEEE</span> ,<span class="number">0xF57C0FAF</span> ,<span class="number">0x4787C62A</span> ,<span class="number">0xA8304613</span> ,<span class="number">0xFD469501</span> ,<span class="number">0x698098D8</span> ,<span class="number">0x8B44F7AF</span> ,<span class="number">0xFFFF5BB1</span> ,<span class="number">0x895CD7BE</span> ,<span class="number">0x6B901122</span> ,<span class="number">0xFD987193</span> ,<span class="number">0xA679438E</span> ,<span class="number">0x49B40821</span> ,<span class="number">0xF61E2562</span> ,<span class="number">0xC040B340</span> ,<span class="number">0x265E5A51</span> ,<span class="number">0xE9B6C7AA</span> ,<span class="number">0xD62F105D</span> ,<span class="number">0x02441453</span> ,<span class="number">0xD8A1E681</span> ,<span class="number">0xE7D3FBC8</span> ,<span class="number">0x21E1CDE6</span> ,<span class="number">0xC33707D6</span> ,<span class="number">0xF4D50D87</span> ,<span class="number">0x455A14ED</span> ,<span class="number">0xA9E3E905</span> ,<span class="number">0xFCEFA3F8</span> ,<span class="number">0x676F02D9</span> ,<span class="number">0x8D2A4C8A</span> ,<span class="number">0xFFFA3942</span> ,<span class="number">0x8771F681</span> ,<span class="number">0x6D9D6122</span> ,<span class="number">0xFDE5380C</span> ,<span class="number">0xA4BEEA44</span> ,<span class="number">0x4BDECFA9</span> ,<span class="number">0xF6BB4B60</span> ,<span class="number">0xBEBFBC70</span> ,<span class="number">0x289B7EC6</span> ,<span class="number">0xEAA127FA</span> ,<span class="number">0xD4EF3085</span> ,<span class="number">0x04881D05</span> ,<span class="number">0xD9D4D039</span> ,<span class="number">0xE6DB99E5</span> ,<span class="number">0x1FA27CF8</span> ,<span class="number">0xC4AC5665</span> ,<span class="number">0xF4292244</span> ,<span class="number">0x432AFF97</span> ,<span class="number">0xAB9423A7</span> ,<span class="number">0xFC93A039</span> ,<span class="number">0x655B59C3</span> ,<span class="number">0x8F0CCC92</span> ,<span class="number">0xFFEFF47D</span> ,<span class="number">0x85845DD1</span> ,<span class="number">0x6FA87E4F</span> ,<span class="number">0xFE2CE6E0</span> ,<span class="number">0xA3014314</span> ,<span class="number">0x4E0811A1</span> ,<span class="number">0xF7537E82</span> ,<span class="number">0xBD3AF235</span> ,<span class="number">0x2AD7D2BB</span> ,<span class="number">0xEB86D391</span> ] ;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> S = [[<span class="number">7</span>,<span class="number">12</span>,<span class="number">17</span>,<span class="number">22</span>],[<span class="number">5</span>,<span class="number">9</span>,<span class="number">14</span>,<span class="number">20</span>],[<span class="number">4</span>,<span class="number">11</span>,<span class="number">16</span>,<span class="number">23</span>],[<span class="number">6</span>,<span class="number">10</span>,<span class="number">15</span>,<span class="number">21</span>]];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> offset = [[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">5</span>,<span class="number">1</span>],[<span class="number">3</span>,<span class="number">5</span>],[<span class="number">7</span>,<span class="number">0</span>]];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 01234567 89abcdef fedcba98 76543210</span></span><br><span class="line">  <span class="keyword">let</span> abcd = [<span class="number">0x67452301</span>,<span class="number">0xEFCDAB89</span>,<span class="number">0x98BADCFE</span>,<span class="number">0x10325476</span>];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// http://www.faqs.org/rfcs/rfc1321.html</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> idx = <span class="number">0</span>; idx &lt; x.length; idx += <span class="number">16</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> ABCD = [...abcd];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; <span class="number">4</span>;i ++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>;j &lt; <span class="number">4</span>;j ++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> k = <span class="number">0</span>;k &lt; <span class="number">4</span>;k ++)&#123;</span><br><span class="line">          abcd = [abcd[<span class="number">3</span>],f(...abcd, x[idx + ((offset[i][<span class="number">0</span>]*(j*<span class="number">4</span>+k) + offset[i][<span class="number">1</span>] ) %<span class="number">16</span>)], S[i][k], K[(i*<span class="number">4</span>+j)*<span class="number">4</span>+k], funcs[i]),abcd[<span class="number">1</span>],abcd[<span class="number">2</span>]];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    abcd = ABCD.map(<span class="function">(<span class="params">item,idx</span>)=&gt;</span> unsignAdd(item,abcd[idx]));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> abcd.map(<span class="function"><span class="params">item</span>=&gt;</span>WordToHex(item)).join(<span class="string">''</span>).toLowerCase();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(md5(<span class="string">""</span>))</span><br><span class="line"><span class="built_in">console</span>.log(md5(<span class="string">"demo"</span>))</span><br></pre></td></tr></table></figure>
+<p>两段看起来复杂的函数 其实 是字符串通过utf8/ascii之类转换成 数值</p>
+<p>其中一些值和公式的设计大自能有个想法感受了，还不明白的是offset和s的设计为什么是这样的,搜了半天也没搜到</p>
+<p><a href="https://en.wikipedia.org/wiki/MD5" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/MD5</a></p>
+
       
     </div>
 
@@ -580,103 +514,75 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/20-07-13-rsa/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-07-13-rsa/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/20-07-13-rsa/" class="post-title-link" itemprop="url">rsa</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-07-13-rsa/" class="post-title-link" itemprop="url">rsa</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2020-07-13 10:37:14" itemprop="dateCreated datePublished" datetime="2020-07-13T10:37:14+08:00">2020-07-13</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/20-07-13-rsa/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/20-07-13-rsa/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-07-13-rsa/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -687,17 +593,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="数论事实"><a href="#数论事实" class="headerlink" title="数论事实"></a>数论事实</h1><p>两个大质数相乘，只需要最多两个数字长度的乘积的复杂度，而把两个质数乘积进行拆分可能要 其中较小数字的时间复杂度。也就是易于验证，难于破解。</p><p>假设两个长度为2048(二进制下)的质数相乘，最多只需要 <code>2048 x 2048</code>的时间，而枚举拆分需要<code>2^2048</code>的时间, 目前最快的？gnfs算法的复杂度也是</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/20-07-13-rsa/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <h1 id="数论事实"><a href="#数论事实" class="headerlink" title="数论事实"></a>数论事实</h1><p>两个大质数相乘，只需要最多两个数字长度的乘积的复杂度，而把两个质数乘积进行拆分可能要 其中较小数字的时间复杂度。也就是易于验证，难于破解。</p>
+<p>假设两个长度为2048(二进制下)的质数相乘，最多只需要 <code>2048 x 2048</code>的时间，而枚举拆分需要<code>2^2048</code>的时间, 目前最快的？gnfs算法的复杂度也是</p>
+<p>$O(e^{\sqrt{\frac{64}{9}}(\log N)^{\frac 13}(\log\log N)^{\frac 23}})$</p>
+<h1 id="加解密"><a href="#加解密" class="headerlink" title="加解密"></a>加解密</h1><h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p>$C=M^e \bmod n$</p>
+<p>n=pq,其中p和q为大质数</p>
+<p>M 要加密的信息 (需要 和n互质也就是至少p,q其中一个互质,1/pq 当质数足够大时碰撞概率极小，其实因为公钥信息里已经有n了，也不会碰撞)</p>
+<p>e 和 (p-1)(q-1)互质，简单些 e直接取小于 (p-1)(q-1)的质数</p>
+<p>公钥(e,n), 所有人都知道</p>
+<h2 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h2><p>私钥匙$(e,p,q)$</p>
+<p>$de = 1 \bmod ((p-1)(q-1))$,计算d,d是e关于(p-1)(q-1)的乘法模逆元 log 级别复杂度</p>
+<p>$ C^d = (M^e)^d = M^{ed} = M^{1+k(p-1)(q-1)} (\bmod n)$</p>
+<p>费马小定理:p质数,a和p互质,$a^{p-1} = 1 (\bmod p)$ </p>
+<p>如果 M 和p 互素, 有 $C^d = M\cdot (M^{p-1})^{k(q-1)} = M \cdot 1^{k(q-1)} = M \cdot 1 = M (mod p)$ 即是 $ C^d - M = 0 (mod p) $</p>
+<p>否则 $ M = 0 \bmod p$, $ C^d = (M^e \bmod n)^d = (0^e)^d = 0 (\bmod p) $,也有 $C^d - M = 0(\bmod p)$</p>
+<p>同理 有$C^d - M = 0 (\bmod q)$</p>
+<p>因此 $C^d - M = 0 (\bmod (n=pq))$即$C^d = M (\bmod n)$</p>
+<p>也就是 我们通过幂次直接拿到 M在$\bmod n$的意义下</p>
+<h1 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h1><p>也就是公钥里只有(e,n), 计算不出p和q, 就意味着计算不出(p-1)(q-1),也就计算不出d，也就无法直接d的幂次。</p>
+<p>另一个问题就是 模运算 是否有办法开e次根。</p>
+<p>在就是历史信息，如果有人（机器）能拆解n，那么所有用到相应公私钥的信息都能被破解了。</p>
+<p>所以据说 现在512位的似乎已经被认为不安全了。可以类似NFS, GNFS,SIQS, 和ECM 定向爆破。<a href="https://blog.csdn.net/tigerisland45/article/details/51348854" target="_blank" rel="noopener">https://blog.csdn.net/tigerisland45/article/details/51348854</a></p>
+<p>穷举自己可以按(10^10) 需要1台计算机一秒来估计，是不可能的。例如枚举需要 <code>2**512//(10**10)//60//60//24//365 = 42515880041674902015392012297710065092210064119077858250011293263957902175524946019792853558367907875729426237273230754863501657825807236</code> 台计算机 年</p>
+<p>而好处是，如果始终拆解质数乘积是难的，那么只需要单纯的增加位数即可，这样在实现上的额外代价就是生成代价，对应的拆解代价是按照幂次增长。</p>
+<p>而生成的代价,解密的代价较大，注定了它用在少量数据，而剩余的数据加密，还是要靠对称加密。</p>
+<p><a href="https://en.wikipedia.org/wiki/RSA_numbers" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/RSA_numbers</a></p>
+
       
     </div>
 
@@ -705,124 +626,87 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/20-07-06-karma/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-07-06-karma/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/20-07-06-karma/" class="post-title-link" itemprop="url">karma</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-07-06-karma/" class="post-title-link" itemprop="url">karma</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2020-07-06 11:20:14" itemprop="dateCreated datePublished" datetime="2020-07-06T11:20:14+08:00">2020-07-06</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/js/karma/" itemprop="url" rel="index"><span itemprop="name">karma</span></a></span>
-
-                
-                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/js/karma/" itemprop="url" rel="index"><span itemprop="name">karma</span></a>
+                </span>
                   ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/code/js/karma/test/" itemprop="url" rel="index"><span itemprop="name">test</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/js/karma/test/" itemprop="url" rel="index"><span itemprop="name">test</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/20-07-06-karma/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/20-07-06-karma/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-07-06-karma/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -833,17 +717,72 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><p>目前看到angular2+ 官方的使用是 karma + jasmine</p><p>Can I use Karma with testing framework X?</p><p>Yes. There are plugins for most of the common testing frameworks (such as Jasmine, Mocha, QUnit). If there is no plugin for the testing framework you like, go ahead and write one. It is simple - you can start by looking into the source code of the existing ones.</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/20-07-06-karma/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><p>目前看到angular2+ 官方的使用是 karma + jasmine</p>
+<p>Can I use Karma with testing framework X?</p>
+<p>Yes. There are plugins for most of the common testing frameworks (such as Jasmine, Mocha, QUnit). If there is no plugin for the testing framework you like, go ahead and write one. It is simple - you can start by looking into the source code of the existing ones.</p>
+<p>karma创建一个web server。</p>
+<p>浏览器通过手动方位 karma server 监听的地址(默认9876),或者自动让karma 知道运行哪个browsers，来让浏览器可以被捕获</p>
+<p>可用的列表<a href="http://karma-runner.github.io/5.0/config/browsers.html" target="_blank" rel="noopener">http://karma-runner.github.io/5.0/config/browsers.html</a></p>
+<h1 id="karma-能力"><a href="#karma-能力" class="headerlink" title="karma 能力"></a>karma 能力</h1><p>见下面 paper的pdf内容</p>
+<p>在真实环境中测试</p>
+<p>支持远程控制</p>
+<p>执行速度快</p>
+<p>可以跟第三方 IDE 进行交互</p>
+<p>支持 ci 服务</p>
+<p>高扩展性，支持插件开发</p>
+<p>支持调试</p>
+<h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><p>paper 3.1的表</p>
+<p><img src="http://gtms04.alicdn.com/tps/i4/TB1eweqLXXXXXbvaXXX0ucn3VXX-964-384.png#alt=tests_tools_comparison" alt="阿里云"></p>
+<h1 id="主要目标"><a href="#主要目标" class="headerlink" title="主要目标"></a>主要目标</h1><p>paper 2.1</p>
+<ol>
+<li><p>真实设备上运行测试</p>
+</li>
+<li><p>远程控制</p>
+</li>
+<li><p>高效, 无缝隙使用流程</p>
+</li>
+<li><p>Integration with IDEs and text editors</p>
+</li>
+<li><p>Integration with CI Servers</p>
+</li>
+<li><p>扩展性</p>
+</li>
+<li><p>Debugging</p>
+</li>
+</ol>
+<p>包含 client/server,基于Http 通信</p>
+<h1 id="设计和分析"><a href="#设计和分析" class="headerlink" title="设计和分析"></a>设计和分析</h1><p>Chapter 4</p>
+<ul>
+<li><p>速度</p>
+</li>
+<li><p>可靠性</p>
+</li>
+<li><p>在真实浏览器上测试 并</p>
+</li>
+<li><p>seamless workflow</p>
+</li>
+</ul>
+<h1 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h1><p>paper 4.1</p>
+<p>监听文件</p>
+<p>与 client 进行通讯</p>
+<p>向开发者输出测试结果</p>
+<p>提供 client 端所需的资源文件</p>
+<h2 id="Manager"><a href="#Manager" class="headerlink" title="Manager"></a>Manager</h2><p>跟client双向通讯，例如开始和结束测试，收集测试结果</p>
+<h2 id="Web-Server"><a href="#Web-Server" class="headerlink" title="Web Server"></a>Web Server</h2><p>Web Server, 给客户端提供静态资源文件</p>
+<h2 id="Reporter"><a href="#Reporter" class="headerlink" title="Reporter"></a>Reporter</h2><p>给开发者输出报告</p>
+<h2 id="File-System-Watcher"><a href="#File-System-Watcher" class="headerlink" title="File System Watcher"></a>File System Watcher</h2><p>检测变化并通知client，类似 一些热更新之类的？</p>
+<h1 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h1><p>可以 多client 对1个server</p>
+<h2 id="Manager-1"><a href="#Manager-1" class="headerlink" title="Manager"></a>Manager</h2><p>和server双向通信</p>
+<h2 id="Testing-Framework"><a href="#Testing-Framework" class="headerlink" title="Testing Framework"></a>Testing Framework</h2><p>框架内自己没有，可以用很多三方的framework，例如上面的jasmine</p>
+<h2 id="Tests-and-Code-under-Test"><a href="#Tests-and-Code-under-Test" class="headerlink" title="Tests and Code under Test"></a>Tests and Code under Test</h2><p>这是开发者编写的内容了</p>
+<p>…….我感觉阿里社区里面那个翻译也不错。。可以不用继续啃英文了</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>测试的代码 全部在客户端运行，这个客户端是真实的客户端，它可以是chrome,firefox等等</p>
+<p>karma主要的工作是支撑测试的提供，例如静态文件服务，文件变化监听等，而具体代码测试内容是在karma启动的客户端(浏览器)中，依靠用户编写的测试代码和第三方测试框架完成的。</p>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="http://karma-runner.github.io/5.0/intro/how-it-works.html" target="_blank" rel="noopener">http://karma-runner.github.io/5.0/intro/how-it-works.html</a></p>
+<p><a href="https://raw.githubusercontent.com/karma-runner/karma/master/thesis.pdf" target="_blank" rel="noopener">https://raw.githubusercontent.com/karma-runner/karma/master/thesis.pdf</a></p>
+<p><a href="https://fed.taobao.org/blog/taofed/do71ct/karma-origin/" target="_blank" rel="noopener">https://fed.taobao.org/blog/taofed/do71ct/karma-origin/</a></p>
+<p><a href="https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347" target="_blank" rel="noopener">https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347</a></p>
+
       
     </div>
 
@@ -851,103 +790,75 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/20-06-03-rust-really-fast/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-06-03-rust-really-fast/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/20-06-03-rust-really-fast/" class="post-title-link" itemprop="url">rust真的快</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-06-03-rust-really-fast/" class="post-title-link" itemprop="url">rust真的快</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2020-06-03 11:20:14" itemprop="dateCreated datePublished" datetime="2020-06-03T11:20:14+08:00">2020-06-03</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/20-06-03-rust-really-fast/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/20-06-03-rust-really-fast/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-06-03-rust-really-fast/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -958,17 +869,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="ProjectEuler-74-题"><a href="#ProjectEuler-74-题" class="headerlink" title="ProjectEuler 74 题"></a>ProjectEuler 74 题</h1><p><a href="https://projecteuler.net/problem=74" target="_blank" rel="noopener">https://projecteuler.net/problem=74</a></p><p>用rust写了一遍,觉得根据常识1e6数据量，应该1s内随便跑，结果5s+，</p><p>就换成C++写了一遍，发现是因为rust没开O2？开了以后还真就和C++差不多的时间</p><h2 id="rust-版本"><a href="#rust-版本" class="headerlink" title="rust 版本"></a>rust 版本</h2><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::collections::HashMap;</span><br><span class="line"><span class="keyword">const</span> N:<span class="built_in">usize</span> = <span class="number">1_000_000</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">next_value</span></span>(<span class="keyword">mut</span> value:<span class="built_in">usize</span>,fac:&amp;[<span class="built_in">usize</span>]) -&gt; <span class="built_in">usize</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> value != <span class="number">0</span> &#123;</span><br><span class="line">        sum += fac[value%<span class="number">10</span>];</span><br><span class="line">        value/=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">dfs</span></span>(</span><br><span class="line">    fac:&amp;[<span class="built_in">usize</span>],</span><br><span class="line">    ans:&amp;<span class="keyword">mut</span> HashMap&lt;<span class="built_in">usize</span>,<span class="built_in">usize</span>&gt;,</span><br><span class="line">    dep:&amp;<span class="keyword">mut</span> HashMap&lt;<span class="built_in">usize</span>,<span class="built_in">usize</span>&gt;,</span><br><span class="line">    value:<span class="built_in">usize</span></span><br><span class="line">    ) -&gt; (<span class="built_in">usize</span>,<span class="built_in">usize</span>) &#123; <span class="comment">// dep, len</span></span><br><span class="line">    <span class="keyword">let</span> nv = next_value(value,fac);</span><br><span class="line">    <span class="keyword">let</span> next_dep = dep.get(&amp;value).unwrap() + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">match</span> dep.get(&amp;nv) &#123;</span><br><span class="line">        <span class="literal">Some</span>(rs) =&gt; &#123;</span><br><span class="line">            <span class="comment">// println!("&#123;&#125; =&gt; &#123;&#125;",value,next_dep - rs);</span></span><br><span class="line">            ans.insert(value,next_dep - rs);</span><br><span class="line">            <span class="keyword">return</span> (*rs,next_dep - rs);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="literal">None</span> =&gt; &#123;</span><br><span class="line">            <span class="keyword">match</span> ans.get(&amp;nv) &#123;</span><br><span class="line">                <span class="literal">Some</span>(res) =&gt; &#123;</span><br><span class="line">                    <span class="keyword">let</span> newres= (*res) + <span class="number">1</span>;</span><br><span class="line">                    <span class="comment">// println!("&#123;&#125; =&gt; &#123;&#125;",value,newres);</span></span><br><span class="line">                    ans.insert(value,newres);</span><br><span class="line">                    <span class="keyword">return</span> (next_dep,newres);</span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="literal">None</span> =&gt; &#123;</span><br><span class="line">                    dep.insert(nv,next_dep);</span><br><span class="line">                    <span class="keyword">let</span> <span class="keyword">mut</span> ret = dfs(fac,ans,dep,nv);</span><br><span class="line">                    <span class="keyword">if</span> next_dep &lt;= ret.<span class="number">0</span>  &#123;</span><br><span class="line">                        ret.<span class="number">1</span> += <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">// println!("&#123;&#125; =&gt; &#123;&#125;",value,ret.1);</span></span><br><span class="line">                    ans.insert(value,ret.<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">return</span> ret;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> fac = [<span class="number">0</span>;<span class="number">11</span>];</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> ans = HashMap::new();</span><br><span class="line">    fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..<span class="number">11</span>&#123;</span><br><span class="line">        fac[i] = fac[i-<span class="number">1</span>]*i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..N+<span class="number">1</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ans.contains_key(&amp;i) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut</span> dep = HashMap::new();</span><br><span class="line">        dep.insert(i,<span class="number">0</span>);</span><br><span class="line">        dfs(&amp;fac,&amp;<span class="keyword">mut</span> ans,&amp;<span class="keyword">mut</span> dep,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (k, v) <span class="keyword">in</span> &amp;ans &#123;</span><br><span class="line">        <span class="keyword">if</span> *v &gt;= <span class="number">60</span> &amp;&amp; *k &lt;= N &#123;</span><br><span class="line">            cnt+=<span class="number">1</span>;</span><br><span class="line">            <span class="comment">// println!("&#123;&#125;: \"&#123;&#125;\"", k, v);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">"&#123;&#125;"</span>,cnt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/20-06-03-rust-really-fast/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <h1 id="ProjectEuler-74-题"><a href="#ProjectEuler-74-题" class="headerlink" title="ProjectEuler 74 题"></a>ProjectEuler 74 题</h1><p><a href="https://projecteuler.net/problem=74" target="_blank" rel="noopener">https://projecteuler.net/problem=74</a></p>
+<p>用rust写了一遍,觉得根据常识1e6数据量，应该1s内随便跑，结果5s+，</p>
+<p>就换成C++写了一遍，发现是因为rust没开O2？开了以后还真就和C++差不多的时间</p>
+<h2 id="rust-版本"><a href="#rust-版本" class="headerlink" title="rust 版本"></a>rust 版本</h2><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::collections::HashMap;</span><br><span class="line"><span class="keyword">const</span> N:<span class="built_in">usize</span> = <span class="number">1_000_000</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">next_value</span></span>(<span class="keyword">mut</span> value:<span class="built_in">usize</span>,fac:&amp;[<span class="built_in">usize</span>]) -&gt; <span class="built_in">usize</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> value != <span class="number">0</span> &#123;</span><br><span class="line">        sum += fac[value%<span class="number">10</span>];</span><br><span class="line">        value/=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">dfs</span></span>(</span><br><span class="line">    fac:&amp;[<span class="built_in">usize</span>],</span><br><span class="line">    ans:&amp;<span class="keyword">mut</span> HashMap&lt;<span class="built_in">usize</span>,<span class="built_in">usize</span>&gt;,</span><br><span class="line">    dep:&amp;<span class="keyword">mut</span> HashMap&lt;<span class="built_in">usize</span>,<span class="built_in">usize</span>&gt;,</span><br><span class="line">    value:<span class="built_in">usize</span></span><br><span class="line">    ) -&gt; (<span class="built_in">usize</span>,<span class="built_in">usize</span>) &#123; <span class="comment">// dep, len</span></span><br><span class="line">    <span class="keyword">let</span> nv = next_value(value,fac);</span><br><span class="line">    <span class="keyword">let</span> next_dep = dep.get(&amp;value).unwrap() + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">match</span> dep.get(&amp;nv) &#123;</span><br><span class="line">        <span class="literal">Some</span>(rs) =&gt; &#123;</span><br><span class="line">            <span class="comment">// println!("&#123;&#125; =&gt; &#123;&#125;",value,next_dep - rs);</span></span><br><span class="line">            ans.insert(value,next_dep - rs);</span><br><span class="line">            <span class="keyword">return</span> (*rs,next_dep - rs);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="literal">None</span> =&gt; &#123;</span><br><span class="line">            <span class="keyword">match</span> ans.get(&amp;nv) &#123;</span><br><span class="line">                <span class="literal">Some</span>(res) =&gt; &#123;</span><br><span class="line">                    <span class="keyword">let</span> newres= (*res) + <span class="number">1</span>;</span><br><span class="line">                    <span class="comment">// println!("&#123;&#125; =&gt; &#123;&#125;",value,newres);</span></span><br><span class="line">                    ans.insert(value,newres);</span><br><span class="line">                    <span class="keyword">return</span> (next_dep,newres);</span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="literal">None</span> =&gt; &#123;</span><br><span class="line">                    dep.insert(nv,next_dep);</span><br><span class="line">                    <span class="keyword">let</span> <span class="keyword">mut</span> ret = dfs(fac,ans,dep,nv);</span><br><span class="line">                    <span class="keyword">if</span> next_dep &lt;= ret.<span class="number">0</span>  &#123;</span><br><span class="line">                        ret.<span class="number">1</span> += <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">// println!("&#123;&#125; =&gt; &#123;&#125;",value,ret.1);</span></span><br><span class="line">                    ans.insert(value,ret.<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">return</span> ret;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> fac = [<span class="number">0</span>;<span class="number">11</span>];</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> ans = HashMap::new();</span><br><span class="line">    fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..<span class="number">11</span>&#123;</span><br><span class="line">        fac[i] = fac[i-<span class="number">1</span>]*i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..N+<span class="number">1</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ans.contains_key(&amp;i) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut</span> dep = HashMap::new();</span><br><span class="line">        dep.insert(i,<span class="number">0</span>);</span><br><span class="line">        dfs(&amp;fac,&amp;<span class="keyword">mut</span> ans,&amp;<span class="keyword">mut</span> dep,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (k, v) <span class="keyword">in</span> &amp;ans &#123;</span><br><span class="line">        <span class="keyword">if</span> *v &gt;= <span class="number">60</span> &amp;&amp; *k &lt;= N &#123;</span><br><span class="line">            cnt+=<span class="number">1</span>;</span><br><span class="line">            <span class="comment">// println!("&#123;&#125;: \"&#123;&#125;\"", k, v);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">"&#123;&#125;"</span>,cnt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="C-版本"><a href="#C-版本" class="headerlink" title="C++版本"></a>C++版本</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ten5 100000+10</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 1000000007</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,a,n) for (uint i=a;i&lt;n;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> iif(c,t,f) ((c)?(t):(f))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(i,a,n) for (int i=n-1;i&gt;=a;i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mp make_pair</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> uint N = <span class="number">1'000'000</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">uint <span class="title">next_value</span><span class="params">(uint value,uint *fac)</span> </span>&#123;</span><br><span class="line">    uint sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(value != <span class="number">0</span>)&#123;</span><br><span class="line">        sum += fac[value%<span class="number">10</span>];</span><br><span class="line">        value/=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pair&lt;uint,uint&gt; dfs(</span><br><span class="line">    uint *fac,</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;uint,uint&gt; &amp;ans,</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;uint,uint&gt; dep,</span><br><span class="line">    uint value</span><br><span class="line">    ) &#123; <span class="comment">// dep, len</span></span><br><span class="line">    uint nv = next_value(value,fac);</span><br><span class="line">    uint next_dep = dep[value] + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(dep.count(nv))&#123;</span><br><span class="line">      <span class="keyword">auto</span> rs = dep[nv];</span><br><span class="line">      <span class="comment">// printf("%d =&gt; %d\n",value,next_dep - rs);</span></span><br><span class="line">      ans[value] = next_dep - rs;</span><br><span class="line">      <span class="keyword">return</span> &#123;rs,next_dep - rs&#125;;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">if</span>(ans.count(nv)) &#123;</span><br><span class="line">        <span class="keyword">auto</span> res = ans[nv];</span><br><span class="line">        <span class="keyword">auto</span> newres= res + <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// printf("%d =&gt; %d\n",value,newres);</span></span><br><span class="line">        ans[value] = newres;</span><br><span class="line">        <span class="keyword">return</span> &#123;next_dep,newres&#125;;</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        dep[nv] = next_dep;</span><br><span class="line">        <span class="keyword">auto</span> ret = dfs(fac,ans,dep,nv);</span><br><span class="line">        <span class="keyword">if</span>(next_dep &lt;= ret.first)&#123;</span><br><span class="line">          ret.second += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// printf("%d =&gt; %d\n",value,ret.second);</span></span><br><span class="line">        ans[value] = ret.second;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    uint fac[<span class="number">11</span>];</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;uint,uint&gt; ans;</span><br><span class="line">    fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    rep(i,<span class="number">1</span>,<span class="number">11</span>)&#123;</span><br><span class="line">        fac[i] = fac[i<span class="number">-1</span>]*i;</span><br><span class="line">    &#125;</span><br><span class="line">    rep(i,<span class="number">1</span>,N+<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(ans.count(i))&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;uint,uint&gt; dep;</span><br><span class="line">        dep[i] = <span class="number">0</span>;</span><br><span class="line">        dfs(fac,ans,dep,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">auto</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> [k,v]: ans) &#123;</span><br><span class="line">        <span class="keyword">if</span>( v &gt;= <span class="number">60</span> &amp;&amp; k &lt;= N )&#123;</span><br><span class="line">            cnt+=<span class="number">1</span>;</span><br><span class="line">            <span class="comment">// println!("&#123;&#125;: \"&#123;&#125;\"", k, v);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,cnt);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>rust不带<code>-O2</code> 大概<code>5s+</code>,带了和<code>C++</code>相近都是<code>0.3s</code>左右, 真的快</p>
+<h1 id="env"><a href="#env" class="headerlink" title="env"></a>env</h1><p>Intel Core i7-7700HQ @ 8x 3.8GHz</p>
+<p><code>!clang++ -o &quot;%&lt;&quot; &quot;%&quot; -std=gnu++17 -O2 -g -Wall -Wcomma</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">clang version 6.0.0-1ubuntu2 (tags/RELEASE_600/final)</span><br><span class="line">Target: x86_64-pc-linux-gnu</span><br><span class="line">Thread model: posix</span><br></pre></td></tr></table></figure>
+<p><code>!rustc &quot;%&quot; -O</code></p>
+<p><code>rustc 1.43.1 (8d69840ab 2020-05-04)</code></p>
+<h1 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h1><p>rust写好的代码转换成C++是真的轻松，C++转换成rust就会很累（除非各种 as，unwrap</p>
+
       
     </div>
 
@@ -976,103 +889,75 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/20-05-25-npm-registry/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-05-25-npm-registry/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/20-05-25-npm-registry/" class="post-title-link" itemprop="url">npm registry</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-05-25-npm-registry/" class="post-title-link" itemprop="url">npm registry</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2020-05-25 11:20:14" itemprop="dateCreated datePublished" datetime="2020-05-25T11:20:14+08:00">2020-05-25</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/20-05-25-npm-registry/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/20-05-25-npm-registry/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-05-25-npm-registry/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -1090,17 +975,21 @@
 <li>初始化仓库 <code>npm init</code></li>
 <li>编写代码</li>
 <li>发布<code>npm publish</code> &amp; github仓库更新</li>
-</ol><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>如果是之前用taobao的镜像，记得发布时 更改设置为官方地址</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/20-05-25-npm-registry/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+</ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>如果是之前用taobao的镜像，记得发布时 更改设置为官方地址</p>
+<p>个人建议一些“没有建设意义”的仓库，就不要去抢名字了，带上自己的scope发布</p>
+<p>发布前<strong> 记得清理敏感信息</strong>，似乎npm虽然可以unpublish但是,不能重置版本号 <a href="https://www.npmjs.com/policies/unpublish" target="_blank" rel="noopener">https://www.npmjs.com/policies/unpublish</a></p>
+<h3 id="生成类发布"><a href="#生成类发布" class="headerlink" title="生成类发布"></a>生成类发布</h3><p>例如源码是用typescript写的，发布要发布编译后的文件，但是git中不会跟踪。</p>
+<p>不建议使用<code>.npmignore</code> (会使<code>.gitignore</code>在publish时无效)，建议的是在<code>package.json</code>中增加<code>&quot;files&quot;:[&quot;dist/**/*&quot;]</code>这样的白名单</p>
+<h2 id="本地调试"><a href="#本地调试" class="headerlink" title="本地调试"></a>本地调试</h2><p>例如</p>
+<p>在开发的库中构建后调用<code>yarn link</code> 会提示<code>success Registered &quot;@cromarmot/isNumberOne&quot;</code></p>
+<p>在用来测试的文件夹中 调用 <code>yarn link &quot;@cromarmot/isNumberOne&quot;</code> 即可使用</p>
+<p>取消link：把上面link替换为unlink,使用对应的<code>yarn unlink</code>命令即可</p>
+<p>link以后，代码更新只需要编译原来的库代码，不需要重新link</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>一个基于莫比乌丝反演的数字1判断</p>
+<p><a href="https://www.npmjs.com/package/@cromarmot/is-number-one" target="_blank" rel="noopener">https://www.npmjs.com/package/@cromarmot/is-number-one</a></p>
+<h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><p><a href="https://docs.npmjs.com/" target="_blank" rel="noopener">https://docs.npmjs.com/</a></p>
+
       
     </div>
 
@@ -1108,103 +997,75 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/20-05-21-vue-v-model-domProps/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-05-21-vue-v-model-domProps/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/20-05-21-vue-v-model-domProps/" class="post-title-link" itemprop="url">vue vmodel domprops</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-05-21-vue-v-model-domProps/" class="post-title-link" itemprop="url">vue vmodel domprops</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2020-05-21 11:20:14" itemprop="dateCreated datePublished" datetime="2020-05-21T11:20:14+08:00">2020-05-21</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/20-05-21-vue-v-model-domProps/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/20-05-21-vue-v-model-domProps/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-05-21-vue-v-model-domProps/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -1215,17 +1076,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>在业务页面 希望对输入框进行额外操作，例如 当输入长度大于 10则截取到前10位</p><p>BUG产生，业务页面写了如下的代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">data()&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    someInputValue:&apos;&apos;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">watch:&#123;</span><br><span class="line">  someInputValue(newVal)&#123;</span><br><span class="line">    this.someInputValue = newVal.substr(0,10);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/20-05-21-vue-v-model-domProps/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>在业务页面 希望对输入框进行额外操作，例如 当输入长度大于 10则截取到前10位</p>
+<p>BUG产生，业务页面写了如下的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">data()&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    someInputValue:&apos;&apos;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">watch:&#123;</span><br><span class="line">  someInputValue(newVal)&#123;</span><br><span class="line">    this.someInputValue = newVal.substr(0,10);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后 前技术经理写的输入框 却可以一直输入</p>
+<p>我用render函数 写的没有问题</p>
+<p>直接裸的input也没问题</p>
+<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p>加了一堆console，基本确定bug的原理是</p>
+<ol>
+<li>内部输入更新</li>
+<li>触发组件emit</li>
+<li>业务页面得到超过长度的值</li>
+<li>修改为只有长度为10的值</li>
+<li>通过props传递给组件</li>
+<li>触发组件内对value的watch (这次能成功</li>
+<li>用户继续输入</li>
+<li>触发组件emit</li>
+<li>业务页面得到超过长度的值</li>
+<li>修改为只有长度为10的值</li>
+<li>通过props传递给组件</li>
+<li>没有触发组件内对value的watch</li>
+</ol>
+<h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><p>官方直接<code>input</code>能用，但不知道是怎么封装的</p>
+<p>我封装的是参考<code>https://cn.vuejs.org/v2/guide/render-function.html#v-model</code>的</p>
+<p>然而,如果你直接尝试上面所写的你会发现并不如愿</p>
+<p>没有使用watch，而是使用<code>domProps</code></p>
+<p>我封装的是参考<code>https://cn.vuejs.org/v2/guide/render-function.html#v-model</code>的没有使用watch，而是使用<code>domProps</code></p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>直接的话就是用<code>domProps</code> 但是有个问题，如果使用者</p>
+<p>另外的话，我本来实现的是会提供一个接受过滤函数的props，业务层可以传递过滤函数而不是通过外部watch</p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>目前看起来，双向绑定就应该做全，不要单向使用。</p>
+<p>有些时候不设置默认值？</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;v-model&lt;/h1&gt;</span><br><span class="line">    &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">      &lt;div&gt; input(默认)&lt;input v-model=&quot;x1&quot;&gt; &#123;&#123; x1 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input2(官方文档)&lt;Input2 v-model=&quot;x2&quot; /&gt;  &#123;&#123; x2 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input3(我)&lt;Input3 v-model=&quot;x3&quot; /&gt;      &#123;&#123; x3 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input4(历史遗留代码)&lt;Input4 v-model=&quot;x4&quot; /&gt;      &#123;&#123; x4 &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;h1&gt;@input only&lt;/h1&gt;</span><br><span class="line">    &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">      &lt;div&gt;input(默认)&lt;input @input=&quot;(e)=&gt;&#123;input1 = e.target.value;&#125;&quot;&gt;    &#123;&#123; input1 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input2(官方)&lt;Input2 @input=&quot;(v)=&gt;&#123;input2=v;&#125;&quot; /&gt;    &#123;&#123; input2 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input3(我)&lt;Input3 @input=&quot;(v)=&gt;&#123;input3=v;&#125;&quot; /&gt;    &#123;&#123; input3 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input4(历史遗留代码)&lt;Input4 @input=&quot;(v)=&gt;&#123;input4=v;&#125;&quot; /&gt;    &#123;&#123; input4 &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    Input3: &#123;</span><br><span class="line">      name: &apos;FormInputJsx&apos;,</span><br><span class="line">      // inheritAttrs: false,</span><br><span class="line">      props: &#123;</span><br><span class="line">        inputFilter: &#123;</span><br><span class="line">          type: Function,</span><br><span class="line">          default: null</span><br><span class="line">        &#125;,</span><br><span class="line">        // 传入类型</span><br><span class="line">        value: String</span><br><span class="line">      &#125;,</span><br><span class="line">      data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          valueIn: this.value</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      methods: &#123;</span><br><span class="line">        updateValue(value) &#123;</span><br><span class="line">          let newVal = value</span><br><span class="line">          if (this.inputFilter) &#123;</span><br><span class="line">            newVal = this.inputFilter(newVal)</span><br><span class="line">          &#125;</span><br><span class="line">          // this.valueIn = newVal</span><br><span class="line">          // if (this.$refs.input.value !== this.valueIn) &#123;</span><br><span class="line">          //   this.$refs.input.value = this.valueIn</span><br><span class="line">          // &#125;</span><br><span class="line">          this.$emit(&apos;input&apos;, newVal)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      render(h) &#123;</span><br><span class="line">        const inputConfig = &#123;</span><br><span class="line">          ref: &apos;input&apos;,</span><br><span class="line">          // input 原始属性不改动 自动下发-</span><br><span class="line">          // attrs: Object.assign(&#123; ...this.$attrs &#125;),</span><br><span class="line">          on: Object.assign(&#123; ...this.$listeners &#125;, &#123;</span><br><span class="line">            input: event =&gt; this.updateValue(event.target.value) // 输入框改变</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        if (typeof this.value !== &apos;undefined&apos;) &#123;</span><br><span class="line">          inputConfig.domProps = &#123;</span><br><span class="line">            value: this.value</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return h(&apos;input&apos;, inputConfig)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Input4: &#123;</span><br><span class="line">      render(h) &#123;</span><br><span class="line">        const self = this</span><br><span class="line">        return h(&apos;input&apos;, &#123;</span><br><span class="line">          domProps: &#123;</span><br><span class="line">            value: self.value</span><br><span class="line">          &#125;,</span><br><span class="line">          on: &#123;</span><br><span class="line">            input (event) &#123;</span><br><span class="line">              self.Amount = event.target.value</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      props: &#123;</span><br><span class="line">        value: &#123;</span><br><span class="line">          type: String,</span><br><span class="line">          default: &apos;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          Amount: &apos;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      watch: &#123;</span><br><span class="line">        value(newVal) &#123;</span><br><span class="line">          this.Amount = newVal</span><br><span class="line">        &#125;,</span><br><span class="line">        Amount(newVal) &#123;</span><br><span class="line">          // 从前截取 不带$</span><br><span class="line">          this.Amount = newVal.match(/^\d*(\.?\d&#123;0,2&#125;)/g)[0] || &apos;&apos;</span><br><span class="line">          if (isNaN(this.Amount)) &#123;</span><br><span class="line">            this.Amount = &apos;&apos;</span><br><span class="line">          &#125;</span><br><span class="line">          this.$emit(&apos;input&apos;, this.Amount)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Input2: &#123;</span><br><span class="line">      props: [&apos;value&apos;],</span><br><span class="line">      render (createElement) &#123;</span><br><span class="line">        const self = this</span><br><span class="line">        return createElement(&apos;input&apos;, &#123;</span><br><span class="line">          domProps: &#123;</span><br><span class="line">            value: self.value</span><br><span class="line">          &#125;,</span><br><span class="line">          on: &#123;</span><br><span class="line">            input (event) &#123;</span><br><span class="line">              self.$emit(&apos;input&apos;, event.target.value)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      x1: &apos;&apos;,</span><br><span class="line">      x2: &apos;&apos;,</span><br><span class="line">      x3: &apos;&apos;,</span><br><span class="line">      x4: &apos;&apos;,</span><br><span class="line">      input1: &apos;&apos;,</span><br><span class="line">      input2: &apos;&apos;,</span><br><span class="line">      input3: &apos;&apos;,</span><br><span class="line">      input4: &apos;&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    x1(nv) &#123;</span><br><span class="line">      this.x1 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x2(nv) &#123;</span><br><span class="line">      this.x2 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x3(nv) &#123;</span><br><span class="line">      this.x3 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x4(nv) &#123;</span><br><span class="line">      this.x4 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input1(nv) &#123;</span><br><span class="line">      this.input1 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input2(nv) &#123;</span><br><span class="line">      this.input2 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input3(nv) &#123;</span><br><span class="line">      this.input3 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input4(nv) &#123;</span><br><span class="line">      this.input4 = nv.substr(0, 3)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.row&#123;</span><br><span class="line">  display:flex;</span><br><span class="line">  flex-direction:column;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="https://cn.vuejs.org/v2/guide/render-function.html#v-model" target="_blank" rel="noopener">vue render v-model</a></p>
+<p><a href="https://github.com/vuejs/vue/pull/9331" target="_blank" rel="noopener">vue pull requests 9331</a></p>
+
       
     </div>
 
@@ -1233,103 +1117,75 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/20-05-18-vue-v-model/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-05-18-vue-v-model/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/20-05-18-vue-v-model/" class="post-title-link" itemprop="url">vue vmodel 一次版本管理问题</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-05-18-vue-v-model/" class="post-title-link" itemprop="url">vue vmodel 一次版本管理问题</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2020-05-18 11:20:14" itemprop="dateCreated datePublished" datetime="2020-05-18T11:20:14+08:00">2020-05-18</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/20-05-18-vue-v-model/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/20-05-18-vue-v-model/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-05-18-vue-v-model/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -1340,17 +1196,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>新做了个输入框，在三次封装时用 <code>$attrs</code>，本地一切正常，内部测试环境出现bug:输入不了值。</p><h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>版本都查过，一样的代码，最后猜是不是vue的问题。</p><p>查了一下在线的vue版本是<code>2.6.11</code>而内部发布版本是<code>2.5.13</code>。</p><p>把调试的vue换成指定版本<code>2.5.13</code>重现了bug。</p><p>顺着官方<code>https://github.com/vuejs/vue/releases</code>看</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/20-05-18-vue-v-model/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>新做了个输入框，在三次封装时用 <code>$attrs</code>，本地一切正常，内部测试环境出现bug:输入不了值。</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>版本都查过，一样的代码，最后猜是不是vue的问题。</p>
+<p>查了一下在线的vue版本是<code>2.6.11</code>而内部发布版本是<code>2.5.13</code>。</p>
+<p>把调试的vue换成指定版本<code>2.5.13</code>重现了bug。</p>
+<p>顺着官方<code>https://github.com/vuejs/vue/releases</code>看</p>
+<p>看到<code>v2.6.1</code>修复了<code>v-model: add value to $attrs if not defined in props</code></p>
+<p>看<code>pull requests 9331</code>和<code>9330</code>似乎很多人也都遇到了</p>
+<p>果然<code>XD</code></p>
+<p>内部测试发布的版本已经在生产使用，当然是锁版本不会改了，把开发用的vue调试版换回了<code>2.5.13</code>，然后对应组件增加<code>props</code>的<code>value</code>和 <code>value</code>的传递。// 还好是新组建</p>
+<p>虽然听说并且实践了无数次<code>锁版本</code>，但亲身是第一次遇到版本问题！（之前几次其它第三方资源有bug 都是最新的官方资源也没修复的，例如swiper有个重复emit的bug放了很久也不知道现在修复没</p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p><strong>锁版本!!!!!</strong></p>
+<p>官方vue虽然说是开发环境是<code>https://cdn.jsdelivr.net/npm/vue/dist/vue.js</code>，但实际因为生产的vue 是锁了版本，所以为了保持和生产一致，如果要使用在线资源可以使用<code>https://cdn.jsdelivr.net/npm/vue@版本号/dist/vue.js</code></p>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="https://github.com/vuejs/vue/releases?after=v2.6.2" target="_blank" rel="noopener">vue releases</a></p>
+<p><a href="https://github.com/vuejs/vue/pull/9331" target="_blank" rel="noopener">vue pull requests 9331</a></p>
+
       
     </div>
 
@@ -1358,103 +1218,75 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/20-04-14-karma-jasmine/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-04-14-karma-jasmine/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/Blog/20-04-14-karma-jasmine/" class="post-title-link" itemprop="url">karma jasmine</a>
-            
-          </h1>
-        
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-04-14-karma-jasmine/" class="post-title-link" itemprop="url">karma jasmine</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2020-04-15 11:20:14" itemprop="dateCreated datePublished" datetime="2020-04-15T11:20:14+08:00">2020-04-15</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/20-04-14-karma-jasmine/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/20-04-14-karma-jasmine/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-04-14-karma-jasmine/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -1465,17 +1297,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn global add jasmine-core karma karma-chrome-launcher karma-jasmine karma-jasmine-html-reporter</span><br><span class="line">karma init <span class="comment"># 一路默认</span></span><br><span class="line">vim karma.conf.js</span><br></pre></td></tr></table></figure><p>一些改动</p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@@ -21,8 +21,12 @@ module.exports = function (config) &#123;</span><br><span class="line"> </span><br><span class="line">     // list of files / patterns to load in the browser</span><br><span class="line">     files: [</span><br><span class="line"><span class="addition">+      'src/**/*.js'</span></span><br><span class="line">     ],</span><br><span class="line"> </span><br><span class="line"><span class="addition">+    client: &#123;</span></span><br><span class="line"><span class="addition">+      clearContext: false, // leave Jasmine Spec Runner output visible in browser</span></span><br><span class="line"><span class="addition">+    &#125;,</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">     // list of files / patterns to exclude</span><br><span class="line">@@ -37,7 +41,7 @@ module.exports = function (config) &#123;</span><br><span class="line">     // test results reporter to use</span><br><span class="line">     // possible values: 'dots', 'progress'</span><br><span class="line">     // available reporters: https://npmjs.org/browse/keyword/karma-reporter</span><br><span class="line"><span class="deletion">-    reporters: ['progress'],</span></span><br><span class="line"><span class="addition">+    reporters: ['progress', 'kjhtml'],</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     // web server port</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/Blog/20-04-14-karma-jasmine/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <h1 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn global add jasmine-core karma karma-chrome-launcher karma-jasmine karma-jasmine-html-reporter</span><br><span class="line">karma init <span class="comment"># 一路默认</span></span><br><span class="line">vim karma.conf.js</span><br></pre></td></tr></table></figure>
+<p>一些改动</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@@ -21,8 +21,12 @@ module.exports = function (config) &#123;</span><br><span class="line"> </span><br><span class="line">     // list of files / patterns to load in the browser</span><br><span class="line">     files: [</span><br><span class="line"><span class="addition">+      'src/**/*.js'</span></span><br><span class="line">     ],</span><br><span class="line"> </span><br><span class="line"><span class="addition">+    client: &#123;</span></span><br><span class="line"><span class="addition">+      clearContext: false, // leave Jasmine Spec Runner output visible in browser</span></span><br><span class="line"><span class="addition">+    &#125;,</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">     // list of files / patterns to exclude</span><br><span class="line">@@ -37,7 +41,7 @@ module.exports = function (config) &#123;</span><br><span class="line">     // test results reporter to use</span><br><span class="line">     // possible values: 'dots', 'progress'</span><br><span class="line">     // available reporters: https://npmjs.org/browse/keyword/karma-reporter</span><br><span class="line"><span class="deletion">-    reporters: ['progress'],</span></span><br><span class="line"><span class="addition">+    reporters: ['progress', 'kjhtml'],</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     // web server port</span><br></pre></td></tr></table></figure>
+<p>编写你的测试代码，语法见jasmine文档</p>
+<p>启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">karma start</span><br></pre></td></tr></table></figure>
+<p><code>karma-jasmine-html-reporter</code> 这个赞极少 却超高的周下载量 所以大多是连带下载的吧</p>
+<h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><h2 id="版本兼容各种问题"><a href="#版本兼容各种问题" class="headerlink" title="版本兼容各种问题"></a>版本兼容各种问题</h2><p>目前一组能用的</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"jasmine-core"</span>: <span class="string">"^3.5.0"</span>,</span><br><span class="line">    <span class="attr">"karma"</span>: <span class="string">"^5.0.1"</span>,</span><br><span class="line">    <span class="attr">"karma-chrome-launcher"</span>: <span class="string">"^3.1.0"</span>,</span><br><span class="line">    <span class="attr">"karma-jasmine"</span>: <span class="string">"^3.1.1"</span>,</span><br><span class="line">    <span class="attr">"karma-jasmine-html-reporter"</span>: <span class="string">"^1.5.3"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="cnpm"><a href="#cnpm" class="headerlink" title="cnpm"></a>cnpm</h2><p>不知道cnpm搞了什么私货，同样的命令 npm 能用 cnpm就是报错。目前采取全局yarn按加项目内karam.conf.js了 (感觉操作不科学啊</p>
+<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><p>报错 大概意思不在module内</p>
+<p>搜到很多加plugins或者在预处理调用webpack的，暂时没有采用</p>
+<p>可行的一种方案,目前把<code>files</code>的配置写成</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="attr">pattern</span>:<span class="string">'src/**/*.js'</span>,<span class="attr">type</span>:<span class="string">'module'</span>&#125;]</span><br></pre></td></tr></table></figure>
+<h2 id="files"><a href="#files" class="headerlink" title="files"></a>files</h2><p>需要包括源代码 和 测试代码</p>
+<h1 id="Repo"><a href="#Repo" class="headerlink" title="Repo"></a>Repo</h1><p><a href="https://github.com/CroMarmot/karma.jasmine.demo" target="_blank" rel="noopener">https://github.com/CroMarmot/karma.jasmine.demo</a></p>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="http://karma-runner.github.io/4.0/config/files.html" target="_blank" rel="noopener">http://karma-runner.github.io/4.0/config/files.html</a></p>
+<p><a href="http://karma-runner.github.io/4.0/intro/how-it-works.html" target="_blank" rel="noopener">http://karma-runner.github.io/4.0/intro/how-it-works.html</a></p>
+
       
     </div>
 
@@ -1483,17 +1323,13 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-    
-  </section>
 
   
   <nav class="pagination">
@@ -1501,381 +1337,98 @@
   </nav>
 
 
+
           </div>
           
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
 
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Cro-Marmot</p>
-  <div class="site-description motion-element" itemprop="description"></div>
+  <div class="site-description" itemprop="description"></div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/Blog/archives/">
         
           <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">分類</span>
-        
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-count">89</span>
         <span class="site-state-item-name">標籤</span>
-        
       </div>
-    
   </nav>
+</div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/CroMarmot" title="GitHub &rarr; https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/CroMarmot" title="GitHub → https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces &rarr; https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-bug"></i>Codeforces</a>
+        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces → https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>Codeforces</a>
       </span>
-    
   </div>
 
 
 
-        </div>
       </div>
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
-          
+          <span>0%</span>
         </div>
-      
 
     </div>
   </aside>
@@ -1885,17 +1438,23 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
 
         
 
@@ -1906,28 +1465,17 @@
 
 
 
-        
       </div>
     </footer>
-
-    
-
   </div>
 
   
-  <script src="/Blog/lib/jquery/index.js?v=3.4.1"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-<script src="/Blog/js/utils.js?v=7.3.0"></script>
-  <script src="/Blog/js/motion.js?v=7.3.0"></script>
-
-
-  <script src="/Blog/js/schemes/muse.js?v=7.3.0"></script>
-
-
-<script src="/Blog/js/next-boot.js?v=7.3.0"></script>
-
+  <script src="/Blog/lib/anime.min.js"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
+<script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script>
+<script src="/Blog/js/schemes/muse.js"></script>
+<script src="/Blog/js/next-boot.js"></script>
 
 
 
@@ -1936,20 +1484,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  <script src="/Blog/js/local-search.js?v=7.3.0"></script>
-
-
+  <script src="/Blog/js/local-search.js"></script>
 
 
 
@@ -1965,88 +1500,62 @@
   
 
   
-    
       
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-    
-      
-<script type="text/x-mathjax-config">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
 <script>
-  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML', () => {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
 </script>
 
     
-  
 
   
 
-  
-
-
-  
-    
 <script>
   function loadCount() {
     var d = document, s = d.createElement('script');

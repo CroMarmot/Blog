@@ -1,60 +1,25 @@
 <!DOCTYPE html>
-
-
-
-
-
-<html class="theme-next muse use-motion" lang="zh-TW">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
   <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
 
-<link rel="stylesheet" href="/Blog/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/Blog/',
-    scheme: 'Muse',
-    version: '7.3.0',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
-    back2top: {"enable":true,"sidebar":true,"scrollpercent":false},
-    save_scroll: false,
-    copycode: {"enable":false,"show_result":false,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '複製',
-      copy_success: '複製成功',
-      copy_failure: '複製失敗'
-    }
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
   <meta name="description" content="19-07-12  -&amp;gt; 19-08-15  Hell world开始 &amp;amp; 安装curl https://sh.rustup.rs -sSf | sh 网络真的是僵硬，下载下一年， 我用远端服务器就很快下了 真是艹了,我在远端 都跟着教程看了两章+尝试demo了，本地的build下载还没下好 国内的话 配置~/.cargo/config如下会稍微快一些,吐槽 1234567[reg">
 <meta name="keywords" content="rust">
@@ -73,22 +38,22 @@
 <meta property="og:image" content="https://doc.rust-lang.org/book/img/trpl15-02.svg">
 <meta property="og:image" content="https://doc.rust-lang.org/book/img/trpl15-03.svg">
 <meta property="og:image" content="https://doc.rust-lang.org/book/img/trpl15-04.svg">
-<meta property="og:updated_time" content="2021-02-23T09:27:03.820Z">
+<meta property="og:updated_time" content="2021-02-25T08:17:35.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rust book 学习笔记">
 <meta name="twitter:description" content="19-07-12  -&amp;gt; 19-08-15  Hell world开始 &amp;amp; 安装curl https://sh.rustup.rs -sSf | sh 网络真的是僵硬，下载下一年， 我用远端服务器就很快下了 真是艹了,我在远端 都跟着教程看了两章+尝试demo了，本地的build下载还没下好 国内的话 配置~/.cargo/config如下会稍微快一些,吐槽 1234567[reg">
 <meta name="twitter:image" content="https://doc.rust-lang.org/book/img/trpl04-01.svg">
-  <link rel="canonical" href="https://cromarmot.github.io/Blog/19-08-15-rust/">
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/19-08-15-rust/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
   };
 </script>
 
@@ -100,11 +65,8 @@
 
 
 
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -113,9 +75,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -129,194 +90,165 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
-
-  <div class="container sidebar-position-right">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-
-    <div class="custom-logo-site-title">
-      <a href="/Blog/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Cro-Marmot's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切換導航欄">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Cro-Marmot's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
+
 
 
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-      
-      
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-      
-    
 
-    <a href="/Blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
-    <a href="/Blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
-        
-          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
       </li>
-    
   </ul>
-
-    
-
 </nav>
-  <div class="site-search">
-    
-  <div class="popup search-popup">
-  <div class="search-header">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none"
-             placeholder="搜尋..." spellcheck="false"
-             type="text" id="search-input">
-    </div>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
   </div>
-  <div id="search-result"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 </div>
 
-
+    </div>
   </div>
+
 </div>
     </header>
 
     
 
-    
 
-  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>
+  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>
+  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
-    <main id="main" class="main">
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content page-post-detail">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/Blog/19-08-15-rust/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-08-15-rust/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Cro-Marmot">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
     </span>
       <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">rust book 学习笔记
-
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          rust book 学习笔记
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              
-                
-              
-
               <time title="創建時間：2019-08-15 15:09:01" itemprop="dateCreated datePublished" datetime="2019-08-15T15:09:01+08:00">2019-08-15</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-23 17:27:03" itemprop="dateModified" datetime="2021-02-23T17:27:03+08:00">2021-02-23</time>
+                <time title="修改時間：2021-02-25 16:17:35" itemprop="dateModified" datetime="2021-02-25T16:17:35+08:00">2021-02-25</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+                </span>
             </span>
-          
 
           
-            
   
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-08-15-rust/#comments" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/19-08-15-rust/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-08-15-rust/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-          
 
         </div>
       </header>
@@ -1816,463 +1748,134 @@
     
     
     
-        
-      
 
       <footer class="post-footer">
-          
-            
-          
           <div class="post-tags">
-            
               <a href="/Blog/tags/rust/" rel="tag"># rust</a>
-            
           </div>
-        
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/Blog/19-07-26-jenkins/" rel="next" title="jenkins 入门尝试">
-                  <i class="fa fa-chevron-left"></i> jenkins 入门尝试
-                </a>
-              
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/Blog/19-08-21-the-black-swan/" rel="prev" title="黑天鹅：如何应对不可预知的未来 阅读笔记">
-                  黑天鹅：如何应对不可预知的未来 阅读笔记 <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
-          </div>
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Blog/19-07-26-jenkins/" rel="prev" title="jenkins 入门尝试">
+      <i class="fa fa-chevron-left"></i> jenkins 入门尝试
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Blog/19-08-21-the-black-swan/" rel="next" title="黑天鹅：如何应对不可预知的未来 阅读笔记">
+      黑天鹅：如何应对不可预知的未来 阅读笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-  </div>
 
 
           </div>
           
     
-    
-  <div class="comments" id="comments">
+  <div class="comments">
     <div id="disqus_thread">
       <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
   </div>
   
-  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目錄
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            本站概要
-          </li>
-        </ul>
-      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hell-world"><span class="nav-number">1.</span> <span class="nav-text">Hell world</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始-amp-安装"><span class="nav-number">1.1.</span> <span class="nav-text">开始 &amp; 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE-vim配置"><span class="nav-number">1.2.</span> <span class="nav-text">IDE/vim配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入门命令"><span class="nav-number">1.3.</span> <span class="nav-text">入门命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖相关"><span class="nav-number">1.4.</span> <span class="nav-text">依赖相关</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本语法-写一个猜测数游戏"><span class="nav-number">2.</span> <span class="nav-text">基本语法+写一个猜测数游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#猜数"><span class="nav-number">2.1.</span> <span class="nav-text">猜数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#immutable和mutable"><span class="nav-number">2.2.</span> <span class="nav-text">immutable和mutable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#match"><span class="nav-number">2.3.</span> <span class="nav-text">match</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#明确的类型"><span class="nav-number">2.4.</span> <span class="nav-text">明确的类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整数"><span class="nav-number">2.5.</span> <span class="nav-text">整数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点数"><span class="nav-number">2.6.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tuple-amp-array"><span class="nav-number">2.7.</span> <span class="nav-text">tuple &amp; array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">2.8.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if"><span class="nav-number">2.9.</span> <span class="nav-text">if</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环"><span class="nav-number">2.10.</span> <span class="nav-text">循环</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ownership-amp-slice"><span class="nav-number">3.</span> <span class="nav-text">Ownership &amp; slice</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#slice"><span class="nav-number">3.1.</span> <span class="nav-text">slice</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Struct"><span class="nav-number">4.</span> <span class="nav-text">Struct</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Enums-and-Option-and-Pattern-Matching"><span class="nav-number">5.</span> <span class="nav-text">Enums and Option and Pattern Matching</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Managing-Growing-Projects-with-Packages-Crates-and-Modules"><span class="nav-number">6.</span> <span class="nav-text">Managing Growing Projects with Packages, Crates, and Modules</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Packages-amp-Crates"><span class="nav-number">6.1.</span> <span class="nav-text">Packages &amp; Crates</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Defining-Modules-to-Control-Scope-and-Privacy"><span class="nav-number">6.2.</span> <span class="nav-text">Defining Modules to Control Scope and Privacy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Path"><span class="nav-number">6.3.</span> <span class="nav-text">Path</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use"><span class="nav-number">6.4.</span> <span class="nav-text">use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pub-use"><span class="nav-number">6.5.</span> <span class="nav-text">pub use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-引入"><span class="nav-number">6.6.</span> <span class="nav-text">package 引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块分化"><span class="nav-number">6.7.</span> <span class="nav-text">模块分化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-Collections"><span class="nav-number">7.</span> <span class="nav-text">Common Collections</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vectors"><span class="nav-number">7.1.</span> <span class="nav-text">Vectors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Storing-UTF-8-Encoded-Text-with-Strings"><span class="nav-number">7.2.</span> <span class="nav-text">Storing UTF-8 Encoded Text with Strings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Storing-Keys-with-Associated-Values-in-Hash-Maps"><span class="nav-number">7.3.</span> <span class="nav-text">Storing Keys with Associated Values in Hash Maps</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Error-Handling"><span class="nav-number">8.</span> <span class="nav-text">Error Handling</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不可恢复的错误with-panic"><span class="nav-number">8.1.</span> <span class="nav-text">不可恢复的错误with panic!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recoverable-Errors-with-Result"><span class="nav-number">8.2.</span> <span class="nav-text">Recoverable Errors with Result</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#To-panic-or-Not-to-panic"><span class="nav-number">8.3.</span> <span class="nav-text">To panic! or Not to panic!</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Generic-Types-Traits-and-Lifetimes"><span class="nav-number">9.</span> <span class="nav-text">Generic Types, Traits, and Lifetimes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Generic-Data-Types"><span class="nav-number">9.1.</span> <span class="nav-text">Generic Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#性能"><span class="nav-number">9.1.1.</span> <span class="nav-text">性能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Traits-Defining-Shared-Behavior"><span class="nav-number">9.2.</span> <span class="nav-text">Traits: Defining Shared Behavior</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#把trait作为参数"><span class="nav-number">9.2.1.</span> <span class="nav-text">把trait作为参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Validating-References-with-Lifetimes"><span class="nav-number">9.3.</span> <span class="nav-text">Validating References with Lifetimes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期注解"><span class="nav-number">9.3.1.</span> <span class="nav-text">生命周期注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thinking-in-Terms-of-Lifetimes-从生命周期的角度思考"><span class="nav-number">9.3.2.</span> <span class="nav-text">Thinking in Terms of Lifetimes 从生命周期的角度思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lifetime-Annotations-in-Method-Definitions"><span class="nav-number">9.3.3.</span> <span class="nav-text">Lifetime Annotations in Method Definitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Static-Lifetime"><span class="nav-number">9.3.4.</span> <span class="nav-text">The Static Lifetime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generic-Type-Parameters-Trait-Bounds-and-Lifetimes-Together"><span class="nav-number">9.3.5.</span> <span class="nav-text">Generic Type Parameters, Trait Bounds, and Lifetimes Together</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Writing-Automated-Tests"><span class="nav-number">10.</span> <span class="nav-text">Writing Automated Tests</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-Write-Tests"><span class="nav-number">10.1.</span> <span class="nav-text">How to Write Tests</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controlling-How-Tests-Are-Run"><span class="nav-number">10.2.</span> <span class="nav-text">Controlling How Tests Are Run</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Test-Organization"><span class="nav-number">10.3.</span> <span class="nav-text">Test Organization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-Tests"><span class="nav-number">10.3.1.</span> <span class="nav-text">Unit Tests</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Integration-Tests"><span class="nav-number">10.3.2.</span> <span class="nav-text">Integration Tests</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Integration-Tests-for-Binary-Crates"><span class="nav-number">10.3.2.1.</span> <span class="nav-text">Integration Tests for Binary Crates</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#An-I-O-Project-Building-a-Command-Line-Program"><span class="nav-number">11.</span> <span class="nav-text">An I/O Project: Building a Command Line Program</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#接受命令行参数"><span class="nav-number">11.1.</span> <span class="nav-text">接受命令行参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reading-a-File"><span class="nav-number">11.2.</span> <span class="nav-text">Reading a File</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Refactoring-to-Improve-Modularity-and-Error-Handling"><span class="nav-number">11.3.</span> <span class="nav-text">Refactoring to Improve Modularity and Error Handling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Developing-the-Library’s-Functionality-with-Test-Driven-Development"><span class="nav-number">11.4.</span> <span class="nav-text">Developing the Library’s Functionality with Test-Driven Development</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Working-with-Environment-Variables"><span class="nav-number">11.5.</span> <span class="nav-text">Working with Environment Variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Writing-Error-Messages-to-Standard-Error-Instead-of-Standard-Output"><span class="nav-number">11.6.</span> <span class="nav-text">Writing Error Messages to Standard Error Instead of Standard Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回顾TDD"><span class="nav-number">11.7.</span> <span class="nav-text">回顾TDD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Functional-Language-Features-Iterators-and-Closures"><span class="nav-number">12.</span> <span class="nav-text">Functional Language Features: Iterators and Closures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Closures-Anonymous-Functions-that-Can-Capture-Their-Environment"><span class="nav-number">12.1.</span> <span class="nav-text">Closures: Anonymous Functions that Can Capture Their Environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Processing-a-Series-of-Items-with-Iterators"><span class="nav-number">12.2.</span> <span class="nav-text">Processing a Series of Items with Iterators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Improving-Our-I-O-Project"><span class="nav-number">12.3.</span> <span class="nav-text">Improving Our I/O Project</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparing-Performance-Loops-vs-Iterators"><span class="nav-number">12.4.</span> <span class="nav-text">Comparing Performance: Loops vs. Iterators</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#More-About-Cargo-and-Crates-io"><span class="nav-number">13.</span> <span class="nav-text">More About Cargo and Crates.io</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Customizing-Builds-with-Release-Profiles"><span class="nav-number">13.1.</span> <span class="nav-text">Customizing Builds with Release Profiles</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Publishing-a-Crate-to-Crates-io"><span class="nav-number">13.2.</span> <span class="nav-text">Publishing a Crate to Crates.io</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cargo-Workspaces"><span class="nav-number">13.3.</span> <span class="nav-text">Cargo Workspaces</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installing-Binaries-from-Crates-io-with-cargo-install"><span class="nav-number">13.4.</span> <span class="nav-text">Installing Binaries from Crates.io with cargo install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extending-Cargo-with-Custom-Commands"><span class="nav-number">13.5.</span> <span class="nav-text">Extending Cargo with Custom Commands</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Smart-Pointers"><span class="nav-number">14.</span> <span class="nav-text">Smart Pointers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Box-to-Point-to-Data-on-the-Heap"><span class="nav-number">14.1.</span> <span class="nav-text">Using Box to Point to Data on the Heap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Treating-Smart-Pointers-Like-Regular-References-with-the-Deref-Trait"><span class="nav-number">14.2.</span> <span class="nav-text">Treating Smart Pointers Like Regular References with the Deref Trait</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Implicit-Deref-Coercions-with-Functions-and-Methods"><span class="nav-number">14.2.1.</span> <span class="nav-text">Implicit Deref Coercions with Functions and Methods</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Running-Code-on-Cleanup-with-the-Drop-Trait"><span class="nav-number">14.3.</span> <span class="nav-text">Running Code on Cleanup with the Drop Trait</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rc-the-Reference-Counted-Smart-Pointer"><span class="nav-number">14.4.</span> <span class="nav-text">Rc, the Reference Counted Smart Pointer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RefCell-and-the-Interior-Mutability-Pattern"><span class="nav-number">14.5.</span> <span class="nav-text">RefCell and the Interior Mutability Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference-Cycles-Can-Leak-Memory"><span class="nav-number">14.6.</span> <span class="nav-text">Reference Cycles Can Leak Memory</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fearless-Concurrency"><span class="nav-number">15.</span> <span class="nav-text">Fearless Concurrency</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Threads-to-Run-Code-Simultaneously"><span class="nav-number">15.1.</span> <span class="nav-text">Using Threads to Run Code Simultaneously</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Message-Passing-to-Transfer-Data-Between-Threads"><span class="nav-number">15.2.</span> <span class="nav-text">Using Message Passing to Transfer Data Between Threads</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shared-State-Concurrency"><span class="nav-number">15.3.</span> <span class="nav-text">Shared-State Concurrency</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extensible-Concurrency-with-the-Sync-and-Send-Traits"><span class="nav-number">15.4.</span> <span class="nav-text">Extensible Concurrency with the Sync and Send Traits</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementing-Send-and-Sync-Manually-Is-Unsafe"><span class="nav-number">15.4.1.</span> <span class="nav-text">Implementing Send and Sync Manually Is Unsafe</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-Oriented-Programming-Features-of-Rust"><span class="nav-number">16.</span> <span class="nav-text">Object Oriented Programming Features of Rust</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Characteristics-of-Object-Oriented-Languages"><span class="nav-number">16.1.</span> <span class="nav-text">Characteristics of Object-Oriented Languages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Trait-Objects-That-Allow-for-Values-of-Different-Types"><span class="nav-number">16.2.</span> <span class="nav-text">Using Trait Objects That Allow for Values of Different Types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Implementing-an-Object-Oriented-Design-Pattern"><span class="nav-number">16.3.</span> <span class="nav-text">Implementing an Object-Oriented Design Pattern</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Patterns-and-Matching"><span class="nav-number">17.</span> <span class="nav-text">Patterns and Matching</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#All-the-Places-Patterns-Can-Be-Used"><span class="nav-number">17.1.</span> <span class="nav-text">All the Places Patterns Can Be Used</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Refutability-Whether-a-Pattern-Might-Fail-to-Match"><span class="nav-number">17.2.</span> <span class="nav-text">Refutability: Whether a Pattern Might Fail to Match</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pattern-Syntax"><span class="nav-number">17.3.</span> <span class="nav-text">Pattern Syntax</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Advanced-Features"><span class="nav-number">18.</span> <span class="nav-text">Advanced Features</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsafe-Rust"><span class="nav-number">18.1.</span> <span class="nav-text">Unsafe Rust</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dereferencing-a-Raw-Pointer"><span class="nav-number">18.1.1.</span> <span class="nav-text">Dereferencing a Raw Pointer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Calling-an-Unsafe-Function-or-Method"><span class="nav-number">18.1.2.</span> <span class="nav-text">Calling an Unsafe Function or Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Accessing-or-Modifying-a-Mutable-Static-Variable"><span class="nav-number">18.1.3.</span> <span class="nav-text">Accessing or Modifying a Mutable Static Variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementing-an-Unsafe-Trait"><span class="nav-number">18.1.4.</span> <span class="nav-text">Implementing an Unsafe Trait</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时使用"><span class="nav-number">18.1.5.</span> <span class="nav-text">何时使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-Traits"><span class="nav-number">18.2.</span> <span class="nav-text">Advanced Traits</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Specifying-Placeholder-Types-in-Trait-Definitions-with-Associated-Types"><span class="nav-number">18.2.1.</span> <span class="nav-text">Specifying Placeholder Types in Trait Definitions with Associated Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Default-Generic-Type-Parameters-and-Operator-Overloading"><span class="nav-number">18.2.2.</span> <span class="nav-text">Default Generic Type Parameters and Operator Overloading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fully-Qualified-Syntax-for-Disambiguation-Calling-Methods-with-the-Same-Name"><span class="nav-number">18.2.3.</span> <span class="nav-text">Fully Qualified Syntax for Disambiguation: Calling Methods with the Same Name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-the-Newtype-Pattern-to-Implement-External-Traits-on-External-Types"><span class="nav-number">18.2.4.</span> <span class="nav-text">Using the Newtype Pattern to Implement External Traits on External Types</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-Types"><span class="nav-number">18.3.</span> <span class="nav-text">Advanced Types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-Functions-and-Closures"><span class="nav-number">18.4.</span> <span class="nav-text">Advanced Functions and Closures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Macros"><span class="nav-number">18.5.</span> <span class="nav-text">Macros</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Attribute-like-macros"><span class="nav-number">18.5.1.</span> <span class="nav-text">Attribute-like macros</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-like-macros"><span class="nav-number">18.5.2.</span> <span class="nav-text">Function-like macros</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-Project-Building-a-Multithreaded-Web-Server"><span class="nav-number">19.</span> <span class="nav-text">Final Project: Building a Multithreaded Web Server</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Appendix"><span class="nav-number">20.</span> <span class="nav-text">Appendix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">21.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TODO"><span class="nav-number">22.</span> <span class="nav-text">TODO</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Cro-Marmot</p>
-  <div class="site-description motion-element" itemprop="description"></div>
+  <div class="site-description" itemprop="description"></div>
 </div>
-  <nav class="site-state motion-element">
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/Blog/archives/">
         
           <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">分類</span>
-        
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-count">89</span>
         <span class="site-state-item-name">標籤</span>
-        
       </div>
-    
   </nav>
+</div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/CroMarmot" title="GitHub &rarr; https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/CroMarmot" title="GitHub → https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces &rarr; https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="fa fa-fw fa-bug"></i>Codeforces</a>
+        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces → https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>Codeforces</a>
       </span>
-    
   </div>
 
 
 
-        </div>
       </div>
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hell-world"><span class="nav-number">1.</span> <span class="nav-text">Hell world</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始-amp-安装"><span class="nav-number">1.1.</span> <span class="nav-text">开始 &amp; 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE-vim配置"><span class="nav-number">1.2.</span> <span class="nav-text">IDE/vim配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入门命令"><span class="nav-number">1.3.</span> <span class="nav-text">入门命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖相关"><span class="nav-number">1.4.</span> <span class="nav-text">依赖相关</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本语法-写一个猜测数游戏"><span class="nav-number">2.</span> <span class="nav-text">基本语法+写一个猜测数游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#猜数"><span class="nav-number">2.1.</span> <span class="nav-text">猜数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#immutable和mutable"><span class="nav-number">2.2.</span> <span class="nav-text">immutable和mutable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#match"><span class="nav-number">2.3.</span> <span class="nav-text">match</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#明确的类型"><span class="nav-number">2.4.</span> <span class="nav-text">明确的类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整数"><span class="nav-number">2.5.</span> <span class="nav-text">整数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点数"><span class="nav-number">2.6.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tuple-amp-array"><span class="nav-number">2.7.</span> <span class="nav-text">tuple &amp; array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">2.8.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if"><span class="nav-number">2.9.</span> <span class="nav-text">if</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环"><span class="nav-number">2.10.</span> <span class="nav-text">循环</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ownership-amp-slice"><span class="nav-number">3.</span> <span class="nav-text">Ownership &amp; slice</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#slice"><span class="nav-number">3.1.</span> <span class="nav-text">slice</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Struct"><span class="nav-number">4.</span> <span class="nav-text">Struct</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Enums-and-Option-and-Pattern-Matching"><span class="nav-number">5.</span> <span class="nav-text">Enums and Option and Pattern Matching</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Managing-Growing-Projects-with-Packages-Crates-and-Modules"><span class="nav-number">6.</span> <span class="nav-text">Managing Growing Projects with Packages, Crates, and Modules</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Packages-amp-Crates"><span class="nav-number">6.1.</span> <span class="nav-text">Packages &amp; Crates</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Defining-Modules-to-Control-Scope-and-Privacy"><span class="nav-number">6.2.</span> <span class="nav-text">Defining Modules to Control Scope and Privacy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Path"><span class="nav-number">6.3.</span> <span class="nav-text">Path</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use"><span class="nav-number">6.4.</span> <span class="nav-text">use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pub-use"><span class="nav-number">6.5.</span> <span class="nav-text">pub use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-引入"><span class="nav-number">6.6.</span> <span class="nav-text">package 引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块分化"><span class="nav-number">6.7.</span> <span class="nav-text">模块分化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-Collections"><span class="nav-number">7.</span> <span class="nav-text">Common Collections</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vectors"><span class="nav-number">7.1.</span> <span class="nav-text">Vectors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Storing-UTF-8-Encoded-Text-with-Strings"><span class="nav-number">7.2.</span> <span class="nav-text">Storing UTF-8 Encoded Text with Strings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Storing-Keys-with-Associated-Values-in-Hash-Maps"><span class="nav-number">7.3.</span> <span class="nav-text">Storing Keys with Associated Values in Hash Maps</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Error-Handling"><span class="nav-number">8.</span> <span class="nav-text">Error Handling</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不可恢复的错误with-panic"><span class="nav-number">8.1.</span> <span class="nav-text">不可恢复的错误with panic!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recoverable-Errors-with-Result"><span class="nav-number">8.2.</span> <span class="nav-text">Recoverable Errors with Result</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#To-panic-or-Not-to-panic"><span class="nav-number">8.3.</span> <span class="nav-text">To panic! or Not to panic!</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Generic-Types-Traits-and-Lifetimes"><span class="nav-number">9.</span> <span class="nav-text">Generic Types, Traits, and Lifetimes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Generic-Data-Types"><span class="nav-number">9.1.</span> <span class="nav-text">Generic Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#性能"><span class="nav-number">9.1.1.</span> <span class="nav-text">性能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Traits-Defining-Shared-Behavior"><span class="nav-number">9.2.</span> <span class="nav-text">Traits: Defining Shared Behavior</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#把trait作为参数"><span class="nav-number">9.2.1.</span> <span class="nav-text">把trait作为参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Validating-References-with-Lifetimes"><span class="nav-number">9.3.</span> <span class="nav-text">Validating References with Lifetimes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期注解"><span class="nav-number">9.3.1.</span> <span class="nav-text">生命周期注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thinking-in-Terms-of-Lifetimes-从生命周期的角度思考"><span class="nav-number">9.3.2.</span> <span class="nav-text">Thinking in Terms of Lifetimes 从生命周期的角度思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lifetime-Annotations-in-Method-Definitions"><span class="nav-number">9.3.3.</span> <span class="nav-text">Lifetime Annotations in Method Definitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Static-Lifetime"><span class="nav-number">9.3.4.</span> <span class="nav-text">The Static Lifetime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generic-Type-Parameters-Trait-Bounds-and-Lifetimes-Together"><span class="nav-number">9.3.5.</span> <span class="nav-text">Generic Type Parameters, Trait Bounds, and Lifetimes Together</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Writing-Automated-Tests"><span class="nav-number">10.</span> <span class="nav-text">Writing Automated Tests</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-Write-Tests"><span class="nav-number">10.1.</span> <span class="nav-text">How to Write Tests</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controlling-How-Tests-Are-Run"><span class="nav-number">10.2.</span> <span class="nav-text">Controlling How Tests Are Run</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Test-Organization"><span class="nav-number">10.3.</span> <span class="nav-text">Test Organization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-Tests"><span class="nav-number">10.3.1.</span> <span class="nav-text">Unit Tests</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Integration-Tests"><span class="nav-number">10.3.2.</span> <span class="nav-text">Integration Tests</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Integration-Tests-for-Binary-Crates"><span class="nav-number">10.3.2.1.</span> <span class="nav-text">Integration Tests for Binary Crates</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#An-I-O-Project-Building-a-Command-Line-Program"><span class="nav-number">11.</span> <span class="nav-text">An I/O Project: Building a Command Line Program</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#接受命令行参数"><span class="nav-number">11.1.</span> <span class="nav-text">接受命令行参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reading-a-File"><span class="nav-number">11.2.</span> <span class="nav-text">Reading a File</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Refactoring-to-Improve-Modularity-and-Error-Handling"><span class="nav-number">11.3.</span> <span class="nav-text">Refactoring to Improve Modularity and Error Handling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Developing-the-Library’s-Functionality-with-Test-Driven-Development"><span class="nav-number">11.4.</span> <span class="nav-text">Developing the Library’s Functionality with Test-Driven Development</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Working-with-Environment-Variables"><span class="nav-number">11.5.</span> <span class="nav-text">Working with Environment Variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Writing-Error-Messages-to-Standard-Error-Instead-of-Standard-Output"><span class="nav-number">11.6.</span> <span class="nav-text">Writing Error Messages to Standard Error Instead of Standard Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回顾TDD"><span class="nav-number">11.7.</span> <span class="nav-text">回顾TDD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Functional-Language-Features-Iterators-and-Closures"><span class="nav-number">12.</span> <span class="nav-text">Functional Language Features: Iterators and Closures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Closures-Anonymous-Functions-that-Can-Capture-Their-Environment"><span class="nav-number">12.1.</span> <span class="nav-text">Closures: Anonymous Functions that Can Capture Their Environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Processing-a-Series-of-Items-with-Iterators"><span class="nav-number">12.2.</span> <span class="nav-text">Processing a Series of Items with Iterators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Improving-Our-I-O-Project"><span class="nav-number">12.3.</span> <span class="nav-text">Improving Our I/O Project</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparing-Performance-Loops-vs-Iterators"><span class="nav-number">12.4.</span> <span class="nav-text">Comparing Performance: Loops vs. Iterators</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#More-About-Cargo-and-Crates-io"><span class="nav-number">13.</span> <span class="nav-text">More About Cargo and Crates.io</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Customizing-Builds-with-Release-Profiles"><span class="nav-number">13.1.</span> <span class="nav-text">Customizing Builds with Release Profiles</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Publishing-a-Crate-to-Crates-io"><span class="nav-number">13.2.</span> <span class="nav-text">Publishing a Crate to Crates.io</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cargo-Workspaces"><span class="nav-number">13.3.</span> <span class="nav-text">Cargo Workspaces</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installing-Binaries-from-Crates-io-with-cargo-install"><span class="nav-number">13.4.</span> <span class="nav-text">Installing Binaries from Crates.io with cargo install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extending-Cargo-with-Custom-Commands"><span class="nav-number">13.5.</span> <span class="nav-text">Extending Cargo with Custom Commands</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Smart-Pointers"><span class="nav-number">14.</span> <span class="nav-text">Smart Pointers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Box-to-Point-to-Data-on-the-Heap"><span class="nav-number">14.1.</span> <span class="nav-text">Using Box to Point to Data on the Heap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Treating-Smart-Pointers-Like-Regular-References-with-the-Deref-Trait"><span class="nav-number">14.2.</span> <span class="nav-text">Treating Smart Pointers Like Regular References with the Deref Trait</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Implicit-Deref-Coercions-with-Functions-and-Methods"><span class="nav-number">14.2.1.</span> <span class="nav-text">Implicit Deref Coercions with Functions and Methods</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Running-Code-on-Cleanup-with-the-Drop-Trait"><span class="nav-number">14.3.</span> <span class="nav-text">Running Code on Cleanup with the Drop Trait</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rc-the-Reference-Counted-Smart-Pointer"><span class="nav-number">14.4.</span> <span class="nav-text">Rc, the Reference Counted Smart Pointer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RefCell-and-the-Interior-Mutability-Pattern"><span class="nav-number">14.5.</span> <span class="nav-text">RefCell and the Interior Mutability Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference-Cycles-Can-Leak-Memory"><span class="nav-number">14.6.</span> <span class="nav-text">Reference Cycles Can Leak Memory</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fearless-Concurrency"><span class="nav-number">15.</span> <span class="nav-text">Fearless Concurrency</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Threads-to-Run-Code-Simultaneously"><span class="nav-number">15.1.</span> <span class="nav-text">Using Threads to Run Code Simultaneously</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Message-Passing-to-Transfer-Data-Between-Threads"><span class="nav-number">15.2.</span> <span class="nav-text">Using Message Passing to Transfer Data Between Threads</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shared-State-Concurrency"><span class="nav-number">15.3.</span> <span class="nav-text">Shared-State Concurrency</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extensible-Concurrency-with-the-Sync-and-Send-Traits"><span class="nav-number">15.4.</span> <span class="nav-text">Extensible Concurrency with the Sync and Send Traits</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementing-Send-and-Sync-Manually-Is-Unsafe"><span class="nav-number">15.4.1.</span> <span class="nav-text">Implementing Send and Sync Manually Is Unsafe</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-Oriented-Programming-Features-of-Rust"><span class="nav-number">16.</span> <span class="nav-text">Object Oriented Programming Features of Rust</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Characteristics-of-Object-Oriented-Languages"><span class="nav-number">16.1.</span> <span class="nav-text">Characteristics of Object-Oriented Languages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Trait-Objects-That-Allow-for-Values-of-Different-Types"><span class="nav-number">16.2.</span> <span class="nav-text">Using Trait Objects That Allow for Values of Different Types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Implementing-an-Object-Oriented-Design-Pattern"><span class="nav-number">16.3.</span> <span class="nav-text">Implementing an Object-Oriented Design Pattern</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Patterns-and-Matching"><span class="nav-number">17.</span> <span class="nav-text">Patterns and Matching</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#All-the-Places-Patterns-Can-Be-Used"><span class="nav-number">17.1.</span> <span class="nav-text">All the Places Patterns Can Be Used</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Refutability-Whether-a-Pattern-Might-Fail-to-Match"><span class="nav-number">17.2.</span> <span class="nav-text">Refutability: Whether a Pattern Might Fail to Match</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pattern-Syntax"><span class="nav-number">17.3.</span> <span class="nav-text">Pattern Syntax</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Advanced-Features"><span class="nav-number">18.</span> <span class="nav-text">Advanced Features</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsafe-Rust"><span class="nav-number">18.1.</span> <span class="nav-text">Unsafe Rust</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dereferencing-a-Raw-Pointer"><span class="nav-number">18.1.1.</span> <span class="nav-text">Dereferencing a Raw Pointer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Calling-an-Unsafe-Function-or-Method"><span class="nav-number">18.1.2.</span> <span class="nav-text">Calling an Unsafe Function or Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Accessing-or-Modifying-a-Mutable-Static-Variable"><span class="nav-number">18.1.3.</span> <span class="nav-text">Accessing or Modifying a Mutable Static Variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementing-an-Unsafe-Trait"><span class="nav-number">18.1.4.</span> <span class="nav-text">Implementing an Unsafe Trait</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时使用"><span class="nav-number">18.1.5.</span> <span class="nav-text">何时使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-Traits"><span class="nav-number">18.2.</span> <span class="nav-text">Advanced Traits</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Specifying-Placeholder-Types-in-Trait-Definitions-with-Associated-Types"><span class="nav-number">18.2.1.</span> <span class="nav-text">Specifying Placeholder Types in Trait Definitions with Associated Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Default-Generic-Type-Parameters-and-Operator-Overloading"><span class="nav-number">18.2.2.</span> <span class="nav-text">Default Generic Type Parameters and Operator Overloading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fully-Qualified-Syntax-for-Disambiguation-Calling-Methods-with-the-Same-Name"><span class="nav-number">18.2.3.</span> <span class="nav-text">Fully Qualified Syntax for Disambiguation: Calling Methods with the Same Name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-the-Newtype-Pattern-to-Implement-External-Traits-on-External-Types"><span class="nav-number">18.2.4.</span> <span class="nav-text">Using the Newtype Pattern to Implement External Traits on External Types</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-Types"><span class="nav-number">18.3.</span> <span class="nav-text">Advanced Types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-Functions-and-Closures"><span class="nav-number">18.4.</span> <span class="nav-text">Advanced Functions and Closures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Macros"><span class="nav-number">18.5.</span> <span class="nav-text">Macros</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Attribute-like-macros"><span class="nav-number">18.5.1.</span> <span class="nav-text">Attribute-like macros</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-like-macros"><span class="nav-number">18.5.2.</span> <span class="nav-text">Function-like macros</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-Project-Building-a-Multithreaded-Web-Server"><span class="nav-number">19.</span> <span class="nav-text">Final Project: Building a Multithreaded Web Server</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Appendix"><span class="nav-number">20.</span> <span class="nav-text">Appendix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">21.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TODO"><span class="nav-number">22.</span> <span class="nav-text">TODO</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
-          
+          <span>0%</span>
         </div>
-      
 
     </div>
   </aside>
@@ -2282,17 +1885,23 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
 
         
 
@@ -2303,28 +1912,17 @@
 
 
 
-        
       </div>
     </footer>
-
-    
-
   </div>
 
   
-  <script src="/Blog/lib/jquery/index.js?v=3.4.1"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-<script src="/Blog/js/utils.js?v=7.3.0"></script>
-  <script src="/Blog/js/motion.js?v=7.3.0"></script>
-
-
-  <script src="/Blog/js/schemes/muse.js?v=7.3.0"></script>
-
-
-<script src="/Blog/js/next-boot.js?v=7.3.0"></script>
-
+  <script src="/Blog/lib/anime.min.js"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
+<script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script>
+<script src="/Blog/js/schemes/muse.js"></script>
+<script src="/Blog/js/next-boot.js"></script>
 
 
 
@@ -2333,20 +1931,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  <script src="/Blog/js/local-search.js?v=7.3.0"></script>
-
-
+  <script src="/Blog/js/local-search.js"></script>
 
 
 
@@ -2362,68 +1947,62 @@
   
 
   
-    
       
-<script type="text/x-mathjax-config">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
 <script>
-  NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML', () => {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
 </script>
 
     
-  
 
   
 
-  
-
-
-  
-  <script src="/Blog/js/scrollspy.js?v=7.3.0"></script>
-<script src="/Blog/js/post-details.js?v=7.3.0"></script>
-
-
-    
 <script>
   function loadCount() {
     var d = document, s = d.createElement('script');
@@ -2435,11 +2014,12 @@
   window.addEventListener('load', loadCount, false);
 </script>
 <script>
-  function disqus_config() {
+  var disqus_config = function() {
     this.page.url = "https://cromarmot.github.io/Blog/19-08-15-rust/";
     this.page.identifier = "19-08-15-rust/";
-    this.page.title = 'rust book 学习笔记';};
-  function loadComments() {
+    this.page.title = "rust book 学习笔记";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
       DISQUS.reset({
         reload: true,
@@ -2451,9 +2031,7 @@
       s.setAttribute('data-timestamp', '' + +new Date());
       (d.head || d.body).appendChild(s);
     }
-  }
-    window.addEventListener('load', loadComments, false);
-  
+  });
 </script>
 
 </body>
