@@ -176,6 +176,107 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-03-08-dotd-folder/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/21-03-08-dotd-folder/" class="post-title-link" itemprop="url">.d 文件夹</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2021-03-08 21:58:14 / 修改時間：17:15:18" itemprop="dateCreated datePublished" datetime="2021-03-08T21:58:14+08:00">2021-03-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/21-03-08-dotd-folder/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-03-08-dotd-folder/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="d-文件夹"><a href="#d-文件夹" class="headerlink" title=".d 文件夹"></a>.d 文件夹</h1><p>众所周知， debian系列的软件源列表, 从最早手动的改动<code>/etc/apt/sources.list</code>,到后面在<code>/etc/apt/sources.list.d/</code> 中手动增加，以及有软件可以直接更换不需要手动改</p>
+<p>apache2 也从直接<code>conf</code>变成了<code>sites-enabled/</code> 和<code>sites-available/</code></p>
+<p>nginx 也从<code>nginx.conf</code> 变成去配置 <code>conf.d/</code> 里的</p>
+<p>虽然老的方法也可以用, 但更多的都变成<code>.d</code> 文件夹之类的</p>
+<p>然而一堆文章还在改 主配置文件文件</p>
+<p>甚至 例如 fail2ban的配置文件 已经明确说了, 还是有人在改主conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># HOW TO ACTIVATE JAILS:</span><br><span class="line">#</span><br><span class="line"># YOU SHOULD NOT MODIFY THIS FILE.</span><br><span class="line">#</span><br><span class="line"># It will probably be overwritten or improved in a distribution update.</span><br><span class="line">#</span><br><span class="line"># Provide customizations in a jail.local file or a jail.d/customisation.local.</span><br><span class="line"># For example to change the default bantime for all jails and to enable the</span><br><span class="line"># ssh-iptables jail the following (uncommented) would appear in the .local file.</span><br><span class="line"># See man 5 jail.conf for details.</span><br></pre></td></tr></table></figure>
+<p>不禁想知道<code>.d</code> 的意义和由来</p>
+<p>然后搜到了</p>
+<blockquote>
+<p>When distribution packaging became more and more common, it became clear that we needed better ways of forming such configuration files out of multiple fragments, often provided by multiple independent packages. Each package that needs to configure some shared service should be able to manage only its configuration without having to edit a shared configuration file used by other packages.</p>
+</blockquote>
+<blockquote>
+<p>The most common convention adopted was to permit including a directory full of configuration files, where anything dropped into that directory would become active and part of that configuration. As that convention became more widespread, that directory was usually named after the configuration file that it was replacing or augmenting. But since one cannot have a directory and a file with the same name, some method was required to distinguish, so .d was appended to the end of the configuration file name. Hence, a configuration file /etc/Muttrc was augmented by fragments in /etc/Muttrc.d, /etc/bash_completion was augmented with /etc/bash_completion.d/*, and so forth. Sometimes slight variations on that convention are used, such as /etc/xinetd.d to supplement /etc/xinetd.conf, or /etc/apache2/conf.d to supplement /etc/apache2/apache2.conf. But it’s the same basic idea.</p>
+</blockquote>
+<blockquote>
+<p>Generally when you see that *.d convention, it means “this is a directory holding a bunch of configuration fragments which will be merged together into configuration for some service.”</p>
+</blockquote>
+<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://unix.stackexchange.com/questions/4029/what-does-the-d-stand-for-in-directory-names/4047" target="_blank" rel="noopener">https://unix.stackexchange.com/questions/4029/what-does-the-d-stand-for-in-directory-names/4047</a></p>
+<p><a href="https://lists.debian.org/debian-devel/2010/04/msg00352.html" target="_blank" rel="noopener">https://lists.debian.org/debian-devel/2010/04/msg00352.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-02-18-html-for/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -207,7 +308,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -331,7 +432,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -440,7 +541,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -537,7 +638,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -643,7 +744,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -759,7 +860,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -855,7 +956,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -948,7 +1049,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1056,7 +1157,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1164,101 +1265,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-08-23-vuedevtools/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-08-23-vuedevtools/" class="post-title-link" itemprop="url">vue 强制生产可调试</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-08-23 16:58:14" itemprop="dateCreated datePublished" datetime="2020-08-23T16:58:14+08:00">2020-08-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-08-23-vuedevtools/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-08-23-vuedevtools/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>直接用devtools就不说了</p>
-<p>现在说生产强制可调是，iqiyi为例</p>
-<p>首先进入 vuejs.org 保证 控制版上有Vue标签</p>
-<p>然后用同样的网页打开iqiyi保证 这个标签还存在</p>
-<p>Sources-&gt;Page -&gt; 右键 top -&gt; search in all files</p>
-<p>输入<code>file:* devtools</code> 搜索出文件</p>
-<p>找到你觉得可能的文件（iqiyi是common.balabala…），格式化(chrome的花括号)，在<code>devtools:!1</code>执行后一句加断点。</p>
-<p>刷新页面,在console中执行修改，例如<code>G.devtools = true;</code>，点调试的pause（暂停继续）按钮，切回Vue标签即可</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1328,7 +1334,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">95</span>
+          <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1337,7 +1343,7 @@
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-count">97</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>

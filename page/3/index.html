@@ -176,6 +176,111 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-04-14-karma-jasmine/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-04-14-karma-jasmine/" class="post-title-link" itemprop="url">karma jasmine</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-04-15 11:20:14" itemprop="dateCreated datePublished" datetime="2020-04-15T11:20:14+08:00">2020-04-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-04-14-karma-jasmine/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-04-14-karma-jasmine/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn global add jasmine-core karma karma-chrome-launcher karma-jasmine karma-jasmine-html-reporter</span><br><span class="line">karma init <span class="comment"># 一路默认</span></span><br><span class="line">vim karma.conf.js</span><br></pre></td></tr></table></figure>
+<p>一些改动</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@@ -21,8 +21,12 @@ module.exports = function (config) &#123;</span><br><span class="line"> </span><br><span class="line">     // list of files / patterns to load in the browser</span><br><span class="line">     files: [</span><br><span class="line"><span class="addition">+      'src/**/*.js'</span></span><br><span class="line">     ],</span><br><span class="line"> </span><br><span class="line"><span class="addition">+    client: &#123;</span></span><br><span class="line"><span class="addition">+      clearContext: false, // leave Jasmine Spec Runner output visible in browser</span></span><br><span class="line"><span class="addition">+    &#125;,</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">     // list of files / patterns to exclude</span><br><span class="line">@@ -37,7 +41,7 @@ module.exports = function (config) &#123;</span><br><span class="line">     // test results reporter to use</span><br><span class="line">     // possible values: 'dots', 'progress'</span><br><span class="line">     // available reporters: https://npmjs.org/browse/keyword/karma-reporter</span><br><span class="line"><span class="deletion">-    reporters: ['progress'],</span></span><br><span class="line"><span class="addition">+    reporters: ['progress', 'kjhtml'],</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     // web server port</span><br></pre></td></tr></table></figure>
+<p>编写你的测试代码，语法见jasmine文档</p>
+<p>启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">karma start</span><br></pre></td></tr></table></figure>
+<p><code>karma-jasmine-html-reporter</code> 这个赞极少 却超高的周下载量 所以大多是连带下载的吧</p>
+<h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><h2 id="版本兼容各种问题"><a href="#版本兼容各种问题" class="headerlink" title="版本兼容各种问题"></a>版本兼容各种问题</h2><p>目前一组能用的</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"jasmine-core"</span>: <span class="string">"^3.5.0"</span>,</span><br><span class="line">    <span class="attr">"karma"</span>: <span class="string">"^5.0.1"</span>,</span><br><span class="line">    <span class="attr">"karma-chrome-launcher"</span>: <span class="string">"^3.1.0"</span>,</span><br><span class="line">    <span class="attr">"karma-jasmine"</span>: <span class="string">"^3.1.1"</span>,</span><br><span class="line">    <span class="attr">"karma-jasmine-html-reporter"</span>: <span class="string">"^1.5.3"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="cnpm"><a href="#cnpm" class="headerlink" title="cnpm"></a>cnpm</h2><p>不知道cnpm搞了什么私货，同样的命令 npm 能用 cnpm就是报错。目前采取全局yarn按加项目内karam.conf.js了 (感觉操作不科学啊</p>
+<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><p>报错 大概意思不在module内</p>
+<p>搜到很多加plugins或者在预处理调用webpack的，暂时没有采用</p>
+<p>可行的一种方案,目前把<code>files</code>的配置写成</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="attr">pattern</span>:<span class="string">'src/**/*.js'</span>,<span class="attr">type</span>:<span class="string">'module'</span>&#125;]</span><br></pre></td></tr></table></figure>
+<h2 id="files"><a href="#files" class="headerlink" title="files"></a>files</h2><p>需要包括源代码 和 测试代码</p>
+<h1 id="Repo"><a href="#Repo" class="headerlink" title="Repo"></a>Repo</h1><p><a href="https://github.com/CroMarmot/karma.jasmine.demo" target="_blank" rel="noopener">https://github.com/CroMarmot/karma.jasmine.demo</a></p>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="http://karma-runner.github.io/4.0/config/files.html" target="_blank" rel="noopener">http://karma-runner.github.io/4.0/config/files.html</a></p>
+<p><a href="http://karma-runner.github.io/4.0/intro/how-it-works.html" target="_blank" rel="noopener">http://karma-runner.github.io/4.0/intro/how-it-works.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-02-26-js-yield/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -207,7 +312,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -310,7 +415,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -427,7 +532,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -544,7 +649,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -699,7 +804,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -802,7 +907,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -891,7 +996,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1094,7 +1199,7 @@ export default {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1273,7 +1378,7 @@ Local version: 4.0.2
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
+                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1313,144 +1418,6 @@ Local version: 4.0.2
           <h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p><a href="https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba" target="_blank" rel="noopener">https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba</a></p>
 <p><a href="http://mywiki.wooledge.org/BashFAQ/031" target="_blank" rel="noopener">http://mywiki.wooledge.org/BashFAQ/031</a></p>
 <p><a href="https://scriptingosx.com/2018/02/single-brackets-vs-double-brackets/" target="_blank" rel="noopener">https://scriptingosx.com/2018/02/single-brackets-vs-double-brackets/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-10-22-nextCloud/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-10-22-nextCloud/" class="post-title-link" itemprop="url">nextCloud ! 真香</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-10-22 15:09:01" itemprop="dateCreated datePublished" datetime="2019-10-22T15:09:01+08:00">2019-10-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-25 16:46:04" itemprop="dateModified" datetime="2021-02-25T16:46:04+08:00">2021-02-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-10-22-nextCloud/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-10-22-nextCloud/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p>因为一些不可描述的原因，dropbox能用但是速度感人</p>
-<p>现在需要一款能够 在 android+Linux+iPadOS三端做同步的</p>
-<p>iPad上的Documents配上ssh可以完成Linux+iPadOS的同步, // android似乎并不行</p>
-<p>google drive就和dropbox是同样的问题</p>
-<p>baiduYunPan ??? 如果你不怕你的个人资料有一天变成 “根据相关法律法规” 的话 // 不过值得一提的是 这玩意支持linux了哦 虽然目测是个 浏览器壳 当然也就没有自动备份同步功能</p>
-<p>然后搜了搜开源的 ownCloud 和 nextCloud ,看介绍基本是一家的</p>
-<p>还有人说 用svn/git来搞，你确定喜欢在手机和ipad上输命令?</p>
-<h1 id="开干"><a href="#开干" class="headerlink" title="开干"></a>开干</h1><p>client就不说了,各个平台下下来安装就行,说说 server</p>
-<p>我目前的电脑环境<code>Ubuntu18.04 x86_64 Linux 4.15.0-65-generic , bash 4.4.20 , 15925MiB</code></p>
-<p><strong>警告第一条命令将会进入root,进入后你将有所有权限，请自重</strong></p>
-<pre><code>sudo -s
-apt install apache2
-service apache2 start
-apt install mariadb-server
-mysql_secure_installation
-apt install php libapache2-mod-php php-mysql php-gd php-json php-mysql php-curl php-mbstring php-intl php-imagick php-xml php-zip
-apt install phpmyadmin
-ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
-a2enconf phpmyadmin
-a2enmod ssl
-a2ensite default-ssl
-service apache2 reload
-mariadb
-MariaDB [(none)]&gt; CREATE DATABASE nextcloud;
-MariaDB [(none)]&gt; CREATE USER nextcloud IDENTIFIED BY &apos;p@ssc0de&apos;;
-MariaDB [(none)]&gt; grant usage on *.* TO nextcloud@localhost IDENTIFIED BY &apos;p@ssc0de&apos;;
-MariaDB [(none)]&gt; GRANT ALL privileges ON nextcloud.* TO nextcloud@localhost;
-MariaDB [(none)]&gt; FLUSH PRIVILEGES;
-</code></pre><p>访问 <a href="https://localhost/phpmyadmin/" target="_blank" rel="noopener">https://localhost/phpmyadmin/</a></p>
-<p>(用户名,密码)=(nextcloud,p@ssc0de)</p>
-<p>去<code>https://download.nextcloud.com/server/releases/nextcloud-17.0.0.zip</code>下载最新的zip包 解压到 <code>/var/www/html/nextcloud</code>里</p>
-<p>chown -R www-data:www-data nextcloud/</p>
-<p>通过<code>https://localhost/nextcloud</code>即可访问 设置admin 密码，填写刚刚的配置即可</p>
-<p>手机连接会无权限，跟着提示修改/var/www/html/nextcloud/config/config.php的配置即可</p>
-<h1 id="失败的尝试"><a href="#失败的尝试" class="headerlink" title="失败的尝试"></a>失败的尝试</h1><p>下载<code>wget https://raw.githubusercontent.com/nextcloud/vm/master/nextcloud_install_production.sh</code></p>
-<p>然后<code>sudo bash nextcloud_install_production.sh</code></p>
-<p><code>https://github.com/nextcloud/server</code> 下源码或者下releases</p>
-<h1 id="nextCloud-额外的应用"><a href="#nextCloud-额外的应用" class="headerlink" title="nextCloud 额外的应用"></a>nextCloud 额外的应用</h1><p>把搜到的release包解压到<code>/var/www/html/nextcloud/apps</code></p>
-<p>在<code>index.php/settings/apps</code>中启用</p>
-<p>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">calendar.tar.gz</span><br><span class="line">checksum.tar.gz</span><br><span class="line">files_readmemd.tar.gz</span><br><span class="line">richdocuments.tar.gz</span><br><span class="line">spreed-7.0.2.tar.gz</span><br></pre></td></tr></table></figure>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://docs.nextcloud.com/server/17/admin_manual/installation/source_installation.html#example-installation-on-ubuntu-18-04-lts-server" target="_blank" rel="noopener">https://docs.nextcloud.com/server/17/admin_manual/installation/source_installation.html#example-installation-on-ubuntu-18-04-lts-server</a></p>
-<p><a href="https://github.com/nextcloud/server.git" target="_blank" rel="noopener">https://github.com/nextcloud/server.git</a></p>
-<p><a href="https://nextcloud.com/install/#instructions-server" target="_blank" rel="noopener">https://nextcloud.com/install/#instructions-server</a></p>
-<p><a href="https://askubuntu.com/questions/387062/how-to-solve-the-phpmyadmin-not-found-issue-after-upgrading-php-and-apache" target="_blank" rel="noopener">https://askubuntu.com/questions/387062/how-to-solve-the-phpmyadmin-not-found-issue-after-upgrading-php-and-apache</a></p>
-<p><a href="https://www.youtube.com/watch?v=QXfsi0pwgYw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=QXfsi0pwgYw</a></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>现在看来主要问题在于 直接snap的 会和当前本地开得一堆服务或多或少冲突？？ 我查运行状态 都是在运行，查端口 没看到监听</p>
-<p>另外一个就是 文件夹权限要搞成 www-data:www-data</p>
-<p>在一个就是mysql的db和账户创建,只玩过CURD，很久没摸也忘了</p>
-<p>客户端口没啥难度</p>
-<p>emmmmmmmm 似乎也不能在ipados上搞… 只能网页勉强</p>
 
       
     </div>
@@ -1535,7 +1502,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">95</span>
+          <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1544,7 +1511,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-count">97</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>

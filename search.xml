@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>.d 文件夹</title>
+      <link href="/Blog/21-03-08-dotd-folder/"/>
+      <url>/Blog/21-03-08-dotd-folder/</url>
+      
+        <content type="html"><![CDATA[<h1 id="d-文件夹"><a href="#d-文件夹" class="headerlink" title=".d 文件夹"></a>.d 文件夹</h1><p>众所周知， debian系列的软件源列表, 从最早手动的改动<code>/etc/apt/sources.list</code>,到后面在<code>/etc/apt/sources.list.d/</code> 中手动增加，以及有软件可以直接更换不需要手动改</p><p>apache2 也从直接<code>conf</code>变成了<code>sites-enabled/</code> 和<code>sites-available/</code></p><p>nginx 也从<code>nginx.conf</code> 变成去配置 <code>conf.d/</code> 里的</p><p>虽然老的方法也可以用, 但更多的都变成<code>.d</code> 文件夹之类的</p><p>然而一堆文章还在改 主配置文件文件</p><p>甚至 例如 fail2ban的配置文件 已经明确说了, 还是有人在改主conf</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># HOW TO ACTIVATE JAILS:</span><br><span class="line">#</span><br><span class="line"># YOU SHOULD NOT MODIFY THIS FILE.</span><br><span class="line">#</span><br><span class="line"># It will probably be overwritten or improved in a distribution update.</span><br><span class="line">#</span><br><span class="line"># Provide customizations in a jail.local file or a jail.d/customisation.local.</span><br><span class="line"># For example to change the default bantime for all jails and to enable the</span><br><span class="line"># ssh-iptables jail the following (uncommented) would appear in the .local file.</span><br><span class="line"># See man 5 jail.conf for details.</span><br></pre></td></tr></table></figure><p>不禁想知道<code>.d</code> 的意义和由来</p><p>然后搜到了</p><blockquote><p>When distribution packaging became more and more common, it became clear that we needed better ways of forming such configuration files out of multiple fragments, often provided by multiple independent packages. Each package that needs to configure some shared service should be able to manage only its configuration without having to edit a shared configuration file used by other packages.</p></blockquote><blockquote><p>The most common convention adopted was to permit including a directory full of configuration files, where anything dropped into that directory would become active and part of that configuration. As that convention became more widespread, that directory was usually named after the configuration file that it was replacing or augmenting. But since one cannot have a directory and a file with the same name, some method was required to distinguish, so .d was appended to the end of the configuration file name. Hence, a configuration file /etc/Muttrc was augmented by fragments in /etc/Muttrc.d, /etc/bash_completion was augmented with /etc/bash_completion.d/*, and so forth. Sometimes slight variations on that convention are used, such as /etc/xinetd.d to supplement /etc/xinetd.conf, or /etc/apache2/conf.d to supplement /etc/apache2/apache2.conf. But it’s the same basic idea.</p></blockquote><blockquote><p>Generally when you see that *.d convention, it means “this is a directory holding a bunch of configuration fragments which will be merged together into configuration for some service.”</p></blockquote><h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://unix.stackexchange.com/questions/4029/what-does-the-d-stand-for-in-directory-names/4047" target="_blank" rel="noopener">https://unix.stackexchange.com/questions/4029/what-does-the-d-stand-for-in-directory-names/4047</a></p><p><a href="https://lists.debian.org/debian-devel/2010/04/msg00352.html" target="_blank" rel="noopener">https://lists.debian.org/debian-devel/2010/04/msg00352.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> backend </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> server </tag>
+            
+            <tag> config </tag>
+            
+            <tag> etc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>v-for, ngFor, react(for) 列表真的需要key吗</title>
       <link href="/Blog/21-02-18-html-for/"/>
       <url>/Blog/21-02-18-html-for/</url>
@@ -1452,9 +1481,9 @@
       
         <tags>
             
-            <tag> crawler </tag>
-            
             <tag> python </tag>
+            
+            <tag> crawler </tag>
             
         </tags>
       
@@ -2122,9 +2151,9 @@
       
         <tags>
             
-            <tag> crawler </tag>
-            
             <tag> python </tag>
+            
+            <tag> crawler </tag>
             
         </tags>
       
@@ -2409,9 +2438,9 @@
       
         <tags>
             
-            <tag> rdf </tag>
-            
             <tag> sparql </tag>
+            
+            <tag> rdf </tag>
             
         </tags>
       
