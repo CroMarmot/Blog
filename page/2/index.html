@@ -176,6 +176,149 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-08-28-redisinit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-08-28-redisinit/" class="post-title-link" itemprop="url">redis init 简单笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-08-28 16:58:14" itemprop="dateCreated datePublished" datetime="2020-08-28T16:58:14+08:00">2020-08-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-08-28-redisinit/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-08-28-redisinit/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h1><h2 id="安装启动"><a href="#安装启动" class="headerlink" title="安装启动"></a>安装启动</h2><p>Debian 系列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install redis-server</span><br></pre></td></tr></table></figure>
+<p>也可以考虑官网下源码自己编译，或者docker直接pull</p>
+<p>修改<code>/etc/redis/redis.conf</code>中<code>supervised no</code>为<code>supervised systemd</code> (Ubuntu 用systemd初始化系统的这样设置</p>
+<p>通用的重启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart redis.service</span><br><span class="line"># 查看状态</span><br><span class="line">systemctl status redis</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>个人电脑取消它开机启动<code>systemctl disable redis</code></p>
+</blockquote>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>啊 这个cli的提示真的香</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ redis-cli</span><br><span class="line">127.0.0.1:6379&gt; ping</span><br><span class="line">127.0.0.1:6379&gt; set test &quot;It&apos;s working!&quot;</span><br><span class="line">127.0.0.1:6379&gt; get test</span><br><span class="line">127.0.0.1:6379&gt; test</span><br><span class="line">$ systemctl restart redis</span><br><span class="line">127.0.0.1:6379&gt; get test</span><br></pre></td></tr></table></figure>
+<h2 id="允许访问的ip设置"><a href="#允许访问的ip设置" class="headerlink" title="允许访问的ip设置"></a>允许访问的ip设置</h2><p>注释掉<code>bind 127.0.0.1 ::1</code> 或者改成<code>bind 0.0.0.0</code> 允许localhost以外的任何地址访问,默认只允许本地访问（不建议？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp | grep redis</span><br></pre></td></tr></table></figure>
+<p>你应该看到的第4列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0.0.0.0:6379</span><br><span class="line">::1:6379</span><br></pre></td></tr></table></figure>
+<h2 id="密码设置"><a href="#密码设置" class="headerlink" title="密码设置"></a>密码设置</h2><p>把下面配置启用并为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requirepass 你的密码</span><br></pre></td></tr></table></figure>
+<p>注释说因为很快用户可以150k/s的尝试，所以建议复杂密码。推荐的方案是<code>openssl rand 60 | openssl base64 -A</code>生成一个</p>
+<p>重启服务用密码登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl restart redis.service</span><br><span class="line">$ redis-cli</span><br><span class="line">127.0.0.1:6379&gt; auth 你的密码</span><br><span class="line">127.0.0.1:6379&gt; set key1 10</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">127.0.0.1:6379&gt; quit</span><br></pre></td></tr></table></figure>
+<h2 id="风险指令禁用"><a href="#风险指令禁用" class="headerlink" title="风险指令禁用"></a>风险指令禁用</h2><p>一些可能有风险的指令 FLUSHDB, FLUSHALL, KEYS, PEXPIRE, DEL, CONFIG, SHUTDOWN, BGREWRITEAOF, BGSAVE, SAVE, SPOP, SREM, RENAME, and DEBUG</p>
+<p><strong>The following steps showing how to disable and rename commands are examples. You should only choose to disable or rename the commands that make sense for you. You can review the full list of commands for yourself and determine how they might be misused at</strong> </p>
+<p><strong>总之就是你应该了解指令的意义，才禁用相关的指令,以防误用</strong> 相关指令描述 <a href="http://redis.io/commands" target="_blank" rel="noopener">http://redis.io/commands</a></p>
+<p>在配置中增加（两种方式）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rename-command 指令名字 &quot;&quot;</span><br><span class="line">rename-command 指令名字 新的难输入的指令名字</span><br></pre></td></tr></table></figure>
+<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p>字符串，hash，list，集合，有序集合</p>
+<p>超时时间设置</p>
+<p>本身不支持嵌套对象，如果要把它变成json字符串</p>
+<p><a href="https://redis.io/topics/data-types-intro" target="_blank" rel="noopener">https://redis.io/topics/data-types-intro</a></p>
+<p>Bit arrays (or simply bitmaps): it is possible, using special commands, to handle String values like an array of bits: you can set and clear individual bits, count all the bits set to 1, find the first set or unset bit, and so forth.</p>
+<p>HyperLogLogs: this is a probabilistic data structure which is used in order to estimate the cardinality of a set. Don’t be scared, it is simpler than it seems… See later in the HyperLogLog section of this tutorial.</p>
+<p>Streams: append-only collections of map-like entries that provide an abstract log data type. They are covered in depth in the Introduction to Redis Streams.</p>
+<h2 id="发布-订阅"><a href="#发布-订阅" class="headerlink" title="发布/订阅"></a>发布/订阅</h2><p><a href="https://redis.io/topics/pubsub" target="_blank" rel="noopener">https://redis.io/topics/pubsub</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SUBSCRIBE 频道名1 [频道名2 ...]</span><br><span class="line">PUBLISH 频道名1 &quot;消息&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MULTI</span><br><span class="line"></span><br><span class="line">命令队列</span><br><span class="line"></span><br><span class="line">EXEC</span><br></pre></td></tr></table></figure>
+<p><a href="https://redis.io/topics/transactions" target="_blank" rel="noopener">https://redis.io/topics/transactions</a></p>
+<p>每条命令是原子操作，如果exec调用了，那么执行过程中 如果有命令失败，则会跳过改命令继续往后。</p>
+<p>? redis的事务 所以到底啥用,首先是和传统数据库的事务的意义不同</p>
+<p>为啥不支持</p>
+<p>Redis commands can fail only if called with a wrong syntax (and the problem is not detectable during the command queueing), or against keys holding the wrong data type: this means that in practical terms a failing command is the result of a programming errors, and a kind of error that is very likely to be detected during development, and not in production.</p>
+<p>Redis is internally simplified and faster because it does not need the ability to roll back.</p>
+<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><p>一个非原子的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val = GET mykey</span><br><span class="line">val = val + 1</span><br><span class="line">SET mykey $val</span><br></pre></td></tr></table></figure>
+<p>改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">WATCH mykey</span><br><span class="line">val = GET mykey</span><br><span class="line">val = val + 1</span><br><span class="line">MULTI</span><br><span class="line">SET mykey $val</span><br><span class="line">EXEC</span><br></pre></td></tr></table></figure>
+<p>如果在WATCH和EXEC之间修改了mykey，这个transaction 会失败</p>
+<p>然后反复尝试，因为从实际期望上，不同的用户冲突的可能性很小，所以用的是乐观锁, 多数情况并不需要重复尝试</p>
+<p>管道Learn how to send multiple commands at once, saving on round trip time.: <code>$(echo -en &quot;PING\r\n SET runoobkey redis\r\nGET runoobkey\r\nINCR visitor\r\nINCR visitor\r\nINCR visitor\r\n&quot;; sleep 10) | nc localhost 6379</code></p>
+<h2 id="cheatsheet"><a href="#cheatsheet" class="headerlink" title="cheatsheet"></a>cheatsheet</h2><p>远程连接: <code>redis-cli -h host -p port -a password</code> // 不建议直接这样操作? 会被记录在你的命令历史里?</p>
+<p>查看信息<code>info</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">config get 配置名</span><br><span class="line">config set 配置名 配置值</span><br></pre></td></tr></table></figure>
+<p>benchmarks: <a href="https://redis.io/topics/benchmarks" target="_blank" rel="noopener">https://redis.io/topics/benchmarks</a></p>
+<p><code>redis-benchmark -h 127.0.0.1 -p 6379 -t set,lpush -n 10000 -q</code> 咦 这玩意不需要权限？？？</p>
+<p>文档很多是ruby写的例子 XD，没用过，人脑执行了一下大概的代码</p>
+<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04</a></p>
+<p><a href="https://redis.io/documentation" target="_blank" rel="noopener">https://redis.io/documentation</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-08-23-vuedevtools/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -207,7 +350,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -302,7 +445,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -459,7 +602,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -559,7 +702,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -651,7 +794,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -763,7 +906,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -915,7 +1058,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1014,7 +1157,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1122,7 +1265,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1191,107 +1334,6 @@
 <p>有些时候不设置默认值？</p>
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;v-model&lt;/h1&gt;</span><br><span class="line">    &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">      &lt;div&gt; input(默认)&lt;input v-model=&quot;x1&quot;&gt; &#123;&#123; x1 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input2(官方文档)&lt;Input2 v-model=&quot;x2&quot; /&gt;  &#123;&#123; x2 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input3(我)&lt;Input3 v-model=&quot;x3&quot; /&gt;      &#123;&#123; x3 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input4(历史遗留代码)&lt;Input4 v-model=&quot;x4&quot; /&gt;      &#123;&#123; x4 &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;h1&gt;@input only&lt;/h1&gt;</span><br><span class="line">    &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">      &lt;div&gt;input(默认)&lt;input @input=&quot;(e)=&gt;&#123;input1 = e.target.value;&#125;&quot;&gt;    &#123;&#123; input1 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input2(官方)&lt;Input2 @input=&quot;(v)=&gt;&#123;input2=v;&#125;&quot; /&gt;    &#123;&#123; input2 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input3(我)&lt;Input3 @input=&quot;(v)=&gt;&#123;input3=v;&#125;&quot; /&gt;    &#123;&#123; input3 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input4(历史遗留代码)&lt;Input4 @input=&quot;(v)=&gt;&#123;input4=v;&#125;&quot; /&gt;    &#123;&#123; input4 &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    Input3: &#123;</span><br><span class="line">      name: &apos;FormInputJsx&apos;,</span><br><span class="line">      // inheritAttrs: false,</span><br><span class="line">      props: &#123;</span><br><span class="line">        inputFilter: &#123;</span><br><span class="line">          type: Function,</span><br><span class="line">          default: null</span><br><span class="line">        &#125;,</span><br><span class="line">        // 传入类型</span><br><span class="line">        value: String</span><br><span class="line">      &#125;,</span><br><span class="line">      data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          valueIn: this.value</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      methods: &#123;</span><br><span class="line">        updateValue(value) &#123;</span><br><span class="line">          let newVal = value</span><br><span class="line">          if (this.inputFilter) &#123;</span><br><span class="line">            newVal = this.inputFilter(newVal)</span><br><span class="line">          &#125;</span><br><span class="line">          // this.valueIn = newVal</span><br><span class="line">          // if (this.$refs.input.value !== this.valueIn) &#123;</span><br><span class="line">          //   this.$refs.input.value = this.valueIn</span><br><span class="line">          // &#125;</span><br><span class="line">          this.$emit(&apos;input&apos;, newVal)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      render(h) &#123;</span><br><span class="line">        const inputConfig = &#123;</span><br><span class="line">          ref: &apos;input&apos;,</span><br><span class="line">          // input 原始属性不改动 自动下发-</span><br><span class="line">          // attrs: Object.assign(&#123; ...this.$attrs &#125;),</span><br><span class="line">          on: Object.assign(&#123; ...this.$listeners &#125;, &#123;</span><br><span class="line">            input: event =&gt; this.updateValue(event.target.value) // 输入框改变</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        if (typeof this.value !== &apos;undefined&apos;) &#123;</span><br><span class="line">          inputConfig.domProps = &#123;</span><br><span class="line">            value: this.value</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return h(&apos;input&apos;, inputConfig)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Input4: &#123;</span><br><span class="line">      render(h) &#123;</span><br><span class="line">        const self = this</span><br><span class="line">        return h(&apos;input&apos;, &#123;</span><br><span class="line">          domProps: &#123;</span><br><span class="line">            value: self.value</span><br><span class="line">          &#125;,</span><br><span class="line">          on: &#123;</span><br><span class="line">            input (event) &#123;</span><br><span class="line">              self.Amount = event.target.value</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      props: &#123;</span><br><span class="line">        value: &#123;</span><br><span class="line">          type: String,</span><br><span class="line">          default: &apos;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          Amount: &apos;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      watch: &#123;</span><br><span class="line">        value(newVal) &#123;</span><br><span class="line">          this.Amount = newVal</span><br><span class="line">        &#125;,</span><br><span class="line">        Amount(newVal) &#123;</span><br><span class="line">          // 从前截取 不带$</span><br><span class="line">          this.Amount = newVal.match(/^\d*(\.?\d&#123;0,2&#125;)/g)[0] || &apos;&apos;</span><br><span class="line">          if (isNaN(this.Amount)) &#123;</span><br><span class="line">            this.Amount = &apos;&apos;</span><br><span class="line">          &#125;</span><br><span class="line">          this.$emit(&apos;input&apos;, this.Amount)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Input2: &#123;</span><br><span class="line">      props: [&apos;value&apos;],</span><br><span class="line">      render (createElement) &#123;</span><br><span class="line">        const self = this</span><br><span class="line">        return createElement(&apos;input&apos;, &#123;</span><br><span class="line">          domProps: &#123;</span><br><span class="line">            value: self.value</span><br><span class="line">          &#125;,</span><br><span class="line">          on: &#123;</span><br><span class="line">            input (event) &#123;</span><br><span class="line">              self.$emit(&apos;input&apos;, event.target.value)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      x1: &apos;&apos;,</span><br><span class="line">      x2: &apos;&apos;,</span><br><span class="line">      x3: &apos;&apos;,</span><br><span class="line">      x4: &apos;&apos;,</span><br><span class="line">      input1: &apos;&apos;,</span><br><span class="line">      input2: &apos;&apos;,</span><br><span class="line">      input3: &apos;&apos;,</span><br><span class="line">      input4: &apos;&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    x1(nv) &#123;</span><br><span class="line">      this.x1 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x2(nv) &#123;</span><br><span class="line">      this.x2 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x3(nv) &#123;</span><br><span class="line">      this.x3 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x4(nv) &#123;</span><br><span class="line">      this.x4 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input1(nv) &#123;</span><br><span class="line">      this.input1 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input2(nv) &#123;</span><br><span class="line">      this.input2 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input3(nv) &#123;</span><br><span class="line">      this.input3 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input4(nv) &#123;</span><br><span class="line">      this.input4 = nv.substr(0, 3)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.row&#123;</span><br><span class="line">  display:flex;</span><br><span class="line">  flex-direction:column;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="https://cn.vuejs.org/v2/guide/render-function.html#v-model" target="_blank" rel="noopener">vue render v-model</a></p>
-<p><a href="https://github.com/vuejs/vue/pull/9331" target="_blank" rel="noopener">vue pull requests 9331</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-05-18-vue-v-model/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-05-18-vue-v-model/" class="post-title-link" itemprop="url">vue2 vmodel 版本管理问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-05-18 11:20:14" itemprop="dateCreated datePublished" datetime="2020-05-18T11:20:14+08:00">2020-05-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-05-18-vue-v-model/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-05-18-vue-v-model/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>新做了个输入框，在三次封装时用 <code>$attrs</code>，本地一切正常，内部测试环境出现bug:输入不了值。</p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>版本都查过，一样的代码，最后猜是不是vue的问题。</p>
-<p>查了一下在线的vue版本是<code>2.6.11</code>而内部发布版本是<code>2.5.13</code>。</p>
-<p>把调试的vue换成指定版本<code>2.5.13</code>重现了bug。</p>
-<p>顺着官方<code>https://github.com/vuejs/vue/releases</code>看</p>
-<p>看到<code>v2.6.1</code>修复了<code>v-model: add value to $attrs if not defined in props</code></p>
-<p>看<code>pull requests 9331</code>和<code>9330</code>似乎很多人也都遇到了</p>
-<p>果然<code>XD</code></p>
-<p>内部测试发布的版本已经在生产使用，当然是锁版本不会改了，把开发用的vue调试版换回了<code>2.5.13</code>，然后对应组件增加<code>props</code>的<code>value</code>和 <code>value</code>的传递。// 还好是新组建</p>
-<p>虽然听说并且实践了无数次<code>锁版本</code>，但亲身是第一次遇到版本问题！（之前几次其它第三方资源有bug 都是最新的官方资源也没修复的，例如swiper有个重复emit的bug放了很久也不知道现在修复没</p>
-<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p><strong>锁版本!!!!!</strong></p>
-<p>官方vue虽然说是开发环境是<code>https://cdn.jsdelivr.net/npm/vue/dist/vue.js</code>，但实际因为生产的vue 是锁了版本，所以为了保持和生产一致，如果要使用在线资源可以使用<code>https://cdn.jsdelivr.net/npm/vue@版本号/dist/vue.js</code></p>
-<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="https://github.com/vuejs/vue/releases?after=v2.6.2" target="_blank" rel="noopener">vue releases</a></p>
 <p><a href="https://github.com/vuejs/vue/pull/9331" target="_blank" rel="noopener">vue pull requests 9331</a></p>
 
       
@@ -1377,12 +1419,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">97</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">

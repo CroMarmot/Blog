@@ -176,6 +176,107 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-05-18-vue-v-model/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-05-18-vue-v-model/" class="post-title-link" itemprop="url">vue2 vmodel 版本管理问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-05-18 11:20:14" itemprop="dateCreated datePublished" datetime="2020-05-18T11:20:14+08:00">2020-05-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-05-18-vue-v-model/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-05-18-vue-v-model/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>新做了个输入框，在三次封装时用 <code>$attrs</code>，本地一切正常，内部测试环境出现bug:输入不了值。</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>版本都查过，一样的代码，最后猜是不是vue的问题。</p>
+<p>查了一下在线的vue版本是<code>2.6.11</code>而内部发布版本是<code>2.5.13</code>。</p>
+<p>把调试的vue换成指定版本<code>2.5.13</code>重现了bug。</p>
+<p>顺着官方<code>https://github.com/vuejs/vue/releases</code>看</p>
+<p>看到<code>v2.6.1</code>修复了<code>v-model: add value to $attrs if not defined in props</code></p>
+<p>看<code>pull requests 9331</code>和<code>9330</code>似乎很多人也都遇到了</p>
+<p>果然<code>XD</code></p>
+<p>内部测试发布的版本已经在生产使用，当然是锁版本不会改了，把开发用的vue调试版换回了<code>2.5.13</code>，然后对应组件增加<code>props</code>的<code>value</code>和 <code>value</code>的传递。// 还好是新组建</p>
+<p>虽然听说并且实践了无数次<code>锁版本</code>，但亲身是第一次遇到版本问题！（之前几次其它第三方资源有bug 都是最新的官方资源也没修复的，例如swiper有个重复emit的bug放了很久也不知道现在修复没</p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p><strong>锁版本!!!!!</strong></p>
+<p>官方vue虽然说是开发环境是<code>https://cdn.jsdelivr.net/npm/vue/dist/vue.js</code>，但实际因为生产的vue 是锁了版本，所以为了保持和生产一致，如果要使用在线资源可以使用<code>https://cdn.jsdelivr.net/npm/vue@版本号/dist/vue.js</code></p>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="https://github.com/vuejs/vue/releases?after=v2.6.2" target="_blank" rel="noopener">vue releases</a></p>
+<p><a href="https://github.com/vuejs/vue/pull/9331" target="_blank" rel="noopener">vue pull requests 9331</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-04-14-karma-jasmine/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -207,7 +308,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -312,7 +413,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -415,7 +516,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -532,7 +633,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -649,7 +750,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -804,7 +905,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -907,7 +1008,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -996,7 +1097,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1199,7 +1300,7 @@ export default {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1343,96 +1444,6 @@ Local version: 4.0.2
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-10-24-shell/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-10-24-shell/" class="post-title-link" itemprop="url">single square brackets vs double square brackets in shell</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-10-24 15:09:01" itemprop="dateCreated datePublished" datetime="2019-10-24T15:09:01+08:00">2019-10-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-10-24-shell/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-10-24-shell/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p><a href="https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba" target="_blank" rel="noopener">https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba</a></p>
-<p><a href="http://mywiki.wooledge.org/BashFAQ/031" target="_blank" rel="noopener">http://mywiki.wooledge.org/BashFAQ/031</a></p>
-<p><a href="https://scriptingosx.com/2018/02/single-brackets-vs-double-brackets/" target="_blank" rel="noopener">https://scriptingosx.com/2018/02/single-brackets-vs-double-brackets/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1502,12 +1513,12 @@ Local version: 4.0.2
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">97</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1603,59 +1614,6 @@ Local version: 4.0.2
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 

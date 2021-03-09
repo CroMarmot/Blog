@@ -176,6 +176,174 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-03-09-js-module/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/21-03-09-js-module/" class="post-title-link" itemprop="url">amd/cmd/commonjs/umd/esm/iife/systemjs</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2021-03-09 21:58:14 / 修改時間：17:11:15" itemprop="dateCreated datePublished" datetime="2021-03-09T21:58:14+08:00">2021-03-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/frontend/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/21-03-09-js-module/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-03-09-js-module/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>为了模块拆分</p>
+<h1 id="AMD-asynchromous-module-definition-异步模块定义"><a href="#AMD-asynchromous-module-definition-异步模块定义" class="headerlink" title="AMD(asynchromous module definition 异步模块定义)"></a>AMD(asynchromous module definition 异步模块定义)</h1><p>RequireJS,前端，异步</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">'module1'</span>, [<span class="string">'jquery'</span>], ($) =&gt; &#123;</span><br><span class="line">  <span class="comment">//do something...</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">define(模块, [依赖的模块], ($) =&gt; &#123;</span><br><span class="line">  <span class="comment">//do something...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="CMD-Common-Module-Definition-公共模块定义-有些地方都不再单独提及"><a href="#CMD-Common-Module-Definition-公共模块定义-有些地方都不再单独提及" class="headerlink" title="CMD(Common Module Definition - 公共模块定义) 有些地方都不再单独提及"></a>CMD(Common Module Definition - 公共模块定义) 有些地方都不再单独提及</h1><p>CMD是SeaJS在推广过程中对模块定义的规范化产出，对于模块的依赖，CMD是延迟执行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function">(<span class="params"><span class="built_in">require</span>, exports, <span class="built_in">module</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    fun1: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'jquery'</span>);</span><br><span class="line">       <span class="keyword">return</span> $(<span class="string">'#test'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">define(<span class="function">(<span class="params"><span class="built_in">require</span>, exports, <span class="built_in">module</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    函数: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">var</span> $ = <span class="built_in">require</span>(依赖的模块);</span><br><span class="line">       <span class="keyword">return</span> $(<span class="string">'#test'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="CommonJS-cjs"><a href="#CommonJS-cjs" class="headerlink" title="CommonJS(cjs)"></a>CommonJS(cjs)</h1><p>CommonJS服务端,Node.js,同步</p>
+<p>使用require / module.exports</p>
+<p>file1.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">moudle.exports = &#123;</span><br><span class="line">  a: <span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>file2.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f1 = <span class="built_in">require</span>(<span class="string">'./file1'</span>);</span><br><span class="line"><span class="keyword">var</span> v = f1.a + <span class="number">2</span>;</span><br><span class="line"><span class="built_in">module</span>.exports =&#123;</span><br><span class="line">  v: v</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="umd-Universal-Module-Definition-通用模块定义"><a href="#umd-Universal-Module-Definition-通用模块定义" class="headerlink" title="umd(Universal Module Definition - 通用模块定义)"></a>umd(Universal Module Definition - 通用模块定义)</h1><p>amd(浏览器，异步) 和 commonjs(服务器，同步) 合并</p>
+<p>使用诸如Rollup/ Webpack之类的bundler时通常用作备用模块</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function">(<span class="params">root, factory</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">'function'</span> &amp;&amp; define.amd) &#123;</span><br><span class="line">    <span class="comment">//AMD</span></span><br><span class="line">    define([<span class="string">'jquery'</span>], factory);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> exports === <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="comment">//CommonJS</span></span><br><span class="line">    <span class="built_in">module</span>.exports = factory(<span class="built_in">require</span>(<span class="string">'jquery'</span>));</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//都不是，浏览器全局定义</span></span><br><span class="line">    root.returnExports = factory(root.jQuery);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)(<span class="keyword">this</span>, ($) =&gt; &#123;</span><br><span class="line">  <span class="comment">//    方法</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">myFunc</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//    暴露公共方法</span></span><br><span class="line">  <span class="keyword">return</span> myFunc;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="ESM-ECMA-Script-Modules"><a href="#ESM-ECMA-Script-Modules" class="headerlink" title="ESM(ECMA Script Modules)"></a>ESM(ECMA Script Modules)</h1><p>es6 模块化规范 (nodejs新版本可直接用,现代化浏览器script标签加<code>type=&quot;module&quot;</code> 可用)</p>
+<p>常见的 export / import</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 写法一</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> m = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 写法二</span></span><br><span class="line"><span class="keyword">var</span> m = <span class="number">1</span>; <span class="keyword">export</span> &#123; m &#125;;</span><br><span class="line"><span class="comment">// 写法三</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>; <span class="keyword">export</span> &#123; n <span class="keyword">as</span> m &#125;;</span><br><span class="line"><span class="comment">// 写法四</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>; <span class="keyword">export</span> <span class="keyword">default</span> n;</span><br><span class="line"><span class="comment">// 写法五</span></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123; <span class="keyword">import</span>(<span class="string">'./myModule.js'</span>).then(<span class="function">(<span class="params">&#123; export1, export2 &#125;</span>) =&gt;</span> &#123; <span class="comment">/* ... */</span> &#125;); &#125;</span><br><span class="line"><span class="comment">// 写法六</span></span><br><span class="line"><span class="built_in">Promise</span>.all([<span class="keyword">import</span>(<span class="string">'./module1.js'</span>),</span><br><span class="line"><span class="keyword">import</span>(<span class="string">'./module2.js'</span>),</span><br><span class="line"><span class="keyword">import</span>(<span class="string">'./module3.js'</span>)]).then(<span class="function">(<span class="params">[module1, module2, module3]</span>) =&gt;</span> &#123; <span class="comment">/* ... */</span> &#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="iife-立即-调用-函数-表达"><a href="#iife-立即-调用-函数-表达" class="headerlink" title="iife(立即 调用 函数 表达)"></a>iife(立即 调用 函数 表达)</h1><p>A self-executing function suitable for inclusion as a <code>&lt;script&gt;</code> tag. If you want to create a bundle for your application, you probably want to use this.</p>
+<p>示例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// maths.js</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// This function gets included</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">cube</span> (<span class="params"> x </span>) </span>&#123;</span><br><span class="line">    <span class="comment">// rewrite this as `square( x ) * x`</span></span><br><span class="line">    <span class="comment">// and see what happens!</span></span><br><span class="line">    <span class="keyword">return</span> x * x * x;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* TREE-SHAKING */</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log( cube( <span class="number">5</span> ) ); <span class="comment">// 125</span></span><br><span class="line"></span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<h1 id="systemjs"><a href="#systemjs" class="headerlink" title="systemjs"></a>systemjs</h1><p>示例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">System.register(<span class="string">'myBundle'</span>, [], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    execute: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// maths.js</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// This function gets included</span></span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">cube</span> (<span class="params"> x </span>) </span>&#123;</span><br><span class="line">        <span class="comment">// rewrite this as `square( x ) * x`</span></span><br><span class="line">        <span class="comment">// and see what happens!</span></span><br><span class="line">        <span class="keyword">return</span> x * x * x;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">/* TREE-SHAKING */</span></span><br><span class="line"></span><br><span class="line">      <span class="built_in">console</span>.log( cube( <span class="number">5</span> ) ); <span class="comment">// 125</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>universal module loader that supports CJS, AMD, and ESM modules</p>
+<p>SystemJS is a hookable, standards-based module loader. It provides a workflow where code written for production workflows of native ES modules in browsers (like Rollup code-splitting builds), can be transpiled to the System.register module format to work in older browsers that don’t support native modules, running almost-native module speeds while supporting top-level await, dynamic import, circular references and live bindings, import.meta.url, module types, import maps, integrity and Content Security Policy with compatibility in older browsers back to IE11.</p>
+<p>简单说在老的浏览器依然可以跑native module,且效率不差</p>
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><table>
+<thead>
+<tr>
+<th>amd(requirejs)</th>
+<th>cmd</th>
+<th>commonjs(cjs)</th>
+<th>umd</th>
+<th>esm</th>
+<th>iife</th>
+<th>systemjs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>异步模块定义</td>
+<td>公共模块定义</td>
+<td>服务端模块规范</td>
+<td>通用模块定义</td>
+<td>ecma脚本模块</td>
+<td>立刻自执行模块</td>
+<td>系统js??翻译不能?</td>
+</tr>
+<tr>
+<td>异步</td>
+<td>异步</td>
+<td>同步</td>
+<td>服务端同步浏览器异步</td>
+<td>es6手动编写,被webpack打包成amd,umd,cjs</td>
+<td>同步立即</td>
+<td>用于在老浏览器跑其它格式的js module</td>
+</tr>
+<tr>
+<td>浏览器</td>
+<td>相关seajs</td>
+<td>服务器(nodejs), (通过Browserify用于浏览器)</td>
+<td>先判断服务器再浏览器</td>
+<td>新版nodejs支持，老版本可以用webpack/rollup等打包</td>
+<td>浏览器script标签</td>
+<td>浏览器</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Tree-Shaking"><a href="#Tree-Shaking" class="headerlink" title="Tree Shaking"></a>Tree Shaking</h1><p>rollup 提出</p>
+<p>见rollup 的 repl(Read-Eval-Print-Loop) 的在线 tree-shaking 示例, 上面的几种生成转换也是可以在在线的repl上看的</p>
+<ol>
+<li>只能作为模块顶层的语句出现，不能出现在 function 里面或是 if 里面。（ECMA-262 15.2)</li>
+<li>import 的模块名只能是字符串常量。(ECMA-262 15.2.2)</li>
+<li>不管 import 的语句出现的位置在哪里，在模块初始化的时候所有的 import 都必须已经导入完成。换句话说，ES6 imports are hoisted。(ECMA-262 15.2.1.16.4 - 8.a)</li>
+<li>import binding 是 immutable 的，类似 const。比如说你不能 import { a } from ‘./a’ 然后给 a 赋值个其他什么东西。(ECMA-262 15.2.1.16.4 - 12.c.3)</li>
+</ol>
+<p>切记副作用</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>现代书写来说，基本就是书写esm了，剩下的事情就由 rollup/webpack之类的工具去完成了</p>
+<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://requirejs.org/docs/api.html#define" target="_blank" rel="noopener">requirejs::deinfe a module</a></p>
+<p><a href="http://wiki.commonjs.org/wiki/Modules/Async/B" target="_blank" rel="noopener">commonjs</a></p>
+<p><a href="https://github.com/login?return_to=%2Fumdjs%2Fumd" target="_blank" rel="noopener">umd</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE" target="_blank" rel="noopener">iife</a></p>
+<p><a href="https://github.com/systemjs/systemjs#systemjs" target="_blank" rel="noopener">systemjs</a></p>
+<p><a href="https://rollupjs.org/repl" target="_blank" rel="noopener">rollup repl</a></p>
+<p><a href="https://www.zhihu.com/question/41922432/answer/93346223" target="_blank" rel="noopener">知乎 尤雨溪 tree-shaking</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-03-08-dotd-folder/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -199,10 +367,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2021-03-08 21:58:14 / 修改時間：17:15:18" itemprop="dateCreated datePublished" datetime="2021-03-08T21:58:14+08:00">2021-03-08</time>
+              <time title="創建時間：2021-03-08 21:58:14" itemprop="dateCreated datePublished" datetime="2021-03-08T21:58:14+08:00">2021-03-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -308,7 +482,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -432,7 +606,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -541,7 +715,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -638,7 +812,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -744,7 +918,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -860,7 +1034,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -956,7 +1130,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1049,7 +1223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
+                <time title="修改時間：2021-03-09 17:11:15" itemprop="dateModified" datetime="2021-03-09T17:11:15+08:00">2021-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1107,149 +1281,6 @@
 <p>这是在另一个并行线程中运行代码的方式。</p>
 <p>Web Workers 可以与主线程交换消息，但是它们具有自己的变量和事件循环。</p>
 <p>Web Workers 没有访问 DOM 的权限，因此，它们对于同时使用多个 CPU 内核的计算非常有用。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-08-28-redisinit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-08-28-redisinit/" class="post-title-link" itemprop="url">redis init 简单笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-08-28 16:58:14" itemprop="dateCreated datePublished" datetime="2020-08-28T16:58:14+08:00">2020-08-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-08 17:15:18" itemprop="dateModified" datetime="2021-03-08T17:15:18+08:00">2021-03-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-08-28-redisinit/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-08-28-redisinit/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h1><h2 id="安装启动"><a href="#安装启动" class="headerlink" title="安装启动"></a>安装启动</h2><p>Debian 系列</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install redis-server</span><br></pre></td></tr></table></figure>
-<p>也可以考虑官网下源码自己编译，或者docker直接pull</p>
-<p>修改<code>/etc/redis/redis.conf</code>中<code>supervised no</code>为<code>supervised systemd</code> (Ubuntu 用systemd初始化系统的这样设置</p>
-<p>通用的重启</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart redis.service</span><br><span class="line"># 查看状态</span><br><span class="line">systemctl status redis</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>个人电脑取消它开机启动<code>systemctl disable redis</code></p>
-</blockquote>
-<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>啊 这个cli的提示真的香</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ redis-cli</span><br><span class="line">127.0.0.1:6379&gt; ping</span><br><span class="line">127.0.0.1:6379&gt; set test &quot;It&apos;s working!&quot;</span><br><span class="line">127.0.0.1:6379&gt; get test</span><br><span class="line">127.0.0.1:6379&gt; test</span><br><span class="line">$ systemctl restart redis</span><br><span class="line">127.0.0.1:6379&gt; get test</span><br></pre></td></tr></table></figure>
-<h2 id="允许访问的ip设置"><a href="#允许访问的ip设置" class="headerlink" title="允许访问的ip设置"></a>允许访问的ip设置</h2><p>注释掉<code>bind 127.0.0.1 ::1</code> 或者改成<code>bind 0.0.0.0</code> 允许localhost以外的任何地址访问,默认只允许本地访问（不建议？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp | grep redis</span><br></pre></td></tr></table></figure>
-<p>你应该看到的第4列</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0.0.0.0:6379</span><br><span class="line">::1:6379</span><br></pre></td></tr></table></figure>
-<h2 id="密码设置"><a href="#密码设置" class="headerlink" title="密码设置"></a>密码设置</h2><p>把下面配置启用并为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requirepass 你的密码</span><br></pre></td></tr></table></figure>
-<p>注释说因为很快用户可以150k/s的尝试，所以建议复杂密码。推荐的方案是<code>openssl rand 60 | openssl base64 -A</code>生成一个</p>
-<p>重启服务用密码登录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl restart redis.service</span><br><span class="line">$ redis-cli</span><br><span class="line">127.0.0.1:6379&gt; auth 你的密码</span><br><span class="line">127.0.0.1:6379&gt; set key1 10</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">127.0.0.1:6379&gt; quit</span><br></pre></td></tr></table></figure>
-<h2 id="风险指令禁用"><a href="#风险指令禁用" class="headerlink" title="风险指令禁用"></a>风险指令禁用</h2><p>一些可能有风险的指令 FLUSHDB, FLUSHALL, KEYS, PEXPIRE, DEL, CONFIG, SHUTDOWN, BGREWRITEAOF, BGSAVE, SAVE, SPOP, SREM, RENAME, and DEBUG</p>
-<p><strong>The following steps showing how to disable and rename commands are examples. You should only choose to disable or rename the commands that make sense for you. You can review the full list of commands for yourself and determine how they might be misused at</strong> </p>
-<p><strong>总之就是你应该了解指令的意义，才禁用相关的指令,以防误用</strong> 相关指令描述 <a href="http://redis.io/commands" target="_blank" rel="noopener">http://redis.io/commands</a></p>
-<p>在配置中增加（两种方式）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rename-command 指令名字 &quot;&quot;</span><br><span class="line">rename-command 指令名字 新的难输入的指令名字</span><br></pre></td></tr></table></figure>
-<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p>字符串，hash，list，集合，有序集合</p>
-<p>超时时间设置</p>
-<p>本身不支持嵌套对象，如果要把它变成json字符串</p>
-<p><a href="https://redis.io/topics/data-types-intro" target="_blank" rel="noopener">https://redis.io/topics/data-types-intro</a></p>
-<p>Bit arrays (or simply bitmaps): it is possible, using special commands, to handle String values like an array of bits: you can set and clear individual bits, count all the bits set to 1, find the first set or unset bit, and so forth.</p>
-<p>HyperLogLogs: this is a probabilistic data structure which is used in order to estimate the cardinality of a set. Don’t be scared, it is simpler than it seems… See later in the HyperLogLog section of this tutorial.</p>
-<p>Streams: append-only collections of map-like entries that provide an abstract log data type. They are covered in depth in the Introduction to Redis Streams.</p>
-<h2 id="发布-订阅"><a href="#发布-订阅" class="headerlink" title="发布/订阅"></a>发布/订阅</h2><p><a href="https://redis.io/topics/pubsub" target="_blank" rel="noopener">https://redis.io/topics/pubsub</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SUBSCRIBE 频道名1 [频道名2 ...]</span><br><span class="line">PUBLISH 频道名1 &quot;消息&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MULTI</span><br><span class="line"></span><br><span class="line">命令队列</span><br><span class="line"></span><br><span class="line">EXEC</span><br></pre></td></tr></table></figure>
-<p><a href="https://redis.io/topics/transactions" target="_blank" rel="noopener">https://redis.io/topics/transactions</a></p>
-<p>每条命令是原子操作，如果exec调用了，那么执行过程中 如果有命令失败，则会跳过改命令继续往后。</p>
-<p>? redis的事务 所以到底啥用,首先是和传统数据库的事务的意义不同</p>
-<p>为啥不支持</p>
-<p>Redis commands can fail only if called with a wrong syntax (and the problem is not detectable during the command queueing), or against keys holding the wrong data type: this means that in practical terms a failing command is the result of a programming errors, and a kind of error that is very likely to be detected during development, and not in production.</p>
-<p>Redis is internally simplified and faster because it does not need the ability to roll back.</p>
-<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><p>一个非原子的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val = GET mykey</span><br><span class="line">val = val + 1</span><br><span class="line">SET mykey $val</span><br></pre></td></tr></table></figure>
-<p>改为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">WATCH mykey</span><br><span class="line">val = GET mykey</span><br><span class="line">val = val + 1</span><br><span class="line">MULTI</span><br><span class="line">SET mykey $val</span><br><span class="line">EXEC</span><br></pre></td></tr></table></figure>
-<p>如果在WATCH和EXEC之间修改了mykey，这个transaction 会失败</p>
-<p>然后反复尝试，因为从实际期望上，不同的用户冲突的可能性很小，所以用的是乐观锁, 多数情况并不需要重复尝试</p>
-<p>管道Learn how to send multiple commands at once, saving on round trip time.: <code>$(echo -en &quot;PING\r\n SET runoobkey redis\r\nGET runoobkey\r\nINCR visitor\r\nINCR visitor\r\nINCR visitor\r\n&quot;; sleep 10) | nc localhost 6379</code></p>
-<h2 id="cheatsheet"><a href="#cheatsheet" class="headerlink" title="cheatsheet"></a>cheatsheet</h2><p>远程连接: <code>redis-cli -h host -p port -a password</code> // 不建议直接这样操作? 会被记录在你的命令历史里?</p>
-<p>查看信息<code>info</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">config get 配置名</span><br><span class="line">config set 配置名 配置值</span><br></pre></td></tr></table></figure>
-<p>benchmarks: <a href="https://redis.io/topics/benchmarks" target="_blank" rel="noopener">https://redis.io/topics/benchmarks</a></p>
-<p><code>redis-benchmark -h 127.0.0.1 -p 6379 -t set,lpush -n 10000 -q</code> 咦 这玩意不需要权限？？？</p>
-<p>文档很多是ruby写的例子 XD，没用过，人脑执行了一下大概的代码</p>
-<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04</a></p>
-<p><a href="https://redis.io/documentation" target="_blank" rel="noopener">https://redis.io/documentation</a></p>
 
       
     </div>
@@ -1334,12 +1365,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-count">97</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
