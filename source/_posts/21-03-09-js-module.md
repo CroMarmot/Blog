@@ -216,7 +216,7 @@ rollup 提出
 
 # ref
 
-[requirejs::deinfe a module](https://requirejs.org/docs/api.html#define)
+[requirejs::define a module](https://requirejs.org/docs/api.html#define)
 
 [commonjs](http://wiki.commonjs.org/wiki/Modules/Async/B)
 
