@@ -16,6 +16,8 @@ tags: [future,plan]
 
 稀有性 极大冲击 事后可预测
 
+<!--more-->
+
 ![190723_01](/Blog/images/blackswan/190723_01.jpg)
 
 最近自己都有点 让错误发生好了

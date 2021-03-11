@@ -30,6 +30,8 @@ Stop being a gray mass! 打破常规，停止使用最佳实践
 * 始终对子组件传递流
 * 宝石图? 并不适合你
 
+<!--more-->
+
 # 不要unsubscribe
 
 所有人都说，我们始终需要取消订阅observables来防止内存泄漏

@@ -27,6 +27,8 @@ Installed as /<your path>/Sdk/platform-tools/adb
 
 手机上：
 
+<!--more-->
+
 连接wifi，开发者选项->无线调试->使用配对码配对设备
 
 电脑上

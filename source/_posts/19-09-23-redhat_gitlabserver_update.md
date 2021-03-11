@@ -36,6 +36,8 @@ https://access.redhat.com/downloads/content/69/ver=/rhel---7/7.7/x86_64/product-
 
 因为想和某个生产环境保持一致 尝试 模拟某些操作
 
+<!--more-->
+
 # Install Software
 
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/installing-software

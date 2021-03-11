@@ -20,6 +20,8 @@ ISBN:9787508672069
 
 历史的解决问题的贡献，很多也用于人类升级
 
+<!--more-->
+
 ![190822_01](/Blog/images/historyoffuture/190822_01.jpg)
 
 ![190822_02](/Blog/images/historyoffuture/190822_02.jpg)

@@ -34,6 +34,8 @@ cat < /tmp/pipedemo
 
 输入和读出不用保证执行顺序
 
+<!--more-->
+
 # sh -i
 
 众所周知

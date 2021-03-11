@@ -32,6 +32,8 @@ console.log(demo.x)
 
 专门做了个赋值取值不一致的乘2
 
+<!--more-->
+
 # Step 2 函数订阅与触发
 
 ```js

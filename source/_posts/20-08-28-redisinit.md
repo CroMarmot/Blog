@@ -34,6 +34,8 @@ systemctl status redis
 
 啊 这个cli的提示真的香
 
+<!--more-->
+
 ```
 $ redis-cli
 127.0.0.1:6379> ping
