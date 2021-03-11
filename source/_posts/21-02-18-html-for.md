@@ -6,15 +6,6 @@ category: [frontend]
 mathjax: true
 ---
 
-# Related articles
-
-https://vuejs.org/v2/guide/list.html#Maintaining-State
-
-https://forum.vuejs.org/t/v-for-with-simple-arrays-what-key-to-use/13692
-
-https://www.jianshu.com/p/4bd5e745ce95
-
-https://www.zhihu.com/question/61064119
 
 # 总述问题
 
@@ -27,6 +18,18 @@ https://www.zhihu.com/question/61064119
  [勾选] B
  [ ] C
 ```
+
+## Related articles
+
+https://vuejs.org/v2/guide/list.html#Maintaining-State
+
+https://forum.vuejs.org/t/v-for-with-simple-arrays-what-key-to-use/13692
+
+https://www.jianshu.com/p/4bd5e745ce95
+
+https://www.zhihu.com/question/61064119
+
+<!--more-->
 
 ## 实际效果(Vue/React)
 

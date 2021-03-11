@@ -6,6 +6,12 @@ category: [frontend]
 mathjax: true
 ---
 
+# 总
+
+之前看vue conf有人用vue组件算阶乘说图灵完备，于是突发奇想用组件做做二分？
+
+<!--more-->
+
 # Vue( 超栈了？Maximum call stack size exceeded
 
 ```js

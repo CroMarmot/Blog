@@ -24,6 +24,8 @@ define(模块, [依赖的模块], ($) => {
 });
 ```
 
+<!--more-->
+
 # CMD(Common Module Definition - 公共模块定义) 有些地方都不再单独提及
 
 CMD是SeaJS在推广过程中对模块定义的规范化产出，对于模块的依赖，CMD是延迟执行
