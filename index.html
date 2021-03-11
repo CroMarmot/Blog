@@ -176,6 +176,87 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-03-11-vue2source/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/21-03-11-vue2source/" class="post-title-link" itemprop="url">vue2 source</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2021-03-11 00:00:00 / 修改時間：16:38:12" itemprop="dateCreated datePublished" datetime="2021-03-11T00:00:00+08:00">2021-03-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/21-03-11-vue2source/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-03-11-vue2source/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="vue2-源码"><a href="#vue2-源码" class="headerlink" title="vue2 源码"></a>vue2 源码</h1><h1 id="document"><a href="#document" class="headerlink" title="document"></a>document</h1><h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-03-09-js-module/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -199,10 +280,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2021-03-09 21:58:14 / 修改時間：17:16:52" itemprop="dateCreated datePublished" datetime="2021-03-09T21:58:14+08:00">2021-03-09</time>
+              <time title="創建時間：2021-03-09 21:58:14" itemprop="dateCreated datePublished" datetime="2021-03-09T21:58:14+08:00">2021-03-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -245,88 +332,14 @@
           <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>为了模块拆分</p>
 <h1 id="AMD-asynchromous-module-definition-异步模块定义"><a href="#AMD-asynchromous-module-definition-异步模块定义" class="headerlink" title="AMD(asynchromous module definition 异步模块定义)"></a>AMD(asynchromous module definition 异步模块定义)</h1><p>RequireJS,前端，异步</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">'module1'</span>, [<span class="string">'jquery'</span>], ($) =&gt; &#123;</span><br><span class="line">  <span class="comment">//do something...</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">define(模块, [依赖的模块], ($) =&gt; &#123;</span><br><span class="line">  <span class="comment">//do something...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h1 id="CMD-Common-Module-Definition-公共模块定义-有些地方都不再单独提及"><a href="#CMD-Common-Module-Definition-公共模块定义-有些地方都不再单独提及" class="headerlink" title="CMD(Common Module Definition - 公共模块定义) 有些地方都不再单独提及"></a>CMD(Common Module Definition - 公共模块定义) 有些地方都不再单独提及</h1><p>CMD是SeaJS在推广过程中对模块定义的规范化产出，对于模块的依赖，CMD是延迟执行</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function">(<span class="params"><span class="built_in">require</span>, exports, <span class="built_in">module</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    fun1: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'jquery'</span>);</span><br><span class="line">       <span class="keyword">return</span> $(<span class="string">'#test'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">define(<span class="function">(<span class="params"><span class="built_in">require</span>, exports, <span class="built_in">module</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    函数: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">var</span> $ = <span class="built_in">require</span>(依赖的模块);</span><br><span class="line">       <span class="keyword">return</span> $(<span class="string">'#test'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h1 id="CommonJS-cjs"><a href="#CommonJS-cjs" class="headerlink" title="CommonJS(cjs)"></a>CommonJS(cjs)</h1><p>CommonJS服务端,Node.js,同步</p>
-<p>使用require / module.exports</p>
-<p>file1.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">moudle.exports = &#123;</span><br><span class="line">  a: <span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>file2.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f1 = <span class="built_in">require</span>(<span class="string">'./file1'</span>);</span><br><span class="line"><span class="keyword">var</span> v = f1.a + <span class="number">2</span>;</span><br><span class="line"><span class="built_in">module</span>.exports =&#123;</span><br><span class="line">  v: v</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h1 id="umd-Universal-Module-Definition-通用模块定义"><a href="#umd-Universal-Module-Definition-通用模块定义" class="headerlink" title="umd(Universal Module Definition - 通用模块定义)"></a>umd(Universal Module Definition - 通用模块定义)</h1><p>amd(浏览器，异步) 和 commonjs(服务器，同步) 合并</p>
-<p>使用诸如Rollup/ Webpack之类的bundler时通常用作备用模块</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function">(<span class="params">root, factory</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">'function'</span> &amp;&amp; define.amd) &#123;</span><br><span class="line">    <span class="comment">//AMD</span></span><br><span class="line">    define([<span class="string">'jquery'</span>], factory);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> exports === <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="comment">//CommonJS</span></span><br><span class="line">    <span class="built_in">module</span>.exports = factory(<span class="built_in">require</span>(<span class="string">'jquery'</span>));</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//都不是，浏览器全局定义</span></span><br><span class="line">    root.returnExports = factory(root.jQuery);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)(<span class="keyword">this</span>, ($) =&gt; &#123;</span><br><span class="line">  <span class="comment">//    方法</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">myFunc</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//    暴露公共方法</span></span><br><span class="line">  <span class="keyword">return</span> myFunc;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h1 id="ESM-ECMA-Script-Modules"><a href="#ESM-ECMA-Script-Modules" class="headerlink" title="ESM(ECMA Script Modules)"></a>ESM(ECMA Script Modules)</h1><p>es6 模块化规范 (nodejs新版本可直接用,现代化浏览器script标签加<code>type=&quot;module&quot;</code> 可用)</p>
-<p>常见的 export / import</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 写法一</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> m = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 写法二</span></span><br><span class="line"><span class="keyword">var</span> m = <span class="number">1</span>; <span class="keyword">export</span> &#123; m &#125;;</span><br><span class="line"><span class="comment">// 写法三</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>; <span class="keyword">export</span> &#123; n <span class="keyword">as</span> m &#125;;</span><br><span class="line"><span class="comment">// 写法四</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>; <span class="keyword">export</span> <span class="keyword">default</span> n;</span><br><span class="line"><span class="comment">// 写法五</span></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123; <span class="keyword">import</span>(<span class="string">'./myModule.js'</span>).then(<span class="function">(<span class="params">&#123; export1, export2 &#125;</span>) =&gt;</span> &#123; <span class="comment">/* ... */</span> &#125;); &#125;</span><br><span class="line"><span class="comment">// 写法六</span></span><br><span class="line"><span class="built_in">Promise</span>.all([<span class="keyword">import</span>(<span class="string">'./module1.js'</span>),</span><br><span class="line"><span class="keyword">import</span>(<span class="string">'./module2.js'</span>),</span><br><span class="line"><span class="keyword">import</span>(<span class="string">'./module3.js'</span>)]).then(<span class="function">(<span class="params">[module1, module2, module3]</span>) =&gt;</span> &#123; <span class="comment">/* ... */</span> &#125;);</span><br></pre></td></tr></table></figure>
-<h1 id="iife-立即-调用-函数-表达"><a href="#iife-立即-调用-函数-表达" class="headerlink" title="iife(立即 调用 函数 表达)"></a>iife(立即 调用 函数 表达)</h1><p>A self-executing function suitable for inclusion as a <code>&lt;script&gt;</code> tag. If you want to create a bundle for your application, you probably want to use this.</p>
-<p>示例</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// maths.js</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// This function gets included</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">cube</span> (<span class="params"> x </span>) </span>&#123;</span><br><span class="line">    <span class="comment">// rewrite this as `square( x ) * x`</span></span><br><span class="line">    <span class="comment">// and see what happens!</span></span><br><span class="line">    <span class="keyword">return</span> x * x * x;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* TREE-SHAKING */</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log( cube( <span class="number">5</span> ) ); <span class="comment">// 125</span></span><br><span class="line"></span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
-<h1 id="systemjs"><a href="#systemjs" class="headerlink" title="systemjs"></a>systemjs</h1><p>示例</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">System.register(<span class="string">'myBundle'</span>, [], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    execute: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// maths.js</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// This function gets included</span></span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">cube</span> (<span class="params"> x </span>) </span>&#123;</span><br><span class="line">        <span class="comment">// rewrite this as `square( x ) * x`</span></span><br><span class="line">        <span class="comment">// and see what happens!</span></span><br><span class="line">        <span class="keyword">return</span> x * x * x;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">/* TREE-SHAKING */</span></span><br><span class="line"></span><br><span class="line">      <span class="built_in">console</span>.log( cube( <span class="number">5</span> ) ); <span class="comment">// 125</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>universal module loader that supports CJS, AMD, and ESM modules</p>
-<p>SystemJS is a hookable, standards-based module loader. It provides a workflow where code written for production workflows of native ES modules in browsers (like Rollup code-splitting builds), can be transpiled to the System.register module format to work in older browsers that don’t support native modules, running almost-native module speeds while supporting top-level await, dynamic import, circular references and live bindings, import.meta.url, module types, import maps, integrity and Content Security Policy with compatibility in older browsers back to IE11.</p>
-<p>简单说在老的浏览器依然可以跑native module,且效率不差</p>
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><table>
-<thead>
-<tr>
-<th>amd(requirejs)</th>
-<th>cmd</th>
-<th>commonjs(cjs)</th>
-<th>umd</th>
-<th>esm</th>
-<th>iife</th>
-<th>systemjs</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>异步模块定义</td>
-<td>公共模块定义</td>
-<td>服务端模块规范</td>
-<td>通用模块定义</td>
-<td>ecma脚本模块</td>
-<td>立刻自执行模块</td>
-<td>系统js??翻译不能?</td>
-</tr>
-<tr>
-<td>异步</td>
-<td>异步</td>
-<td>同步</td>
-<td>服务端同步浏览器异步</td>
-<td>es6手动编写,被webpack打包成amd,umd,cjs</td>
-<td>同步立即</td>
-<td>用于在老浏览器跑其它格式的js module</td>
-</tr>
-<tr>
-<td>浏览器</td>
-<td>相关seajs</td>
-<td>服务器(nodejs), (通过Browserify用于浏览器)</td>
-<td>先判断服务器再浏览器</td>
-<td>新版nodejs支持，老版本可以用webpack/rollup等打包</td>
-<td>浏览器script标签</td>
-<td>浏览器</td>
-</tr>
-</tbody>
-</table>
-<h1 id="Tree-Shaking"><a href="#Tree-Shaking" class="headerlink" title="Tree Shaking"></a>Tree Shaking</h1><p>rollup 提出</p>
-<p>见rollup 的 repl(Read-Eval-Print-Loop) 的在线 tree-shaking 示例, 上面的几种生成转换也是可以在在线的repl上看的</p>
-<ol>
-<li>只能作为模块顶层的语句出现，不能出现在 function 里面或是 if 里面。（ECMA-262 15.2)</li>
-<li>import 的模块名只能是字符串常量。(ECMA-262 15.2.2)</li>
-<li>不管 import 的语句出现的位置在哪里，在模块初始化的时候所有的 import 都必须已经导入完成。换句话说，ES6 imports are hoisted。(ECMA-262 15.2.1.16.4 - 8.a)</li>
-<li>import binding 是 immutable 的，类似 const。比如说你不能 import { a } from ‘./a’ 然后给 a 赋值个其他什么东西。(ECMA-262 15.2.1.16.4 - 12.c.3)</li>
-</ol>
-<p>切记副作用</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>上面提到的几种 仅仅是写法示例，完整的书写规则见各自的官方文档，或者下面的参考链接</p>
-<p>现代书写来说，基本就是书写esm了，剩下的事情就由 rollup/webpack之类的工具去完成了</p>
-<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://requirejs.org/docs/api.html#define" target="_blank" rel="noopener">requirejs::define a module</a></p>
-<p><a href="http://wiki.commonjs.org/wiki/Modules/Async/B" target="_blank" rel="noopener">commonjs</a></p>
-<p><a href="https://github.com/login?return_to=%2Fumdjs%2Fumd" target="_blank" rel="noopener">umd</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE" target="_blank" rel="noopener">iife</a></p>
-<p><a href="https://github.com/systemjs/systemjs#systemjs" target="_blank" rel="noopener">systemjs</a></p>
-<p><a href="https://rollupjs.org/repl" target="_blank" rel="noopener">rollup repl</a></p>
-<p><a href="https://www.zhihu.com/question/41922432/answer/93346223" target="_blank" rel="noopener">知乎 尤雨溪 tree-shaking</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/21-03-09-js-module/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -376,7 +389,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
+                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -419,21 +432,14 @@
 <p>虽然老的方法也可以用, 但更多的都变成<code>.d</code> 文件夹之类的</p>
 <p>然而一堆文章还在改 主配置文件文件</p>
 <p>甚至 例如 fail2ban的配置文件 已经明确说了, 还是有人在改主conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># HOW TO ACTIVATE JAILS:</span><br><span class="line">#</span><br><span class="line"># YOU SHOULD NOT MODIFY THIS FILE.</span><br><span class="line">#</span><br><span class="line"># It will probably be overwritten or improved in a distribution update.</span><br><span class="line">#</span><br><span class="line"># Provide customizations in a jail.local file or a jail.d/customisation.local.</span><br><span class="line"># For example to change the default bantime for all jails and to enable the</span><br><span class="line"># ssh-iptables jail the following (uncommented) would appear in the .local file.</span><br><span class="line"># See man 5 jail.conf for details.</span><br></pre></td></tr></table></figure>
-<p>不禁想知道<code>.d</code> 的意义和由来</p>
-<p>然后搜到了</p>
-<blockquote>
-<p>When distribution packaging became more and more common, it became clear that we needed better ways of forming such configuration files out of multiple fragments, often provided by multiple independent packages. Each package that needs to configure some shared service should be able to manage only its configuration without having to edit a shared configuration file used by other packages.</p>
-</blockquote>
-<blockquote>
-<p>The most common convention adopted was to permit including a directory full of configuration files, where anything dropped into that directory would become active and part of that configuration. As that convention became more widespread, that directory was usually named after the configuration file that it was replacing or augmenting. But since one cannot have a directory and a file with the same name, some method was required to distinguish, so .d was appended to the end of the configuration file name. Hence, a configuration file /etc/Muttrc was augmented by fragments in /etc/Muttrc.d, /etc/bash_completion was augmented with /etc/bash_completion.d/*, and so forth. Sometimes slight variations on that convention are used, such as /etc/xinetd.d to supplement /etc/xinetd.conf, or /etc/apache2/conf.d to supplement /etc/apache2/apache2.conf. But it’s the same basic idea.</p>
-</blockquote>
-<blockquote>
-<p>Generally when you see that *.d convention, it means “this is a directory holding a bunch of configuration fragments which will be merged together into configuration for some service.”</p>
-</blockquote>
-<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://unix.stackexchange.com/questions/4029/what-does-the-d-stand-for-in-directory-names/4047" target="_blank" rel="noopener">https://unix.stackexchange.com/questions/4029/what-does-the-d-stand-for-in-directory-names/4047</a></p>
-<p><a href="https://lists.debian.org/debian-devel/2010/04/msg00352.html" target="_blank" rel="noopener">https://lists.debian.org/debian-devel/2010/04/msg00352.html</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/21-03-08-dotd-folder/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -483,7 +489,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
+                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -520,44 +526,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Related-articles"><a href="#Related-articles" class="headerlink" title="Related articles"></a>Related articles</h1><p><a href="https://vuejs.org/v2/guide/list.html#Maintaining-State" target="_blank" rel="noopener">https://vuejs.org/v2/guide/list.html#Maintaining-State</a></p>
+          <h1 id="总述问题"><a href="#总述问题" class="headerlink" title="总述问题"></a>总述问题</h1><p>列表渲染时，在对列表插入和移除之类的操作时，会因为其设计的“替换算法”，导致语义上的对应映射错误</p>
+<p>原始列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[ ] A</span><br><span class="line">[勾选] B</span><br><span class="line">[ ] C</span><br></pre></td></tr></table></figure>
+<h2 id="Related-articles"><a href="#Related-articles" class="headerlink" title="Related articles"></a>Related articles</h2><p><a href="https://vuejs.org/v2/guide/list.html#Maintaining-State" target="_blank" rel="noopener">https://vuejs.org/v2/guide/list.html#Maintaining-State</a></p>
 <p><a href="https://forum.vuejs.org/t/v-for-with-simple-arrays-what-key-to-use/13692" target="_blank" rel="noopener">https://forum.vuejs.org/t/v-for-with-simple-arrays-what-key-to-use/13692</a></p>
 <p><a href="https://www.jianshu.com/p/4bd5e745ce95" target="_blank" rel="noopener">https://www.jianshu.com/p/4bd5e745ce95</a></p>
 <p><a href="https://www.zhihu.com/question/61064119" target="_blank" rel="noopener">https://www.zhihu.com/question/61064119</a></p>
-<h1 id="总述问题"><a href="#总述问题" class="headerlink" title="总述问题"></a>总述问题</h1><p>列表渲染时，在对列表插入和移除之类的操作时，会因为其设计的“替换算法”，导致语义上的对应映射错误</p>
-<p>原始列表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[ ] A</span><br><span class="line">[勾选] B</span><br><span class="line">[ ] C</span><br></pre></td></tr></table></figure>
-<h2 id="实际效果-Vue-React"><a href="#实际效果-Vue-React" class="headerlink" title="实际效果(Vue/React)"></a>实际效果(Vue/React)</h2><p>删除B</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ ] A</span><br><span class="line">[勾选] C</span><br></pre></td></tr></table></figure>
-<p>头部增加D</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[ ] D</span><br><span class="line">[勾选] A</span><br><span class="line">[ ] B</span><br><span class="line">[ ] C</span><br></pre></td></tr></table></figure>
-<h2 id="期望效果-Ng"><a href="#期望效果-Ng" class="headerlink" title="期望效果(Ng)"></a>期望效果(Ng)</h2><p>删除B</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ ] A</span><br><span class="line">[ ] C</span><br></pre></td></tr></table></figure>
-<p>头部增加D</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[ ] D</span><br><span class="line">[ ] A</span><br><span class="line">[勾选] B</span><br><span class="line">[ ] C</span><br></pre></td></tr></table></figure>
-<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><p><a href="https://cromarmot.github.io/VueDemo/#/VueForDemo">https://cromarmot.github.io/VueDemo/#/VueForDemo</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"name"</span> <span class="attr">type</span>=<span class="string">"text"</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"add"</span>&gt;</span>添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>With key<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in list"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> /&gt;</span> &#123;&#123; item.name &#125;&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>Without key<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in list"</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> /&gt;</span> &#123;&#123; item.name &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">  data() &#123;</span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">      name: <span class="string">''</span>,</span></span><br><span class="line">      newId: 3,</span><br><span class="line">      list: [</span><br><span class="line"><span class="javascript">        &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">'Name0'</span> &#125;,</span></span><br><span class="line"><span class="javascript">        &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">'Name1'</span> &#125;,</span></span><br><span class="line"><span class="javascript">        &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">name</span>: <span class="string">'Name2'</span> &#125;,</span></span><br><span class="line">      ],</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    add() &#123;</span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.list.unshift(&#123; <span class="attr">id</span>: ++<span class="keyword">this</span>.newId, <span class="attr">name</span>: <span class="keyword">this</span>.name &#125;)</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.name = <span class="string">''</span></span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><p>Same with Vue, try it on <a href="https://codesandbox.io/" target="_blank" rel="noopener">https://codesandbox.io/</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">CharShop</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  newId = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      name: <span class="string">""</span>,</span><br><span class="line">      list: [</span><br><span class="line">        &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">"Name0"</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">"Name1"</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">name</span>: <span class="string">"Name2"</span> &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  add = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.state.list.unshift(&#123; <span class="attr">id</span>: ++<span class="keyword">this</span>.newId, <span class="attr">name</span>: <span class="keyword">this</span>.state.name &#125;);</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123; <span class="attr">name</span>: <span class="string">""</span>, <span class="attr">list</span>: <span class="keyword">this</span>.state.list &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  handleChange = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123; <span class="attr">name</span>: e.target.value &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;input</span><br><span class="line">            value=&#123;<span class="keyword">this</span>.state.name&#125;</span><br><span class="line">            onChange=&#123;<span class="keyword">this</span>.handleChange&#125;</span><br><span class="line">            type=<span class="string">"text"</span></span><br><span class="line">          /&gt;</span><br><span class="line">          &lt;button onClick=&#123;<span class="keyword">this</span>.add&#125;&gt;添加&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &#123;<span class="keyword">this</span>.state.list.map(<span class="function">(<span class="params">item</span>) =&gt;</span> (</span><br><span class="line">            &lt;li&gt;</span><br><span class="line">              &lt;input type=<span class="string">"checkbox"</span> /&gt; &#123;item.name&#125;</span><br><span class="line">            &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">          ))&#125;</span></span><br><span class="line"><span class="regexp">        &lt;/u</span>l&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Warning: Each child in a list should have a unique &quot;key&quot; prop.</span><br><span class="line"></span><br><span class="line">Check the render method of `CharShop`. See https://reactjs.org/link/warning-keys for more information.</span><br><span class="line">    at li</span><br><span class="line">    at CharShop</span><br></pre></td></tr></table></figure>
-<h1 id="Ng"><a href="#Ng" class="headerlink" title="Ng"></a>Ng</h1><p><a href="https://cromarmot.github.io/NgDemo/#/for-demo">https://cromarmot.github.io/NgDemo/#/for-demo</a></p>
-<p>Smarter !?</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> [(<span class="attr">ngModel</span>)]=<span class="string">"name"</span> <span class="attr">type</span>=<span class="string">"text"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"add()"</span>&gt;</span>添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Without key<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">"let item of list"</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> /&gt;</span> &#123;&#123; item.name &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;Component&#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-for-demo'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./for-demo.component.html'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ForDemoComponent</span> </span>&#123;</span><br><span class="line">  name = <span class="string">''</span>;</span><br><span class="line">  newId = <span class="number">3</span>;</span><br><span class="line">  list = [</span><br><span class="line">    &#123;<span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">'Name0'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">'Name1'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">id</span>: <span class="number">3</span>, <span class="attr">name</span>: <span class="string">'Name2'</span>&#125;,</span><br><span class="line">  ];</span><br><span class="line"></span><br><span class="line">  add(): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.list.unshift(&#123;</span><br><span class="line">      id: ++<span class="keyword">this</span>.newId,</span><br><span class="line">      name: <span class="keyword">this</span>.name,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">''</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>总的来说就是一个 设计上导致的Bug</p>
-<p>从代码语义上，<code>Vue</code>和<code>React</code>在此时已经就不符合语义了，<code>for出来的input元素内容</code>和<code>渲染列表的内容</code>是挂钩的。渲染为空(默认状态)都比现在这样的更正确。</p>
-<p>从设计上讲，既然都想到了做<code>值的ob</code>和<code>拦截set/get</code>，同样对于数组数据的每一项，可以用包裹的方式跟踪上，因为它们毕竟是会渲染到页面上的，从语义上 既然作为data(vue),state(react),class成员(ng)。</p>
-<p>然而vue/react都没有</p>
-<p>  于是甩锅给用户，让用户提供<code>key</code>（虽然这部分主要是<code>eslint</code>在管理提示，但默认<code>error</code>，或者<code>warn</code>都会让用户难受），（而且在官方文档中,<code>for的基础使用</code>又是支持完全没有，虽然详细文档里有）, <code>ng</code>是<code>trackBy</code>非一定要提供。</p>
-<p>然而实际上，如果真的需要跟踪，因该有相应的数据（VM层面），怎么想都不会“复用错误”，比如上面的勾选，如果真的要用应该会有对应的勾选数组VM层进行跟踪</p>
-<p>而还有不少是简单列表，非动态列表，key其实不必要的情况更多。</p>
-<p>甚至产生不少用<code>index</code>作为<code>key</code>来解决<code>eslint</code>报错的代码，跟没写一样，单纯是为了不让eslint报错而写的代码</p>
-<p>或者简单页面有两块列表时，要么塞额外字符串前后缀，要么再拆一个没啥卵用的组件层级来解决<code>key</code>冲突。</p>
-<p>而又不建议用了 非数字和字符串的key，有些时候，对象的地址甚至也是在没有<code>id</code>时，更好的值</p>
-<p>所以 直接关掉<code>key</code>的需求，每个列表的渲染有VM上的数据跟踪感觉更合理</p>
-<p><code>key</code>应该作为真的后台能提供<code>唯一id</code>时再使用的辅助功能</p>
-<p>所以从实现上，Vue/React 也“不那么需要”修复这个Bug，使用者该做的是VM层有对应的数据跟踪，而不是打开必须key的lint配置，然后提供一个无意义/无语义的key</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/21-02-18-html-for/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -607,7 +590,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
+                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -644,645 +627,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Vue-超栈了？Maximum-call-stack-size-exceeded"><a href="#Vue-超栈了？Maximum-call-stack-size-exceeded" class="headerlink" title="Vue( 超栈了？Maximum call stack size exceeded"></a>Vue( 超栈了？Maximum call stack size exceeded</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;demo</span><br><span class="line">    v-<span class="keyword">if</span>=<span class="string">"this.l !== this.newl || this.r !== this.newr"</span></span><br><span class="line">    :l=<span class="string">"newl"</span></span><br><span class="line">    :r=<span class="string">"newr"</span></span><br><span class="line">    :fn=<span class="string">"fn"</span></span><br><span class="line">  /&gt;</span><br><span class="line">  &lt;div v-<span class="keyword">else</span>&gt;[&#123;&#123; l &#125;&#125;,&#123;&#123; r &#125;&#125;]&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">"Demo"</span>,</span><br><span class="line">  props: &#123;</span><br><span class="line">    l: <span class="built_in">Number</span>,</span><br><span class="line">    r: <span class="built_in">Number</span>,</span><br><span class="line">    fn: <span class="built_in">Function</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    mid() &#123;</span><br><span class="line">      <span class="keyword">return</span> (<span class="keyword">this</span>.l + <span class="keyword">this</span>.r) / <span class="number">2</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    newl() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.fn(<span class="keyword">this</span>.mid) ? <span class="keyword">this</span>.l : <span class="keyword">this</span>.mid;</span><br><span class="line">    &#125;,</span><br><span class="line">    newr() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.fn(<span class="keyword">this</span>.mid) ? <span class="keyword">this</span>.mid : <span class="keyword">this</span>.r;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p>使用</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">demo</span> <span class="attr">:l</span>=<span class="string">"0"</span> <span class="attr">:r</span>=<span class="string">"1"</span> <span class="attr">:fn</span>=<span class="string">"(x) =&gt; x &gt; 0"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在线代码</p>
-<iframe src="https://codesandbox.io/embed/inspiring-sound-2f11o?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="inspiring-sound-2f11o" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-
-<h1 id="React-能跑"><a href="#React-能跑" class="headerlink" title="React(能跑)"></a>React(能跑)</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  demo = <span class="function">(<span class="params">l, r, fn</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">const</span> newl = fn(mid) ? l : mid;</span><br><span class="line">    <span class="keyword">const</span> newr = fn(mid) ? mid : r;</span><br><span class="line">    <span class="keyword">if</span> (l !== newl || r !== newr) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;&gt;</span>&#123;this.demo(newl, newr, fn)&#125;<span class="tag">&lt;/&gt;</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        [&#123;l&#125;,&#123;r&#125;]</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  render() &#123;</span></span><br><span class="line"><span class="regexp">    return &lt;div&gt;&#123;this.demo(this.props.l, this.props.r, this.props.fn)&#125;&lt;/</span>div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
-<p>使用</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">App</span> <span class="attr">l</span>=<span class="string">&#123;0&#125;</span> <span class="attr">r</span>=<span class="string">&#123;1&#125;</span> <span class="attr">fn</span>=<span class="string">&#123;(v)</span> =&gt;</span> v &gt; 0&#125; /&gt;</span><br></pre></td></tr></table></figure>
-<p>在线代码</p>
-<iframe src="https://codesandbox.io/embed/determined-maxwell-dpuv1?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="determined-maxwell-dpuv1" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-
-<h1 id="Angular-我本地调也爆栈，但是在线的可以"><a href="#Angular-我本地调也爆栈，但是在线的可以" class="headerlink" title="Angular(我本地调也爆栈，但是在线的可以"></a>Angular(我本地调也爆栈，但是在线的可以</h1><p>html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">demo</span></span></span><br><span class="line"><span class="tag">  *<span class="attr">ngIf</span>=<span class="string">"l !== newl() || r !== newr();else ShowResult"</span></span></span><br><span class="line"><span class="tag">  [<span class="attr">l</span>]=<span class="string">"newl()"</span></span></span><br><span class="line"><span class="tag">  [<span class="attr">r</span>]=<span class="string">"newr()"</span></span></span><br><span class="line"><span class="tag">  [<span class="attr">fn</span>]=<span class="string">"fn"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">demo</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ng-template</span> #<span class="attr">ShowResult</span>&gt;</span></span><br><span class="line">  [&#123;&#123; l &#125;&#125; , &#123;&#123; r &#125;&#125;]</span><br><span class="line"><span class="tag">&lt;/<span class="name">ng-template</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, Input &#125; <span class="keyword">from</span> <span class="string">"@angular/core"</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">"demo"</span>,</span><br><span class="line">  templateUrl: <span class="string">"./demo.component.html"</span>,</span><br><span class="line">  styleUrls: [<span class="string">"./demo.component.css"</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoComponent</span> </span>&#123;</span><br><span class="line">  @Input() l: number;</span><br><span class="line">  @Input() r: number;</span><br><span class="line">  @Input() fn: <span class="function">(<span class="params">v: number</span>) =&gt;</span> boolean;</span><br><span class="line"></span><br><span class="line">  newl() &#123;</span><br><span class="line">    <span class="keyword">const</span> mid: number = (<span class="keyword">this</span>.l + <span class="keyword">this</span>.r) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.fn(mid) ? <span class="keyword">this</span>.l : mid;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  newr() &#123;</span><br><span class="line">    <span class="keyword">const</span> mid: number = (<span class="keyword">this</span>.l + <span class="keyword">this</span>.r) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.fn(mid) ? mid : <span class="keyword">this</span>.r;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">demo</span> [<span class="attr">l</span>]=<span class="string">"0"</span> [<span class="attr">r</span>]=<span class="string">"1"</span> [<span class="attr">fn</span>]=<span class="string">"fn"</span>&gt;</span> <span class="tag">&lt;/<span class="name">demo</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在线代码</p>
-<iframe src="https://codesandbox.io/embed/gifted-mestorf-zeb2m?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="gifted-mestorf-zeb2m" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-
-<p>本地一旦把ngIf 去了也能跑，迷。</p>
-<p>搜了半天，没学会ng怎么做完全的无wrapper的页面元素。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-01-13-reactive-demo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/21-01-13-reactive-demo/" class="post-title-link" itemprop="url">vue2 reactive基本原理demo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-01-13 21:58:14" itemprop="dateCreated datePublished" datetime="2021-01-13T21:58:14+08:00">2021-01-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/21-01-13-reactive-demo/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-01-13-reactive-demo/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>以下代码均可以在nodejs和chrome的console里运行</p>
-<p>以下均未考虑兼容,空判断,父类属性,解除绑定, 多层关系, 循环调用,多次调用等</p>
-<h1 id="Step-1-接管赋值和取值"><a href="#Step-1-接管赋值和取值" class="headerlink" title="Step 1 接管赋值和取值"></a>Step 1 接管赋值和取值</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> demo = &#123;&#125;;</span><br><span class="line">demo._dAtA = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(demo, <span class="string">'x'</span>, &#123;</span><br><span class="line">  <span class="keyword">get</span>: function()&#123;</span><br><span class="line">    <span class="keyword">return</span> demo._dAtA[<span class="string">'x'</span>] * <span class="number">2</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="keyword">set</span>(val)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(val);</span><br><span class="line">    demo._dAtA[<span class="string">'x'</span>] = val;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">demo.x = <span class="number">123</span></span><br><span class="line"><span class="built_in">console</span>.log(demo.x)</span><br></pre></td></tr></table></figure>
-<p>专门做了个赋值取值不一致的乘2</p>
-<h1 id="Step-2-函数订阅与触发"><a href="#Step-2-函数订阅与触发" class="headerlink" title="Step 2 函数订阅与触发"></a>Step 2 函数订阅与触发</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">  subs = []</span><br><span class="line">  sub(fn) &#123;</span><br><span class="line">    <span class="keyword">this</span>.subs.push(fn)</span><br><span class="line">  &#125;</span><br><span class="line">  unsub(fn) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="keyword">this</span>.subs.length - <span class="number">1</span>;i &gt;= <span class="number">0</span> ;i--)&#123;</span><br><span class="line">      <span class="keyword">if</span>(<span class="keyword">this</span>.subs[i] === fn)&#123;</span><br><span class="line">        <span class="keyword">this</span>.subs.splice(i,<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  notify() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'nofity start'</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.subs.length; i ++)&#123;</span><br><span class="line">      (<span class="keyword">this</span>.subs[i])();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'nofity end'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> d = <span class="keyword">new</span> Demo();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> hello0 = <span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(<span class="string">'hello 0'</span>)&#125;</span><br><span class="line">d.sub(hello0)</span><br><span class="line">d.notify()</span><br><span class="line">d.unsub(hello0)</span><br><span class="line">d.notify()</span><br><span class="line"></span><br><span class="line">d.sub(<span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(<span class="string">'hello 1'</span>)&#125;)</span><br><span class="line">d.unsub(<span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(<span class="string">'hello 1'</span>)&#125;)</span><br><span class="line">d.notify()</span><br></pre></td></tr></table></figure>
-<p>专门写了两种，对于函数指针不了解的，也可以通过这个理解一下</p>
-<h1 id="Step-3-data-computed"><a href="#Step-3-data-computed" class="headerlink" title="Step 3 data + computed"></a>Step 3 data + computed</h1><p>有了上面的基本工具，结合一下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sub</span></span>&#123;</span><br><span class="line">  subs = []</span><br><span class="line">  sub(fn) &#123;</span><br><span class="line">    <span class="keyword">this</span>.subs.push(fn)</span><br><span class="line">  &#125;</span><br><span class="line">  notify()&#123;</span><br><span class="line">    <span class="keyword">this</span>.subs.forEach(<span class="function"><span class="params">fn</span>=&gt;</span>&#123;fn()&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// currentReactiveValue</span></span><br><span class="line"><span class="keyword">let</span> curV = <span class="literal">null</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defineReactive</span>(<span class="params">obj, key, value, db</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> subs = <span class="keyword">new</span> Sub();</span><br><span class="line">  obj[db][key] = value;</span><br><span class="line">  <span class="built_in">Object</span>.defineProperty(obj, key, &#123;</span><br><span class="line">    <span class="keyword">get</span>()&#123;</span><br><span class="line">      <span class="keyword">if</span>(curV)&#123;</span><br><span class="line">        <span class="comment">// not bind self</span></span><br><span class="line">        <span class="keyword">if</span>(!(curV.vm === obj &amp;&amp; curV.key === key))&#123;</span><br><span class="line">          <span class="keyword">const</span> rv = curV;</span><br><span class="line">          subs.sub(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            rv.vm[rv.key] = rv.fn();</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">`\t[info][<span class="subst">$&#123;rv.key&#125;</span>] set to [<span class="subst">$&#123;rv.vm[rv.key]&#125;</span>]`</span>);</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> obj[db][key];</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">set</span>(v)&#123;</span><br><span class="line">      obj[db][key] = v</span><br><span class="line">      subs.notify();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defineComputed</span>(<span class="params">obj, key, fn</span>) </span>&#123;</span><br><span class="line">  curV = &#123;<span class="attr">vm</span>: obj, key, <span class="attr">fn</span>: fn.bind(obj)&#125;;</span><br><span class="line">  <span class="keyword">let</span> d = (fn.bind(obj))();</span><br><span class="line">  defineReactive(obj, key, d, <span class="string">'_computed'</span>);</span><br><span class="line">  curV = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">VDemo</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(config)&#123;</span><br><span class="line">    <span class="keyword">const</span> d = config.dAtA();</span><br><span class="line">    <span class="keyword">this</span>._data = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> d) &#123;</span><br><span class="line">      defineReactive(<span class="keyword">this</span>, key, d[key], <span class="string">'_data'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>._computed = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> config.computed)&#123;</span><br><span class="line">      defineComputed(<span class="keyword">this</span>, key, config.computed[key])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> vDemo = <span class="keyword">new</span> VDemo(&#123;</span><br><span class="line">  dAtA()&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      vAl0: <span class="string">'hey'</span>,</span><br><span class="line">      vAl1: <span class="string">'world'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    x() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.vAl0 + <span class="string">' '</span> + <span class="keyword">this</span>.vAl1;</span><br><span class="line">    &#125;,</span><br><span class="line">    y() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'y: '</span> + <span class="keyword">this</span>.x;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(vDemo.vAl0)</span><br><span class="line"><span class="built_in">console</span>.log(vDemo.vAl1)</span><br><span class="line"><span class="built_in">console</span>.log(vDemo.x)</span><br><span class="line">vDemo.vAl0 = <span class="string">'hello'</span></span><br><span class="line"><span class="built_in">console</span>.log(vDemo.x)</span><br><span class="line">vDemo.vAl1 = <span class="string">' ?'</span></span><br><span class="line"><span class="built_in">console</span>.log(vDemo.x)</span><br><span class="line"><span class="built_in">console</span>.log(vDemo.x)</span><br><span class="line"><span class="built_in">console</span>.log(vDemo)</span><br></pre></td></tr></table></figure>
-<p>这样，改变值，依赖的值就会自动跟着变化，而在依赖的值不变时，不会多次调用函数。</p>
-<h1 id="相关文档"><a href="#相关文档" class="headerlink" title="相关文档"></a>相关文档</h1><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-11-13-android11-adb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-11-13-android11-adb/" class="post-title-link" itemprop="url">android 11 wireless adb</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-11-13 21:58:14" itemprop="dateCreated datePublished" datetime="2020-11-13T21:58:14+08:00">2020-11-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-11-13-android11-adb/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-11-13-android11-adb/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>发现android 11 开发者模式 多了个无线调试</p>
-<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>android 11，开发者模式</p>
-<p>电脑：</p>
-<p>android platform tools adb 30 版本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">adb --version</span><br><span class="line">Android Debug Bridge version 1.0.41</span><br><span class="line">Version 30.0.5-6877874 # 这里 要30版本</span><br><span class="line">Installed as /&lt;your path&gt;/Sdk/platform-tools/adb</span><br></pre></td></tr></table></figure>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>手机上：</p>
-<p>连接wifi，开发者选项-&gt;无线调试-&gt;使用配对码配对设备</p>
-<p>电脑上</p>
-<p>配对</p>
-<p><code>adb pair 弹框中你的ip:端口</code> 输入六位数字 配对成功</p>
-<p>连接</p>
-<p><code>adb connect 无限调试界面的 ip:端口</code></p>
-<p>查看</p>
-<p><code>adb devices</code></p>
-<p><code>adb shell</code></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://developer.android.com/studio/command-line/adb" target="_blank" rel="noopener">https://developer.android.com/studio/command-line/adb</a></p>
-<p>之前看了一些国内发的文章，很多缺少<code>adb connect</code>这一步骤,可能是android studio会自动调用connect？</p>
-<p>另外就是无线调试并不是android 11 才有的，看官方文档在10以及以下一直可以，只是授权过程和启动手机上调试端口更麻烦一些</p>
-<p>可以先usb连接后 通过 adb tcpip 5555 再 adb connect ip:5555 这样进入无线调试</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-11-11-mkfifo-nc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-11-11-mkfifo-nc/" class="post-title-link" itemprop="url">mkfifo sh nc</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-11-11 21:58:14" itemprop="dateCreated datePublished" datetime="2020-11-11T21:58:14+08:00">2020-11-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-11-11-mkfifo-nc/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-11-11-mkfifo-nc/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="mkpipe"><a href="#mkpipe" class="headerlink" title="mkpipe"></a>mkpipe</h1><p>众所周知</p>
-<p><code>ls | grep hey</code>中的竖线是pipe，</p>
-<p>同样，我们可以用mkfifo创建命名的管道</p>
-<p>创建</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfifo /tmp/pipedemo</span><br></pre></td></tr></table></figure>
-<p>输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls &gt; /tmp/pipedemo</span><br></pre></td></tr></table></figure>
-<p>读出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &lt; /tmp/pipedemo</span><br></pre></td></tr></table></figure>
-<p>输入和读出不用保证执行顺序</p>
-<h1 id="sh-i"><a href="#sh-i" class="headerlink" title="sh -i"></a>sh -i</h1><p>众所周知</p>
-<p>0 是一个文件描述符，表示标准输入(stdin)<br>1 是一个文件描述符，表示标准输出(stdout)<br>2 是一个文件描述符，表示标准错误(stderr)</p>
-<p>而<code>sh -i</code> 可以强制交互模式</p>
-<h1 id="nc"><a href="#nc" class="headerlink" title="nc"></a>nc</h1><p>最后就有了, nc文档上的实例,既可以做server又可以做client</p>
-<p>服务端</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 清除并创建fifo 的管道(看权限是`rw-rw-r--`)</span><br><span class="line">$ rm -f /tmp/f; mkfifo /tmp/f</span><br><span class="line">$ cat /tmp/f | /bin/sh -i 2&gt;&amp;1 | nc -l 127.0.0.1 1234 &gt; /tmp/f</span><br></pre></td></tr></table></figure>
-<p>客户端</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc 127.0.0.1 1234</span><br></pre></td></tr></table></figure>
-<p>/bin/sh 输出到服务端127.0.0.1:1234，作为输入</p>
-<p>用户连接上127.0.0.1:1234，接受到上面的输入</p>
-<p>用户敲入命令，发送给服务端127.0.0.1:1234</p>
-<p>服务端输出重定向到/tmp/f中</p>
-<p>/tmp/f 被cat出 定向给 /bin/sh</p>
-<p>/bin/sh接受输入并反馈出输出给 服务端</p>
-<p>服务端返回给客户端</p>
-<h1 id="搜还搜到了一个"><a href="#搜还搜到了一个" class="headerlink" title="搜还搜到了一个"></a>搜还搜到了一个</h1><p><a href="https://www.dartmouth.edu/~rc/classes/ksh/welcome.html#top" target="_blank" rel="noopener">https://www.dartmouth.edu/~rc/classes/ksh/welcome.html#top</a></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><code>man sh</code></p>
-<p><code>man mkfifo</code></p>
-<p><code>man nc</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-11-09-scroll/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-11-09-scroll/" class="post-title-link" itemprop="url">scroll</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-11-09 21:58:14" itemprop="dateCreated datePublished" datetime="2020-11-09T21:58:14+08:00">2020-11-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-11-09-scroll/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-11-09-scroll/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>对于css</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">html &#123;</span><br><span class="line">  scroll-behavior: smooth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>用id + hash的方式滚动</p>
-<p>对于js</p>
-<p>事件:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;scroll&apos;, callback);</span><br></pre></td></tr></table></figure>
-<p><code>throttle + js判断后 再增删 class</code></p>
-<p>详细：下面30k viewed的页面</p>
-<p><a href="https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section" target="_blank" rel="noopener">https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-11-09-call/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-11-09-call/" class="post-title-link" itemprop="url">call this</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-11-09 16:58:14" itemprop="dateCreated datePublished" datetime="2020-11-09T16:58:14+08:00">2020-11-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-11-09-call/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-11-09-call/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>直接上代码</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">'fn print'</span>)&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">'fn1 print'</span>)&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fnthis</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>);&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(fn.call == <span class="built_in">Function</span>.call)</span><br><span class="line"><span class="built_in">console</span>.log(fn.call.call == <span class="built_in">Function</span>.call)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Function</span>.call.call == <span class="built_in">Function</span>.call)</span><br><span class="line"></span><br><span class="line">fn.call(fn1)</span><br><span class="line">fn.call.call(fn1)</span><br><span class="line"><span class="built_in">Function</span>.call(fn1)</span><br><span class="line"><span class="built_in">Function</span>.call.call(fn1)</span><br><span class="line"></span><br><span class="line">fn.call(fnthis)</span><br><span class="line">fn.call.call(fnthis)</span><br><span class="line"><span class="built_in">Function</span>.call(fnthis)</span><br><span class="line"><span class="built_in">Function</span>.call.call(fnthis)</span><br></pre></td></tr></table></figure>
-<p>根据mdn上的call的文档</p>
-<p><code>function.call(thisArg, arg1, arg2, ...)</code></p>
-<p>所以</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fn.call(fn1) // 调用fn函数，在函数执行中的 this = fn1，</span><br><span class="line">fn.call.call(fn1) // 调用Function.call函数，在函数执行中的 this = fn1，</span><br><span class="line">Function.call(fn1) // 调用Function.call函数，但是是参数传递了fn1,而不是this = fn1</span><br><span class="line">Function.call.call(fn1) // 和第二个相同</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-09-21-tasks-microtasks-queues-and-schedules/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-09-21-tasks-microtasks-queues-and-schedules/" class="post-title-link" itemprop="url">宏任务 微任务</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-09-21 16:58:14" itemprop="dateCreated datePublished" datetime="2020-09-21T16:58:14+08:00">2020-09-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-09-21-tasks-microtasks-queues-and-schedules/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-09-21-tasks-microtasks-queues-and-schedules/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>setTimeout 启动的宏任务</p>
-<p>promise(以及await的写法) 和 observer 都是微任务</p>
-<p>执行是单线程，当宏任务执行完后，把所有等待的微任务执行后，才会执行下一个宏任务。</p>
-<p>然后作者举例了一个稍微特殊一点的，html的事件冒泡，父子元素都有点击事件。</p>
-<ul>
-<li><p>鼠标点击子元素。分发是靠浏览器分发，对于js的任务是两个click。</p>
-</li>
-<li><p>代码调用子元素点击事件，也会触发冒泡，但是对于js的任务是 这个调用代码。</p>
-</li>
-</ul>
-<p>因此上面两种看似相同的点击会有不同的执行顺序。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/" target="_blank" rel="noopener">https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/</a></p>
-<p>有精力建议，直接看上面原文，作者的demo做得很好的！</p>
-<p>以外的话 还有mdn的文档看</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide</a></p>
-<p><a href="https://zh.javascript.info/event-loop" target="_blank" rel="noopener">https://zh.javascript.info/event-loop</a></p>
-<p><a href="https://stackoverflow.com/questions/25915634/difference-between-microtask-and-macrotask-within-an-event-loop-context" target="_blank" rel="noopener">https://stackoverflow.com/questions/25915634/difference-between-microtask-and-macrotask-within-an-event-loop-context</a></p>
-<p>对于不应该阻塞事件循环的耗时长的繁重计算任务，我们可以使用 Web Workers。<a href="https://html.spec.whatwg.org/multipage/workers.html" target="_blank" rel="noopener">https://html.spec.whatwg.org/multipage/workers.html</a></p>
-<p>这是在另一个并行线程中运行代码的方式。</p>
-<p>Web Workers 可以与主线程交换消息，但是它们具有自己的变量和事件循环。</p>
-<p>Web Workers 没有访问 DOM 的权限，因此，它们对于同时使用多个 CPU 内核的计算非常有用。</p>
-
+          <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>之前看vue conf有人用vue组件算阶乘说图灵完备，于是突发奇想用组件做做二分？</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/21-02-02-Turing-complete/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1300,7 +653,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/Blog/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/Blog/page/10/">10</a><a class="extend next" rel="next" href="/Blog/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/Blog/page/2/">2</a><a class="page-number" href="/Blog/page/4/">4</a><a class="page-number" href="/Blog/page/8/">8</a><a class="page-number" href="/Blog/page/16/">16</a><a class="page-number" href="/Blog/page/20/">20</a><a class="extend next" rel="next" href="/Blog/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -1366,7 +719,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">97</span>
+          <span class="site-state-item-count">98</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1375,7 +728,7 @@
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">97</span>
+        <span class="site-state-item-count">98</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>

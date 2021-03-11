@@ -21,18 +21,18 @@
     var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Vue( 超栈了？Maximum call stack size exceeded12345678910111213141516171819202122232425262728293031&amp;lt;template&amp;gt;  &amp;lt;demo    v-if=&quot;this.l !== this.newl || this.r !== this.newr&quot;    :l=&quot;newl&quot;    :r=&quot;newr">
+  <meta name="description" content="总之前看vue conf有人用vue组件算阶乘说图灵完备，于是突发奇想用组件做做二分？">
 <meta name="keywords" content="angular,vue2,react,递归">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图灵完备？那做个二分vue&#x2F;react&#x2F;angular,递归组件Demo">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/21-02-02-Turing-complete/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
-<meta property="og:description" content="Vue( 超栈了？Maximum call stack size exceeded12345678910111213141516171819202122232425262728293031&amp;lt;template&amp;gt;  &amp;lt;demo    v-if=&quot;this.l !== this.newl || this.r !== this.newr&quot;    :l=&quot;newl&quot;    :r=&quot;newr">
+<meta property="og:description" content="总之前看vue conf有人用vue组件算阶乘说图灵完备，于是突发奇想用组件做做二分？">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-03-09T09:16:52.346Z">
+<meta property="og:updated_time" content="2021-03-11T08:38:12.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图灵完备？那做个二分vue&#x2F;react&#x2F;angular,递归组件Demo">
-<meta name="twitter:description" content="Vue( 超栈了？Maximum call stack size exceeded12345678910111213141516171819202122232425262728293031&amp;lt;template&amp;gt;  &amp;lt;demo    v-if=&quot;this.l !== this.newl || this.r !== this.newr&quot;    :l=&quot;newl&quot;    :r=&quot;newr">
+<meta name="twitter:description" content="总之前看vue conf有人用vue组件算阶乘说图灵完备，于是突发奇想用组件做做二分？">
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/21-02-02-Turing-complete/">
 
@@ -212,7 +212,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
+                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,7 +249,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Vue-超栈了？Maximum-call-stack-size-exceeded"><a href="#Vue-超栈了？Maximum-call-stack-size-exceeded" class="headerlink" title="Vue( 超栈了？Maximum call stack size exceeded"></a>Vue( 超栈了？Maximum call stack size exceeded</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;demo</span><br><span class="line">    v-<span class="keyword">if</span>=<span class="string">"this.l !== this.newl || this.r !== this.newr"</span></span><br><span class="line">    :l=<span class="string">"newl"</span></span><br><span class="line">    :r=<span class="string">"newr"</span></span><br><span class="line">    :fn=<span class="string">"fn"</span></span><br><span class="line">  /&gt;</span><br><span class="line">  &lt;div v-<span class="keyword">else</span>&gt;[&#123;&#123; l &#125;&#125;,&#123;&#123; r &#125;&#125;]&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">"Demo"</span>,</span><br><span class="line">  props: &#123;</span><br><span class="line">    l: <span class="built_in">Number</span>,</span><br><span class="line">    r: <span class="built_in">Number</span>,</span><br><span class="line">    fn: <span class="built_in">Function</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    mid() &#123;</span><br><span class="line">      <span class="keyword">return</span> (<span class="keyword">this</span>.l + <span class="keyword">this</span>.r) / <span class="number">2</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    newl() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.fn(<span class="keyword">this</span>.mid) ? <span class="keyword">this</span>.l : <span class="keyword">this</span>.mid;</span><br><span class="line">    &#125;,</span><br><span class="line">    newr() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.fn(<span class="keyword">this</span>.mid) ? <span class="keyword">this</span>.mid : <span class="keyword">this</span>.r;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>之前看vue conf有人用vue组件算阶乘说图灵完备，于是突发奇想用组件做做二分？</p>
+<a id="more"></a>
+<h1 id="Vue-超栈了？Maximum-call-stack-size-exceeded"><a href="#Vue-超栈了？Maximum-call-stack-size-exceeded" class="headerlink" title="Vue( 超栈了？Maximum call stack size exceeded"></a>Vue( 超栈了？Maximum call stack size exceeded</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;demo</span><br><span class="line">    v-<span class="keyword">if</span>=<span class="string">"this.l !== this.newl || this.r !== this.newr"</span></span><br><span class="line">    :l=<span class="string">"newl"</span></span><br><span class="line">    :r=<span class="string">"newr"</span></span><br><span class="line">    :fn=<span class="string">"fn"</span></span><br><span class="line">  /&gt;</span><br><span class="line">  &lt;div v-<span class="keyword">else</span>&gt;[&#123;&#123; l &#125;&#125;,&#123;&#123; r &#125;&#125;]&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">"Demo"</span>,</span><br><span class="line">  props: &#123;</span><br><span class="line">    l: <span class="built_in">Number</span>,</span><br><span class="line">    r: <span class="built_in">Number</span>,</span><br><span class="line">    fn: <span class="built_in">Function</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    mid() &#123;</span><br><span class="line">      <span class="keyword">return</span> (<span class="keyword">this</span>.l + <span class="keyword">this</span>.r) / <span class="number">2</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    newl() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.fn(<span class="keyword">this</span>.mid) ? <span class="keyword">this</span>.l : <span class="keyword">this</span>.mid;</span><br><span class="line">    &#125;,</span><br><span class="line">    newr() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.fn(<span class="keyword">this</span>.mid) ? <span class="keyword">this</span>.mid : <span class="keyword">this</span>.r;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p>使用</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">demo</span> <span class="attr">:l</span>=<span class="string">"0"</span> <span class="attr">:r</span>=<span class="string">"1"</span> <span class="attr">:fn</span>=<span class="string">"(x) =&gt; x &gt; 0"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <p>在线代码</p>
@@ -364,7 +366,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-超栈了？Maximum-call-stack-size-exceeded"><span class="nav-number">1.</span> <span class="nav-text">Vue( 超栈了？Maximum call stack size exceeded</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-能跑"><span class="nav-number">2.</span> <span class="nav-text">React(能跑)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Angular-我本地调也爆栈，但是在线的可以"><span class="nav-number">3.</span> <span class="nav-text">Angular(我本地调也爆栈，但是在线的可以</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#总"><span class="nav-number">1.</span> <span class="nav-text">总</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-超栈了？Maximum-call-stack-size-exceeded"><span class="nav-number">2.</span> <span class="nav-text">Vue( 超栈了？Maximum call stack size exceeded</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-能跑"><span class="nav-number">3.</span> <span class="nav-text">React(能跑)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Angular-我本地调也爆栈，但是在线的可以"><span class="nav-number">4.</span> <span class="nav-text">Angular(我本地调也爆栈，但是在线的可以</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -378,7 +380,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">97</span>
+          <span class="site-state-item-count">98</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -387,7 +389,7 @@
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">97</span>
+        <span class="site-state-item-count">98</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>

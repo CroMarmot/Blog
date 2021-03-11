@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
 <meta property="og:description" content="总为了模块拆分 AMD(asynchromous module definition 异步模块定义)RequireJS,前端，异步 1234567define(&apos;module1&apos;, [&apos;jquery&apos;], ($) =&amp;gt; &amp;#123;  //do something...&amp;#125;);define(模块, [依赖的模块], ($) =&amp;gt; &amp;#123;  //do something..">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-03-09T09:16:52.346Z">
+<meta property="og:updated_time" content="2021-03-11T08:38:12.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="amd&#x2F;cmd&#x2F;commonjs&#x2F;umd&#x2F;esm&#x2F;iife&#x2F;systemjs">
 <meta name="twitter:description" content="总为了模块拆分 AMD(asynchromous module definition 异步模块定义)RequireJS,前端，异步 1234567define(&apos;module1&apos;, [&apos;jquery&apos;], ($) =&amp;gt; &amp;#123;  //do something...&amp;#125;);define(模块, [依赖的模块], ($) =&amp;gt; &amp;#123;  //do something..">
@@ -204,10 +204,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2021-03-09 21:58:14 / 修改時間：17:16:52" itemprop="dateCreated datePublished" datetime="2021-03-09T21:58:14+08:00">2021-03-09</time>
+              <time title="創建時間：2021-03-09 21:58:14" itemprop="dateCreated datePublished" datetime="2021-03-09T21:58:14+08:00">2021-03-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -250,6 +256,7 @@
         <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>为了模块拆分</p>
 <h1 id="AMD-asynchromous-module-definition-异步模块定义"><a href="#AMD-asynchromous-module-definition-异步模块定义" class="headerlink" title="AMD(asynchromous module definition 异步模块定义)"></a>AMD(asynchromous module definition 异步模块定义)</h1><p>RequireJS,前端，异步</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">'module1'</span>, [<span class="string">'jquery'</span>], ($) =&gt; &#123;</span><br><span class="line">  <span class="comment">//do something...</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">define(模块, [依赖的模块], ($) =&gt; &#123;</span><br><span class="line">  <span class="comment">//do something...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h1 id="CMD-Common-Module-Definition-公共模块定义-有些地方都不再单独提及"><a href="#CMD-Common-Module-Definition-公共模块定义-有些地方都不再单独提及" class="headerlink" title="CMD(Common Module Definition - 公共模块定义) 有些地方都不再单独提及"></a>CMD(Common Module Definition - 公共模块定义) 有些地方都不再单独提及</h1><p>CMD是SeaJS在推广过程中对模块定义的规范化产出，对于模块的依赖，CMD是延迟执行</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function">(<span class="params"><span class="built_in">require</span>, exports, <span class="built_in">module</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    fun1: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'jquery'</span>);</span><br><span class="line">       <span class="keyword">return</span> $(<span class="string">'#test'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">define(<span class="function">(<span class="params"><span class="built_in">require</span>, exports, <span class="built_in">module</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    函数: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">var</span> $ = <span class="built_in">require</span>(依赖的模块);</span><br><span class="line">       <span class="keyword">return</span> $(<span class="string">'#test'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h1 id="CommonJS-cjs"><a href="#CommonJS-cjs" class="headerlink" title="CommonJS(cjs)"></a>CommonJS(cjs)</h1><p>CommonJS服务端,Node.js,同步</p>
@@ -352,7 +359,10 @@
     <a href="/Blog/21-03-08-dotd-folder/" rel="prev" title=".d 文件夹">
       <i class="fa fa-chevron-left"></i> .d 文件夹
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/Blog/21-03-11-vue2source/" rel="next" title="vue2 source">
+      vue2 source <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -432,7 +442,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">97</span>
+          <span class="site-state-item-count">98</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -441,7 +451,7 @@
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">97</span>
+        <span class="site-state-item-count">98</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>

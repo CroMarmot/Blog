@@ -21,18 +21,18 @@
     var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Related articleshttps://vuejs.org/v2/guide/list.html#Maintaining-State https://forum.vuejs.org/t/v-for-with-simple-arrays-what-key-to-use/13692 https://www.jianshu.com/p/4bd5e745ce95 https://www.zhihu">
+  <meta name="description" content="总述问题列表渲染时，在对列表插入和移除之类的操作时，会因为其设计的“替换算法”，导致语义上的对应映射错误 原始列表 123[ ] A[勾选] B[ ] C Related articleshttps://vuejs.org/v2/guide/list.html#Maintaining-State https://forum.vuejs.org/t/v-for-with-simple-arrays-">
 <meta name="keywords" content="angular,vue2,react,for">
 <meta property="og:type" content="article">
 <meta property="og:title" content="v-for, ngFor, react(for) 列表真的需要key吗">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/21-02-18-html-for/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
-<meta property="og:description" content="Related articleshttps://vuejs.org/v2/guide/list.html#Maintaining-State https://forum.vuejs.org/t/v-for-with-simple-arrays-what-key-to-use/13692 https://www.jianshu.com/p/4bd5e745ce95 https://www.zhihu">
+<meta property="og:description" content="总述问题列表渲染时，在对列表插入和移除之类的操作时，会因为其设计的“替换算法”，导致语义上的对应映射错误 原始列表 123[ ] A[勾选] B[ ] C Related articleshttps://vuejs.org/v2/guide/list.html#Maintaining-State https://forum.vuejs.org/t/v-for-with-simple-arrays-">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-03-09T09:16:52.346Z">
+<meta property="og:updated_time" content="2021-03-11T08:38:12.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="v-for, ngFor, react(for) 列表真的需要key吗">
-<meta name="twitter:description" content="Related articleshttps://vuejs.org/v2/guide/list.html#Maintaining-State https://forum.vuejs.org/t/v-for-with-simple-arrays-what-key-to-use/13692 https://www.jianshu.com/p/4bd5e745ce95 https://www.zhihu">
+<meta name="twitter:description" content="总述问题列表渲染时，在对列表插入和移除之类的操作时，会因为其设计的“替换算法”，导致语义上的对应映射错误 原始列表 123[ ] A[勾选] B[ ] C Related articleshttps://vuejs.org/v2/guide/list.html#Maintaining-State https://forum.vuejs.org/t/v-for-with-simple-arrays-">
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/21-02-18-html-for/">
 
@@ -212,7 +212,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
+                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,13 +249,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Related-articles"><a href="#Related-articles" class="headerlink" title="Related articles"></a>Related articles</h1><p><a href="https://vuejs.org/v2/guide/list.html#Maintaining-State" target="_blank" rel="noopener">https://vuejs.org/v2/guide/list.html#Maintaining-State</a></p>
+        <h1 id="总述问题"><a href="#总述问题" class="headerlink" title="总述问题"></a>总述问题</h1><p>列表渲染时，在对列表插入和移除之类的操作时，会因为其设计的“替换算法”，导致语义上的对应映射错误</p>
+<p>原始列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[ ] A</span><br><span class="line">[勾选] B</span><br><span class="line">[ ] C</span><br></pre></td></tr></table></figure>
+<h2 id="Related-articles"><a href="#Related-articles" class="headerlink" title="Related articles"></a>Related articles</h2><p><a href="https://vuejs.org/v2/guide/list.html#Maintaining-State" target="_blank" rel="noopener">https://vuejs.org/v2/guide/list.html#Maintaining-State</a></p>
 <p><a href="https://forum.vuejs.org/t/v-for-with-simple-arrays-what-key-to-use/13692" target="_blank" rel="noopener">https://forum.vuejs.org/t/v-for-with-simple-arrays-what-key-to-use/13692</a></p>
 <p><a href="https://www.jianshu.com/p/4bd5e745ce95" target="_blank" rel="noopener">https://www.jianshu.com/p/4bd5e745ce95</a></p>
 <p><a href="https://www.zhihu.com/question/61064119" target="_blank" rel="noopener">https://www.zhihu.com/question/61064119</a></p>
-<h1 id="总述问题"><a href="#总述问题" class="headerlink" title="总述问题"></a>总述问题</h1><p>列表渲染时，在对列表插入和移除之类的操作时，会因为其设计的“替换算法”，导致语义上的对应映射错误</p>
-<p>原始列表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[ ] A</span><br><span class="line">[勾选] B</span><br><span class="line">[ ] C</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="实际效果-Vue-React"><a href="#实际效果-Vue-React" class="headerlink" title="实际效果(Vue/React)"></a>实际效果(Vue/React)</h2><p>删除B</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ ] A</span><br><span class="line">[勾选] C</span><br></pre></td></tr></table></figure>
 <p>头部增加D</p>
@@ -379,7 +380,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Related-articles"><span class="nav-number">1.</span> <span class="nav-text">Related articles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总述问题"><span class="nav-number">2.</span> <span class="nav-text">总述问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实际效果-Vue-React"><span class="nav-number">2.1.</span> <span class="nav-text">实际效果(Vue/React)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#期望效果-Ng"><span class="nav-number">2.2.</span> <span class="nav-text">期望效果(Ng)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue"><span class="nav-number">3.</span> <span class="nav-text">Vue</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React"><span class="nav-number">4.</span> <span class="nav-text">React</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ng"><span class="nav-number">5.</span> <span class="nav-text">Ng</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总"><span class="nav-number">6.</span> <span class="nav-text">总</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#总述问题"><span class="nav-number">1.</span> <span class="nav-text">总述问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-articles"><span class="nav-number">1.1.</span> <span class="nav-text">Related articles</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实际效果-Vue-React"><span class="nav-number">1.2.</span> <span class="nav-text">实际效果(Vue/React)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#期望效果-Ng"><span class="nav-number">1.3.</span> <span class="nav-text">期望效果(Ng)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue"><span class="nav-number">2.</span> <span class="nav-text">Vue</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React"><span class="nav-number">3.</span> <span class="nav-text">React</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ng"><span class="nav-number">4.</span> <span class="nav-text">Ng</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总"><span class="nav-number">5.</span> <span class="nav-text">总</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -393,7 +394,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">97</span>
+          <span class="site-state-item-count">98</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -402,7 +403,7 @@
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">97</span>
+        <span class="site-state-item-count">98</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>

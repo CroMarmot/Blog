@@ -176,7 +176,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-10-24-shell/">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-07-14-md5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Blog/images/avatar.gif">
@@ -190,7 +190,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/Blog/19-10-24-shell/" class="post-title-link" itemprop="url">single square brackets vs double square brackets in shell</a>
+            <a href="/Blog/20-07-14-md5/" class="post-title-link" itemprop="url">md5</a>
         </h2>
 
         <div class="post-meta">
@@ -200,14 +200,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2019-10-24 15:09:01" itemprop="dateCreated datePublished" datetime="2019-10-24T15:09:01+08:00">2019-10-24</time>
+              <time title="創建時間：2020-07-14 10:37:14" itemprop="dateCreated datePublished" datetime="2020-07-14T10:37:14+08:00">2020-07-14</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
+                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -215,7 +215,7 @@
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+                  <a href="/Blog/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a>
                 </span>
             </span>
 
@@ -228,8 +228,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-10-24-shell/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-10-24-shell/" itemprop="commentCount"></span>
+    <a title="disqus" href="/Blog/20-07-14-md5/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-07-14-md5/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -244,9 +244,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p><a href="https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba" target="_blank" rel="noopener">https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba</a></p>
-<p><a href="http://mywiki.wooledge.org/BashFAQ/031" target="_blank" rel="noopener">http://mywiki.wooledge.org/BashFAQ/031</a></p>
-<p><a href="https://scriptingosx.com/2018/02/single-brackets-vs-double-brackets/" target="_blank" rel="noopener">https://scriptingosx.com/2018/02/single-brackets-vs-double-brackets/</a></p>
+          <h1 id="数学事实"><a href="#数学事实" class="headerlink" title="数学事实"></a>数学事实</h1><p>反复线性和非线性交替计算</p>
+<h1 id="代码js"><a href="#代码js" class="headerlink" title="代码js"></a>代码js</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">md5</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">RotateLeft</span>(<span class="params">lValue, iShiftBits</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((lValue &lt;&lt; iShiftBits) | (lValue &gt;&gt;&gt; (<span class="number">32</span> - iShiftBits))) &amp; <span class="number">0xFFFFFFFF</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">unsignAdd</span>(<span class="params">lX, lY</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((lX &amp; <span class="number">0xFFFFFFFF</span>) + (lY &amp; <span class="number">0xFFFFFFFF</span>) ) &amp; <span class="number">0xFFFFFFFF</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// (a,b,c,d) = (d, ((a+f(b,c,d) + data + Ki)&lt;&lt;&lt; s)+b, b, c)</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a, b, c, d, x, s, ac, Fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> unsignAdd(RotateLeft(unsignAdd(a, unsignAdd(unsignAdd(Fn(b, c, d), x), ac)), s), b);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">ConvertToWordArray</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> lWordCount;</span><br><span class="line">    <span class="keyword">let</span> lMessageLength = string.length;</span><br><span class="line">    <span class="comment">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER</span></span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords_temp1 = lMessageLength + <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords_temp2 = (lNumberOfWords_temp1 - (lNumberOfWords_temp1 % <span class="number">64</span>)) / <span class="number">64</span>;</span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords = (lNumberOfWords_temp2 + <span class="number">1</span>) * <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">let</span> lWordArray = <span class="built_in">Array</span>(lNumberOfWords - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">let</span> lBytePosition = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> lByteCount = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (lByteCount &lt; lMessageLength) &#123;</span><br><span class="line">      lWordCount = (lByteCount - (lByteCount % <span class="number">4</span>)) / <span class="number">4</span>;</span><br><span class="line">      lBytePosition = (lByteCount % <span class="number">4</span>) * <span class="number">8</span>;</span><br><span class="line">      lWordArray[lWordCount] = (lWordArray[lWordCount] | (string.charCodeAt(lByteCount) &lt;&lt; lBytePosition));</span><br><span class="line">      lByteCount++;</span><br><span class="line">    &#125;</span><br><span class="line">    lWordCount = (lByteCount - (lByteCount % <span class="number">4</span>)) / <span class="number">4</span>;</span><br><span class="line">    lBytePosition = (lByteCount % <span class="number">4</span>) * <span class="number">8</span>;</span><br><span class="line">    lWordArray[lWordCount] = lWordArray[lWordCount] | (<span class="number">0x80</span> &lt;&lt; lBytePosition);</span><br><span class="line">    lWordArray[lNumberOfWords - <span class="number">2</span>] = lMessageLength &lt;&lt; <span class="number">3</span>;</span><br><span class="line">    lWordArray[lNumberOfWords - <span class="number">1</span>] = lMessageLength &gt;&gt;&gt; <span class="number">29</span>;</span><br><span class="line">    <span class="keyword">return</span> lWordArray;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">WordToHex</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> WordToHexValue = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">      WordToHexValue += <span class="string">`0<span class="subst">$&#123;((v &gt;&gt;&gt; (i * <span class="number">8</span>)) &amp; <span class="number">0xFF</span>).toString(<span class="number">16</span>)&#125;</span>`</span>.substr(<span class="number">-2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> WordToHexValue;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Utf8Encode</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> utftext = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> n = <span class="number">0</span>; n &lt; string.length; n++) &#123;</span><br><span class="line">      <span class="keyword">let</span> c = string.charCodeAt(n);</span><br><span class="line">      <span class="keyword">if</span> (c &lt; <span class="number">128</span>) &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode(c);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> ((c &gt; <span class="number">127</span>) &amp;&amp; (c &lt; <span class="number">2048</span>)) &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &gt;&gt; <span class="number">6</span>) | <span class="number">192</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &gt;&gt; <span class="number">12</span>) | <span class="number">224</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode(((c &gt;&gt; <span class="number">6</span>) &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> utftext;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">let</span> x = ConvertToWordArray(Utf8Encode(string));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> funcs = [</span><br><span class="line">    (x,y,z) =&gt; ((x &amp; y) | ((~x) &amp; z) ),</span><br><span class="line">    (x,y,z) =&gt; ((x &amp; z) | (y &amp; (~z))),</span><br><span class="line">    (x,y,z) =&gt; (x ^ y ^ z),</span><br><span class="line">    (x,y,z) =&gt; (y ^ (x | (~z)))</span><br><span class="line">  ];</span><br><span class="line">  <span class="comment">// K = abs(sin(i+1))*(2^32) int part</span></span><br><span class="line">  <span class="comment">// https://softwareengineering.stackexchange.com/questions/89694/md5-implementation-notes</span></span><br><span class="line">  <span class="keyword">const</span> K = [ <span class="number">0xD76AA478</span> ,<span class="number">0xE8C7B756</span> ,<span class="number">0x242070DB</span> ,<span class="number">0xC1BDCEEE</span> ,<span class="number">0xF57C0FAF</span> ,<span class="number">0x4787C62A</span> ,<span class="number">0xA8304613</span> ,<span class="number">0xFD469501</span> ,<span class="number">0x698098D8</span> ,<span class="number">0x8B44F7AF</span> ,<span class="number">0xFFFF5BB1</span> ,<span class="number">0x895CD7BE</span> ,<span class="number">0x6B901122</span> ,<span class="number">0xFD987193</span> ,<span class="number">0xA679438E</span> ,<span class="number">0x49B40821</span> ,<span class="number">0xF61E2562</span> ,<span class="number">0xC040B340</span> ,<span class="number">0x265E5A51</span> ,<span class="number">0xE9B6C7AA</span> ,<span class="number">0xD62F105D</span> ,<span class="number">0x02441453</span> ,<span class="number">0xD8A1E681</span> ,<span class="number">0xE7D3FBC8</span> ,<span class="number">0x21E1CDE6</span> ,<span class="number">0xC33707D6</span> ,<span class="number">0xF4D50D87</span> ,<span class="number">0x455A14ED</span> ,<span class="number">0xA9E3E905</span> ,<span class="number">0xFCEFA3F8</span> ,<span class="number">0x676F02D9</span> ,<span class="number">0x8D2A4C8A</span> ,<span class="number">0xFFFA3942</span> ,<span class="number">0x8771F681</span> ,<span class="number">0x6D9D6122</span> ,<span class="number">0xFDE5380C</span> ,<span class="number">0xA4BEEA44</span> ,<span class="number">0x4BDECFA9</span> ,<span class="number">0xF6BB4B60</span> ,<span class="number">0xBEBFBC70</span> ,<span class="number">0x289B7EC6</span> ,<span class="number">0xEAA127FA</span> ,<span class="number">0xD4EF3085</span> ,<span class="number">0x04881D05</span> ,<span class="number">0xD9D4D039</span> ,<span class="number">0xE6DB99E5</span> ,<span class="number">0x1FA27CF8</span> ,<span class="number">0xC4AC5665</span> ,<span class="number">0xF4292244</span> ,<span class="number">0x432AFF97</span> ,<span class="number">0xAB9423A7</span> ,<span class="number">0xFC93A039</span> ,<span class="number">0x655B59C3</span> ,<span class="number">0x8F0CCC92</span> ,<span class="number">0xFFEFF47D</span> ,<span class="number">0x85845DD1</span> ,<span class="number">0x6FA87E4F</span> ,<span class="number">0xFE2CE6E0</span> ,<span class="number">0xA3014314</span> ,<span class="number">0x4E0811A1</span> ,<span class="number">0xF7537E82</span> ,<span class="number">0xBD3AF235</span> ,<span class="number">0x2AD7D2BB</span> ,<span class="number">0xEB86D391</span> ] ;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> S = [[<span class="number">7</span>,<span class="number">12</span>,<span class="number">17</span>,<span class="number">22</span>],[<span class="number">5</span>,<span class="number">9</span>,<span class="number">14</span>,<span class="number">20</span>],[<span class="number">4</span>,<span class="number">11</span>,<span class="number">16</span>,<span class="number">23</span>],[<span class="number">6</span>,<span class="number">10</span>,<span class="number">15</span>,<span class="number">21</span>]];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> offset = [[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">5</span>,<span class="number">1</span>],[<span class="number">3</span>,<span class="number">5</span>],[<span class="number">7</span>,<span class="number">0</span>]];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 01234567 89abcdef fedcba98 76543210</span></span><br><span class="line">  <span class="keyword">let</span> abcd = [<span class="number">0x67452301</span>,<span class="number">0xEFCDAB89</span>,<span class="number">0x98BADCFE</span>,<span class="number">0x10325476</span>];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// http://www.faqs.org/rfcs/rfc1321.html</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> idx = <span class="number">0</span>; idx &lt; x.length; idx += <span class="number">16</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> ABCD = [...abcd];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; <span class="number">4</span>;i ++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>;j &lt; <span class="number">4</span>;j ++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> k = <span class="number">0</span>;k &lt; <span class="number">4</span>;k ++)&#123;</span><br><span class="line">          abcd = [abcd[<span class="number">3</span>],f(...abcd, x[idx + ((offset[i][<span class="number">0</span>]*(j*<span class="number">4</span>+k) + offset[i][<span class="number">1</span>] ) %<span class="number">16</span>)], S[i][k], K[(i*<span class="number">4</span>+j)*<span class="number">4</span>+k], funcs[i]),abcd[<span class="number">1</span>],abcd[<span class="number">2</span>]];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    abcd = ABCD.map(<span class="function">(<span class="params">item,idx</span>)=&gt;</span> unsignAdd(item,abcd[idx]));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> abcd.map(<span class="function"><span class="params">item</span>=&gt;</span>WordToHex(item)).join(<span class="string">''</span>).toLowerCase();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(md5(<span class="string">""</span>))</span><br><span class="line"><span class="built_in">console</span>.log(md5(<span class="string">"demo"</span>))</span><br></pre></td></tr></table></figure>
+<p>两段看起来复杂的函数 其实 是字符串通过utf8/ascii之类转换成 数值</p>
+<p>其中一些值和公式的设计大自能有个想法感受了，还不明白的是offset和s的设计为什么是这样的,搜了半天也没搜到</p>
+<p><a href="https://en.wikipedia.org/wiki/MD5" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/MD5</a></p>
 
       
     </div>
@@ -266,7 +268,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-10-22-nextCloud/">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-07-13-rsa/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Blog/images/avatar.gif">
@@ -280,7 +282,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/Blog/19-10-22-nextCloud/" class="post-title-link" itemprop="url">nextCloud ! 真香</a>
+            <a href="/Blog/20-07-13-rsa/" class="post-title-link" itemprop="url">rsa</a>
         </h2>
 
         <div class="post-meta">
@@ -290,14 +292,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2019-10-22 15:09:01" itemprop="dateCreated datePublished" datetime="2019-10-22T15:09:01+08:00">2019-10-22</time>
+              <time title="創建時間：2020-07-13 10:37:14" itemprop="dateCreated datePublished" datetime="2020-07-13T10:37:14+08:00">2020-07-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
+                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -305,7 +307,7 @@
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+                  <a href="/Blog/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a>
                 </span>
             </span>
 
@@ -318,8 +320,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-10-22-nextCloud/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-10-22-nextCloud/" itemprop="commentCount"></span>
+    <a title="disqus" href="/Blog/20-07-13-rsa/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-07-13-rsa/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -334,57 +336,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p>因为一些不可描述的原因，dropbox能用但是速度感人</p>
-<p>现在需要一款能够 在 android+Linux+iPadOS三端做同步的</p>
-<p>iPad上的Documents配上ssh可以完成Linux+iPadOS的同步, // android似乎并不行</p>
-<p>google drive就和dropbox是同样的问题</p>
-<p>baiduYunPan ??? 如果你不怕你的个人资料有一天变成 “根据相关法律法规” 的话 // 不过值得一提的是 这玩意支持linux了哦 虽然目测是个 浏览器壳 当然也就没有自动备份同步功能</p>
-<p>然后搜了搜开源的 ownCloud 和 nextCloud ,看介绍基本是一家的</p>
-<p>还有人说 用svn/git来搞，你确定喜欢在手机和ipad上输命令?</p>
-<h1 id="开干"><a href="#开干" class="headerlink" title="开干"></a>开干</h1><p>client就不说了,各个平台下下来安装就行,说说 server</p>
-<p>我目前的电脑环境<code>Ubuntu18.04 x86_64 Linux 4.15.0-65-generic , bash 4.4.20 , 15925MiB</code></p>
-<p><strong>警告第一条命令将会进入root,进入后你将有所有权限，请自重</strong></p>
-<pre><code>sudo -s
-apt install apache2
-service apache2 start
-apt install mariadb-server
-mysql_secure_installation
-apt install php libapache2-mod-php php-mysql php-gd php-json php-mysql php-curl php-mbstring php-intl php-imagick php-xml php-zip
-apt install phpmyadmin
-ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
-a2enconf phpmyadmin
-a2enmod ssl
-a2ensite default-ssl
-service apache2 reload
-mariadb
-MariaDB [(none)]&gt; CREATE DATABASE nextcloud;
-MariaDB [(none)]&gt; CREATE USER nextcloud IDENTIFIED BY &apos;p@ssc0de&apos;;
-MariaDB [(none)]&gt; grant usage on *.* TO nextcloud@localhost IDENTIFIED BY &apos;p@ssc0de&apos;;
-MariaDB [(none)]&gt; GRANT ALL privileges ON nextcloud.* TO nextcloud@localhost;
-MariaDB [(none)]&gt; FLUSH PRIVILEGES;
-</code></pre><p>访问 <a href="https://localhost/phpmyadmin/" target="_blank" rel="noopener">https://localhost/phpmyadmin/</a></p>
-<p>(用户名,密码)=(nextcloud,p@ssc0de)</p>
-<p>去<code>https://download.nextcloud.com/server/releases/nextcloud-17.0.0.zip</code>下载最新的zip包 解压到 <code>/var/www/html/nextcloud</code>里</p>
-<p>chown -R www-data:www-data nextcloud/</p>
-<p>通过<code>https://localhost/nextcloud</code>即可访问 设置admin 密码，填写刚刚的配置即可</p>
-<p>手机连接会无权限，跟着提示修改/var/www/html/nextcloud/config/config.php的配置即可</p>
-<h1 id="失败的尝试"><a href="#失败的尝试" class="headerlink" title="失败的尝试"></a>失败的尝试</h1><p>下载<code>wget https://raw.githubusercontent.com/nextcloud/vm/master/nextcloud_install_production.sh</code></p>
-<p>然后<code>sudo bash nextcloud_install_production.sh</code></p>
-<p><code>https://github.com/nextcloud/server</code> 下源码或者下releases</p>
-<h1 id="nextCloud-额外的应用"><a href="#nextCloud-额外的应用" class="headerlink" title="nextCloud 额外的应用"></a>nextCloud 额外的应用</h1><p>把搜到的release包解压到<code>/var/www/html/nextcloud/apps</code></p>
-<p>在<code>index.php/settings/apps</code>中启用</p>
-<p>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">calendar.tar.gz</span><br><span class="line">checksum.tar.gz</span><br><span class="line">files_readmemd.tar.gz</span><br><span class="line">richdocuments.tar.gz</span><br><span class="line">spreed-7.0.2.tar.gz</span><br></pre></td></tr></table></figure>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://docs.nextcloud.com/server/17/admin_manual/installation/source_installation.html#example-installation-on-ubuntu-18-04-lts-server" target="_blank" rel="noopener">https://docs.nextcloud.com/server/17/admin_manual/installation/source_installation.html#example-installation-on-ubuntu-18-04-lts-server</a></p>
-<p><a href="https://github.com/nextcloud/server.git" target="_blank" rel="noopener">https://github.com/nextcloud/server.git</a></p>
-<p><a href="https://nextcloud.com/install/#instructions-server" target="_blank" rel="noopener">https://nextcloud.com/install/#instructions-server</a></p>
-<p><a href="https://askubuntu.com/questions/387062/how-to-solve-the-phpmyadmin-not-found-issue-after-upgrading-php-and-apache" target="_blank" rel="noopener">https://askubuntu.com/questions/387062/how-to-solve-the-phpmyadmin-not-found-issue-after-upgrading-php-and-apache</a></p>
-<p><a href="https://www.youtube.com/watch?v=QXfsi0pwgYw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=QXfsi0pwgYw</a></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>现在看来主要问题在于 直接snap的 会和当前本地开得一堆服务或多或少冲突？？ 我查运行状态 都是在运行，查端口 没看到监听</p>
-<p>另外一个就是 文件夹权限要搞成 www-data:www-data</p>
-<p>在一个就是mysql的db和账户创建,只玩过CURD，很久没摸也忘了</p>
-<p>客户端口没啥难度</p>
-<p>emmmmmmmm 似乎也不能在ipados上搞… 只能网页勉强</p>
+          <h1 id="数论事实"><a href="#数论事实" class="headerlink" title="数论事实"></a>数论事实</h1><p>两个大质数相乘，只需要最多两个数字长度的乘积的复杂度，而把两个质数乘积进行拆分可能要 其中较小数字的时间复杂度。也就是易于验证，难于破解。</p>
+<p>假设两个长度为2048(二进制下)的质数相乘，最多只需要 <code>2048 x 2048</code>的时间，而枚举拆分需要<code>2^2048</code>的时间, 目前最快的？gnfs算法的复杂度也是</p>
+<p>$O(e^{\sqrt{\frac{64}{9}}(\log N)^{\frac 13}(\log\log N)^{\frac 23}})$</p>
+<h1 id="加解密"><a href="#加解密" class="headerlink" title="加解密"></a>加解密</h1><h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p>$C=M^e \bmod n$</p>
+<p>n=pq,其中p和q为大质数</p>
+<p>M 要加密的信息 (需要 和n互质也就是至少p,q其中一个互质,1/pq 当质数足够大时碰撞概率极小，其实因为公钥信息里已经有n了，也不会碰撞)</p>
+<p>e 和 (p-1)(q-1)互质，简单些 e直接取小于 (p-1)(q-1)的质数</p>
+<p>公钥(e,n), 所有人都知道</p>
+<h2 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h2><p>私钥匙$(e,p,q)$</p>
+<p>$de = 1 \bmod ((p-1)(q-1))$,计算d,d是e关于(p-1)(q-1)的乘法模逆元 log 级别复杂度</p>
+<p>$ C^d = (M^e)^d = M^{ed} = M^{1+k(p-1)(q-1)} (\bmod n)$</p>
+<p>费马小定理:p质数,a和p互质,$a^{p-1} = 1 (\bmod p)$ </p>
+<p>如果 M 和p 互素, 有 $C^d = M\cdot (M^{p-1})^{k(q-1)} = M \cdot 1^{k(q-1)} = M \cdot 1 = M (mod p)$ 即是 $ C^d - M = 0 (mod p) $</p>
+<p>否则 $ M = 0 \bmod p$, $ C^d = (M^e \bmod n)^d = (0^e)^d = 0 (\bmod p) $,也有 $C^d - M = 0(\bmod p)$</p>
+<p>同理 有$C^d - M = 0 (\bmod q)$</p>
+<p>因此 $C^d - M = 0 (\bmod (n=pq))$即$C^d = M (\bmod n)$</p>
+<p>也就是 我们通过幂次直接拿到 M在$\bmod n$的意义下</p>
+<h1 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h1><p>也就是公钥里只有(e,n), 计算不出p和q, 就意味着计算不出(p-1)(q-1),也就计算不出d，也就无法直接d的幂次。</p>
+<p>另一个问题就是 模运算 是否有办法开e次根。</p>
+<p>在就是历史信息，如果有人（机器）能拆解n，那么所有用到相应公私钥的信息都能被破解了。</p>
+<p>所以据说 现在512位的似乎已经被认为不安全了。可以类似NFS, GNFS,SIQS, 和ECM 定向爆破。<a href="https://blog.csdn.net/tigerisland45/article/details/51348854" target="_blank" rel="noopener">https://blog.csdn.net/tigerisland45/article/details/51348854</a></p>
+<p>穷举自己可以按(10^10) 需要1台计算机一秒来估计，是不可能的。例如枚举需要 <code>2**512//(10**10)//60//60//24//365 = 42515880041674902015392012297710065092210064119077858250011293263957902175524946019792853558367907875729426237273230754863501657825807236</code> 台计算机 年</p>
+<p>而好处是，如果始终拆解质数乘积是难的，那么只需要单纯的增加位数即可，这样在实现上的额外代价就是生成代价，对应的拆解代价是按照幂次增长。</p>
+<p>而生成的代价,解密的代价较大，注定了它用在少量数据，而剩余的数据加密，还是要靠对称加密。</p>
+<p><a href="https://en.wikipedia.org/wiki/RSA_numbers" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/RSA_numbers</a></p>
 
       
     </div>
@@ -404,7 +380,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-10-21-throttle-debounce/">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-07-06-karma/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Blog/images/avatar.gif">
@@ -418,7 +394,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/Blog/19-10-21-throttle-debounce/" class="post-title-link" itemprop="url">throttle vs debounce</a>
+            <a href="/Blog/20-07-06-karma/" class="post-title-link" itemprop="url">karma</a>
         </h2>
 
         <div class="post-meta">
@@ -428,14 +404,14 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2019-10-21 15:09:01" itemprop="dateCreated datePublished" datetime="2019-10-21T15:09:01+08:00">2019-10-21</time>
+              <time title="創建時間：2020-07-06 11:20:14" itemprop="dateCreated datePublished" datetime="2020-07-06T11:20:14+08:00">2020-07-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
+                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -456,8 +432,8 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-10-21-throttle-debounce/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-10-21-throttle-debounce/" itemprop="commentCount"></span>
+    <a title="disqus" href="/Blog/20-07-06-karma/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-07-06-karma/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -472,887 +448,71 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p>基本讲就是 throttle(截流)和debounce(去抖)</p>
-<p>功能都是为了避免快速反复触发</p>
-<p>比如 用户快速点击按钮</p>
-<p>假设设置为1s</p>
-<p>throttle相当于，执行的最小间隔为1s</p>
-<p>debounce也是执行最小间隔为1s，但是假设用户持续的一直快速点击，函数不会执行，需要等到最后一次点击后过1s才执行</p>
-<h1 id="直接看lodash的"><a href="#直接看lodash的" class="headerlink" title="直接看lodash的"></a>直接看lodash的</h1><p>throttle:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">func, wait, options</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> leading = <span class="literal">true</span></span><br><span class="line">  <span class="keyword">let</span> trailing = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> func !== <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Expected a function'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (isObject(options)) &#123;</span><br><span class="line">    leading = <span class="string">'leading'</span> <span class="keyword">in</span> options ? !!options.leading : leading</span><br><span class="line">    trailing = <span class="string">'trailing'</span> <span class="keyword">in</span> options ? !!options.trailing : trailing</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> debounce(func, wait, &#123;</span><br><span class="line">    leading,</span><br><span class="line">    trailing,</span><br><span class="line">    <span class="string">'maxWait'</span>: wait</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> throttle</span><br></pre></td></tr></table></figure>
-<p>debounce:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">func, wait, options</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> lastArgs,</span><br><span class="line">    lastThis,</span><br><span class="line">    maxWait,</span><br><span class="line">    result,</span><br><span class="line">    timerId,</span><br><span class="line">    lastCallTime</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> lastInvokeTime = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> leading = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">let</span> maxing = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">let</span> trailing = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// Bypass `requestAnimationFrame` by explicitly setting `wait=0`.</span></span><br><span class="line">  <span class="keyword">const</span> useRAF = (!wait &amp;&amp; wait !== <span class="number">0</span> &amp;&amp; <span class="keyword">typeof</span> root.requestAnimationFrame === <span class="string">'function'</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> func !== <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Expected a function'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  wait = +wait || <span class="number">0</span></span><br><span class="line">  <span class="keyword">if</span> (isObject(options)) &#123;</span><br><span class="line">    leading = !!options.leading</span><br><span class="line">    maxing = <span class="string">'maxWait'</span> <span class="keyword">in</span> options</span><br><span class="line">    maxWait = maxing ? <span class="built_in">Math</span>.max(+options.maxWait || <span class="number">0</span>, wait) : maxWait</span><br><span class="line">    trailing = <span class="string">'trailing'</span> <span class="keyword">in</span> options ? !!options.trailing : trailing</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">invokeFunc</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> args = lastArgs</span><br><span class="line">    <span class="keyword">const</span> thisArg = lastThis</span><br><span class="line"></span><br><span class="line">    lastArgs = lastThis = <span class="literal">undefined</span></span><br><span class="line">    lastInvokeTime = time</span><br><span class="line">    result = func.apply(thisArg, args)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">startTimer</span>(<span class="params">pendingFunc, wait</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (useRAF) &#123;</span><br><span class="line">      root.cancelAnimationFrame(timerId)</span><br><span class="line">      <span class="keyword">return</span> root.requestAnimationFrame(pendingFunc)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> setTimeout(pendingFunc, wait)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">cancelTimer</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (useRAF) &#123;</span><br><span class="line">      <span class="keyword">return</span> root.cancelAnimationFrame(id)</span><br><span class="line">    &#125;</span><br><span class="line">    clearTimeout(id)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">leadingEdge</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Reset any `maxWait` timer.</span></span><br><span class="line">    lastInvokeTime = time</span><br><span class="line">    <span class="comment">// Start the timer for the trailing edge.</span></span><br><span class="line">    timerId = startTimer(timerExpired, wait)</span><br><span class="line">    <span class="comment">// Invoke the leading edge.</span></span><br><span class="line">    <span class="keyword">return</span> leading ? invokeFunc(time) : result</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">remainingWait</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> timeSinceLastCall = time - lastCallTime</span><br><span class="line">    <span class="keyword">const</span> timeSinceLastInvoke = time - lastInvokeTime</span><br><span class="line">    <span class="keyword">const</span> timeWaiting = wait - timeSinceLastCall</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> maxing</span><br><span class="line">      ? <span class="built_in">Math</span>.min(timeWaiting, maxWait - timeSinceLastInvoke)</span><br><span class="line">      : timeWaiting</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">shouldInvoke</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> timeSinceLastCall = time - lastCallTime</span><br><span class="line">    <span class="keyword">const</span> timeSinceLastInvoke = time - lastInvokeTime</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Either this is the first call, activity has stopped and we're at the</span></span><br><span class="line">    <span class="comment">// trailing edge, the system time has gone backwards and we're treating</span></span><br><span class="line">    <span class="comment">// it as the trailing edge, or we've hit the `maxWait` limit.</span></span><br><span class="line">    <span class="keyword">return</span> (lastCallTime === <span class="literal">undefined</span> || (timeSinceLastCall &gt;= wait) ||</span><br><span class="line">      (timeSinceLastCall &lt; <span class="number">0</span>) || (maxing &amp;&amp; timeSinceLastInvoke &gt;= maxWait))</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">timerExpired</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> time = <span class="built_in">Date</span>.now()</span><br><span class="line">    <span class="keyword">if</span> (shouldInvoke(time)) &#123;</span><br><span class="line">      <span class="keyword">return</span> trailingEdge(time)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Restart the timer.</span></span><br><span class="line">    timerId = startTimer(timerExpired, remainingWait(time))</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">trailingEdge</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    timerId = <span class="literal">undefined</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Only invoke if we have `lastArgs` which means `func` has been</span></span><br><span class="line">    <span class="comment">// debounced at least once.</span></span><br><span class="line">    <span class="keyword">if</span> (trailing &amp;&amp; lastArgs) &#123;</span><br><span class="line">      <span class="keyword">return</span> invokeFunc(time)</span><br><span class="line">    &#125;</span><br><span class="line">    lastArgs = lastThis = <span class="literal">undefined</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">cancel</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (timerId !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">      cancelTimer(timerId)</span><br><span class="line">    &#125;</span><br><span class="line">    lastInvokeTime = <span class="number">0</span></span><br><span class="line">    lastArgs = lastCallTime = lastThis = timerId = <span class="literal">undefined</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">flush</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> timerId === <span class="literal">undefined</span> ? result : trailingEdge(<span class="built_in">Date</span>.now())</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">pending</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> timerId !== <span class="literal">undefined</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">debounced</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> time = <span class="built_in">Date</span>.now()</span><br><span class="line">    <span class="keyword">const</span> isInvoking = shouldInvoke(time)</span><br><span class="line"></span><br><span class="line">    lastArgs = args</span><br><span class="line">    lastThis = <span class="keyword">this</span></span><br><span class="line">    lastCallTime = time</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (isInvoking) &#123;</span><br><span class="line">      <span class="keyword">if</span> (timerId === <span class="literal">undefined</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> leadingEdge(lastCallTime)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (maxing) &#123;</span><br><span class="line">        <span class="comment">// Handle invocations in a tight loop.</span></span><br><span class="line">        timerId = startTimer(timerExpired, wait)</span><br><span class="line">        <span class="keyword">return</span> invokeFunc(lastCallTime)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (timerId === <span class="literal">undefined</span>) &#123;</span><br><span class="line">      timerId = startTimer(timerExpired, wait)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;</span><br><span class="line">  debounced.cancel = cancel</span><br><span class="line">  debounced.flush = flush</span><br><span class="line">  debounced.pending = pending</span><br><span class="line">  <span class="keyword">return</span> debounced</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> debounce</span><br></pre></td></tr></table></figure>
-<p>直接的参数区别</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">throttle</span><br><span class="line"></span><br><span class="line">  let leading = true</span><br><span class="line">  let maxing = true &amp;&amp; maxWait</span><br><span class="line">  let trailing = true</span><br><span class="line"></span><br><span class="line">debounce</span><br><span class="line">  let leading = false</span><br><span class="line">  let maxing = false</span><br><span class="line">  let trailing = true</span><br></pre></td></tr></table></figure>
-<h1 id="Vue-有一个官方教程中的使用方法如下"><a href="#Vue-有一个官方教程中的使用方法如下" class="headerlink" title="Vue 有一个官方教程中的使用方法如下"></a>Vue 有一个官方教程中的使用方法如下</h1><p><a href="https://cn.vuejs.org/v2/guide/computed.html#%E4%BE%A6%E5%90%AC%E5%99%A8" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/computed.html#%E4%BE%A6%E5%90%AC%E5%99%A8</a></p>
-<p>之前我也写过一个 在methods中 计算出一个函数，但是那样的返回和计算不能使用箭头函数，因为运行函数和执行的this不同，ide也报错，XD 虽然可用</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/lodash/lodash/blob/master/throttle.js" target="_blank" rel="noopener">https://github.com/lodash/lodash/blob/master/throttle.js</a></p>
-<p><a href="https://github.com/lodash/lodash/blob/master/debounce.js" target="_blank" rel="noopener">https://github.com/lodash/lodash/blob/master/debounce.js</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-10-18-adb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-10-18-adb/" class="post-title-link" itemprop="url">adb 入门尝试</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-10-18 15:09:01" itemprop="dateCreated datePublished" datetime="2019-10-18T15:09:01+08:00">2019-10-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-10-18-adb/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-10-18-adb/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p>想看一下 某个包的文件</p>
-<p>查看 usb连接/模拟器 的设备 <code>adb devices</code></p>
-<p>连接一个具体的设备 <code>adb -s &lt;设备id&gt; shell</code></p>
-<p>列出手机里的安装包<code>pm list packages</code> 当然 grep命令也可以用</p>
-<p>比如你要查看的包为<code>com.xxx.yyy</code>那么 <code>run-as com.xxx.yyy</code></p>
-<p><code>cd ls grep cat</code>这些命令是有的 并没有vi XD,不过有cat 基本能看文件了</p>
-<p>// 搜到了 单个文件 cat 出来的 但没搜到文件夹的</p>
-<p>// 也有间接先cat到sdcard再pull 再删sdcard</p>
-<p>// 还搜到了一个 用 adb backup 把整个app搞出来，再 转换成tar的 [见下面链接]</p>
-<p>// 当然 还有一堆说root的 emmm 告辞</p>
-<p>// Stetho?</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://stackoverflow.com/questions/53634246/android-get-all-installed-packages-using-adb" target="_blank" rel="noopener">https://stackoverflow.com/questions/53634246/android-get-all-installed-packages-using-adb</a></p>
-<p><a href="https://gist.github.com/davidnunez/1404789" target="_blank" rel="noopener">https://gist.github.com/davidnunez/1404789</a></p>
-<p><a href="https://stackoverflow.com/questions/1043322/why-do-i-get-access-denied-to-data-folder-when-using-adb?rq=1" target="_blank" rel="noopener">https://stackoverflow.com/questions/1043322/why-do-i-get-access-denied-to-data-folder-when-using-adb?rq=1</a></p>
-<p><a href="https://stackoverflow.com/questions/7399028/android-adb-permission-denied" target="_blank" rel="noopener">https://stackoverflow.com/questions/7399028/android-adb-permission-denied</a></p>
-<p><a href="https://stackoverflow.com/questions/15558353/how-can-one-pull-the-private-data-of-ones-own-android-app" target="_blank" rel="noopener">https://stackoverflow.com/questions/15558353/how-can-one-pull-the-private-data-of-ones-own-android-app</a></p>
-<p><a href="https://stackoverflow.com/questions/9017073/is-it-possible-to-see-application-data-from-adb-shell-the-same-way-i-see-it-moun/16461386" target="_blank" rel="noopener">https://stackoverflow.com/questions/9017073/is-it-possible-to-see-application-data-from-adb-shell-the-same-way-i-see-it-moun/16461386</a></p>
-<p><a href="https://stackoverflow.com/questions/15558353/how-can-one-pull-the-private-data-of-ones-own-android-app/31504263#31504263" target="_blank" rel="noopener">https://stackoverflow.com/questions/15558353/how-can-one-pull-the-private-data-of-ones-own-android-app/31504263#31504263</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-30-nikki4calc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-09-30-nikki4calc/" class="post-title-link" itemprop="url">闪耀暖暖 耗材计算器 rxjs + angular2+</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-09-30 15:09:01" itemprop="dateCreated datePublished" datetime="2019-09-30T15:09:01+08:00">2019-09-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-09-30-nikki4calc/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-30-nikki4calc/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p>闪耀暖暖的设计师 材料耗材计算器</p>
-<p>基于一个已经有的原生js 进行改造</p>
-<p>原来生 <a href="http://www.spongem.com/ajglz/tools/evalLevelUpCost.html" target="_blank" rel="noopener">http://www.spongem.com/ajglz/tools/evalLevelUpCost.html</a></p>
-<h1 id="重构内容"><a href="#重构内容" class="headerlink" title="重构内容"></a>重构内容</h1><ol start="0">
-<li>首先把这个的源码 搞下来,比较无脑的操作</li>
-<li>然后开个module 配一下routing</li>
-<li>搞个component 然后把函数数据都搬进来</li>
-<li>把相关全局变量 改为 <code>this.</code></li>
-<li>修改原来的一些<code>$</code>方法 改为原生js,或者改为<code>[(ngModel)]</code>双向绑定，至此基本可以运行。</li>
-<li>解构一下用户输入和计算输出分别叫做<code>Class: CardBasic/Card -&gt; html:Card/CardOut</code> // 好吧 这里变量名有点乱 现在看来</li>
-<li>引入<code>https://material.angular.io</code>的组件,稍微调整画风</li>
-<li>尝试搞一个computed,移除计算按钮, 改为 <code>get XXX</code>的方法</li>
-</ol>
-<p>这里遇到问题, 根据调试，页面上的调用会反复调用get方法, 大量重复不必要计算</p>
-<ol start="8">
-<li>解决方案1: 引入Ramda，建立两个cache 分别是计算结果 和 用户输入，用 Ramda的深比较和深拷贝完成少的计算次数</li>
-</ol>
-<p>写着还好，行数不多，就能实现，性能也好，但是问题是，相当于你依然要去关心的是，输出值输入值直接的具体关系才能写。</p>
-<ol start="9">
-<li>解决方案2: 引入rxjs，用Observable搞</li>
-</ol>
-<p>这里实践上有些问题</p>
-<ul>
-<li>双向绑定如何和<code>BehaviorSubject</code>绑定,最后用<code>(ngModelChange)</code>来 单向到 具体字段</li>
-<li>能否监听整个Class</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">of</span> &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">let</span> a = &#123;<span class="attr">x</span>:<span class="number">1</span>,<span class="attr">y</span>:<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> a$ = <span class="keyword">of</span>(a);</span><br><span class="line">a$.subscribe(<span class="built_in">console</span>.log);</span><br><span class="line">a.x=<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-<p>例如这样 并不会因为修改了a的子字段而自动发送next</p>
-<p>搞了半天最后还是 感觉很 手工写依赖的输入</p>
-<p>这一块的实现主要如下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 相当于所有用户输入的部分 都会对应一个emitter</span></span><br><span class="line">private textEmitter: <span class="built_in">Map</span>&lt;string, BehaviorSubject&lt;string&gt;&gt; = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line"><span class="comment">// 在初始化时 初始化它们并监听</span></span><br><span class="line">  <span class="comment">// initial textEmitter</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> <span class="keyword">this</span>.card) &#123;</span><br><span class="line">    <span class="keyword">this</span>.textEmitter.set(key, <span class="keyword">new</span> BehaviorSubject(<span class="keyword">this</span>.card[key]));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.obAllKeys(<span class="keyword">this</span>.textEmitter)</span><br><span class="line">    .pipe(</span><br><span class="line">      map(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 细粒度触发 全体计算</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'fire calc'</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.cardOut; <span class="comment">// 就是最开始写的get方法 触发过程中只 告诉说 '哎!我变了!' 即可</span></span><br><span class="line">      &#125;)</span><br><span class="line">    ).subscribe(<span class="keyword">this</span>.cardOut$); <span class="comment">// 页面通过这个读取 是个 BehaviorSubject</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 做的个功能 监听一个类 的所有字段 对应的 textEmitter的Observable</span></span><br><span class="line"><span class="comment">// 做了一点防抖</span></span><br><span class="line">obAllKeys(emitter: <span class="built_in">Map</span>&lt;string, BehaviorSubject&lt;string&gt;&gt;): Observable&lt;string&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> mergeOb: Observable&lt;string&gt; = <span class="keyword">new</span> BehaviorSubject(<span class="string">''</span>);</span><br><span class="line">  emitter.forEach(<span class="function">(<span class="params">emitValue, emitKey</span>) =&gt;</span> &#123;</span><br><span class="line">    mergeOb = merge(mergeOb, <span class="comment">// 关于merge的使用考虑 最开始想过使用combineLatest 但是 问题是 我明明可以直接通过 页面双向绑定拿到 用户输入,所以其实只需要一个变更通知即可，再另一个 combineLatest感觉要配上flat 才能 自动 绑定所有key,不然是手写的所有key,而对应的下标再反向生成 对象,表示 是不是有更好的方法 没学到没搜到</span></span><br><span class="line">      emitValue.pipe(</span><br><span class="line">        debounceTime(<span class="keyword">this</span>.debounceInterval),</span><br><span class="line">        distinctUntilChanged(),</span><br><span class="line">        map(<span class="function">(<span class="params">v</span>) =&gt;</span> emitKey + v) <span class="comment">// 这个是避免 在段时间内 上次状态a,  改b 改a 改回最初的a 这样就不会触发改变</span></span><br><span class="line">      ));</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> mergeOb.pipe(debounceTime(<span class="keyword">this</span>.debounceInterval)); <span class="comment">// 按理说一次只会改动一个  这个是初次进入时 会有多个 当然 combineLatest 不会有这个问题</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 主要是和页面上的 输入绑定 具体就是 ngModelChange ,这一块的问题就是 写了 [(ngModel)] 又写了一遍这个绑定 光是key就要写两遍 还是字符串没法保证正确 靠的是下面的 调试强行保证部分</span></span><br><span class="line">onChange(cardKey: string, <span class="attr">value</span>: string) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`onCardIdChange: <span class="subst">$&#123;cardKey&#125;</span> =&gt; <span class="subst">$&#123;value&#125;</span>`</span>);</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.textEmitter.has(cardKey)) &#123;</span><br><span class="line">    <span class="keyword">this</span>.textEmitter.get(cardKey).next(value);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123; <span class="comment">// 调试用</span></span><br><span class="line">    <span class="built_in">console</span>.warn(<span class="string">'onChange'</span>, cardKey, value);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="10">
-<li>最后增加了一点 try catch,因为 不同的卡可选范围并不同，或者用户输入不合法会 爆红=.=只在 两个LevelVal里加了</li>
-</ol>
-<h1 id="最后结果"><a href="#最后结果" class="headerlink" title="最后结果"></a>最后结果</h1><p><a href="https://cromarmot.github.io/Debuq/#/nikki4/lvlup">https://cromarmot.github.io/Debuq/#/nikki4/lvlup</a></p>
-<p>如果打开看到404，保持页面，等待一会儿再刷新即可。因为有worker service</p>
-<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><p>比如搞成动态拉取</p>
-<p>计算函数再向纯函数靠拢啊</p>
-<p>怎么json 转换 Class 甚至 Map // 搜了一会没搜到简洁的方案</p>
-<p>更好的双向绑定+BehaviorSubject 绑定?</p>
-<p>是否可能简化某部分代码</p>
-<p>输入控制 比如 现在其实可以输入 小数 和 范围以外的数</p>
-<p>比如因为还是有不少json 导致 typescript的 类型判断并不完整 虽然</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-27-Dont_follow_RxJS_Best_Practices/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-09-27-Dont_follow_RxJS_Best_Practices/" class="post-title-link" itemprop="url">别遵循RxJS的最佳实践</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-09-27 01:01:01" itemprop="dateCreated datePublished" datetime="2019-09-27T01:01:01+08:00">2019-09-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-09-27-Dont_follow_RxJS_Best_Practices/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-27-Dont_follow_RxJS_Best_Practices/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p><a href="https://dev.to/nikpoltoratsky/don-t-follow-rxjs-best-practices-4893#pass-streams-to-children" target="_blank" rel="noopener">英文原文</a></p>
-<p><a href="/Blog/19-06-27-rxjs/">rxjs入门</a></p>
-<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>如今,越来越多开发者开始学 RxJs, 并跟随最佳实践正确使用它。但是完全不必要,那些所谓的最佳实践，需要学一些新的内容，并且在你的项目中增加额外的代码。</p>
-<p>更多的是，使用最佳实践，是冒着创建好的代码库和让你的队友高兴的风险! 🌈</p>
-<p>Stop being a gray mass! 打破常规，停止使用最佳实践</p>
-<p>下面我将想你介绍，怎么改造那些所谓的最佳实践代码.</p>
-<ul>
-<li>不要unsubscribe</li>
-<li>嵌套使用Subscribe</li>
-<li>不要使用 纯函数</li>
-<li>手动subscribe，不要使用 async pipe</li>
-<li>向你的服务暴露subjects</li>
-<li>始终对子组件传递流</li>
-<li>宝石图? 并不适合你</li>
-</ul>
-<h1 id="不要unsubscribe"><a href="#不要unsubscribe" class="headerlink" title="不要unsubscribe"></a>不要unsubscribe</h1><p>所有人都说，我们始终需要取消订阅observables来防止内存泄漏</p>
-<p>但，我觉得不行。认真的吗，谁决定你需要 取消订阅 observables? 没必要，我们来玩个游戏，下面哪个取消订阅的实现最好。</p>
-<p>有<code>takeUntil</code>操作符的吗?</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123; ... &#125;)</span><br><span class="line">  <span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="title">implements</span> <span class="title">OnInit</span>, <span class="title">OnDestroy</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    private destroyed$ = <span class="keyword">new</span> Subject();</span><br><span class="line"></span><br><span class="line">    ngOnInit() &#123;</span><br><span class="line">      myInfiniteStream$</span><br><span class="line">        .pipe(takeUntil(<span class="keyword">this</span>.destroyed$))</span><br><span class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> ...);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ngOnDestroy() &#123;</span><br><span class="line">      <span class="keyword">this</span>.destroyed$.next();</span><br><span class="line">      <span class="keyword">this</span>.destroyed$.complete();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>还是使用<code>takeWhile</code>操作符的?</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123; ... &#125;)</span><br><span class="line">  <span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="title">implements</span> <span class="title">OnInit</span>, <span class="title">OnDestroy</span> </span>&#123;</span><br><span class="line">    private alive = <span class="literal">true</span>;</span><br><span class="line">    ngOnInit() &#123;</span><br><span class="line">      myInfiniteStream$</span><br><span class="line">        .pipe(takeWhile(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.alive))</span><br><span class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> ...);</span><br><span class="line">    &#125;</span><br><span class="line">    ngOnDestroy() &#123;</span><br><span class="line">      <span class="keyword">this</span>.alive = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>显然！都不是，<code>takeWhile</code>和<code>takeUntil</code>操作符有隐含意义，并且可能比较难以阅读 🤓 (sarcasm). 最好的解决方案，是用显示的方式用不同的变量分别保存每个subscription，在destroy中unsubscribe.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123; ... &#125;)</span><br><span class="line">  <span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="title">implements</span> <span class="title">OnInit</span>, <span class="title">OnDestroy</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    private subscription;</span><br><span class="line"></span><br><span class="line">    ngOnInit() &#123;</span><br><span class="line">      <span class="keyword">this</span>.subscription = myInfiniteStream$</span><br><span class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> ...);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ngOnDestroy() &#123;</span><br><span class="line">      <span class="keyword">this</span>.subscription.unsubscribe();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>这个方案在有很多 subscriptions的时候工作得十分优秀</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Component(&#123; ... &#125;)</span><br><span class="line">  <span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="title">implements</span> <span class="title">OnInit</span>, <span class="title">OnDestroy</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    private subscription1;</span><br><span class="line">    private subscription2;</span><br><span class="line">    private subscription3;</span><br><span class="line">    private subscription4;</span><br><span class="line">    private subscription5;</span><br><span class="line"></span><br><span class="line">    ngOnInit() &#123;</span><br><span class="line">      <span class="keyword">this</span>.subscription1 = myInfiniteStream1$</span><br><span class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> ...);</span><br><span class="line">      <span class="keyword">this</span>.subscription2 = myInfiniteStream2$</span><br><span class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> ...);</span><br><span class="line">      <span class="keyword">this</span>.subscription3 = myInfiniteStream3$</span><br><span class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> ...);</span><br><span class="line">      <span class="keyword">this</span>.subscription4 = myInfiniteStream4$</span><br><span class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> ...);</span><br><span class="line">      <span class="keyword">this</span>.subscription5 = myInfiniteStream5$</span><br><span class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> ...);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ngOnDestroy() &#123;</span><br><span class="line">      <span class="keyword">this</span>.subscription1.unsubscribe();</span><br><span class="line">      <span class="keyword">this</span>.subscription2.unsubscribe();</span><br><span class="line">      <span class="keyword">this</span>.subscription3.unsubscribe();</span><br><span class="line">      <span class="keyword">this</span>.subscription4.unsubscribe();</span><br><span class="line">      <span class="keyword">this</span>.subscription5.unsubscribe(); </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>但方案还不完美。怎么样能做得更好呢? 你感觉呢? 怎么能让代码更加干净易读?</p>
-<p>没错，我们给你的答案是，把那些丑陋的取消订阅删了呗</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123; ... &#125;)</span><br><span class="line">  <span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    ngOnInit() &#123;</span><br><span class="line">      myInfiniteStream$</span><br><span class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> ...);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>非常棒! 我们删除了冗余的代码，现在看起来清爽，并且节约了一些硬盘空间。 But what will happen with myInfiniteStream$ subscription?</p>
-<p>别管他! 😅 让我们让垃圾回收器去做那些工作，不然它们有啥存在意义，对吧!</p>
-<h1 id="嵌套使用Subscribe"><a href="#嵌套使用Subscribe" class="headerlink" title="嵌套使用Subscribe"></a>嵌套使用Subscribe</h1><p>其它人说我们应该用 <code>*Map</code> 操作符来链接observables 而不是层级订阅它来防止回调地狱。</p>
-<p>但，我又觉得不行. 认真吗，为啥? 为啥我们都要用<code>switchMap/mergeMap</code>操作符号? 你觉得下面代码易读吗？你真的喜欢你的队友吗？</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getUser().pipe(</span><br><span class="line">  switchMap(<span class="function"><span class="params">user</span> =&gt;</span> getDetails(user)),</span><br><span class="line">  switchMap(<span class="function"><span class="params">details</span> =&gt;</span> getPosts(details)),</span><br><span class="line">  switchMap(<span class="function"><span class="params">posts</span> =&gt;</span> getComments(posts)),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>你觉不觉得它过于整洁可爱，你有别的选择，看一看。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">getUser().subscribe(<span class="function"><span class="params">user</span> =&gt;</span> &#123;</span><br><span class="line">  getDetails(user).subscribe(<span class="function"><span class="params">details</span> =&gt;</span> &#123;</span><br><span class="line">    getPosts(details).subscribe(<span class="function"><span class="params">posts</span> =&gt;</span> &#123;</span><br><span class="line">      getComments(posts).subscribe(<span class="function"><span class="params">comments</span> =&gt;</span> &#123;  </span><br><span class="line">        <span class="comment">// handle all the data here</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>这样更好吧，如果你恨你的队友，而且不想学新的RxJS operators操作符号，就这么写代码吧.</p>
-<p>做个聪明人! 让你的队友感受到一些回调地域的怀念之情。</p>
-<h1 id="不要使用-纯函数"><a href="#不要使用-纯函数" class="headerlink" title="不要使用 纯函数"></a>不要使用 纯函数</h1><p>其它人说，纯函数让代码可预测，且易测试</p>
-<p>我双觉得不行。为啥要用纯函数？ 测试友好的？ 组合友好的？ 麻烦了，影响global让编码更加简单,看个例子。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">calculateTax</span>(<span class="params">tax: number, productPrice: number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (productPrice * (tax / <span class="number">100</span>)) + productPrice; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对于实例，我们有一个计算tax的函数，一个纯函数，如果入参相同，返回始终相同，很容易测试和组合。但我们真的需要这些行为吗？我觉得大可不必，不带参数的函数更加易于使用:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.tax = <span class="number">20</span>;</span><br><span class="line"><span class="built_in">window</span>.productPrice = <span class="number">200</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">calculateTax</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (productPrice * (tax / <span class="number">100</span>)) + productPrice; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>事实上，我们又能弄错什么呢？ 😉</p>
-<h1 id="手动subscribe，不要使用-async-pipe"><a href="#手动subscribe，不要使用-async-pipe" class="headerlink" title="手动subscribe，不要使用 async pipe"></a>手动subscribe，不要使用 async pipe</h1><p>其它人说我们需要在angular 模板中使用 async pipe 来帮助在components中管理subscriptions</p>
-<p>但我觉得不行，我们上面已经讨论了<code>takeUntil</code>和<code>takeWhile</code>,并一致认可这些操作符来自邪恶。因此为什么我们不用另一种方式来处理async pipe.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123;  </span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;span&gt;&#123;&#123; data$ | async &#125;&#125;&lt;/span&gt;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  data$: Observable&lt;Data&gt;;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="keyword">this</span>.data$ = myInfiniteStream$;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>你看到了吗，干净，可读，容易维护的代码。但它不被允许，对于我来说，放到本地变量再在template里用不是更好吗。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123;  </span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;span&gt;&#123;&#123; data &#125;&#125;&lt;/span&gt;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">  data;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    myInfiniteStream$</span><br><span class="line">      .subscribe(<span class="function"><span class="params">data</span> =&gt;</span> <span class="keyword">this</span>.data = data);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="向你的服务暴露subjects"><a href="#向你的服务暴露subjects" class="headerlink" title="向你的服务暴露subjects"></a>向你的服务暴露subjects</h1><p>在 Angular中使用 Observable Data Services 是非常常见的事件。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@Injectable(&#123; <span class="attr">providedIn</span>: <span class="string">'root'</span> &#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">DataService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  private data: BehaviorSubject = <span class="keyword">new</span> BehaviorSubject(<span class="string">'bar'</span>);</span><br><span class="line"></span><br><span class="line">  readonly data$: Observable = <span class="keyword">this</span>.data.asObservable();</span><br><span class="line"></span><br><span class="line">  foo() &#123;</span><br><span class="line">    <span class="keyword">this</span>.data$.next(<span class="string">'foo'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  bar() &#123;</span><br><span class="line">    <span class="keyword">this</span>.data$.next(<span class="string">'bar'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里我们以observable的形式暴露了一个数据流, 能保证只能通过 数据服务接口来修改它。但它令人困惑。</p>
-<p>你想改变数据的时候，你必须真的改变数据。</p>
-<p>为什么不增加一个方法能够就地改变数据呢？让我们重写这个服务让它更加易用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Injectable(&#123; <span class="attr">providedIn</span>: <span class="string">'root'</span> &#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">DataService</span> </span>&#123;</span><br><span class="line">  public data$: BehaviorSubject = <span class="keyword">new</span> BehaviorSubject(<span class="string">'bar'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Yeah!你看到了吗，我们的数据服务变得更加小且易读，现在我们可以任意的操作数据流了。完美！你也觉得是吧?🔥</p>
-<h1 id="始终对子组件传递流"><a href="#始终对子组件传递流" class="headerlink" title="始终对子组件传递流"></a>始终对子组件传递流</h1><p>你有没有听说过 Smart/Dump components pattern, 它能帮助, 解构组件之间? 同样的，这样的模式，能够阻止子组件触发父组件的行为。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-parent'</span>,</span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;app-child [data]="data$ | async"&gt;&lt;/app-child&gt;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParentComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  data$: Observable&lt;Data&gt;;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="keyword">this</span>.data$ = <span class="keyword">this</span>.http.get(...);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-child'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildComponent</span> </span>&#123;</span><br><span class="line">  @Input() data: Data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>你喜欢这样写吗？你的队友也喜欢它。在这种情况下，你想报复他们，你需要这样重写你的代码。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-parent'</span>,</span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;app-child [data$]="data$"&gt;&lt;/app-child&gt;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParentComponent</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  data$ = <span class="keyword">this</span>.http.get(...);</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-child'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  @Input() data$: Observable&lt;Data&gt;;</span><br><span class="line"></span><br><span class="line">data: Data;</span><br><span class="line">  ngOnInit()&#123;</span><br><span class="line">    <span class="comment">// Trigger data fetch only here</span></span><br><span class="line">    <span class="keyword">this</span>.data$.subscribe(<span class="function"><span class="params">data</span> =&gt;</span> <span class="keyword">this</span>.data = data);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>看到了吗，我们不再在父组件中处理subscriptions. 我们直接把它丢给子组件去处理.</p>
-<p>如果你这样写，你的队友保证可以debug到 哭到流血，信我。</p>
-<h1 id="宝石图-并不适合你"><a href="#宝石图-并不适合你" class="headerlink" title="宝石图? 并不适合你"></a>宝石图? 并不适合你</h1><p>你知道宝石图吗？不，它不适合你。</p>
-<p>让我们假设写了下面的函数，并且要测试。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">numTwoTimes</span>(<span class="params">obs: Observable&lt;number&gt;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> obs.pipe(map(<span class="function">(<span class="params">x: number</span>) =&gt;</span> x * <span class="number">2</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>很多人，会使用宝石图来测试这个函数：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">it(<span class="string">'multiplies each number by 2'</span>, () =&gt; &#123; </span><br><span class="line">  createScheduler().run(<span class="function">(<span class="params">&#123; cold, expectObservable &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> values = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">3</span>, <span class="attr">x</span>: <span class="number">2</span>, <span class="attr">y</span>: <span class="number">4</span>, <span class="attr">z</span>: <span class="number">6</span> &#125;</span><br><span class="line">    <span class="keyword">const</span> numbers$ = cold(<span class="string">'a-b-c-|'</span>, values) <span class="keyword">as</span> Observable&lt;number&gt;;</span><br><span class="line">    <span class="keyword">const</span> resultDiagram = <span class="string">'x-y-z-|'</span>;</span><br><span class="line">    expectObservable(numTwoTimes(numbers$)).toBe(resultDiagram, values);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>但是，谁又会想学新的宝石图的部分呢。谁想写clean and laconic 的代码呢? 让我们用更常规的方式写测试代码。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">it(<span class="string">'multiplies each number by 2'</span>, done =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> numbers$ = interval(<span class="number">1000</span>).pipe(</span><br><span class="line">      take(<span class="number">3</span>),</span><br><span class="line">      map(<span class="function"><span class="params">n</span> =&gt;</span> n + <span class="number">1</span>)</span><br><span class="line">  )</span><br><span class="line">  <span class="comment">// This emits: -1-2-3-|</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> numbersTwoTimes$ = numTwoTimes(numbers$)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> results: number[] = []</span><br><span class="line"></span><br><span class="line">  numbersTwoTimes$.subscribe(</span><br><span class="line">      n =&gt; &#123;</span><br><span class="line">        results.push(n)</span><br><span class="line">      &#125;,</span><br><span class="line">      err =&gt; &#123;</span><br><span class="line">        done(err)</span><br><span class="line">      &#125;,</span><br><span class="line">      () =&gt; &#123;</span><br><span class="line">        expect(results).toEqual([ <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span> ])</span><br><span class="line">        done()</span><br><span class="line">      &#125;</span><br><span class="line">    )</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>Yeah! 现在看起来100倍好了。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>You’re a hero if you’ve read all the advice above. But. Well. If you recognized your train of thoughts, I have a piece of bad news for you. It was a joke.</p>
-<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--cuqyIqfO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://i.ibb.co/7zwMdyn/image.png" alt="it was a prank"></p>
-<p>Please, never do what I said in that article. Never let your teammates cry and hate you. Always strive to be a decent and neat person. Save the world - use patterns and best practices!</p>
-<p>I just decided to cheer you up and make your day a little bit better. Hopefully, you like it.</p>
-<p>Stay tuned and let me know if you have any particular Angular topics you would like to hear about!</p>
-<h1 id="读后补充"><a href="#读后补充" class="headerlink" title="读后补充"></a>读后补充</h1><p>看到第一个就满脸疑惑，然后看到pipe那里觉得很有问题，然后看到纯函数就觉得很不对,然后我把文章拉到了最后,XD 果然是prank</p>
-<p>这个原作者是个大佬，每个内容反着看就是代码如何优化，举例的都是十分常见的场景。</p>
-<p>下面说说每个对应的场景，和一些能想到的例子。</p>
-<h2 id="页面与页面内异步的生命周期"><a href="#页面与页面内异步的生命周期" class="headerlink" title="页面与页面内异步的生命周期"></a>页面与页面内异步的生命周期</h2><p>常见的就是，页面内有异步事件，如后台调用等。这种情况如果回调会触发一些全局的事情，但是并不会因为页面销毁而中止。通过<code>takeUntil</code>和生命周期挂钩，就能简单的解决这类问题。想对于自己去做逻辑显然更少的逻辑需要管理，更不容易出错。</p>
-<p>其二是页面上的一些无限observable。这类主要是内存泄漏相关的问题。</p>
-<h2 id="回调地狱"><a href="#回调地狱" class="headerlink" title="回调地狱"></a>回调地狱</h2><p>在 promise里有  <code>promise.then(函数).then(函数).then(函数)</code> 的方式把地狱变为链式。</p>
-<p>不过就我看来，有的人依然用了 promise.then, 依然在promise.then 里面去地狱函数。。。。。。。自闭</p>
-<h2 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a>纯函数</h2><p>其实和rxjs关系不大，毕竟不论任何一个提供全局的语言，总有滥用全局变量的。</p>
-<p>有时觉得vue angular里面，很容易因为写页面写习惯了，毕竟本身页面之类的就是类/结构体，很多会用this点去取值。</p>
-<p>然后去做纯函数时就会看到“全局变量”，也是难受，不过有框架，基本上在window上定义变量的人少了。</p>
-<h2 id="Async-Pipe"><a href="#Async-Pipe" class="headerlink" title="Async Pipe"></a>Async Pipe</h2><p>这个是angular 提供的，在上面例子只有一个可能还没多少感觉，当内容多了，每个尾部都会多出subscribe。这块，在说上第一部分讲的内存泄漏，也是可能因为没有取消订阅发生，而有了 async pipe，即少了代码，又不会泄漏？</p>
-<h2 id="封装与暴露"><a href="#封装与暴露" class="headerlink" title="封装与暴露"></a>封装与暴露</h2><p>像vue之类的，关于这种数据，更多的是“同步写+开发时校验提醒”，但这一切，还是不够强制，毕竟仍然有不少的人，直接操作改变数据而不遵守流程。</p>
-<p>我一直相信一句话，只要没有从工具上限制死，有多少内容，人始终会越界操作。</p>
-<p>这里本质上，封装了具体的Subject，向外提供readonly的 observable。利用了typescript的修饰。</p>
-<h2 id="父向子组件传递不应使用-ob"><a href="#父向子组件传递不应使用-ob" class="headerlink" title="父向子组件传递不应使用 ob"></a>父向子组件传递不应使用 ob</h2><p>对于一个组件的传递过程是 原始数据类型的更好？不是特别理解感受这一块。</p>
-<h2 id="测试-observables处理函数"><a href="#测试-observables处理函数" class="headerlink" title="测试 observables处理函数"></a>测试 observables处理函数</h2><p>利用已有的测试封装工具，把测试代码做到易读，易维护</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-23-redhat_gitlabserver_update/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-09-23-redhat_gitlabserver_update/" class="post-title-link" itemprop="url">redhat7 + gitlab-ce版本更新 11.6->12.2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-09-23 15:09:01" itemprop="dateCreated datePublished" datetime="2019-09-23T15:09:01+08:00">2019-09-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-09-23-redhat_gitlabserver_update/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-23-redhat_gitlabserver_update/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><p>模拟生产环境 尝试 升级 gitlab-ce 从 11.6 到 12.2, 以及尝试模拟之前产生的错误</p>
-<p>官方说 先要到<code>11.11.X</code>再到<code>12.X</code></p>
-<p>物料准备</p>
-<p>vmware on Ubuntu 18.04 LTS</p>
-<p>gitlab-ce-11.6.5-ce.0.el6.x86_64.rpm</p>
-<p>gitlab-ce-11.11.0-ce.0.el6.x86_64.rpm</p>
-<p>gitlab-ce-12.2.5-ce.0.el7.x86_64.rpm</p>
-<p>rhel-server-7.7-x86_64-dvd.iso</p>
-<h1 id="Install-OS"><a href="#Install-OS" class="headerlink" title="Install OS"></a>Install OS</h1><p><a href="https://access.redhat.com/downloads/content/69/ver=/rhel---7/7.7/x86_64/product-software" target="_blank" rel="noopener">https://access.redhat.com/downloads/content/69/ver=/rhel---7/7.7/x86_64/product-software</a></p>
-<p>注册 下载 安装</p>
-<p>需要注意的是 下4GB左右的 而不是boot.iso</p>
-<blockquote>
-<p>为什么是7 不是8(当前最新)</p>
-</blockquote>
-<p>因为想和某个生产环境保持一致 尝试 模拟某些操作</p>
-<h1 id="Install-Software"><a href="#Install-Software" class="headerlink" title="Install Software"></a>Install Software</h1><p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/installing-software" target="_blank" rel="noopener">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/installing-software</a></p>
-<p>401 还用不了 TODO</p>
-<h1 id="authorized-keys"><a href="#authorized-keys" class="headerlink" title="authorized_keys"></a>authorized_keys</h1><p>印象来说<code>~/.ssh/authorized_keys</code>中把pub丢进去 就好了</p>
-<p>然而并没有</p>
-<p>尝试了一些 方案</p>
-<p>最后是<code>/etc/ssh/sshd_config</code> 中配置<code>StrictModes no</code>再重启sshd 好的</p>
-<p>这主要是为了方便 我直接 ssh进去 可以更方便的copypaste</p>
-<h1 id="哇"><a href="#哇" class="headerlink" title="哇"></a>哇</h1><p>默认</p>
-<p>alias rm=’rm -i’<br>alias cp=’cp -i’<br>alias mv=’mv -i’</p>
-<p>虽然 感觉要是按熟了 形成肌肉记忆 也阻止不了按y XD</p>
-<h1 id="gitlab-ce-11-6-安装"><a href="#gitlab-ce-11-6-安装" class="headerlink" title="gitlab-ce 11.6 安装"></a>gitlab-ce 11.6 安装</h1><p>也是模拟全靠离线包安装 没有配yum</p>
-<p>之前一直用的是Debian系列的Linux，对rpm并不熟 搜一搜 常用命令 <code>rpm -i</code> 或者 <code>rpm -ivh</code> 即可</p>
-<p>root权限下</p>
-<p><code>rpm -ivh gitlab-ce-11.6.5-ce.0.el6.x86_64.rpm</code></p>
-<p><code>gitlab-ctl reconfigure</code></p>
-<p>然后 我主机访问 一下 内部ip ??? 访问不了</p>
-<p>内部wget一下 是可以下载index.html</p>
-<p>外部ping能通，nmap加了<code>-Pn</code>都只能nmap到 22</p>
-<p>开了另一个虚拟机 发现 随便搭 个apache2 或者 nginx都是能从主机访问,以为是nginx配置或者虚拟机配置问题</p>
-<p>然后突然想到是不是防火墙</p>
-<p>用 <code>systemctl status firewalld.service</code> 看了看  哇 这个防火墙是默认打开的</p>
-<p>这里 直接<code>systemctl stop firewalld.service</code> 就可以了访问了</p>
-<p>TODO 这里有点疑惑 之前尝试过程中 我也有用过iptables 允许过80的难道哪里输错了?还是iptables不起作用?</p>
-<p>不过 这次主要目的是 gitlab的升级,这里 就没有详细去研究防火墙了</p>
-<p>至此 gitlab-ce 能用,随便设置root密码 建立个账户，改一些配置，建一些组，建一些仓库等等 模拟一下大概有内容</p>
-<h1 id="升级到11-11-0"><a href="#升级到11-11-0" class="headerlink" title="升级到11.11.0"></a>升级到11.11.0</h1><p><code>rpm -Uvh gitlab-ce-11.11.0-ce.0.el6.x86_64.rpm</code></p>
-<p>也没有输命令停止什么 然后 竟然无错运行了?</p>
-<h1 id="升级到12-2-5"><a href="#升级到12-2-5" class="headerlink" title="升级到12.2.5"></a>升级到12.2.5</h1><p><code>rpm -Uvh gitlab-ce-12.2.5-ce.0.el7.x86_64.rpm</code></p>
-<p>哎 也无错升级了 =.=</p>
-<p>好吧 重现不了 GG</p>
-<h1 id="生产中尝试过的操作"><a href="#生产中尝试过的操作" class="headerlink" title="生产中尝试过的操作"></a>生产中尝试过的操作</h1><p>虽然是 “生产” 但 实际只有50-人使用,所以 简单 弄下来，让大家停止使用</p>
-<p>然后 生产 也不是我操作的，过程中不知道哪个步骤挂了</p>
-<p>大概 现象是 升级到12了 但是 报500,查log 是 某个提示，搜对应提示找到issues都是建议<code>gitlab-rake db:migrate</code>搞一搞</p>
-<p>然而<code>gitlab-rake</code>报错 数据库太老要先升级到11.11, emmmm 也就是 之前 从11.6到11.11应该就挂了但没人发现,我也是服气的=。=?</p>
-<p>然后 搜了半天downgrade 也没有搜到明确指示，他们不敢downgrade=。= ? 感觉downgrade 也比 重装 影响小啊</p>
-<p>解决过程 就把内容先 全搞下来 =。=，然后 完全删除 gitlab-ce 大概</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gitlab-ctl stop</span><br><span class="line">rpm -e gitlab-ce</span><br><span class="line">ps aux | grep gitlab</span><br><span class="line">kill -9 &lt;上面一个runsvdir 带很长点的一个&gt;</span><br><span class="line">find / -name gitlab | xargs rm -rf</span><br></pre></td></tr></table></figure>
-<p>对应服务器是专门开的一个没有其它服务,所以最后一句 执行 还好=.=</p>
-<p>然后 安 12.2</p>
-<p>一个是需要runit，下载+安装</p>
-<p>一个是运行时卡住<code>] action run</code>, 某个东西 lock? 可能是他们之前熟练的使用kill -9 造成的? 然后google一下,启动一哈对应服务</p>
-<p>一个是报错 三个配置 找不到,ls去看 是三个conf 软链接 指向空的, 删掉它们</p>
-<p>然后就能用=.=</p>
-<p>所以 最后生产还是重装的 2333,然后把各个仓库导入进去=。= 我不知道是谁做的备份，只备份了仓库 也没有各个用户关系之类的=。=，估计他是clone的而没有用rake，所以也没尝试用 rake 去恢复</p>
-<p>最后 客户端 内容太大,需要 清除就到了<a href="/Blog/19-09-20-gitbiguselessfile/">这一篇</a></p>
-<h1 id="使用到的工具等-可能有遗漏"><a href="#使用到的工具等-可能有遗漏" class="headerlink" title="使用到的工具等(可能有遗漏)"></a>使用到的工具等(可能有遗漏)</h1><p>ssh wget vim rpm htop netstat ifconfig grep nmap systemctl iptables ping</p>
-<p><a href="https://docs.gitlab.com/omnibus/update/" target="_blank" rel="noopener">https://docs.gitlab.com/omnibus/update/</a></p>
-<p><a href="https://docs.gitlab.com/ce/update/#upgrading-without-downtime" target="_blank" rel="noopener">https://docs.gitlab.com/ce/update/#upgrading-without-downtime</a></p>
-<p><a href="https://linuxconfig.org/how-to-stop-start-and-disable-enable-firewall-on-redhat-7-linux-system" target="_blank" rel="noopener">https://linuxconfig.org/how-to-stop-start-and-disable-enable-firewall-on-redhat-7-linux-system</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-20-gitbiguselessfile/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-09-20-gitbiguselessfile/" class="post-title-link" itemprop="url">git 在历史版本中 完全移除文件</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-09-20 15:09:01" itemprop="dateCreated datePublished" datetime="2019-09-20T15:09:01+08:00">2019-09-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/life/" itemprop="url" rel="index"><span itemprop="name">life</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-09-20-gitbiguselessfile/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-20-gitbiguselessfile/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="How"><a href="#How" class="headerlink" title="How"></a>How</h1><p>参考</p>
-<p><a href="https://www.cnblogs.com/amiezhang/p/11337095.html" target="_blank" rel="noopener">https://www.cnblogs.com/amiezhang/p/11337095.html</a></p>
-<p>上面链接都有讲</p>
-<p>按照文件大小排序前100:</p>
-<p><code>git rev-list --objects --all | grep &quot;$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -100 | awk &#39;{print$1}&#39;)&quot;</code></p>
-<p><code>git filter-branch --force --index-filter &#39;git rm --cached --ignore-unmatch 文件名&#39; --prune-empty --tag-name-filter cat -- --all</code></p>
-<p><code>git filter-branch --index-filter</code> 让每个提交的文件都复制到索引(<code>.git/index</code>)中</p>
-<p>然后运行过滤器命令：<code>git rm --cached --ignore-unmatch</code> 文件名 ，让每个提交都删除掉“文件名”文件</p>
-<p>然后<code>--prune-empty</code>把空的提交“修剪”掉</p>
-<p>然后<code>--tag-name-filter cat</code>把每个tag保持原名字，指向修改后的对应提交</p>
-<p>最后<code>-- --all</code>将所有ref（包括branch、tag）都执行上面的重写</p>
-<p><code>git for-each-ref --format=&#39;delete %(refname)&#39; refs/original | git update-ref --stdin</code></p>
-<p><code>git reflog expire --expire=now --all</code></p>
-<p><code>git gc --prune=now</code></p>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ol>
-<li><p>上面的文件名可以写通配符号</p>
-</li>
-<li><p>众所周知只要我加到git中过的，即使把分支删了，也可以从reflog中找到，但这里 有 清除reflog所以 想要这样做的，要么 单独开文件夹搞，要么 确定 reflog都不会再用</p>
-</li>
-<li><p>什么时候使用? 使用频率不应高，因为 这种操作无疑是会对 分支重写，也就完全不同的commit hash,所以最后push都会带上–force, 目前能想到场景,比如 不必要的大文件,如不小心提交的下下来的打包后文件,大zip.也有场景 比如 很多分支前 不小心提交了一个涉密的文件。 当然push force以后 所有用仓库的人要想继续用只有去新的分支里搞了，已经被别人下的还会在别人硬盘里</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-14-A_Brief_History_of_Tomorrow/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-09-14-A_Brief_History_of_Tomorrow/" class="post-title-link" itemprop="url">未来简史 阅读笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-09-15 15:09:01" itemprop="dateCreated datePublished" datetime="2019-09-15T15:09:01+08:00">2019-09-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/life/" itemprop="url" rel="index"><span itemprop="name">life</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-09-14-A_Brief_History_of_Tomorrow/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-14-A_Brief_History_of_Tomorrow/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>19-08-22  -&gt; 19-09-15</p>
-</blockquote>
-<p>ISBN:9787508672069</p>
-<h1 id="Main"><a href="#Main" class="headerlink" title="Main"></a>Main</h1><p>回顾历史，发现很多现在有的，都是由各种其它混杂原因的组合</p>
-<p>历史解决了三大 饥荒 瘟疫 战争</p>
-<p>将可能考虑新的问题 永生 快乐</p>
-<p>历史的解决问题的贡献，很多也用于人类升级</p>
-<p><img src="/Blog/images/historyoffuture/190822_01.jpg" alt="190822_01"></p>
-<p><img src="/Blog/images/historyoffuture/190822_02.jpg" alt="190822_02"></p>
-<p>人类世</p>
-<p>进化论 自然选择，利用家畜本身欲望，人的生物本能几乎没变</p>
-<p>人的农业发展，驯化 畜牧业，猫狗多，家畜多</p>
-<p>力学 生物学 化学 等 的发展 让神话逐渐消失</p>
-<p><img src="/Blog/images/historyoffuture/190827_01.jpg" alt="190827_01"></p>
-<p><img src="/Blog/images/historyoffuture/190827_02.jpg" alt="190827_02"></p>
-<p>人有什么不同</p>
-<p>以现在了解认为情感上甚至一些社会合作上我们和动物并无不同</p>
-<p>而对于意识究竟是什么，为什么需要依然在16年为止没有解释</p>
-<p>那剩下智力</p>
-<p>和作者认为的合作</p>
-<p>这里的合作指能快速</p>
-<p>与以前没有合作过的任何人很多以及社会信任下的分工</p>
-<p>而对于 平等等一系列动物性存在的我们也存在，但当范围扩大一些属性会改变。</p>
-<p>合作这里认为的是有人或有组织创造了某些也许有实体也许没有实体的。意义，也可以说共识，当两个没有合作过的人 他们有相同共识 会有同样认可的意义时，合作变得简单快速</p>
-<p>以及为什么拍的时候还觉得很亮</p>
-<p><img src="/Blog/images/historyoffuture/190829_01.jpg" alt="190829_01"></p>
-<p><img src="/Blog/images/historyoffuture/190829_02.jpg" alt="190829_02"></p>
-<p><img src="/Blog/images/historyoffuture/190829_03.jpg" alt="190829_03"></p>
-<p>智人为世界赋予意义，虚构的力量。</p>
-<p>人们相信共同一个虚构的实体，如法老，纸币</p>
-<p>当众人相信时，具体法老怎么样，纸币是什么已经不重要，他们参与了多少也不重要。</p>
-<p>以及文字，文书的力量，评价系统分数的力量，都是 虚构的。</p>
-<p>不像战士这样的实体受伤会痛等等</p>
-<p>然而如文字，如分数，如货币，当被信任时，人们甚至做出了让现实为虚构让步，追寻虚构</p>
-<p>另外在复杂网络运作时，除了整体，从各个细小单位来看可能得到不同描述</p>
-<p><img src="/Blog/images/historyoffuture/190830_01.jpg" alt="190830_01"></p>
-<p><img src="/Blog/images/historyoffuture/190830_02.jpg" alt="190830_02"></p>
-<p><img src="/Blog/images/historyoffuture/190830_03.jpg" alt="190830_03"></p>
-<p><img src="/Blog/images/historyoffuture/190830_04.jpg" alt="190830_04"></p>
-<p>第五章</p>
-<p>把科学看作宗教并不合适</p>
-<p>人们相信宗教一起做事得到成果 宗教有效<br>但如果不相信 便是无效</p>
-<p>而科学不同，你不相信青霉素，并不会让青霉素失效</p>
-<p>科学宗教都是追寻快乐，但快乐无法衡量比较</p>
-<p>修建三峡大坝带来的好处和破坏的生灵如何评价</p>
-<p>科学宗教的 不是完全对立也不是完全无关</p>
-<p>可是看来 科学似乎会更支持同性恋，相对来说科学甚至能去计算谁编纂了圣经</p>
-<p>所以冲突和融合都在发生（？）把他们都说为教条似乎是有理的</p>
-<p><img src="/Blog/images/historyoffuture/190831_01.jpg" alt="190831_01"></p>
-<p>现代人出生时就签署的契约，放弃意义换取力量。</p>
-<p>人人都是追求经济增长（而且并不是100涨到101的增长），在人与人范畴内不再是零和游戏，而能有共赢，在这种势态下没有人能减缓经济发展，而更多催生的是，问题解决方案，如北京的空气净化器产业</p>
-<p><img src="/Blog/images/historyoffuture/190901_01.jpg" alt="190901_01"></p>
-<p><img src="/Blog/images/historyoffuture/190901_02.jpg" alt="190901_02"></p>
-<p>7章 人文主义革命</p>
-<p>自由主义的灭亡与复兴感受，自由主义被看作财富追求，真正的复活是自由主义➕苏联</p>
-<p>世界各个地方的不同主义在发展，科学无法参与的艺术评价，无法评价意义。</p>
-<p>战争的记录从 全局的画作，到个人的感受，</p>
-<p>神的已经死了，只剩下人们自己。</p>
-<p>人们考虑的只有自己和他人的感受</p>
-<p>然而在科技孕育的同时，没有机械化，没有科技的其他国家里，宗教依旧上演，没有什么值得一提的贡献</p>
-<p>最后展望了一下 第三部分</p>
-<p><img src="/Blog/images/historyoffuture/190903_01.jpg" alt="190903_01"></p>
-<p><img src="/Blog/images/historyoffuture/190903_02.jpg" alt="190903_02"></p>
-<p><img src="/Blog/images/historyoffuture/190903_03.jpg" alt="190903_03"></p>
-<p>8 实验室里的定时炸弹</p>
-<p>生物科学的 大脑解剖和基因否认了 自由意志，但人们大多假装不知道</p>
-<p>p264 🤔体验自我 和 叙事自我（终 峰 定律）</p>
-<p>所以生命 究竟有什么意义</p>
-<p><img src="/Blog/images/historyoffuture/190904_01.jpg" alt="190904_01"></p>
-<p><img src="/Blog/images/historyoffuture/190904_02.jpg" alt="190904_02"></p>
-<p><img src="/Blog/images/historyoffuture/190904_03.jpg" alt="190904_03"></p>
-<p><img src="/Blog/images/historyoffuture/190904_04.jpg" alt="190904_04"></p>
-<p><img src="/Blog/images/historyoffuture/190904_05.jpg" alt="190904_05"></p>
-<p><img src="/Blog/images/historyoffuture/190904_06.jpg" alt="190904_06"></p>
-<p>第九章 大分离</p>
-<p>这一章和我之前有思考过的 契合度很高，感觉像是有人专门写书支持我观点一样2333👀</p>
-<p>计算机量化，或者智能化，或者统计数据下的分析 让人的经验 感觉 想法 方案，逐渐被替代，也是大部分被替代</p>
-<p>然后阻碍有</p>
+          <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><p>目前看到angular2+ 官方的使用是 karma + jasmine</p>
+<p>Can I use Karma with testing framework X?</p>
+<p>Yes. There are plugins for most of the common testing frameworks (such as Jasmine, Mocha, QUnit). If there is no plugin for the testing framework you like, go ahead and write one. It is simple - you can start by looking into the source code of the existing ones.</p>
+<p>karma创建一个web server。</p>
+<p>浏览器通过手动方位 karma server 监听的地址(默认9876),或者自动让karma 知道运行哪个browsers，来让浏览器可以被捕获</p>
+<p>可用的列表<a href="http://karma-runner.github.io/5.0/config/browsers.html" target="_blank" rel="noopener">http://karma-runner.github.io/5.0/config/browsers.html</a></p>
+<h1 id="karma-能力"><a href="#karma-能力" class="headerlink" title="karma 能力"></a>karma 能力</h1><p>见下面 paper的pdf内容</p>
+<p>在真实环境中测试</p>
+<p>支持远程控制</p>
+<p>执行速度快</p>
+<p>可以跟第三方 IDE 进行交互</p>
+<p>支持 ci 服务</p>
+<p>高扩展性，支持插件开发</p>
+<p>支持调试</p>
+<h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><p>paper 3.1的表</p>
+<p><img src="http://gtms04.alicdn.com/tps/i4/TB1eweqLXXXXXbvaXXX0ucn3VXX-964-384.png#alt=tests_tools_comparison" alt="阿里云"></p>
+<h1 id="主要目标"><a href="#主要目标" class="headerlink" title="主要目标"></a>主要目标</h1><p>paper 2.1</p>
 <ol>
-<li>人有隐私想法，不愿意公开，反对利用个人数据</li>
-<li>在个别领域 暂时没有技术，或暂时没有投入资金进行 研发，如考古</li>
-<li>不论医疗诊断 性爱体验 小说 下棋 自动驾驶 身体状况检测 战争等，明明都是能做出比较，但在一些领域，因为情感觉得，不愿意承认，或者装作看不见</li>
+<li><p>真实设备上运行测试</p>
+</li>
+<li><p>远程控制</p>
+</li>
+<li><p>高效, 无缝隙使用流程</p>
+</li>
+<li><p>Integration with IDEs and text editors</p>
+</li>
+<li><p>Integration with CI Servers</p>
+</li>
+<li><p>扩展性</p>
+</li>
+<li><p>Debugging</p>
+</li>
 </ol>
-<p>所以感觉自己有一点 通过数据了解自己</p>
-<p>以及之前有过自己不是自己，从外部把自己当作一个机械装置看待，记录分析历史数据。</p>
-<p>再就是终峰问题的处理，历史记录对比能够缓解</p>
-<p>最后一张图 感觉我应该会被历史归类到绝大多数无用的普通人</p>
-<p><img src="/Blog/images/historyoffuture/190905_01.jpg" alt="190905_01"></p>
-<p><img src="/Blog/images/historyoffuture/190905_02.jpg" alt="190905_02"></p>
-<p>第十章 意识的海洋</p>
-<p>人类的感知并不是完整的，即使相对于原始人类</p>
-<p>科技的发展是可能提供，情感控制和感知控制。</p>
-<p>而决定权，内心的声音，科技控制，没有什么是真理，都是生化反应做决策，再交给科技控制</p>
-<p><img src="/Blog/images/historyoffuture/190906_01.jpg" alt="190906_01"></p>
-<p>数据主义的展望</p>
-<p>毁灭和开端 不过是对不同物体而言罢了</p>
-<p>隐私？是一个巨大的阻碍</p>
-<p><img src="/Blog/images/historyoffuture/190907_01.jpg" alt="190907_01"></p>
-<p><img src="/Blog/images/historyoffuture/190907_02.jpg" alt="190907_02"></p>
-<p><img src="/Blog/images/historyoffuture/190907_03.jpg" alt="190907_03"></p>
-<p><img src="/Blog/images/historyoffuture/190907_04.jpg" alt="190907_04"></p>
-<h1 id="summary"><a href="#summary" class="headerlink" title="summary"></a>summary</h1><p>算是总结过去展望未来的一本书，但只是大的方向和目标的展望,并没有 brief的感觉</p>
-<p>不过本书和我很多观点相契合，相对于上一本《黑天鹅》来说，这本书的阅读感觉就会很“顺”，也算是串起了一些想法。</p>
-<p>最后最极端的和我之前想的也是很像，人类将失去大部分用处，甚至被完全取代</p>
-<p>这一本书另一个点就是说，什么是有意义的:-)? 讨论的或者说总结的各方观点最后结论似乎是没有什么是有意义的。</p>
+<p>包含 client/server,基于Http 通信</p>
+<h1 id="设计和分析"><a href="#设计和分析" class="headerlink" title="设计和分析"></a>设计和分析</h1><p>Chapter 4</p>
+<ul>
+<li><p>速度</p>
+</li>
+<li><p>可靠性</p>
+</li>
+<li><p>在真实浏览器上测试 并</p>
+</li>
+<li><p>seamless workflow</p>
+</li>
+</ul>
+<h1 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h1><p>paper 4.1</p>
+<p>监听文件</p>
+<p>与 client 进行通讯</p>
+<p>向开发者输出测试结果</p>
+<p>提供 client 端所需的资源文件</p>
+<h2 id="Manager"><a href="#Manager" class="headerlink" title="Manager"></a>Manager</h2><p>跟client双向通讯，例如开始和结束测试，收集测试结果</p>
+<h2 id="Web-Server"><a href="#Web-Server" class="headerlink" title="Web Server"></a>Web Server</h2><p>Web Server, 给客户端提供静态资源文件</p>
+<h2 id="Reporter"><a href="#Reporter" class="headerlink" title="Reporter"></a>Reporter</h2><p>给开发者输出报告</p>
+<h2 id="File-System-Watcher"><a href="#File-System-Watcher" class="headerlink" title="File System Watcher"></a>File System Watcher</h2><p>检测变化并通知client，类似 一些热更新之类的？</p>
+<h1 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h1><p>可以 多client 对1个server</p>
+<h2 id="Manager-1"><a href="#Manager-1" class="headerlink" title="Manager"></a>Manager</h2><p>和server双向通信</p>
+<h2 id="Testing-Framework"><a href="#Testing-Framework" class="headerlink" title="Testing Framework"></a>Testing Framework</h2><p>框架内自己没有，可以用很多三方的framework，例如上面的jasmine</p>
+<h2 id="Tests-and-Code-under-Test"><a href="#Tests-and-Code-under-Test" class="headerlink" title="Tests and Code under Test"></a>Tests and Code under Test</h2><p>这是开发者编写的内容了</p>
+<p>…….我感觉阿里社区里面那个翻译也不错。。可以不用继续啃英文了</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>测试的代码 全部在客户端运行，这个客户端是真实的客户端，它可以是chrome,firefox等等</p>
+<p>karma主要的工作是支撑测试的提供，例如静态文件服务，文件变化监听等，而具体代码测试内容是在karma启动的客户端(浏览器)中，依靠用户编写的测试代码和第三方测试框架完成的。</p>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="http://karma-runner.github.io/5.0/intro/how-it-works.html" target="_blank" rel="noopener">http://karma-runner.github.io/5.0/intro/how-it-works.html</a></p>
+<p><a href="https://raw.githubusercontent.com/karma-runner/karma/master/thesis.pdf" target="_blank" rel="noopener">https://raw.githubusercontent.com/karma-runner/karma/master/thesis.pdf</a></p>
+<p><a href="https://fed.taobao.org/blog/taofed/do71ct/karma-origin/" target="_blank" rel="noopener">https://fed.taobao.org/blog/taofed/do71ct/karma-origin/</a></p>
+<p><a href="https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347" target="_blank" rel="noopener">https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347</a></p>
 
       
     </div>
@@ -1372,7 +532,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-04-vuemsgbox/">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-06-03-rust-really-fast/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Blog/images/avatar.gif">
@@ -1386,7 +546,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/Blog/19-09-04-vuemsgbox/" class="post-title-link" itemprop="url">eleme vue msgbox 简单看看实现原理</a>
+            <a href="/Blog/20-06-03-rust-really-fast/" class="post-title-link" itemprop="url">rust真的快</a>
         </h2>
 
         <div class="post-meta">
@@ -1396,14 +556,14 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2019-09-04 11:20:14" itemprop="dateCreated datePublished" datetime="2019-09-04T11:20:14+08:00">2019-09-04</time>
+              <time title="創建時間：2020-06-03 11:20:14" itemprop="dateCreated datePublished" datetime="2020-06-03T11:20:14+08:00">2020-06-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-09 17:16:52" itemprop="dateModified" datetime="2021-03-09T17:16:52+08:00">2021-03-09</time>
+                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1411,19 +571,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/vue/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/vue/js/alert/" itemprop="url" rel="index"><span itemprop="name">alert</span></a>
+                  <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
                 </span>
             </span>
 
@@ -1436,8 +584,8 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/19-09-04-vuemsgbox/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-04-vuemsgbox/" itemprop="commentCount"></span>
+    <a title="disqus" href="/Blog/20-06-03-rust-really-fast/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-06-03-rust-really-fast/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1452,46 +600,126 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="依赖版本"><a href="#依赖版本" class="headerlink" title="依赖版本"></a>依赖版本</h1><p>element-ui 版本 10592d12ea981912165542920160669fd8874bd9</p>
-<p>文档 <a href="https://element.eleme.io/#/zh-CN/component/message-box" target="_blank" rel="noopener">https://element.eleme.io/#/zh-CN/component/message-box</a></p>
-<h1 id="要解决的问题"><a href="#要解决的问题" class="headerlink" title="要解决的问题"></a>要解决的问题</h1><p>像是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$msgbox(options)</span><br><span class="line">$alert(message, title, options) 或 $alert(message, options)</span><br><span class="line">$confirm(message, title, options) 或 $confirm(message, options)</span><br><span class="line">$prompt(message, title, options) 或 $prompt(message, options)</span><br></pre></td></tr></table></figure>
-<p>这样的api是怎么实现的</p>
-<h1 id="代码阅读"><a href="#代码阅读" class="headerlink" title="代码阅读"></a>代码阅读</h1><p>大概看一眼怎么搞的</p>
-<p><code>src/index.js</code> 看 这些方法 ,都是来自 <code>import MessageBox from &#39;../packages/message-box/index.js&#39;;</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.prototype.$msgbox = MessageBox;</span><br><span class="line">Vue.prototype.$alert = MessageBox.alert;</span><br><span class="line">Vue.prototype.$confirm = MessageBox.confirm;</span><br><span class="line">Vue.prototype.$prompt = MessageBox.prompt;</span><br></pre></td></tr></table></figure>
-<p>那么看 <code>packages/message-box/src</code>文件夹</p>
-<p>两个文件 <code>main.js</code>和 <code>main.vue</code></p>
-<p><code>main.vue</code>瞄一眼,都是我们常见的写法</p>
-<p><code>main.js</code>，看这些方法 最后 都是 调用 <code>MessageBox(配置参数)</code>的形式调用</p>
-<p>再看<code>const MessageBox = function(options, callback) {</code>的实现</p>
-<p>都是 先<code>msgQueue.push(配置参数) + showNextMsg()</code></p>
-<p><code>msgQueue</code>和 <code>showNextMsg</code>,分别是个数组，和从数组中<code>shift()</code> 取出值 进行具体展示执行</p>
-<p>然后 看 <code>showNextMsg()</code> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (!instance) &#123;</span><br><span class="line">  initInstance();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const initInstance = () =&gt; &#123;</span><br><span class="line">  instance = new MessageBoxConstructor(&#123;</span><br><span class="line">    el: document.createElement(&apos;div&apos;)</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  instance.callback = defaultCallback;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>和</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const MessageBoxConstructor = Vue.extend(msgboxVue);</span><br></pre></td></tr></table></figure>
-<p>说明了基本这就是 工厂模式+单例模式+<code>Vue.extend</code>来创建弹框单例,所以我们页面上不需要写什么,就能直接调用</p>
-<p>然后这些<code>confirm</code>调用过程 也就是对这个单例的参数改动 比如控制样式 数据 显示之类的</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
-<li>用户调用 <code>$msgbox</code></li>
-<li>调用到<code>packages/message-box/src/main.js</code>的 <code>MessageBox(options,callback)</code></li>
-<li><code>MessageBox(options,callback)</code>通过 数组 + 数组.shift,依次提取数据展示</li>
-<li>对于展示的实例 是 通过 <code>Vue.extend(packages/message-box/src/main.vue)</code> + 工厂单例来产生的一个实例</li>
-<li>他们 搞了一个<code>element/examples/components/demo-block.vue</code> 可以在<code>markdown</code>写示例代码,并且在网页上查看 可以运行 66666</li>
+          <h1 id="ProjectEuler-74-题"><a href="#ProjectEuler-74-题" class="headerlink" title="ProjectEuler 74 题"></a>ProjectEuler 74 题</h1><p><a href="https://projecteuler.net/problem=74" target="_blank" rel="noopener">https://projecteuler.net/problem=74</a></p>
+<p>用rust写了一遍,觉得根据常识1e6数据量，应该1s内随便跑，结果5s+，</p>
+<p>就换成C++写了一遍，发现是因为rust没开O2？开了以后还真就和C++差不多的时间</p>
+<h2 id="rust-版本"><a href="#rust-版本" class="headerlink" title="rust 版本"></a>rust 版本</h2><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::collections::HashMap;</span><br><span class="line"><span class="keyword">const</span> N:<span class="built_in">usize</span> = <span class="number">1_000_000</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">next_value</span></span>(<span class="keyword">mut</span> value:<span class="built_in">usize</span>,fac:&amp;[<span class="built_in">usize</span>]) -&gt; <span class="built_in">usize</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> value != <span class="number">0</span> &#123;</span><br><span class="line">        sum += fac[value%<span class="number">10</span>];</span><br><span class="line">        value/=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">dfs</span></span>(</span><br><span class="line">    fac:&amp;[<span class="built_in">usize</span>],</span><br><span class="line">    ans:&amp;<span class="keyword">mut</span> HashMap&lt;<span class="built_in">usize</span>,<span class="built_in">usize</span>&gt;,</span><br><span class="line">    dep:&amp;<span class="keyword">mut</span> HashMap&lt;<span class="built_in">usize</span>,<span class="built_in">usize</span>&gt;,</span><br><span class="line">    value:<span class="built_in">usize</span></span><br><span class="line">    ) -&gt; (<span class="built_in">usize</span>,<span class="built_in">usize</span>) &#123; <span class="comment">// dep, len</span></span><br><span class="line">    <span class="keyword">let</span> nv = next_value(value,fac);</span><br><span class="line">    <span class="keyword">let</span> next_dep = dep.get(&amp;value).unwrap() + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">match</span> dep.get(&amp;nv) &#123;</span><br><span class="line">        <span class="literal">Some</span>(rs) =&gt; &#123;</span><br><span class="line">            <span class="comment">// println!("&#123;&#125; =&gt; &#123;&#125;",value,next_dep - rs);</span></span><br><span class="line">            ans.insert(value,next_dep - rs);</span><br><span class="line">            <span class="keyword">return</span> (*rs,next_dep - rs);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="literal">None</span> =&gt; &#123;</span><br><span class="line">            <span class="keyword">match</span> ans.get(&amp;nv) &#123;</span><br><span class="line">                <span class="literal">Some</span>(res) =&gt; &#123;</span><br><span class="line">                    <span class="keyword">let</span> newres= (*res) + <span class="number">1</span>;</span><br><span class="line">                    <span class="comment">// println!("&#123;&#125; =&gt; &#123;&#125;",value,newres);</span></span><br><span class="line">                    ans.insert(value,newres);</span><br><span class="line">                    <span class="keyword">return</span> (next_dep,newres);</span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="literal">None</span> =&gt; &#123;</span><br><span class="line">                    dep.insert(nv,next_dep);</span><br><span class="line">                    <span class="keyword">let</span> <span class="keyword">mut</span> ret = dfs(fac,ans,dep,nv);</span><br><span class="line">                    <span class="keyword">if</span> next_dep &lt;= ret.<span class="number">0</span>  &#123;</span><br><span class="line">                        ret.<span class="number">1</span> += <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">// println!("&#123;&#125; =&gt; &#123;&#125;",value,ret.1);</span></span><br><span class="line">                    ans.insert(value,ret.<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">return</span> ret;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> fac = [<span class="number">0</span>;<span class="number">11</span>];</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> ans = HashMap::new();</span><br><span class="line">    fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..<span class="number">11</span>&#123;</span><br><span class="line">        fac[i] = fac[i-<span class="number">1</span>]*i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..N+<span class="number">1</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ans.contains_key(&amp;i) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut</span> dep = HashMap::new();</span><br><span class="line">        dep.insert(i,<span class="number">0</span>);</span><br><span class="line">        dfs(&amp;fac,&amp;<span class="keyword">mut</span> ans,&amp;<span class="keyword">mut</span> dep,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (k, v) <span class="keyword">in</span> &amp;ans &#123;</span><br><span class="line">        <span class="keyword">if</span> *v &gt;= <span class="number">60</span> &amp;&amp; *k &lt;= N &#123;</span><br><span class="line">            cnt+=<span class="number">1</span>;</span><br><span class="line">            <span class="comment">// println!("&#123;&#125;: \"&#123;&#125;\"", k, v);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">"&#123;&#125;"</span>,cnt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="C-版本"><a href="#C-版本" class="headerlink" title="C++版本"></a>C++版本</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ten5 100000+10</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 1000000007</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,a,n) for (uint i=a;i&lt;n;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> iif(c,t,f) ((c)?(t):(f))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> per(i,a,n) for (int i=n-1;i&gt;=a;i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mp make_pair</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> uint N = <span class="number">1'000'000</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">uint <span class="title">next_value</span><span class="params">(uint value,uint *fac)</span> </span>&#123;</span><br><span class="line">    uint sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(value != <span class="number">0</span>)&#123;</span><br><span class="line">        sum += fac[value%<span class="number">10</span>];</span><br><span class="line">        value/=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pair&lt;uint,uint&gt; dfs(</span><br><span class="line">    uint *fac,</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;uint,uint&gt; &amp;ans,</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;uint,uint&gt; dep,</span><br><span class="line">    uint value</span><br><span class="line">    ) &#123; <span class="comment">// dep, len</span></span><br><span class="line">    uint nv = next_value(value,fac);</span><br><span class="line">    uint next_dep = dep[value] + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(dep.count(nv))&#123;</span><br><span class="line">      <span class="keyword">auto</span> rs = dep[nv];</span><br><span class="line">      <span class="comment">// printf("%d =&gt; %d\n",value,next_dep - rs);</span></span><br><span class="line">      ans[value] = next_dep - rs;</span><br><span class="line">      <span class="keyword">return</span> &#123;rs,next_dep - rs&#125;;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">if</span>(ans.count(nv)) &#123;</span><br><span class="line">        <span class="keyword">auto</span> res = ans[nv];</span><br><span class="line">        <span class="keyword">auto</span> newres= res + <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// printf("%d =&gt; %d\n",value,newres);</span></span><br><span class="line">        ans[value] = newres;</span><br><span class="line">        <span class="keyword">return</span> &#123;next_dep,newres&#125;;</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        dep[nv] = next_dep;</span><br><span class="line">        <span class="keyword">auto</span> ret = dfs(fac,ans,dep,nv);</span><br><span class="line">        <span class="keyword">if</span>(next_dep &lt;= ret.first)&#123;</span><br><span class="line">          ret.second += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// printf("%d =&gt; %d\n",value,ret.second);</span></span><br><span class="line">        ans[value] = ret.second;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    uint fac[<span class="number">11</span>];</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;uint,uint&gt; ans;</span><br><span class="line">    fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    rep(i,<span class="number">1</span>,<span class="number">11</span>)&#123;</span><br><span class="line">        fac[i] = fac[i<span class="number">-1</span>]*i;</span><br><span class="line">    &#125;</span><br><span class="line">    rep(i,<span class="number">1</span>,N+<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(ans.count(i))&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;uint,uint&gt; dep;</span><br><span class="line">        dep[i] = <span class="number">0</span>;</span><br><span class="line">        dfs(fac,ans,dep,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">auto</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> [k,v]: ans) &#123;</span><br><span class="line">        <span class="keyword">if</span>( v &gt;= <span class="number">60</span> &amp;&amp; k &lt;= N )&#123;</span><br><span class="line">            cnt+=<span class="number">1</span>;</span><br><span class="line">            <span class="comment">// println!("&#123;&#125;: \"&#123;&#125;\"", k, v);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,cnt);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>rust不带<code>-O2</code> 大概<code>5s+</code>,带了和<code>C++</code>相近都是<code>0.3s</code>左右, 真的快</p>
+<h1 id="env"><a href="#env" class="headerlink" title="env"></a>env</h1><p>Intel Core i7-7700HQ @ 8x 3.8GHz</p>
+<p><code>!clang++ -o &quot;%&lt;&quot; &quot;%&quot; -std=gnu++17 -O2 -g -Wall -Wcomma</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">clang version 6.0.0-1ubuntu2 (tags/RELEASE_600/final)</span><br><span class="line">Target: x86_64-pc-linux-gnu</span><br><span class="line">Thread model: posix</span><br></pre></td></tr></table></figure>
+<p><code>!rustc &quot;%&quot; -O</code></p>
+<p><code>rustc 1.43.1 (8d69840ab 2020-05-04)</code></p>
+<h1 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h1><p>rust写好的代码转换成C++是真的轻松，C++转换成rust就会很累（除非各种 as，unwrap</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-05-25-npm-registry/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-05-25-npm-registry/" class="post-title-link" itemprop="url">npm registry</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-05-25 11:20:14" itemprop="dateCreated datePublished" datetime="2020-05-25T11:20:14+08:00">2020-05-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-05-25-npm-registry/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-05-25-npm-registry/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="npm发布仓库"><a href="#npm发布仓库" class="headerlink" title="npm发布仓库"></a>npm发布仓库</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li>注册账户 <a href="https://www.npmjs.com/signup" target="_blank" rel="noopener">https://www.npmjs.com/signup</a></li>
+<li>命令行登录 <code>npm login</code></li>
+<li>建立github仓库</li>
+<li>初始化仓库 <code>npm init</code></li>
+<li>编写代码</li>
+<li>发布<code>npm publish</code> &amp; github仓库更新</li>
 </ol>
-<blockquote>
-<p>那常见的问题可能有说，连续调用2此带有回调函数的<code>$msgbox</code>会怎样</p>
-</blockquote>
-<p>我们可以看<code>showNextMsg()</code>实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//得到 instance</span></span><br><span class="line">  <span class="keyword">if</span> (!instance.visible || instance.closeTimer) &#123;</span><br><span class="line"> <span class="comment">//...</span></span><br><span class="line">      <span class="keyword">let</span> oldCb = instance.callback;</span><br><span class="line">      instance.callback = <span class="function">(<span class="params">action, instance</span>) =&gt;</span> &#123;</span><br><span class="line">        oldCb(action, instance);</span><br><span class="line">        showNextMsg();</span><br><span class="line">      &#125;;</span><br><span class="line">      <span class="comment">//...</span></span><br><span class="line">      Vue.nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        instance.visible = <span class="literal">true</span>;</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="comment">//...</span></span><br></pre></td></tr></table></figure>
-<p>意思就是如果我们同步调用两个，</p>
-<ul>
-<li>因为我们visible设置为true是 异步里发生的,那么 这两个调用时 visible默认都是false,所以 只会最后一个生效</li>
-<li>如果我们异步调用两次msgbox,那么 后一个调用 会在<code>!visible</code>的地方为false,不会直接触发，但是因为设计了msgQueue,因此 会放在数组中，然后看到 上面的callback,会在调用oldCb以后 再调用showNextMsg,所以会在对话框回调以后 再回调 那个时刻，msgQueue里首个 并从数组中移除</li>
-</ul>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>如果是之前用taobao的镜像，记得发布时 更改设置为官方地址</p>
+<p>个人建议一些“没有建设意义”的仓库，就不要去抢名字了，带上自己的scope发布</p>
+<p>发布前<strong> 记得清理敏感信息</strong>，似乎npm虽然可以unpublish但是,不能重置版本号 <a href="https://www.npmjs.com/policies/unpublish" target="_blank" rel="noopener">https://www.npmjs.com/policies/unpublish</a></p>
+<h3 id="生成类发布"><a href="#生成类发布" class="headerlink" title="生成类发布"></a>生成类发布</h3><p>例如源码是用typescript写的，发布要发布编译后的文件，但是git中不会跟踪。</p>
+<p>不建议使用<code>.npmignore</code> (会使<code>.gitignore</code>在publish时无效)，建议的是在<code>package.json</code>中增加<code>&quot;files&quot;:[&quot;dist/**/*&quot;]</code>这样的白名单</p>
+<h2 id="本地调试"><a href="#本地调试" class="headerlink" title="本地调试"></a>本地调试</h2><p>例如</p>
+<p>在开发的库中构建后调用<code>yarn link</code> 会提示<code>success Registered &quot;@cromarmot/isNumberOne&quot;</code></p>
+<p>在用来测试的文件夹中 调用 <code>yarn link &quot;@cromarmot/isNumberOne&quot;</code> 即可使用</p>
+<p>取消link：把上面link替换为unlink,使用对应的<code>yarn unlink</code>命令即可</p>
+<p>link以后，代码更新只需要编译原来的库代码，不需要重新link</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>一个基于莫比乌丝反演的数字1判断</p>
+<p><a href="https://www.npmjs.com/package/@cromarmot/is-number-one" target="_blank" rel="noopener">https://www.npmjs.com/package/@cromarmot/is-number-one</a></p>
+<h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><p><a href="https://docs.npmjs.com/" target="_blank" rel="noopener">https://docs.npmjs.com/</a></p>
 
       
     </div>
@@ -1510,7 +738,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/Blog/page/3/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/Blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/Blog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/Blog/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/Blog/page/10/">10</a><a class="extend next" rel="next" href="/Blog/page/5/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+    <a class="extend prev" rel="prev" href="/Blog/page/3/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/Blog/page/5/">5</a><a class="page-number" href="/Blog/page/7/">7</a><a class="page-number" href="/Blog/page/11/">11</a><a class="page-number" href="/Blog/page/19/">19</a><a class="page-number" href="/Blog/page/20/">20</a><a class="extend next" rel="next" href="/Blog/page/5/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -1576,7 +804,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">97</span>
+          <span class="site-state-item-count">98</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1585,7 +813,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">97</span>
+        <span class="site-state-item-count">98</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>
