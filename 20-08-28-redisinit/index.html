@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
 <meta property="og:description" content="安装配置安装启动Debian 系列 1apt install redis-server 也可以考虑官网下源码自己编译，或者docker直接pull 修改/etc/redis/redis.conf中supervised no为supervised systemd (Ubuntu 用systemd初始化系统的这样设置 通用的重启 123systemctl restart redis.service#">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-03-11T08:38:12.250Z">
+<meta property="og:updated_time" content="2021-03-12T10:12:12.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis init 简单笔记">
 <meta name="twitter:description" content="安装配置安装启动Debian 系列 1apt install redis-server 也可以考虑官网下源码自己编译，或者docker直接pull 修改/etc/redis/redis.conf中supervised no为supervised systemd (Ubuntu 用systemd初始化系统的这样设置 通用的重启 123systemctl restart redis.service#">
@@ -212,7 +212,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
+                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,6 +259,7 @@
 <p>个人电脑取消它开机启动<code>systemctl disable redis</code></p>
 </blockquote>
 <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>啊 这个cli的提示真的香</p>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ redis-cli</span><br><span class="line">127.0.0.1:6379&gt; ping</span><br><span class="line">127.0.0.1:6379&gt; set test &quot;It&apos;s working!&quot;</span><br><span class="line">127.0.0.1:6379&gt; get test</span><br><span class="line">127.0.0.1:6379&gt; test</span><br><span class="line">$ systemctl restart redis</span><br><span class="line">127.0.0.1:6379&gt; get test</span><br></pre></td></tr></table></figure>
 <h2 id="允许访问的ip设置"><a href="#允许访问的ip设置" class="headerlink" title="允许访问的ip设置"></a>允许访问的ip设置</h2><p>注释掉<code>bind 127.0.0.1 ::1</code> 或者改成<code>bind 0.0.0.0</code> 允许localhost以外的任何地址访问,默认只允许本地访问（不建议？</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp | grep redis</span><br></pre></td></tr></table></figure>

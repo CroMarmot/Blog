@@ -207,7 +207,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
+                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -315,7 +315,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
+                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -362,53 +362,14 @@
 <p>个人电脑取消它开机启动<code>systemctl disable redis</code></p>
 </blockquote>
 <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>啊 这个cli的提示真的香</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ redis-cli</span><br><span class="line">127.0.0.1:6379&gt; ping</span><br><span class="line">127.0.0.1:6379&gt; set test &quot;It&apos;s working!&quot;</span><br><span class="line">127.0.0.1:6379&gt; get test</span><br><span class="line">127.0.0.1:6379&gt; test</span><br><span class="line">$ systemctl restart redis</span><br><span class="line">127.0.0.1:6379&gt; get test</span><br></pre></td></tr></table></figure>
-<h2 id="允许访问的ip设置"><a href="#允许访问的ip设置" class="headerlink" title="允许访问的ip设置"></a>允许访问的ip设置</h2><p>注释掉<code>bind 127.0.0.1 ::1</code> 或者改成<code>bind 0.0.0.0</code> 允许localhost以外的任何地址访问,默认只允许本地访问（不建议？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp | grep redis</span><br></pre></td></tr></table></figure>
-<p>你应该看到的第4列</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0.0.0.0:6379</span><br><span class="line">::1:6379</span><br></pre></td></tr></table></figure>
-<h2 id="密码设置"><a href="#密码设置" class="headerlink" title="密码设置"></a>密码设置</h2><p>把下面配置启用并为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requirepass 你的密码</span><br></pre></td></tr></table></figure>
-<p>注释说因为很快用户可以150k/s的尝试，所以建议复杂密码。推荐的方案是<code>openssl rand 60 | openssl base64 -A</code>生成一个</p>
-<p>重启服务用密码登录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl restart redis.service</span><br><span class="line">$ redis-cli</span><br><span class="line">127.0.0.1:6379&gt; auth 你的密码</span><br><span class="line">127.0.0.1:6379&gt; set key1 10</span><br><span class="line">127.0.0.1:6379&gt; get key1</span><br><span class="line">127.0.0.1:6379&gt; quit</span><br></pre></td></tr></table></figure>
-<h2 id="风险指令禁用"><a href="#风险指令禁用" class="headerlink" title="风险指令禁用"></a>风险指令禁用</h2><p>一些可能有风险的指令 FLUSHDB, FLUSHALL, KEYS, PEXPIRE, DEL, CONFIG, SHUTDOWN, BGREWRITEAOF, BGSAVE, SAVE, SPOP, SREM, RENAME, and DEBUG</p>
-<p><strong>The following steps showing how to disable and rename commands are examples. You should only choose to disable or rename the commands that make sense for you. You can review the full list of commands for yourself and determine how they might be misused at</strong> </p>
-<p><strong>总之就是你应该了解指令的意义，才禁用相关的指令,以防误用</strong> 相关指令描述 <a href="http://redis.io/commands" target="_blank" rel="noopener">http://redis.io/commands</a></p>
-<p>在配置中增加（两种方式）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rename-command 指令名字 &quot;&quot;</span><br><span class="line">rename-command 指令名字 新的难输入的指令名字</span><br></pre></td></tr></table></figure>
-<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p>字符串，hash，list，集合，有序集合</p>
-<p>超时时间设置</p>
-<p>本身不支持嵌套对象，如果要把它变成json字符串</p>
-<p><a href="https://redis.io/topics/data-types-intro" target="_blank" rel="noopener">https://redis.io/topics/data-types-intro</a></p>
-<p>Bit arrays (or simply bitmaps): it is possible, using special commands, to handle String values like an array of bits: you can set and clear individual bits, count all the bits set to 1, find the first set or unset bit, and so forth.</p>
-<p>HyperLogLogs: this is a probabilistic data structure which is used in order to estimate the cardinality of a set. Don’t be scared, it is simpler than it seems… See later in the HyperLogLog section of this tutorial.</p>
-<p>Streams: append-only collections of map-like entries that provide an abstract log data type. They are covered in depth in the Introduction to Redis Streams.</p>
-<h2 id="发布-订阅"><a href="#发布-订阅" class="headerlink" title="发布/订阅"></a>发布/订阅</h2><p><a href="https://redis.io/topics/pubsub" target="_blank" rel="noopener">https://redis.io/topics/pubsub</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SUBSCRIBE 频道名1 [频道名2 ...]</span><br><span class="line">PUBLISH 频道名1 &quot;消息&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MULTI</span><br><span class="line"></span><br><span class="line">命令队列</span><br><span class="line"></span><br><span class="line">EXEC</span><br></pre></td></tr></table></figure>
-<p><a href="https://redis.io/topics/transactions" target="_blank" rel="noopener">https://redis.io/topics/transactions</a></p>
-<p>每条命令是原子操作，如果exec调用了，那么执行过程中 如果有命令失败，则会跳过改命令继续往后。</p>
-<p>? redis的事务 所以到底啥用,首先是和传统数据库的事务的意义不同</p>
-<p>为啥不支持</p>
-<p>Redis commands can fail only if called with a wrong syntax (and the problem is not detectable during the command queueing), or against keys holding the wrong data type: this means that in practical terms a failing command is the result of a programming errors, and a kind of error that is very likely to be detected during development, and not in production.</p>
-<p>Redis is internally simplified and faster because it does not need the ability to roll back.</p>
-<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><p>一个非原子的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val = GET mykey</span><br><span class="line">val = val + 1</span><br><span class="line">SET mykey $val</span><br></pre></td></tr></table></figure>
-<p>改为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">WATCH mykey</span><br><span class="line">val = GET mykey</span><br><span class="line">val = val + 1</span><br><span class="line">MULTI</span><br><span class="line">SET mykey $val</span><br><span class="line">EXEC</span><br></pre></td></tr></table></figure>
-<p>如果在WATCH和EXEC之间修改了mykey，这个transaction 会失败</p>
-<p>然后反复尝试，因为从实际期望上，不同的用户冲突的可能性很小，所以用的是乐观锁, 多数情况并不需要重复尝试</p>
-<p>管道Learn how to send multiple commands at once, saving on round trip time.: <code>$(echo -en &quot;PING\r\n SET runoobkey redis\r\nGET runoobkey\r\nINCR visitor\r\nINCR visitor\r\nINCR visitor\r\n&quot;; sleep 10) | nc localhost 6379</code></p>
-<h2 id="cheatsheet"><a href="#cheatsheet" class="headerlink" title="cheatsheet"></a>cheatsheet</h2><p>远程连接: <code>redis-cli -h host -p port -a password</code> // 不建议直接这样操作? 会被记录在你的命令历史里?</p>
-<p>查看信息<code>info</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">config get 配置名</span><br><span class="line">config set 配置名 配置值</span><br></pre></td></tr></table></figure>
-<p>benchmarks: <a href="https://redis.io/topics/benchmarks" target="_blank" rel="noopener">https://redis.io/topics/benchmarks</a></p>
-<p><code>redis-benchmark -h 127.0.0.1 -p 6379 -t set,lpush -n 10000 -q</code> 咦 这玩意不需要权限？？？</p>
-<p>文档很多是ruby写的例子 XD，没用过，人脑执行了一下大概的代码</p>
-<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-18-04</a></p>
-<p><a href="https://redis.io/documentation" target="_blank" rel="noopener">https://redis.io/documentation</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/20-08-28-redisinit/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -458,7 +419,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
+                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -553,7 +514,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
+                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -603,64 +564,14 @@
 </blockquote>
 <p>金字塔中的思想以3种方式互相关联——向上、向下和横向。位于一组思想的上一个层次的思想是对这一组思想的概。这一组思想则是对其上一层次的思想的解释和支持。</p>
 <p>文章中的思想必须符合以下规则。</p>
-<ol>
-<li>纵向：文章中任一层次上的思想必须是其下一层次思想的概括。</li>
-<li>横向：每组中的思想必须属于同一逻辑范畴</li>
-<li>横向：每组中的思想必须按逻辑顺序组织</li>
-</ol>
-<blockquote>
-<p>组织思想基本上只可能有4种顺序</p>
-</blockquote>
-<p>演绎顺序: 大前提，小前提，结论</p>
-<p>时间（步骤）顺序：第一第二第三</p>
-<p>结构（空间）顺序：波士顿，纽约，华盛顿</p>
-<p>程度（重要性）顺序：最重要，次重要，等等</p>
-<p>通过 产生疑问吸引读者，逐级提问引导再提问，读者不一定会同意作者从地一个表述到最后一个表述的思维进展方式，但至少能够明确了解作者的思路，而这是所有作者期望的最好结果。（在我看来这里在尽力保证人与人之间的传达准确性，但传达虽然准确了，其中有不少是“作者的，不必要的信息”</p>
-<p>序言应当介绍4要素：介绍背景，指出冲突，引发疑问，给出答案。</p>
-<blockquote>
-<p>提示</p>
-</blockquote>
-<p>自上而下法构建金字塔的步骤</p>
-<ol>
-<li>提出主题思想</li>
-<li>设想受众的主要疑问</li>
-<li>写序言，背景-冲突-疑问-回答</li>
-<li>与受众进行疑问/回答式对话</li>
-<li>对受众的新疑问，重复进行疑问/回答式对话。</li>
-</ol>
-<p>子节点之间 演绎关系，归纳关系</p>
-<p>“日本商人正在增加对中国市场的投资”</p>
-<p>演绎关系“美国商人将很快进入中国市场，必将进一步促进日商的行动”</p>
-<p>归纳关系“美国商人正在增加对中国市场的投资” （主语不变改变谓语，谓语不变改变主语）</p>
-<p>演绎推理（第二点是对第一点主语或谓语的论述）归纳推理（同组中的思想具有类似的主语或谓语）</p>
-<h2 id="思考的逻辑"><a href="#思考的逻辑" class="headerlink" title="思考的逻辑"></a>思考的逻辑</h2><p>分类方法：因果/整体部分/重要性</p>
-<p>时间顺序/阶段划分/步骤</p>
-<p>结构顺序</p>
-<p>程度顺序/重要性</p>
-<p>以及对一个不合理的金字塔结构如何调整</p>
-<p>各组思想有效概括</p>
-<p>原始资料被概括后，包含传达者的意图，真的好吗？</p>
-<p>“总是要概括？”</p>
-<p>的确固定习惯可能发现新的提炼和思想，但习惯分类也会导致分类的固定死，和无真实意义。</p>
-<p>事物之间可能本来没有意义关系是人类强加的，有时需要弄清，有时甚至是错的不该加以关系，现在要强制清晰这些联系，还做了个数限制，不太实际吧。</p>
-<h2 id="解决问题的逻辑"><a href="#解决问题的逻辑" class="headerlink" title="解决问题的逻辑"></a>解决问题的逻辑</h2><p>界定问题：背景，当前，目标，方法</p>
-<p>结构化分析：手机信息，描述发现，得出结论，提出方案</p>
-<p>既定的表只适用于其特定的问题分析。如果是持续可能出问题的，可以维护这样一个分析结构，但感觉这是给不熟悉的人的，熟悉的人应该有一个快速问题的hash表</p>
-<p>作者反复说了几次相互独立，完全穷尽。。。。可以尽量，但太不现实</p>
-<p>使用诊断框架的意义，我感觉更多是，持续维护和更新框架，减少每一次或者重复出现过的思考，不熟悉的人对框架的思考，最好能再增加具体操作描述</p>
-<h2 id="演示的逻辑"><a href="#演示的逻辑" class="headerlink" title="演示的逻辑"></a>演示的逻辑</h2><p>ppt教学？？？？感觉很多理所应当，不过我有不少事情感觉理所应当有不少人做不到，只能说作者写得细致？</p>
-<p>关于图标，突然意识到，其实结论，文字就足够了，而为了“人类容易理解和记忆”，会辅助以图标和文字，但这个图标有多少人会去“校验”，和值得到文字结论的相比，都是不拥有原始数据的，像是五十步和百步。</p>
-<p>图标幻灯片90%，文字幻灯片10%。。。</p>
-<p>减少不必要术语创造所带来的理解代价</p>
-<p>文章/ppt等： 你收集了各种知识，通过一个通道线性的输出，读者线性的接受，自己组装成一个架构</p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>有时结构不存在，无形的，不能解释的结果</p>
-<p>任何推理涉及3个实体：规则（关于世界组成方式的看法），情况（世界上存在的已知事实），结果（如果把规则用于该情况，预期将发生的事情）</p>
-<p>提出假设，设计实验</p>
-<p><strong>搬运附录3 TODO</strong></p>
-<h1 id="结"><a href="#结" class="headerlink" title="结"></a>结</h1><p>建议大家平时自己 多读写xmind，ppt，wiki，tutorial等 很多东西就自然而然了，或者每件事情写完后，多几遍自己阅读</p>
-<p>收获有的，吐槽一下，例如上面作者说了好几遍 不重不漏这种不现实的，自己写书不同章节重复的不知有多少，例如子节点和父节点，有时平摊到一个层级 能更好的扁平化。</p>
-<p>感受是 整体针对的是一个“想法传递的准确性保障”，但实践的步骤会因为各种奇怪的理由强制抽象（比如强调7+-2），有不少在现有工具优秀表现上显得过时，例如分类的维护性等。令我很怀疑这个title XD</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/20-08-10-pyramidprinciple/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -710,7 +621,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-11 16:38:12" itemprop="dateModified" datetime="2021-03-11T16:38:12+08:00">2021-03-11</time>
+                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -751,16 +662,15 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">点击按钮</span><br><span class="line">显示div</span><br><span class="line">旋转4.5秒</span><br><span class="line">隐藏div</span><br></pre></td></tr></table></figure>
 <p>BUG:</p>
 <p>在android和ios(系统版本&lt;=12)上正常的代码，在ios(&gt;=13.5.1)上 如果前后角度相同会无法旋转</p>
-<h1 id="代码vue"><a href="#代码vue" class="headerlink" title="代码vue"></a>代码vue</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div</span><br><span class="line">    class=&quot;container&quot;</span><br><span class="line">  &gt;</span><br><span class="line">    &lt;div</span><br><span class="line">      v-show=&quot;display&quot;</span><br><span class="line">      :style=&quot;&#123; transform: angle &#125;&quot;</span><br><span class="line">      class=&quot;demo-div&quot;</span><br><span class="line">    &gt;Hey</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h1&gt;expect: show div, rotate div. rotate angle(&#123;&#123; rotateA &#125;&#125;), hide div&lt;/h1&gt;</span><br><span class="line">    &lt;div v-if=&quot;!unClickable&quot;&gt;</span><br><span class="line">      &lt;h2 @click=&quot;onClick(0)&quot;&gt;Same angle(bug)&lt;/h2&gt;</span><br><span class="line">      &lt;h2 @click=&quot;onClick(60)&quot;&gt;+60 angle&lt;/h2&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">// rotate stuck on ios ( &gt;=13.5.1 ) , works well on android and ios ( &lt;= 12 )</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      unClickable: false,</span><br><span class="line">      display: false,</span><br><span class="line">      angle: &apos;rotate(0deg)&apos;,</span><br><span class="line">      rotateA: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    onClick(deg) &#123;</span><br><span class="line">      if (this.unClickable) &#123;</span><br><span class="line">        return</span><br><span class="line">      &#125;</span><br><span class="line">      this.unClickable = true</span><br><span class="line">      this.display = true</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        // if rotate don&apos;t change the rotation will stucked</span><br><span class="line">        this.rotateA = (this.rotateA + deg) % 360</span><br><span class="line">        this.angle = `rotate($&#123;(6 * 360 + this.rotateA)&#125;deg)`</span><br><span class="line">      &#125;, 100)</span><br><span class="line">      // change 100 to 1000 works well</span><br><span class="line"></span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        this.angle = &apos;rotate(0deg)&apos;</span><br><span class="line">        this.display = false</span><br><span class="line">        this.unClickable = false</span><br><span class="line">      &#125;, 5500)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.container &#123;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  min-height: 100vh;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-direction: column;</span><br><span class="line">  justify-content: center;</span><br><span class="line">  align-items: center;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">h2 &#123;</span><br><span class="line">  background-color: lightgrey;</span><br><span class="line">  padding: 1em;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.demo-div &#123;</span><br><span class="line">  transition: transform ease-out 4.5s;</span><br><span class="line">  width: 50vw;</span><br><span class="line">  height: 50vh;</span><br><span class="line">  background-color: lightblue;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="一些调试结果"><a href="#一些调试结果" class="headerlink" title="一些调试结果"></a>一些调试结果</h1><p>如果和上一次结束的角度不同，则可以旋转。</p>
-<p>如果把setTimeout调整到1000则可以旋转。</p>
-<p>如果把<code>v-show</code>设置成始终显示也没有问题。</p>
-<p>可能和vue关系不大，因为通过把v-show换成 纯js对的display操作也能重现</p>
-<p>没有可以直接调试ios webview的工具。猜测是ios的 webview和 vue 的 <code>v-show</code> 某些处理出现了问题</p>
-<h1 id="在线demo"><a href="#在线demo" class="headerlink" title="在线demo"></a>在线demo</h1><p><a href="https://42zc6.csb.app" target="_blank" rel="noopener">https://42zc6.csb.app</a></p>
-<iframe src="https://codesandbox.io/embed/naughty-nobel-42zc6?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="naughty-nobel-42zc6" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-
-
+<h1 id="代码vue"><a href="#代码vue" class="headerlink" title="代码vue"></a>代码vue</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/20-08-06-ios13_5_1_vuevshow_transformrotatebug/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
