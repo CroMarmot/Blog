@@ -1,4 +1,5 @@
 'use strict';
+/*
 // replace default paginator
 const {Pagination} = require('@cromarmot/pagination');
 
@@ -64,3 +65,4 @@ function binPaginatorHelper(options = {}) {
 }
 
 hexo.extend.helper.register('paginator', binPaginatorHelper);
+*/
