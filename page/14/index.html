@@ -207,7 +207,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
+                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
               </span>
 
           
@@ -286,7 +286,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
+                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -343,14 +343,98 @@
 </ol>
 <h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><p><img src="https://docs.docker.com/engine/images/architecture.svg" alt="architecture"></p>
 <p><img src="https://docs.docker.com/engine/images/engine-components-flow.png" alt="components"></p>
+<p><img src="../images/dockercommand.jpg" alt="docker command"></p>
+<p><img src="../images/dockerstate.png" alt="docker state"></p>
 <p><a href="https://docs.docker.com/engine/faq/" target="_blank" rel="noopener">https://docs.docker.com/engine/faq/</a></p>
-<p>常用</p>
-<p>docker pull</p>
+<h1 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h1><p>docker pull</p>
 <p>docker build</p>
 <p>docker push</p>
 <p>docker run</p>
+<h2 id="run"><a href="#run" class="headerlink" title="run"></a>run</h2><p><code>--rm</code> 运行后删除自己，可以把数据类映射到宿主机上，运行的container只是当作个程序</p>
+<p><code>--env</code> 运行环境参数</p>
+<p>但凡会输入<code>--help</code>命令就能看到<code>-d</code>是 <code>-d, --detach                         Run container in background and print container ID</code> 还有一堆人非要说是daemon</p>
+<p><code>--link &lt;container name or id&gt;:&lt;alias name&gt;</code> # <a href="https://www.jianshu.com/p/21d66ca6115e" target="_blank" rel="noopener">https://www.jianshu.com/p/21d66ca6115e</a></p>
+<h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><p>方案1 sudo启动</p>
+<p>方案2 创建docker用户组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker     #添加docker用户组</span><br><span class="line">sudo gpasswd -a $USER docker     #将登陆用户加入到docker用户组中</span><br><span class="line">newgrp docker     #更新用户组</span><br><span class="line">docker ps    #测试docker命令是否可以使用sudo正常使用</span><br></pre></td></tr></table></figure>
 <h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run --name 容器名 -i -t -p 主机端口:容器端口 -d -v 主机目录:容器目录:ro 镜像TD或镜像名:TAG</span><br><span class="line"></span><br><span class="line"># --name 指定容器名，可自定义，不指定自动命名</span><br><span class="line"># -i 以交互模式运行容器</span><br><span class="line"># -t 分配一个伪终端，即命令行，通常组合来使用</span><br><span class="line"># -p 指定映射端口，将主机端口映射到容器内的端口</span><br><span class="line"># -d 后台运行容器</span><br><span class="line"># -v 指定挂载主机目录到容器目录，默认为rw读写模式，ro表示只读</span><br></pre></td></tr></table></figure>
-<h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1>
+<p>映射：冒号左侧<code>宿主</code>或<code>docker提供</code>，右侧docker内部</p>
+<h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><p>docker hub 仓库，拉取到本地images</p>
+<p>images 生成可运行的container</p>
+<p>container 执行具体任务</p>
+<p><code>docker image inspect &lt;image name&gt;</code> 看配置</p>
+<h1 id="多个docker-之间配置-一次使用"><a href="#多个docker-之间配置-一次使用" class="headerlink" title="多个docker 之间配置 一次使用"></a>多个docker 之间配置 一次使用</h1><p><code>docker-compose.yml</code>文件 + 相关配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动所有服务</span></span><br><span class="line">docker-compose up</span><br><span class="line"><span class="comment"># 关闭所有服务</span></span><br><span class="line">docker-compose stop</span><br><span class="line"><span class="comment"># 删除所有</span></span><br><span class="line">docker-compose rm</span><br></pre></td></tr></table></figure>
+<h1 id="Dockerfile-创建image-Demo"><a href="#Dockerfile-创建image-Demo" class="headerlink" title="Dockerfile 创建image Demo"></a>Dockerfile 创建image Demo</h1><p><code>index.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> os = <span class="built_in">require</span>(<span class="string">"os"</span>);</span><br><span class="line"><span class="keyword">var</span> hostname = os.hostname();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello from "</span> + hostname);</span><br></pre></td></tr></table></figure>
+<p><code>Dockerfile</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">FROM alpine</span><br><span class="line">RUN apk update &amp;&amp; apk add nodejs</span><br><span class="line">COPY . /app</span><br><span class="line">WORKDIR /app</span><br><span class="line">EXPOSE 3000</span><br><span class="line">CMD [&quot;node&quot;,&quot;index.js&quot;]</span><br></pre></td></tr></table></figure>
+<p><code>docker image build -t hello:v0.1 .</code></p>
+<p>相关命令</p>
+<ul>
+<li>基础镜像（父镜像）信息指令 FROM。</li>
+<li>维护者信息指令 MAINTAINER。</li>
+<li>镜像操作指令 RUN 、EVN 、ADD、 WORKDIR、EXPOSE 等。<br>COPY 从宿主到内部</li>
+<li>容器启动指令 CMD 、ENTRYPOINT 和 USER 等。<br>CMD 内部执行的命令 推荐上面数组格式<br>ENTRYPOINT 可以让你的容器表现得像一个可执行程序一样。</li>
+</ul>
+<h1 id="使用多个container-swarm-mode"><a href="#使用多个container-swarm-mode" class="headerlink" title="使用多个container (swarm mode)"></a>使用多个container (swarm mode)</h1><p><code>Docker Compose and Docker Swarm Mode</code></p>
+<p>Compose用于控制单个系统上的多个容器。 就像我们用来构建映像的Dockerfile一样，有一个文本文件描述了应用程序：要使用的映像，多少实例，网络连接等。但是Compose仅在单个系统上运行，因此虽然有用 ，我们将跳过Compose1并直接进入Docker Swarm Mode。</p>
+<p>Swarm Mode 告诉Docker您将运行许多Docker引擎，并且您希望协调所有引擎。 Swarm模式结合了以下功能：不仅可以定义应用程序体系结构（例如Compose），而且可以定义和维护高可用性级别，扩展，负载平衡等。 通过所有这些功能，Swarm模式在生产环境中的使用频率要比其简单的表亲Compose更高。</p>
+<p><a href="https://training.play-with-docker.com/ops-s1-swarm-intro/" target="_blank" rel="noopener">https://training.play-with-docker.com/ops-s1-swarm-intro/</a></p>
+<h1 id="常用-1"><a href="#常用-1" class="headerlink" title="常用"></a>常用</h1><p>这些并不会随着container消失而清理，可能需要手动rm,</p>
+<p><code>docker network ls</code> 管理网络配置</p>
+<p><code>docker volume ls</code> 储存</p>
+<h1 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h1><p>对于宿主机器的权限<code>https://training.play-with-docker.com/security-seccomp</code></p>
+<h1 id="常用-cheat-sheet"><a href="#常用-cheat-sheet" class="headerlink" title="常用 cheat sheet"></a>常用 cheat sheet</h1><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>比较container和images本身的区别</td>
+<td><code>docker container diff &lt;container_id&gt;</code></td>
+</tr>
+<tr>
+<td>基于container创建image</td>
+<td><code>docker container commit &lt;container_id&gt;</code></td>
+</tr>
+<tr>
+<td>命名image的repo</td>
+<td><code>docker image tag &lt;image_id&gt; &lt;image_repository&gt;</code></td>
+</tr>
+<tr>
+<td>基于dockerfile创建image</td>
+<td><code>docker image build -t &lt;image_repository&gt; .</code></td>
+</tr>
+<tr>
+<td>导出容器</td>
+<td><code>docker export &lt;container_id&gt; &gt; xxx.tar</code></td>
+</tr>
+<tr>
+<td>导入容器</td>
+<td><code>cat xxx.tar &lt;管道符号&gt; docker import - &lt;repository&gt;:&lt;tag&gt;</code></td>
+</tr>
+<tr>
+<td>标准输出日志查看</td>
+<td><code>docker logs -f &lt;container_id&gt;</code> / <code>docker container logs &lt;container_id&gt;</code></td>
+</tr>
+<tr>
+<td>进入正在运行的容器(不建议经常操作，如果经常改，应该映射出来)</td>
+<td><code>docker container exec -it &lt;container_id&gt; /bin/bash</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="发布到远端"><a href="#发布到远端" class="headerlink" title="发布到远端"></a>发布到远端</h1><p>登录</p>
+<p><code>docker login</code></p>
+<p>产生image</p>
+<p><code>docker image build -t [username]/[repository]:[tag] .</code> </p>
+<p>推送</p>
+<p><code>docker image push [username]/[repository]:[tag]</code></p>
+<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://training.play-with-docker.com/" target="_blank" rel="noopener">training play with docker</a></p>
+
       
     </div>
 
@@ -400,7 +484,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
+                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -524,7 +608,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
+                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -654,7 +738,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
+                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -790,7 +874,7 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">

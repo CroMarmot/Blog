@@ -207,7 +207,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
+                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -386,7 +386,7 @@ Local version: 4.0.2
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
+                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -476,7 +476,7 @@ Local version: 4.0.2
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
+                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -564,6 +564,16 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
 <p>在一个就是mysql的db和账户创建,只玩过CURD，很久没摸也忘了</p>
 <p>客户端口没啥难度</p>
 <p>emmmmmmmm 似乎也不能在ipados上搞… 只能网页勉强</p>
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><ol>
+<li>本地建立文件夹 <code>/data/nextcloudserver/</code> 给它存东西用</li>
+<li>一条docker命令<code>docker run -d -p 8080:80 -v /data/nextcloudserver/:/var/www/html --name=nextcloudserver nextcloud</code> ，注意docker的习惯冒号左边是宿主机器的东西，右边是容器内的东西，这里映射了端口和磁盘</li>
+</ol>
+<p>这样就可以跑了，本地访问都是ui操作，没啥好说的</p>
+<ol start="3">
+<li>配置<code>config/config.php</code>中的<code>trusted_domains</code> (无脑的话root进，或者docker起个busybox连接一下)，注意这里的写法是星号来匹配应该<code>192.168.*.*</code>，而不是<code>192.168.0.0/24</code>, 保存就行</li>
+</ol>
+<h1 id="或者官方的仓库下"><a href="#或者官方的仓库下" class="headerlink" title="或者官方的仓库下"></a>或者官方的仓库下</h1><p><a href="https://github.com/nextcloud/docker/blob/master" target="_blank" rel="noopener">https://github.com/nextcloud/docker/blob/master</a> 文件夹<code>.examples/docker-compose/insecure/mariadb/apache</code></p>
+<p>执行<code>docker-compose up -d</code></p>
 
       
     </div>
@@ -614,7 +624,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
+                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -717,7 +727,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
+                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -861,7 +871,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">

@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
 <meta property="og:description" content="What因为一些不可描述的原因，dropbox能用但是速度感人 现在需要一款能够 在 android+Linux+iPadOS三端做同步的 iPad上的Documents配上ssh可以完成Linux+iPadOS的同步, // android似乎并不行 google drive就和dropbox是同样的问题 baiduYunPan ??? 如果你不怕你的个人资料有一天变成 “根据相关法律法规” 的">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-03-12T10:12:12.316Z">
+<meta property="og:updated_time" content="2021-03-15T08:19:11.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nextCloud ! 真香">
 <meta name="twitter:description" content="What因为一些不可描述的原因，dropbox能用但是速度感人 现在需要一款能够 在 android+Linux+iPadOS三端做同步的 iPad上的Documents配上ssh可以完成Linux+iPadOS的同步, // android似乎并不行 google drive就和dropbox是同样的问题 baiduYunPan ??? 如果你不怕你的个人资料有一天变成 “根据相关法律法规” 的">
@@ -212,7 +212,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-12 18:12:12" itemprop="dateModified" datetime="2021-03-12T18:12:12+08:00">2021-03-12</time>
+                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -300,6 +300,16 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
 <p>在一个就是mysql的db和账户创建,只玩过CURD，很久没摸也忘了</p>
 <p>客户端口没啥难度</p>
 <p>emmmmmmmm 似乎也不能在ipados上搞… 只能网页勉强</p>
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><ol>
+<li>本地建立文件夹 <code>/data/nextcloudserver/</code> 给它存东西用</li>
+<li>一条docker命令<code>docker run -d -p 8080:80 -v /data/nextcloudserver/:/var/www/html --name=nextcloudserver nextcloud</code> ，注意docker的习惯冒号左边是宿主机器的东西，右边是容器内的东西，这里映射了端口和磁盘</li>
+</ol>
+<p>这样就可以跑了，本地访问都是ui操作，没啥好说的</p>
+<ol start="3">
+<li>配置<code>config/config.php</code>中的<code>trusted_domains</code> (无脑的话root进，或者docker起个busybox连接一下)，注意这里的写法是星号来匹配应该<code>192.168.*.*</code>，而不是<code>192.168.0.0/24</code>, 保存就行</li>
+</ol>
+<h1 id="或者官方的仓库下"><a href="#或者官方的仓库下" class="headerlink" title="或者官方的仓库下"></a>或者官方的仓库下</h1><p><a href="https://github.com/nextcloud/docker/blob/master" target="_blank" rel="noopener">https://github.com/nextcloud/docker/blob/master</a> 文件夹<code>.examples/docker-compose/insecure/mariadb/apache</code></p>
+<p>执行<code>docker-compose up -d</code></p>
 
     </div>
 
@@ -392,7 +402,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What"><span class="nav-number">1.</span> <span class="nav-text">What</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开干"><span class="nav-number">2.</span> <span class="nav-text">开干</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#失败的尝试"><span class="nav-number">3.</span> <span class="nav-text">失败的尝试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nextCloud-额外的应用"><span class="nav-number">4.</span> <span class="nav-text">nextCloud 额外的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What"><span class="nav-number">1.</span> <span class="nav-text">What</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开干"><span class="nav-number">2.</span> <span class="nav-text">开干</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#失败的尝试"><span class="nav-number">3.</span> <span class="nav-text">失败的尝试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nextCloud-额外的应用"><span class="nav-number">4.</span> <span class="nav-text">nextCloud 额外的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker"><span class="nav-number">7.</span> <span class="nav-text">Docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#或者官方的仓库下"><span class="nav-number">8.</span> <span class="nav-text">或者官方的仓库下</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -411,7 +421,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
