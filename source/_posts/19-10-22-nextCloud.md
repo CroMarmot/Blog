@@ -109,3 +109,19 @@ https://www.youtube.com/watch?v=QXfsi0pwgYw
 客户端口没啥难度
 
 emmmmmmmm 似乎也不能在ipados上搞... 只能网页勉强
+
+# Docker
+
+1. 本地建立文件夹 `/data/nextcloudserver/` 给它存东西用
+2. 一条docker命令`docker run -d -p 8080:80 -v /data/nextcloudserver/:/var/www/html --name=nextcloudserver nextcloud` ，注意docker的习惯冒号左边是宿主机器的东西，右边是容器内的东西，这里映射了端口和磁盘
+
+这样就可以跑了，本地访问都是ui操作，没啥好说的
+
+3. 配置`config/config.php`中的`trusted_domains` (无脑的话root进，或者docker起个busybox连接一下)，注意这里的写法是星号来匹配应该`192.168.*.*`，而不是`192.168.0.0/24`, 保存就行
+
+# 或者官方的仓库下
+
+https://github.com/nextcloud/docker/blob/master 文件夹`.examples/docker-compose/insecure/mariadb/apache`
+
+执行`docker-compose up -d`
+
