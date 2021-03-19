@@ -119,9 +119,76 @@ emmmmmmmm 似乎也不能在ipados上搞... 只能网页勉强
 
 3. 配置`config/config.php`中的`trusted_domains` (无脑的话root进，或者docker起个busybox连接一下)，注意这里的写法是星号来匹配应该`192.168.*.*`，而不是`192.168.0.0/24`, 保存就行
 
-# 或者官方的仓库下
+## 或者官方的仓库下
 
 https://github.com/nextcloud/docker/blob/master 文件夹`.examples/docker-compose/insecure/mariadb/apache`
 
 执行`docker-compose up -d`
 
+## 官方仓库自签https 证书
+
+内网要用的话，可以考虑。毕竟没有CA中心，管内网的还是有办法搞你XD
+
+`.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm`
+
+sed玩得熟的可以sed替换哈
+
+```diff
+diff --git a/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/db.env b/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/db.env
+index a436605..e9872a4 100644
+--- a/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/db.env
++++ b/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/db.env
+@@ -1,3 +1,3 @@
+-MYSQL_PASSWORD=
++MYSQL_PASSWORD=123
+ MYSQL_DATABASE=nextcloud
+ MYSQL_USER=nextcloud
+diff --git a/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/docker-compose.yml b/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/docker-compose.yml
+index 3d60f7e..0d9fa81 100644
+--- a/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/docker-compose.yml
++++ b/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/docker-compose.yml
+@@ -8,7 +8,7 @@ services:
+     volumes:
+       - db:/var/lib/mysql
+     environment:
+-      - MYSQL_ROOT_PASSWORD=
++      - MYSQL_ROOT_PASSWORD=123
+     env_file:
+       - db.env
+ 
+@@ -30,7 +30,7 @@ services:
+     volumes:
+       - nextcloud:/var/www/html:ro
+     environment:
+-      - VIRTUAL_HOST=
++      - VIRTUAL_HOST=nextcloud.cromarmot.com
+     depends_on:
+       - app
+     networks:
+@@ -59,11 +59,11 @@ services:
+     volumes:
+       - certs:/certs
+     environment:
+-      - SSL_SUBJECT=servhostname.local
+-      - CA_SUBJECT=my@example.com
+-      - SSL_KEY=/certs/servhostname.local.key
+-      - SSL_CSR=/certs/servhostname.local.csr
+-      - SSL_CERT=/certs/servhostname.local.crt
++      - SSL_SUBJECT=nextcloud.cromarmot.com
++      - CA_SUBJECT=cromarmot@example.com
++      - SSL_KEY=/certs/nextcloud.cromarmot.com.key
++      - SSL_CSR=/certs/nextcloud.cromarmot.com.csr
++      - SSL_CERT=/certs/nextcloud.cromarmot.com.crt
+     networks:
+       - proxy-tier
+```
+
+然后你需要在要连接的电脑上把hosts文件增加 ip到`nextcloud.cromarmot.com` 的映射
+
+执行`docker-compose up -d`
+
+# 移除
+
+执行`docker-compose down`
+
+注意，只会移除container和network，不会移除volume, 如果要移除，要手动移除
