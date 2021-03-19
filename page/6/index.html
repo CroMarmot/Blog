@@ -176,6 +176,123 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-02-19-console.logsourceurl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-02-19-console.logsourceurl/" class="post-title-link" itemprop="url">console source url</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-02-19 11:20:14" itemprop="dateCreated datePublished" datetime="2020-02-19T11:20:14+08:00">2020-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-19 18:33:37" itemprop="dateModified" datetime="2021-03-19T18:33:37+08:00">2021-03-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/js/chrome/" itemprop="url" rel="index"><span itemprop="name">chrome</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/js/chrome/debug/" itemprop="url" rel="index"><span itemprop="name">debug</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/js/chrome/debug/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-02-19-console.logsourceurl/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-02-19-console.logsourceurl/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>chrome里有命令行输出的时候，右侧会有<code>VM:xxx</code>或者<code>源文件名:行数</code>的一个跳转链接</p>
+<p>然而如果封装了console函数或者例如用了vconsole之类的库，</p>
+<p>它的错误输出，可能就不是你所期望的自己的代码</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>如果只是简单的封装log</p>
+<p>搜到的大多方案都是形如<code>var newlogfunction = console.log.bind(window.console)</code></p>
+<p>或者是原来的调用变成返回函数，然后再调用大概变成<code>newconsole()()</code>的写法</p>
+<p>然而和我期望的需求有些不符，</p>
+<p>目前期望的是一个通用的函数内，增加一点调试时的参数输出，希望能输出调用者的位置</p>
+<p>也搜索了call stack相关，目前看来有些地方能用<code>console.trace()</code>,但在webpack里就不行了？</p>
+<p>有搜到过用<code>new Error()</code>但它的stack字段是个string ，还真有人字符分割解析这个string</p>
+<p>目前一个比较科学的方案是用chrome的blackbox文件功能，对webpack里的无效，但是可以对例如vconsole进行blackbox，这样就能展示到原来调用的位置。</p>
+<p>同时根据这个思考，可以在调试的版本中对文件的分块进行指定，让公共文件和具体文件webpack打分开的chunk</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://gist.github.com/paulirish/c307a5a585ddbcc17242" target="_blank" rel="noopener">https://gist.github.com/paulirish/c307a5a585ddbcc17242</a></p>
+<p><a href="https://stackoverflow.com/questions/9559725/extending-console-log-without-affecting-log-line" target="_blank" rel="noopener">https://stackoverflow.com/questions/9559725/extending-console-log-without-affecting-log-line</a></p>
+<p><a href="https://stackoverflow.com/questions/13815640/a-proper-wrapper-for-console-log-with-correct-line-number/32928812" target="_blank" rel="noopener">https://stackoverflow.com/questions/13815640/a-proper-wrapper-for-console-log-with-correct-line-number/32928812</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Console/trace" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Console/trace</a></p>
+<p><a href="https://developers.google.com/web/tools/chrome-devtools/javascript/reference" target="_blank" rel="noopener">https://developers.google.com/web/tools/chrome-devtools/javascript/reference</a></p>
+<p><a href="https://developer.chrome.com/devtools/docs/blackboxing" target="_blank" rel="noopener">https://developer.chrome.com/devtools/docs/blackboxing</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-01-19-vsc-ENOSPC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -207,7 +324,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
+                <time title="修改時間：2021-03-19 18:33:37" itemprop="dateModified" datetime="2021-03-19T18:33:37+08:00">2021-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -324,7 +441,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
+                <time title="修改時間：2021-03-19 18:33:37" itemprop="dateModified" datetime="2021-03-19T18:33:37+08:00">2021-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -479,7 +596,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
+                <time title="修改時間：2021-03-19 18:33:37" itemprop="dateModified" datetime="2021-03-19T18:33:37+08:00">2021-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -582,7 +699,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
+                <time title="修改時間：2021-03-19 18:33:37" itemprop="dateModified" datetime="2021-03-19T18:33:37+08:00">2021-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -622,209 +739,6 @@
           <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> JSEncrypt = <span class="built_in">require</span>(<span class="string">'node-jsencrypt'</span>);</span><br><span class="line"><span class="keyword">let</span> encrypt;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rsa</span>(<span class="params">pwd, publicKey</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!encrypt) &#123;</span><br><span class="line">        encrypt = <span class="keyword">new</span> JSEncrypt();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!pwd || <span class="keyword">typeof</span> pwd !== <span class="string">'string'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> newPwd = pwd;</span><br><span class="line">    <span class="keyword">if</span> (newPwd.length &gt; <span class="number">230</span>) &#123;</span><br><span class="line">        newPwd = newPwd.substr(<span class="number">0</span>, <span class="number">230</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    encrypt.setPublicKey(publicKey);</span><br><span class="line">    <span class="keyword">let</span> result = encrypt.encrypt(newPwd);</span><br><span class="line">    <span class="keyword">let</span> tryTimes = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (result.length !== <span class="number">344</span>) &#123;</span><br><span class="line">        <span class="comment">// 如果加密后的字符串长度不是344，后端必然解密失败</span></span><br><span class="line">        result = encrypt.encrypt(newPwd);</span><br><span class="line">        <span class="keyword">if</span> (tryTimes &gt; <span class="number">10</span>) &#123;</span><br><span class="line">            <span class="comment">// 最多重试十次</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        tryTimes += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> pk = <span class="string">'publicKey'</span>;</span><br><span class="line"><span class="keyword">const</span> pwd = <span class="string">'密码'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(rsa(pwd,pk));</span><br></pre></td></tr></table></figure>
 <p><code>tcpdump -S -e -vv -i wlo1 host xx.xx.xx.xx</code></p>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-11-25-vue-node-protobuf/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-11-25-vue-node-protobuf/" class="post-title-link" itemprop="url">vue-node-protobuf</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-11-25 11:20:14" itemprop="dateCreated datePublished" datetime="2019-11-25T11:20:14+08:00">2019-11-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/vue2/" itemprop="url" rel="index"><span itemprop="name">vue2</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/vue2/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-11-25-vue-node-protobuf/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-11-25-vue-node-protobuf/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><p><code>yarn add protobuf cors protobufjs</code></p>
-<p>生成js</p>
-<p><code>pbjs -t static-module -w es6 -o ./proto/msgProto.js ./proto/message.proto</code></p>
-<p>运行server:<code>node index.js</code></p>
-<h1 id="代码清单"><a href="#代码清单" class="headerlink" title="代码清单"></a>代码清单</h1><h2 id="proto-message-proto"><a href="#proto-message-proto" class="headerlink" title="proto/message.proto"></a>proto/message.proto</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">message Message &#123;</span><br><span class="line">    required string text = 1;</span><br><span class="line">    required string lang = 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="server代码index-js"><a href="#server代码index-js" class="headerlink" title="server代码index.js"></a>server代码index.js</h2><p>注意修改<code>let protoFolderName = &#39;../&#39;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">// https://protobufjs.github.io/protobuf.js/</span><br><span class="line"></span><br><span class="line">const path = require(&apos;path&apos;)</span><br><span class="line">const express = require(&apos;express&apos;)</span><br><span class="line">const cors = require(&apos;cors&apos;)</span><br><span class="line">const app = express()</span><br><span class="line">app.use(cors())</span><br><span class="line">const messages = [</span><br><span class="line">  &#123;text: &apos;hey&apos;, lang: &apos;english&apos;&#125;,</span><br><span class="line">  &#123;text: &apos;isänme&apos;, lang: &apos;tatar&apos;&#125;,</span><br><span class="line">  &#123;text: &apos;hej&apos;, lang: &apos;swedish&apos;&#125;</span><br><span class="line">];</span><br><span class="line">let protoFolderName = &apos;../&apos;</span><br><span class="line">app.use (function(req, res, next) &#123;</span><br><span class="line">  if (!req.is(&apos;application/octet-stream&apos;))&#123;</span><br><span class="line">    return next()</span><br><span class="line">  &#125;</span><br><span class="line">  var data = [] // List of Buffer objects</span><br><span class="line">  req.on(&apos;data&apos;, function(chunk) &#123;</span><br><span class="line">    data.push(chunk) // Append Buffer object</span><br><span class="line">  &#125;)</span><br><span class="line">  req.on(&apos;end&apos;, function() &#123;</span><br><span class="line">    if (data.length &lt;= 0 ) return next()</span><br><span class="line">    data = Buffer.concat(data) // Make one large Buffer of it</span><br><span class="line">    console.log(&apos;Received buffer&apos;, data)</span><br><span class="line">    req.raw = data</span><br><span class="line">    next()</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">let ProtoBuf = require(&apos;protobufjs&apos;)</span><br><span class="line">let root = ProtoBuf.loadSync(</span><br><span class="line">  path.join(__dirname,</span><br><span class="line">    protoFolderName,</span><br><span class="line">    &apos;message.proto&apos;)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">let Message = root.lookupType(&quot;Message&quot;);</span><br><span class="line"></span><br><span class="line">app.get(&apos;/api/messages&apos;, (req, res, next)=&gt;&#123;</span><br><span class="line">  let msg = Message.create(messages[Math.round(Math.random()*2)])</span><br><span class="line">  console.log(&apos;Encode and decode: &apos;, Message.decode(Message.encode(msg).finish()))</span><br><span class="line">  console.log(&apos;Buffer we are sending: &apos;, Message.encode(msg).finish())</span><br><span class="line">  // res.send(msg.encode().toBuffer(), &apos;binary&apos;) // alternative</span><br><span class="line">  res.send(Message.encode(msg).finish())</span><br><span class="line">  // res.send(Buffer.from(msg.toArrayBuffer()), &apos;binary&apos;) // alternative</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.post(&apos;/api/messages&apos;, (req, res, next)=&gt;&#123;</span><br><span class="line">  if (req.raw) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">      // Decode the Message</span><br><span class="line">      let msg = Message.decode(req.raw)</span><br><span class="line">      console.log(&apos;Received &quot;%s&quot; in %s&apos;, msg.text, msg.lang)</span><br><span class="line">      console.log(&apos;Received :&apos;,msg);</span><br><span class="line"></span><br><span class="line">      msg = Message.create(messages[Math.round(Math.random()*2)])</span><br><span class="line">      console.log(&apos;Encode and decode: &apos;, Message.decode(Message.encode(msg).finish()))</span><br><span class="line">      console.log(&apos;Buffer we are sending: &apos;, Message.encode(msg).finish())</span><br><span class="line">      // res.send(msg.encode().toBuffer(), &apos;binary&apos;) // alternative</span><br><span class="line">      res.send(Message.encode(msg).finish())</span><br><span class="line">    &#125; catch (err) &#123;</span><br><span class="line">      console.log(&apos;Processing failed:&apos;, err)</span><br><span class="line">      next(err)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    console.log(&quot;Not binary data&quot;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.all(&apos;*&apos;, (req, res)=&gt;&#123;</span><br><span class="line">  res.status(400).send(&apos;Not supported&apos;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const PORT=3001;</span><br><span class="line">app.listen(PORT,()=&gt;&#123;</span><br><span class="line">  console.log(`app listening on port $&#123;PORT&#125;!`);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="vue-代码"><a href="#vue-代码" class="headerlink" title="vue 代码"></a>vue 代码</h2><pre><code>&lt;template&gt;
-  &lt;div class=&quot;container&quot;&gt;
-    {{ msg }}
-    &lt;button @click=&quot;postProtobuf()&quot;&gt;
-      post
-    &lt;/button&gt;
-    &lt;button @click=&quot;getProtobuf()&quot;&gt;
-      get
-    &lt;/button&gt;
-    &lt;code&gt;
-      proto生成js &quot;proto2js&quot;: &quot;pbjs -t static-module -w es6 -o ./proto/msgProto.js ./proto/message.proto&quot;,
-    &lt;/code&gt;
-    &lt;code&gt;
-      proto生成ts &quot;js2ts&quot;: &quot;pbts -o ./proto/msgProto.d.ts ./proto/msgProto.js&quot;,
-    &lt;/code&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;script&gt;
-/* eslint-disable new-cap */
-import * as msgProto from &apos;~/proto/msgProto.js&apos;
-
-export default {
-  components: {},
-  data() {
-    return {
-      val: process.env.baseUrl,
-      msg: {}
-    }
-  },
-  mounted() {
-  },
-  methods: {
-    getProtobuf() {
-      this.$axios.get(
-        &apos;http://127.0.0.1:3001/api/messages&apos;,
-        { responseType: &apos;arraybuffer&apos; }
-      ).then((response) =&gt; {
-        console.log(&apos;Response from the server: &apos;, response)
-        const data = new Uint8Array(response.data) // important !
-        const ret = msgProto.Message.decode(data)
-        console.log(&apos;Decoded message&apos;, ret)
-        this.msg = ret.toJSON()
-      })
-    },
-    postProtobuf() {
-      const msg = new msgProto.Message({ text: &apos;yx xr&apos;, lang: &apos;slang&apos; })
-      const buffer = msgProto.Message.encode(msg).finish()
-      console.log(&apos;de(en(msg))&apos;, msgProto.Message.decode(buffer))
-      console.log(&apos;send:&apos;, msg)
-      console.log(&apos;send buffer:&apos;, buffer)
-      this.$axios.$post(
-        &apos;http://127.0.0.1:3001/api/messages&apos;,
-        buffer,
-        {
-          headers: { &apos;Content-Type&apos;: &apos;application/octet-stream&apos; },
-          responseType: &apos;arraybuffer&apos;
-        }
-      ).then((response) =&gt; {
-        console.log(&apos;Response from the server: &apos;, response)
-        const data = new Uint8Array(response) // important !
-        const ret = msgProto.Message.decode(data)
-        console.log(&apos;Decoded message&apos;, ret)
-        this.msg = ret.toJSON()
-      }).catch(function(response) {
-        console.log(response)
-      })
-    }
-  }
-}
-&lt;/script&gt;
-
-&lt;style&gt;
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: &apos;Quicksand&apos;, &apos;Source Sans Pro&apos;, -apple-system, BlinkMacSystemFont,
-  &apos;Segoe UI&apos;, Roboto, &apos;Helvetica Neue&apos;, Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-&lt;/style&gt;
-</code></pre>
       
     </div>
 
@@ -908,7 +822,7 @@ export default {
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -917,7 +831,7 @@ export default {
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">98</span>
+        <span class="site-state-item-count">99</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>

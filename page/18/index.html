@@ -176,6 +176,129 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-02-21-four-smart-ptr/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/17-02-21-four-smart-ptr/" class="post-title-link" itemprop="url">four smart ptr</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2017-02-21 01:01:01" itemprop="dateCreated datePublished" datetime="2017-02-21T01:01:01+08:00">2017-02-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-19 18:33:37" itemprop="dateModified" datetime="2021-03-19T18:33:37+08:00">2021-03-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/17-02-21-four-smart-ptr/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-02-21-four-smart-ptr/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="四种指针"><a href="#四种指针" class="headerlink" title="四种指针"></a>四种指针</h1><p><a href="http://www.cnblogs.com/TenosDoIt/p/3456704.html" target="_blank" rel="noopener">参考文</a></p>
+<hr>
+<h2 id="个人整理"><a href="#个人整理" class="headerlink" title="个人整理"></a>个人整理</h2><p>四个智能指针: <code>auto_ptr</code>, <code>shared_ptr</code>, <code>weak_ptr</code>, <code>unique_ptr</code> 其中后三个是c++11支持，并且第一个已经被c++11弃用。</p>
+<h3 id="用于测试的结构体"><a href="#用于测试的结构体" class="headerlink" title="用于测试的结构体"></a>用于测试的结构体</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Test(<span class="built_in">string</span> s)</span><br><span class="line">    &#123;</span><br><span class="line">        str = s;</span><br><span class="line">       <span class="built_in">cout</span>&lt;&lt;<span class="string">"Test creat\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ~Test()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Test delete:"</span>&lt;&lt;str&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="built_in">string</span>&amp; <span class="title">getStr</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setStr</span><span class="params">(<span class="built_in">string</span> s)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        str = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;str&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">string</span> str;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="auto-ptr"><a href="#auto-ptr" class="headerlink" title="auto_ptr"></a><a href="http://www.cplusplus.com/reference/memory/auto_ptr/" target="_blank" rel="noopener">auto_ptr</a></h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">auto_ptr</span>&lt;Test&gt; <span class="title">ptest</span><span class="params">(<span class="keyword">new</span> Test(<span class="string">"123"</span>))</span></span>;</span><br><span class="line">    ptest-&gt;setStr(<span class="string">"hello 0"</span>);</span><br><span class="line">    ptest-&gt;print();</span><br><span class="line">    ptest.get()-&gt;print();</span><br><span class="line">    ptest-&gt;getStr() += <span class="string">"world !"</span>;</span><br><span class="line">    (*ptest).print();</span><br><span class="line">    ptest.reset(<span class="keyword">new</span> Test(<span class="string">"567"</span>));</span><br><span class="line">    ptest-&gt;print();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="built_in">auto_ptr</span>&lt;Test&gt; <span class="title">ptest</span><span class="params">(<span class="keyword">new</span> Test(<span class="string">"789"</span>))</span></span>;</span><br><span class="line">    <span class="function"><span class="built_in">auto_ptr</span>&lt;Test&gt; <span class="title">ptest2</span><span class="params">(<span class="keyword">new</span> Test(<span class="string">"JQK"</span>))</span></span>;</span><br><span class="line">    ptest2 = ptest;</span><br><span class="line">    ptest2-&gt;print();</span><br><span class="line">    <span class="keyword">if</span>(ptest.get() == <span class="literal">NULL</span>)<span class="built_in">cout</span>&lt;&lt;<span class="string">"ptest = NULL\n"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Test creat</span><br><span class="line">hello 0</span><br><span class="line">hello 0</span><br><span class="line">hello 0world !</span><br><span class="line">Test creat</span><br><span class="line">Test delete:hello 0world !</span><br><span class="line">567</span><br><span class="line">Test creat</span><br><span class="line">Test creat</span><br><span class="line">Test delete:JQK</span><br><span class="line">789</span><br><span class="line">Test delete:789</span><br><span class="line">Test delete:567</span><br></pre></td></tr></table></figure>
+<h2 id="unique-ptr"><a href="#unique-ptr" class="headerlink" title="unique_ptr"></a><a href="http://www.cplusplus.com/reference/memory/unique_ptr/" target="_blank" rel="noopener">unique_ptr</a></h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">unique_ptr</span>&lt;Test&gt; <span class="title">fun</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">unique_ptr</span>&lt;Test&gt;(<span class="keyword">new</span> Test(<span class="string">"789"</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">unique_ptr</span>&lt;Test&gt; <span class="title">ptest</span><span class="params">(<span class="keyword">new</span> Test(<span class="string">"123"</span>))</span></span>;</span><br><span class="line">    <span class="function"><span class="built_in">unique_ptr</span>&lt;Test&gt; <span class="title">ptest2</span><span class="params">(<span class="keyword">new</span> Test(<span class="string">"456"</span>))</span></span>;</span><br><span class="line">    ptest-&gt;print();</span><br><span class="line">    ptest2 = <span class="built_in">std</span>::move(ptest);<span class="comment">//不能直接ptest2 = ptest</span></span><br><span class="line">    <span class="keyword">if</span>(ptest == <span class="literal">NULL</span>)<span class="built_in">cout</span>&lt;&lt;<span class="string">"ptest = NULL\n"</span>;</span><br><span class="line">    Test* p = ptest2.release();</span><br><span class="line">    p-&gt;print();</span><br><span class="line">    ptest.reset(p);</span><br><span class="line">    ptest-&gt;print();</span><br><span class="line">    ptest2 = fun(); <span class="comment">//这里可以用=，因为使用了移动构造函数</span></span><br><span class="line">    ptest2-&gt;print();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Test creat</span><br><span class="line">Test creat</span><br><span class="line">123</span><br><span class="line">Test delete:456</span><br><span class="line">ptest = NULL</span><br><span class="line">123</span><br><span class="line">123</span><br><span class="line">Test creat</span><br><span class="line">789</span><br><span class="line">Test delete:789</span><br><span class="line">Test delete:123</span><br></pre></td></tr></table></figure>
+<h2 id="share-ptr"><a href="#share-ptr" class="headerlink" title="share_ptr"></a><a href="http://www.cplusplus.com/reference/memory/shared_ptr/" target="_blank" rel="noopener">share_ptr</a></h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">shared_ptr</span>&lt;Test&gt; <span class="title">ptest</span><span class="params">(<span class="keyword">new</span> Test(<span class="string">"123"</span>))</span></span>;</span><br><span class="line">    <span class="function"><span class="built_in">shared_ptr</span>&lt;Test&gt; <span class="title">ptest2</span><span class="params">(<span class="keyword">new</span> Test(<span class="string">"456"</span>))</span></span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ptest2-&gt;getStr()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ptest2.use_count()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    ptest = ptest2;<span class="comment">//"456"引用次数加1，“123”销毁</span></span><br><span class="line">    ptest-&gt;print();</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ptest2.use_count()&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//2</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ptest.use_count()&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//2</span></span><br><span class="line">    ptest.reset();</span><br><span class="line">    ptest2.reset();<span class="comment">//此时“456”销毁</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"done !\n"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Test creat</span><br><span class="line">Test creat</span><br><span class="line">456</span><br><span class="line">1</span><br><span class="line">Test delete:123</span><br><span class="line">456</span><br><span class="line">2</span><br><span class="line">2</span><br><span class="line">Test delete:456</span><br></pre></td></tr></table></figure>
+<hr>
+<p>总结</p>
+<p><code>auto_ptr</code> </p>
+<ul>
+<li>手动释放<strong>资源</strong> <code>.reset()</code></li>
+<li>将指针置空,返回<strong>资源</strong>控制权 <code>.release()</code></li>
+<li>用 <code>.get()==NULL</code> 判断是否为空</li>
+</ul>
+<p><code>unique_ptr</code></p>
+<ul>
+<li>和<code>auto_ptr</code>相似</li>
+<li>不能使用两个智能指针赋值操作，应该使用<code>std::move</code></li>
+<li>可以直接用if(ptest == NULL)来判断是否空指针</li>
+</ul>
+<p><code>share_ptr</code></p>
+<ul>
+<li>使用计数机制来表明资源被几个指针共享,<code>.use_count()</code>来查看资源的所有者个数</li>
+<li>没有release</li>
+</ul>
+<p><code>weak_ptr</code></p>
+<ul>
+<li>weak_ptr是用来解决shared_ptr相互引用时的死锁问题,如果说两个shared_ptr相互引用,那么这两个指针的引用计数永远不可能下降为0,资源永远不会释放。它是对对象的一种弱引用，不会增加对象的引用计数，和shared_ptr之间可以相互转化，shared_ptr可以直接赋值给它，它可以通过调用lock函数来获得shared_ptr。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-02-15-Why-Linux-Is-More-Secure-Than-Windows/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -207,7 +330,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
+                <time title="修改時間：2021-03-19 18:33:37" itemprop="dateModified" datetime="2021-03-19T18:33:37+08:00">2021-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -352,7 +475,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
+                <time title="修改時間：2021-03-19 18:33:37" itemprop="dateModified" datetime="2021-03-19T18:33:37+08:00">2021-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -567,7 +690,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
+                <time title="修改時間：2021-03-19 18:33:37" itemprop="dateModified" datetime="2021-03-19T18:33:37+08:00">2021-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -902,7 +1025,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
+                <time title="修改時間：2021-03-19 18:33:37" itemprop="dateModified" datetime="2021-03-19T18:33:37+08:00">2021-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -941,101 +1064,6 @@
       
           <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> M_CUW = angular.module(<span class="string">'cuw'</span>,[]);</span><br><span class="line">  M_CUW.directive(<span class="string">'cuwList'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      restrict : <span class="string">'E'</span>,</span><br><span class="line">      templateUrl : <span class="string">'data/cuw/cuw.list.directive.html'</span>,</span><br><span class="line">      controller : cuwListCtrl,</span><br><span class="line">      controllerAs : cuwListCtrl</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">cuwListCtrl</span>(<span class="params">$scope</span>)</span>&#123;</span><br><span class="line">    $scope.commonlyused = [</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"秀米 XIUMI | 秀米 XIUMI"</span>,<span class="attr">url</span>:<span class="string">"http://xiumi.us/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"StackEdit – In-browser markdown editor"</span>,<span class="attr">url</span>:<span class="string">"https://stackedit.io/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Google hosts"</span>,<span class="attr">url</span>:<span class="string">"https://raw.githubusercontent.com/racaljk/hosts/master/hosts"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"菜鸟教程"</span>,<span class="attr">url</span>:<span class="string">"http://www.runoob.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"课程 - 实验楼"</span>,<span class="attr">url</span>:<span class="string">"https://www.shiyanlou.com/courses/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Wolfram|Alpha"</span>,<span class="attr">url</span>:<span class="string">"http://www.wolframalpha.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Octave Online: Free Interface compatible with MATLAB"</span>,<span class="attr">url</span>:<span class="string">"http://octave-online.net/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-awesome-se"</span>,<span class="attr">url</span>:<span class="string">"https://github.com/SJTU-SE/awesome-se"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-ICS"</span>,<span class="attr">url</span>:<span class="string">"http://ipads.se.sjtu.edu.cn/courses/ics/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"CMU-CS:APP3e, Bryant and O'Hallaron"</span>,<span class="attr">url</span>:<span class="string">"http://csapp.cs.cmu.edu/3e/labs.html"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-CSE"</span>,<span class="attr">url</span>:<span class="string">"http://ipads.se.sjtu.edu.cn/courses/cse"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-OS"</span>,<span class="attr">url</span>:<span class="string">"http://ipads.se.sjtu.edu.cn/courses/os/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-DS"</span>,<span class="attr">url</span>:<span class="string">"http://ipads.se.sjtu.edu.cn/courses/ds/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-GP"</span>,<span class="attr">url</span>:<span class="string">"http://dalab.se.sjtu.edu.cn/gp/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-饮水思源"</span>,<span class="attr">url</span>:<span class="string">"https://bbs.sjtu.edu.cn/frame2.html"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"e-Learning platform -- LEO-Pro"</span>,<span class="attr">url</span>:<span class="string">"http://elearning.se.sjtu.edu.cn/login.asp"</span>&#125;</span><br><span class="line">    ];</span><br><span class="line">    $scope.notoftenused = [</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"好大学在线CNMOOC"</span>,<span class="attr">url</span>:<span class="string">"http://www.cnmooc.org/home/index.mooc"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"The Absolut Company"</span>,<span class="attr">url</span>:<span class="string">"http://www.absolut.com/cn/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"汉字简体繁体转换_GB国标码_Big5码"</span>,<span class="attr">url</span>:<span class="string">"http://www.123cha.com/chinese-converter/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"在线汉字注音软件,汉语拼音查询标注(多音字自动识别)——快典网"</span>,<span class="attr">url</span>:<span class="string">"http://py.kdd.cc/index.py"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"教育部《異體字字典》主畫面"</span>,<span class="attr">url</span>:<span class="string">"http://dict.variants.moe.edu.tw/main.htm"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"VirSCAN.org-多引擎在线病毒扫描网 v1.02，当前支持 36 款杀毒引擎"</span>,<span class="attr">url</span>:<span class="string">"http://www.virscan.org/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"HexGL by BKcore"</span>,<span class="attr">url</span>:<span class="string">"http://hexgl.bkcore.com/play/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"LeetCode Online Judge"</span>,<span class="attr">url</span>:<span class="string">"https://leetcode.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"数字帝国 - 数学工具"</span>,<span class="attr">url</span>:<span class="string">"http://zh.numberempire.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"graph.tk"</span>,<span class="attr">url</span>:<span class="string">"http://graph.tk/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"龙哥盟 | The Dragonese Union"</span>,<span class="attr">url</span>:<span class="string">"http://www.flygon.net/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"visualgo.net"</span>,<span class="attr">url</span>:<span class="string">"http://visualgo.net/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Acm之家,专业的ACM学习网站"</span>,<span class="attr">url</span>:<span class="string">"http://www.acmerblog.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Photoshop CS6视频教程-51视频自学网,51视频学院"</span>,<span class="attr">url</span>:<span class="string">"http://www.51shiping.com/list-657.html"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"JavaBNF"</span>,<span class="attr">url</span>:<span class="string">"http://www.daimi.au.dk/dRegAut/JavaBNF.html"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Material Design"</span>,<span class="attr">url</span>:<span class="string">"http://wiki.jikexueyuan.com/project/material-design/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Laravel"</span>,<span class="attr">url</span>:<span class="string">"http://www.golaravel.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Method Draw"</span>,<span class="attr">url</span>:<span class="string">"http://editor.method.ac/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"WebGL Report"</span>,<span class="attr">url</span>:<span class="string">"http://webglreport.com/?v=2"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Facecore 人脸识别|人脸比对"</span>,<span class="attr">url</span>:<span class="string">"http://www.facecore.cn/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"google hosts 2016，持续更新"</span>,<span class="attr">url</span>:<span class="string">"http://www.360kb.com/kb/2_122.html"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"网站测速|网站速度测试|网速测试|电信|联通|网通|全国|监控|CDN|PING|DNS 17CE.COM"</span>,<span class="attr">url</span>:<span class="string">"http://www.17ce.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"vis.js - A dynamic, browser based visualization library."</span>,<span class="attr">url</span>:<span class="string">"http://visjs.org/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Visual Event"</span>,<span class="attr">url</span>:<span class="string">"javascript:(function()&#123;if(typeof%20VisualEvent!='undefined')&#123;if(document.getElementById('Event_display'))&#123;VisualEvent.fnClose();&#125;else&#123;VisualEvent.fnInit();&#125;&#125;else&#123;var%20n=document.createElement('script');n.setAttribute('language','JavaScript');n.setAttribute('src','http://www.sprymedia.co.uk/design/event/media/js/event-loader.js');document.body.appendChild(n);&#125;&#125;)();;"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Visual Event2"</span>,<span class="attr">url</span>:<span class="string">"javascript:(function()%20&#123;var%20protocol%20=%20window.location.protocol%20===%20'file:'%20?'http:'%20:%20'';var%20url%20=%20protocol+'//www.sprymedia.co.uk/VisualEvent/VisualEvent_Loader.js';if(%20typeof%20VisualEvent!='undefined'%20)%20&#123;if%20(%20VisualEvent.instance%20!==%20null%20)%20&#123;VisualEvent.close();&#125;else%20&#123;new%20VisualEvent();&#125;&#125;else%20&#123;var%20n=document.createElement('script');n.setAttribute('language','JavaScript');n.setAttribute('src',url+'?rand='+new%20Date().getTime());document.body.appendChild(n);&#125;&#125;)();"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Chrome扩展开发文档"</span>,<span class="attr">url</span>:<span class="string">"http://open.chrome.360.cn/extension_dev/overview.html"</span>&#125;</span><br><span class="line">    ];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/15-10-15-ml_ver2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/15-10-15-ml_ver2/" class="post-title-link" itemprop="url">ml_ver2.md</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2015-10-15 00:00:00" itemprop="dateCreated datePublished" datetime="2015-10-15T00:00:00+08:00">2015-10-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/lang/" itemprop="url" rel="index"><span itemprop="name">lang</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/15-10-15-ml_ver2/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="15-10-15-ml_ver2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>编译原理课程 我的语言的范式</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/15-10-15-ml_ver2/">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 
@@ -1119,7 +1147,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1128,7 +1156,7 @@
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">98</span>
+        <span class="site-state-item-count">99</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>

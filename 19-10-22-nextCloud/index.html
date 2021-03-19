@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
 <meta property="og:description" content="What因为一些不可描述的原因，dropbox能用但是速度感人 现在需要一款能够 在 android+Linux+iPadOS三端做同步的 iPad上的Documents配上ssh可以完成Linux+iPadOS的同步, // android似乎并不行 google drive就和dropbox是同样的问题 baiduYunPan ??? 如果你不怕你的个人资料有一天变成 “根据相关法律法规” 的">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-03-15T08:19:11.638Z">
+<meta property="og:updated_time" content="2021-03-19T10:33:37.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nextCloud ! 真香">
 <meta name="twitter:description" content="What因为一些不可描述的原因，dropbox能用但是速度感人 现在需要一款能够 在 android+Linux+iPadOS三端做同步的 iPad上的Documents配上ssh可以完成Linux+iPadOS的同步, // android似乎并不行 google drive就和dropbox是同样的问题 baiduYunPan ??? 如果你不怕你的个人资料有一天变成 “根据相关法律法规” 的">
@@ -212,7 +212,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
+                <time title="修改時間：2021-03-19 18:33:37" itemprop="dateModified" datetime="2021-03-19T18:33:37+08:00">2021-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -308,8 +308,16 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
 <ol start="3">
 <li>配置<code>config/config.php</code>中的<code>trusted_domains</code> (无脑的话root进，或者docker起个busybox连接一下)，注意这里的写法是星号来匹配应该<code>192.168.*.*</code>，而不是<code>192.168.0.0/24</code>, 保存就行</li>
 </ol>
-<h1 id="或者官方的仓库下"><a href="#或者官方的仓库下" class="headerlink" title="或者官方的仓库下"></a>或者官方的仓库下</h1><p><a href="https://github.com/nextcloud/docker/blob/master" target="_blank" rel="noopener">https://github.com/nextcloud/docker/blob/master</a> 文件夹<code>.examples/docker-compose/insecure/mariadb/apache</code></p>
+<h2 id="或者官方的仓库下"><a href="#或者官方的仓库下" class="headerlink" title="或者官方的仓库下"></a>或者官方的仓库下</h2><p><a href="https://github.com/nextcloud/docker/blob/master" target="_blank" rel="noopener">https://github.com/nextcloud/docker/blob/master</a> 文件夹<code>.examples/docker-compose/insecure/mariadb/apache</code></p>
 <p>执行<code>docker-compose up -d</code></p>
+<h2 id="官方仓库自签https-证书"><a href="#官方仓库自签https-证书" class="headerlink" title="官方仓库自签https 证书"></a>官方仓库自签https 证书</h2><p>内网要用的话，可以考虑。毕竟没有CA中心，管内网的还是有办法搞你XD</p>
+<p><code>.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm</code></p>
+<p>sed玩得熟的可以sed替换哈</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">diff --git a/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/db.env b/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/db.env</span><br><span class="line">index a436605..e9872a4 100644</span><br><span class="line"><span class="comment">--- a/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/db.env</span></span><br><span class="line"><span class="comment">+++ b/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/db.env</span></span><br><span class="line"><span class="meta">@@ -1,3 +1,3 @@</span></span><br><span class="line"><span class="deletion">-MYSQL_PASSWORD=</span></span><br><span class="line"><span class="addition">+MYSQL_PASSWORD=123</span></span><br><span class="line"> MYSQL_DATABASE=nextcloud</span><br><span class="line"> MYSQL_USER=nextcloud</span><br><span class="line">diff --git a/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/docker-compose.yml b/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/docker-compose.yml</span><br><span class="line">index 3d60f7e..0d9fa81 100644</span><br><span class="line"><span class="comment">--- a/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/docker-compose.yml</span></span><br><span class="line"><span class="comment">+++ b/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/docker-compose.yml</span></span><br><span class="line">@@ -8,7 +8,7 @@ services:</span><br><span class="line">     volumes:</span><br><span class="line">       - db:/var/lib/mysql</span><br><span class="line">     environment:</span><br><span class="line"><span class="deletion">-      - MYSQL_ROOT_PASSWORD=</span></span><br><span class="line"><span class="addition">+      - MYSQL_ROOT_PASSWORD=123</span></span><br><span class="line">     env_file:</span><br><span class="line">       - db.env</span><br><span class="line"> </span><br><span class="line">@@ -30,7 +30,7 @@ services:</span><br><span class="line">     volumes:</span><br><span class="line">       - nextcloud:/var/www/html:ro</span><br><span class="line">     environment:</span><br><span class="line"><span class="deletion">-      - VIRTUAL_HOST=</span></span><br><span class="line"><span class="addition">+      - VIRTUAL_HOST=nextcloud.cromarmot.com</span></span><br><span class="line">     depends_on:</span><br><span class="line">       - app</span><br><span class="line">     networks:</span><br><span class="line">@@ -59,11 +59,11 @@ services:</span><br><span class="line">     volumes:</span><br><span class="line">       - certs:/certs</span><br><span class="line">     environment:</span><br><span class="line"><span class="deletion">-      - SSL_SUBJECT=servhostname.local</span></span><br><span class="line"><span class="deletion">-      - CA_SUBJECT=my@example.com</span></span><br><span class="line"><span class="deletion">-      - SSL_KEY=/certs/servhostname.local.key</span></span><br><span class="line"><span class="deletion">-      - SSL_CSR=/certs/servhostname.local.csr</span></span><br><span class="line"><span class="deletion">-      - SSL_CERT=/certs/servhostname.local.crt</span></span><br><span class="line"><span class="addition">+      - SSL_SUBJECT=nextcloud.cromarmot.com</span></span><br><span class="line"><span class="addition">+      - CA_SUBJECT=cromarmot@example.com</span></span><br><span class="line"><span class="addition">+      - SSL_KEY=/certs/nextcloud.cromarmot.com.key</span></span><br><span class="line"><span class="addition">+      - SSL_CSR=/certs/nextcloud.cromarmot.com.csr</span></span><br><span class="line"><span class="addition">+      - SSL_CERT=/certs/nextcloud.cromarmot.com.crt</span></span><br><span class="line">     networks:</span><br><span class="line">       - proxy-tier</span><br></pre></td></tr></table></figure>
+<p>然后你需要在要连接的电脑上把hosts文件增加 ip到<code>nextcloud.cromarmot.com</code> 的映射</p>
+<p>执行<code>docker-compose up -d</code></p>
+<h1 id="移除"><a href="#移除" class="headerlink" title="移除"></a>移除</h1><p>执行<code>docker-compose down</code></p>
+<p>注意，只会移除container和network，不会移除volume, 如果要移除，要手动移除</p>
 
     </div>
 
@@ -402,7 +410,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What"><span class="nav-number">1.</span> <span class="nav-text">What</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开干"><span class="nav-number">2.</span> <span class="nav-text">开干</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#失败的尝试"><span class="nav-number">3.</span> <span class="nav-text">失败的尝试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nextCloud-额外的应用"><span class="nav-number">4.</span> <span class="nav-text">nextCloud 额外的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker"><span class="nav-number">7.</span> <span class="nav-text">Docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#或者官方的仓库下"><span class="nav-number">8.</span> <span class="nav-text">或者官方的仓库下</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What"><span class="nav-number">1.</span> <span class="nav-text">What</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开干"><span class="nav-number">2.</span> <span class="nav-text">开干</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#失败的尝试"><span class="nav-number">3.</span> <span class="nav-text">失败的尝试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nextCloud-额外的应用"><span class="nav-number">4.</span> <span class="nav-text">nextCloud 额外的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker"><span class="nav-number">7.</span> <span class="nav-text">Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#或者官方的仓库下"><span class="nav-number">7.1.</span> <span class="nav-text">或者官方的仓库下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#官方仓库自签https-证书"><span class="nav-number">7.2.</span> <span class="nav-text">官方仓库自签https 证书</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#移除"><span class="nav-number">8.</span> <span class="nav-text">移除</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -416,7 +424,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -425,7 +433,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">98</span>
+        <span class="site-state-item-count">99</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>

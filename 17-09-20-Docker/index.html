@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://docs.docker.com/engine/images/engine-components-flow.png">
 <meta property="og:image" content="https://cromarmot.github.io/Blog/images/dockercommand.jpg">
 <meta property="og:image" content="https://cromarmot.github.io/Blog/images/dockerstate.png">
-<meta property="og:updated_time" content="2021-03-15T08:19:11.634Z">
+<meta property="og:updated_time" content="2021-03-19T10:33:37.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker">
 <meta name="twitter:description" content="关于docker的介绍以及初级使用 在各个网上都能搜到了 记录一下个人的使用了两天后的感受  首先可以去看看知乎的评价 以及知乎上说的关于docker的使用场景  目前还是没有感觉出和server 虚拟机的差别， 很明显的就是 它能直接通过内部命令去搜和下载以及安装运行，而虚拟机需要去找找找  因为本身我的host也是linux而且还是基于ubuntu的mint，所以我看到很多应用 感觉都直接可以">
@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 16:19:11" itemprop="dateModified" datetime="2021-03-15T16:19:11+08:00">2021-03-15</time>
+                <time title="修改時間：2021-03-19 18:33:37" itemprop="dateModified" datetime="2021-03-19T18:33:37+08:00">2021-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -364,6 +364,11 @@
 <p><code>docker image build -t [username]/[repository]:[tag] .</code> </p>
 <p>推送</p>
 <p><code>docker image push [username]/[repository]:[tag]</code></p>
+<h1 id="磁盘体积过大"><a href="#磁盘体积过大" class="headerlink" title="磁盘体积过大"></a>磁盘体积过大</h1><p>比如我的一个128ssd+1t普通的电脑，分区大概是<code>/</code>,<code>/home</code>,<code>/data</code>, 然后这个玩意占了8g多<code>/</code>，忍不了</p>
+<p>很多办法 <a href="https://github.com/moby/moby/issues/3127" target="_blank" rel="noopener">https://github.com/moby/moby/issues/3127</a> , 官网是建议</p>
+<p><code>/etc/docker/daemon.json</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"data-root"</span>: <span class="string">"/data/docker"</span>,</span><br><span class="line">    <span class="attr">"storage-driver"</span>: <span class="string">"overlay2"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>记得先停再操作</p>
 <h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://training.play-with-docker.com/" target="_blank" rel="noopener">training play with docker</a></p>
 
     </div>
@@ -455,7 +460,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#架构"><span class="nav-number">1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用"><span class="nav-number">2.</span> <span class="nav-text">常用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#run"><span class="nav-number">2.1.</span> <span class="nav-text">run</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#权限"><span class="nav-number">3.</span> <span class="nav-text">权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行"><span class="nav-number">4.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建"><span class="nav-number">5.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流程"><span class="nav-number">6.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多个docker-之间配置-一次使用"><span class="nav-number">7.</span> <span class="nav-text">多个docker 之间配置 一次使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dockerfile-创建image-Demo"><span class="nav-number">8.</span> <span class="nav-text">Dockerfile 创建image Demo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用多个container-swarm-mode"><span class="nav-number">9.</span> <span class="nav-text">使用多个container (swarm mode)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用-1"><span class="nav-number">10.</span> <span class="nav-text">常用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安全"><span class="nav-number">11.</span> <span class="nav-text">安全</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用-cheat-sheet"><span class="nav-number">12.</span> <span class="nav-text">常用 cheat sheet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布到远端"><span class="nav-number">13.</span> <span class="nav-text">发布到远端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ref"><span class="nav-number">14.</span> <span class="nav-text">ref</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#架构"><span class="nav-number">1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用"><span class="nav-number">2.</span> <span class="nav-text">常用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#run"><span class="nav-number">2.1.</span> <span class="nav-text">run</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#权限"><span class="nav-number">3.</span> <span class="nav-text">权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行"><span class="nav-number">4.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建"><span class="nav-number">5.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流程"><span class="nav-number">6.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多个docker-之间配置-一次使用"><span class="nav-number">7.</span> <span class="nav-text">多个docker 之间配置 一次使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dockerfile-创建image-Demo"><span class="nav-number">8.</span> <span class="nav-text">Dockerfile 创建image Demo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用多个container-swarm-mode"><span class="nav-number">9.</span> <span class="nav-text">使用多个container (swarm mode)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用-1"><span class="nav-number">10.</span> <span class="nav-text">常用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安全"><span class="nav-number">11.</span> <span class="nav-text">安全</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用-cheat-sheet"><span class="nav-number">12.</span> <span class="nav-text">常用 cheat sheet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布到远端"><span class="nav-number">13.</span> <span class="nav-text">发布到远端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#磁盘体积过大"><span class="nav-number">14.</span> <span class="nav-text">磁盘体积过大</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ref"><span class="nav-number">15.</span> <span class="nav-text">ref</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -469,7 +474,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -478,7 +483,7 @@
         <span class="site-state-item-name">分類</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">98</span>
+        <span class="site-state-item-count">99</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>
