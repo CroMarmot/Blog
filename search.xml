@@ -13,7 +13,9 @@
       
       <categories>
           
-          <category> backend </category>
+          <category> code </category>
+          
+          <category> android </category>
           
       </categories>
       
@@ -38,7 +40,11 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> frontend </category>
+          
+          <category> vue </category>
           
       </categories>
       
@@ -67,16 +73,16 @@
       
       <categories>
           
-          <category> frontend </category>
+          <category> code </category>
           
-          <category> backend </category>
+          <category> frontend </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> js </tag>
+            <tag> js module </tag>
             
         </tags>
       
@@ -94,7 +100,9 @@
       
       <categories>
           
-          <category> backend </category>
+          <category> code </category>
+          
+          <category> linux </category>
           
       </categories>
       
@@ -102,6 +110,8 @@
         <tags>
             
             <tag> server </tag>
+            
+            <tag> linux </tag>
             
             <tag> config </tag>
             
@@ -123,6 +133,8 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> frontend </category>
           
       </categories>
@@ -130,9 +142,9 @@
       
         <tags>
             
-            <tag> angular </tag>
-            
             <tag> vue2 </tag>
+            
+            <tag> Angular2+ </tag>
             
             <tag> react </tag>
             
@@ -154,6 +166,8 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> frontend </category>
           
       </categories>
@@ -161,13 +175,13 @@
       
         <tags>
             
-            <tag> angular </tag>
-            
             <tag> vue2 </tag>
+            
+            <tag> Angular2+ </tag>
             
             <tag> react </tag>
             
-            <tag> 递归 </tag>
+            <tag> recursive </tag>
             
         </tags>
       
@@ -185,7 +199,11 @@
       
       <categories>
           
-          <category> backend </category>
+          <category> code </category>
+          
+          <category> frontend </category>
+          
+          <category> vue </category>
           
       </categories>
       
@@ -210,7 +228,9 @@
       
       <categories>
           
-          <category> backend </category>
+          <category> code </category>
+          
+          <category> android </category>
           
       </categories>
       
@@ -239,7 +259,9 @@
       
       <categories>
           
-          <category> backend </category>
+          <category> code </category>
+          
+          <category> linux </category>
           
       </categories>
       
@@ -265,6 +287,8 @@
       
       
       <categories>
+          
+          <category> code </category>
           
           <category> frontend </category>
           
@@ -295,6 +319,8 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> frontend </category>
           
       </categories>
@@ -319,6 +345,8 @@
       
       
       <categories>
+          
+          <category> code </category>
           
           <category> frontend </category>
           
@@ -349,7 +377,11 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> backend </category>
+          
+          <category> redis </category>
           
       </categories>
       
@@ -374,7 +406,11 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> frontend </category>
+          
+          <category> vue </category>
           
       </categories>
       
@@ -399,12 +435,16 @@
       
       <categories>
           
+          <category> notes </category>
+          
           <category> book </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> notes </tag>
             
             <tag> book </tag>
             
@@ -423,6 +463,8 @@
       
       
       <categories>
+          
+          <category> code </category>
           
           <category> frontend </category>
           
@@ -509,6 +551,8 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> frontend </category>
           
       </categories>
@@ -518,7 +562,7 @@
             
             <tag> js </tag>
             
-            <tag> code </tag>
+            <tag> Angular2+ </tag>
             
             <tag> test </tag>
             
@@ -540,7 +584,11 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> backend </category>
+          
+          <category> rust </category>
           
       </categories>
       
@@ -566,6 +614,8 @@
       
       
       <categories>
+          
+          <category> code </category>
           
           <category> frontend </category>
           
@@ -594,7 +644,11 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> frontend </category>
+          
+          <category> vue </category>
           
       </categories>
       
@@ -621,7 +675,11 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> frontend </category>
+          
+          <category> vue </category>
           
       </categories>
       
@@ -649,6 +707,8 @@
       
       
       <categories>
+          
+          <category> code </category>
           
           <category> frontend </category>
           
@@ -679,16 +739,16 @@
       
       <categories>
           
-          <category> js </category>
+          <category> code </category>
           
-          <category> yield </category>
+          <category> frontend </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> frontend </tag>
+            <tag> yield </tag>
             
         </tags>
       
@@ -706,11 +766,7 @@
       
       <categories>
           
-          <category> js </category>
-          
-          <category> chrome </category>
-          
-          <category> debug </category>
+          <category> code </category>
           
           <category> frontend </category>
           
@@ -719,7 +775,11 @@
       
         <tags>
             
-            <tag> frontend </tag>
+            <tag> code </tag>
+            
+            <tag> chrome </tag>
+            
+            <tag> debug </tag>
             
         </tags>
       
@@ -737,14 +797,16 @@
       
       <categories>
           
-          <category> ide </category>
+          <category> code </category>
           
-          <category> backend </category>
+          <category> ide </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> ide </tag>
             
             <tag> vscode </tag>
             
@@ -764,9 +826,9 @@
       
       <categories>
           
-          <category> system </category>
+          <category> code </category>
           
-          <category> backend </category>
+          <category> linux </category>
           
       </categories>
       
@@ -797,9 +859,9 @@
       
       <categories>
           
-          <category> backend </category>
+          <category> code </category>
           
-          <category> system </category>
+          <category> linux </category>
           
       </categories>
       
@@ -826,16 +888,14 @@
       
       <categories>
           
-          <category> backend </category>
+          <category> code </category>
+          
+          <category> encrypt </category>
           
       </categories>
       
       
         <tags>
-            
-            <tag> js </tag>
-            
-            <tag> code </tag>
             
             <tag> encrypt </tag>
             
@@ -855,7 +915,7 @@
       
       <categories>
           
-          <category> vue2 </category>
+          <category> code </category>
           
           <category> frontend </category>
           
@@ -863,10 +923,6 @@
       
       
         <tags>
-            
-            <tag> js </tag>
-            
-            <tag> code </tag>
             
             <tag> json </tag>
             
@@ -890,9 +946,7 @@
           
           <category> code </category>
           
-          <category> js </category>
-          
-          <category> gulp </category>
+          <category> frontend </category>
           
       </categories>
       
@@ -900,6 +954,8 @@
         <tags>
             
             <tag> frontend </tag>
+            
+            <tag> gulp </tag>
             
         </tags>
       
@@ -917,7 +973,9 @@
       
       <categories>
           
-          <category> backend </category>
+          <category> code </category>
+          
+          <category> linux </category>
           
       </categories>
       
@@ -941,6 +999,8 @@
       
       
       <categories>
+          
+          <category> code </category>
           
           <category> backend </category>
           
@@ -970,6 +1030,8 @@
       
       
       <categories>
+          
+          <category> code </category>
           
           <category> frontend </category>
           
@@ -1002,7 +1064,9 @@
       
       <categories>
           
-          <category> frontend </category>
+          <category> code </category>
+          
+          <category> android </category>
           
       </categories>
       
@@ -1029,16 +1093,20 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> frontend </category>
+          
+          <category> Angular </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> nikki4 </tag>
+            <tag> Angular2+ </tag>
             
-            <tag> angular2 </tag>
+            <tag> nikki4 </tag>
             
         </tags>
       
@@ -1056,12 +1124,18 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> frontend </category>
+          
+          <category> Angular </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> Angular2+ </tag>
             
             <tag> rxjs </tag>
             
@@ -1083,7 +1157,9 @@
       
       <categories>
           
-          <category> backend </category>
+          <category> code </category>
+          
+          <category> git </category>
           
       </categories>
       
@@ -1092,9 +1168,9 @@
             
             <tag> gitlab </tag>
             
-            <tag> os </tag>
+            <tag> redhat </tag>
             
-            <tag> system </tag>
+            <tag> update </tag>
             
         </tags>
       
@@ -1112,16 +1188,16 @@
       
       <categories>
           
-          <category> life </category>
+          <category> code </category>
+          
+          <category> git </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> future </tag>
-            
-            <tag> plan </tag>
+            <tag> git </tag>
             
         </tags>
       
@@ -1139,12 +1215,16 @@
       
       <categories>
           
-          <category> life </category>
+          <category> notes </category>
+          
+          <category> book </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> life </tag>
             
             <tag> future </tag>
             
@@ -1168,14 +1248,24 @@
           
           <category> code </category>
           
+          <category> frontend </category>
+          
           <category> vue </category>
-          
-          <category> js </category>
-          
-          <category> alert </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> vue2 </tag>
+            
+            <tag> msgbox </tag>
+            
+            <tag> element-ui </tag>
+            
+            <tag> alert </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1191,6 +1281,8 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> git </category>
           
       </categories>
@@ -1199,6 +1291,10 @@
         <tags>
             
             <tag> git </tag>
+            
+            <tag> subtree </tag>
+            
+            <tag> submodule </tag>
             
         </tags>
       
@@ -1218,14 +1314,22 @@
           
           <category> code </category>
           
+          <category> frontend </category>
+          
           <category> vue </category>
-          
-          <category> js </category>
-          
-          <category> router </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> vue2 </tag>
+            
+            <tag> source code </tag>
+            
+            <tag> router </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1241,7 +1345,9 @@
       
       <categories>
           
-          <category> code </category>
+          <category> notes </category>
+          
+          <category> book </category>
           
       </categories>
       
@@ -1266,12 +1372,16 @@
       
       <categories>
           
-          <category> life </category>
+          <category> notes </category>
+          
+          <category> book </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> life </tag>
             
             <tag> future </tag>
             
@@ -1293,7 +1403,11 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> backend </category>
+          
+          <category> rust </category>
           
       </categories>
       
@@ -1318,7 +1432,9 @@
       
       <categories>
           
-          <category> backend </category>
+          <category> code </category>
+          
+          <category> devops </category>
           
       </categories>
       
@@ -1345,7 +1461,9 @@
       
       <categories>
           
-          <category> backend </category>
+          <category> code </category>
+          
+          <category> ide </category>
           
       </categories>
       
@@ -1374,7 +1492,9 @@
       
       <categories>
           
-          <category> backend </category>
+          <category> code </category>
+          
+          <category> git </category>
           
       </categories>
       
@@ -1401,12 +1521,16 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> frontend </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> Angular2+ </tag>
             
             <tag> rxjs </tag>
             
@@ -1427,6 +1551,8 @@
       
       
       <categories>
+          
+          <category> code </category>
           
           <category> frontend </category>
           
@@ -1453,14 +1579,22 @@
       
       <categories>
           
-          <category> js </category>
+          <category> code </category>
+          
+          <category> frontend </category>
+          
+          <category> vue </category>
           
       </categories>
       
       
         <tags>
             
+            <tag> js </tag>
+            
             <tag> vue2 </tag>
+            
+            <tag> vue3 </tag>
             
         </tags>
       
@@ -1478,14 +1612,18 @@
       
       <categories>
           
-          <category> js </category>
+          <category> code </category>
+          
+          <category> frontend </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> material </tag>
+            <tag> Angular2+ </tag>
+            
+            <tag> material design </tag>
             
         </tags>
       
@@ -1503,6 +1641,8 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> test </category>
           
       </categories>
@@ -1511,6 +1651,8 @@
         <tags>
             
             <tag> test </tag>
+            
+            <tag> TDD </tag>
             
         </tags>
       
@@ -1528,7 +1670,11 @@
       
       <categories>
           
-          <category> js </category>
+          <category> code </category>
+          
+          <category> frontend </category>
+          
+          <category> Angular </category>
           
       </categories>
       
@@ -1537,7 +1683,7 @@
             
             <tag> js </tag>
             
-            <tag> angular </tag>
+            <tag> Angular2+ </tag>
             
         </tags>
       
@@ -1555,7 +1701,7 @@
       
       <categories>
           
-          <category> note </category>
+          <category> notes </category>
           
       </categories>
       
@@ -1582,10 +1728,20 @@
       
       <categories>
           
-          <category> life </category>
+          <category> notes </category>
+          
+          <category> book </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> life </tag>
+            
+            <tag> book </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1603,7 +1759,7 @@
           
           <category> code </category>
           
-          <category> js </category>
+          <category> frontend </category>
           
       </categories>
       
@@ -1611,6 +1767,8 @@
         <tags>
             
             <tag> frontend </tag>
+            
+            <tag> code </tag>
             
         </tags>
       
@@ -1630,12 +1788,18 @@
           
           <category> code </category>
           
-          <category> snap </category>
-          
           <category> linux </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> ubuntu </tag>
+            
+            <tag> snap </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1653,12 +1817,20 @@
           
           <category> code </category>
           
-          <category> js </category>
+          <category> frontend </category>
           
-          <category> promises </category>
+          <category> vue </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> vue2 </tag>
+            
+            <tag> v-model </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1676,12 +1848,16 @@
           
           <category> code </category>
           
-          <category> js </category>
-          
-          <category> promises </category>
+          <category> frontend </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> promise </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1697,20 +1873,22 @@
       
       <categories>
           
-          <category> vue2 </category>
+          <category> code </category>
+          
+          <category> frontend </category>
+          
+          <category> vue </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> js </tag>
+            <tag> vue2 </tag>
             
-            <tag> frontend </tag>
+            <tag> vuex </tag>
             
-            <tag> code </tag>
-            
-            <tag> vue </tag>
+            <tag> source code </tag>
             
         </tags>
       
@@ -1730,12 +1908,20 @@
           
           <category> code </category>
           
-          <category> vue </category>
+          <category> frontend </category>
           
-          <category> js </category>
+          <category> vue </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> vue2 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1751,14 +1937,16 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> backend </category>
+          
+          <category> java </category>
           
       </categories>
       
       
         <tags>
-            
-            <tag> code </tag>
             
             <tag> java </tag>
             
@@ -1779,6 +1967,8 @@
       
       
       <categories>
+          
+          <category> code </category>
           
           <category> backend </category>
           
@@ -1803,6 +1993,18 @@
         <content type="html"><![CDATA[<p>I found that I was no longer willing to write the crawler program, more often use jquery output page link, and then wget to download, this will be faster.</p>]]></content>
       
       
+      <categories>
+          
+          <category> notes </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1818,7 +2020,9 @@
       
       <categories>
           
-          <category> note </category>
+          <category> code </category>
+          
+          <category> devops </category>
           
       </categories>
       
@@ -1843,7 +2047,7 @@
       
       <categories>
           
-          <category> note </category>
+          <category> notes </category>
           
       </categories>
       
@@ -1851,6 +2055,8 @@
         <tags>
             
             <tag> csp </tag>
+            
+            <tag> system </tag>
             
         </tags>
       
@@ -1868,7 +2074,7 @@
       
       <categories>
           
-          <category> note </category>
+          <category> notes </category>
           
       </categories>
       
@@ -1893,7 +2099,9 @@
       
       <categories>
           
-          <category> note </category>
+          <category> notes </category>
+          
+          <category> book </category>
           
       </categories>
       
@@ -1918,7 +2126,9 @@
       
       <categories>
           
-          <category> note </category>
+          <category> notes </category>
+          
+          <category> book </category>
           
       </categories>
       
@@ -1943,7 +2153,9 @@
       
       <categories>
           
-          <category> note </category>
+          <category> notes </category>
+          
+          <category> book </category>
           
       </categories>
       
@@ -1968,7 +2180,7 @@
       
       <categories>
           
-          <category> note </category>
+          <category> notes </category>
           
       </categories>
       
@@ -1993,9 +2205,7 @@
       
       <categories>
           
-          <category> code </category>
-          
-          <category> java </category>
+          <category> math </category>
           
       </categories>
       
@@ -2014,7 +2224,9 @@
       
       <categories>
           
-          <category> note </category>
+          <category> notes </category>
+          
+          <category> book </category>
           
       </categories>
       
@@ -2022,8 +2234,6 @@
         <tags>
             
             <tag> c++ </tag>
-            
-            <tag> code </tag>
             
             <tag> algorithm </tag>
             
@@ -2043,6 +2253,8 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> ide </category>
           
       </categories>
@@ -2050,7 +2262,7 @@
       
         <tags>
             
-            <tag> code </tag>
+            <tag> ide </tag>
             
             <tag> emacs </tag>
             
@@ -2072,10 +2284,18 @@
           
           <category> code </category>
           
+          <category> backend </category>
+          
           <category> java </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
       
     </entry>
     
@@ -2091,7 +2311,11 @@
       
       <categories>
           
-          <category> note </category>
+          <category> code </category>
+          
+          <category> backend </category>
+          
+          <category> java </category>
           
       </categories>
       
@@ -2099,6 +2323,8 @@
         <tags>
             
             <tag> article </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -2116,7 +2342,11 @@
       
       <categories>
           
-          <category> note </category>
+          <category> code </category>
+          
+          <category> backend </category>
+          
+          <category> java </category>
           
       </categories>
       
@@ -2143,10 +2373,18 @@
           
           <category> code </category>
           
+          <category> background </category>
+          
           <category> java </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
       
     </entry>
     
@@ -2162,7 +2400,11 @@
       
       <categories>
           
-          <category> lib </category>
+          <category> code </category>
+          
+          <category> backend </category>
+          
+          <category> cpp </category>
           
       </categories>
       
@@ -2170,6 +2412,8 @@
         <tags>
             
             <tag> c++ </tag>
+            
+            <tag> lib </tag>
             
         </tags>
       
@@ -2185,29 +2429,16 @@
         <content type="html"><![CDATA[<h1 id="permutation-traversal-cpp"><a href="#permutation-traversal-cpp" class="headerlink" title="permutation_traversal.cpp"></a>permutation_traversal.cpp</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//10 - 0.2s</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> pt_s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ptdemo</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> pt_bits)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(pt_bits == (<span class="number">1</span>&lt;&lt;pt_s) - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">int</span> i;</span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; pt_s ; ++i)&#123;</span><br><span class="line">    <span class="keyword">if</span>( pt_bits &amp; (<span class="number">1</span>&lt;&lt;i) )</span><br><span class="line">      <span class="keyword">continue</span> ; </span><br><span class="line">    <span class="comment">//cout&lt;&lt;i&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">int</span> debug = i;</span><br><span class="line">    ptdemo(pt_bits | (<span class="number">1</span>&lt;&lt;i));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  pt_s = <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">int</span> v = <span class="number">0</span>;</span><br><span class="line">  ptdemo(v);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="permutation-traversal-old1-cpp"><a href="#permutation-traversal-old1-cpp" class="headerlink" title="permutation_traversal.old1.cpp"></a>permutation_traversal.old1.cpp</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//10 - 11.588 </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Permutation_traversal</span>&#123;</span></span><br><span class="line">  <span class="keyword">protected</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;left_index; <span class="comment">// to boost vector?</span></span><br><span class="line">    <span class="built_in">stack</span>&lt;pair&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator,<span class="keyword">int</span>&gt;&gt;visitstack; <span class="comment">// to boost list?</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator iter;</span><br><span class="line">    Permutation_traversal(<span class="keyword">const</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;li,<span class="keyword">const</span> <span class="built_in">stack</span>&lt;pair&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator,<span class="keyword">int</span>&gt;&gt;&amp;vs)</span><br><span class="line">    :left_index(li),visitstack(vs)&#123;</span><br><span class="line">      iter = left_index.begin();</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    Permutation_traversal(<span class="keyword">int</span> s)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s;i++)&#123;</span><br><span class="line">        left_index.push_back(i);</span><br><span class="line">      &#125;</span><br><span class="line">      iter = left_index.begin();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> left_index.empty();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">next</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(iter == left_index.end())</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">      ++iter;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">valid</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> iter != left_index.end();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getnum</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> visitstack.size();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="keyword">const</span> <span class="title">getvalue</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> iter != left_index.end() ? *iter : <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(iter == left_index.end())</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">      visitstack.push(make_pair(iter,*iter));</span><br><span class="line">      left_index.erase(iter);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(visitstack.empty())</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">      pair&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator,<span class="keyword">int</span>&gt; p = visitstack.top();</span><br><span class="line">      left_index.insert(p.first,p.second);</span><br><span class="line">      visitstack.pop();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">Permutation_traversal * <span class="title">isolate</span><span class="params">()</span></span>&#123;<span class="comment">// careful about memory overflow</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> Permutation_traversal(left_index,visitstack);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ptdemo</span><span class="params">(Permutation_traversal &amp; pt)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(pt.empty())</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">  <span class="keyword">for</span>(;pt.valid();pt.next())&#123;</span><br><span class="line">    <span class="comment">//for(int i=0,limiti=pt.getnum();i&lt;limiti;i++)cout&lt;&lt;" ";</span></span><br><span class="line">    <span class="comment">//cout&lt;&lt;pt.getvalue()&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">int</span> debug = pt.getvalue();</span><br><span class="line">    pt.push();</span><br><span class="line">    Permutation_traversal * child_pt = pt.isolate();</span><br><span class="line">    ptdemo(*child_pt);</span><br><span class="line">    <span class="keyword">delete</span> child_pt;</span><br><span class="line">    pt.pop();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="function">Permutation_traversal <span class="title">pt</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line">  ptdemo(pt);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="permutation-traversal-old1-min-cpp"><a href="#permutation-traversal-old1-min-cpp" class="headerlink" title="permutation_traversal.old1.min.cpp"></a>permutation_traversal.old1.min.cpp</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ,min.cpp use less check</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Permutation_traversal</span>&#123;</span></span><br><span class="line">  <span class="keyword">protected</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;left_index; <span class="comment">// to boost vector?</span></span><br><span class="line">    <span class="built_in">stack</span>&lt;pair&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator,<span class="keyword">int</span>&gt;&gt;visitstack; <span class="comment">// to boost list?</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator iter;</span><br><span class="line">    Permutation_traversal(<span class="keyword">const</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;li,<span class="keyword">const</span> <span class="built_in">stack</span>&lt;pair&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator,<span class="keyword">int</span>&gt;&gt;&amp;vs)</span><br><span class="line">    :left_index(li),visitstack(vs)&#123;</span><br><span class="line">      iter = left_index.begin();</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    Permutation_traversal(<span class="keyword">int</span> s)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s;i++)&#123;</span><br><span class="line">        left_index.push_back(i);</span><br><span class="line">      &#125;</span><br><span class="line">      iter = left_index.begin();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> left_index.empty();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">next</span><span class="params">()</span></span>&#123;</span><br><span class="line">      ++iter;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">valid</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> iter != left_index.end();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="keyword">const</span> <span class="title">getvalue</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> *iter;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">()</span></span>&#123;</span><br><span class="line">      visitstack.push(make_pair(iter,*iter));</span><br><span class="line">      left_index.erase(iter);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</span><br><span class="line">      pair&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator,<span class="keyword">int</span>&gt; p = visitstack.top();</span><br><span class="line">      left_index.insert(p.first,p.second);</span><br><span class="line">      visitstack.pop();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">Permutation_traversal * <span class="title">isolate</span><span class="params">()</span></span>&#123;<span class="comment">// careful about memory overflow</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> Permutation_traversal(left_index,visitstack);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ptdemo</span><span class="params">(Permutation_traversal &amp; pt)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(pt.empty())</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">  <span class="keyword">for</span>(;pt.valid();pt.next())&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;pt.getvalue()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    pt.push();</span><br><span class="line">    Permutation_traversal * child_pt = pt.isolate();</span><br><span class="line">    ptdemo(*child_pt);</span><br><span class="line">    <span class="keyword">delete</span> child_pt;</span><br><span class="line">    pt.pop();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="function">Permutation_traversal <span class="title">pt</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line">  ptdemo(pt);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="permutation-traversal-old2-cpp"><a href="#permutation-traversal-old2-cpp" class="headerlink" title="permutation_traversal.old2.cpp"></a>permutation_traversal.old2.cpp</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//10 4.469s</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Permutation_traversal</span>&#123;</span></span><br><span class="line">  <span class="keyword">protected</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;left_index; <span class="comment">// to boost vector?</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator iter;</span><br><span class="line">    Permutation_traversal(<span class="keyword">const</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;li)</span><br><span class="line">    :left_index(li)&#123;</span><br><span class="line">      iter = left_index.begin();</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    Permutation_traversal(<span class="keyword">int</span> s)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s;i++)&#123;</span><br><span class="line">        left_index.push_back(i);</span><br><span class="line">      &#125;</span><br><span class="line">      iter = left_index.begin();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> left_index.empty();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">next</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(iter == left_index.end())</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">      ++iter;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">valid</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> iter != left_index.end();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="keyword">const</span> <span class="title">getvalue</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> iter != left_index.end() ? *iter : <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">Permutation_traversal * <span class="title">isolate</span><span class="params">()</span></span>&#123;<span class="comment">// careful about memory overflow</span></span><br><span class="line">      <span class="keyword">if</span>(iter == left_index.end())</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">      <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator tmp_iter = iter;</span><br><span class="line">      <span class="keyword">int</span> tmp_val = *iter;</span><br><span class="line">      left_index.erase(iter);</span><br><span class="line">      Permutation_traversal * newpt = <span class="keyword">new</span> Permutation_traversal(left_index);</span><br><span class="line">      left_index.insert(tmp_iter,tmp_val);</span><br><span class="line">      <span class="keyword">return</span> newpt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// debug [TODO]remove code below</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getnum</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">5</span>-left_index.size();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ptdemo</span><span class="params">(Permutation_traversal &amp; pt)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(pt.empty())</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">  <span class="keyword">for</span>(;pt.valid();pt.next())&#123;</span><br><span class="line">    <span class="comment">//for(int i=0,limiti=pt.getnum();i&lt;limiti;i++)cout&lt;&lt;" ";</span></span><br><span class="line">    <span class="comment">//cout&lt;&lt;pt.getvalue()&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">int</span> debug = pt.getvalue();</span><br><span class="line">    Permutation_traversal * child_pt = pt.isolate();</span><br><span class="line">    ptdemo(*child_pt);</span><br><span class="line">    <span class="keyword">delete</span> child_pt;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="function">Permutation_traversal <span class="title">pt</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line">  ptdemo(pt);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="permutation-traversal-old2-min-cpp"><a href="#permutation-traversal-old2-min-cpp" class="headerlink" title="permutation_traversal.old2.min.cpp"></a>permutation_traversal.old2.min.cpp</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Permutation_traversal</span>&#123;</span></span><br><span class="line">  <span class="keyword">protected</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;left_index; <span class="comment">// to boost vector?</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator iter;</span><br><span class="line">    Permutation_traversal(<span class="keyword">const</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;li)</span><br><span class="line">    :left_index(li)&#123;</span><br><span class="line">      iter = left_index.begin();</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    Permutation_traversal(<span class="keyword">int</span> s)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s;i++)&#123;</span><br><span class="line">        left_index.push_back(i);</span><br><span class="line">      &#125;</span><br><span class="line">      iter = left_index.begin();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> left_index.empty();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">next</span><span class="params">()</span></span>&#123;</span><br><span class="line">      ++iter;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">valid</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> iter != left_index.end();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="keyword">const</span> <span class="title">getvalue</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> *iter;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">Permutation_traversal * <span class="title">isolate</span><span class="params">()</span></span>&#123;<span class="comment">// careful about memory overflow</span></span><br><span class="line">      <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator tmp_iter = iter;</span><br><span class="line">      <span class="keyword">int</span> tmp_val = *iter;</span><br><span class="line">      left_index.erase(iter);</span><br><span class="line">      Permutation_traversal * newpt = <span class="keyword">new</span> Permutation_traversal(left_index);</span><br><span class="line">      left_index.insert(tmp_iter,tmp_val);</span><br><span class="line">      <span class="keyword">return</span> newpt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// debug [TODO]remove code below</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getnum</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">5</span>-left_index.size();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ptdemo</span><span class="params">(Permutation_traversal &amp; pt)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(pt.empty())</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">  <span class="keyword">for</span>(;pt.valid();pt.next())&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,limiti=pt.getnum();i&lt;limiti;i++)<span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;pt.getvalue()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    Permutation_traversal * child_pt = pt.isolate();</span><br><span class="line">    ptdemo(*child_pt);</span><br><span class="line">    <span class="keyword">delete</span> child_pt;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="function">Permutation_traversal <span class="title">pt</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line">  ptdemo(pt);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="permutation-traversal-old3-cpp"><a href="#permutation-traversal-old3-cpp" class="headerlink" title="permutation_traversal.old3.cpp"></a>permutation_traversal.old3.cpp</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//10 - 0.927s</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Permutation_traversal</span>&#123;</span></span><br><span class="line">  <span class="keyword">protected</span>:</span><br><span class="line">    <span class="keyword">int</span> * left_index; <span class="comment">// to boost vector?</span></span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    <span class="keyword">int</span> iter;</span><br><span class="line">    Permutation_traversal()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    Permutation_traversal(<span class="keyword">int</span> s)</span><br><span class="line">    :size(s),iter(<span class="number">0</span>)&#123;</span><br><span class="line">      left_index = <span class="keyword">new</span> <span class="keyword">int</span>[s];</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s;i++)&#123;</span><br><span class="line">        left_index[i]=i;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ~Permutation_traversal()&#123;</span><br><span class="line">      <span class="keyword">delete</span> [] left_index;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> size == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">next</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(iter == size)</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">      ++iter;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">valid</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> iter != size;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="keyword">const</span> <span class="title">getvalue</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> iter != size ? left_index[iter] : <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">Permutation_traversal * <span class="title">isolate</span><span class="params">()</span></span>&#123;<span class="comment">// careful about memory overflow</span></span><br><span class="line">      <span class="keyword">if</span>(iter == size)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">      Permutation_traversal * newpt = <span class="keyword">new</span> Permutation_traversal();</span><br><span class="line">      newpt-&gt;left_index = <span class="keyword">new</span> <span class="keyword">int</span>[size<span class="number">-1</span>];</span><br><span class="line">      newpt-&gt;size = <span class="number">0</span>;</span><br><span class="line">      newpt-&gt;iter = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> it = <span class="number">0</span> ; it &lt; size ; ++it)&#123;</span><br><span class="line">        <span class="keyword">if</span>(it == iter)</span><br><span class="line">          <span class="keyword">continue</span>;</span><br><span class="line">        newpt-&gt;left_index[newpt-&gt;size++] = left_index[it];</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> newpt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// debug [TODO]remove code below</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getnum</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">5</span>-size;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ptdemo</span><span class="params">(Permutation_traversal &amp; pt)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(pt.empty())</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">  <span class="keyword">for</span>(;pt.valid();pt.next())&#123;</span><br><span class="line">    <span class="comment">//for(int i=0,limiti=pt.getnum();i&lt;limiti;i++)cout&lt;&lt;" ";</span></span><br><span class="line">    <span class="comment">//cout&lt;&lt;pt.getvalue()&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">int</span> debug = pt.getvalue();</span><br><span class="line">    Permutation_traversal * child_pt = pt.isolate();</span><br><span class="line">    ptdemo(*child_pt);</span><br><span class="line">    <span class="keyword">delete</span> child_pt;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="function">Permutation_traversal <span class="title">pt</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line">  ptdemo(pt);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="permutation-traversal-old3-min-cpp"><a href="#permutation-traversal-old3-min-cpp" class="headerlink" title="permutation_traversal.old3.min.cpp"></a>permutation_traversal.old3.min.cpp</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Permutation_traversal</span>&#123;</span></span><br><span class="line">  <span class="keyword">protected</span>:</span><br><span class="line">    <span class="keyword">int</span> * left_index; <span class="comment">// to boost vector?</span></span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    <span class="keyword">int</span> iter;</span><br><span class="line">    Permutation_traversal()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    Permutation_traversal(<span class="keyword">int</span> s)</span><br><span class="line">    :size(s),iter(<span class="number">0</span>)&#123;</span><br><span class="line">      left_index = <span class="keyword">new</span> <span class="keyword">int</span>[s];</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s;i++)&#123;</span><br><span class="line">        left_index[i]=i;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ~Permutation_traversal()&#123;</span><br><span class="line">      <span class="keyword">delete</span> [] left_index;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> size == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">next</span><span class="params">()</span></span>&#123;</span><br><span class="line">      ++iter;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">valid</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> iter != size;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="keyword">const</span> <span class="title">getvalue</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> left_index[iter];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">Permutation_traversal * <span class="title">isolate</span><span class="params">()</span></span>&#123;<span class="comment">// careful about memory overflow</span></span><br><span class="line">      Permutation_traversal * newpt = <span class="keyword">new</span> Permutation_traversal();</span><br><span class="line">      newpt-&gt;left_index = <span class="keyword">new</span> <span class="keyword">int</span>[size<span class="number">-1</span>];</span><br><span class="line">      newpt-&gt;size = <span class="number">0</span>;</span><br><span class="line">      newpt-&gt;iter = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> it = <span class="number">0</span> ; it &lt; size ; ++it)&#123;</span><br><span class="line">        <span class="keyword">if</span>(it == iter)</span><br><span class="line">          <span class="keyword">continue</span>;</span><br><span class="line">        newpt-&gt;left_index[newpt-&gt;size++] = left_index[it];</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> newpt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// debug [TODO]remove code below</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getnum</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">5</span>-size;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ptdemo</span><span class="params">(Permutation_traversal &amp; pt)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(pt.empty())</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">  <span class="keyword">for</span>(;pt.valid();pt.next())&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,limiti=pt.getnum();i&lt;limiti;i++)<span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;pt.getvalue()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    Permutation_traversal * child_pt = pt.isolate();</span><br><span class="line">    ptdemo(*child_pt);</span><br><span class="line">    <span class="keyword">delete</span> child_pt;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="function">Permutation_traversal <span class="title">pt</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line">  ptdemo(pt);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="permutation-traversal-old4-cpp"><a href="#permutation-traversal-old4-cpp" class="headerlink" title="permutation_traversal.old4.cpp"></a>permutation_traversal.old4.cpp</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//10 - 0.581s</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Permutation_traversal</span>&#123;</span></span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Child_Permutation_traversal</span>&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">      <span class="keyword">int</span> * left_index; <span class="comment">// to boost vector?</span></span><br><span class="line">      <span class="keyword">int</span> size;</span><br><span class="line">      <span class="keyword">int</span> iter;</span><br><span class="line">      Child_Permutation_traversal(<span class="keyword">int</span> s)</span><br><span class="line">        :size(s),iter(<span class="number">0</span>)&#123;</span><br><span class="line">          left_index = <span class="keyword">new</span> <span class="keyword">int</span>[s];</span><br><span class="line">        &#125;</span><br><span class="line">      ~Child_Permutation_traversal()&#123;</span><br><span class="line">        <span class="keyword">delete</span> [] left_index;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  Child_Permutation_traversal ** cpt;</span><br><span class="line">  <span class="keyword">int</span> size;</span><br><span class="line">  <span class="keyword">int</span> depth;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  Permutation_traversal(<span class="keyword">int</span> s)</span><br><span class="line">  :size(s)&#123;</span><br><span class="line">    cpt = <span class="keyword">new</span> Child_Permutation_traversal * [s + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt;= s; i++)&#123;</span><br><span class="line">      cpt[i] = <span class="keyword">new</span> Child_Permutation_traversal(s-i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; s; i++)&#123;</span><br><span class="line">      cpt[<span class="number">0</span>]-&gt;left_index[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    depth = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  ~Permutation_traversal()&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=size;i++)&#123;</span><br><span class="line">      <span class="keyword">delete</span> cpt[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">delete</span> [] cpt;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> cpt[depth]-&gt;size == <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">next</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cpt[depth]-&gt;iter == cpt[depth]-&gt;size)</span><br><span class="line">      <span class="keyword">return</span> ;</span><br><span class="line">    ++(cpt[depth]-&gt;iter);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">valid</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> cpt[depth]-&gt;iter != cpt[depth]-&gt;size;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="keyword">const</span> <span class="title">getvalue</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> cpt[depth]-&gt;iter != cpt[depth]-&gt;size ? cpt[depth]-&gt;left_index[cpt[depth]-&gt;iter] : <span class="number">-1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">select</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cpt[depth]-&gt;iter == cpt[depth]-&gt;size)</span><br><span class="line">      <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">int</span> newdepth = depth + <span class="number">1</span>;</span><br><span class="line">    cpt[newdepth]-&gt;size = <span class="number">0</span>;</span><br><span class="line">    cpt[newdepth]-&gt;iter = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> it = <span class="number">0</span>,itlimit=cpt[depth]-&gt;size ; it &lt; itlimit ; ++it)&#123;</span><br><span class="line">      <span class="keyword">if</span>(it == cpt[depth]-&gt;iter)</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      cpt[newdepth]-&gt;left_index[cpt[newdepth]-&gt;size++] = cpt[depth]-&gt;left_index[it];</span><br><span class="line">    &#125;</span><br><span class="line">    depth = newdepth;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">unselect</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(depth &gt; <span class="number">0</span>)</span><br><span class="line">      --depth;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">getnum</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">5</span>-cpt[depth]-&gt;size;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ptdemo</span><span class="params">(Permutation_traversal &amp; pt)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(pt.empty())</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">  <span class="keyword">for</span>(;pt.valid();pt.next())&#123;</span><br><span class="line">    <span class="comment">//for(int i=0,limiti=pt.getnum();i&lt;limiti;i++)cout&lt;&lt;" ";</span></span><br><span class="line">    <span class="comment">//cout&lt;&lt;pt.getvalue()&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">int</span> debug = pt.getvalue();</span><br><span class="line">    pt.select();</span><br><span class="line">    ptdemo(pt);</span><br><span class="line">    pt.unselect();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="function">Permutation_traversal <span class="title">pt</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line">  ptdemo(pt);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="permutation-traversal-old4-min-cpp"><a href="#permutation-traversal-old4-min-cpp" class="headerlink" title="permutation_traversal.old4.min.cpp"></a>permutation_traversal.old4.min.cpp</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//10 - 0.472s</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Permutation_traversal</span>&#123;</span></span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Child_Permutation_traversal</span>&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">      <span class="keyword">int</span> * left_index; <span class="comment">// to boost vector?</span></span><br><span class="line">      <span class="keyword">int</span> size;</span><br><span class="line">      <span class="keyword">int</span> iter;</span><br><span class="line">      Child_Permutation_traversal(<span class="keyword">int</span> s)</span><br><span class="line">        :size(s),iter(<span class="number">0</span>)&#123;</span><br><span class="line">          left_index = <span class="keyword">new</span> <span class="keyword">int</span>[s];</span><br><span class="line">        &#125;</span><br><span class="line">      ~Child_Permutation_traversal()&#123;</span><br><span class="line">        <span class="keyword">delete</span> [] left_index;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  Child_Permutation_traversal ** cpt;</span><br><span class="line">  <span class="keyword">int</span> size;</span><br><span class="line">  <span class="keyword">int</span> depth;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  Permutation_traversal(<span class="keyword">int</span> s)</span><br><span class="line">  :size(s)&#123;</span><br><span class="line">    cpt = <span class="keyword">new</span> Child_Permutation_traversal * [s + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt;= s; i++)&#123;</span><br><span class="line">      cpt[i] = <span class="keyword">new</span> Child_Permutation_traversal(s-i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; s; i++)&#123;</span><br><span class="line">      cpt[<span class="number">0</span>]-&gt;left_index[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    depth = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  ~Permutation_traversal()&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=size;i++)&#123;</span><br><span class="line">      <span class="keyword">delete</span> cpt[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">delete</span> [] cpt;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> cpt[depth]-&gt;size == <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">next</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ++(cpt[depth]-&gt;iter);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">bool</span> <span class="keyword">const</span> <span class="title">valid</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> cpt[depth]-&gt;iter != cpt[depth]-&gt;size;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="keyword">const</span> <span class="title">getvalue</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> cpt[depth]-&gt;left_index[cpt[depth]-&gt;iter];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">select</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> newdepth = depth + <span class="number">1</span>;</span><br><span class="line">    cpt[newdepth]-&gt;size = <span class="number">0</span>;</span><br><span class="line">    cpt[newdepth]-&gt;iter = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> it = <span class="number">0</span>,itlimit=cpt[depth]-&gt;size ; it &lt; itlimit ; ++it)&#123;</span><br><span class="line">      <span class="keyword">if</span>(it == cpt[depth]-&gt;iter)</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      cpt[newdepth]-&gt;left_index[cpt[newdepth]-&gt;size++] = cpt[depth]-&gt;left_index[it];</span><br><span class="line">    &#125;</span><br><span class="line">    depth = newdepth;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">unselect</span><span class="params">()</span></span>&#123;</span><br><span class="line">      --depth;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">getnum</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">5</span>-cpt[depth]-&gt;size;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ptdemo</span><span class="params">(Permutation_traversal &amp; pt)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(pt.empty())</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">  <span class="keyword">for</span>(;pt.valid();pt.next())&#123;</span><br><span class="line">    <span class="comment">//for(int i=0,limiti=pt.getnum();i&lt;limiti;i++)cout&lt;&lt;" ";</span></span><br><span class="line">    <span class="comment">//cout&lt;&lt;pt.getvalue()&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">int</span> debug = pt.getvalue();</span><br><span class="line">    pt.select();</span><br><span class="line">    ptdemo(pt);</span><br><span class="line">    pt.unselect();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="function">Permutation_traversal <span class="title">pt</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line">  ptdemo(pt);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>某人的python作业</title>
-      <link href="/Blog/17-03-27-pythoncharascii/"/>
-      <url>/Blog/17-03-27-pythoncharascii/</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字符串 在内存里的保存形式 英文数字等会按照ASCII码保存 (中文是utf-8或其它)</span></span><br><span class="line"><span class="comment"># 如果 字符串变量名为 s ，s="hello"，那么s[0] 即是取它的第一个字符'h',s[1]是取它第二个字符'e',以此类推 </span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># ASCII 码表在这里: http://baike.baidu.com/link?url=vIX_ks54v50vnb-tKKAFKfQXc6Mqu1uzbfvBJQwuLadPL0GXSVLo1WlZTBSRtARNcyLFe8Pl0IqKHdJNAE9aZciRoFMDqOR2UrOXqPvAYrxc16528vFTTUS1CXXM1IDbyqMXPkhJGfwyqbA_e781Dq</span></span><br><span class="line"><span class="comment"># 看表中的 "十进制列" 和 "解释列" 即可</span></span><br><span class="line"><span class="comment"># 可以看到 </span></span><br><span class="line"><span class="comment">#    数字0~9 对应的ASCII是 48~57</span></span><br><span class="line"><span class="comment">#    英文 A~Z 对应的ASCII 65~90</span></span><br><span class="line"><span class="comment">#    a~z 对应的是97~122</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 所以我们判断字符串的第一个字符s[0] 是否是数字的话，可以用 下面三种方式 任意一种，第三种比较简洁</span></span><br><span class="line"><span class="comment">#     ord(s[0]) &gt;= 48 and ord(s[0]) &lt;= 57</span></span><br><span class="line"><span class="comment">#     ord(s[0]) &gt;= ord('0') and ord(s[0]) &lt;= ord('9')</span></span><br><span class="line"><span class="comment">#     s[0] &gt;= '0' and s[0] &lt;= '9'</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 下面示例判断 输入的字符串的 第一个字符是 数字 还是 字母 还是 其它</span></span><br><span class="line"></span><br><span class="line">inputstring = input(<span class="string">"输入的字符串:"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (inputstring[<span class="number">0</span>] &gt;= <span class="string">'A'</span> <span class="keyword">and</span> inputstring[<span class="number">0</span>] &lt;= <span class="string">'Z'</span>) <span class="keyword">or</span> (inputstring[<span class="number">0</span>] &gt;= <span class="string">'a'</span> <span class="keyword">and</span> inputstring[<span class="number">0</span>] &lt;= <span class="string">'z'</span>) :</span><br><span class="line">    print(<span class="string">"输入的 第一个字符 为英文"</span>)</span><br><span class="line"><span class="keyword">elif</span> inputstring[<span class="number">0</span>] &gt;= <span class="string">'0'</span> <span class="keyword">and</span> inputstring[<span class="number">0</span>] &lt;= <span class="string">'9'</span>:</span><br><span class="line">    print(<span class="string">"输入的 第一个字符 为数字"</span>)</span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">    print(<span class="string">"输入的 第一个字符 为其它"</span>)</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
       <categories>
           
-          <category> demo </category>
+          <category> notes </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> python </tag>
+            <tag> c++ </tag>
             
         </tags>
       
@@ -2225,7 +2456,11 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> backend </category>
+          
+          <category> python </category>
           
       </categories>
       
@@ -2252,7 +2487,11 @@
       
       <categories>
           
-          <category> note </category>
+          <category> code </category>
+          
+          <category> backend </category>
+          
+          <category> cpp </category>
           
       </categories>
       
@@ -2261,7 +2500,7 @@
             
             <tag> c++ </tag>
             
-            <tag> code </tag>
+            <tag> smart ptr </tag>
             
         </tags>
       
@@ -2279,7 +2518,7 @@
       
       <categories>
           
-          <category> note </category>
+          <category> notes </category>
           
       </categories>
       
@@ -2304,18 +2543,18 @@
       
       <categories>
           
-          <category> note </category>
+          <category> notes </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> node </tag>
+            <tag> nodejs </tag>
             
-            <tag> angular </tag>
+            <tag> AngularJS </tag>
             
-            <tag> mongo </tag>
+            <tag> mongodb </tag>
             
         </tags>
       
@@ -2333,7 +2572,7 @@
       
       <categories>
           
-          <category> daily </category>
+          <category> notes </category>
           
       </categories>
       
@@ -2341,33 +2580,6 @@
         <tags>
             
             <tag> markdown </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>CUW</title>
-      <link href="/Blog/16-01-01-cuw.js/"/>
-      <url>/Blog/16-01-01-cuw.js/</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> M_CUW = angular.module(<span class="string">'cuw'</span>,[]);</span><br><span class="line">  M_CUW.directive(<span class="string">'cuwList'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      restrict : <span class="string">'E'</span>,</span><br><span class="line">      templateUrl : <span class="string">'data/cuw/cuw.list.directive.html'</span>,</span><br><span class="line">      controller : cuwListCtrl,</span><br><span class="line">      controllerAs : cuwListCtrl</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">cuwListCtrl</span>(<span class="params">$scope</span>)</span>&#123;</span><br><span class="line">    $scope.commonlyused = [</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"秀米 XIUMI | 秀米 XIUMI"</span>,<span class="attr">url</span>:<span class="string">"http://xiumi.us/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"StackEdit – In-browser markdown editor"</span>,<span class="attr">url</span>:<span class="string">"https://stackedit.io/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Google hosts"</span>,<span class="attr">url</span>:<span class="string">"https://raw.githubusercontent.com/racaljk/hosts/master/hosts"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"菜鸟教程"</span>,<span class="attr">url</span>:<span class="string">"http://www.runoob.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"课程 - 实验楼"</span>,<span class="attr">url</span>:<span class="string">"https://www.shiyanlou.com/courses/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Wolfram|Alpha"</span>,<span class="attr">url</span>:<span class="string">"http://www.wolframalpha.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Octave Online: Free Interface compatible with MATLAB"</span>,<span class="attr">url</span>:<span class="string">"http://octave-online.net/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-awesome-se"</span>,<span class="attr">url</span>:<span class="string">"https://github.com/SJTU-SE/awesome-se"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-ICS"</span>,<span class="attr">url</span>:<span class="string">"http://ipads.se.sjtu.edu.cn/courses/ics/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"CMU-CS:APP3e, Bryant and O'Hallaron"</span>,<span class="attr">url</span>:<span class="string">"http://csapp.cs.cmu.edu/3e/labs.html"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-CSE"</span>,<span class="attr">url</span>:<span class="string">"http://ipads.se.sjtu.edu.cn/courses/cse"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-OS"</span>,<span class="attr">url</span>:<span class="string">"http://ipads.se.sjtu.edu.cn/courses/os/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-DS"</span>,<span class="attr">url</span>:<span class="string">"http://ipads.se.sjtu.edu.cn/courses/ds/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-GP"</span>,<span class="attr">url</span>:<span class="string">"http://dalab.se.sjtu.edu.cn/gp/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"SJTU-饮水思源"</span>,<span class="attr">url</span>:<span class="string">"https://bbs.sjtu.edu.cn/frame2.html"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"e-Learning platform -- LEO-Pro"</span>,<span class="attr">url</span>:<span class="string">"http://elearning.se.sjtu.edu.cn/login.asp"</span>&#125;</span><br><span class="line">    ];</span><br><span class="line">    $scope.notoftenused = [</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"好大学在线CNMOOC"</span>,<span class="attr">url</span>:<span class="string">"http://www.cnmooc.org/home/index.mooc"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"The Absolut Company"</span>,<span class="attr">url</span>:<span class="string">"http://www.absolut.com/cn/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"汉字简体繁体转换_GB国标码_Big5码"</span>,<span class="attr">url</span>:<span class="string">"http://www.123cha.com/chinese-converter/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"在线汉字注音软件,汉语拼音查询标注(多音字自动识别)——快典网"</span>,<span class="attr">url</span>:<span class="string">"http://py.kdd.cc/index.py"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"教育部《異體字字典》主畫面"</span>,<span class="attr">url</span>:<span class="string">"http://dict.variants.moe.edu.tw/main.htm"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"VirSCAN.org-多引擎在线病毒扫描网 v1.02，当前支持 36 款杀毒引擎"</span>,<span class="attr">url</span>:<span class="string">"http://www.virscan.org/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"HexGL by BKcore"</span>,<span class="attr">url</span>:<span class="string">"http://hexgl.bkcore.com/play/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"LeetCode Online Judge"</span>,<span class="attr">url</span>:<span class="string">"https://leetcode.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"数字帝国 - 数学工具"</span>,<span class="attr">url</span>:<span class="string">"http://zh.numberempire.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"graph.tk"</span>,<span class="attr">url</span>:<span class="string">"http://graph.tk/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"龙哥盟 | The Dragonese Union"</span>,<span class="attr">url</span>:<span class="string">"http://www.flygon.net/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"visualgo.net"</span>,<span class="attr">url</span>:<span class="string">"http://visualgo.net/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Acm之家,专业的ACM学习网站"</span>,<span class="attr">url</span>:<span class="string">"http://www.acmerblog.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Photoshop CS6视频教程-51视频自学网,51视频学院"</span>,<span class="attr">url</span>:<span class="string">"http://www.51shiping.com/list-657.html"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"JavaBNF"</span>,<span class="attr">url</span>:<span class="string">"http://www.daimi.au.dk/dRegAut/JavaBNF.html"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Material Design"</span>,<span class="attr">url</span>:<span class="string">"http://wiki.jikexueyuan.com/project/material-design/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Laravel"</span>,<span class="attr">url</span>:<span class="string">"http://www.golaravel.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Method Draw"</span>,<span class="attr">url</span>:<span class="string">"http://editor.method.ac/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"WebGL Report"</span>,<span class="attr">url</span>:<span class="string">"http://webglreport.com/?v=2"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Facecore 人脸识别|人脸比对"</span>,<span class="attr">url</span>:<span class="string">"http://www.facecore.cn/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"google hosts 2016，持续更新"</span>,<span class="attr">url</span>:<span class="string">"http://www.360kb.com/kb/2_122.html"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"网站测速|网站速度测试|网速测试|电信|联通|网通|全国|监控|CDN|PING|DNS 17CE.COM"</span>,<span class="attr">url</span>:<span class="string">"http://www.17ce.com/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"vis.js - A dynamic, browser based visualization library."</span>,<span class="attr">url</span>:<span class="string">"http://visjs.org/"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Visual Event"</span>,<span class="attr">url</span>:<span class="string">"javascript:(function()&#123;if(typeof%20VisualEvent!='undefined')&#123;if(document.getElementById('Event_display'))&#123;VisualEvent.fnClose();&#125;else&#123;VisualEvent.fnInit();&#125;&#125;else&#123;var%20n=document.createElement('script');n.setAttribute('language','JavaScript');n.setAttribute('src','http://www.sprymedia.co.uk/design/event/media/js/event-loader.js');document.body.appendChild(n);&#125;&#125;)();;"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Visual Event2"</span>,<span class="attr">url</span>:<span class="string">"javascript:(function()%20&#123;var%20protocol%20=%20window.location.protocol%20===%20'file:'%20?'http:'%20:%20'';var%20url%20=%20protocol+'//www.sprymedia.co.uk/VisualEvent/VisualEvent_Loader.js';if(%20typeof%20VisualEvent!='undefined'%20)%20&#123;if%20(%20VisualEvent.instance%20!==%20null%20)%20&#123;VisualEvent.close();&#125;else%20&#123;new%20VisualEvent();&#125;&#125;else%20&#123;var%20n=document.createElement('script');n.setAttribute('language','JavaScript');n.setAttribute('src',url+'?rand='+new%20Date().getTime());document.body.appendChild(n);&#125;&#125;)();"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">title</span>:<span class="string">"Chrome扩展开发文档"</span>,<span class="attr">url</span>:<span class="string">"http://open.chrome.360.cn/extension_dev/overview.html"</span>&#125;</span><br><span class="line">    ];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> blog </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> blog </tag>
-            
-            <tag> links </tag>
             
         </tags>
       
@@ -2385,7 +2597,7 @@
       
       <categories>
           
-          <category> lang </category>
+          <category> notes </category>
           
       </categories>
       
@@ -2393,6 +2605,8 @@
         <tags>
             
             <tag> c++ </tag>
+            
+            <tag> lang </tag>
             
         </tags>
       
@@ -2411,6 +2625,8 @@
       <categories>
           
           <category> code </category>
+          
+          <category> security </category>
           
       </categories>
       
@@ -2434,6 +2650,8 @@
       
       
       <categories>
+          
+          <category> code </category>
           
           <category> frontend </category>
           
@@ -2460,6 +2678,8 @@
       
       <categories>
           
+          <category> code </category>
+          
           <category> frontend </category>
           
       </categories>
@@ -2468,6 +2688,31 @@
         <tags>
             
             <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>code record</title>
+      <link href="/Blog/14-12-07-coderecord/"/>
+      <url>/Blog/14-12-07-coderecord/</url>
+      
+        <content type="html"><![CDATA[<p>String:<br>String.format<br>str.trim();// 返回 去前导 尾部空格 的字符串<br>import java.util.StringTokenizer;//P113<br>StringTokenizer(String str,String delim);//str 要去除空格的字符串 delim要去除的字符 返回去除后结果<br>StringBuffer<br>str.replaceAll(String regex,String replacement);//正则表达式<br>str.replace(String regex,String replacement);//字符(串)的替换<br>str.replaceFirst(regex,replacement);<br>str.split(delim);//会分出 无长字符<br>str.matches(String regex);//判断是否正则表达式<br>汉子匹配P133</p><p>StringBuilder:<br>.append(String str);<br>.append(StringBuffer str);<br>.insert(int offset,String str);</p><p>时间:<br>System.currentTimeMillis();//系统时间<br>Date date = new Date(); // 创建Date对象date</p><p>多个类文件前面要加package com.lzw;</p><p>import java.text.DecimalFormat;<br>DecimalFormat myFormat = new DecimalFormat(pattern);// 实例化DecimalFormat对象<br>String output = myFormat.format(value);<br>System.out.println(Object X)-&gt;调用String.valueof(X)-&gt;X.toString();//<br>自定义Class 调用Object默认的equals<br>getClass().getName();</p><p>不定长<br>    public static int add(int… a) { // 定义不定长参数方法<br>        int s = 0;<br>        for (int i = 0; i &lt; a.length; i++)<br>            // 根据参数个数做循环操作<br>            s += a[i]; // 将每个参数累加<br>        return s; // 将计算结果返回<br>    }<br>add(1,2, 3,4, 5,6, 7, 8, 9);</p><p>10.10 接口 向上转型</p><p>A instanceof B;A和B的关系要是 A extends B or B extends A//返回A是否为B的子类<br>抽象类不能实例化</p><p>new innerClass 11.07;<br>接口向上转型 直接调用内部类 11.08<br>e.printStackTrace;//catch (MyException e) </p><p>WindowConstants.DISPOSE_ON_CLOSE<br>||<br>JFrame.DISPOSE_ON_CLOSE</p><p>数据库:<br>加入数据<br>String sql= insert into tb_users (username,password,sex,age) values(‘adf’,’111’,’nan’,’22’)<br>Statement stmt = conn.createStatement();<br>stmt.executeUpdate(sql);</p><p>String Sql =insert into tb_users (username,password,sex,age)value(?,?,?,?);<br>PreparedStatement ps =conn.prepareStatement(sql);<br>ps.setString(1,””);<br>ps.setString(2,””);<br>ps.setString(3,””);<br>ps.executeUpdate();<br>获得数据<br>String sql=select * from tb_users;<br>Statement stmt = conn.createStatement();<br>ResultSet rs =stmt.executeQuery(sql);<br>while(rs.next()){<br>    =rs.getInt(“id”);<br>    =rs.getStringInt(2);<br>    =rs.getString(“password”);<br>    =rs.getInt(4);<br>}</p><p>更改数据<br>String sql=”update tb_users set age=20 where id=1”<br>Statement stmt = conn.createStatement();<br>stmt.executeUpdate(sql);</p><p>String sql=”update tb_users set password=? where sex=?”<br>PreparedStatement ps=conn.prepareStatement(sql);<br>ps.setString(1,”admin”);<br>ps.setString(2,”nan”);<br>int count=ps.executeUpdate();<br>删除数据<br>String sql=”delete from tb_users where id=1”<br>Statement stmt=conn.createStatement();<br>stmt.executeUpdate;<br>模糊查询<br>Statement stmt=conn.createStatement();<br>String sql=”select * from tb_users where username like ‘%李%’”;//通配符%=0个或多个字符 下划线_=一个字符<br>ResultSet rs =stmt.executeQuery(sql);<br>while(rs.next()){<br>    =rs.getInt(“id”);<br>    =rs.getStringInt(2);<br>    =rs.getString(“password”);<br>    =rs.getInt(4);<br>}</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> notes </tag>
             
         </tags>
       
@@ -2486,6 +2731,8 @@
       <categories>
           
           <category> code </category>
+          
+          <category> backend </category>
           
       </categories>
       
@@ -2512,16 +2759,16 @@
       
       <categories>
           
-          <category> note </category>
+          <category> notes </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> rdf </tag>
-            
             <tag> sparql </tag>
+            
+            <tag> rdf </tag>
             
         </tags>
       
@@ -2539,12 +2786,14 @@
       
       <categories>
           
-          <category> note </category>
+          <category> notes </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> rdf </tag>
             
             <tag> post </tag>
             
@@ -2559,12 +2808,12 @@
       <link href="/Blog/13-01-01-trinity.rdf/"/>
       <url>/Blog/13-01-01-trinity.rdf/</url>
       
-        <content type="html"><![CDATA[<p>dgraph engine for web scale rdf data</p><h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><p>  现有的对于网络范围的RDF数据现有依然不是高效的,内部存储不用bitmap,other operations,</p><h1 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h1><p>挑战:可扩展性(急切)和普遍性,需要分布式,现有依然三元组,join巨大中间结果,过大的开销 通常指数级 ,现有不支持更有意义的查询 仅仅对SPARQL优化</p><p>作者的成就:分布式,处理billion even trillion triples ,不用 relational tables and bitmap matrices,build on top of a memory cloud,首先说 随机访问的情况下 用硬盘储存三元组不够优良 ,就算有好的索引也会因为额外的join操作,作为主要的查询中 耗时,in-memory graph exploration instead of join operations for SPARQL processing ,作为对比 之前的系统 孤立使用自己划分的三元组 没有用已有的 造成了很大的中间额外开销,介绍如何降低join 数量 如何降低中间过程的大小,并且就算没有足够好的划分 也有优秀的性能,我们允许大范围的图分析</p><ol><li>新的基于图表的管理RDF数据 ,有对于RDf 高效基于图查询 和 图分析 的可能性</li><li>新的查询规范(相对于SPARQL)有效的提高性能 减少总监结果 和提高系统可扩展性</li><li>新的价值模型 新的基数估计基数 分布式查询生成的优化算法 ,这些成果提供 在web 范围 RDF数据上 出色的性能</li></ol><p>Section 2  join操作 和 图探索 的区别. Section 3 Trinity.RDF 系统的架构. Section 4 how we model RDF data as native graphs. Section 5 describes SPARQL query processing techniques. Section 6 shows experimental results. We conclude in Section 8.</p><h1 id="Join-vs-Graph-Exploration"><a href="#Join-vs-Graph-Exploration" class="headerlink" title="Join vs. Graph Exploration"></a>Join vs. Graph Exploration</h1><p>RDF and SPARQL 的介绍 和 缺点(join 耗费高 中间无用结果大)</p><p>图探索 介绍方法 并说需要更高效的储存方式来适应这种方法 用native graph 会把原来的每次 读入O(log N)的时间复杂度降低为O(1) 需要搜索的顺序优化来 </p><h1 id="System-Architecture"><a href="#System-Architecture" class="headerlink" title="System Architecture"></a>System Architecture</h1><p>就是图储存,并且完全存在内存里 (因为是分布式的所以才可以储存这么多)</p><p>架构client,proxy,string server,trinity machine [看来陈榕老师就是按照这样的思路改的代码</p><h1 id="Data-Modeling"><a href="#Data-Modeling" class="headerlink" title="Data Modeling"></a>Data Modeling</h1><p>(node-id, in-adjacency-list, out-adjacency-listi)</p><p>讲图分割问题 对于自然图 用大度的点 连接点来决定放置未知 以及使用 in out<strong>间接id</strong>  可以有效减少发送数据交流量</p><p>但是对于邻点少的来说用另一种方法更好 同一个点的in和out放在同一个机器上的方法</p><p>还用了</p><ul><li>本地 谓词索引 sort all (predicate, node-id )</li><li>全局的 谓词索引 (predicate, hsubject-list i , object-list i i)</li></ul><p>提供基本图操作</p><ol><li>LoadNodes(predicate, direction): Return nodes that have an incoming or outgoing edge labeled as predicate. 使用全局谓词索引</li><li>LoadNeighborsOnMachine(node, direction, machine i): For a given node, return its incoming or outgoing neighbors that reside on machine i. 返回的是上面的间接id</li><li>SelectByPredicate(nid, predicate): From a given partial adjacency list specified by nid, return nodes that are labeled with the given predicate.<br>Figure 4.<br>LoadNodes(l2 , out) finds n2 on machine 1, and n3 on machine 2. LoadNeighborsOnMachine(n0 , in, 1) returns the partial adjacency list’s id in1 , and SelectByP redicate(in1 , l2 ) returns n2 .</li></ol><h1 id="Query-Processing"><a href="#Query-Processing" class="headerlink" title="Query Processing"></a>Query Processing</h1><p>先把 查询Q拆分为 q1 q2 q3…qn，然后让它们并行寻找 再最后再和并</p><h2 id="单个q的匹配方式"><a href="#单个q的匹配方式" class="headerlink" title="单个q的匹配方式"></a>单个q的匹配方式</h2><p>For a triple pattern q, our goal is to find all its matches R(q). Let P denote the predicate in q, V denote the variables in q, and B(V ) denote the binding of V . If V is a free variable (not bound), we also use B(V ) to denote all possible values V can take.</p><p>从 S 去找 O ,写作q→</p><p>从 O 去找 S ,写作q←</p><p>分为两个阶段</p><p>src</p><p>用LoadNodes(本机)找到基于 所有可能predicate 的所有可能的src </p><p>对于所有可能src  在所有机器LoadNeighborsOnMachine(有远端操作)找<code>nid_i</code> 把结果M再发给所有机器</p><p>tgt</p><p>对于收到的结果M 的每一个(src,nid)</p><p>找所有的可能的predicate</p><p>用 SelectByPredicate(本机) 交 所有可能的tgt 得到R</p><p>方案是 合并相邻 的操作来减少中间过程的损耗</p><p>然后讲优化 也就是顺序优化</p><p>注意到用了合并以后 前面j个操作 只要集合相同 那么结果与前面j个的内部顺序无关</p><p>我们使用 启发式算法</p><p>Heuristic 1. We expand a subgraph from its exploration point. We combine two subgraphs by connecting their exploration points.</p><p>Property 1. We expand a subgraph or combine two subgraphs through an edge. The two nodes on both ends of the edge are valid exploration points in the new graph.</p><p>Theorem 1. For a query graph G(V, E), the DP has time complexity O(n·|V |·|E|) where n is the number of connected subgraphs in G.</p><p>Theorem 2. Any acyclic query Q with query graph G is guaranteed to have an exploration plan.</p><p>Discussion. There are two cases we have not considered formally: i) G is cyclic, and ii) G contains a join on predicates.</p>]]></content>
+        <content type="html"><![CDATA[<p>dgraph engine for web scale rdf data</p><h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><p>  现有的对于网络范围的RDF数据现有依然不是高效的,内部存储不用bitmap,other operations,</p><h1 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h1><p>挑战:可扩展性(急切)和普遍性,需要分布式,现有依然三元组,join巨大中间结果,过大的开销 通常指数级 ,现有不支持更有意义的查询 仅仅对SPARQL优化</p><p>作者的成就:分布式,处理billion even trillion triples ,不用 relational tables and bitmap matrices,build on top of a memory cloud,首先说 随机访问的情况下 用硬盘储存三元组不够优良 ,就算有好的索引也会因为额外的join操作,作为主要的查询中 耗时,in-memory graph exploration instead of join operations for SPARQL processing ,作为对比 之前的系统 孤立使用自己划分的三元组 没有用已有的 造成了很大的中间额外开销,介绍如何降低join 数量 如何降低中间过程的大小,并且就算没有足够好的划分 也有优秀的性能,我们允许大范围的图分析</p><ol><li>新的基于图表的管理RDF数据 ,有对于RDf 高效基于图查询 和 图分析 的可能性</li><li>新的查询规范(相对于SPARQL)有效的提高性能 减少总监结果 和提高系统可扩展性</li><li>新的价值模型 新的基数估计基数 分布式查询生成的优化算法 ,这些成果提供 在web 范围 RDF数据上 出色的性能</li></ol><p>Section 2  join操作 和 图探索 的区别. Section 3 Trinity.RDF 系统的架构. Section 4 how we model RDF data as native graphs. Section 5 describes SPARQL query processing techniques. Section 6 shows experimental results. We conclude in Section 8.</p><h1 id="Join-vs-Graph-Exploration"><a href="#Join-vs-Graph-Exploration" class="headerlink" title="Join vs. Graph Exploration"></a>Join vs. Graph Exploration</h1><p>RDF and SPARQL 的介绍 和 缺点(join 耗费高 中间无用结果大)</p><p>图探索 介绍方法 并说需要更高效的储存方式来适应这种方法 用native graph 会把原来的每次 读入O(log N)的时间复杂度降低为O(1) 需要搜索的顺序优化来 </p><h1 id="System-Architecture"><a href="#System-Architecture" class="headerlink" title="System Architecture"></a>System Architecture</h1><p>就是图储存,并且完全存在内存里 (因为是分布式的所以才可以储存这么多)</p><p>架构client,proxy,string server,trinity machine [看来陈榕老师就是按照这样的思路改的代码</p><h1 id="Data-Modeling"><a href="#Data-Modeling" class="headerlink" title="Data Modeling"></a>Data Modeling</h1><p>(node-id, in-adjacency-list, out-adjacency-listi)</p><p>讲图分割问题 对于自然图 用大度的点 连接点来决定放置未知 以及使用 in out<strong>间接id</strong>  可以有效减少发送数据交流量</p><p>但是对于邻点少的来说用另一种方法更好 同一个点的in和out放在同一个机器上的方法</p><p>还用了</p><ul><li>本地 谓词索引 sort all (predicate, node-id )</li><li>全局的 谓词索引 (predicate, hsubject-list i , object-list i i)</li></ul><p>提供基本图操作</p><ol><li>LoadNodes(predicate, direction): Return nodes that have an incoming or outgoing edge labeled as predicate. 使用全局谓词索引</li><li>LoadNeighborsOnMachine(node, direction, machine i): For a given node, return its incoming or outgoing neighbors that reside on machine i. 返回的是上面的间接id</li><li>SelectByPredicate(nid, predicate): From a given partial adjacency list specified by nid, return nodes that are labeled with the given predicate.<br>Figure 4.<br>LoadNodes(l2 , out) finds n2 on machine 1, and n3 on machine 2. LoadNeighborsOnMachine(n0 , in, 1) returns the partial adjacency list’s id in1 , and SelectByP redicate(in1 , l2 ) returns n2 .</li></ol><h1 id="Query-Processing"><a href="#Query-Processing" class="headerlink" title="Query Processing"></a>Query Processing</h1><p>先把 查询Q拆分为 q1 q2 q3…qn，然后让它们并行寻找 再最后再和并</p><h2 id="单个q的匹配方式"><a href="#单个q的匹配方式" class="headerlink" title="单个q的匹配方式"></a>单个q的匹配方式</h2><p>For a triple pattern q, our goal is to find all its matches R(q). Let P de[notes] the predicate in q, V denote the variables in q, and B(V ) denote the binding of V . If V is a free variable (not bound), we also use B(V ) to denote all possible values V can take.</p><p>从 S 去找 O ,写作q→</p><p>从 O 去找 S ,写作q←</p><p>分为两个阶段</p><p>src</p><p>用LoadNodes(本机)找到基于 所有可能predicate 的所有可能的src </p><p>对于所有可能src  在所有机器LoadNeighborsOnMachine(有远端操作)找<code>nid_i</code> 把结果M再发给所有机器</p><p>tgt</p><p>对于收到的结果M 的每一个(src,nid)</p><p>找所有的可能的predicate</p><p>用 SelectByPredicate(本机) 交 所有可能的tgt 得到R</p><p>方案是 合并相邻 的操作来减少中间过程的损耗</p><p>然后讲优化 也就是顺序优化</p><p>注意到用了合并以后 前面j个操作 只要集合相同 那么结果与前面j个的内部顺序无关</p><p>我们使用 启发式算法</p><p>Heuristic 1. We expand a subgraph from its exploration point. We combine two subgraphs by connecting their exploration points.</p><p>Property 1. We expand a subgraph or combine two subgraphs through an edge. The two nodes on both ends of the edge are valid exploration points in the new graph.</p><p>Theorem 1. For a query graph G(V, E), the DP has time complexity O(n·|V |·|E|) where n is the number of connected subgraphs in G.</p><p>Theorem 2. Any acyclic query Q with query graph G is guaranteed to have an exploration plan.</p><p>Discussion. There are two cases we have not considered formally: i) G is cyclic, and ii) G contains a join on predicates.</p>]]></content>
       
       
       <categories>
           
-          <category> note </category>
+          <category> notes </category>
           
       </categories>
       
@@ -2591,7 +2840,9 @@
       
       <categories>
           
-          <category> node </category>
+          <category> code </category>
+          
+          <category> security </category>
           
       </categories>
       
