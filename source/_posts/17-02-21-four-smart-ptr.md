@@ -2,8 +2,8 @@
 title: four smart ptr
 mathjax: true
 date: 2017-02-21 01:01:01
-categories: note
-tags: [code,c++]
+tags: [smart ptr, c++]
+categories: [code, backend, cpp]
 ---
 
 # 四种指针

@@ -2,8 +2,8 @@
 title: throttle vs debounce
 mathjax: true
 date: 2019-10-21 15:09:01
-categories: frontend
 tags: [js,lodash,throttle,debounce]
+categories: [code, frontend]
 ---
 
 # What

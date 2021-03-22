@@ -2,8 +2,8 @@
 title: 未来简史 阅读笔记
 mathjax: true
 date: 2019-09-15 15:09:01
-categories: life
-tags: [future,plan]
+tags: [future, plan, life]
+categories: [notes, book]
 ---
 
 > 19-08-22  -> 19-09-15

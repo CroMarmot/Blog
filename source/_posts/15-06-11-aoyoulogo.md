@@ -3,7 +3,7 @@ date: 2015-06-11
 title: aoyoulogo
 description: "纯css实现遨游浏览器图标"
 tags: [css]
-category: [frontend]
+category: [code, frontend]
 ---
 
 ```html

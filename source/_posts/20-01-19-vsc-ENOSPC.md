@@ -1,8 +1,8 @@
 ---
 title: vscode use out my file watchers
 date: 2020-01-19 11:20:14
-tags: [vscode]
-category: [ide,backend]
+tags: [vscode, ide]
+category: [code, ide]
 ---
 
 # ENOSPC

@@ -2,7 +2,7 @@
 title: karma jasmine
 date: 2020-04-15 11:20:14
 tags: [js,karma,jasmine]
-category: [frontend]
+category: [code, frontend]
 ---
 
 # Run

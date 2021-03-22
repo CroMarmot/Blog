@@ -3,7 +3,7 @@ title: 设计模式 阅读笔记
 mathjax: true
 date: 2019-08-26 15:09:01
 tags: [design pattern]
-categories: [code]
+categories: [notes, book]
 ---
 
 > 19-08-26 -> 19-

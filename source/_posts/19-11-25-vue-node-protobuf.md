@@ -1,8 +1,8 @@
 ---
 title: vue-node-protobuf
 date: 2019-11-25 11:20:14
-tags: [code,js,json,protobuf]
-category: [vue2,frontend]
+tags: [json, protobuf]
+category: [code, frontend]
 ---
 
 # 步骤

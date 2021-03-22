@@ -1,8 +1,8 @@
 ---
 title: 原则
 date: 2019-05-01 11:20:14
-tags:
-category: [life]
+tags: [life, book]
+category: [notes, book]
 ---
 
 # 原则

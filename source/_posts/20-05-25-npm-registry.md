@@ -2,7 +2,7 @@
 title: npm registry
 date: 2020-05-25 11:20:14
 tags: [js,npm]
-category: [frontend]
+category: [code, frontend]
 ---
 
 # npm发布仓库

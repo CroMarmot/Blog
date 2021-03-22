@@ -1,8 +1,8 @@
 ---
 title: mkfifo sh nc
 date: 2020-11-11 21:58:14
-tags: [linux,mkfifo]
-category: [backend]
+tags: [linux, mkfifo]
+category: [code, linux]
 mathjax: true
 ---
 

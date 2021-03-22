@@ -1,8 +1,8 @@
 ---
 title: vue custom v-model
 date: 2019-04-01 11:20:14
-tags: 
-category: [code,js,promises]
+tags: [vue2, v-model]
+category: [code,frontend, vue]
 ---
 
 # 感谢

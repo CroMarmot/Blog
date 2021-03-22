@@ -2,7 +2,7 @@
 title: redis init 简单笔记
 date: 2020-08-28 16:58:14
 tags: [redis]
-category: [backend]
+category: [code, backend, redis]
 mathjax: true
 ---
 

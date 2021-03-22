@@ -1,8 +1,8 @@
 ---
 title: amd/cmd/commonjs/umd/esm/iife/systemjs
 date: 2021-03-09 21:58:14
-tags: [js]
-category: [frontend,backend]
+tags: [js module]
+category: [code, frontend]
 mathjax: true
 ---
 

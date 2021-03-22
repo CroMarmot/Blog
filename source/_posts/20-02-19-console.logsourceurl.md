@@ -1,8 +1,8 @@
 ---
 title: console source url
 date: 2020-02-19 11:20:14
-tags: frontend
-category: [js,chrome,debug,frontend]
+tags: [chrome, debug, code]
+category: [code, frontend]
 ---
 
 # 问题

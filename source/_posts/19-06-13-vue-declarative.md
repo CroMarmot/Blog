@@ -2,8 +2,8 @@
 title: vue声明式交互能力 & vue3.0 进展
 mathjax: true
 date: 2019-06-13 01:01:01
-categories: js
-tags: [vue2]
+tags: [js, vue2 ,vue3]
+categories: [code, frontend, vue]
 ---
 
 # 参考

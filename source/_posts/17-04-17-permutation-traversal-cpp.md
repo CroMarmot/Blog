@@ -1,7 +1,8 @@
 ---
 title: 遍历管理
 date: 2017-04-17 00:50:21
-tags:
+tags: [c++]
+category: [notes]
 ---
 
 # permutation_traversal.cpp

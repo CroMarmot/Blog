@@ -2,8 +2,8 @@
 title: Rowhammer.js
 mathjax: true
 date: 2015-07-24 01:01:01
-categories: code
 tags: [rowhammer]
+categories: [code, security]
 ---
 
 

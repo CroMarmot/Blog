@@ -2,8 +2,8 @@
 title: Trinity RDF
 mathjax: true
 date: 2013-01-01 01:01:01
-tags: [graph,rdf]
-categories: note
+tags: [graph, rdf]
+categories: [notes]
 ---
 
 dgraph engine for web scale rdf data
@@ -61,7 +61,7 @@ LoadNodes(l2 , out) finds n2 on machine 1, and n3 on machine 2. LoadNeighborsOnM
 
 ## 单个q的匹配方式
 
-For a triple pattern q, our goal is to find all its matches R(q). Let P denote the predicate in q, V denote the variables in q, and B(V ) denote the binding of V . If V is a free variable (not bound), we also use B(V ) to denote all possible values V can take.
+For a triple pattern q, our goal is to find all its matches R(q). Let P de[notes] the predicate in q, V denote the variables in q, and B(V ) denote the binding of V . If V is a free variable (not bound), we also use B(V ) to denote all possible values V can take.
 
 从 S 去找 O ,写作q→
 

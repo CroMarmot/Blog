@@ -2,8 +2,8 @@
 title: material学习
 mathjax: true
 date: 2019-06-11 01:01:01
-categories: js
-tags: [material]
+tags: [Angular2+, material design]
+categories: [code, frontend]
 ---
 
 # 参考

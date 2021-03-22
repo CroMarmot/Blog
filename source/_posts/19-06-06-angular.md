@@ -2,8 +2,8 @@
 title: angular
 mathjax: true
 date: 2019-06-06 01:01:01
-categories: js
-tags: [js,angular]
+tags: [Angular2+, js]
+categories: [code, frontend, Angular]
 ---
 
 # 从 angular generate 看 分化想法

@@ -2,8 +2,8 @@
 title: 计算机系统设计原理个人整理(unfinished)
 mathjax: true
 date: 2017-07-07 01:01:01
-categories: note
 tags: [algorithm]
+categories: [notes, book]
 ---
 
 # 总评

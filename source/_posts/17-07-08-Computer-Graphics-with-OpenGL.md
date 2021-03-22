@@ -2,8 +2,8 @@
 title: 计算机图形学个人整理
 mathjax: true
 date: 2017-07-08 01:01:01
-categories: note
 tags: [algorithm]
+categories: [notes, book]
 ---
 
 opengl自己的全以gl开头

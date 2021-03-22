@@ -2,8 +2,8 @@
 title: linux 为什么比 windows 更安全
 mathjax: true
 date: 2017-02-15 01:01:01
-categories: note
 tags: [article]
+categories: [notes]
 ---
 
 很久以前就有听说这个命题

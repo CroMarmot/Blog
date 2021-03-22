@@ -1,8 +1,8 @@
 ---
 title: vue slot
 date: 2019-03-20 11:20:14
-tags: 
-category: [code,vue,js]
+tags: [vue2, js]
+category: [code, frontend, vue]
 ---
 
 参考:https://blog.csdn.net/qq_38128179/article/details/85273522

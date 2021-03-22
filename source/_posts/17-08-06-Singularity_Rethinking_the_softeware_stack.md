@@ -2,8 +2,8 @@
 title: Singularity:Rethinking the Software Stack
 mathjax: true
 date: 2017-07-22 01:01:01
-categories: note
 tags: [csp]
+categories: [notes]
 ---
 
 # Singularity: Rethinking the Software Stack

@@ -2,8 +2,8 @@
 title: 离散数学教程四川大学出版个人整理
 mathjax: true
 date: 2017-06-22 01:01:01
-categories: note
 tags: [algorithm]
+categories: [notes, book]
 ---
 
 # 总评

@@ -2,7 +2,7 @@
 title: fiddler android
 date: 2021-03-16
 tags: [fiddler]
-category: [backend]
+category: [code, android]
 mathjax: true
 ---
 

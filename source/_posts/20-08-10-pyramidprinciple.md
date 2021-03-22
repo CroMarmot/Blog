@@ -1,8 +1,8 @@
 ---
 title: 《金字塔原理》笔记
 date: 2020-08-10 16:58:14
-tags: [book]
-category: [book]
+tags: [notes, book]
+category: [notes, book]
 mathjax: true
 ---
 

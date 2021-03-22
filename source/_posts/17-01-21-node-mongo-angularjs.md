@@ -2,8 +2,8 @@
 title: nodejs mongodb angularjs 个人笔记
 mathjax: true
 date: 2017-01-21 01:01:01
-categories: note
-tags: [node,angular,mongo]
+tags: [nodejs, AngularJS, mongodb]
+categories: [notes]
 ---
 
 # mongodb 学习记录

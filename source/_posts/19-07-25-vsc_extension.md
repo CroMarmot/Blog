@@ -2,8 +2,8 @@
 title: vsc extension 入门尝试
 mathjax: true
 date: 2019-07-25 01:01:01
-categories: backend
-tags: [nodejs,vscode,extension]
+tags: [nodejs, vscode ,extension]
+categories: [code, ide]
 ---
 
 # 开始 & 安装

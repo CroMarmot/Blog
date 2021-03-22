@@ -2,8 +2,8 @@
 title: code record
 mathjax: true
 date: 2014-12-07 01:01:01
-categories: code
-tags: [code]
+categories: notes
+tags: [notes]
 ---
 
 String:

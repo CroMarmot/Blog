@@ -1,8 +1,8 @@
 ---
 title: 图灵完备？那做个二分vue/react/angular,递归组件Demo
 date: 2021-02-02 21:58:14
-tags: [vue2,angular,react,递归]
-category: [frontend]
+tags: [vue2,Angular2+,react,recursive]
+category: [code, frontend]
 mathjax: true
 ---
 

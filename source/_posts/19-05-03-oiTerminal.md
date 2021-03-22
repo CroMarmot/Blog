@@ -2,8 +2,8 @@
 title: oiTerminal
 mathjax: true
 date: 2019-05-03 01:01:01
-categories: note
-tags: [python,crawler]
+tags: [python, crawler]
+categories: [notes]
 ---
 
 [oiTerminal](https://github.com/CroMarmot/oiTerminal)

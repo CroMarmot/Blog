@@ -2,8 +2,8 @@
 title: 黑天鹅：如何应对不可预知的未来 阅读笔记
 mathjax: true
 date: 2019-08-21 15:09:01
-categories: life
-tags: [future,plan]
+tags: [future, plan, life]
+categories: [notes, book]
 ---
 
 > 19-07-19  -> 19-08-21

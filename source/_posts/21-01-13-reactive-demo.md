@@ -2,7 +2,7 @@
 title: vue2 reactive基本原理demo
 date: 2021-01-13 21:58:14
 tags: [vue2]
-category: [backend]
+category: [code, frontend, vue]
 mathjax: true
 ---
 

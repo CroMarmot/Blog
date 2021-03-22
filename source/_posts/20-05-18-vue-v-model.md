@@ -2,7 +2,7 @@
 title: vue2 vmodel 版本管理问题
 date: 2020-05-18 11:20:14
 tags: [js,vue2,v-model]
-category: [frontend]
+category: [code, frontend, vue]
 ---
 
 # 起因

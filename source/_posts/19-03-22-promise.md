@@ -1,8 +1,8 @@
 ---
 title: promises分析
 date: 2019-03-22 11:20:14
-tags: 
-category: [code,js,promises]
+tags: [promise]
+category: [code, frontend]
 ---
 
 个人其实建议阅读下方的参考链接`zh.javascript.info`,本篇整理的主要是基于个人已有经验进行提要，简化和再解释，不够完整
