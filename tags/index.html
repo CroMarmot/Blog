@@ -21,20 +21,16 @@
     var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="问题chrome里有命令行输出的时候，右侧会有VM:xxx或者源文件名:行数的一个跳转链接 然而如果封装了console函数或者例如用了vconsole之类的库， 它的错误输出，可能就不是你所期望的自己的代码 解决如果只是简单的封装log 搜到的大多方案都是形如var newlogfunction = console.log.bind(window.console) 或者是原来的调用变成返回函数，">
-<meta name="keywords" content="frontend">
-<meta property="og:type" content="article">
-<meta property="og:title" content="console source url">
-<meta property="og:url" content="https://cromarmot.github.io/Blog/20-02-19-console.logsourceurl/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="tags">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/tags/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
-<meta property="og:description" content="问题chrome里有命令行输出的时候，右侧会有VM:xxx或者源文件名:行数的一个跳转链接 然而如果封装了console函数或者例如用了vconsole之类的库， 它的错误输出，可能就不是你所期望的自己的代码 解决如果只是简单的封装log 搜到的大多方案都是形如var newlogfunction = console.log.bind(window.console) 或者是原来的调用变成返回函数，">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-03-22T03:21:55.150Z">
+<meta property="og:updated_time" content="2021-03-22T03:21:55.194Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="console source url">
-<meta name="twitter:description" content="问题chrome里有命令行输出的时候，右侧会有VM:xxx或者源文件名:行数的一个跳转链接 然而如果封装了console函数或者例如用了vconsole之类的库， 它的错误输出，可能就不是你所期望的自己的代码 解决如果只是简单的封装log 搜到的大多方案都是形如var newlogfunction = console.log.bind(window.console) 或者是原来的调用变成返回函数，">
+<meta name="twitter:title" content="tags">
 
-<link rel="canonical" href="https://cromarmot.github.io/Blog/20-02-19-console.logsourceurl/">
+<link rel="canonical" href="https://cromarmot.github.io/Blog/tags/">
 
 
 <script id="page-configurations">
@@ -42,12 +38,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>console source url | Cro-Marmot's Blog</title>
+  <title>tags | Cro-Marmot's Blog
+</title>
   
 
 
@@ -189,144 +186,51 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
-          <div class="content post posts-expand">
+          <div class="content page posts-expand">
             
 
     
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-02-19-console.logsourceurl/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
+    
+    
+    <div class="post-block" lang="zh-TW">
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          console source url
-        </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
+<h1 class="post-title" itemprop="name headline">tags
+</h1>
 
-              <time title="創建時間：2020-02-19 11:20:14" itemprop="dateCreated datePublished" datetime="2020-02-19T11:20:14+08:00">2020-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-22 11:21:55" itemprop="dateModified" datetime="2021-03-22T11:21:55+08:00">2021-03-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/js/chrome/" itemprop="url" rel="index"><span itemprop="name">chrome</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/js/chrome/debug/" itemprop="url" rel="index"><span itemprop="name">debug</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/js/chrome/debug/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-02-19-console.logsourceurl/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-02-19-console.logsourceurl/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
+<div class="post-meta">
   
 
-        </div>
-      </header>
+</div>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
-        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>chrome里有命令行输出的时候，右侧会有<code>VM:xxx</code>或者<code>源文件名:行数</code>的一个跳转链接</p>
-<p>然而如果封装了console函数或者例如用了vconsole之类的库，</p>
-<p>它的错误输出，可能就不是你所期望的自己的代码</p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>如果只是简单的封装log</p>
-<p>搜到的大多方案都是形如<code>var newlogfunction = console.log.bind(window.console)</code></p>
-<p>或者是原来的调用变成返回函数，然后再调用大概变成<code>newconsole()()</code>的写法</p>
-<p>然而和我期望的需求有些不符，</p>
-<p>目前期望的是一个通用的函数内，增加一点调试时的参数输出，希望能输出调用者的位置</p>
-<p>也搜索了call stack相关，目前看来有些地方能用<code>console.trace()</code>,但在webpack里就不行了？</p>
-<p>有搜到过用<code>new Error()</code>但它的stack字段是个string ，还真有人字符分割解析这个string</p>
-<p>目前一个比较科学的方案是用chrome的blackbox文件功能，对webpack里的无效，但是可以对例如vconsole进行blackbox，这样就能展示到原来调用的位置。</p>
-<p>同时根据这个思考，可以在调试的版本中对文件的分块进行指定，让公共文件和具体文件webpack打分开的chunk</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://gist.github.com/paulirish/c307a5a585ddbcc17242" target="_blank" rel="noopener">https://gist.github.com/paulirish/c307a5a585ddbcc17242</a></p>
-<p><a href="https://stackoverflow.com/questions/9559725/extending-console-log-without-affecting-log-line" target="_blank" rel="noopener">https://stackoverflow.com/questions/9559725/extending-console-log-without-affecting-log-line</a></p>
-<p><a href="https://stackoverflow.com/questions/13815640/a-proper-wrapper-for-console-log-with-correct-line-number/32928812" target="_blank" rel="noopener">https://stackoverflow.com/questions/13815640/a-proper-wrapper-for-console-log-with-correct-line-number/32928812</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Console/trace" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Console/trace</a></p>
-<p><a href="https://developers.google.com/web/tools/chrome-devtools/javascript/reference" target="_blank" rel="noopener">https://developers.google.com/web/tools/chrome-devtools/javascript/reference</a></p>
-<p><a href="https://developer.chrome.com/devtools/docs/blackboxing" target="_blank" rel="noopener">https://developer.chrome.com/devtools/docs/blackboxing</a></p>
-
-    </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/Blog/tags/frontend/" rel="tag"># frontend</a>
+      
+      
+      <div class="post-body">
+          <div class="tag-cloud">
+            <div class="tag-cloud-title">
+              目前共有 99 個標籤
+            </div>
+            <div class="tag-cloud-tags">
+              <a href="/Blog/tags/CI/" style="font-size: 12px; color: #ccc">CI</a> <a href="/Blog/tags/adb/" style="font-size: 12px; color: #ccc">adb</a> <a href="/Blog/tags/algorithm/" style="font-size: 19.71px; color: #7c7c7c">algorithm</a> <a href="/Blog/tags/android/" style="font-size: 12px; color: #ccc">android</a> <a href="/Blog/tags/android-11/" style="font-size: 12px; color: #ccc">android 11</a> <a href="/Blog/tags/angular/" style="font-size: 19.71px; color: #7c7c7c">angular</a> <a href="/Blog/tags/angular2/" style="font-size: 12px; color: #ccc">angular2</a> <a href="/Blog/tags/article/" style="font-size: 14.57px; color: #b1b1b1">article</a> <a href="/Blog/tags/backend/" style="font-size: 14.57px; color: #b1b1b1">backend</a> <a href="/Blog/tags/blog/" style="font-size: 12px; color: #ccc">blog</a> <a href="/Blog/tags/book/" style="font-size: 12px; color: #ccc">book</a> <a href="/Blog/tags/bug/" style="font-size: 12px; color: #ccc">bug</a> <a href="/Blog/tags/c/" style="font-size: 19.71px; color: #7c7c7c">c++</a> <a href="/Blog/tags/code/" style="font-size: 24.86px; color: #464646">code</a> <a href="/Blog/tags/computer/" style="font-size: 12px; color: #ccc">computer</a> <a href="/Blog/tags/config/" style="font-size: 12px; color: #ccc">config</a> <a href="/Blog/tags/context/" style="font-size: 12px; color: #ccc">context</a> <a href="/Blog/tags/cplusplus/" style="font-size: 12px; color: #ccc">cplusplus</a> <a href="/Blog/tags/crawler/" style="font-size: 14.57px; color: #b1b1b1">crawler</a> <a href="/Blog/tags/csp/" style="font-size: 14.57px; color: #b1b1b1">csp</a> <a href="/Blog/tags/css/" style="font-size: 14.57px; color: #b1b1b1">css</a> <a href="/Blog/tags/debounce/" style="font-size: 12px; color: #ccc">debounce</a> <a href="/Blog/tags/design-pattern/" style="font-size: 12px; color: #ccc">design pattern</a> <a href="/Blog/tags/docker/" style="font-size: 12px; color: #ccc">docker</a> <a href="/Blog/tags/document/" style="font-size: 12px; color: #ccc">document</a> <a href="/Blog/tags/dropbox/" style="font-size: 12px; color: #ccc">dropbox</a> <a href="/Blog/tags/emacs/" style="font-size: 12px; color: #ccc">emacs</a> <a href="/Blog/tags/encrypt/" style="font-size: 12px; color: #ccc">encrypt</a> <a href="/Blog/tags/etc/" style="font-size: 12px; color: #ccc">etc</a> <a href="/Blog/tags/extension/" style="font-size: 12px; color: #ccc">extension</a> <a href="/Blog/tags/fiddler/" style="font-size: 12px; color: #ccc">fiddler</a> <a href="/Blog/tags/for/" style="font-size: 12px; color: #ccc">for</a> <a href="/Blog/tags/frontend/" style="font-size: 22.29px; color: #616161">frontend</a> <a href="/Blog/tags/future/" style="font-size: 17.14px; color: #979797">future</a> <a href="/Blog/tags/git/" style="font-size: 14.57px; color: #b1b1b1">git</a> <a href="/Blog/tags/gitlab/" style="font-size: 14.57px; color: #b1b1b1">gitlab</a> <a href="/Blog/tags/graph/" style="font-size: 12px; color: #ccc">graph</a> <a href="/Blog/tags/io/" style="font-size: 12px; color: #ccc">io</a> <a href="/Blog/tags/ios/" style="font-size: 12px; color: #ccc">ios</a> <a href="/Blog/tags/ios13-5-1/" style="font-size: 12px; color: #ccc">ios13.5.1</a> <a href="/Blog/tags/jasmine/" style="font-size: 12px; color: #ccc">jasmine</a> <a href="/Blog/tags/java/" style="font-size: 12px; color: #ccc">java</a> <a href="/Blog/tags/js/" style="font-size: 30px; color: #111">js</a> <a href="/Blog/tags/json/" style="font-size: 12px; color: #ccc">json</a> <a href="/Blog/tags/jvm/" style="font-size: 12px; color: #ccc">jvm</a> <a href="/Blog/tags/karma/" style="font-size: 14.57px; color: #b1b1b1">karma</a> <a href="/Blog/tags/language/" style="font-size: 12px; color: #ccc">language</a> <a href="/Blog/tags/links/" style="font-size: 12px; color: #ccc">links</a> <a href="/Blog/tags/linux/" style="font-size: 14.57px; color: #b1b1b1">linux</a> <a href="/Blog/tags/lodash/" style="font-size: 12px; color: #ccc">lodash</a> <a href="/Blog/tags/macroTasks/" style="font-size: 12px; color: #ccc">macroTasks</a> <a href="/Blog/tags/markdown/" style="font-size: 12px; color: #ccc">markdown</a> <a href="/Blog/tags/material/" style="font-size: 12px; color: #ccc">material</a> <a href="/Blog/tags/math/" style="font-size: 17.14px; color: #979797">math</a> <a href="/Blog/tags/md5/" style="font-size: 12px; color: #ccc">md5</a> <a href="/Blog/tags/microTasks/" style="font-size: 12px; color: #ccc">microTasks</a> <a href="/Blog/tags/mkfifo/" style="font-size: 12px; color: #ccc">mkfifo</a> <a href="/Blog/tags/mongo/" style="font-size: 12px; color: #ccc">mongo</a> <a href="/Blog/tags/nextCloud/" style="font-size: 12px; color: #ccc">nextCloud</a> <a href="/Blog/tags/nikki4/" style="font-size: 12px; color: #ccc">nikki4</a> <a href="/Blog/tags/node/" style="font-size: 12px; color: #ccc">node</a> <a href="/Blog/tags/nodejs/" style="font-size: 12px; color: #ccc">nodejs</a> <a href="/Blog/tags/npm/" style="font-size: 12px; color: #ccc">npm</a> <a href="/Blog/tags/observable/" style="font-size: 14.57px; color: #b1b1b1">observable</a> <a href="/Blog/tags/os/" style="font-size: 12px; color: #ccc">os</a> <a href="/Blog/tags/ownCloud/" style="font-size: 12px; color: #ccc">ownCloud</a> <a href="/Blog/tags/plan/" style="font-size: 17.14px; color: #979797">plan</a> <a href="/Blog/tags/post/" style="font-size: 12px; color: #ccc">post</a> <a href="/Blog/tags/protobuf/" style="font-size: 12px; color: #ccc">protobuf</a> <a href="/Blog/tags/python/" style="font-size: 17.14px; color: #979797">python</a> <a href="/Blog/tags/ram/" style="font-size: 12px; color: #ccc">ram</a> <a href="/Blog/tags/rdf/" style="font-size: 17.14px; color: #979797">rdf</a> <a href="/Blog/tags/react/" style="font-size: 14.57px; color: #b1b1b1">react</a> <a href="/Blog/tags/redis/" style="font-size: 12px; color: #ccc">redis</a> <a href="/Blog/tags/rowhammer/" style="font-size: 14.57px; color: #b1b1b1">rowhammer</a> <a href="/Blog/tags/rsa/" style="font-size: 12px; color: #ccc">rsa</a> <a href="/Blog/tags/rust/" style="font-size: 14.57px; color: #b1b1b1">rust</a> <a href="/Blog/tags/rxjs/" style="font-size: 14.57px; color: #b1b1b1">rxjs</a> <a href="/Blog/tags/schedule/" style="font-size: 12px; color: #ccc">schedule</a> <a href="/Blog/tags/scroll/" style="font-size: 12px; color: #ccc">scroll</a> <a href="/Blog/tags/security/" style="font-size: 12px; color: #ccc">security</a> <a href="/Blog/tags/server/" style="font-size: 14.57px; color: #b1b1b1">server</a> <a href="/Blog/tags/shell/" style="font-size: 12px; color: #ccc">shell</a> <a href="/Blog/tags/source-code/" style="font-size: 12px; color: #ccc">source code</a> <a href="/Blog/tags/sparql/" style="font-size: 12px; color: #ccc">sparql</a> <a href="/Blog/tags/spring/" style="font-size: 12px; color: #ccc">spring</a> <a href="/Blog/tags/system/" style="font-size: 14.57px; color: #b1b1b1">system</a> <a href="/Blog/tags/test/" style="font-size: 14.57px; color: #b1b1b1">test</a> <a href="/Blog/tags/throttle/" style="font-size: 12px; color: #ccc">throttle</a> <a href="/Blog/tags/v-model/" style="font-size: 12px; color: #ccc">v-model</a> <a href="/Blog/tags/virus/" style="font-size: 12px; color: #ccc">virus</a> <a href="/Blog/tags/vscode/" style="font-size: 14.57px; color: #b1b1b1">vscode</a> <a href="/Blog/tags/vue/" style="font-size: 12px; color: #ccc">vue</a> <a href="/Blog/tags/vue2/" style="font-size: 27.43px; color: #2c2c2c">vue2</a> <a href="/Blog/tags/webpack/" style="font-size: 12px; color: #ccc">webpack</a> <a href="/Blog/tags/wireless-adb/" style="font-size: 12px; color: #ccc">wireless adb</a> <a href="/Blog/tags/递归/" style="font-size: 12px; color: #ccc">递归</a>
+            </div>
           </div>
-
         
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/Blog/20-01-19-vsc-ENOSPC/" rel="prev" title="vscode use out my file watchers">
-      <i class="fa fa-chevron-left"></i> vscode use out my file watchers
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/Blog/20-02-26-js-yield/" rel="next" title="js yield">
-      js yield <i class="fa fa-chevron-right"></i>
-    </a></div>
+      </div>
+      
+      
+      
     </div>
-      </footer>
     
-  </article>
-  
-  
-  
 
+    
+    
+    
 
 
           </div>
@@ -384,7 +288,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -524,9 +427,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://cromarmot.github.io/Blog/20-02-19-console.logsourceurl/";
-    this.page.identifier = "20-02-19-console.logsourceurl/";
-    this.page.title = "console source url";
+    this.page.url = "https://cromarmot.github.io/Blog/tags/index.html";
+    this.page.identifier = "tags/index.html";
+    this.page.title = "tags";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
