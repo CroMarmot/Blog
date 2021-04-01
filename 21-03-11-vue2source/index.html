@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
 <meta property="og:description" content="源代码commit hash:4f81b5db9ab553ca0abe0706ac55ceb861344330 src server platforms core 6600 行 shared compiler sfc  134 ./sfc/parser.js    dist 生成的文件  typings TypeScript的定义文件  本地调试代码环境搭建 12yarnyarn dev -m">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-03-22T07:13:55.445Z">
+<meta property="og:updated_time" content="2021-04-01T03:14:37.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue2源码阅读(由xmind笔记生成, 修改中...)">
 <meta name="twitter:description" content="源代码commit hash:4f81b5db9ab553ca0abe0706ac55ceb861344330 src server platforms core 6600 行 shared compiler sfc  134 ./sfc/parser.js    dist 生成的文件  typings TypeScript的定义文件  本地调试代码环境搭建 12yarnyarn dev -m">
@@ -227,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-22 15:13:55" itemprop="dateModified" datetime="2021-03-22T15:13:55+08:00">2021-03-22</time>
+                <time title="修改時間：2021-04-01 11:14:37" itemprop="dateModified" datetime="2021-04-01T11:14:37+08:00">2021-04-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -301,7 +301,7 @@
 <li><p><a href="https://github.com/numbbbbb/read-vue-source-code/issues/9" target="_blank" rel="noopener">https://github.com/numbbbbb/read-vue-source-code/issues/9</a></p>
 </li>
 </ul>
-<h1 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h1><h2 id="src-platforms-weex"><a href="#src-platforms-weex" class="headerlink" title="src/platforms/weex"></a>src/platforms/weex</h2><ul>
+<h2 id><a href="#" class="headerlink" title></a><a id="more"></a></h2><h1 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h1><h2 id="src-platforms-weex"><a href="#src-platforms-weex" class="headerlink" title="src/platforms/weex"></a>src/platforms/weex</h2><ul>
 <li>阿里之前的，已经弃用了？上次更改2020年1月</li>
 </ul>
 <h2 id="entry"><a href="#entry" class="headerlink" title="entry"></a>entry</h2><ul>
@@ -503,7 +503,7 @@
 <h2 id="Vue-init"><a href="#Vue-init" class="headerlink" title="Vue._init()"></a>Vue._init()</h2><ul>
 <li>前面的代码 都是在 new Vue 之前 import阶段发生的事情,往后就是，Vue整个类被构建好了，还是真正产生实例的过程</li>
 <li>这个函数是 initMixin 在原型链中定义的</li>
-<li>这部分的时候，先忽略 defineReactive，ast等相对复杂的实现，主要看一个流程 和 一些相对不那么复杂的调用实现。</li>
+<li>这部分的时候，先忽略 defineReactive，ast等，Watcher 相对复杂的实现，主要看一个流程 和 一些相对不那么复杂的调用实现。</li>
 <li><p>用户代码举例</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	el:<span class="string">'#app'</span>,</span><br><span class="line">	data()&#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			message: <span class="string">'Hello Vue!'</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
@@ -636,8 +636,14 @@
 <li><p>initState</p>
 <ul>
 <li>_watchers = []</li>
+<li><p>proxy 函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">proxy</span> (<span class="params">target: Object, sourceKey: string, key: string</span>) </span>&#123;</span><br><span class="line">  sharedPropertyDefinition.get = <span class="function"><span class="keyword">function</span> <span class="title">proxyGetter</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>[sourceKey][key]</span><br><span class="line">  &#125;</span><br><span class="line">  sharedPropertyDefinition.set = <span class="function"><span class="keyword">function</span> <span class="title">proxySetter</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>[sourceKey][key] = val</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">Object</span>.defineProperty(target, key, sharedPropertyDefinition)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>也可以看到这里的用了 defineProperty</li>
+</ul>
+</li>
 <li><p>porps 核心实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vm._props = &#123;&#125;</span><br><span class="line">vm._propsKeys = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> vm.$options.props﻿) &#123;</span><br><span class="line">  defineReactive(props, key, value)</span><br><span class="line">  <span class="keyword">if</span> (!(key <span class="keyword">in</span> vm)) &#123;</span><br><span class="line">    proxy(vm, <span class="string">`_props`</span>, key)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> props = vm._props = &#123;&#125;</span><br><span class="line">vm._propsKeys = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> vm.$options.props﻿) &#123;</span><br><span class="line">  defineReactive(props, key, value)</span><br><span class="line">  <span class="keyword">if</span> (!(key <span class="keyword">in</span> vm)) &#123;</span><br><span class="line">    proxy(vm, <span class="string">`_props`</span>, key)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>非 root，都是关闭响应式 进行操作的</li>
 </ul>
@@ -645,14 +651,12 @@
 <li><p>methods 核心实现</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> methods = vm.$options.methods</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> methods) &#123;</span><br><span class="line">  vm[key] = bind(methods[key], vm)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>这一块有做 保留词判断，对于<code>$</code> 和 <code>_</code>开头的视作保留词</li>
+<li>这一块有做 保留词判断，对于<code>$</code> 和 <code>_</code>开头的视作保留词 isReserved</li>
 <li>initMethods 中可以看到 和_props中做冲突检查，但是这里是直接提出了_props? 为啥不是专门建立冲突表，毕竟data，computed里都可能会有冲突检查</li>
 <li><p>这里也可以看到，我面试喜欢问人 为啥function中的this是怎么来的，或者让你实现会怎么实现，这里bind</p>
 <ul>
 <li>稍微多dig一下代码，发现了还有nativebind和pollyfillBind 为了解决不支持默认的bind的情况</li>
 </ul>
-</li>
-<li><p>绑定到vm上</p>
 </li>
 </ul>
 </li>
@@ -662,20 +666,11 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="keyword">const</span> data = vm._data = <span class="keyword">typeof</span> data === <span class="string">'function'</span></span><br><span class="line">  ? getData(data, vm)</span><br><span class="line">  : data || &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> keys = <span class="built_in">Object</span>.keys(data)</span><br><span class="line"><span class="keyword">let</span> i = keys.length</span><br><span class="line"><span class="keyword">while</span> (i--) &#123;</span><br><span class="line">  <span class="keyword">const</span> key = keys[i]</span><br><span class="line">    proxy(vm, <span class="string">`_data`</span>, key)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// observe data</span></span><br><span class="line">observe(data, <span class="literal">true</span> <span class="comment">/* asRootData */</span>)</span><br></pre></td></tr></table></figure>
 <ul>
 <li>…为啥相邻3个函数，传参设计还有的自己取，有的提取出来，再传入</li>
-<li>刚刚刚好说了，冲突校验越写越多</li>
+<li>刚刚说了，冲突校验越写越多</li>
 <li>哦 原来这里data调用时会传递实例本身，可以this.去拿，也可以直接 通过传入的vm获得this</li>
-<li><p>感觉，这里如果是裸的data，完全可以加一个 深拷贝来做，但是为啥 就只是报个错？历史原因？</p>
-<ul>
-<li>这里也可以看到，通过isReserved 排除了 $和下划线开头的变量</li>
-<li><p>也可以看到这里的用了 defineProperty</p>
-<ul>
-<li>this._data[key]</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>最后observe(data, true)，后面响应式再说</p>
-</li>
+<li>感觉，这里如果是裸的data，完全可以加一个 深拷贝来做，但是为啥 就只是报个错？历史原因？</li>
+<li>也有isReserved判断是否是 <code>$</code>,<code>_</code>开头</li>
+<li>最后observe(data, true)</li>
 </ul>
 </li>
 <li><p>无data时，observe(vm._data={}, true)</p>
@@ -683,54 +678,42 @@
 </ul>
 </li>
 <li><p>initComputed</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> watchers = vm._computedWatchers = <span class="built_in">Object</span>.create(<span class="literal">null</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> <span class="keyword">this</span>.$options.computed) &#123;</span><br><span class="line">  <span class="keyword">const</span> userDef = computed[key]</span><br><span class="line">  <span class="keyword">const</span> getter = <span class="keyword">typeof</span> userDef === <span class="string">'function'</span> ? userDef : userDef.get</span><br><span class="line">    watchers[key] = <span class="keyword">new</span> Watcher(</span><br><span class="line">      vm,</span><br><span class="line">      getter || noop,</span><br><span class="line">      noop,</span><br><span class="line">      computedWatcherOptions</span><br><span class="line">    )</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(target, key, sharedPropertyDefinition) <span class="comment">// 其中 sharedPropertyDefinition是基于用户提供的函数创建的 带有cache或直接的 调用函数﻿</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>存在 _computedWatchers 数组里</p>
+<li><code>this._computedWatchers = Object.create(null)</code> 真实存储在 这个field的键值对里</li>
+<li>对于 服务端渲染ssr的情况，computed就是作为getter计算</li>
+<li>这里可以看到，漏掉了和methods冲突校验？只有$data 和 props</li>
+<li><p>sharedPropertyDefinition.get = shouldCache       ? createComputedGetter(key) : createGetterInvoker(userDef)</p>
 <ul>
-<li>这里可以看到，就没有和methods做冲突校验，</li>
-<li>defineComputed</li>
-<li><p>isServerRendering</p>
-<ul>
-<li><p>决定是否cache</p>
-<ul>
-<li><p>createComputedGetter</p>
-<ul>
-<li>这里就是脏标记和更新 通知等</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>这里也可以看到 对直接的函数，和用户定义set/get 的支持</p>
-</li>
+<li>这两块实现细节与 响应式有关，在后面响应式讲解的地方再细说。总之从现在的视角就是通过把用户传入的包装后的函数</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>initWatch</p>
-<ul>
-<li>哦 watch还可以数组函数</li>
-<li><p>createWatcher</p>
-<ul>
-<li>js 这种 手动的可变 传参，有时就很草</li>
-<li>然后tm，这里handler也可以是个字符串，也就是可以是methods的名字？？？？</li>
-<li>调用$watch(key, handler, options)</li>
-</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> <span class="keyword">this</span>.$options.watch) &#123;</span><br><span class="line">  vm.$watch(key,watch[key])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-</li>
+<pre><code>$watch，闭包内watcher，留一个unwatchFn支持取消
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> watcher = <span class="keyword">new</span> Watcher(vm, key, watch[key], &#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+  - 这里代码做的是单watch的情况会走的代码，watch还可以数组函数, 可以immediate，这些官方文档上统统都没有
+  - createWatcher又见函数重载
+</code></pre><ul>
 <li><p>initProvide</p>
 <ul>
-<li>resolve provide after data/props</li>
+<li>函数则vm调用，值则直接取，放在 vm._provided</li>
 </ul>
 </li>
 <li><p>callHook(vm, ‘created’) 生命周期</p>
 </li>
-<li><p>vm.$mount</p>
+<li>上面就完成了js部分的创建，vm什么都好了，接下来就是渲染出html</li>
+<li><p>vm.$mount(vm.$options.el)</p>
 <ul>
-<li><p>来自上面多次包裹的$mount</p>
+<li><p>来自上面在设置Class时多次包裹的$mount</p>
 <ul>
 <li>web/entry-runtime-with-compiler.js</li>
 <li>web/runtime/index.js</li>
@@ -739,187 +722,64 @@
 </li>
 </ul>
 </li>
-<li><p>可以看到是入侵式编码 性能测试，用 NODE_ENV 包裹</p>
+<li><p>之后的内容就是用户操作和 对应函数/事件的触发了</p>
 </li>
-<li>之后的内容就是用户操作和 对应函数/事件的触发了</li>
 </ul>
 <h2 id="响应式"><a href="#响应式" class="headerlink" title="响应式"></a>响应式</h2><ul>
+<li><p>defineReactive(内部调用的 Observer), Watcher, Dep, </p>
+<ul>
+<li>先看分别的实现，再看实际使用时候的调用</li>
+</ul>
+</li>
 <li><p>Dep</p>
 <ul>
-<li>虽然我们直接看到的是 defineReactive, 但是我们从Dep开始看</li>
-<li>“全局uid” 显然是 全局函数</li>
-<li><p>static Dep.target : Watcher?</p>
-<ul>
-<li>这里又是，存在值/null/undefined 都有可能</li>
-</ul>
+<li><p>core/observer/dep.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Dep</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> target: ?Watcher;</span><br><span class="line">  id: number;</span><br><span class="line">  subs: <span class="built_in">Array</span>&lt;Watcher&gt;;</span><br><span class="line">  <span class="keyword">constructor</span> () &#123;</span><br><span class="line">    <span class="keyword">this</span>.id = uid++</span><br><span class="line">    <span class="keyword">this</span>.subs = []</span><br><span class="line">  &#125;</span><br><span class="line">  addSub (sub: Watcher) </span><br><span class="line">  removeSub (sub: Watcher) </span><br><span class="line">  depend ()</span><br><span class="line">  notify () </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>depend()</p>
-<ul>
-<li>Dep.target.addDep(this)</li>
-</ul>
+<li><p>虽然我们直接看到的是 defineReactive, 但是我们从Dep开始看</p>
 </li>
-<li><p>notify()</p>
+<li>这也会有一个自己的单增 uid</li>
+<li>Dep增删自己subs里的Watcher ： addSub/removeSub</li>
+<li><p>在当前Dep.target(是个Watcher)中增加自己 Dep.target.addDep(this)</p>
 <ul>
-<li><p>获取subs</p>
+<li>这里Dep.target又是，存在值/null/undefined 都有可能</li>
+<li>这是个静态成员</li>
+<li><p>通过 pushTarget/popTarget 来维护的，是个栈，啊 搞这么多变量干嘛，直接取栈顶不就好了。从代码看起来在其它地方有前置判断，目测还是所谓性能相关？<!--我就不懂了，perf都是靠这样破坏层级的搞，那还得了，真把自己当后端了--></p>
 <ul>
-<li>遍历调用 update()</li>
+<li>看起来是 #7824 对应提交id： 6b1d431a8</li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p>observer/index.js</p>
-<ul>
-<li>只给 object 且 instanceof VNode 增加 可ob</li>
-<li><p><code>__ob__</code></p>
-<ul>
-<li>防止无无限循环?指向 Observer实例</li>
-</ul>
-</li>
-<li><p>value</p>
-</li>
-<li>dep = new Dep()</li>
-<li>vmCount ( asRootData 时会增加</li>
-<li><p>递归的defineReactive</p>
-<ul>
-<li><p>数组</p>
-<ul>
-<li>遍历每个 observe</li>
-</ul>
-</li>
-<li><p>对象</p>
-<ul>
-<li>对每个属性 defineReactive</li>
-</ul>
+<li><p>触发所有subs数组中watcher的update方法，notify()</p>
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p>core/observer/index.js::defineReactive</p>
+<li><p>Watcher</p>
 <ul>
-<li><p>获取对象的key原有的set和get</p>
-<ul>
-<li>Object.getOwnPropertyDescriptor</li>
-</ul>
+<li><p>core/observer/watcher.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Watcher</span> </span>&#123;</span><br><span class="line"> vm: Component;</span><br><span class="line"> expression: string;</span><br><span class="line"> cb: <span class="built_in">Function</span>;</span><br><span class="line"> id: number;</span><br><span class="line"> deep: boolean;</span><br><span class="line"> user: boolean;</span><br><span class="line"> lazy: boolean;</span><br><span class="line"> sync: boolean;</span><br><span class="line"> dirty: boolean;</span><br><span class="line"> active: boolean;</span><br><span class="line"> deps: <span class="built_in">Array</span>&lt;Dep&gt;;</span><br><span class="line"> newDeps: <span class="built_in">Array</span>&lt;Dep&gt;;</span><br><span class="line"> depIds: SimpleSet;</span><br><span class="line"> newDepIds: SimpleSet;</span><br><span class="line"> before: ?<span class="built_in">Function</span>;</span><br><span class="line"> getter: <span class="built_in">Function</span>;</span><br><span class="line"> value: any;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">constructor</span> (</span><br><span class="line">  vm: Component,</span><br><span class="line">  expOrFn: string | Function,</span><br><span class="line">  cb: Function,</span><br><span class="line">  options?: ?Object,</span><br><span class="line">  isRenderWatcher?: boolean</span><br><span class="line"> ) &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 计算getter并重新收集dep</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="keyword">get</span> () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 向当前watcher增加dep</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> addDep (dep: Dep) &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 清理dep</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> cleanupDeps () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 当dep改变时会被调用</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> update () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 调度器会调用</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> run () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 只有lazy watcher 会调用，计算值</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> evaluate () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 和所有收集的dep建立联系</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> depend () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 移除自身订阅的所有dep列表</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> teardown () &#123;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+<li><p>vm._watcher = this</p>
 </li>
-<li><p>从执行角度看，触发了 defineProperty 中的set</p>
-<ul>
-<li><p>不太理解这个set的执行顺序。是因为setter.call 都当作很纯的函数吗，比如值相等时候早return掉，进来是调用getter.call</p>
-<ul>
-<li>有getter 没 setter，会不走 通知</li>
-</ul>
-</li>
-<li><p>如果和旧值一致，则返回</p>
-</li>
-<li>这里有自己比较自己， 是因为？get方法可能返回不同值还是为什么？</li>
-<li>如果有设置函数调用设置函数</li>
-<li>通过闭包，修改childOb 和 val</li>
-<li>dep.notify()</li>
-</ul>
-</li>
-<li><p>defineReactive 定义的是属性</p>
-<ul>
-<li>闭包里有 dep</li>
-<li>val</li>
-<li><p>childOb</p>
-<ul>
-<li><p>Observer</p>
-<ul>
-<li>通过 value指向原 对象</li>
-<li>原对象通过<code>__ob__</code>指向 Observer</li>
-<li>dep = new Dep()</li>
-<li>vmCount</li>
-<li><p>原对象被递归修改</p>
-<ul>
-<li>walk</li>
-<li><p>如果原来的是数组则是通过 copyAugment/proptAugment 对 数组操作进行拦截</p>
-<ul>
-<li>对数组的每一个元素，通过observeArray进行转换成 可观察的</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>set</p>
-</li>
-<li>get</li>
-<li><p>defineReactive-&gt;Observer-&gt;defineReactive</p>
-<ul>
-<li>本质上 obj.x 是通过 defineReactive 来拦截计算</li>
-<li>而 <code>obj.x.__ob__ =</code> 的是一个 Observer</li>
-<li><p>最简单的测试是通过vue官网浏览器，console里面调用 </p>
-<ul>
-<li>const obj = {};</li>
-<li>obj._data = {xxx:’x value’,yyy:{zzz:’z value’,v:’v value’}};</li>
-<li>Vue.util.defineReactive(obj,’_data’);</li>
-<li>通过展开 可以看到，被defineReactive的obj本身会增加 <code>__ob__</code> 是个Observable, 内部的字段会递归的 defineReactive 变成 setter/getter. </li>
-<li><p>上面这些是直接在结构体上 / 属性上的，而dep 和 childOb和 val 不在结构体上，是在 闭包里的</p>
-<ul>
-<li>因为这个缺点，想要尝试修改并运行代码，可以改 vue的源码然后，跑生成，再自己去调用 输出</li>
-<li><p>不论是读代码，还是调试，childOb 其实就是 通过 observe方法绑定在对应对象上的<code>__ob__</code></p>
-<ul>
-<li><p>本身observer上也会有 value,vmCount,dep</p>
-<ul>
-<li>Observer 这个this.value 有啥用呢，感觉只有看看也许调试工具使用，本质上，感觉没卵用，可以尝试把初始化的赋值删掉，测试也是能运行的。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>数据呢，通过闭包放在函数里的val上</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>observe 创建的是 Observer</p>
-<ul>
-<li>只会对对象创建，原始类型不会创建</li>
-<li><p>observe 传递true时，自定义的引用计数会+1</p>
-<ul>
-<li>src/core/instance/lifecycle.js:      <code>vm._data.__ob__.vmCount--</code></li>
-<li>src/core/observer/index.js:  vmCount: number; // number of vms that have this object as root $data</li>
-<li>src/core/observer/index.js:    this.vmCount = 0</li>
-<li>src/core/observer/index.js:    ob.vmCount++</li>
-<li>src/core/observer/index.js:  if (target._isVue || (ob &amp;&amp; ob.vmCount)) {</li>
-<li>src/core/observer/index.js:  if (target._isVue || (ob &amp;&amp; ob.vmCount)) {</li>
-<li>看起来，判断是否是root data的？</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>computed 里 会创建 Watcher</p>
-<ul>
-<li>vm._watcher = this</li>
 <li>vm.watchers.push(this)</li>
-<li>deps =[ ]</li>
-<li>newDeps = [ ]</li>
 <li>等等一堆初始化</li>
-<li>最后this.value = this.get()</li>
-<li><p>get() 使用执行过程</p>
+<li>根据 expOrFn 产生this.getter</li>
+<li>最后    this.value = this.lazy ? undefined : this.get()</li>
+<li><p>get(), 会把当前watcher通过dep里提供的 pushTarget 压栈，再调用 getter，结束后popTarget</p>
 <ul>
-<li>pushTarget</li>
-<li><p>调用getter 得到value</p>
-<ul>
-<li>也就是，我们把会收到影响的object push到Dep.target上，然后，每次运算中触发“响应式”的值相关的时候，会通过 dep.depend()-&gt;Target::addDep(dep) -&gt; dep.addSub (响应式属性) 和它建立影响关系，(数据的值) 也会 childOb.dep.depend() -&gt; .dep.depend()-&gt;Target::addDep(dep) -&gt; dep.addSub </li>
-<li><p>之后值变化可以通过 dep.notify() -&gt; Watcher::update() 影响变化</p>
-<ul>
-<li><p>默认是 queueWatcher（当前Watcher）</p>
-<ul>
-<li>如果队列中没它，则加入到watcher队列中</li>
-<li>这里可以看到nextTick 的使用，从promise/MutationObserver/setImmediate/setTimeout0 逐级下降，所以不要靠 nextTick猜执行顺序来控制</li>
+<li>其中如果设置deep，会遍历对象元素，触发每个层级的计算其中用set避免递归无限循环</li>
+<li>注意到上面的Dep类，在get触发计算函数过程中会调用这里的addDep，在addDep的实现是通过 newDepIds/newDep 去记录，到最后结束的时候，通过cleanupDeps 函数完成 从new开头的移动到depIds/deps 中</li>
 </ul>
 </li>
+<li><p>我们来看看Dep和Watcher之间的触发关系（不看移除）</p>
+<ul>
+<li>Dep::addSub 在dep中记录watcher</li>
+<li>Dep::depend 当前watchers栈顶的addDep方法传入dep</li>
+<li>Dep::notify 当前dep中的watchers 依次触发 update()</li>
+<li>Watcher::get 触发自己getter函数，收集依赖（通过依赖自己的addDep）,最后 cleanupDeps</li>
+<li><p>Watcher::update 调用自己的run 或 调用queueWatcher 或 标记dirty</p>
+<ul>
 <li><p>lazy</p>
 <ul>
 <li>dirty标识</li>
@@ -927,73 +787,18 @@
 </li>
 <li><p>sync</p>
 <ul>
-<li>run</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>如果deep被设置，traverse</p>
+<li><p>run</p>
 <ul>
-<li>触发所有转换后的getter</li>
+<li>这里会调用get，如果有设置callback，例如用户设置的watch函数，则会 callback.call(实例，新值，旧值)</li>
+<li>这里我们从代码可以看到，deep不光会影响 深的对象，同时如果是基础类型其实这里即使和原来值相同也会触发callback</li>
 </ul>
 </li>
-<li><p>popTarget</p>
+</ul>
 </li>
-<li><p>this.cleanupDeps()</p>
+<li><p>queueWatcher（传入当前Watcher）</p>
 <ul>
-<li>这一块和 addDep 都用 Set 来判断重复</li>
-<li>清除的是“不存在的关系”和 临时的中间变量</li>
-</ul>
-</li>
-<li><p>返回value</p>
-</li>
-</ul>
-</li>
-<li><p>转换过程</p>
-<ul>
-<li>转化成 reactive data</li>
-<li>创建新的 watcher</li>
-<li>watcher调用getter</li>
-<li>数据调用depend</li>
-<li>数据Dep调用addDep(watcher)</li>
-<li>watcher 调用addSub(Dep)</li>
-<li>返回 数据给watcher</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="动态数据，lazy，同步，queue"><a href="#动态数据，lazy，同步，queue" class="headerlink" title="动态数据，lazy，同步，queue"></a>动态数据，lazy，同步，queue</h2><ul>
-<li><p>3种触发 watchers的方法</p>
-<ul>
-<li>上面讲了 watcher和 它依赖的响应式变量如何建立关系的，和基本触发，下面讲如何异步触发它</li>
-<li><p>被更新的内容 是调用的update()方法</p>
-<ul>
-<li><p>lazy，置dirty为true</p>
-<ul>
-<li><p>每次computedGetter()-&gt;state.js::evaluate()，先调用，dirty置为false， createComputedGetter</p>
-<ul>
-<li>weex里能搜到完全state.js::computedGetter()一样的代码，我们不管它</li>
-</ul>
-</li>
-<li><p>从实现上讲，就是 如果配置的lazy，那么计算过程 和 更新过程就会走 lazy 单独的 方案</p>
-</li>
-<li>例子 computed的 lazy是true</li>
-</ul>
-</li>
-<li><p>如果 sync 设置，直接调用run</p>
-<ul>
-<li><p>基于一个没太懂的active，为了防止内存泄漏还在跑？</p>
-<ul>
-<li>因为这个变量默认true，在 teardown完成后才会置为false</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>其它情况 走 queueWatcher</p>
-<ul>
+<li>如果队列中没它，则加入到watcher队列中</li>
+<li>这里可以看到nextTick 的使用，从promise/MutationObserver/setImmediate/setTimeout0 逐级下降，所以不要靠 nextTick猜执行顺序来控制</li>
 <li><p>通过 一个 scheduler 享有的has 集合，来记录 是否有当前的 watcher.id</p>
 <ul>
 <li>哎哟 好难受 又是 undefined/null/true 这里就是双等于，而不是三等于</li>
@@ -1021,67 +826,164 @@
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li><p>Watcher::evaluate 会被 用在设置了lazy的computed的getter里， 调用时会触发上面的get函数</p>
+<ul>
+<li>这为什么要在外部访问一个对象的属性，再掉对象的方法而不做任何其它事呢，那不直接把属性内置到对象内更好吗</li>
+</ul>
+</li>
+<li><p>Watcher::depend  触发记录的所有dep的 depend方法，也是被computed的getter调用</p>
+<ul>
+<li><p>这里可以看到是，watcher是更主动的类，而Dep是被动的类，也就是watcher通过计算收集自己的deps，然后对deps里面再和自己建立关系</p>
+<ul>
+<li>computedGetter-&gt;watcher::depend-&gt;deps::depend-&gt;watcher::adddep, 区别是前后的watcher可能因为压栈而不是同一个吗？？？</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>也就是，我们把会收到影响的object push到Dep.target上，然后，每次运算中触发“响应式”的值相关的时候，会通过 dep.depend()-&gt;Target::addDep(dep) -&gt; dep.addSub (响应式属性) 和它建立影响关系，(数据的值) 也会 childOb.dep.depend() -&gt; .dep.depend()-&gt;Target::addDep(dep) -&gt; dep.addSub </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>observer/index.js</p>
+<ul>
+<li><p>Observer</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Observer</span> </span>&#123;</span><br><span class="line">  value: any;</span><br><span class="line">  dep: Dep;</span><br><span class="line">  vmCount: number; <span class="comment">// number of vms that have this object as root $data</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span> (value: any) &#123;</span><br><span class="line">    <span class="keyword">this</span>.value = value</span><br><span class="line">    <span class="keyword">this</span>.dep = <span class="keyword">new</span> Dep()</span><br><span class="line">    <span class="keyword">this</span>.vmCount = <span class="number">0</span></span><br><span class="line">    def(value, <span class="string">'__ob__'</span>, <span class="keyword">this</span>)</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(value)) &#123;</span><br><span class="line">      <span class="keyword">if</span> (hasProto) &#123;</span><br><span class="line">        protoAugment(value, arrayMethods)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        copyAugment(value, arrayMethods, arrayKeys)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">this</span>.observeArray(value)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.walk(value)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Walk through all properties and convert them into</span></span><br><span class="line"><span class="comment">   * getter/setters. This method should only be called when</span></span><br><span class="line"><span class="comment">   * value type is Object.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  walk (obj: <span class="built_in">Object</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> keys = <span class="built_in">Object</span>.keys(obj)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; keys.length; i++) &#123;</span><br><span class="line">      defineReactive(obj, keys[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 对数组每个元素 调用observe函数</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  observeArray (items: <span class="built_in">Array</span>&lt;any&gt;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>只给 object 且 instanceof VNode 增加 可ob</li>
+<li><p><code>__ob__</code></p>
+<ul>
+<li>防止无限循环?指向 Observer实例，observe函数不会重复创建</li>
+</ul>
+</li>
+<li><p>value 为初始化传入的value</p>
+</li>
+<li>dep = new Dep()</li>
+<li>vmCount ( asRootData 时会增加</li>
+<li><p>如果是数组修改了数组的push之类的函数</p>
+<ul>
+<li>遍历每个 observe</li>
+</ul>
+</li>
+<li><p>如果是对象，调用defineReactive处理每个属性</p>
+<ul>
+<li>具体的defineReactive 向后讲</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>observe 创建的是 Observer</p>
+<ul>
+<li>只会对对象创建，原始类型不会创建</li>
+<li><p>observe 传递true时，自定义的vmCount计数会+1</p>
+<ul>
+<li>src/core/instance/lifecycle.js:      <code>vm._data.__ob__.vmCount--</code></li>
+<li>src/core/observer/index.js:  vmCount: number; // number of vms that have this object as root $data</li>
+<li>src/core/observer/index.js:    this.vmCount = 0</li>
+<li>src/core/observer/index.js:    ob.vmCount++</li>
+<li>src/core/observer/index.js:  if (target._isVue || (ob &amp;&amp; ob.vmCount)) {</li>
+<li>src/core/observer/index.js:  if (target._isVue || (ob &amp;&amp; ob.vmCount)) {</li>
+<li>看起来，判断是否是root data的？</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>defineReactive</p>
+<ul>
+<li><p>获取对象的key原有的set和get</p>
+<ul>
+<li>Object.getOwnPropertyDescriptor</li>
+</ul>
+</li>
+<li><p>修改的是原有的属性，自定义了set/get方法</p>
+</li>
+<li><p>自己比包内有dep，childOb和val来维持</p>
+<ul>
+<li><p>childOb</p>
+<ul>
+<li>在 $attrs/$listener 时失效，只做到最外层dep</li>
+<li>其余的会，对数据调用observe函数产生Observer对象，用对象内的dep建立关系</li>
+</ul>
+</li>
+<li><p>dep</p>
+<ul>
+<li>get时建立关系</li>
+<li>set时通知有关系的watcher</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>defineReactive-&gt;Observer-&gt;defineReactive 递归所有key</p>
+</li>
+<li><p>最简单的测试是通过vue官网浏览器，console里面调用 </p>
+<ul>
+<li>const obj = {};</li>
+<li>obj._data = {xxx:’x value’,yyy:{zzz:’z value’,v:’v value’}};</li>
+<li>Vue.util.defineReactive(obj,’_data’);</li>
+<li>通过展开 可以看到，被defineReactive的obj本身会增加 <code>__ob__</code> 是个Observable, 内部的字段会递归的 defineReactive 变成 setter/getter. </li>
+<li><p>上面这些是直接在结构体上 / 属性上的，而dep 和 childOb和 val 不在结构体上，是在 闭包里的</p>
+<ul>
+<li>因为这个缺点，想要尝试修改并运行代码，可以改 vue的源码然后，跑生成，再自己去调用 输出</li>
+<li><p>不论是读代码，还是调试，childOb 其实就是 通过 observe方法绑定在对应对象上的<code>__ob__</code></p>
+<ul>
+<li><p>本身observer上也会有 value,vmCount,dep</p>
+<ul>
+<li>Observer 这个this.value 有啥用呢，感觉只有看看也许调试工具使用，本质上，感觉没卵用，可以尝试把初始化的赋值删掉，测试也是能运行的。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数据呢，通过闭包放在函数里的val上</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>defineProperty 中的set</p>
+<ul>
+<li>如果和旧值一致，则返回</li>
+<li>这里有自己比较自己， 是因为？get方法可能返回不同值还是为什么？</li>
+<li>如果有设置函数调用设置函数</li>
+<li>通过闭包，修改childOb 和 val</li>
+<li><p>dep.notify()</p>
+<ul>
+<li><p>被更新的内容 是调用的update()方法</p>
+<ul>
+<li><p>lazy，置dirty为true</p>
+<ul>
+<li>每次computedGetter()-&gt;state.js::evaluate()，先调用，dirty置为false， createComputedGetter</li>
+<li><p>从实现上讲，就是 如果配置的lazy，那么计算过程 和 更新过程就会走 lazy 单独的 方案</p>
+<ul>
+<li>从理解的角度，其实这里是手工去做了，C++里面的同父类指针不同子类指针的虚函数，实际上如果以C++的角度来写，就是根据是否lazy是不同的子类实现，从而提供不同的方法。</li>
+</ul>
+</li>
+<li><p>例子 computed的 lazy是true</p>
+</li>
+</ul>
+</li>
+<li><p>如果 sync 设置，直接调用run</p>
+<ul>
+<li><p>基于一个没太懂的active，为了防止内存泄漏还在跑？</p>
+<ul>
+<li>因为这个变量默认true，在 teardown完成后才会置为false</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>最终值都是来自 get()函数</p>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>如何触发视图(view)刷新</p>
-<ul>
-<li>本质上，我们已经有了，响应式实现的核心部分了，接下来是，在界面上如何使用的</li>
-<li><p>定义位置</p>
-<ul>
-<li>.$mount -&gt; core/instance/lifecycle.js::mountComponent</li>
-<li><p>函数里的</p>
-<ul>
-<li>new Watcher(vm, updateComponent, noop, {</li>
-<li>before () {</li>
-<li>if (vm._isMounted &amp;&amp; !vm._isDestroyed) {</li>
-<li>callHook(vm, ‘beforeUpdate’)</li>
-<li>}</li>
-<li>}</li>
-<li>}, true /<em> isRenderWatcher </em>/)</li>
-</ul>
-</li>
-<li><p>其中updateComponent为更新时触发的函数</p>
-<ul>
-<li>非生产环境的，就不看了</li>
-<li><p>生产环境的是</p>
-<ul>
-<li>()=&gt; {vm._update(vm._render(), hydrating);}</li>
-<li>lazy: false</li>
-<li>这里设计上本来是getter，但实际上，这里就是返回undefined的函数，所以 对应 Watcher实例里面的 value 一直undefined</li>
-<li>vm._render() 返回的是VNode</li>
-<li><p>vm._update 是具体更新节点</p>
-<ul>
-<li>这里我们可以看到keep-alive 相关的 setActiveInstance 方法</li>
-<li>替换了 _vnode , 原来的vm._vnode 是老的，由render()计算出的是新的，</li>
-<li><p>节点替换是由<code>__patch__</code> 实现的</p>
-<ul>
-<li>当在浏览器中的时候 core/vdom/patch.js::createPatchFunction 创建的patch 函数</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>所以总结一下，变化都是使用响应式的实现核心来触发，通过vm+render+patch，来完成更新，其中vm是依赖的变化，render是 获取到的新VNode, patch 是 完成把虚拟节点的变化反映到真实页面上</p>
-<ul>
-<li>和直接的 响应式区别是，响应式实现的是变量，没有“直接的”的函数触发，例如这里的 updateComponent 实际上走的是getter的设计。所以说看上去有点“没有符合原始设计的实现方案”</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>核心的方法是</p>
-<ul>
-<li>core/instance/lifecycle.js::lifecycleMixin::_update</li>
-<li>core/instance/render.js::renderMixin::_render</li>
-</ul>
-</li>
-</ul>
+<li><p>这边提供了 没法触发defineReactive 时的 set和del函数，比如对象新增字段啊 之类的时候用</p>
 </li>
 <li><p>如何控制更新的顺序</p>
 <ul>
@@ -1110,13 +1012,36 @@
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 <h2 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h2><ul>
-<li><p>如何找到render函数</p>
+<li><p>开端</p>
 <ul>
-<li>上一部分 我们其实知道 _update 中的<strong>patch</strong>是做替换工作的，_render() 是计算虚拟节点的</li>
+<li>上面的部分，已经完成了 Class定义，实例产生，以及看了其中的实践方案，下面就是最后一步<code>$mount</code></li>
+<li>从实践上来讲，我们其实已经有响应式了，那么要做的是说把它运用到渲染里，因为从抽象层面讲，响应式不也就是一个函数么</li>
+<li><p>直接从<code>$mount</code>函数开始挖，核心就是</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">new</span> Watcher(vm, () =&gt; &#123;</span><br><span class="line">	vm.__patch__(vm._vnode,vm._render())</span><br><span class="line">&#125;, noop, &#123;</span><br><span class="line">  before () &#123;</span><br><span class="line">   <span class="keyword">if</span> (vm._isMounted &amp;&amp; !vm._isDestroyed) &#123;</span><br><span class="line">    callHook(vm, <span class="string">'beforeUpdate'</span>)</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;, <span class="literal">true</span> <span class="comment">/* isRenderWatcher */</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>_vnode 老的虚拟节点</li>
+<li>_render() 是计算新虚拟节点的</li>
+<li><code>__patch__</code>是做替换工作的，修改真正的html</li>
+<li><p>Watcher复用实现的响应式，来完成响应式触发</p>
+<ul>
+<li>lazy: false</li>
+<li><p>这里watcher传入设计上本来是getter，但实际上，这里就是返回undefined的箭头函数，所以 对应 Watcher实例里面的 value 一直undefined</p>
+<ul>
+<li>和直接的 响应式区别是，响应式实现的是变量，没有“直接的”的函数触发，例如这里的 updateComponent 实际上走的是getter的设计。所以说看上去有点“没有符合原始设计的实现方案”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>core/instance/render.js::_render()</p>
 <ul>
-<li>根据父节点 scopedSlots / slots / 之前计算的scopedSlots 生成当前节点的scopedSlots</li>
+<li>根据父节点scopedSlots / slots / 之前计算的scopedSlots 生成当前节点的scopedSlots</li>
 <li><p>vm.$vnode = _parentVnode</p>
 <ul>
 <li>$vnode: VNode; // the placeholder node for the component in parent’s render tree</li>
@@ -1144,14 +1069,8 @@
 <li><p>vnode.parent = _parentVnode</p>
 </li>
 <li>return vnode</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>view render的结构</p>
-<ul>
-<li><p>虽然上面说是可选，但是我们可以看看 默认的实现</p>
-<ul>
+<li>虽然上面说是可选，但是我们可以看看 默认的实现</li>
+<li>当在浏览器中的时候 core/vdom/patch.js::createPatchFunction 创建的patch 函数</li>
 <li><p>parser:: compiler/parser/index.js</p>
 <ul>
 <li><p>简单说就是把 字符串的 模版，变成 AST</p>
@@ -1235,23 +1154,6 @@
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p>_update</p>
-<ul>
-<li><p>在 render.call(vm._renderProxy, vm.$createElement) 之后增加 console.log(vnode)</p>
-<ul>
-<li><p>定义两个 多个component，可以看到 render的顺序是 先父级别的，后子级别的</p>
-<ul>
-<li>在context里可以看到 前面的 _c / _data / _watchers</li>
-</ul>
-</li>
-<li><p>但是在children 数组里的tag会变成 “vue-component-1-&lt;你的组件名&gt;”</p>
-</li>
-<li>在子组件的vnode 输出里，parent的tag 是 “vue-component-1-&lt;你的组件名&gt;”</li>
-<li>而当 我们跟新数据的时候，能够看到vnode被重新计算</li>
-</ul>
-</li>
 <li><p><code>__patch__</code></p>
 <ul>
 <li>接受 render()计算的虚拟节点的结果</li>
@@ -1330,6 +1232,7 @@
 <li>原尾=新头，patch</li>
 <li>剩余，通过建立老的元素的key到idx映射，然后把新放入时去查这个映射表，找到后记得删除老的表，继续while</li>
 <li>如果找不到创建新的</li>
+<li>感觉似乎很多面试喜欢问讲讲实现原理，实际上抽象出成问题可能也就一个leetcode easy难度</li>
 </ul>
 </li>
 </ul>
@@ -1360,10 +1263,28 @@
 </li>
 </ul>
 </li>
+<li><p>vm._update 是包裹<code>__patch__</code>更新节点</p>
+<ul>
+<li>这里我们可以看到keep-alive 相关的 setActiveInstance 方法</li>
+<li><p>在 render.call(vm._renderProxy, vm.$createElement) 之后增加 console.log(vnode)</p>
+<ul>
+<li><p>定义两个 多个component，可以看到 render的顺序是 先父级别的，后子级别的</p>
+<ul>
+<li>在context里可以看到 前面的 _c / _data / _watchers</li>
+</ul>
+</li>
+<li><p>但是在children 数组里的tag会变成 “vue-component-1-&lt;你的组件名&gt;”</p>
+</li>
+<li>在子组件的vnode 输出里，parent的tag 是 “vue-component-1-&lt;你的组件名&gt;”</li>
+<li>而当 我们跟新数据的时候，能够看到vnode被重新计算</li>
 </ul>
 </li>
 </ul>
-<h1 id="使用的方法"><a href="#使用的方法" class="headerlink" title="使用的方法"></a>使用的方法</h1><h2 id="Flow"><a href="#Flow" class="headerlink" title="Flow"></a>Flow</h2><ul>
+</li>
+<li><p>本质上，我们已经有了，响应式实现的核心部分了，接下来是，在界面上如何使用的</p>
+</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="Flow"><a href="#Flow" class="headerlink" title="Flow"></a>Flow</h2><ul>
 <li>一个typescript类的工具，让编写的时候假装是强类型 可以转换成js</li>
 <li>区别 是静态代码检查</li>
 <li><p>Vue 2.0 为什么选用 Flow 进行静态代码检查而不是直接使用 TypeScript？ - 尤雨溪的回答 - 知乎<br><a href="https://www.zhihu.com/question/46397274/answer/101193678" target="_blank" rel="noopener">https://www.zhihu.com/question/46397274/answer/101193678</a></p>
@@ -1375,14 +1296,20 @@
 </li>
 <li><a href="https://zhuanlan.zhihu.com/p/26204569" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/26204569</a></li>
 </ul>
-<h2 id="自定义alias"><a href="#自定义alias" class="headerlink" title="自定义alias"></a>自定义alias</h2><ul>
-<li><p>scripts/alias.js</p>
+<h2 id="首先整个Vue的原型，或者说Class-是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个-Vue-init-函数，再触发这些不同文件创建的方法来完成-实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化"><a href="#首先整个Vue的原型，或者说Class-是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个-Vue-init-函数，再触发这些不同文件创建的方法来完成-实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化" class="headerlink" title="首先整个Vue的原型，或者说Class 是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个 Vue._init() 函数，再触发这些不同文件创建的方法来完成 实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化"></a>首先整个Vue的原型，或者说Class 是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个 Vue._init() 函数，再触发这些不同文件创建的方法来完成 实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化</h2><ul>
+<li><p>而目前的方式一层层包裹，却都是在Vue这一个 实例/原型 上面 做操作</p>
 <ul>
-<li>可能的替代方案，利用typescript+idea的重构功能</li>
+<li><p>带来的问题是</p>
+<ul>
+<li>不同的包裹之间，不能有冲突的字段</li>
+<li>层级在代码上实现了分层，但是在对应的创建出来的实例并没有分层</li>
+<li>类型标注上，希望字段分层增加是没有起到工具提供保护作用。</li>
 </ul>
 </li>
+<li><p>可能可以通过ts的 类型描述解决</p>
+</li>
 </ul>
-<h2 id="首先整个Vue的原型，或者说Class-是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个-Vue-init-函数，再触发这些不同文件创建的方法来完成-实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化"><a href="#首先整个Vue的原型，或者说Class-是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个-Vue-init-函数，再触发这些不同文件创建的方法来完成-实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化" class="headerlink" title="首先整个Vue的原型，或者说Class 是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个 Vue._init() 函数，再触发这些不同文件创建的方法来完成 实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化"></a>首先整个Vue的原型，或者说Class 是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个 Vue._init() 函数，再触发这些不同文件创建的方法来完成 实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化</h2><ul>
+</li>
 <li><p>定义Vue的类时包裹，包裹再包裹</p>
 <ul>
 <li><p>src/core/instance/index.js</p>
@@ -1414,45 +1341,53 @@
 <li>工作内容，根据默认配置和用户传入的配置，产生合并的$options</li>
 </ul>
 </li>
-<li><p>initLifecycle(vm)</p>
+<li><p>然后是依次init和 穿插hook的触发</p>
 </li>
-<li>initEvents(vm)</li>
-<li>initRender(vm)</li>
-<li>callHook(vm, ‘beforeCreate’)</li>
-<li>initInjections(vm) // resolve injections before data/props</li>
-<li>initState(vm)</li>
-<li>initProvide(vm) // resolve provide after data/props</li>
-<li>callHook(vm, ‘created’)</li>
 <li>vm.$mount(vm.$options.el)</li>
 </ul>
 </li>
 </ul>
-<h2 id="在实例化之前，设计Vue的时候，我们能看到有的用点，有的defineProperty-Vue-…-有的defineProperty-Vue-prototype-…-根据学过的知识，前两种区别是-是否可枚举？后面的是实例上才会有的内容"><a href="#在实例化之前，设计Vue的时候，我们能看到有的用点，有的defineProperty-Vue-…-有的defineProperty-Vue-prototype-…-根据学过的知识，前两种区别是-是否可枚举？后面的是实例上才会有的内容" class="headerlink" title="在实例化之前，设计Vue的时候，我们能看到有的用点，有的defineProperty(Vue,…),有的defineProperty(Vue.prototype,…),根据学过的知识，前两种区别是 是否可枚举？后面的是实例上才会有的内容"></a>在实例化之前，设计Vue的时候，我们能看到有的用点，有的defineProperty(Vue,…),有的defineProperty(Vue.prototype,…),根据学过的知识，前两种区别是 是否可枚举？后面的是实例上才会有的内容</h2><h2 id="version"><a href="#version" class="headerlink" title="version"></a>version</h2><ul>
+<h2 id="常见方法"><a href="#常见方法" class="headerlink" title="常见方法"></a>常见方法</h2><ul>
+<li><p>自定义alias</p>
+<ul>
+<li><p>scripts/alias.js</p>
+<ul>
+<li>可能的替代方案，利用typescript+idea的重构功能</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>version</p>
+<ul>
 <li><code>src/core/index.js</code>：<code>Vue.version = &#39;__VERSION__&#39;</code></li>
 </ul>
-<h2 id="istanbul-ignore-a-lot"><a href="#istanbul-ignore-a-lot" class="headerlink" title="istanbul ignore a lot"></a>istanbul ignore a lot</h2><ul>
-<li>覆盖忽略吧 印象中 这个是覆盖报告忽略</li>
-</ul>
-<h2 id="on-once-等方法都返回了原始的实例，C-里有时能见到这样的写法，可以链式书写调用"><a href="#on-once-等方法都返回了原始的实例，C-里有时能见到这样的写法，可以链式书写调用" class="headerlink" title="$on,$once 等方法都返回了原始的实例，C++里有时能见到这样的写法，可以链式书写调用"></a>$on,$once 等方法都返回了原始的实例，C++里有时能见到这样的写法，可以链式书写调用</h2><h2 id="toArray"><a href="#toArray" class="headerlink" title="toArray"></a>toArray</h2><ul>
+</li>
+<li><p><code>$on</code>,<code>$once</code> 等方法都返回了原始的实例，C++里有时能见到这样的写法，可以链式书写调用</p>
+</li>
+<li><p>toArray</p>
+<ul>
 <li>array like的转换成array</li>
 </ul>
-<h2 id="报错封装"><a href="#报错封装" class="headerlink" title="报错封装"></a>报错封装</h2><ul>
+</li>
+<li><p>报错封装</p>
+<ul>
 <li>handleError(error,vm,info)</li>
 </ul>
-<h2 id="响应式-1"><a href="#响应式-1" class="headerlink" title="响应式"></a>响应式</h2><ul>
-<li><p>src/core/observer/</p>
+</li>
+<li><p>用户可能不传true/false时的代码 = !!value</p>
+</li>
+<li>手工 实现 重载</li>
+<li>手工 实现 多态</li>
+<li>如果有比较复杂的历史bug，利用上github，在注释中，写上对应的issue id</li>
+<li>和其它语言写东西一样，都是主逻辑以外的错误判断有不少</li>
+</ul>
+<h2 id="体验上难受的点"><a href="#体验上难受的点" class="headerlink" title="体验上难受的点"></a>体验上难受的点</h2><ul>
+<li>阅读代码时，非纯函数的确读起来相对更头疼，但是我在想，虽然是非纯函数，但实际上 如果变成一个class，也是类似的，因为有些内容不应该暴露出来的，而对于class内部的一些状态，把它取出来判断再只调用class内的操作，还不如直接class封好</li>
+<li>文档也不全，官方档有些部分没三方博客描述全</li>
+<li>可以看到是入侵式编码 性能测试，用 NODE_ENV 包裹，这个利用了rollup/webpack等编译时能去掉，但从编码上还是入侵式的，如果有办法做切面编程是不是更好</li>
+<li><!-- 在代码上，虽然都不愿意口头承认很多时候用的内容都是过度设计的，而现实的使用其实已经表明了观点，对于很多公司，其实jquery甚至都能胜任，在jquery上封一层类似框架或者ng1，vue1也都完全够用。而vue能火到今天的地步，是社区吹水+入门低+劣币驱逐良币等等的共同结果。随着源码阅读的深入，真的很惊叹这么多公司在用。 --></li>
+<li><p>不够完备的测试，不太能做到重构保护</p>
 <ul>
-<li><p>index.js</p>
-<ul>
-<li>defineReactive</li>
-</ul>
-</li>
-<li><p>dep.js</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="阅读代码时，非纯函数的确读起来相对更头疼，但是我在想，虽然是非纯函数，但实际上-如果变成一个class，也是类似的，因为有些内容不应该暴露出来的。"><a href="#阅读代码时，非纯函数的确读起来相对更头疼，但是我在想，虽然是非纯函数，但实际上-如果变成一个class，也是类似的，因为有些内容不应该暴露出来的。" class="headerlink" title="阅读代码时，非纯函数的确读起来相对更头疼，但是我在想，虽然是非纯函数，但实际上 如果变成一个class，也是类似的，因为有些内容不应该暴露出来的。"></a>阅读代码时，非纯函数的确读起来相对更头疼，但是我在想，虽然是非纯函数，但实际上 如果变成一个class，也是类似的，因为有些内容不应该暴露出来的。</h2><h2 id="如果有比较复杂的历史bug，利用上github，在注释中，写上对应的issue-id"><a href="#如果有比较复杂的历史bug，利用上github，在注释中，写上对应的issue-id" class="headerlink" title="如果有比较复杂的历史bug，利用上github，在注释中，写上对应的issue id"></a>如果有比较复杂的历史bug，利用上github，在注释中，写上对应的issue id</h2><h2 id="用户可能不传true-false时的代码-value"><a href="#用户可能不传true-false时的代码-value" class="headerlink" title="用户可能不传true/false时的代码 = !!value"></a>用户可能不传true/false时的代码 = !!value</h2><h1 id="阅读时临时想法记录"><a href="#阅读时临时想法记录" class="headerlink" title="阅读时临时想法记录"></a>阅读时临时想法记录</h1><h2 id><a href="#" class="headerlink" title></a><!-- 在代码上，虽然都不愿意口头承认很多时候用的内容都是过度设计的，而现实的使用其实已经表明了观点，对于很多公司，其实jquery甚至都能胜任，在jquery上封一层类似框架或者ng1，vue1也都完全够用。而vue能火到今天的地步，是社区吹水+入门低+劣币驱逐良币等等的共同结果。随着源码阅读的深入，真的很惊叹这么多公司在用。 --></h2><h2 id="文档也不全，官方档有些部分没三方博客描述全"><a href="#文档也不全，官方档有些部分没三方博客描述全" class="headerlink" title="文档也不全，官方档有些部分没三方博客描述全"></a>文档也不全，官方档有些部分没三方博客描述全</h2><h2 id="不够完备的测试，不太能做到重构保护"><a href="#不够完备的测试，不太能做到重构保护" class="headerlink" title="不够完备的测试，不太能做到重构保护"></a>不够完备的测试，不太能做到重构保护</h2><ul>
 <li>覆盖报告的 ignore</li>
 <li><p>例如事件的$on 设计是 有hook:冒号则置为true，否则是默认false，而测试覆盖 根本不全test/unit/features/options/lifecycle.spec.js 就简单做了覆盖</p>
 <p>if (hookRE.test(event)) {<br>  vm._hasHookEvent = true<br>}<br>改为 （语义变了，代码错了，测试依然通过）<br>vm._hasHookEvent = hookRE.test(event)</p>
@@ -1460,45 +1395,23 @@
 <li><p>这样也就意味着，能用就不会再有代码更新，不炸就没有对应测试，这类的测试代码对应的测试报告形同虚设，真的是为了写测试代码而写测试代码</p>
 </li>
 </ul>
-<h2 id="分层-当然是好的，但是这里因为前端的随意性，从构建的思考来讲一个对象，更应该在初始化时就完成其所有组件"><a href="#分层-当然是好的，但是这里因为前端的随意性，从构建的思考来讲一个对象，更应该在初始化时就完成其所有组件" class="headerlink" title="分层 当然是好的，但是这里因为前端的随意性，从构建的思考来讲一个对象，更应该在初始化时就完成其所有组件"></a>分层 当然是好的，但是这里因为前端的随意性，从构建的思考来讲一个对象，更应该在初始化时就完成其所有组件</h2><ul>
-<li><p>而目前的方式一层层包裹，却都是在Vue这一个 实例/原型 上面 做操作</p>
+</li>
+<li><p>光是看core 相关的内容，发现是缺少自动生成文档的注释的</p>
 <ul>
-<li><p>带来的问题是</p>
-<ul>
-<li>不同的包裹之间，不能有冲突的字段</li>
-<li>层级在代码上实现了分层，但是在对应的创建出来的实例并没有分层</li>
-<li>类型标注上，希望字段分层增加是没有起到工具提供保护作用。</li>
+<li>相关工具比如commit msg检查的不一致性已经导致了多达百个commit不一致的问题</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p>编写的模式还是反向树形和正向编写，没有一个依赖注入的优雅？</p>
+<li><p>很多的空判断，放在调用者而不是执行者，这样好码？</p>
 <ul>
-<li>相对难利用shake tree</li>
-</ul>
-</li>
-</ul>
-<h2 id="光是看core-相关的内容，发现是缺少自动生成文档的注释的"><a href="#光是看core-相关的内容，发现是缺少自动生成文档的注释的" class="headerlink" title="光是看core 相关的内容，发现是缺少自动生成文档的注释的"></a>光是看core 相关的内容，发现是缺少自动生成文档的注释的</h2><h2 id="还是有些-“全局”let变量跨-js的import飞"><a href="#还是有些-“全局”let变量跨-js的import飞" class="headerlink" title="还是有些 “全局”let变量跨 js的import飞"></a>还是有些 “全局”let变量跨 js的import飞</h2><h2 id="很多的空判断，放在调用者而不是执行者，这样好码？"><a href="#很多的空判断，放在调用者而不是执行者，这样好码？" class="headerlink" title="很多的空判断，放在调用者而不是执行者，这样好码？"></a>很多的空判断，放在调用者而不是执行者，这样好码？</h2><ul>
 <li>比如 if(a){f(a)}, 而不是在f里面判断</li>
 </ul>
-<h2 id="目前的方法是，相关的东西放在一个core-instance-xxx文件里然后分成两个部分"><a href="#目前的方法是，相关的东西放在一个core-instance-xxx文件里然后分成两个部分" class="headerlink" title="目前的方法是，相关的东西放在一个core/instance/xxx文件里然后分成两个部分"></a>目前的方法是，相关的东西放在一个core/instance/xxx文件里然后分成两个部分</h2><ul>
-<li><p>第一部分是 xxxMixin</p>
-<ul>
-<li><p>主要操作是：定义函数，定义方法</p>
-<ul>
-<li>这一步我们从编码顺序反过来想，甚至不需要知道具体的方法内容，因为这里只是准备方法，为了未来调用</li>
-</ul>
 </li>
-</ul>
+<li><p>还是有不少的 ?Object / any / vm 飞来飞去，没有一个“严格”的类型管制，有些地方读代码还是比较困难，没有angular那样的注释，也是一个困难</p>
 </li>
-<li><p>第二部分是用户new 实例之后，通过 由init函数里面逐个调用</p>
-<ul>
-<li>这里一是有initXXX函数</li>
-<li>二是会用到上面预先定义的变量和函数</li>
+<li>又有undefined，又有null，阅读还是有些难受</li>
+<li>没有具体看weex相关的，但是就阅读体验来说，weex感觉是侵入的写到了vue里</li>
 </ul>
-</li>
-</ul>
-<h2 id="不懂-这种-istanbul-ignore要干嘛，没测到就没测到呗，为啥要去撑覆盖率？"><a href="#不懂-这种-istanbul-ignore要干嘛，没测到就没测到呗，为啥要去撑覆盖率？" class="headerlink" title="不懂 这种 istanbul ignore要干嘛，没测到就没测到呗，为啥要去撑覆盖率？"></a>不懂 这种 istanbul ignore要干嘛，没测到就没测到呗，为啥要去撑覆盖率？</h2><h2 id="还是有不少的-Object-any-vm-飞来飞去，没有一个“严格”的类型管制，有些地方读代码还是比较困难，没有angular那样的注释，也是一个困难"><a href="#还是有不少的-Object-any-vm-飞来飞去，没有一个“严格”的类型管制，有些地方读代码还是比较困难，没有angular那样的注释，也是一个困难" class="headerlink" title="还是有不少的 ?Object / any / vm 飞来飞去，没有一个“严格”的类型管制，有些地方读代码还是比较困难，没有angular那样的注释，也是一个困难"></a>还是有不少的 ?Object / any / vm 飞来飞去，没有一个“严格”的类型管制，有些地方读代码还是比较困难，没有angular那样的注释，也是一个困难</h2><h2 id="又有undefined，又有null，阅读还是有些难受"><a href="#又有undefined，又有null，阅读还是有些难受" class="headerlink" title="又有undefined，又有null，阅读还是有些难受"></a>又有undefined，又有null，阅读还是有些难受</h2><h2 id="抽象内容"><a href="#抽象内容" class="headerlink" title="抽象内容"></a>抽象内容</h2><ul>
+<h2 id="抽象内容"><a href="#抽象内容" class="headerlink" title="抽象内容"></a>抽象内容</h2><ul>
 <li>响应式触发</li>
 <li>空处理</li>
 <li>定义冲突校验</li>
@@ -1512,11 +1425,12 @@
 </li>
 <li>保留前缀判断</li>
 </ul>
-<h2 id="没有具体看weex相关的，但是就阅读体验来说，weex感觉是侵入的写到了vue里"><a href="#没有具体看weex相关的，但是就阅读体验来说，weex感觉是侵入的写到了vue里" class="headerlink" title="没有具体看weex相关的，但是就阅读体验来说，weex感觉是侵入的写到了vue里"></a>没有具体看weex相关的，但是就阅读体验来说，weex感觉是侵入的写到了vue里</h2><h2 id="写xmind，生成markdown比直接markdown更舒服"><a href="#写xmind，生成markdown比直接markdown更舒服" class="headerlink" title="写xmind，生成markdown比直接markdown更舒服"></a>写xmind，生成markdown比直接markdown更舒服</h2><p>xmind可以在分支上增加笔记，好处是转换成markdown就不会变成目录层级，缺点是xmind上不能直接展开。 然后xmind不能指定导出的目录层级。<br>另外xmind写一遍，整理成markdown时能对读的过程进行修剪补充可以再温习一遍。</p>
-<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><h2 id="https-github-com-numbbbbb-read-vue-source-code"><a href="#https-github-com-numbbbbb-read-vue-source-code" class="headerlink" title="https://github.com/numbbbbb/read-vue-source-code/"></a><a href="https://github.com/numbbbbb/read-vue-source-code/" target="_blank" rel="noopener">https://github.com/numbbbbb/read-vue-source-code/</a></h2><h2 id="https-www-youtube-com-watch-v-OrxmtDw4pVI-amp-t-45s-amp-ab-channel-Honeypot"><a href="#https-www-youtube-com-watch-v-OrxmtDw4pVI-amp-t-45s-amp-ab-channel-Honeypot" class="headerlink" title="https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot"></a><a href="https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot" target="_blank" rel="noopener">https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot</a></h2><h2 id="https-www-bilibili-com-video-BV1d4411v7UX"><a href="#https-www-bilibili-com-video-BV1d4411v7UX" class="headerlink" title="https://www.bilibili.com/video/BV1d4411v7UX"></a><a href="https://www.bilibili.com/video/BV1d4411v7UX" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1d4411v7UX</a></h2><h2 id="https-developer-mozilla-org-zh-CN-docs-Web-JavaScript-Reference-Global-Objects-Object-defineProperty"><a href="#https-developer-mozilla-org-zh-CN-docs-Web-JavaScript-Reference-Global-Objects-Object-defineProperty" class="headerlink" title="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty</a></h2><h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><h2 id="react-source"><a href="#react-source" class="headerlink" title="react source"></a><a href="https://github.com/numbbbbb/read-react-source-code" target="_blank" rel="noopener">react source</a></h2><ul>
-<li><p><em>XMind - Trial Version</em></p>
-</li>
+<h2 id="写xmind，生成markdown比直接markdown更舒服"><a href="#写xmind，生成markdown比直接markdown更舒服" class="headerlink" title="写xmind，生成markdown比直接markdown更舒服"></a>写xmind，生成markdown比直接markdown更舒服</h2><p>xmind可以在分支上增加笔记，好处是转换成markdown就不会变成目录层级，缺点是xmind上不能直接展开。 然后xmind不能指定导出的目录层级。<br>另外xmind写一遍，整理成markdown时能对读的过程进行修剪补充可以再温习一遍。</p>
+<h2 id="feature"><a href="#feature" class="headerlink" title="feature"></a>feature</h2><ul>
+<li>如何ssr</li>
+<li>如何keep-alive</li>
 </ul>
+<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><h2 id="https-github-com-numbbbbb-read-vue-source-code"><a href="#https-github-com-numbbbbb-read-vue-source-code" class="headerlink" title="https://github.com/numbbbbb/read-vue-source-code/"></a><a href="https://github.com/numbbbbb/read-vue-source-code/" target="_blank" rel="noopener">https://github.com/numbbbbb/read-vue-source-code/</a></h2><h2 id="https-www-youtube-com-watch-v-OrxmtDw4pVI-amp-t-45s-amp-ab-channel-Honeypot"><a href="#https-www-youtube-com-watch-v-OrxmtDw4pVI-amp-t-45s-amp-ab-channel-Honeypot" class="headerlink" title="https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot"></a><a href="https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot" target="_blank" rel="noopener">https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot</a></h2><h2 id="https-www-bilibili-com-video-BV1d4411v7UX"><a href="#https-www-bilibili-com-video-BV1d4411v7UX" class="headerlink" title="https://www.bilibili.com/video/BV1d4411v7UX"></a><a href="https://www.bilibili.com/video/BV1d4411v7UX" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1d4411v7UX</a></h2><h2 id="https-developer-mozilla-org-zh-CN-docs-Web-JavaScript-Reference-Global-Objects-Object-defineProperty"><a href="#https-developer-mozilla-org-zh-CN-docs-Web-JavaScript-Reference-Global-Objects-Object-defineProperty" class="headerlink" title="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty</a></h2><p><em>XMind - Trial Version</em></p>
 
     </div>
 
@@ -1609,7 +1523,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#源代码"><span class="nav-number">1.</span> <span class="nav-text">源代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#commit-hash"><span class="nav-number">1.1.</span> <span class="nav-text">commit hash:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#src"><span class="nav-number">1.2.</span> <span class="nav-text">src</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dist"><span class="nav-number">1.3.</span> <span class="nav-text">dist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typings"><span class="nav-number">1.4.</span> <span class="nav-text">typings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地调试代码环境搭建"><span class="nav-number">1.5.</span> <span class="nav-text">本地调试代码环境搭建</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阅读"><span class="nav-number">2.</span> <span class="nav-text">阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#src-platforms-weex"><span class="nav-number">2.1.</span> <span class="nav-text">src/platforms/weex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#entry"><span class="nav-number">2.2.</span> <span class="nav-text">entry</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#src-platforms-web-runtime-index-js"><span class="nav-number">2.3.</span> <span class="nav-text">src/platforms/web/runtime/index.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#core-index-js"><span class="nav-number">2.4.</span> <span class="nav-text">core/index.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#core-instance-index"><span class="nav-number">2.5.</span> <span class="nav-text">core/instance/index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-init"><span class="nav-number">2.6.</span> <span class="nav-text">Vue._init()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式"><span class="nav-number">2.7.</span> <span class="nav-text">响应式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态数据，lazy，同步，queue"><span class="nav-number">2.8.</span> <span class="nav-text">动态数据，lazy，同步，queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染"><span class="nav-number">2.9.</span> <span class="nav-text">渲染</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用的方法"><span class="nav-number">3.</span> <span class="nav-text">使用的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Flow"><span class="nav-number">3.1.</span> <span class="nav-text">Flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义alias"><span class="nav-number">3.2.</span> <span class="nav-text">自定义alias</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首先整个Vue的原型，或者说Class-是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个-Vue-init-函数，再触发这些不同文件创建的方法来完成-实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化"><span class="nav-number">3.3.</span> <span class="nav-text">首先整个Vue的原型，或者说Class 是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个 Vue._init() 函数，再触发这些不同文件创建的方法来完成 实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在实例化之前，设计Vue的时候，我们能看到有的用点，有的defineProperty-Vue-…-有的defineProperty-Vue-prototype-…-根据学过的知识，前两种区别是-是否可枚举？后面的是实例上才会有的内容"><span class="nav-number">3.4.</span> <span class="nav-text">在实例化之前，设计Vue的时候，我们能看到有的用点，有的defineProperty(Vue,…),有的defineProperty(Vue.prototype,…),根据学过的知识，前两种区别是 是否可枚举？后面的是实例上才会有的内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#version"><span class="nav-number">3.5.</span> <span class="nav-text">version</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#istanbul-ignore-a-lot"><span class="nav-number">3.6.</span> <span class="nav-text">istanbul ignore a lot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#on-once-等方法都返回了原始的实例，C-里有时能见到这样的写法，可以链式书写调用"><span class="nav-number">3.7.</span> <span class="nav-text">$on,$once 等方法都返回了原始的实例，C++里有时能见到这样的写法，可以链式书写调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toArray"><span class="nav-number">3.8.</span> <span class="nav-text">toArray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#报错封装"><span class="nav-number">3.9.</span> <span class="nav-text">报错封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式-1"><span class="nav-number">3.10.</span> <span class="nav-text">响应式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阅读代码时，非纯函数的确读起来相对更头疼，但是我在想，虽然是非纯函数，但实际上-如果变成一个class，也是类似的，因为有些内容不应该暴露出来的。"><span class="nav-number">3.11.</span> <span class="nav-text">阅读代码时，非纯函数的确读起来相对更头疼，但是我在想，虽然是非纯函数，但实际上 如果变成一个class，也是类似的，因为有些内容不应该暴露出来的。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果有比较复杂的历史bug，利用上github，在注释中，写上对应的issue-id"><span class="nav-number">3.12.</span> <span class="nav-text">如果有比较复杂的历史bug，利用上github，在注释中，写上对应的issue id</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户可能不传true-false时的代码-value"><span class="nav-number">3.13.</span> <span class="nav-text">用户可能不传true/false时的代码 = !!value</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阅读时临时想法记录"><span class="nav-number">4.</span> <span class="nav-text">阅读时临时想法记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档也不全，官方档有些部分没三方博客描述全"><span class="nav-number">4.2.</span> <span class="nav-text">文档也不全，官方档有些部分没三方博客描述全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不够完备的测试，不太能做到重构保护"><span class="nav-number">4.3.</span> <span class="nav-text">不够完备的测试，不太能做到重构保护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分层-当然是好的，但是这里因为前端的随意性，从构建的思考来讲一个对象，更应该在初始化时就完成其所有组件"><span class="nav-number">4.4.</span> <span class="nav-text">分层 当然是好的，但是这里因为前端的随意性，从构建的思考来讲一个对象，更应该在初始化时就完成其所有组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光是看core-相关的内容，发现是缺少自动生成文档的注释的"><span class="nav-number">4.5.</span> <span class="nav-text">光是看core 相关的内容，发现是缺少自动生成文档的注释的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#还是有些-“全局”let变量跨-js的import飞"><span class="nav-number">4.6.</span> <span class="nav-text">还是有些 “全局”let变量跨 js的import飞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#很多的空判断，放在调用者而不是执行者，这样好码？"><span class="nav-number">4.7.</span> <span class="nav-text">很多的空判断，放在调用者而不是执行者，这样好码？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目前的方法是，相关的东西放在一个core-instance-xxx文件里然后分成两个部分"><span class="nav-number">4.8.</span> <span class="nav-text">目前的方法是，相关的东西放在一个core/instance/xxx文件里然后分成两个部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不懂-这种-istanbul-ignore要干嘛，没测到就没测到呗，为啥要去撑覆盖率？"><span class="nav-number">4.9.</span> <span class="nav-text">不懂 这种 istanbul ignore要干嘛，没测到就没测到呗，为啥要去撑覆盖率？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#还是有不少的-Object-any-vm-飞来飞去，没有一个“严格”的类型管制，有些地方读代码还是比较困难，没有angular那样的注释，也是一个困难"><span class="nav-number">4.10.</span> <span class="nav-text">还是有不少的 ?Object / any / vm 飞来飞去，没有一个“严格”的类型管制，有些地方读代码还是比较困难，没有angular那样的注释，也是一个困难</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#又有undefined，又有null，阅读还是有些难受"><span class="nav-number">4.11.</span> <span class="nav-text">又有undefined，又有null，阅读还是有些难受</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象内容"><span class="nav-number">4.12.</span> <span class="nav-text">抽象内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#没有具体看weex相关的，但是就阅读体验来说，weex感觉是侵入的写到了vue里"><span class="nav-number">4.13.</span> <span class="nav-text">没有具体看weex相关的，但是就阅读体验来说，weex感觉是侵入的写到了vue里</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写xmind，生成markdown比直接markdown更舒服"><span class="nav-number">4.14.</span> <span class="nav-text">写xmind，生成markdown比直接markdown更舒服</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ref"><span class="nav-number">5.</span> <span class="nav-text">ref</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#https-github-com-numbbbbb-read-vue-source-code"><span class="nav-number">5.1.</span> <span class="nav-text">https://github.com/numbbbbb/read-vue-source-code/</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-www-youtube-com-watch-v-OrxmtDw4pVI-amp-t-45s-amp-ab-channel-Honeypot"><span class="nav-number">5.2.</span> <span class="nav-text">https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-www-bilibili-com-video-BV1d4411v7UX"><span class="nav-number">5.3.</span> <span class="nav-text">https://www.bilibili.com/video/BV1d4411v7UX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-developer-mozilla-org-zh-CN-docs-Web-JavaScript-Reference-Global-Objects-Object-defineProperty"><span class="nav-number">5.4.</span> <span class="nav-text">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TODO"><span class="nav-number">6.</span> <span class="nav-text">TODO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#react-source"><span class="nav-number">6.1.</span> <span class="nav-text">react source</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#源代码"><span class="nav-number">1.</span> <span class="nav-text">源代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#commit-hash"><span class="nav-number">1.1.</span> <span class="nav-text">commit hash:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#src"><span class="nav-number">1.2.</span> <span class="nav-text">src</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dist"><span class="nav-number">1.3.</span> <span class="nav-text">dist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typings"><span class="nav-number">1.4.</span> <span class="nav-text">typings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地调试代码环境搭建"><span class="nav-number">1.5.</span> <span class="nav-text">本地调试代码环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.6.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阅读"><span class="nav-number">2.</span> <span class="nav-text">阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#src-platforms-weex"><span class="nav-number">2.1.</span> <span class="nav-text">src/platforms/weex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#entry"><span class="nav-number">2.2.</span> <span class="nav-text">entry</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#src-platforms-web-runtime-index-js"><span class="nav-number">2.3.</span> <span class="nav-text">src/platforms/web/runtime/index.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#core-index-js"><span class="nav-number">2.4.</span> <span class="nav-text">core/index.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#core-instance-index"><span class="nav-number">2.5.</span> <span class="nav-text">core/instance/index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-init"><span class="nav-number">2.6.</span> <span class="nav-text">Vue._init()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式"><span class="nav-number">2.7.</span> <span class="nav-text">响应式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染"><span class="nav-number">2.8.</span> <span class="nav-text">渲染</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Flow"><span class="nav-number">3.1.</span> <span class="nav-text">Flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首先整个Vue的原型，或者说Class-是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个-Vue-init-函数，再触发这些不同文件创建的方法来完成-实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化"><span class="nav-number">3.2.</span> <span class="nav-text">首先整个Vue的原型，或者说Class 是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个 Vue._init() 函数，再触发这些不同文件创建的方法来完成 实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见方法"><span class="nav-number">3.3.</span> <span class="nav-text">常见方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#体验上难受的点"><span class="nav-number">3.4.</span> <span class="nav-text">体验上难受的点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象内容"><span class="nav-number">3.5.</span> <span class="nav-text">抽象内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写xmind，生成markdown比直接markdown更舒服"><span class="nav-number">3.6.</span> <span class="nav-text">写xmind，生成markdown比直接markdown更舒服</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#feature"><span class="nav-number">3.7.</span> <span class="nav-text">feature</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ref"><span class="nav-number">4.</span> <span class="nav-text">ref</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#https-github-com-numbbbbb-read-vue-source-code"><span class="nav-number">4.1.</span> <span class="nav-text">https://github.com/numbbbbb/read-vue-source-code/</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-www-youtube-com-watch-v-OrxmtDw4pVI-amp-t-45s-amp-ab-channel-Honeypot"><span class="nav-number">4.2.</span> <span class="nav-text">https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-www-bilibili-com-video-BV1d4411v7UX"><span class="nav-number">4.3.</span> <span class="nav-text">https://www.bilibili.com/video/BV1d4411v7UX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-developer-mozilla-org-zh-CN-docs-Web-JavaScript-Reference-Global-Objects-Object-defineProperty"><span class="nav-number">4.4.</span> <span class="nav-text">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1623,7 +1537,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1636,7 +1550,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">119</span>
+        <span class="site-state-item-count">120</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

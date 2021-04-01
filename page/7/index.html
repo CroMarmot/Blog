@@ -191,6 +191,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-12-16-mpaas-password/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-12-16-mpaas-password/" class="post-title-link" itemprop="url">mpaas password</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-12-16 11:20:14" itemprop="dateCreated datePublished" datetime="2019-12-16T11:20:14+08:00">2019-12-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-01 11:14:37" itemprop="dateModified" datetime="2021-04-01T11:14:37+08:00">2021-04-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/encrypt/" itemprop="url" rel="index"><span itemprop="name">encrypt</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-12-16-mpaas-password/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-12-16-mpaas-password/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> JSEncrypt = <span class="built_in">require</span>(<span class="string">'node-jsencrypt'</span>);</span><br><span class="line"><span class="keyword">let</span> encrypt;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rsa</span>(<span class="params">pwd, publicKey</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!encrypt) &#123;</span><br><span class="line">        encrypt = <span class="keyword">new</span> JSEncrypt();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!pwd || <span class="keyword">typeof</span> pwd !== <span class="string">'string'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> newPwd = pwd;</span><br><span class="line">    <span class="keyword">if</span> (newPwd.length &gt; <span class="number">230</span>) &#123;</span><br><span class="line">        newPwd = newPwd.substr(<span class="number">0</span>, <span class="number">230</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    encrypt.setPublicKey(publicKey);</span><br><span class="line">    <span class="keyword">let</span> result = encrypt.encrypt(newPwd);</span><br><span class="line">    <span class="keyword">let</span> tryTimes = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (result.length !== <span class="number">344</span>) &#123;</span><br><span class="line">        <span class="comment">// 如果加密后的字符串长度不是344，后端必然解密失败</span></span><br><span class="line">        result = encrypt.encrypt(newPwd);</span><br><span class="line">        <span class="keyword">if</span> (tryTimes &gt; <span class="number">10</span>) &#123;</span><br><span class="line">            <span class="comment">// 最多重试十次</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        tryTimes += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> pk = <span class="string">'publicKey'</span>;</span><br><span class="line"><span class="keyword">const</span> pwd = <span class="string">'密码'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(rsa(pwd,pk));</span><br></pre></td></tr></table></figure>
+<p><code>tcpdump -S -e -vv -i wlo1 host xx.xx.xx.xx</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-11-25-vue-node-protobuf/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +315,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-22 15:13:55" itemprop="dateModified" datetime="2021-03-22T15:13:55+08:00">2021-03-22</time>
+                <time title="修改時間：2021-04-01 11:14:37" itemprop="dateModified" datetime="2021-04-01T11:14:37+08:00">2021-04-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -425,7 +518,7 @@ export default {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-22 15:13:55" itemprop="dateModified" datetime="2021-03-22T15:13:55+08:00">2021-03-22</time>
+                <time title="修改時間：2021-04-01 11:14:37" itemprop="dateModified" datetime="2021-04-01T11:14:37+08:00">2021-04-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -600,7 +693,7 @@ Local version: 4.0.2
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-22 15:13:55" itemprop="dateModified" datetime="2021-03-22T15:13:55+08:00">2021-03-22</time>
+                <time title="修改時間：2021-04-01 11:14:37" itemprop="dateModified" datetime="2021-04-01T11:14:37+08:00">2021-04-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -694,7 +787,7 @@ Local version: 4.0.2
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-22 15:13:55" itemprop="dateModified" datetime="2021-03-22T15:13:55+08:00">2021-03-22</time>
+                <time title="修改時間：2021-04-01 11:14:37" itemprop="dateModified" datetime="2021-04-01T11:14:37+08:00">2021-04-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -819,113 +912,6 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-10-21-throttle-debounce/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-10-21-throttle-debounce/" class="post-title-link" itemprop="url">throttle vs debounce</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-10-21 15:09:01" itemprop="dateCreated datePublished" datetime="2019-10-21T15:09:01+08:00">2019-10-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-22 15:13:55" itemprop="dateModified" datetime="2021-03-22T15:13:55+08:00">2021-03-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-10-21-throttle-debounce/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-10-21-throttle-debounce/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p>基本讲就是 throttle(截流)和debounce(去抖)</p>
-<p>功能都是为了避免快速反复触发</p>
-<p>比如 用户快速点击按钮</p>
-<p>假设设置为1s</p>
-<p>throttle相当于，执行的最小间隔为1s</p>
-<p>debounce也是执行最小间隔为1s，但是假设用户持续的一直快速点击，函数不会执行，需要等到最后一次点击后过1s才执行</p>
-<h1 id="直接看lodash的"><a href="#直接看lodash的" class="headerlink" title="直接看lodash的"></a>直接看lodash的</h1><p>throttle:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">func, wait, options</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> leading = <span class="literal">true</span></span><br><span class="line">  <span class="keyword">let</span> trailing = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> func !== <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Expected a function'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (isObject(options)) &#123;</span><br><span class="line">    leading = <span class="string">'leading'</span> <span class="keyword">in</span> options ? !!options.leading : leading</span><br><span class="line">    trailing = <span class="string">'trailing'</span> <span class="keyword">in</span> options ? !!options.trailing : trailing</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> debounce(func, wait, &#123;</span><br><span class="line">    leading,</span><br><span class="line">    trailing,</span><br><span class="line">    <span class="string">'maxWait'</span>: wait</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> throttle</span><br></pre></td></tr></table></figure>
-<p>debounce:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">func, wait, options</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> lastArgs,</span><br><span class="line">    lastThis,</span><br><span class="line">    maxWait,</span><br><span class="line">    result,</span><br><span class="line">    timerId,</span><br><span class="line">    lastCallTime</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> lastInvokeTime = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> leading = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">let</span> maxing = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">let</span> trailing = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// Bypass `requestAnimationFrame` by explicitly setting `wait=0`.</span></span><br><span class="line">  <span class="keyword">const</span> useRAF = (!wait &amp;&amp; wait !== <span class="number">0</span> &amp;&amp; <span class="keyword">typeof</span> root.requestAnimationFrame === <span class="string">'function'</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> func !== <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Expected a function'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  wait = +wait || <span class="number">0</span></span><br><span class="line">  <span class="keyword">if</span> (isObject(options)) &#123;</span><br><span class="line">    leading = !!options.leading</span><br><span class="line">    maxing = <span class="string">'maxWait'</span> <span class="keyword">in</span> options</span><br><span class="line">    maxWait = maxing ? <span class="built_in">Math</span>.max(+options.maxWait || <span class="number">0</span>, wait) : maxWait</span><br><span class="line">    trailing = <span class="string">'trailing'</span> <span class="keyword">in</span> options ? !!options.trailing : trailing</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">invokeFunc</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> args = lastArgs</span><br><span class="line">    <span class="keyword">const</span> thisArg = lastThis</span><br><span class="line"></span><br><span class="line">    lastArgs = lastThis = <span class="literal">undefined</span></span><br><span class="line">    lastInvokeTime = time</span><br><span class="line">    result = func.apply(thisArg, args)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">startTimer</span>(<span class="params">pendingFunc, wait</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (useRAF) &#123;</span><br><span class="line">      root.cancelAnimationFrame(timerId)</span><br><span class="line">      <span class="keyword">return</span> root.requestAnimationFrame(pendingFunc)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> setTimeout(pendingFunc, wait)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">cancelTimer</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (useRAF) &#123;</span><br><span class="line">      <span class="keyword">return</span> root.cancelAnimationFrame(id)</span><br><span class="line">    &#125;</span><br><span class="line">    clearTimeout(id)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">leadingEdge</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Reset any `maxWait` timer.</span></span><br><span class="line">    lastInvokeTime = time</span><br><span class="line">    <span class="comment">// Start the timer for the trailing edge.</span></span><br><span class="line">    timerId = startTimer(timerExpired, wait)</span><br><span class="line">    <span class="comment">// Invoke the leading edge.</span></span><br><span class="line">    <span class="keyword">return</span> leading ? invokeFunc(time) : result</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">remainingWait</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> timeSinceLastCall = time - lastCallTime</span><br><span class="line">    <span class="keyword">const</span> timeSinceLastInvoke = time - lastInvokeTime</span><br><span class="line">    <span class="keyword">const</span> timeWaiting = wait - timeSinceLastCall</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> maxing</span><br><span class="line">      ? <span class="built_in">Math</span>.min(timeWaiting, maxWait - timeSinceLastInvoke)</span><br><span class="line">      : timeWaiting</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">shouldInvoke</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> timeSinceLastCall = time - lastCallTime</span><br><span class="line">    <span class="keyword">const</span> timeSinceLastInvoke = time - lastInvokeTime</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Either this is the first call, activity has stopped and we're at the</span></span><br><span class="line">    <span class="comment">// trailing edge, the system time has gone backwards and we're treating</span></span><br><span class="line">    <span class="comment">// it as the trailing edge, or we've hit the `maxWait` limit.</span></span><br><span class="line">    <span class="keyword">return</span> (lastCallTime === <span class="literal">undefined</span> || (timeSinceLastCall &gt;= wait) ||</span><br><span class="line">      (timeSinceLastCall &lt; <span class="number">0</span>) || (maxing &amp;&amp; timeSinceLastInvoke &gt;= maxWait))</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">timerExpired</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> time = <span class="built_in">Date</span>.now()</span><br><span class="line">    <span class="keyword">if</span> (shouldInvoke(time)) &#123;</span><br><span class="line">      <span class="keyword">return</span> trailingEdge(time)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Restart the timer.</span></span><br><span class="line">    timerId = startTimer(timerExpired, remainingWait(time))</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">trailingEdge</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    timerId = <span class="literal">undefined</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Only invoke if we have `lastArgs` which means `func` has been</span></span><br><span class="line">    <span class="comment">// debounced at least once.</span></span><br><span class="line">    <span class="keyword">if</span> (trailing &amp;&amp; lastArgs) &#123;</span><br><span class="line">      <span class="keyword">return</span> invokeFunc(time)</span><br><span class="line">    &#125;</span><br><span class="line">    lastArgs = lastThis = <span class="literal">undefined</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">cancel</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (timerId !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">      cancelTimer(timerId)</span><br><span class="line">    &#125;</span><br><span class="line">    lastInvokeTime = <span class="number">0</span></span><br><span class="line">    lastArgs = lastCallTime = lastThis = timerId = <span class="literal">undefined</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">flush</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> timerId === <span class="literal">undefined</span> ? result : trailingEdge(<span class="built_in">Date</span>.now())</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">pending</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> timerId !== <span class="literal">undefined</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">debounced</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> time = <span class="built_in">Date</span>.now()</span><br><span class="line">    <span class="keyword">const</span> isInvoking = shouldInvoke(time)</span><br><span class="line"></span><br><span class="line">    lastArgs = args</span><br><span class="line">    lastThis = <span class="keyword">this</span></span><br><span class="line">    lastCallTime = time</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (isInvoking) &#123;</span><br><span class="line">      <span class="keyword">if</span> (timerId === <span class="literal">undefined</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> leadingEdge(lastCallTime)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (maxing) &#123;</span><br><span class="line">        <span class="comment">// Handle invocations in a tight loop.</span></span><br><span class="line">        timerId = startTimer(timerExpired, wait)</span><br><span class="line">        <span class="keyword">return</span> invokeFunc(lastCallTime)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (timerId === <span class="literal">undefined</span>) &#123;</span><br><span class="line">      timerId = startTimer(timerExpired, wait)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;</span><br><span class="line">  debounced.cancel = cancel</span><br><span class="line">  debounced.flush = flush</span><br><span class="line">  debounced.pending = pending</span><br><span class="line">  <span class="keyword">return</span> debounced</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> debounce</span><br></pre></td></tr></table></figure>
-<p>直接的参数区别</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">throttle</span><br><span class="line"></span><br><span class="line">  let leading = true</span><br><span class="line">  let maxing = true &amp;&amp; maxWait</span><br><span class="line">  let trailing = true</span><br><span class="line"></span><br><span class="line">debounce</span><br><span class="line">  let leading = false</span><br><span class="line">  let maxing = false</span><br><span class="line">  let trailing = true</span><br></pre></td></tr></table></figure>
-<h1 id="Vue-有一个官方教程中的使用方法如下"><a href="#Vue-有一个官方教程中的使用方法如下" class="headerlink" title="Vue 有一个官方教程中的使用方法如下"></a>Vue 有一个官方教程中的使用方法如下</h1><p><a href="https://cn.vuejs.org/v2/guide/computed.html#%E4%BE%A6%E5%90%AC%E5%99%A8" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/computed.html#%E4%BE%A6%E5%90%AC%E5%99%A8</a></p>
-<p>之前我也写过一个 在methods中 计算出一个函数，但是那样的返回和计算不能使用箭头函数，因为运行函数和执行的this不同，ide也报错，XD 虽然可用</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/lodash/lodash/blob/master/throttle.js" target="_blank" rel="noopener">https://github.com/lodash/lodash/blob/master/throttle.js</a></p>
-<p><a href="https://github.com/lodash/lodash/blob/master/debounce.js" target="_blank" rel="noopener">https://github.com/lodash/lodash/blob/master/debounce.js</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -995,7 +981,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1008,7 +994,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">119</span>
+        <span class="site-state-item-count">120</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

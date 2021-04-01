@@ -191,6 +191,136 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-08-06-Singularity_Rethinking_the_softeware_stack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/17-08-06-Singularity_Rethinking_the_softeware_stack/" class="post-title-link" itemprop="url">Singularity:Rethinking the Software Stack</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2017-07-22 01:01:01" itemprop="dateCreated datePublished" datetime="2017-07-22T01:01:01+08:00">2017-07-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-01 11:14:37" itemprop="dateModified" datetime="2021-04-01T11:14:37+08:00">2021-04-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/notes/" itemprop="url" rel="index"><span itemprop="name">notes</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/17-08-06-Singularity_Rethinking_the_softeware_stack/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-08-06-Singularity_Rethinking_the_softeware_stack/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Singularity-Rethinking-the-Software-Stack"><a href="#Singularity-Rethinking-the-Software-Stack" class="headerlink" title="Singularity: Rethinking the Software Stack"></a>Singularity: Rethinking the Software Stack</h1><ol>
+<li>software-isolated processes for protection of programs and system services</li>
+<li>contract-based channels for communication</li>
+<li>manifest-based programs for verification of system properties</li>
+</ol>
+<p>现有的系统在一些结构上还是采取老的方法,这个Singularity项目就是要复审现有的软件的常见问题 widespread security vulnerabilities; unexpected interactions among applications; failures caused by errant extensions, plug-ins, and drivers, and a perceived lack of robustness.</p>
+<h2 id="1-new-os-new-program-language-Sing-extension-of-C-and-new-software-verification-tools，安全的编程语言能避免许多安全问题，verification-tool也能提前检测出一些，增强的系统架构，作者也说这个Singularity在它们看来是个过程和意见-不是最终的一个完善的系统。"><a href="#1-new-os-new-program-language-Sing-extension-of-C-and-new-software-verification-tools，安全的编程语言能避免许多安全问题，verification-tool也能提前检测出一些，增强的系统架构，作者也说这个Singularity在它们看来是个过程和意见-不是最终的一个完善的系统。" class="headerlink" title="1 new os ,new program language(Sing#(extension of C#)) and new software verification tools，安全的编程语言能避免许多安全问题，verification tool也能提前检测出一些，增强的系统架构，作者也说这个Singularity在它们看来是个过程和意见 不是最终的一个完善的系统。"></a>1 new os ,new program language(Sing#(extension of C#)) and new software verification tools，安全的编程语言能避免许多安全问题，verification tool也能提前检测出一些，增强的系统架构，作者也说这个Singularity在它们看来是个过程和意见 不是最终的一个完善的系统。</h2><h2 id="2-提供简易但能根据简易的实现更丰富的实现"><a href="#2-提供简易但能根据简易的实现更丰富的实现" class="headerlink" title="2 提供简易但能根据简易的实现更丰富的实现"></a>2 提供简易但能根据简易的实现更丰富的实现</h2><h3 id="2-1-Software-Isolated-Processes"><a href="#2-1-Software-Isolated-Processes" class="headerlink" title="2.1 Software-Isolated Processes"></a>2.1 Software-Isolated Processes</h3><p>利用现代编程语言的类型和内存安全来说动态减少用于隔离的代码,两个程序间不能直接的内存操作，要么信号传递要么用特殊的交换heap，这样设计的sip是自动运行的，每一个sip有它自己的数据框架，运行时系统，垃圾回收，不能运行时加代码，新建sip和host的sip是隔离开的，易于去分析，最近也有paper对这种sealed processes的好处和trade-off进行分析.基于语言类型和内存安全用软件静态+运行时分析？？？这么吊？不需要硬件？通过这样多个程序甚至可以使用同一个大的虚拟地址，因为每个都不会超过它自己的SIP的范围，Aiken比较了硬件和软件用来孤立的trade-off，SIP减少page table切换 TLB，这个实验的关键就是建立一个用SIP的系统并论证它更加可靠..</p>
+<h3 id="2-2-Contract-Based-Channels"><a href="#2-2-Contract-Based-Channels" class="headerlink" title="2.2 Contract-Based Channels"></a>2.2 Contract-Based Channels</h3><p>通过合约channel (In the Sing# language, the endpoints are distinguished by types C.Imp and C.Exp , respectively,), 这里给的是状态来表示 以及状态转移所要进行的操作的伪代码 总之细节也记不很清，如果以后要做相关的可以来参考，这里这样是表达了所有的操作按照一个Contrat，这样是高效并且在SIP之间的交流是可以分析的，之后结合上线性类型Singularity也支持了SIP之间进行大数据的零拷贝的channel,作者说验证器开发了很久，因为它无法预测输入的数据不足的情况，并且这个bug也存在了很久，(最后的解决办法是在可能触发的几秒钟内再进行判断？？？) 总之通过channel 提供了分离 易于静态分析 减少一定的动态检测  并且动态也能去检测故障</p>
+<h3 id="2-3-Manifest-Based-Programs"><a href="#2-3-Manifest-Based-Programs" class="headerlink" title="2.3 Manifest-Based Programs"></a>2.3 Manifest-Based Programs</h3><p>用户需要执行的时候不是给一个exe一样的而是给系统一个manifest，它包含source程序的位置以及要依赖的程序的信息(感觉就和Android中的权限需要 先在manifest的样子很像)，通过manifest的提供 可以静态动态的分析 依赖，以及检测是否可以支持,总之MBP很强 是MSIL的一个扩展=。= 有助于 各种检查</p>
+<h2 id="3-SINGULARITY-KERNEL"><a href="#3-SINGULARITY-KERNEL" class="headerlink" title="3. SINGULARITY KERNEL"></a>3. SINGULARITY KERNEL</h2><p>提供最基本的 software-isolated processes, contract-based channels, and manifest-based programs的抽象,To each SIP, the kernel provides a pure execution environment with threads, memory, and access to other MBPs via channels. 主要90% 使用Sing# 类型安全的语言写的 有垃圾回收机制，最主要的unsafe的代码是是实现垃圾回收的=。= 并不懂它这种48%的计量方式是什么 以及这么具体干嘛=。=<code>_(:з」∠)_</code> 这也就不继续说语言组成的细节 具体看paper，总的说它是microkernel 所有的protocol 文件系统都是在核外,</p>
+<h2 id="3-1-ABI"><a href="#3-1-ABI" class="headerlink" title="3.1 ABI"></a>3.1 ABI</h2><p>Application Binary Interface (ABI) 确保最小 安全的 孤立的 每一个SIP的计算环境,ABI通过 终端的channel进行信息交流,ABI 将 accessing primitive和process-local operations 区分开，这种区分在进过通道时作为一个参数，静态分析可以利用这个信息进行分析，……比如静态分析可以知道没有使用网络channel的就没有能力发送DDOS攻击……</p>
+<p>不是很懂这一段 怎么设计的功能有192个 又很多 又不包括一些类似win和linux的复杂的,ABI保证任何SIP不能通过ABI函数‘直接’改变另一个SIP的状态，保证了每一个SIP自己的控制权，这样让每个SIP依赖与软件层面的孤立而不是硬件的保护,然后它们的消耗比普通的函数调用消耗更大</p>
+<p>3.1.1 Privileged Code 由于类型安全和内存安全，SIP提供了权限指令更加宽松的 执行范围，SIP并利用这种safe in-line技术 来优化channel 交流</p>
+<p>3.1.2 Handle Table 通过强类型控制表保证SIP的跨ABI的操作例如 mutexes和threads不会被篡改，</p>
+<h3 id="3-2-Memory-Management"><a href="#3-2-Memory-Management" class="headerlink" title="3.2 Memory Management"></a>3.2 Memory Management</h3><p>又是说以往的内存的虚拟内存每个SIP一个管理,就算是分享 也是 指向自己的虚拟地址，不会指向其它SIP的虚拟地址，因此易于垃圾回收。</p>
+<p>3.2.1 Exchange Heap 每一个SIP之间交换的数据需要放在交换heap中(Figure 3),交换heap中的指针只会指向交换heap中，在运行时同一个heap在一个时间最多被一个SIP拥有，静态分析能确保SIP不会访问一个dangling pointer.为了能静态分析….在执行时一个SIP最多有一个指向block的指针，Singularity保证一个SIP在发送一个block数据后不再拥有修改它的能力</p>
+<h3 id="3-3-Threads"><a href="#3-3-Threads" class="headerlink" title="3.3 Threads"></a>3.3 Threads</h3><p>所有tread是内核tread ，也就是内核可调度的,性能差不多 因为不需要内核权限和protected mode</p>
+<p>3.3.1 Linked Stacks</p>
+<p>3.3.2 Scheduler 用一个 unblocked list 和一个preempted list来,和普通发信息一样它也是发送信息，block等待返回，Singularity允许 一个SIP中的线程切换到另一个SIP上的线程，需要394个周期</p>
+<p>3.4 Garbage Collection</p>
+<p>大多safe language 中都有垃圾回收，Singularity的每个SIP有它自己的垃圾回收功能，又pointer不会跨SIP等前面的限定让系统能够很好的垃圾回收。现在运行时的垃圾回收有五种 generational semi-space, generational sliding compacting, an adaptive combination of the previous two collectors, mark-sweep, and concurrent mark-sweep.现在系统用的是concurrent mark-sweep collector</p>
+<p>3.5 Channel Implementation</p>
+<p>0allocated ,用Sing#实现，状态转换的每个周期至少一次发送和一次读取，这样保证了不会有终端无限发送而不等待，看上去这个规则过于严格，但实践没发现有放宽的需要,预申请终端的queues并把指针指向exchange heap 很自然的能够实现0拷贝的多SIP子系统</p>
+<h3 id="3-6-Principals-and-Access-Control"><a href="#3-6-Principals-and-Access-Control" class="headerlink" title="3.6 Principals and Access Control"></a>3.6 Principals and Access Control</h3><h1 id="4-DESIGN-SPACE-EXPLORATION"><a href="#4-DESIGN-SPACE-EXPLORATION" class="headerlink" title="4. DESIGN SPACE EXPLORATION"></a>4. DESIGN SPACE EXPLORATION</h1><p> Singularity’s principled architecture, amenability to sound static analysis, and relatively small code base make it an excellent vehicle for exploring new options. In the following subsections, we describe four explorations in Singularity:</p>
+<ul>
+<li>compile-time reflection for generative programming, </li>
+<li>support for hardware protection domains to augment SIPs, </li>
+<li>hardware-agnostic heterogeneous multiprocessing, </li>
+<li>typed assembly language.</li>
+</ul>
+<h2 id="4-1-Compile-Time-Reflection"><a href="#4-1-Compile-Time-Reflection" class="headerlink" title="4.1 Compile-Time Reflection"></a>4.1 Compile-Time Reflection</h2><p>The Java 有运行时的反射,We have developed a new compile-time reflection (CTR) facility . Compile-time reflection (CTR) is a partial substitute for the CLR’s (common language runtime) full reflection capability. The core feature of CTR is a high-level construct in Sing#, called a transform, which allows programmers to write inspection and generation code in a pattern matching and template style. The generated code and metadata can be statically verified to ensure it is well-formed, type-safe, and not violate system safety properties. At the same time, a programmer can avoid the complexities of reflection APIs.</p>
+<h2 id="4-2-Hardware-Protection-Domains"><a href="#4-2-Hardware-Protection-Domains" class="headerlink" title="4.2 Hardware Protection Domains"></a>4.2 Hardware Protection Domains</h2><p>大多的os用cpu的mmu 硬件来孤立进程通过两种机制 ——1.进程只能访问具体的一些物理地址，2.使用privilege levels保护 执行权限指令的不可信代码.</p>
+<p>主要讲的还是 权限的分配</p>
+<h2 id="4-3-Heterogeneous-Multiprocessing"><a href="#4-3-Heterogeneous-Multiprocessing" class="headerlink" title="4.3 Heterogeneous Multiprocessing"></a>4.3 Heterogeneous Multiprocessing</h2><h1 id="5-CONCLUSIONS"><a href="#5-CONCLUSIONS" class="headerlink" title="5. CONCLUSIONS"></a>5. CONCLUSIONS</h1><ul>
+<li>how to make more dependable software systems</li>
+<li>software isolated processes (SIPs), </li>
+<li>contract-based channels, and </li>
+<li>manifest-based programs (MBPs).</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>读后感 首先其的设计方法 还是让我有新的获取，</p>
+<p>依然是对type-safe 的语言 一脸懵逼 问了问ssj，他说开学给我说<code>_(:з」∠)_</code>向大佬低头</p>
+<p>然后就是一点感悟，不知道其它学科 往研究方向是怎么走的，至少目前看到 系统相关的 很多东西都不是”站在巨人的肩上“ 更多的像是”听了巨人说的话“，毕竟它和实际的联系会有更紧密一些，向文中的很多驱动啊什么之类的都是巨大的工作量，当对底层有修改想法的时候，还需要去考虑对上层的支持，因此这样一个就算十分优秀的想法，想要实现，想要验证，甚至想要应用都需要大量的时间和物力去支持。</p>
+<p>我不知道未来会怎样，不知道如果我去研究会做出多少贡献，又能有多少支持。如果梦想养不活你，就挣钱养活梦想吧。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-07-08-Computer-Graphics-with-OpenGL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +352,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-22 15:13:55" itemprop="dateModified" datetime="2021-03-22T15:13:55+08:00">2021-03-22</time>
+                <time title="修改時間：2021-04-01 11:14:37" itemprop="dateModified" datetime="2021-04-01T11:14:37+08:00">2021-04-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -323,7 +453,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-22 15:13:55" itemprop="dateModified" datetime="2021-03-22T15:13:55+08:00">2021-03-22</time>
+                <time title="修改時間：2021-04-01 11:14:37" itemprop="dateModified" datetime="2021-04-01T11:14:37+08:00">2021-04-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -425,7 +555,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-22 15:13:55" itemprop="dateModified" datetime="2021-03-22T15:13:55+08:00">2021-03-22</time>
+                <time title="修改時間：2021-04-01 11:14:37" itemprop="dateModified" datetime="2021-04-01T11:14:37+08:00">2021-04-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -609,7 +739,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-22 15:13:55" itemprop="dateModified" datetime="2021-03-22T15:13:55+08:00">2021-03-22</time>
+                <time title="修改時間：2021-04-01 11:14:37" itemprop="dateModified" datetime="2021-04-01T11:14:37+08:00">2021-04-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -795,105 +925,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-06-20-bilibilimath88461692/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/17-06-20-bilibilimath88461692/" class="post-title-link" itemprop="url">3Blue1Brown</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2017-06-21 11:20:14" itemprop="dateCreated datePublished" datetime="2017-06-21T11:20:14+08:00">2017-06-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-22 15:13:55" itemprop="dateModified" datetime="2021-03-22T15:13:55+08:00">2021-03-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/17-06-20-bilibilimath88461692/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-06-20-bilibilimath88461692/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a href="http://space.bilibili.com/88461692#!/video" target="_blank" rel="noopener">page</a></p>
-<p>从头刷到了从欧拉公式到初等群论了，=。=做点基于个人知识的笔记。</p>
-<p><strong>如果有大佬会，求大佬解答。</strong></p>
-<p><code>音乐与测度论有什么关系？</code>和<code>希尔伯特曲线：无限数学怎样应用于有限世界</code>中不是很理解的是：既然有理数的测度为0，那么为什么通过曲线覆盖空间。不过一维到二维的映射让我首次认识到这类曲线的一种用途。Orz</p>
-<p><a href="http://octave-online.net/" target="_blank" rel="noopener">octave-online</a></p>
-<p>线代视屏收货蛮多的，主要在基变换的部分，但和ssj大佬用式子分析下来，虽然看上去是图像理解，可以说更多的还是让过程更复杂了。其中视频中没有讲在一起的有矩阵乘法的意义。以及我认为它把<code>[0 -1 ; 1 0]</code>称作旋转90°并不完全科学</p>
-<p>例如<code>[A]*[B]</code>矩阵AB相乘</p>
-<p>从右向左看，首先对原坐标系的基做B的变换，再做A的变换 其变换的视角是基于标准坐标系的，例如<code>[0 -1 ; 1 0]*[1 1 ; 0 1]</code></p>
-<p>先看<code>[1 1 ; 0 1]</code>是把 原来的基变为newx = oldx,newy=oldx+oldy,而左边的矩阵为视频中的逆时针转90°，这里都是基于 标准坐标系。</p>
-<p>从左向右看 首先newx=oldy，newy=-oldx，然后<code>[1 1 ; 0 1]</code>需要将视角转过来以新的基的视角进行<code>[1 1;0 1]</code>的变换，如果按照原坐标系进行变换得到的是<code>[1 -1; 1 0]</code></p>
-<p>第一次从图像上看到特征值和特征向量，抽象向量空间也是感觉棒棒哒。</p>
-<p>然后是群论没有看懂的是如何从加法群到乘法群就有了2^x的群，中间的乘法到幂的过度没理解。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -963,7 +994,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -976,7 +1007,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">119</span>
+        <span class="site-state-item-count">120</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

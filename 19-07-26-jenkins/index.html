@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
 <meta property="og:description" content="Why作为被factorio洗脑的人 看到 自动化 自动化 自动化 就会激动 Steps首先你需要 java 8(jre/jdk),docker 这两个我之前都安装过了 然后下载jenkins: https://jenkins.io/zh/download/ 运行命令java -jar jenkins.war --httpPort=8080 打开网页http://localhost:8080 输入">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-03-22T07:13:55.441Z">
+<meta property="og:updated_time" content="2021-04-01T03:14:37.755Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jenkins 入门尝试">
 <meta name="twitter:description" content="Why作为被factorio洗脑的人 看到 自动化 自动化 自动化 就会激动 Steps首先你需要 java 8(jre/jdk),docker 这两个我之前都安装过了 然后下载jenkins: https://jenkins.io/zh/download/ 运行命令java -jar jenkins.war --httpPort=8080 打开网页http://localhost:8080 输入">
@@ -227,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-22 15:13:55" itemprop="dateModified" datetime="2021-03-22T15:13:55+08:00">2021-03-22</time>
+                <time title="修改時間：2021-04-01 11:14:37" itemprop="dateModified" datetime="2021-04-01T11:14:37+08:00">2021-04-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -326,12 +326,22 @@
 <p>在post部分里，增加 不同 完成状态时要执行的动作</p>
 <h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><p>先去继续看rust了</p>
 <p><a href="https://jenkins.io/zh/doc/pipeline/tour/agents/" target="_blank" rel="noopener">https://jenkins.io/zh/doc/pipeline/tour/agents/</a></p>
-<h1 id="onekey"><a href="#onekey" class="headerlink" title="onekey"></a>onekey</h1><p>todo 比较通用的配置</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://jenkins.io/zh/doc/pipeline/tour/getting-started/" target="_blank" rel="noopener">https://jenkins.io/zh/doc/pipeline/tour/getting-started/</a></p>
 <p><a href="https://github.com/nuxt/nuxt.js" target="_blank" rel="noopener">https://github.com/nuxt/nuxt.js</a></p>
 <p><a href="https://github.com/Microsoft/WSL/issues/14" target="_blank" rel="noopener">https://github.com/Microsoft/WSL/issues/14</a></p>
 <p><a href="https://stackoverflow.com/questions/42743201/npm-install-fails-in-jenkins-pipeline-in-docker/42957034" target="_blank" rel="noopener">https://stackoverflow.com/questions/42743201/npm-install-fails-in-jenkins-pipeline-in-docker/42957034</a></p>
 <p>所有默认功能:<code>http://localhost:8083/job/yarnwebpipedocker/pipeline-syntax/html</code></p>
+<h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><p><a href="https://github.com/jenkinsci/docker/blob/master/README.md" target="_blank" rel="noopener">https://github.com/jenkinsci/docker/blob/master/README.md</a></p>
+<p>为了把软件/软件依赖插件/仓库分开</p>
+<p><code>docker run --rm -d --group-add $(stat -c &#39;%g&#39; /var/run/docker.sock) --name myjenkins -p 10080:8080 -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts</code></p>
+<p>解释</p>
+<p><code>--rm</code>结束后就自动删除</p>
+<p>内部<code>8080</code>映射到外部<code>10080</code></p>
+<p>使用<code>docker volume jenkins_home</code>映射到内部使用的<code>/var/jenkins_home</code></p>
+<p>为了在docker内的jenkins能使用docker作为agent，对docker和docker.sock 进行了映射,并通过<code>--group-add</code> 授权，</p>
+<p>使用官方lts镜像</p>
+<p>你需要jenkins中安装 docker pipeline 和 docker 两个插件</p>
+<p>//??  为了有权限操作docker 还需要 <code>sudo usermod -aG docker jenkins</code></p>
 
     </div>
 
@@ -423,7 +433,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why"><span class="nav-number">1.</span> <span class="nav-text">Why</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Steps"><span class="nav-number">2.</span> <span class="nav-text">Steps</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hell-world"><span class="nav-number">3.</span> <span class="nav-text">Hell world</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#尝试增加更多steps"><span class="nav-number">3.1.</span> <span class="nav-text">尝试增加更多steps</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#超时、重试和更多"><span class="nav-number">3.1.1.</span> <span class="nav-text">超时、重试和更多</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成时"><span class="nav-number">3.1.2.</span> <span class="nav-text">完成时</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TODO"><span class="nav-number">4.</span> <span class="nav-text">TODO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#onekey"><span class="nav-number">5.</span> <span class="nav-text">onekey</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why"><span class="nav-number">1.</span> <span class="nav-text">Why</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Steps"><span class="nav-number">2.</span> <span class="nav-text">Steps</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hell-world"><span class="nav-number">3.</span> <span class="nav-text">Hell world</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#尝试增加更多steps"><span class="nav-number">3.1.</span> <span class="nav-text">尝试增加更多steps</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#超时、重试和更多"><span class="nav-number">3.1.1.</span> <span class="nav-text">超时、重试和更多</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成时"><span class="nav-number">3.1.2.</span> <span class="nav-text">完成时</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TODO"><span class="nav-number">4.</span> <span class="nav-text">TODO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker"><span class="nav-number">6.</span> <span class="nav-text">docker</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -437,7 +447,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -450,7 +460,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">119</span>
+        <span class="site-state-item-count">120</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
