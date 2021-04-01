@@ -234,10 +234,6 @@ pipeline {
 
 https://jenkins.io/zh/doc/pipeline/tour/agents/
 
-# onekey
-
-todo 比较通用的配置
-
 # 参考
 
 https://jenkins.io/zh/doc/pipeline/tour/getting-started/
@@ -249,3 +245,29 @@ https://github.com/Microsoft/WSL/issues/14
 https://stackoverflow.com/questions/42743201/npm-install-fails-in-jenkins-pipeline-in-docker/42957034
 
 所有默认功能:`http://localhost:8083/job/yarnwebpipedocker/pipeline-syntax/html`
+
+# docker
+
+https://github.com/jenkinsci/docker/blob/master/README.md
+
+为了把软件/软件依赖插件/仓库分开
+
+`docker run --rm -d --group-add $(stat -c '%g' /var/run/docker.sock) --name myjenkins -p 10080:8080 -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts`
+
+解释
+
+`--rm`结束后就自动删除
+
+内部`8080`映射到外部`10080`
+
+使用`docker volume jenkins_home`映射到内部使用的`/var/jenkins_home`
+
+为了在docker内的jenkins能使用docker作为agent，对docker和docker.sock 进行了映射,并通过`--group-add` 授权，
+
+使用官方lts镜像
+
+你需要jenkins中安装 docker pipeline 和 docker 两个插件
+
+//??  为了有权限操作docker 还需要 `sudo usermod -aG docker jenkins`
+
+
