@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>破事水 gogs with docker</title>
+      <link href="/Blog/21-04-27-gogs/"/>
+      <url>/Blog/21-04-27-gogs/</url>
+      
+        <content type="html"><![CDATA[<h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>众所周知，我电脑目前只有16G，虽然Ubuntu本身吃不了多少内存，要同时开Dota2,VMware，Chrome之类的，gitlab/jenkins对我来说已经太大了</p><p>要想在自己本地电脑上玩个git server，（虽然也没啥卵用，毕竟一般来说私有的本地git就管理了不需要server，公开的都丢github</p><p>就要找一个小内存占用的</p><h1 id="用"><a href="#用" class="headerlink" title="用"></a>用</h1><p>建立一个宿主上的存放<code>gogs</code>数据的文件夹，我这边数据类都丢在<code>/data</code>里，所以我这是<code>mkdir -p /data/gogs</code></p><p>然后启动</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /data/gogs:/data gogs/gogs</span><br></pre></td></tr></table></figure><p>然后网页开<code>localhost:10080</code>就好了</p><p>这里需要注意的是git设置用<code>[git@192.XXX.XXX.XXX:10022]:cromarmot/web.git</code>的形式</p><h1 id="总-1"><a href="#总-1" class="headerlink" title="总"></a>总</h1><p>这样就可以dota2+vmware+chrome+nextcloud+gogs了，好耶，虽然也不知道有啥卵用</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> code </category>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> gogs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>外部文章 索引</title>
+      <link href="/Blog/21-04-01-pointers/"/>
+      <url>/Blog/21-04-01-pointers/</url>
+      
+        <content type="html"><![CDATA[<h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>有些别人整理过的，暂时也不太需要二次整理的文章，建立索引，缺点是可能失效链接和无法自己维护, 移除用twitter书签的, 手机 Pocket, 网页书签栏,</p><h1 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h1><p><a href="https://blog.joway.io/posts/deep-into-distributed-filesystem/" target="_blank" rel="noopener">分布式文件系统的演化</a></p><p><a href="https://coolshell.cn/articles/21263.html" target="_blank" rel="noopener">GO 编程模式：K8S VISITOR 模式</a></p><p><a href="https://github.com/goharbor/community/blob/master/proposals/enhanced-default-processor.md" target="_blank" rel="noopener">proposals/enhanced-default-processor</a></p><p><a href="https://twitter.com/angular/status/1377395280648097796" target="_blank" rel="noopener">ng packages</a></p><p><a href="https://www.ximalaya.com/keji/29161862/" target="_blank" rel="noopener">牛油果烤面包</a></p><p><a href="https://www.ximalaya.com/keji/24821511/" target="_blank" rel="noopener">捕蛇者说</a></p><p><a href="https://blog.angular.io/ivys-internal-data-structures-f410509c7480" target="_blank" rel="noopener">ng ivy</a></p><p><a href="https://tech.meituan.com/2021/02/04/2021-spring-festival-present.html" target="_blank" rel="noopener">美团技术团队</a></p><p><a href="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-intro#architecture" target="_blank" rel="noopener">tidb</a></p><p><a href="http://maizure.org/projects/decoded-gnu-coreutils/" target="_blank" rel="noopener">gnu core utils 源码</a></p><p><a href="http://jimbly.github.io/regex-crossword/" target="_blank" rel="noopener">regex 填字游戏</a></p><p><a href="https://huggingface.co/stanford-cs329s" target="_blank" rel="noopener">stanford cs 329s 机器学习设计</a></p><p><a href="https://www.bilibili.com/video/BV1Zo4y1R7En/" target="_blank" rel="noopener">ncnn</a></p><p><a href="https://draveness.me/golang/" target="_blank" rel="noopener">go语言设计与实现</a></p><p><a href="https://www.bilibili.com/video/BV1rx411Z7LV" target="_blank" rel="noopener"> Learning How to Learn</a></p><p><a href="https://github.com/b1f6c1c4/learn-git-the-super-hard-way" target="_blank" rel="noopener">git</a></p><p><a href="https://www.hacker101.com/start-here" target="_blank" rel="noopener">hacker101</a></p><p><a href="https://github.com/type-challenges/type-challenges" target="_blank" rel="noopener">typescript challenge</a></p><p><a href="https://nhigham.com/2020/09/01/what-is-the-sylvester-equation/" target="_blank" rel="noopener">Sylvester Equation</a></p><p><a href="https://github.com/pingcap/awesome-database-learning" target="_blank" rel="noopener">pingcap database learning path</a></p><p><a href="https://github.com/facebook/folly/blob/master/folly/docs/FBVector.md" target="_blank" rel="noopener">FB vector</a></p><p><a href="https://linux.die.net/man/8/logrotate" target="_blank" rel="noopener">logrotate</a></p><p><a href="https://coolshell.cn/articles/21003.html" target="_blank" rel="noopener">timing attack</a></p><p><a href="https://github.com/NickCarneiro/curlconverter" target="_blank" rel="noopener">py spider</a></p><p><a href="http://aggregate.org/MAGIC/" target="_blank" rel="noopener">The Aggregate Magic Algorithms</a></p><p><a href="https://www.youtube.com/watch?v=EFwGK3Lvr04&amp;ab_channel=PyConChina" target="_blank" rel="noopener">py command line</a></p><p><a href="https://www.vadimbulavin.com/modern-mvvm-ios-app-architecture-with-combine-and-swiftui/" target="_blank" rel="noopener">Modern MVVM iOS App Architecture with Combine and SwiftUI</a></p><p><a href="https://www.bilibili.com/video/av90473411" target="_blank" rel="noopener">k8s 调度</a></p><p><a href="https://cloud.tsinghua.edu.cn/d/339de5f93d8c420ebbb7/?p=%2Faos-lec1&amp;mode=list" target="_blank" rel="noopener">tsinghua aos</a></p><p><a href="https://coolshell.cn/articles/20845.html" target="_blank" rel="noopener">RUST语言的编程范式 coolshell</a></p><p><a href="https://www.sourcetrail.com/blog/open_source/" target="_blank" rel="noopener">sourcetrail</a></p><p><a href="https://www.cs.cmu.edu/~rwh/courses/hott/" target="_blank" rel="noopener">cmu type theory</a></p><p><a href="https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6" target="_blank" rel="noopener">Abstract Algobra Youtube</a></p><p><a href="https://github.com/caicloud/kube-ladder" target="_blank" rel="noopener">kube ladder</a></p><p><a href="https://googleprojectzero.blogspot.com/" target="_blank" rel="noopener">Project Zero</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> article </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端通信</title>
       <link href="/Blog/21-03-24-frontend-call-and-data/"/>
       <url>/Blog/21-03-24-frontend-call-and-data/</url>

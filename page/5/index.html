@@ -191,6 +191,293 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-07-13-rsa/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-07-13-rsa/" class="post-title-link" itemprop="url">rsa</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-07-13 10:37:14" itemprop="dateCreated datePublished" datetime="2020-07-13T10:37:14+08:00">2020-07-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-27 09:46:06" itemprop="dateModified" datetime="2021-04-27T09:46:06+08:00">2021-04-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-07-13-rsa/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-07-13-rsa/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="数论事实"><a href="#数论事实" class="headerlink" title="数论事实"></a>数论事实</h1><p>两个大质数相乘，只需要最多两个数字长度的乘积的复杂度，而把两个质数乘积进行拆分可能要 其中较小数字的时间复杂度。也就是易于验证，难于破解。</p>
+<p>假设两个长度为2048(二进制下)的质数相乘，最多只需要 <code>2048 x 2048</code>的时间，而枚举拆分需要<code>2^2048</code>的时间, 目前最快的？gnfs算法的复杂度也是</p>
+<p>$O(e^{\sqrt{\frac{64}{9}}(\log N)^{\frac 13}(\log\log N)^{\frac 23}})$</p>
+<h1 id="加解密"><a href="#加解密" class="headerlink" title="加解密"></a>加解密</h1><h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p>$C=M^e \bmod n$</p>
+<p>n=pq,其中p和q为大质数</p>
+<p>M 要加密的信息 (需要 和n互质也就是至少p,q其中一个互质,1/pq 当质数足够大时碰撞概率极小，其实因为公钥信息里已经有n了，也不会碰撞)</p>
+<p>e 和 (p-1)(q-1)互质，简单些 e直接取小于 (p-1)(q-1)的质数</p>
+<p>公钥(e,n), 所有人都知道</p>
+<h2 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h2><p>私钥匙$(e,p,q)$</p>
+<p>$de = 1 \bmod ((p-1)(q-1))$,计算d,d是e关于(p-1)(q-1)的乘法模逆元 log 级别复杂度</p>
+<p>$ C^d = (M^e)^d = M^{ed} = M^{1+k(p-1)(q-1)} (\bmod n)$</p>
+<p>费马小定理:p质数,a和p互质,$a^{p-1} = 1 (\bmod p)$ </p>
+<p>如果 M 和p 互素, 有 $C^d = M\cdot (M^{p-1})^{k(q-1)} = M \cdot 1^{k(q-1)} = M \cdot 1 = M (mod p)$ 即是 $ C^d - M = 0 (mod p) $</p>
+<p>否则 $ M = 0 \bmod p$, $ C^d = (M^e \bmod n)^d = (0^e)^d = 0 (\bmod p) $,也有 $C^d - M = 0(\bmod p)$</p>
+<p>同理 有$C^d - M = 0 (\bmod q)$</p>
+<p>因此 $C^d - M = 0 (\bmod (n=pq))$即$C^d = M (\bmod n)$</p>
+<p>也就是 我们通过幂次直接拿到 M在$\bmod n$的意义下</p>
+<h1 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h1><p>也就是公钥里只有(e,n), 计算不出p和q, 就意味着计算不出(p-1)(q-1),也就计算不出d，也就无法直接d的幂次。</p>
+<p>另一个问题就是 模运算 是否有办法开e次根。</p>
+<p>在就是历史信息，如果有人（机器）能拆解n，那么所有用到相应公私钥的信息都能被破解了。</p>
+<p>所以据说 现在512位的似乎已经被认为不安全了。可以类似NFS, GNFS,SIQS, 和ECM 定向爆破。<a href="https://blog.csdn.net/tigerisland45/article/details/51348854" target="_blank" rel="noopener">https://blog.csdn.net/tigerisland45/article/details/51348854</a></p>
+<p>穷举自己可以按(10^10) 需要1台计算机一秒来估计，是不可能的。例如枚举需要 <code>2**512//(10**10)//60//60//24//365 = 42515880041674902015392012297710065092210064119077858250011293263957902175524946019792853558367907875729426237273230754863501657825807236</code> 台计算机 年</p>
+<p>而好处是，如果始终拆解质数乘积是难的，那么只需要单纯的增加位数即可，这样在实现上的额外代价就是生成代价，对应的拆解代价是按照幂次增长。</p>
+<p>而生成的代价,解密的代价较大，注定了它用在少量数据，而剩余的数据加密，还是要靠对称加密。</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>产生3072 bits的私钥(不要分享)</p>
+<p><code>openssl genrsa -out private.pem 3072</code></p>
+<p>通过私钥产生公钥(可以给任何人)</p>
+<p><code>openssl rsa -in private.pem -out public.pem -outform PEM -pubout</code></p>
+<p>产生原始消息(模拟要给你发信息的人)</p>
+<p><code>echo &#39;too many secrets&#39; &gt; file.txt</code></p>
+<p>通过你提供的公钥加密(并把加密后的信息发给你)</p>
+<p><code>openssl rsautl -encrypt -inkey public.pem -pubin -in file.txt -out file.ssl</code></p>
+<p>你通过私钥解密</p>
+<p><code>openssl rsautl -decrypt -inkey private.pem -in file.ssl -out decrypted.txt</code></p>
+<p>查看消息</p>
+<p><code>cat decrypted.txt</code></p>
+<h1 id="如何使用ssh-keygen-生成的公私钥"><a href="#如何使用ssh-keygen-生成的公私钥" class="headerlink" title="如何使用ssh-keygen 生成的公私钥"></a>如何使用ssh-keygen 生成的公私钥</h1><p>众所周知，一般上个git之类都会用<code>openssh</code>提供的 <code>ssh-keygen</code>生成公私钥。但是公钥不能像上面那样直接用</p>
+<p>方法是用<code>id_rsa.pub</code> 转换，生成一个openssl能使用的<code>PEM格式</code>再用</p>
+<p><code>ssh-keygen -f ~/.ssh/id_rsa.pub -e -m PKCS8 &gt; id_rsa.pem.pub</code></p>
+<p>剩余的操作和上面一样</p>
+<h1 id="contact"><a href="#contact" class="headerlink" title="contact"></a>contact</h1><p>加密联系我</p>
+<p><code>id_rsa.pub</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDgFNXLxLccaE5w6GBHwg+sqXXphmEDgxjTQj6UYgu1et0yIqY2NU6ouAp91SnQAsW6htF1g6X7SjVuW4cgN+3R4nCociNBwvzPIiUbInhn1J5oaI3wRktWLOlxqUO1ykvsCjoZty+wfMvy5zFnG6+bjkn3i0WfCNoEOiHuaOJd+dt0l0Kha6+QdIHj6zLPH65y/oW5WJWe4iZoOjmBKJ+Ps9oGVMJxOZDCTWCUJQV1DFZgo7WAkT2/Thfz390sNiuclDE6rpmLPAqCGjtOO4zhoUpwq35QmTNjlg5PutM6s+SQZMnX2ZKgkUV/QWNenC40yS/L0Sj57ZCHvbEenh8v4YC4YRcW2BrdSloaPmhne1tH5xpw/By7UKAG/S3liebb5B3tjLpvjI0EU8l6/I6JxAtYe19tKpDPC/J1Z1L1nQ//rjDiVayg0u4Ti1grngTcTogTU9ttvwGFgdBCBkI/4xQB8kkSXllMLf2AmocFjyU/TFa1fgw+PBv8Ydi+T48= yexiaorain@gmail.com</span><br></pre></td></tr></table></figure>
+<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://en.wikipedia.org/wiki/RSA_numbers" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/RSA_numbers</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-07-06-karma/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-07-06-karma/" class="post-title-link" itemprop="url">karma</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-07-06 11:20:14" itemprop="dateCreated datePublished" datetime="2020-07-06T11:20:14+08:00">2020-07-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-27 09:46:06" itemprop="dateModified" datetime="2021-04-27T09:46:06+08:00">2021-04-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-07-06-karma/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-07-06-karma/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><p>目前看到angular2+ 官方的使用是 karma + jasmine</p>
+<p>Can I use Karma with testing framework X?</p>
+<p>Yes. There are plugins for most of the common testing frameworks (such as Jasmine, Mocha, QUnit). If there is no plugin for the testing framework you like, go ahead and write one. It is simple - you can start by looking into the source code of the existing ones.</p>
+<p>karma创建一个web server。</p>
+<p>浏览器通过手动方位 karma server 监听的地址(默认9876),或者自动让karma 知道运行哪个browsers，来让浏览器可以被捕获</p>
+<p>可用的列表<a href="http://karma-runner.github.io/5.0/config/browsers.html" target="_blank" rel="noopener">http://karma-runner.github.io/5.0/config/browsers.html</a></p>
+<h1 id="karma-能力"><a href="#karma-能力" class="headerlink" title="karma 能力"></a>karma 能力</h1><p>见下面 paper的pdf内容</p>
+<p>在真实环境中测试</p>
+<p>支持远程控制</p>
+<p>执行速度快</p>
+<p>可以跟第三方 IDE 进行交互</p>
+<p>支持 ci 服务</p>
+<p>高扩展性，支持插件开发</p>
+<p>支持调试</p>
+<h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><p>paper 3.1的表</p>
+<p><img src="http://gtms04.alicdn.com/tps/i4/TB1eweqLXXXXXbvaXXX0ucn3VXX-964-384.png#alt=tests_tools_comparison" alt="阿里云"></p>
+<h1 id="主要目标"><a href="#主要目标" class="headerlink" title="主要目标"></a>主要目标</h1><p>paper 2.1</p>
+<ol>
+<li><p>真实设备上运行测试</p>
+</li>
+<li><p>远程控制</p>
+</li>
+<li><p>高效, 无缝隙使用流程</p>
+</li>
+<li><p>Integration with IDEs and text editors</p>
+</li>
+<li><p>Integration with CI Servers</p>
+</li>
+<li><p>扩展性</p>
+</li>
+<li><p>Debugging</p>
+</li>
+</ol>
+<p>包含 client/server,基于Http 通信</p>
+<h1 id="设计和分析"><a href="#设计和分析" class="headerlink" title="设计和分析"></a>设计和分析</h1><p>Chapter 4</p>
+<ul>
+<li><p>速度</p>
+</li>
+<li><p>可靠性</p>
+</li>
+<li><p>在真实浏览器上测试 并</p>
+</li>
+<li><p>seamless workflow</p>
+</li>
+</ul>
+<h1 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h1><p>paper 4.1</p>
+<p>监听文件</p>
+<p>与 client 进行通讯</p>
+<p>向开发者输出测试结果</p>
+<p>提供 client 端所需的资源文件</p>
+<h2 id="Manager"><a href="#Manager" class="headerlink" title="Manager"></a>Manager</h2><p>跟client双向通讯，例如开始和结束测试，收集测试结果</p>
+<h2 id="Web-Server"><a href="#Web-Server" class="headerlink" title="Web Server"></a>Web Server</h2><p>Web Server, 给客户端提供静态资源文件</p>
+<h2 id="Reporter"><a href="#Reporter" class="headerlink" title="Reporter"></a>Reporter</h2><p>给开发者输出报告</p>
+<h2 id="File-System-Watcher"><a href="#File-System-Watcher" class="headerlink" title="File System Watcher"></a>File System Watcher</h2><p>检测变化并通知client，类似 一些热更新之类的？</p>
+<h1 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h1><p>可以 多client 对1个server</p>
+<h2 id="Manager-1"><a href="#Manager-1" class="headerlink" title="Manager"></a>Manager</h2><p>和server双向通信</p>
+<h2 id="Testing-Framework"><a href="#Testing-Framework" class="headerlink" title="Testing Framework"></a>Testing Framework</h2><p>框架内自己没有，可以用很多三方的framework，例如上面的jasmine</p>
+<h2 id="Tests-and-Code-under-Test"><a href="#Tests-and-Code-under-Test" class="headerlink" title="Tests and Code under Test"></a>Tests and Code under Test</h2><p>这是开发者编写的内容了</p>
+<p>…….我感觉阿里社区里面那个翻译也不错。。可以不用继续啃英文了</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>测试的代码 全部在客户端运行，这个客户端是真实的客户端，它可以是chrome,firefox等等</p>
+<p>karma主要的工作是支撑测试的提供，例如静态文件服务，文件变化监听等，而具体代码测试内容是在karma启动的客户端(浏览器)中，依靠用户编写的测试代码和第三方测试框架完成的。</p>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="http://karma-runner.github.io/5.0/intro/how-it-works.html" target="_blank" rel="noopener">http://karma-runner.github.io/5.0/intro/how-it-works.html</a></p>
+<p><a href="https://raw.githubusercontent.com/karma-runner/karma/master/thesis.pdf" target="_blank" rel="noopener">https://raw.githubusercontent.com/karma-runner/karma/master/thesis.pdf</a></p>
+<p><a href="https://fed.taobao.org/blog/taofed/do71ct/karma-origin/" target="_blank" rel="noopener">https://fed.taobao.org/blog/taofed/do71ct/karma-origin/</a></p>
+<p><a href="https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347" target="_blank" rel="noopener">https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-06-03-rust-really-fast/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +509,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-01 11:17:30" itemprop="dateModified" datetime="2021-04-01T11:17:30+08:00">2021-04-01</time>
+                <time title="修改時間：2021-04-27 09:46:06" itemprop="dateModified" datetime="2021-04-27T09:46:06+08:00">2021-04-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -329,7 +616,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-01 11:17:30" itemprop="dateModified" datetime="2021-04-01T11:17:30+08:00">2021-04-01</time>
+                <time title="修改時間：2021-04-27 09:46:06" itemprop="dateModified" datetime="2021-04-27T09:46:06+08:00">2021-04-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -441,7 +728,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-01 11:17:30" itemprop="dateModified" datetime="2021-04-01T11:17:30+08:00">2021-04-01</time>
+                <time title="修改時間：2021-04-27 09:46:06" itemprop="dateModified" datetime="2021-04-27T09:46:06+08:00">2021-04-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -534,228 +821,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-05-18-vue-v-model/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-05-18-vue-v-model/" class="post-title-link" itemprop="url">vue2 vmodel 版本管理问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-05-18 11:20:14" itemprop="dateCreated datePublished" datetime="2020-05-18T11:20:14+08:00">2020-05-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-01 11:17:30" itemprop="dateModified" datetime="2021-04-01T11:17:30+08:00">2021-04-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-05-18-vue-v-model/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-05-18-vue-v-model/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>新做了个输入框，在三次封装时用 <code>$attrs</code>，本地一切正常，内部测试环境出现bug:输入不了值。</p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>版本都查过，一样的代码，最后猜是不是vue的问题。</p>
-<p>查了一下在线的vue版本是<code>2.6.11</code>而内部发布版本是<code>2.5.13</code>。</p>
-<p>把调试的vue换成指定版本<code>2.5.13</code>重现了bug。</p>
-<p>顺着官方<code>https://github.com/vuejs/vue/releases</code>看</p>
-<p>看到<code>v2.6.1</code>修复了<code>v-model: add value to $attrs if not defined in props</code></p>
-<p>看<code>pull requests 9331</code>和<code>9330</code>似乎很多人也都遇到了</p>
-<p>果然<code>XD</code></p>
-<p>内部测试发布的版本已经在生产使用，当然是锁版本不会改了，把开发用的vue调试版换回了<code>2.5.13</code>，然后对应组件增加<code>props</code>的<code>value</code>和 <code>value</code>的传递。// 还好是新组建</p>
-<p>虽然听说并且实践了无数次<code>锁版本</code>，但亲身是第一次遇到版本问题！（之前几次其它第三方资源有bug 都是最新的官方资源也没修复的，例如swiper有个重复emit的bug放了很久也不知道现在修复没</p>
-<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p><strong>锁版本!!!!!</strong></p>
-<p>官方vue虽然说是开发环境是<code>https://cdn.jsdelivr.net/npm/vue/dist/vue.js</code>，但实际因为生产的vue 是锁了版本，所以为了保持和生产一致，如果要使用在线资源可以使用<code>https://cdn.jsdelivr.net/npm/vue@版本号/dist/vue.js</code></p>
-<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="https://github.com/vuejs/vue/releases?after=v2.6.2" target="_blank" rel="noopener">vue releases</a></p>
-<p><a href="https://github.com/vuejs/vue/pull/9331" target="_blank" rel="noopener">vue pull requests 9331</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-04-14-karma-jasmine/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-04-14-karma-jasmine/" class="post-title-link" itemprop="url">karma jasmine</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-04-15 11:20:14" itemprop="dateCreated datePublished" datetime="2020-04-15T11:20:14+08:00">2020-04-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-01 11:17:30" itemprop="dateModified" datetime="2021-04-01T11:17:30+08:00">2021-04-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-04-14-karma-jasmine/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-04-14-karma-jasmine/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn global add jasmine-core karma karma-chrome-launcher karma-jasmine karma-jasmine-html-reporter</span><br><span class="line">karma init <span class="comment"># 一路默认</span></span><br><span class="line">vim karma.conf.js</span><br></pre></td></tr></table></figure>
-<p>一些改动</p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@@ -21,8 +21,12 @@ module.exports = function (config) &#123;</span><br><span class="line"> </span><br><span class="line">     // list of files / patterns to load in the browser</span><br><span class="line">     files: [</span><br><span class="line"><span class="addition">+      'src/**/*.js'</span></span><br><span class="line">     ],</span><br><span class="line"> </span><br><span class="line"><span class="addition">+    client: &#123;</span></span><br><span class="line"><span class="addition">+      clearContext: false, // leave Jasmine Spec Runner output visible in browser</span></span><br><span class="line"><span class="addition">+    &#125;,</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">     // list of files / patterns to exclude</span><br><span class="line">@@ -37,7 +41,7 @@ module.exports = function (config) &#123;</span><br><span class="line">     // test results reporter to use</span><br><span class="line">     // possible values: 'dots', 'progress'</span><br><span class="line">     // available reporters: https://npmjs.org/browse/keyword/karma-reporter</span><br><span class="line"><span class="deletion">-    reporters: ['progress'],</span></span><br><span class="line"><span class="addition">+    reporters: ['progress', 'kjhtml'],</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     // web server port</span><br></pre></td></tr></table></figure>
-<p>编写你的测试代码，语法见jasmine文档</p>
-<p>启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">karma start</span><br></pre></td></tr></table></figure>
-<p><code>karma-jasmine-html-reporter</code> 这个赞极少 却超高的周下载量 所以大多是连带下载的吧</p>
-<h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><h2 id="版本兼容各种问题"><a href="#版本兼容各种问题" class="headerlink" title="版本兼容各种问题"></a>版本兼容各种问题</h2><p>目前一组能用的</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"jasmine-core"</span>: <span class="string">"^3.5.0"</span>,</span><br><span class="line">    <span class="attr">"karma"</span>: <span class="string">"^5.0.1"</span>,</span><br><span class="line">    <span class="attr">"karma-chrome-launcher"</span>: <span class="string">"^3.1.0"</span>,</span><br><span class="line">    <span class="attr">"karma-jasmine"</span>: <span class="string">"^3.1.1"</span>,</span><br><span class="line">    <span class="attr">"karma-jasmine-html-reporter"</span>: <span class="string">"^1.5.3"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="cnpm"><a href="#cnpm" class="headerlink" title="cnpm"></a>cnpm</h2><p>不知道cnpm搞了什么私货，同样的命令 npm 能用 cnpm就是报错。目前采取全局yarn按加项目内karam.conf.js了 (感觉操作不科学啊</p>
-<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><p>报错 大概意思不在module内</p>
-<p>搜到很多加plugins或者在预处理调用webpack的，暂时没有采用</p>
-<p>可行的一种方案,目前把<code>files</code>的配置写成</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="attr">pattern</span>:<span class="string">'src/**/*.js'</span>,<span class="attr">type</span>:<span class="string">'module'</span>&#125;]</span><br></pre></td></tr></table></figure>
-<h2 id="files"><a href="#files" class="headerlink" title="files"></a>files</h2><p>需要包括源代码 和 测试代码</p>
-<h1 id="Repo"><a href="#Repo" class="headerlink" title="Repo"></a>Repo</h1><p><a href="https://github.com/CroMarmot/karma.jasmine.demo" target="_blank" rel="noopener">https://github.com/CroMarmot/karma.jasmine.demo</a></p>
-<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="http://karma-runner.github.io/4.0/config/files.html" target="_blank" rel="noopener">http://karma-runner.github.io/4.0/config/files.html</a></p>
-<p><a href="http://karma-runner.github.io/4.0/intro/how-it-works.html" target="_blank" rel="noopener">http://karma-runner.github.io/4.0/intro/how-it-works.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/Blog/page/4/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/2/">2</a><a class="page-number" href="/Blog/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/Blog/page/6/">6</a><a class="page-number" href="/Blog/page/8/">8</a><a class="page-number" href="/Blog/page/12/">12</a><a class="page-number" href="/Blog/page/20/">20</a><a class="extend next" rel="next" href="/Blog/page/6/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+    <a class="extend prev" rel="prev" href="/Blog/page/4/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/2/">2</a><a class="page-number" href="/Blog/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/Blog/page/6/">6</a><a class="page-number" href="/Blog/page/8/">8</a><a class="page-number" href="/Blog/page/12/">12</a><a class="page-number" href="/Blog/page/20/">20</a><a class="page-number" href="/Blog/page/21/">21</a><a class="extend next" rel="next" href="/Blog/page/6/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -821,7 +890,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">101</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -834,7 +903,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">120</span>
+        <span class="site-state-item-count">121</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -932,6 +1001,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

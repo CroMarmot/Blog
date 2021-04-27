@@ -191,6 +191,411 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-06-22-Discrete-Mathematics-Tutorial-scu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/17-06-22-Discrete-Mathematics-Tutorial-scu/" class="post-title-link" itemprop="url">离散数学教程四川大学出版个人整理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2017-06-22 01:01:01" itemprop="dateCreated datePublished" datetime="2017-06-22T01:01:01+08:00">2017-06-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-27 09:46:06" itemprop="dateModified" datetime="2021-04-27T09:46:06+08:00">2021-04-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/notes/" itemprop="url" rel="index"><span itemprop="name">notes</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/notes/book/" itemprop="url" rel="index"><span itemprop="name">book</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/17-06-22-Discrete-Mathematics-Tutorial-scu/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-06-22-Discrete-Mathematics-Tutorial-scu/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="总评"><a href="#总评" class="headerlink" title="总评"></a>总评</h1><p>整理开始日期:2017-06-21</p>
+<p>整理结束日期:2017-06-22</p>
+<h2 id="第1章-命题逻辑"><a href="#第1章-命题逻辑" class="headerlink" title="第1章 命题逻辑"></a>第1章 命题逻辑</h2><p>~ 否定命题</p>
+<p>∧  合取命题 and</p>
+<p>∨  析取命题 or</p>
+<p>→  条件命题</p>
+<p>P→ Q = ~P∨ Q</p>
+<p>P↑ Q = ~(P∧ Q)</p>
+<p>P↓ Q = ~(P∨ Q)</p>
+<p>T 永真式 重言式 可满足公式</p>
+<p>F 不可满足公式</p>
+<p>不同取值让不同命题有相同结果 则 命题等价</p>
+<p>子公式等价替换后保持等价A(A1)=A(A2) 如果A1=A2</p>
+<p>可互推则双条件命题为永真</p>
+<p><code>A*</code>与 A处处真值表为反为A的对偶式</p>
+<p>$A\cup B={x\in A\bigvee x\in B}$</p>
+<p>析取 子句</p>
+<p>合取 合取范式</p>
+<p>凡不是永真的，命题公式都存在与之等价的主合取范式</p>
+<p>CP规则</p>
+<p>右箭头上加c表示推的否定</p>
+<h2 id="第2章-一阶谓词逻辑"><a href="#第2章-一阶谓词逻辑" class="headerlink" title="第2章 一阶谓词逻辑"></a>第2章 一阶谓词逻辑</h2><p>A是人 PEOPLE(A)</p>
+<p>x大于y GREATER-THAN(x,y)</p>
+<p>∀ 任意</p>
+<p>∃ 存在</p>
+<p>~(∀ x)P(x) = (∃ x)[~P(x)]</p>
+<p>~(∃ x)P(x) = (∀ x)[~P(x)]</p>
+<p>Skolem 将合取范式的所有存在用函数与任意进行替换(∀ x)(∀ y)(∃ z)P(z) = (∀ x)(∀ y)P(f(x,y))</p>
+<p>∃ x ∀ y →  ∀ y ∃ x</p>
+<h2 id="第3章-集合及其运算"><a href="#第3章-集合及其运算" class="headerlink" title="第3章 集合及其运算"></a>第3章 集合及其运算</h2><p>$A\cup B={x\in A\bigvee x\in B}$</p>
+<p>$A\cap B={x\in A\bigwedge x\in B}$</p>
+<p>$A\bigoplus B={x\in A - B\bigvee x\in B - A}$</p>
+<p>2^A={ X | X \subseteq A}$</p>
+<p>运算$\times$为集合的直径 不满足交换律 结合律</p>
+<p>形式语言</p>
+<h2 id="第4章-初等数论和证明方法"><a href="#第4章-初等数论和证明方法" class="headerlink" title="第4章 初等数论和证明方法"></a>第4章 初等数论和证明方法</h2><p>n=d×k -&gt; d | n</p>
+<p>最大公因子gcd，最小公倍数lcm</p>
+<p>数学归纳法</p>
+<h2 id="第5章-二元关系"><a href="#第5章-二元关系" class="headerlink" title="第5章 二元关系"></a>第5章 二元关系</h2><p>R 关系 {(A的元素,B的元素)} 也可以画成矩阵表示</p>
+<p>性质(自反 对称 可传递)对应的现象({(x,x)} {(x,y)(y,x)} {(x,y) (y,z) (x,z)})</p>
+<p>关系的运算 $\cup \cap \bigoplus$</p>
+<p>同时有 自反 对称 可传递 为等价关系</p>
+<p>同时有 自反 反对称 传递 为偏序关系 如整除，有最小值的偏序集为良序</p>
+<h2 id="第6章-函数"><a href="#第6章-函数" class="headerlink" title="第6章 函数"></a>第6章 函数</h2><p>f: X→ Y</p>
+<p>单射、满射、双射</p>
+<p>$\pi_1\circ \pi_2 = \pi_1(\pi_2())$</p>
+<p>循环的积</p>
+<p>与自然数集N等势的为可数集</p>
+<p>集合的基数card()</p>
+<p>阿列夫 =。=</p>
+<p>f(x)=O(g(x))不能写成O(g(x))=f(x) 表示f(x)的上界,f(x) &lt;=M |g(x)|</p>
+<h2 id="第7章-基本计数方法"><a href="#第7章-基本计数方法" class="headerlink" title="第7章 基本计数方法"></a>第7章 基本计数方法</h2><p>排列计数，组合计数</p>
+<p>圆排列！！</p>
+<p>组合恒等式!!!</p>
+<p>容斥原理</p>
+<p>抽屉原理/鸽巢原理</p>
+<h2 id="第8章-生成函数和递推关系"><a href="#第8章-生成函数和递推关系" class="headerlink" title="第8章 生成函数和递推关系"></a>第8章 生成函数和递推关系</h2><p>定义 生成函数!!!!!!!!!!!!! (排列的生成函数 组合的生成函数)</p>
+<p>递推关系及其解 差分方程</p>
+<p>递推关系和生成函数 6666666</p>
+<h2 id="第9章-无向图和有向图"><a href="#第9章-无向图和有向图" class="headerlink" title="第9章 无向图和有向图"></a>第9章 无向图和有向图</h2><p>V为节点 E为边 度 sum(每个点度)=2倍边数</p>
+<p>G(V,E)</p>
+<p>定义…</p>
+<p>图的矩阵表示</p>
+<p>独立集 点团 极图，布尔表达式 析取范式，诱导子图？？</p>
+<p>图的着色？？</p>
+<h2 id="第10章-基本图类和算法"><a href="#第10章-基本图类和算法" class="headerlink" title="第10章 基本图类和算法"></a>第10章 基本图类和算法</h2><p>树与生成树</p>
+<p>每个连通图都含有生成树，图的任何割集至少与树有一个公共边，图的圈至少与树有一个公共边</p>
+<p>如果有向图G的图是树，则称G为有向树</p>
+<p>平面图(画为平面图可以让连线没有额外焦点)和对偶图</p>
+<p>面数为f的连通平面图G(n,m) 有n-m+f=2</p>
+<p>阶数大于2的(n,m)连通平面图 m&lt;=3n-6,至少存在一个度不超过5的结点</p>
+<p>Kuratowski 定理</p>
+<p>欧拉图及其应用</p>
+<p>哈密顿图及其应用</p>
+<p>图的匹配与匈牙利算法</p>
+<p>网络无环又有向权图</p>
+<h2 id="第11章-群和环"><a href="#第11章-群和环" class="headerlink" title="第11章 群和环"></a>第11章 群和环</h2><p>群 环 域 格 和 布尔代数是典型的系统</p>
+<p>运算与代数系统</p>
+<p>集合的二元运算 封闭的 可交换的 可结合的 可分配的 吸收率</p>
+<p>常见的代数系统 $&lt;Z,+&gt;$,$&lt;Q,+,*&gt;$</p>
+<p>封闭 广群</p>
+<p>广群+可结合 半群</p>
+<p>群 和 子群</p>
+<p>群=有逆元的含幺半群 </p>
+<p>群的运算满足交换律则为交换群/Abel群 充要条件 $a,b \in G, (a\cdot b)^2=a^2\cdot b^2$</p>
+<p>陪集与拉格朗日定理</p>
+<p>同态与同构</p>
+<p>环和域</p>
+<p>群码</p>
+<h2 id="第12章-格与布尔代数"><a href="#第12章-格与布尔代数" class="headerlink" title="第12章 格与布尔代数"></a>第12章 格与布尔代数</h2><p>格 交换 结合 吸收</p>
+<p>格的性质和同态，逆关系 互为 对偶 </p>
+<p>分配格和有补格</p>
+<p>格+分配+有界+有补 = 布尔格</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-06-22-Mathematical_Principles_of_natural_Philosophy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/17-06-22-Mathematical_Principles_of_natural_Philosophy/" class="post-title-link" itemprop="url">自然哲学的数学原理个人整理(Give up)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2017-06-22 01:01:01" itemprop="dateCreated datePublished" datetime="2017-06-22T01:01:01+08:00">2017-06-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-27 09:46:06" itemprop="dateModified" datetime="2021-04-27T09:46:06+08:00">2021-04-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/notes/" itemprop="url" rel="index"><span itemprop="name">notes</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/17-06-22-Mathematical_Principles_of_natural_Philosophy/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-06-22-Mathematical_Principles_of_natural_Philosophy/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="总评"><a href="#总评" class="headerlink" title="总评"></a>总评</h1><p>整理开始日期:2017-06-22</p>
+<p>整理结束日期:[整理中 感觉技不如人甘拜下风 是不是用google翻译的啊]</p>
+<p>ISBN 978-7-214-06747-0</p>
+<p>千万不要买这本书，定义，证明的翻译看得我好难受,整理的时候心一万个草泥马飞过,感觉需要再搞一本英文版对着看</p>
+<h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>质量 物质的量就是物质的度量，可以通过物体的密度和体积而算出</td>
+</tr>
+<tr>
+<td>2</td>
+<td>动量 运动的量即是运动的度量，是由其速度和物质的量共同算出的</td>
+</tr>
+<tr>
+<td>3</td>
+<td>惯性 vis insita，或称为物体本身固有的力，是一种起抵抗作用的力。它存在于每一个物体之中，并始终使物体保持现有的静止或匀速直线运动的状态</td>
+</tr>
+<tr>
+<td>4</td>
+<td>施加在物体上的外力，其作用是使物体改变静止或匀速直线运动的状态。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>向心力迫使物体趋向一个中心点，并对任何倾向于该点的物体起作用。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>用向心力的绝对度量来量度向心力，它与由中心导致产生，并且通过周围空间传递出来的效能成正比</td>
+</tr>
+<tr>
+<td>7</td>
+<td>用向心力的加速度度量来量度向心力，它与向心力在一个给定时间里产生的速度成正比</td>
+</tr>
+<tr>
+<td>8</td>
+<td>用向心力的运动度量来量度向心力，它与向心力在一个给定时间里产生的运动量成正比</td>
+</tr>
+</tbody>
+</table>
+<p>运动公理或定律</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>定律</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>对于任何一个物体，除非有外力作用于它并改变其状态，否则它将保持静止或匀速直线的运动状态。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>运动的变化与外力成正比，且沿着外力作用的直线方向进行变化</td>
+</tr>
+<tr>
+<td>3</td>
+<td>每一种作用都有一个与之方向相反的反作用，并且，两个物体间的相互作用总是相等的。</td>
+</tr>
+<tr>
+<td>推论1</td>
+<td>当两个力同时作用于一个物体时，这个物体将沿着平时四边形的对角线运动，所需时间等于两个力分别沿两边运动所用的时间之和。</td>
+</tr>
+<tr>
+<td>推论2</td>
+<td>由此，可以得到以下结论：一个直线力AD可以由任何两个倾斜力AC和CD合成。反之，任何一个直线力AD又可以分解成AC和CD两个倾斜力。</td>
+</tr>
+<tr>
+<td>推论3</td>
+<td>运动的量，是由同一方向的运动的和以及相反方向运动的差所得出，并且在物体间的相互作用保持不变</td>
+</tr>
+<tr>
+<td>推论4</td>
+<td>两个或多个物体共同的重力中心不会因为物体间的相互作用而改变其运动或静止的状态。如果将外力和阻碍作用排除在外，那么，所有相互作用的物体的公共重心不是静止就是处于匀速直线运动状态</td>
+</tr>
+<tr>
+<td>推论5</td>
+<td>在一个给定的空间中，物体的运动和它们自身之间的运动是一样的，无论此空间是静止的还是在做不含任何旋转运动的匀速直线运动。</td>
+</tr>
+<tr>
+<td>推论6</td>
+<td>无论物体相互之间以何种形式运动，在平行方向上，被相同的加速力加速时，都会继续之前相互间的运动，就如同没有加速力时一样</td>
+</tr>
+</tbody>
+</table>
+<p>其它 插图</p>
+<p>四种基本力：万有引力 电磁力维持原子 弱作用力释放射线 强作用力维持原子核</p>
+<hr>
+<ul>
+<li>物体的运动<ul>
+<li>通过量的初值与终值的比率(引理1-11)</li>
+<li>向心力的确定</li>
+<li>物体在偏心圆锥曲线上的运动</li>
+<li>通过已知焦点求椭圆、抛物线和双曲线的轨道</li>
+<li>由未知焦点求曲线轨道</li>
+<li>如何求已知轨道上物体的运动</li>
+<li>物体的直线上升或下落</li>
+<li>如何确定物体受任意类型向心力作用运动的轨道</li>
+<li>物体沿运动轨道进行运动以及在回归点的运动</li>
+<li>物体在给定表面上的运动以及物体的摆动运动</li>
+<li>球体的吸引力</li>
+<li>非球状物体的吸引力</li>
+<li>受指向极大物体上各部分的向心力推动的极小物体的运动</li>
+</ul>
+</li>
+<li>物体在阻滞介质中的运动<ul>
+<li>受与速度成正比的阻力作用的物体的运动</li>
+<li>受与速度平方成正比的阻力作用的物体的运动</li>
+<li>受部分与速度成正比而部分与速度平方成正比的阻力作用的物体的运动</li>
+<li>物体在阻碍介质中的圆运动</li>
+<li>流体密度和压力 流体静力学</li>
+<li>摆体的运动及其受到的阻力</li>
+<li>流体的运动；流体施加于抛体的阻力</li>
+<li>通过流体传播的运动</li>
+<li>流体的圆运动</li>
+</ul>
+</li>
+<li>宇宙体系 使用数学的论述<ul>
+<li>哲学中的推理规则</li>
+<li>现象</li>
+<li>命题</li>
+<li>月球交汇点的运动</li>
+</ul>
+</li>
+</ul>
+<p>1.1.1 </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-06-20-bilibilimath88461692/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +627,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-01 11:17:30" itemprop="dateModified" datetime="2021-04-01T11:17:30+08:00">2021-04-01</time>
+                <time title="修改時間：2021-04-27 09:46:06" itemprop="dateModified" datetime="2021-04-27T09:46:06+08:00">2021-04-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -321,7 +726,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-01 11:17:30" itemprop="dateModified" datetime="2021-04-01T11:17:30+08:00">2021-04-01</time>
+                <time title="修改時間：2021-04-27 09:46:06" itemprop="dateModified" datetime="2021-04-27T09:46:06+08:00">2021-04-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -622,7 +1027,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-01 11:17:30" itemprop="dateModified" datetime="2021-04-01T11:17:30+08:00">2021-04-01</time>
+                <time title="修改時間：2021-04-27 09:46:06" itemprop="dateModified" datetime="2021-04-27T09:46:06+08:00">2021-04-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -704,286 +1109,10 @@ C-p
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-04-26-ProfessionalJavaForWebApplications个人整理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/17-04-26-ProfessionalJavaForWebApplications个人整理/" class="post-title-link" itemprop="url">javaforwebapplications 笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2017-04-26 11:20:14" itemprop="dateCreated datePublished" datetime="2017-04-26T11:20:14+08:00">2017-04-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-01 11:17:30" itemprop="dateModified" datetime="2021-04-01T11:17:30+08:00">2021-04-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/17-04-26-ProfessionalJavaForWebApplications个人整理/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-04-26-ProfessionalJavaForWebApplications个人整理/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>该书版本2015.06</p>
-<p><strong>基于个人已有知识整理 低分享价值</strong></p>
-<h1 id="章节"><a href="#章节" class="headerlink" title="章节"></a>章节</h1><ol>
-<li>java 是什么 java web是什么</li>
-<li>各种java web容器 以及IDE的使用</li>
-<li>Servlet without jsp</li>
-<li>basic jsp syntax ,jsp 和servlet 在server端的互相forward</li>
-<li>cookie/session 以及相关安全知识</li>
-<li>jsp 表达式语句 $,#</li>
-<li>jsp 标签库 c fmt fn x sql</li>
-<li>jsp 自定义标签与函数库 .tag .tld</li>
-<li>过滤器 (日志 验证 压缩加密 错误处理)<ol start="10">
-<li>WebSocket 进行交互 (ajax,adobe flash等 各类访问 的设计) 在线对战井字棋 集群</li>
-<li>日志监控</li>
-<li>Spring<br>13.<br>14.<br>15.<br>16.<br>17.<br>18.<br>19.<br>20.<br>21.<br>22.<br>23.<br>24.<br>25.<br>26.<br>27.<br>28.</li>
-</ol>
-</li>
-</ol>
-<h1 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h1><p><a href="https://github.com/YeXiaoRain/Professional-Java-for-Web-Applications" target="_blank" rel="noopener">Here</a></p>
-<h1 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h1><p><a href="http://www.runoob.com/jsp" target="_blank" rel="noopener">runnoob jsp</a></p>
-<h1 id="tomcat-个人理解"><a href="#tomcat-个人理解" class="headerlink" title="tomcat 个人理解"></a>tomcat 个人理解</h1><p>和php+apache类似</p>
-<p>遇到请求是jsp则找jsp</p>
-<p>如果是其它url则根据<code>/WEB-INF/web.xml</code>的servlet配置去找对应的class (这些都没有main函数 继承自HttpServlet)</p>
-<p>配置web.xml也可以用java 的@WebServlet注解代替</p>
-<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p><code>sudo apt-get install default-jdk idea tomcat8</code></p>
-<p>把个人用户添加到tomcat8的组里[???必要么]</p>
-<h1 id="servlet"><a href="#servlet" class="headerlink" title="servlet"></a>servlet</h1><p>文件上传 @MultipartConfig()</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MultipartConfig</span>(</span><br><span class="line">        fileSizeThreshold = <span class="number">5_242_880</span>,<span class="comment">//小于5MB保存在内存中</span></span><br><span class="line">        maxFileSize = <span class="number">20_231L</span> ,       <span class="comment">//5~20MB保存在location(可设置 不设置则java默认)</span></span><br><span class="line">        maxRequestSize = <span class="number">41_943_040L</span>  <span class="comment">//拒绝&gt;20MB文件 或 &gt;40MB请求</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>通过request.getParameter(“action”)来判断 是要 请求 上传 下载 还是什么操作(下载需要注意设置返回头)</p>
-<p>request.getPart(“file1”)来接受上传的文件</p>
-<h1 id="jsp"><a href="#jsp" class="headerlink" title="jsp"></a>jsp</h1><p>&lt;%@ 指令 %&gt;  例如说明文档 类型 引入依赖等<br>&lt;% page  %&gt;<br>&lt;% include  %&gt;<br>&lt;% taglib  %&gt;<br>&lt;%! 声明 %&gt;  如声明定义变量 函数<br>&lt;% 脚本 %&gt;   赋值运算 貌似也可以在这里声明<br>&lt;%= 表达式 %&gt;运算<br>&lt;%– 注释 –%&gt;运算</p>
-<p>表达式语句保留字 true false null instanceof empty div mod and or not eq ne lt gt le ge</p>
-<p>表达式 的流处理 以及lambda</p>
-<p>java 标准标签库规范的5个标签库 c 核心,fmt 格式化, fn 函数, sql, x XML</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">"c"</span> uri=<span class="string">"https://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"fmt"</span> uri=<span class="string">"https://java.sun.com/jsp/jstl/fmt"</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"fn"</span> uri=<span class="string">"https://java.sun.com/jsp/jstl/fn"</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"sql"</span> uri=<span class="string">"https://java.sun.com/jsp/jstl/sql"</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"x"</span> uri=<span class="string">"https://java.sun.com/jsp/jstl/x"</span> %&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;c:out value=<span class="string">"$&#123;exp&#125;"</span> <span class="keyword">default</span>=<span class="string">"value is null"</span>&gt;</span><br><span class="line">&lt;c:out value="$&#123;exp&#125;"&gt;value is null&lt;/c:out&gt;</span><br><span class="line"></span><br><span class="line">&lt;c:url value=<span class="string">"http://....../today.jsp"</span>&gt;</span><br><span class="line">  &lt;c:param name=<span class="string">"story"</span> value=<span class="string">"$&#123;storyId&#125;"</span>&gt;</span><br><span class="line">  &lt;c:param name=<span class="string">"seo"</span> value=<span class="string">"$&#123;seoString&#125;"</span>&gt;</span><br><span class="line">&lt;/c:url&gt;</span><br><span class="line"></span><br><span class="line">&lt;c:<span class="keyword">if</span> test=&gt;</span><br><span class="line">balabala</span><br><span class="line">&lt;/c:if&gt;</span><br><span class="line">c:choose c:when c:otherwise c:forEach c:forTokens c:redirect c:<span class="keyword">import</span> c:set c:remove</span><br><span class="line"></span><br><span class="line">fmt:message fmt:setLocale fmt:bundle fmt:setBundle fmt:requestEncoding fmt:timeZone fmt:setTimeZone fmt:formatDate fmt:parseDate fmt:formatNumber fmt:parseNumber</span><br><span class="line">对应还有i18n的配置</span><br><span class="line"></span><br><span class="line">(不推荐)sql:transaction sql:update sql:param sql:dateParam sql:query</span><br><span class="line"></span><br><span class="line">(x 命名空间)</span><br></pre></td></tr></table></figure>
-<h1 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h1><p>继承Filter 重写函数doFilter init destroy，通过chain.doFilter向下传递</p>
-<p>也可以在java内用代码配置 FilterGegistration</p>
-<p>因为排序问题请勿使用注解来配置过滤器 (URL映射优先级 &gt; Servlet映射)</p>
-<p><code>filter-mapping</code>可以用 不同方式配置 需要过滤的链接</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>myf<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>com.wrox.fff<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>myf<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/foo<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ticketServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>压缩过滤器extends HttpServletResponnseWrapper</p>
-<h1 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h1><p>会使用443(wss)端口 以及Http/1.1中的 Connection:Upgrade</p>
-<p>HTTP开始 然后用TCP连接的WebSocket交流</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> connection = <span class="keyword">new</span> WebSocket(<span class="string">'ws://www.example.net/safsd'</span>);</span><br><span class="line"><span class="keyword">var</span> connection = <span class="keyword">new</span> WebSocket(<span class="string">'wss://secure.example.net/safsd'</span>);</span><br><span class="line"><span class="keyword">var</span> connection = <span class="keyword">new</span> WebSocket(<span class="string">'ws://www.example.net/safsd'</span>,<span class="string">'asdf'</span>);</span><br><span class="line"><span class="keyword">var</span> connection = <span class="keyword">new</span> WebSocket(<span class="string">'ws://www.example.net/safsd'</span>,&#123;<span class="string">'wer'</span>,<span class="string">'qwef'</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(connection.readyState == WebServlet.OPEN)&#123;qwer;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">connection.onopen = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;&#125;</span><br><span class="line">connection.onclose = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;&#125;</span><br><span class="line">connection.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;&#125;</span><br><span class="line">connection.onmessag = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>利用WebSocket可以实现 在线对战游戏 比如 井字棋</p>
-<p>Server:</p>
-<p>session来记录用户</p>
-<p><code>@ServerEndpoint(&quot;/ticTacToe/{gameId}/{username}&quot;)</code></p>
-<p><code>onOpen()</code></p>
-<p><code>onMessage()</code></p>
-<p><code>onClose()</code></p>
-<p>发送消息</p>
-<p><code>session.getBasicRemote().sendText(ttttteeeeexxxxxttttt)</code>以及 close的另外的函数</p>
-<p>前端js</p>
-<p>上面的<code>new WebSocket(*)</code>和<code>on*</code> + <code>server.send</code></p>
-<hr>
-<p>用WebSocket 做集群</p>
-<p>@ClientEndpoint</p>
-<p><code>ClusterMessage</code></p>
-<p>做用户端的 extends HttpServlet</p>
-<h1 id="日志监控"><a href="#日志监控" class="headerlink" title="日志监控"></a>日志监控</h1><p>maven -&gt; <code>org.apache.logging.log4j</code> -&gt; <code>log4j-api/log4j-core/...</code> </p>
-<p><code>System.err.println/Sytem.out.println</code>并不完美 因为它们永远启用 并在代码中</p>
-<p>要记录的内容:错误/警告/错误类型/栈/JVM状态/一些需要审核的事的记录 比如医院</p>
-<p>记录方法:普通的println/平面日志/XML/JSON/ linux的syslog/套接字/SMTP SMS/DB</p>
-<p>分级:重要性 n MB/s的日志 = 无日志 ,例如<code>java.util.logging.Level</code>分类 (也有其它分类 如apache的不同级别)</p>
-<ul>
-<li>致命/崩溃 无常量</li>
-<li>错误 SEVERE</li>
-<li>警告 WARNING</li>
-<li>信息 INFO</li>
-<li>配置细节 CONFIG</li>
-<li>调试 FINE</li>
-<li>追踪1/2 FINER FINEST</li>
-</ul>
-<p>通过 <code>java.util.logging.LogManager</code>解耦合，注意日志必要性和性能影响的权衡</p>
-<p>框架 log4j,slf4j,logback,log4j2</p>
-<p>log4j2的 记录器(),日志储存器,布局,过滤器</p>
-<p>log4j2将寻找 <code>log4j2</code>或<code>log4j2-test</code>支持的扩展类型有<code>.xml</code>,<code>.json</code>和<code>.jsn</code></p>
-<h1 id="Spring-framework"><a href="#Spring-framework" class="headerlink" title="Spring framework"></a>Spring framework</h1><h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p>java编译后 单个实现不能超过65535个字节=.=……….</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-04-23-javase/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/17-04-23-javase/" class="post-title-link" itemprop="url">javase</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2017-04-23 01:01:01" itemprop="dateCreated datePublished" datetime="2017-04-23T01:01:01+08:00">2017-04-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-01 11:17:30" itemprop="dateModified" datetime="2021-04-01T11:17:30+08:00">2021-04-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/17-04-23-javase/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-04-23-javase/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a href="https://docs.oracle.com/javase/8/docs/api/" target="_blank" rel="noopener">官方文档</a></p>
-<p>总的图 来自实验楼<code>https://www.shiyanlou.com/courses/109</code></p>
-<p><img src="https://dn-anything-about-doc.qbox.me/document-uid79144labid1085timestamp1435475423685.png?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="实验楼"></p>
-<p><code>java.lang</code>不需要import</p>
-<p>String 内部不可变，StringBuffer 内部可变</p>
-<p>看到下面这图我 哇的一声就哭了</p>
-<p><img src="https://dn-anything-about-doc.qbox.me/userid46108labid863time1429495366116?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="设计模式之间关系"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/Blog/page/15/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/9/">9</a><a class="page-number" href="/Blog/page/13/">13</a><a class="page-number" href="/Blog/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/Blog/page/17/">17</a><a class="page-number" href="/Blog/page/19/">19</a><a class="page-number" href="/Blog/page/20/">20</a><a class="extend next" rel="next" href="/Blog/page/17/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+    <a class="extend prev" rel="prev" href="/Blog/page/15/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/9/">9</a><a class="page-number" href="/Blog/page/13/">13</a><a class="page-number" href="/Blog/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/Blog/page/17/">17</a><a class="page-number" href="/Blog/page/19/">19</a><a class="page-number" href="/Blog/page/21/">21</a><a class="extend next" rel="next" href="/Blog/page/17/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -1049,7 +1178,7 @@ C-p
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">101</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1062,7 +1191,7 @@ C-p
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">120</span>
+        <span class="site-state-item-count">121</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
