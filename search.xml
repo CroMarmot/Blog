@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>破事水 gogs with docker</title>
+      <title>gogs with docker 破事水</title>
       <link href="/Blog/21-04-27-gogs/"/>
       <url>/Blog/21-04-27-gogs/</url>
       
-        <content type="html"><![CDATA[<h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>众所周知，我电脑目前只有16G，虽然Ubuntu本身吃不了多少内存，要同时开Dota2,VMware，Chrome之类的，gitlab/jenkins对我来说已经太大了</p><p>要想在自己本地电脑上玩个git server，（虽然也没啥卵用，毕竟一般来说私有的本地git就管理了不需要server，公开的都丢github</p><p>就要找一个小内存占用的</p><h1 id="用"><a href="#用" class="headerlink" title="用"></a>用</h1><p>建立一个宿主上的存放<code>gogs</code>数据的文件夹，我这边数据类都丢在<code>/data</code>里，所以我这是<code>mkdir -p /data/gogs</code></p><p>然后启动</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /data/gogs:/data gogs/gogs</span><br></pre></td></tr></table></figure><p>然后网页开<code>localhost:10080</code>就好了</p><p>这里需要注意的是git设置用<code>[git@192.XXX.XXX.XXX:10022]:cromarmot/web.git</code>的形式</p><h1 id="总-1"><a href="#总-1" class="headerlink" title="总"></a>总</h1><p>这样就可以dota2+vmware+chrome+nextcloud+gogs了，好耶，虽然也不知道有啥卵用</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="起"><a href="#起" class="headerlink" title="起"></a>起</h1><p>众所周知，我电脑目前只有16G，虽然Ubuntu本身吃不了多少内存，要同时开Dota2,VMware，Chrome之类的，gitlab/jenkins对我来说已经太大了</p><p>要想在自己本地电脑上玩个git server，（虽然也没啥卵用，毕竟一般来说私有的本地git就管理了不需要server，公开的都丢github</p><p>就要找一个小内存占用的</p><h1 id="用"><a href="#用" class="headerlink" title="用"></a>用</h1><p>建立一个宿主上的存放<code>gogs</code>数据的文件夹，我这边数据类都丢在<code>/data</code>里，所以我这是<code>mkdir -p /data/gogs</code></p><p>然后启动</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /data/gogs:/data gogs/gogs</span><br></pre></td></tr></table></figure><p>然后网页开<code>localhost:10080</code>就好了</p><p>这里需要注意的是git设置用<code>[git@192.XXX.XXX.XXX:10022]:cromarmot/demo.git</code>的形式</p><h1 id="合"><a href="#合" class="headerlink" title="合"></a>合</h1><p>这样就可以dota2+vmware+chrome+nextcloud+gogs了，好耶，虽然也不知道有啥卵用</p><p><a href="https://github.com/gogs/gogs/tree/main/docker" target="_blank" rel="noopener">https://github.com/gogs/gogs/tree/main/docker</a></p>]]></content>
       
       
       <categories>

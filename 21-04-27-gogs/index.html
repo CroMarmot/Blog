@@ -21,18 +21,18 @@
     var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="总众所周知，我电脑目前只有16G，虽然Ubuntu本身吃不了多少内存，要同时开Dota2,VMware，Chrome之类的，gitlab/jenkins对我来说已经太大了 要想在自己本地电脑上玩个git server，（虽然也没啥卵用，毕竟一般来说私有的本地git就管理了不需要server，公开的都丢github 就要找一个小内存占用的 用建立一个宿主上的存放gogs数据的文件夹，我这边数据类都丢">
+  <meta name="description" content="起众所周知，我电脑目前只有16G，虽然Ubuntu本身吃不了多少内存，要同时开Dota2,VMware，Chrome之类的，gitlab/jenkins对我来说已经太大了 要想在自己本地电脑上玩个git server，（虽然也没啥卵用，毕竟一般来说私有的本地git就管理了不需要server，公开的都丢github 就要找一个小内存占用的 用建立一个宿主上的存放gogs数据的文件夹，我这边数据类都丢">
 <meta name="keywords" content="git,gogs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="破事水 gogs with docker">
+<meta property="og:title" content="gogs with docker 破事水">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/21-04-27-gogs/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
-<meta property="og:description" content="总众所周知，我电脑目前只有16G，虽然Ubuntu本身吃不了多少内存，要同时开Dota2,VMware，Chrome之类的，gitlab/jenkins对我来说已经太大了 要想在自己本地电脑上玩个git server，（虽然也没啥卵用，毕竟一般来说私有的本地git就管理了不需要server，公开的都丢github 就要找一个小内存占用的 用建立一个宿主上的存放gogs数据的文件夹，我这边数据类都丢">
+<meta property="og:description" content="起众所周知，我电脑目前只有16G，虽然Ubuntu本身吃不了多少内存，要同时开Dota2,VMware，Chrome之类的，gitlab/jenkins对我来说已经太大了 要想在自己本地电脑上玩个git server，（虽然也没啥卵用，毕竟一般来说私有的本地git就管理了不需要server，公开的都丢github 就要找一个小内存占用的 用建立一个宿主上的存放gogs数据的文件夹，我这边数据类都丢">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-04-27T01:46:06.942Z">
+<meta property="og:updated_time" content="2021-04-27T01:55:58.902Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="破事水 gogs with docker">
-<meta name="twitter:description" content="总众所周知，我电脑目前只有16G，虽然Ubuntu本身吃不了多少内存，要同时开Dota2,VMware，Chrome之类的，gitlab/jenkins对我来说已经太大了 要想在自己本地电脑上玩个git server，（虽然也没啥卵用，毕竟一般来说私有的本地git就管理了不需要server，公开的都丢github 就要找一个小内存占用的 用建立一个宿主上的存放gogs数据的文件夹，我这边数据类都丢">
+<meta name="twitter:title" content="gogs with docker 破事水">
+<meta name="twitter:description" content="起众所周知，我电脑目前只有16G，虽然Ubuntu本身吃不了多少内存，要同时开Dota2,VMware，Chrome之类的，gitlab/jenkins对我来说已经太大了 要想在自己本地电脑上玩个git server，（虽然也没啥卵用，毕竟一般来说私有的本地git就管理了不需要server，公开的都丢github 就要找一个小内存占用的 用建立一个宿主上的存放gogs数据的文件夹，我这边数据类都丢">
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/21-04-27-gogs/">
 
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>破事水 gogs with docker | Cro-Marmot's Blog</title>
+  <title>gogs with docker 破事水 | Cro-Marmot's Blog</title>
   
 
 
@@ -210,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          破事水 gogs with docker
+          gogs with docker 破事水
         </h1>
 
         <div class="post-meta">
@@ -221,7 +221,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2021-04-27 00:00:00 / 修改時間：09:46:06" itemprop="dateCreated datePublished" datetime="2021-04-27T00:00:00+08:00">2021-04-27</time>
+              <time title="創建時間：2021-04-27 00:00:00 / 修改時間：09:55:58" itemprop="dateCreated datePublished" datetime="2021-04-27T00:00:00+08:00">2021-04-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,15 +262,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>众所周知，我电脑目前只有16G，虽然Ubuntu本身吃不了多少内存，要同时开Dota2,VMware，Chrome之类的，gitlab/jenkins对我来说已经太大了</p>
+        <h1 id="起"><a href="#起" class="headerlink" title="起"></a>起</h1><p>众所周知，我电脑目前只有16G，虽然Ubuntu本身吃不了多少内存，要同时开Dota2,VMware，Chrome之类的，gitlab/jenkins对我来说已经太大了</p>
 <p>要想在自己本地电脑上玩个git server，（虽然也没啥卵用，毕竟一般来说私有的本地git就管理了不需要server，公开的都丢github</p>
 <p>就要找一个小内存占用的</p>
 <h1 id="用"><a href="#用" class="headerlink" title="用"></a>用</h1><p>建立一个宿主上的存放<code>gogs</code>数据的文件夹，我这边数据类都丢在<code>/data</code>里，所以我这是<code>mkdir -p /data/gogs</code></p>
 <p>然后启动</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /data/gogs:/data gogs/gogs</span><br></pre></td></tr></table></figure>
 <p>然后网页开<code>localhost:10080</code>就好了</p>
-<p>这里需要注意的是git设置用<code>[git@192.XXX.XXX.XXX:10022]:cromarmot/web.git</code>的形式</p>
-<h1 id="总-1"><a href="#总-1" class="headerlink" title="总"></a>总</h1><p>这样就可以dota2+vmware+chrome+nextcloud+gogs了，好耶，虽然也不知道有啥卵用</p>
+<p>这里需要注意的是git设置用<code>[git@192.XXX.XXX.XXX:10022]:cromarmot/demo.git</code>的形式</p>
+<h1 id="合"><a href="#合" class="headerlink" title="合"></a>合</h1><p>这样就可以dota2+vmware+chrome+nextcloud+gogs了，好耶，虽然也不知道有啥卵用</p>
+<p><a href="https://github.com/gogs/gogs/tree/main/docker" target="_blank" rel="noopener">https://github.com/gogs/gogs/tree/main/docker</a></p>
 
     </div>
 
@@ -359,7 +360,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#总"><span class="nav-number">1.</span> <span class="nav-text">总</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用"><span class="nav-number">2.</span> <span class="nav-text">用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总-1"><span class="nav-number">3.</span> <span class="nav-text">总</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#起"><span class="nav-number">1.</span> <span class="nav-text">起</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用"><span class="nav-number">2.</span> <span class="nav-text">用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#合"><span class="nav-number">3.</span> <span class="nav-text">合</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -554,7 +555,7 @@
   var disqus_config = function() {
     this.page.url = "https://cromarmot.github.io/Blog/21-04-27-gogs/";
     this.page.identifier = "21-04-27-gogs/";
-    this.page.title = "破事水 gogs with docker";
+    this.page.title = "gogs with docker 破事水";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
