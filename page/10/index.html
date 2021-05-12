@@ -191,6 +191,141 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-04-vuemsgbox/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-09-04-vuemsgbox/" class="post-title-link" itemprop="url">eleme vue msgbox 简单看看实现原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-09-04 11:20:14" itemprop="dateCreated datePublished" datetime="2019-09-04T11:20:14+08:00">2019-09-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-09-04-vuemsgbox/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-04-vuemsgbox/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="依赖版本"><a href="#依赖版本" class="headerlink" title="依赖版本"></a>依赖版本</h1><p>element-ui 版本 10592d12ea981912165542920160669fd8874bd9</p>
+<p>文档 <a href="https://element.eleme.io/#/zh-CN/component/message-box" target="_blank" rel="noopener">https://element.eleme.io/#/zh-CN/component/message-box</a></p>
+<h1 id="要解决的问题"><a href="#要解决的问题" class="headerlink" title="要解决的问题"></a>要解决的问题</h1><p>像是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$msgbox(options)</span><br><span class="line">$alert(message, title, options) 或 $alert(message, options)</span><br><span class="line">$confirm(message, title, options) 或 $confirm(message, options)</span><br><span class="line">$prompt(message, title, options) 或 $prompt(message, options)</span><br></pre></td></tr></table></figure>
+<p>这样的api是怎么实现的</p>
+<h1 id="代码阅读"><a href="#代码阅读" class="headerlink" title="代码阅读"></a>代码阅读</h1><p>大概看一眼怎么搞的</p>
+<p><code>src/index.js</code> 看 这些方法 ,都是来自 <code>import MessageBox from &#39;../packages/message-box/index.js&#39;;</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.prototype.$msgbox = MessageBox;</span><br><span class="line">Vue.prototype.$alert = MessageBox.alert;</span><br><span class="line">Vue.prototype.$confirm = MessageBox.confirm;</span><br><span class="line">Vue.prototype.$prompt = MessageBox.prompt;</span><br></pre></td></tr></table></figure>
+<p>那么看 <code>packages/message-box/src</code>文件夹</p>
+<p>两个文件 <code>main.js</code>和 <code>main.vue</code></p>
+<p><code>main.vue</code>瞄一眼,都是我们常见的写法</p>
+<p><code>main.js</code>，看这些方法 最后 都是 调用 <code>MessageBox(配置参数)</code>的形式调用</p>
+<p>再看<code>const MessageBox = function(options, callback) {</code>的实现</p>
+<p>都是 先<code>msgQueue.push(配置参数) + showNextMsg()</code></p>
+<p><code>msgQueue</code>和 <code>showNextMsg</code>,分别是个数组，和从数组中<code>shift()</code> 取出值 进行具体展示执行</p>
+<p>然后 看 <code>showNextMsg()</code> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (!instance) &#123;</span><br><span class="line">  initInstance();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const initInstance = () =&gt; &#123;</span><br><span class="line">  instance = new MessageBoxConstructor(&#123;</span><br><span class="line">    el: document.createElement(&apos;div&apos;)</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  instance.callback = defaultCallback;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>和</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const MessageBoxConstructor = Vue.extend(msgboxVue);</span><br></pre></td></tr></table></figure>
+<p>说明了基本这就是 工厂模式+单例模式+<code>Vue.extend</code>来创建弹框单例,所以我们页面上不需要写什么,就能直接调用</p>
+<p>然后这些<code>confirm</code>调用过程 也就是对这个单例的参数改动 比如控制样式 数据 显示之类的</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
+<li>用户调用 <code>$msgbox</code></li>
+<li>调用到<code>packages/message-box/src/main.js</code>的 <code>MessageBox(options,callback)</code></li>
+<li><code>MessageBox(options,callback)</code>通过 数组 + 数组.shift,依次提取数据展示</li>
+<li>对于展示的实例 是 通过 <code>Vue.extend(packages/message-box/src/main.vue)</code> + 工厂单例来产生的一个实例</li>
+<li>他们 搞了一个<code>element/examples/components/demo-block.vue</code> 可以在<code>markdown</code>写示例代码,并且在网页上查看 可以运行 66666</li>
+</ol>
+<blockquote>
+<p>那常见的问题可能有说，连续调用2此带有回调函数的<code>$msgbox</code>会怎样</p>
+</blockquote>
+<p>我们可以看<code>showNextMsg()</code>实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//得到 instance</span></span><br><span class="line">  <span class="keyword">if</span> (!instance.visible || instance.closeTimer) &#123;</span><br><span class="line"> <span class="comment">//...</span></span><br><span class="line">      <span class="keyword">let</span> oldCb = instance.callback;</span><br><span class="line">      instance.callback = <span class="function">(<span class="params">action, instance</span>) =&gt;</span> &#123;</span><br><span class="line">        oldCb(action, instance);</span><br><span class="line">        showNextMsg();</span><br><span class="line">      &#125;;</span><br><span class="line">      <span class="comment">//...</span></span><br><span class="line">      Vue.nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        instance.visible = <span class="literal">true</span>;</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="comment">//...</span></span><br></pre></td></tr></table></figure>
+<p>意思就是如果我们同步调用两个，</p>
+<ul>
+<li>因为我们visible设置为true是 异步里发生的,那么 这两个调用时 visible默认都是false,所以 只会最后一个生效</li>
+<li>如果我们异步调用两次msgbox,那么 后一个调用 会在<code>!visible</code>的地方为false,不会直接触发，但是因为设计了msgQueue,因此 会放在数组中，然后看到 上面的callback,会在调用oldCb以后 再调用showNextMsg,所以会在对话框回调以后 再回调 那个时刻，msgQueue里首个 并从数组中移除</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-02-git_subtree_vs_submodule/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +357,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -343,7 +478,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -974,7 +1109,7 @@ base: __dirname,
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1370,7 +1505,7 @@ base: __dirname,
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1419,135 +1554,6 @@ base: __dirname,
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Blog/19-08-21-the-black-swan/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-08-15-rust/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-08-15-rust/" class="post-title-link" itemprop="url">rust book 学习笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-08-15 15:09:01" itemprop="dateCreated datePublished" datetime="2019-08-15T15:09:01+08:00">2019-08-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/rust/" itemprop="url" rel="index"><span itemprop="name">rust</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-08-15-rust/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-08-15-rust/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>19-07-12  -&gt; 19-08-15</p>
-</blockquote>
-<h1 id="Hell-world"><a href="#Hell-world" class="headerlink" title="Hell world"></a>Hell world</h1><h2 id="开始-amp-安装"><a href="#开始-amp-安装" class="headerlink" title="开始 &amp; 安装"></a>开始 &amp; 安装</h2><p><code>curl https://sh.rustup.rs -sSf | sh</code></p>
-<p>网络真的是僵硬，下载下一年， 我用远端服务器就很快下了 真是艹了,我在远端 都跟着教程看了两章+尝试demo了，本地的build下载还没下好</p>
-<p>国内的话 配置<code>~/.cargo/config</code>如下会稍微快一些,<a href="https://twitter.com/gaocedidi/status/1158558939530706944?s=20" target="_blank" rel="noopener">吐槽</a></p>
-<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[registry]</span></span><br><span class="line"><span class="attr">index</span> = <span class="string">"https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/"</span></span><br><span class="line"><span class="section">[source.crates-io]</span></span><br><span class="line"><span class="attr">registry</span> = <span class="string">"https://github.com/rust-lang/crates.io-index"</span></span><br><span class="line"><span class="attr">replace-with</span> = <span class="string">'ustc'</span></span><br><span class="line"><span class="section">[source.sjtug]</span></span><br><span class="line"><span class="attr">registry</span> = <span class="string">"https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/"</span></span><br></pre></td></tr></table></figure>
-<p><strong>更新</strong> 上面不能用的话看这里 <a href="https://lug.ustc.edu.cn/wiki/mirrors/help/rust-crates" target="_blank" rel="noopener">https://lug.ustc.edu.cn/wiki/mirrors/help/rust-crates</a></p>
-<h2 id="IDE-vim配置"><a href="#IDE-vim配置" class="headerlink" title="IDE/vim配置"></a>IDE/vim配置</h2><p>我是用的<code>vim</code> + <code>spf13-vim</code>上加自己配置的 <code>~/.vimrc.local</code></p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function CompileByFileType()</span><br><span class="line">  if &amp;filetype == "cpp"</span><br><span class="line">    "!clang++ -o "%&lt;" "%" -std=gnu++17 -O2 -g -Wall -Wcomma</span><br><span class="line">    !clang++ -o "%&lt;" "%" -std=gnu++17 -g -Wall -Wcomma</span><br><span class="line">    "!g++ -o "%&lt;" "%" -std=gnu++14 -O2 -g -Wall</span><br><span class="line">  elseif &amp;filetype == "c"</span><br><span class="line">    !gcc -o "%&lt;" "%" -O2 -g</span><br><span class="line">  elseif &amp;filetype == "python"</span><br><span class="line">    !python3 "%"</span><br><span class="line">  elseif &amp;filetype == "go"</span><br><span class="line">    !go run "%"</span><br><span class="line"><span class="addition">+  elseif &amp;filetype == "rust"</span></span><br><span class="line"><span class="addition">+    !cargo run</span></span><br><span class="line">  else</span><br><span class="line">    echo "UNKNOWN FILETYPE : &amp;filetype"</span><br><span class="line">  endif</span><br><span class="line">endfunction</span><br><span class="line"></span><br><span class="line">nnoremap &lt;F9&gt; :call CompileByFileType() &lt;CR&gt;</span><br></pre></td></tr></table></figure>
-<p>其它的话 据说<code>Clion</code> + <code>rust插件</code> 不错</p>
-<h2 id="入门命令"><a href="#入门命令" class="headerlink" title="入门命令"></a>入门命令</h2><p><code>rustup docs --book</code></p>
-<p><del>66666 题外话，我觉得现代的游戏 除了游戏本身还需要 背景，目标玩家定位，目标游戏类型定位，以及自身完备性和营销。自身完备性比如观战，历史记录等，去年出的 刀牌 从6万峰值到现在上线就是世界前100,我认为其中缺少的就是完备性。而rust 带一个 这个文档66666</del></p>
-<p>有了教程，那我yyp一点 教程里的总结吧</p>
-<ul>
-<li>单个rs:<code>rustc main.rs</code></li>
-<li>build project using <code>cargo build</code> or <code>cargo check</code>.</li>
-<li>build + run a project <code>cargo run</code>.</li>
-<li>Instead of saving the result of the build in the same directory as our code, Cargo stores it in the <code>target/debug</code> directory.</li>
-<li>cargo build –release</li>
-</ul>
-<h2 id="依赖相关"><a href="#依赖相关" class="headerlink" title="依赖相关"></a>依赖相关</h2><p><del>如果玩过npm可以感觉到和package.json 和对应的lock相似</del></p>
-<p>首先<code>Cargo.toml</code> 中加入需要依赖的库和版本描述，如<code>rand = &quot;0.3.14&quot;</code>,会匹配能匹配的某个版本</p>
-<p>然后<code>cargo build</code></p>
-<p><code>Cargo.lock</code>会保存首次build的各个库的版本</p>
-<p>如果希望升级<code>cargo update</code></p>
-<h1 id="基本语法-写一个猜测数游戏"><a href="#基本语法-写一个猜测数游戏" class="headerlink" title="基本语法+写一个猜测数游戏"></a>基本语法+写一个猜测数游戏</h1><h2 id="猜数"><a href="#猜数" class="headerlink" title="猜数"></a>猜数</h2><p>依赖</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/19-08-15-rust/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -1636,20 +1642,20 @@ base: __dirname,
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-count">102</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Blog/categories/">
           
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">121</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

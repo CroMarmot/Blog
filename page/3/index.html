@@ -191,6 +191,112 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-01-13-reactive-demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/21-01-13-reactive-demo/" class="post-title-link" itemprop="url">vue2 reactive基本原理demo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-01-13 21:58:14" itemprop="dateCreated datePublished" datetime="2021-01-13T21:58:14+08:00">2021-01-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/21-01-13-reactive-demo/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-01-13-reactive-demo/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>以下代码均可以在nodejs和chrome的console里运行</p>
+<p>以下均未考虑兼容,空判断,父类属性,解除绑定, 多层关系, 循环调用,多次调用等</p>
+<h1 id="Step-1-接管赋值和取值"><a href="#Step-1-接管赋值和取值" class="headerlink" title="Step 1 接管赋值和取值"></a>Step 1 接管赋值和取值</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> demo = &#123;&#125;;</span><br><span class="line">demo._dAtA = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(demo, <span class="string">'x'</span>, &#123;</span><br><span class="line">  <span class="keyword">get</span>: function()&#123;</span><br><span class="line">    <span class="keyword">return</span> demo._dAtA[<span class="string">'x'</span>] * <span class="number">2</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="keyword">set</span>(val)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(val);</span><br><span class="line">    demo._dAtA[<span class="string">'x'</span>] = val;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">demo.x = <span class="number">123</span></span><br><span class="line"><span class="built_in">console</span>.log(demo.x)</span><br></pre></td></tr></table></figure>
+<p>专门做了个赋值取值不一致的乘2</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/21-01-13-reactive-demo/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-11-13-android11-adb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +328,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -326,7 +432,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -434,7 +540,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -534,7 +640,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -581,118 +687,6 @@
 <p><code>function.call(thisArg, arg1, arg2, ...)</code></p>
 <p>所以</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fn.call(fn1) // 调用fn函数，在函数执行中的 this = fn1，</span><br><span class="line">fn.call.call(fn1) // 调用Function.call函数，在函数执行中的 this = fn1，</span><br><span class="line">Function.call(fn1) // 调用Function.call函数，但是是参数传递了fn1,而不是this = fn1</span><br><span class="line">Function.call.call(fn1) // 和第二个相同</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-09-21-tasks-microtasks-queues-and-schedules/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-09-21-tasks-microtasks-queues-and-schedules/" class="post-title-link" itemprop="url">宏任务 微任务</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-09-21 16:58:14" itemprop="dateCreated datePublished" datetime="2020-09-21T16:58:14+08:00">2020-09-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-09-21-tasks-microtasks-queues-and-schedules/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-09-21-tasks-microtasks-queues-and-schedules/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>setTimeout 启动的宏任务</p>
-<p>promise(以及await的写法) 和 observer 都是微任务</p>
-<p>执行是单线程，当宏任务执行完后，把所有等待的微任务执行后，才会执行下一个宏任务。</p>
-<p>然后作者举例了一个稍微特殊一点的，html的事件冒泡，父子元素都有点击事件。</p>
-<ul>
-<li><p>鼠标点击子元素。分发是靠浏览器分发，对于js的任务是两个click。</p>
-</li>
-<li><p>代码调用子元素点击事件，也会触发冒泡，但是对于js的任务是 这个调用代码。</p>
-</li>
-</ul>
-<p>因此上面两种看似相同的点击会有不同的执行顺序。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/" target="_blank" rel="noopener">https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/</a></p>
-<p>有精力建议，直接看上面原文，作者的demo做得很好的！</p>
-<p>以外的话 还有mdn的文档看</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide</a></p>
-<p><a href="https://zh.javascript.info/event-loop" target="_blank" rel="noopener">https://zh.javascript.info/event-loop</a></p>
-<p><a href="https://stackoverflow.com/questions/25915634/difference-between-microtask-and-macrotask-within-an-event-loop-context" target="_blank" rel="noopener">https://stackoverflow.com/questions/25915634/difference-between-microtask-and-macrotask-within-an-event-loop-context</a></p>
-<p>对于不应该阻塞事件循环的耗时长的繁重计算任务，我们可以使用 Web Workers。<a href="https://html.spec.whatwg.org/multipage/workers.html" target="_blank" rel="noopener">https://html.spec.whatwg.org/multipage/workers.html</a></p>
-<p>这是在另一个并行线程中运行代码的方式。</p>
-<p>Web Workers 可以与主线程交换消息，但是它们具有自己的变量和事件循环。</p>
-<p>Web Workers 没有访问 DOM 的权限，因此，它们对于同时使用多个 CPU 内核的计算非常有用。</p>
 
       
     </div>
@@ -777,20 +771,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-count">102</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Blog/categories/">
           
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">121</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

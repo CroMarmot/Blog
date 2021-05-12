@@ -191,6 +191,181 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-10-29-gulp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-10-29-gulp/" class="post-title-link" itemprop="url">gulp 文档笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-10-29 11:20:14" itemprop="dateCreated datePublished" datetime="2019-10-29T11:20:14+08:00">2019-10-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-10-29-gulp/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-10-29-gulp/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="文档学习"><a href="#文档学习" class="headerlink" title="文档学习"></a>文档学习</h1><p>有中文看中文 :-)</p>
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p>先看 node等版本</p>
+<pre><code>node --version
+v11.8.0
+npm --version
+6.12.0
+npx --version
+10.2.0
+</code></pre><p>安装</p>
+<p><code>npm install --global gulp-cli</code></p>
+<p><code>npx mkdirp my-project &amp;&amp; cd my-project</code></p>
+<p><code>npm init &amp;&amp; npm install --save-dev gulp</code></p>
+<p>检查版本</p>
+<pre><code>gulp --version
+CLI version: 2.2.0
+Local version: 4.0.2
+</code></pre><p>创建配置 <code>touch gulpfile.js</code></p>
+<p>写入</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defaultTask</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// place code for your default task here</span></span><br><span class="line">  cb();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>exports.default = defaultTask</p>
+<p>执行 <code>gulp</code>完成</p>
+<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>查看任务<code>gulp --tasks</code></p>
+<p>多个任务可以通过<code>series()</code> 和 <code>parallel()</code>来合并, 其中series是按顺序串行,parallel是并行,</p>
+<p>例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; series &#125; = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// `clean` 函数并未被导出（export），因此被认为是私有任务（private task）。</span></span><br><span class="line"><span class="comment">// 它仍然可以被用在 `series()` 组合中。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clean</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// body omitted</span></span><br><span class="line">  cb();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// `build` 函数被导出（export）了，因此它是一个公开任务（public task），并且可以被 `gulp` 命令直接调用。</span></span><br><span class="line"><span class="comment">// 它也仍然可以被用在 `series()` 组合中。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">build</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// body omitted</span></span><br><span class="line">  cb();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.build = build;</span><br><span class="line">exports.default = series(clean, build);</span><br></pre></td></tr></table></figure>
+<p>可以任意深度嵌套!</p>
+<h2 id="异步执行"><a href="#异步执行" class="headerlink" title="异步执行"></a>异步执行</h2><p>可以返回 stream、promise、event emitter、child process 或 observable ，否则使用callback</p>
+<p>stream</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; src, dest &#125; = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">streamTask</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> src(<span class="string">'*.js'</span>)</span><br><span class="line">    .pipe(dest(<span class="string">'output'</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.default = streamTask;</span><br></pre></td></tr></table></figure>
+<p>promise</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">promiseTask</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(<span class="string">'the value is ignored'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.default = promiseTask;</span><br></pre></td></tr></table></figure>
+<p>event emitter</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; EventEmitter &#125; = <span class="built_in">require</span>(<span class="string">'events'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">eventEmitterTask</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> emitter = <span class="keyword">new</span> EventEmitter();</span><br><span class="line">  <span class="comment">// Emit has to happen async otherwise gulp isn't listening yet</span></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> emitter.emit(<span class="string">'finish'</span>), <span class="number">250</span>);</span><br><span class="line">  <span class="keyword">return</span> emitter;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.default = eventEmitterTask;</span><br></pre></td></tr></table></figure>
+<p>child process</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; exec &#125; = <span class="built_in">require</span>(<span class="string">'child_process'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">childProcessTask</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> exec(<span class="string">'date'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.default = childProcessTask;</span><br></pre></td></tr></table></figure>
+<p>observable</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; Observable &#125; = <span class="built_in">require</span>(<span class="string">'rxjs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">observableTask</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> Observable.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.default = observableTask;</span><br></pre></td></tr></table></figure>
+<p>callback</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callbackError</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// `cb()` should be called by some async work</span></span><br><span class="line">  cb(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'kaboom'</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.default = callbackError;</span><br></pre></td></tr></table></figure>
+<p><strong>gulp 不再支持同步任务（Synchronous tasks）了。因为同步任务常常会导致难以调试的细微错误，例如忘记从任务（task）中返回 stream。</strong></p>
+<h2 id="流Stream"><a href="#流Stream" class="headerlink" title="流Stream"></a>流Stream</h2><p>常见流使用:<code>src,dest,pipe()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; src, dest &#125; = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">const</span> babel = <span class="built_in">require</span>(<span class="string">'gulp-babel'</span>);</span><br><span class="line"><span class="keyword">const</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</span><br><span class="line"><span class="keyword">const</span> rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>);</span><br><span class="line"></span><br><span class="line">exports.default = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> src(<span class="string">'src/*.js'</span>)</span><br><span class="line">    .pipe(babel())</span><br><span class="line">    .pipe(src(<span class="string">'vendor/*.js'</span>))</span><br><span class="line">    .pipe(dest(<span class="string">'output/'</span>))</span><br><span class="line">    .pipe(uglify())</span><br><span class="line">    .pipe(rename(&#123; <span class="attr">extname</span>: <span class="string">'.min.js'</span> &#125;))</span><br><span class="line">    .pipe(dest(<span class="string">'output/'</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Glob-详解"><a href="#Glob-详解" class="headerlink" title="Glob 详解"></a>Glob 详解</h2><p>glob 是由普通字符和/或通配字符组成的字符串，用于匹配文件路径。可以利用一个或多个 glob 在文件系统中定位文件。</p>
+<p>至少一个匹配项目</p>
+<p>分隔符永远是<code>/</code>不分系统</p>
+<p><code>\\</code>用于转译，如 <code>\\*</code>表示普通的星号 不是通配符</p>
+<p>避免使用<code>path</code>, <code>__dirname</code>,<code>__filename</code>来创建glob</p>
+<blockquote>
+<p>单个星号 不能匹配层级文件夹</p>
+</blockquote>
+<blockquote>
+<p>两个星号 能匹配任意层级文件夹</p>
+</blockquote>
+<blockquote>
+<p>取反<code>!</code></p>
+</blockquote>
+<p><code>[&#39;script/**/*.js&#39;, &#39;!scripts/vendor/&#39;, &#39;scripts/vendor/react.js&#39;]</code></p>
+<p><code>[&#39;**/*.js&#39;, &#39;!node_modules/&#39;]</code></p>
+<p><a href="https://www.gulpjs.com.cn/docs/getting-started/explaining-globs/#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6-%E5%8F%96%E5%8F%8D" target="_blank" rel="noopener">注意书写 会影响执行速度</a></p>
+<h2 id="插件-plugins"><a href="#插件-plugins" class="headerlink" title="插件 plugins"></a>插件 plugins</h2><p><a href="https://gulpjs.com/plugins/" target="_blank" rel="noopener">https://gulpjs.com/plugins/</a></p>
+<p>实质是流转换器 插件应当总是用来转换文件的。其他操作都应该使用（非插件的） Node 模块或库来实现。</p>
+<p>条件插件 gulp-if</p>
+<h2 id="文件监控-watch"><a href="#文件监控-watch" class="headerlink" title="文件监控 watch"></a>文件监控 watch</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; watch, series &#125; = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clean</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// body omitted</span></span><br><span class="line">  cb();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">javascript</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// body omitted</span></span><br><span class="line">  cb();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">css</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// body omitted</span></span><br><span class="line">  cb();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以只关联一个任务</span></span><br><span class="line">watch(<span class="string">'src/*.css'</span>, css);</span><br><span class="line"><span class="comment">// 或者关联一个任务组合</span></span><br><span class="line">watch(<span class="string">'src/*.js'</span>, series(clean, javascript));</span><br></pre></td></tr></table></figure>
+<p>指定监控的事件’add’、’addDir’、’change’、’unlink’、’unlinkDir’、’ready’、’error’。此外，还有一个 ‘all’ 事件，它表示除 ‘ready’ 和 ‘error’ 之外的所有事件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; watch &#125; = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 所有事件都将被监控</span></span><br><span class="line">watch(<span class="string">'src/*.js'</span>, &#123; <span class="attr">events</span>: <span class="string">'all'</span> &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// body omitted</span></span><br><span class="line">  cb();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>如需在第一次文件修改之前执行，也就是调用 watch() 之后立即执行，请将 ignoreInitial 参数设置为 false。</p>
+<p><code>watch(...,{ignoreInitial:false},...)</code></p>
+<p>延迟 <code>{ delay: 500 }</code></p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h2 id="Vinyl"><a href="#Vinyl" class="headerlink" title="Vinyl"></a>Vinyl</h2><p><code>Vinyl 对象</code> (the virtual file objects)</p>
+<p>文件元数据作为 Node 的 fs.Stats 实例提供。它是 Vinyl 实例的 stat 属性，并在内部用于确定 Vinyl 对象是否表示目录或符号链接（symbolic link）。当写入文件系统时，权限和时间值将从 Vinyl 对象的 stat 属性同步。</p>
+<p>src()</p>
+<p>dest()</p>
+<p>symlink()</p>
+<p>lastRun()</p>
+<p>series()</p>
+<p>parallel()</p>
+<p>watch()</p>
+<p>task()</p>
+<p>registry()</p>
+<p>tree()</p>
+<p>Vinyl</p>
+<p>Vinyl.isVinyl()</p>
+<p>Vinyl.isCustomProp()</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.gulpjs.com.cn/docs/getting-started/quick-start/" target="_blank" rel="noopener">https://www.gulpjs.com.cn/docs/getting-started/quick-start/</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-10-24-shell/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +397,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -316,7 +491,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -476,7 +651,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -583,7 +758,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -642,144 +817,6 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
 <p><a href="https://stackoverflow.com/questions/15558353/how-can-one-pull-the-private-data-of-ones-own-android-app" target="_blank" rel="noopener">https://stackoverflow.com/questions/15558353/how-can-one-pull-the-private-data-of-ones-own-android-app</a></p>
 <p><a href="https://stackoverflow.com/questions/9017073/is-it-possible-to-see-application-data-from-adb-shell-the-same-way-i-see-it-moun/16461386" target="_blank" rel="noopener">https://stackoverflow.com/questions/9017073/is-it-possible-to-see-application-data-from-adb-shell-the-same-way-i-see-it-moun/16461386</a></p>
 <p><a href="https://stackoverflow.com/questions/15558353/how-can-one-pull-the-private-data-of-ones-own-android-app/31504263#31504263" target="_blank" rel="noopener">https://stackoverflow.com/questions/15558353/how-can-one-pull-the-private-data-of-ones-own-android-app/31504263#31504263</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-30-nikki4calc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-09-30-nikki4calc/" class="post-title-link" itemprop="url">闪耀暖暖 耗材计算器 rxjs + angular2+</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-09-30 15:09:01" itemprop="dateCreated datePublished" datetime="2019-09-30T15:09:01+08:00">2019-09-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/Angular/" itemprop="url" rel="index"><span itemprop="name">Angular</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-09-30-nikki4calc/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-30-nikki4calc/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p>闪耀暖暖的设计师 材料耗材计算器</p>
-<p>基于一个已经有的原生js 进行改造</p>
-<p>原来生 <a href="http://www.spongem.com/ajglz/tools/evalLevelUpCost.html" target="_blank" rel="noopener">http://www.spongem.com/ajglz/tools/evalLevelUpCost.html</a></p>
-<h1 id="重构内容"><a href="#重构内容" class="headerlink" title="重构内容"></a>重构内容</h1><ol start="0">
-<li>首先把这个的源码 搞下来,比较无脑的操作</li>
-<li>然后开个module 配一下routing</li>
-<li>搞个component 然后把函数数据都搬进来</li>
-<li>把相关全局变量 改为 <code>this.</code></li>
-<li>修改原来的一些<code>$</code>方法 改为原生js,或者改为<code>[(ngModel)]</code>双向绑定，至此基本可以运行。</li>
-<li>解构一下用户输入和计算输出分别叫做<code>Class: CardBasic/Card -&gt; html:Card/CardOut</code> // 好吧 这里变量名有点乱 现在看来</li>
-<li>引入<code>https://material.angular.io</code>的组件,稍微调整画风</li>
-<li>尝试搞一个computed,移除计算按钮, 改为 <code>get XXX</code>的方法</li>
-</ol>
-<p>这里遇到问题, 根据调试，页面上的调用会反复调用get方法, 大量重复不必要计算</p>
-<ol start="8">
-<li>解决方案1: 引入Ramda，建立两个cache 分别是计算结果 和 用户输入，用 Ramda的深比较和深拷贝完成少的计算次数</li>
-</ol>
-<p>写着还好，行数不多，就能实现，性能也好，但是问题是，相当于你依然要去关心的是，输出值输入值直接的具体关系才能写。</p>
-<ol start="9">
-<li>解决方案2: 引入rxjs，用Observable搞</li>
-</ol>
-<p>这里实践上有些问题</p>
-<ul>
-<li>双向绑定如何和<code>BehaviorSubject</code>绑定,最后用<code>(ngModelChange)</code>来 单向到 具体字段</li>
-<li>能否监听整个Class</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">of</span> &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">let</span> a = &#123;<span class="attr">x</span>:<span class="number">1</span>,<span class="attr">y</span>:<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> a$ = <span class="keyword">of</span>(a);</span><br><span class="line">a$.subscribe(<span class="built_in">console</span>.log);</span><br><span class="line">a.x=<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-<p>例如这样 并不会因为修改了a的子字段而自动发送next</p>
-<p>搞了半天最后还是 感觉很 手工写依赖的输入</p>
-<p>这一块的实现主要如下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 相当于所有用户输入的部分 都会对应一个emitter</span></span><br><span class="line">private textEmitter: <span class="built_in">Map</span>&lt;string, BehaviorSubject&lt;string&gt;&gt; = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line"><span class="comment">// 在初始化时 初始化它们并监听</span></span><br><span class="line">  <span class="comment">// initial textEmitter</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> <span class="keyword">this</span>.card) &#123;</span><br><span class="line">    <span class="keyword">this</span>.textEmitter.set(key, <span class="keyword">new</span> BehaviorSubject(<span class="keyword">this</span>.card[key]));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.obAllKeys(<span class="keyword">this</span>.textEmitter)</span><br><span class="line">    .pipe(</span><br><span class="line">      map(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 细粒度触发 全体计算</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'fire calc'</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.cardOut; <span class="comment">// 就是最开始写的get方法 触发过程中只 告诉说 '哎!我变了!' 即可</span></span><br><span class="line">      &#125;)</span><br><span class="line">    ).subscribe(<span class="keyword">this</span>.cardOut$); <span class="comment">// 页面通过这个读取 是个 BehaviorSubject</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 做的个功能 监听一个类 的所有字段 对应的 textEmitter的Observable</span></span><br><span class="line"><span class="comment">// 做了一点防抖</span></span><br><span class="line">obAllKeys(emitter: <span class="built_in">Map</span>&lt;string, BehaviorSubject&lt;string&gt;&gt;): Observable&lt;string&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> mergeOb: Observable&lt;string&gt; = <span class="keyword">new</span> BehaviorSubject(<span class="string">''</span>);</span><br><span class="line">  emitter.forEach(<span class="function">(<span class="params">emitValue, emitKey</span>) =&gt;</span> &#123;</span><br><span class="line">    mergeOb = merge(mergeOb, <span class="comment">// 关于merge的使用考虑 最开始想过使用combineLatest 但是 问题是 我明明可以直接通过 页面双向绑定拿到 用户输入,所以其实只需要一个变更通知即可，再另一个 combineLatest感觉要配上flat 才能 自动 绑定所有key,不然是手写的所有key,而对应的下标再反向生成 对象,表示 是不是有更好的方法 没学到没搜到</span></span><br><span class="line">      emitValue.pipe(</span><br><span class="line">        debounceTime(<span class="keyword">this</span>.debounceInterval),</span><br><span class="line">        distinctUntilChanged(),</span><br><span class="line">        map(<span class="function">(<span class="params">v</span>) =&gt;</span> emitKey + v) <span class="comment">// 这个是避免 在段时间内 上次状态a,  改b 改a 改回最初的a 这样就不会触发改变</span></span><br><span class="line">      ));</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> mergeOb.pipe(debounceTime(<span class="keyword">this</span>.debounceInterval)); <span class="comment">// 按理说一次只会改动一个  这个是初次进入时 会有多个 当然 combineLatest 不会有这个问题</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 主要是和页面上的 输入绑定 具体就是 ngModelChange ,这一块的问题就是 写了 [(ngModel)] 又写了一遍这个绑定 光是key就要写两遍 还是字符串没法保证正确 靠的是下面的 调试强行保证部分</span></span><br><span class="line">onChange(cardKey: string, <span class="attr">value</span>: string) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`onCardIdChange: <span class="subst">$&#123;cardKey&#125;</span> =&gt; <span class="subst">$&#123;value&#125;</span>`</span>);</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.textEmitter.has(cardKey)) &#123;</span><br><span class="line">    <span class="keyword">this</span>.textEmitter.get(cardKey).next(value);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123; <span class="comment">// 调试用</span></span><br><span class="line">    <span class="built_in">console</span>.warn(<span class="string">'onChange'</span>, cardKey, value);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="10">
-<li>最后增加了一点 try catch,因为 不同的卡可选范围并不同，或者用户输入不合法会 爆红=.=只在 两个LevelVal里加了</li>
-</ol>
-<h1 id="最后结果"><a href="#最后结果" class="headerlink" title="最后结果"></a>最后结果</h1><p><a href="https://cromarmot.github.io/Debuq/#/nikki4/lvlup">https://cromarmot.github.io/Debuq/#/nikki4/lvlup</a></p>
-<p>如果打开看到404，保持页面，等待一会儿再刷新即可。因为有worker service</p>
-<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><p>比如搞成动态拉取</p>
-<p>计算函数再向纯函数靠拢啊</p>
-<p>怎么json 转换 Class 甚至 Map // 搜了一会没搜到简洁的方案</p>
-<p>更好的双向绑定+BehaviorSubject 绑定?</p>
-<p>是否可能简化某部分代码</p>
-<p>输入控制 比如 现在其实可以输入 小数 和 范围以外的数</p>
-<p>比如因为还是有不少json 导致 typescript的 类型判断并不完整 虽然</p>
 
       
     </div>
@@ -864,20 +901,20 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-count">102</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Blog/categories/">
           
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">121</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

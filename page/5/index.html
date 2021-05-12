@@ -191,6 +191,98 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-07-14-md5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-07-14-md5/" class="post-title-link" itemprop="url">md5</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-07-14 10:37:14" itemprop="dateCreated datePublished" datetime="2020-07-14T10:37:14+08:00">2020-07-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-07-14-md5/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-07-14-md5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="数学事实"><a href="#数学事实" class="headerlink" title="数学事实"></a>数学事实</h1><p>反复线性和非线性交替计算</p>
+<h1 id="代码js"><a href="#代码js" class="headerlink" title="代码js"></a>代码js</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">md5</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">RotateLeft</span>(<span class="params">lValue, iShiftBits</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((lValue &lt;&lt; iShiftBits) | (lValue &gt;&gt;&gt; (<span class="number">32</span> - iShiftBits))) &amp; <span class="number">0xFFFFFFFF</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">unsignAdd</span>(<span class="params">lX, lY</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((lX &amp; <span class="number">0xFFFFFFFF</span>) + (lY &amp; <span class="number">0xFFFFFFFF</span>) ) &amp; <span class="number">0xFFFFFFFF</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// (a,b,c,d) = (d, ((a+f(b,c,d) + data + Ki)&lt;&lt;&lt; s)+b, b, c)</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a, b, c, d, x, s, ac, Fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> unsignAdd(RotateLeft(unsignAdd(a, unsignAdd(unsignAdd(Fn(b, c, d), x), ac)), s), b);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">ConvertToWordArray</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> lWordCount;</span><br><span class="line">    <span class="keyword">let</span> lMessageLength = string.length;</span><br><span class="line">    <span class="comment">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER</span></span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords_temp1 = lMessageLength + <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords_temp2 = (lNumberOfWords_temp1 - (lNumberOfWords_temp1 % <span class="number">64</span>)) / <span class="number">64</span>;</span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords = (lNumberOfWords_temp2 + <span class="number">1</span>) * <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">let</span> lWordArray = <span class="built_in">Array</span>(lNumberOfWords - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">let</span> lBytePosition = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> lByteCount = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (lByteCount &lt; lMessageLength) &#123;</span><br><span class="line">      lWordCount = (lByteCount - (lByteCount % <span class="number">4</span>)) / <span class="number">4</span>;</span><br><span class="line">      lBytePosition = (lByteCount % <span class="number">4</span>) * <span class="number">8</span>;</span><br><span class="line">      lWordArray[lWordCount] = (lWordArray[lWordCount] | (string.charCodeAt(lByteCount) &lt;&lt; lBytePosition));</span><br><span class="line">      lByteCount++;</span><br><span class="line">    &#125;</span><br><span class="line">    lWordCount = (lByteCount - (lByteCount % <span class="number">4</span>)) / <span class="number">4</span>;</span><br><span class="line">    lBytePosition = (lByteCount % <span class="number">4</span>) * <span class="number">8</span>;</span><br><span class="line">    lWordArray[lWordCount] = lWordArray[lWordCount] | (<span class="number">0x80</span> &lt;&lt; lBytePosition);</span><br><span class="line">    lWordArray[lNumberOfWords - <span class="number">2</span>] = lMessageLength &lt;&lt; <span class="number">3</span>;</span><br><span class="line">    lWordArray[lNumberOfWords - <span class="number">1</span>] = lMessageLength &gt;&gt;&gt; <span class="number">29</span>;</span><br><span class="line">    <span class="keyword">return</span> lWordArray;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">WordToHex</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> WordToHexValue = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">      WordToHexValue += <span class="string">`0<span class="subst">$&#123;((v &gt;&gt;&gt; (i * <span class="number">8</span>)) &amp; <span class="number">0xFF</span>).toString(<span class="number">16</span>)&#125;</span>`</span>.substr(<span class="number">-2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> WordToHexValue;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Utf8Encode</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> utftext = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> n = <span class="number">0</span>; n &lt; string.length; n++) &#123;</span><br><span class="line">      <span class="keyword">let</span> c = string.charCodeAt(n);</span><br><span class="line">      <span class="keyword">if</span> (c &lt; <span class="number">128</span>) &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode(c);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> ((c &gt; <span class="number">127</span>) &amp;&amp; (c &lt; <span class="number">2048</span>)) &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &gt;&gt; <span class="number">6</span>) | <span class="number">192</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &gt;&gt; <span class="number">12</span>) | <span class="number">224</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode(((c &gt;&gt; <span class="number">6</span>) &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> utftext;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">let</span> x = ConvertToWordArray(Utf8Encode(string));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> funcs = [</span><br><span class="line">    (x,y,z) =&gt; ((x &amp; y) | ((~x) &amp; z) ),</span><br><span class="line">    (x,y,z) =&gt; ((x &amp; z) | (y &amp; (~z))),</span><br><span class="line">    (x,y,z) =&gt; (x ^ y ^ z),</span><br><span class="line">    (x,y,z) =&gt; (y ^ (x | (~z)))</span><br><span class="line">  ];</span><br><span class="line">  <span class="comment">// K = abs(sin(i+1))*(2^32) int part</span></span><br><span class="line">  <span class="comment">// https://softwareengineering.stackexchange.com/questions/89694/md5-implementation-notes</span></span><br><span class="line">  <span class="keyword">const</span> K = [ <span class="number">0xD76AA478</span> ,<span class="number">0xE8C7B756</span> ,<span class="number">0x242070DB</span> ,<span class="number">0xC1BDCEEE</span> ,<span class="number">0xF57C0FAF</span> ,<span class="number">0x4787C62A</span> ,<span class="number">0xA8304613</span> ,<span class="number">0xFD469501</span> ,<span class="number">0x698098D8</span> ,<span class="number">0x8B44F7AF</span> ,<span class="number">0xFFFF5BB1</span> ,<span class="number">0x895CD7BE</span> ,<span class="number">0x6B901122</span> ,<span class="number">0xFD987193</span> ,<span class="number">0xA679438E</span> ,<span class="number">0x49B40821</span> ,<span class="number">0xF61E2562</span> ,<span class="number">0xC040B340</span> ,<span class="number">0x265E5A51</span> ,<span class="number">0xE9B6C7AA</span> ,<span class="number">0xD62F105D</span> ,<span class="number">0x02441453</span> ,<span class="number">0xD8A1E681</span> ,<span class="number">0xE7D3FBC8</span> ,<span class="number">0x21E1CDE6</span> ,<span class="number">0xC33707D6</span> ,<span class="number">0xF4D50D87</span> ,<span class="number">0x455A14ED</span> ,<span class="number">0xA9E3E905</span> ,<span class="number">0xFCEFA3F8</span> ,<span class="number">0x676F02D9</span> ,<span class="number">0x8D2A4C8A</span> ,<span class="number">0xFFFA3942</span> ,<span class="number">0x8771F681</span> ,<span class="number">0x6D9D6122</span> ,<span class="number">0xFDE5380C</span> ,<span class="number">0xA4BEEA44</span> ,<span class="number">0x4BDECFA9</span> ,<span class="number">0xF6BB4B60</span> ,<span class="number">0xBEBFBC70</span> ,<span class="number">0x289B7EC6</span> ,<span class="number">0xEAA127FA</span> ,<span class="number">0xD4EF3085</span> ,<span class="number">0x04881D05</span> ,<span class="number">0xD9D4D039</span> ,<span class="number">0xE6DB99E5</span> ,<span class="number">0x1FA27CF8</span> ,<span class="number">0xC4AC5665</span> ,<span class="number">0xF4292244</span> ,<span class="number">0x432AFF97</span> ,<span class="number">0xAB9423A7</span> ,<span class="number">0xFC93A039</span> ,<span class="number">0x655B59C3</span> ,<span class="number">0x8F0CCC92</span> ,<span class="number">0xFFEFF47D</span> ,<span class="number">0x85845DD1</span> ,<span class="number">0x6FA87E4F</span> ,<span class="number">0xFE2CE6E0</span> ,<span class="number">0xA3014314</span> ,<span class="number">0x4E0811A1</span> ,<span class="number">0xF7537E82</span> ,<span class="number">0xBD3AF235</span> ,<span class="number">0x2AD7D2BB</span> ,<span class="number">0xEB86D391</span> ] ;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> S = [[<span class="number">7</span>,<span class="number">12</span>,<span class="number">17</span>,<span class="number">22</span>],[<span class="number">5</span>,<span class="number">9</span>,<span class="number">14</span>,<span class="number">20</span>],[<span class="number">4</span>,<span class="number">11</span>,<span class="number">16</span>,<span class="number">23</span>],[<span class="number">6</span>,<span class="number">10</span>,<span class="number">15</span>,<span class="number">21</span>]];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> offset = [[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">5</span>,<span class="number">1</span>],[<span class="number">3</span>,<span class="number">5</span>],[<span class="number">7</span>,<span class="number">0</span>]];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 01234567 89abcdef fedcba98 76543210</span></span><br><span class="line">  <span class="keyword">let</span> abcd = [<span class="number">0x67452301</span>,<span class="number">0xEFCDAB89</span>,<span class="number">0x98BADCFE</span>,<span class="number">0x10325476</span>];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// http://www.faqs.org/rfcs/rfc1321.html</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> idx = <span class="number">0</span>; idx &lt; x.length; idx += <span class="number">16</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> ABCD = [...abcd];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; <span class="number">4</span>;i ++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>;j &lt; <span class="number">4</span>;j ++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> k = <span class="number">0</span>;k &lt; <span class="number">4</span>;k ++)&#123;</span><br><span class="line">          abcd = [abcd[<span class="number">3</span>],f(...abcd, x[idx + ((offset[i][<span class="number">0</span>]*(j*<span class="number">4</span>+k) + offset[i][<span class="number">1</span>] ) %<span class="number">16</span>)], S[i][k], K[(i*<span class="number">4</span>+j)*<span class="number">4</span>+k], funcs[i]),abcd[<span class="number">1</span>],abcd[<span class="number">2</span>]];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    abcd = ABCD.map(<span class="function">(<span class="params">item,idx</span>)=&gt;</span> unsignAdd(item,abcd[idx]));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> abcd.map(<span class="function"><span class="params">item</span>=&gt;</span>WordToHex(item)).join(<span class="string">''</span>).toLowerCase();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(md5(<span class="string">""</span>))</span><br><span class="line"><span class="built_in">console</span>.log(md5(<span class="string">"demo"</span>))</span><br></pre></td></tr></table></figure>
+<p>两段看起来复杂的函数 其实 是字符串通过utf8/ascii之类转换成 数值</p>
+<p>其中一些值和公式的设计大自能有个想法感受了，还不明白的是offset和s的设计为什么是这样的,搜了半天也没搜到</p>
+<p><a href="https://en.wikipedia.org/wiki/MD5" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/MD5</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-07-13-rsa/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +314,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -353,7 +445,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -509,7 +601,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -616,7 +708,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
+                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -678,134 +770,6 @@
 <h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>一个基于莫比乌丝反演的数字1判断</p>
 <p><a href="https://www.npmjs.com/package/@cromarmot/is-number-one" target="_blank" rel="noopener">https://www.npmjs.com/package/@cromarmot/is-number-one</a></p>
 <h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><p><a href="https://docs.npmjs.com/" target="_blank" rel="noopener">https://docs.npmjs.com/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-05-21-vue-v-model-domProps/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-05-21-vue-v-model-domProps/" class="post-title-link" itemprop="url">vue vmodel domprops</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-05-21 11:20:14" itemprop="dateCreated datePublished" datetime="2020-05-21T11:20:14+08:00">2020-05-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-27 09:55:58" itemprop="dateModified" datetime="2021-04-27T09:55:58+08:00">2021-04-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-05-21-vue-v-model-domProps/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-05-21-vue-v-model-domProps/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>在业务页面 希望对输入框进行额外操作，例如 当输入长度大于 10则截取到前10位</p>
-<p>BUG产生，业务页面写了如下的代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">data()&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    someInputValue:&apos;&apos;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">watch:&#123;</span><br><span class="line">  someInputValue(newVal)&#123;</span><br><span class="line">    this.someInputValue = newVal.substr(0,10);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后 前技术经理写的输入框 却可以一直输入</p>
-<p>我用render函数 写的没有问题</p>
-<p>直接裸的input也没问题</p>
-<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p>加了一堆console，基本确定bug的原理是</p>
-<ol>
-<li>内部输入更新</li>
-<li>触发组件emit</li>
-<li>业务页面得到超过长度的值</li>
-<li>修改为只有长度为10的值</li>
-<li>通过props传递给组件</li>
-<li>触发组件内对value的watch (这次能成功</li>
-<li>用户继续输入</li>
-<li>触发组件emit</li>
-<li>业务页面得到超过长度的值</li>
-<li>修改为只有长度为10的值</li>
-<li>通过props传递给组件</li>
-<li>没有触发组件内对value的watch</li>
-</ol>
-<h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><p>官方直接<code>input</code>能用，但不知道是怎么封装的</p>
-<p>我封装的是参考<code>https://cn.vuejs.org/v2/guide/render-function.html#v-model</code>的</p>
-<p>然而,如果你直接尝试上面所写的你会发现并不如愿</p>
-<p>没有使用watch，而是使用<code>domProps</code></p>
-<p>我封装的是参考<code>https://cn.vuejs.org/v2/guide/render-function.html#v-model</code>的没有使用watch，而是使用<code>domProps</code></p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>直接的话就是用<code>domProps</code> 但是有个问题，如果使用者</p>
-<p>另外的话，我本来实现的是会提供一个接受过滤函数的props，业务层可以传递过滤函数而不是通过外部watch</p>
-<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>目前看起来，双向绑定就应该做全，不要单向使用。</p>
-<p>有些时候不设置默认值？</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;v-model&lt;/h1&gt;</span><br><span class="line">    &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">      &lt;div&gt; input(默认)&lt;input v-model=&quot;x1&quot;&gt; &#123;&#123; x1 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input2(官方文档)&lt;Input2 v-model=&quot;x2&quot; /&gt;  &#123;&#123; x2 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input3(我)&lt;Input3 v-model=&quot;x3&quot; /&gt;      &#123;&#123; x3 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input4(历史遗留代码)&lt;Input4 v-model=&quot;x4&quot; /&gt;      &#123;&#123; x4 &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;h1&gt;@input only&lt;/h1&gt;</span><br><span class="line">    &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">      &lt;div&gt;input(默认)&lt;input @input=&quot;(e)=&gt;&#123;input1 = e.target.value;&#125;&quot;&gt;    &#123;&#123; input1 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input2(官方)&lt;Input2 @input=&quot;(v)=&gt;&#123;input2=v;&#125;&quot; /&gt;    &#123;&#123; input2 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input3(我)&lt;Input3 @input=&quot;(v)=&gt;&#123;input3=v;&#125;&quot; /&gt;    &#123;&#123; input3 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input4(历史遗留代码)&lt;Input4 @input=&quot;(v)=&gt;&#123;input4=v;&#125;&quot; /&gt;    &#123;&#123; input4 &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    Input3: &#123;</span><br><span class="line">      name: &apos;FormInputJsx&apos;,</span><br><span class="line">      // inheritAttrs: false,</span><br><span class="line">      props: &#123;</span><br><span class="line">        inputFilter: &#123;</span><br><span class="line">          type: Function,</span><br><span class="line">          default: null</span><br><span class="line">        &#125;,</span><br><span class="line">        // 传入类型</span><br><span class="line">        value: String</span><br><span class="line">      &#125;,</span><br><span class="line">      data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          valueIn: this.value</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      methods: &#123;</span><br><span class="line">        updateValue(value) &#123;</span><br><span class="line">          let newVal = value</span><br><span class="line">          if (this.inputFilter) &#123;</span><br><span class="line">            newVal = this.inputFilter(newVal)</span><br><span class="line">          &#125;</span><br><span class="line">          // this.valueIn = newVal</span><br><span class="line">          // if (this.$refs.input.value !== this.valueIn) &#123;</span><br><span class="line">          //   this.$refs.input.value = this.valueIn</span><br><span class="line">          // &#125;</span><br><span class="line">          this.$emit(&apos;input&apos;, newVal)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      render(h) &#123;</span><br><span class="line">        const inputConfig = &#123;</span><br><span class="line">          ref: &apos;input&apos;,</span><br><span class="line">          // input 原始属性不改动 自动下发-</span><br><span class="line">          // attrs: Object.assign(&#123; ...this.$attrs &#125;),</span><br><span class="line">          on: Object.assign(&#123; ...this.$listeners &#125;, &#123;</span><br><span class="line">            input: event =&gt; this.updateValue(event.target.value) // 输入框改变</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        if (typeof this.value !== &apos;undefined&apos;) &#123;</span><br><span class="line">          inputConfig.domProps = &#123;</span><br><span class="line">            value: this.value</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return h(&apos;input&apos;, inputConfig)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Input4: &#123;</span><br><span class="line">      render(h) &#123;</span><br><span class="line">        const self = this</span><br><span class="line">        return h(&apos;input&apos;, &#123;</span><br><span class="line">          domProps: &#123;</span><br><span class="line">            value: self.value</span><br><span class="line">          &#125;,</span><br><span class="line">          on: &#123;</span><br><span class="line">            input (event) &#123;</span><br><span class="line">              self.Amount = event.target.value</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      props: &#123;</span><br><span class="line">        value: &#123;</span><br><span class="line">          type: String,</span><br><span class="line">          default: &apos;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          Amount: &apos;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      watch: &#123;</span><br><span class="line">        value(newVal) &#123;</span><br><span class="line">          this.Amount = newVal</span><br><span class="line">        &#125;,</span><br><span class="line">        Amount(newVal) &#123;</span><br><span class="line">          // 从前截取 不带$</span><br><span class="line">          this.Amount = newVal.match(/^\d*(\.?\d&#123;0,2&#125;)/g)[0] || &apos;&apos;</span><br><span class="line">          if (isNaN(this.Amount)) &#123;</span><br><span class="line">            this.Amount = &apos;&apos;</span><br><span class="line">          &#125;</span><br><span class="line">          this.$emit(&apos;input&apos;, this.Amount)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Input2: &#123;</span><br><span class="line">      props: [&apos;value&apos;],</span><br><span class="line">      render (createElement) &#123;</span><br><span class="line">        const self = this</span><br><span class="line">        return createElement(&apos;input&apos;, &#123;</span><br><span class="line">          domProps: &#123;</span><br><span class="line">            value: self.value</span><br><span class="line">          &#125;,</span><br><span class="line">          on: &#123;</span><br><span class="line">            input (event) &#123;</span><br><span class="line">              self.$emit(&apos;input&apos;, event.target.value)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      x1: &apos;&apos;,</span><br><span class="line">      x2: &apos;&apos;,</span><br><span class="line">      x3: &apos;&apos;,</span><br><span class="line">      x4: &apos;&apos;,</span><br><span class="line">      input1: &apos;&apos;,</span><br><span class="line">      input2: &apos;&apos;,</span><br><span class="line">      input3: &apos;&apos;,</span><br><span class="line">      input4: &apos;&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    x1(nv) &#123;</span><br><span class="line">      this.x1 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x2(nv) &#123;</span><br><span class="line">      this.x2 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x3(nv) &#123;</span><br><span class="line">      this.x3 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x4(nv) &#123;</span><br><span class="line">      this.x4 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input1(nv) &#123;</span><br><span class="line">      this.input1 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input2(nv) &#123;</span><br><span class="line">      this.input2 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input3(nv) &#123;</span><br><span class="line">      this.input3 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input4(nv) &#123;</span><br><span class="line">      this.input4 = nv.substr(0, 3)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.row&#123;</span><br><span class="line">  display:flex;</span><br><span class="line">  flex-direction:column;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="https://cn.vuejs.org/v2/guide/render-function.html#v-model" target="_blank" rel="noopener">vue render v-model</a></p>
-<p><a href="https://github.com/vuejs/vue/pull/9331" target="_blank" rel="noopener">vue pull requests 9331</a></p>
 
       
     </div>
@@ -890,20 +854,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-count">102</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Blog/categories/">
           
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">121</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
