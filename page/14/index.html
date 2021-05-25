@@ -191,6 +191,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-04-01-vue-custom-v-model/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-04-01-vue-custom-v-model/" class="post-title-link" itemprop="url">vue custom v-model</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-04-01 11:20:14" itemprop="dateCreated datePublished" datetime="2019-04-01T11:20:14+08:00">2019-04-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-25 17:50:05" itemprop="dateModified" datetime="2021-05-25T17:50:05+08:00">2021-05-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-04-01-vue-custom-v-model/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-04-01-vue-custom-v-model/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component" target="_blank" rel="noopener">https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component</a></p>
+<p>To let our component support v-model two-way binding, I stated earlier that the component needs to accept a <code>value</code> prop and emit an <code>input</code> event.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;input @input=<span class="string">"handleInput"</span> /&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  prop: ['value'],</span></span><br><span class="line"><span class="regexp">  data () &#123;</span></span><br><span class="line"><span class="regexp">    return &#123;</span></span><br><span class="line"><span class="regexp">      content: this.value</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  methods: &#123;</span></span><br><span class="line"><span class="regexp">    handleInput (e) &#123;</span></span><br><span class="line"><span class="regexp">      this.$emit('input', this.content)</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-03-22-promise/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +320,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
+                <time title="修改時間：2021-05-25 17:50:05" itemprop="dateModified" datetime="2021-05-25T17:50:05+08:00">2021-05-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -393,7 +491,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
+                <time title="修改時間：2021-05-25 17:50:05" itemprop="dateModified" datetime="2021-05-25T17:50:05+08:00">2021-05-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -667,7 +765,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
+                <time title="修改時間：2021-05-25 17:50:05" itemprop="dateModified" datetime="2021-05-25T17:50:05+08:00">2021-05-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -772,7 +870,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
+                <time title="修改時間：2021-05-25 17:50:05" itemprop="dateModified" datetime="2021-05-25T17:50:05+08:00">2021-05-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1560,109 +1658,6 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-11-12-quine/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/17-11-12-quine/" class="post-title-link" itemprop="url">quine</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2017-11-12 16:58:14" itemprop="dateCreated datePublished" datetime="2017-11-12T16:58:14+08:00">2017-11-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-05-12 11:43:48" itemprop="dateModified" datetime="2021-05-12T11:43:48+08:00">2021-05-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/17-11-12-quine/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-11-12-quine/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h1><h2 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h2><ol start="0">
-<li><p>install brainfuck by downloading the package from <a href="https://packages.ubuntu.com/search?keywords=bf" target="_blank" rel="noopener">ubuntu packages</a></p>
-</li>
-<li><p>install npm &amp; LiveScript</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install npm</span><br><span class="line">sudo npm install -g LiveScript</span><br></pre></td></tr></table></figure>
-<p>I don’t know what happened, livescript which is installed by apt is broken and the error message shows as below or this <a href="https://github.com/mame/quine-relay/issues/86" target="_blank" rel="noopener">issue</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">##################################</span><br><span class="line">##  93: LiveScript -&gt; LLVM asm  ##</span><br><span class="line">##################################</span><br><span class="line"></span><br><span class="line">lsc QR.ls &gt; QR.ll</span><br><span class="line">module.js:442</span><br><span class="line">    throw err;</span><br><span class="line">    ^</span><br><span class="line"></span><br><span class="line">Error: Cannot find module &apos;prelude-ls&apos;</span><br><span class="line">    at Function.Module._resolveFilename (module.js:440:15)</span><br><span class="line">    at Function.Module._load (module.js:388:25)</span><br><span class="line">    at Module.require (module.js:468:17)</span><br><span class="line">    at require (internal/module.js:20:19)</span><br><span class="line">    at Object.&lt;anonymous&gt; (/usr/lib/nodejs/livescript/lib/ast.js:3:8)</span><br><span class="line">    at Module._compile (module.js:541:32)</span><br><span class="line">    at Object.Module._extensions..js (module.js:550:10)</span><br><span class="line">    at Module.load (module.js:458:32)</span><br><span class="line">    at tryModuleLoad (module.js:417:12)</span><br><span class="line">    at Function.Module._load (module.js:409:3)</span><br></pre></td></tr></table></figure>
-<p>Install <code>prelude-ls</code> haven’t fix it, however it is workable by using <code>npm</code> to install <code>LiveScript</code> to cover it.</p>
-<h2 id="Preview-output"><a href="#Preview-output" class="headerlink" title="Preview output"></a>Preview output</h2><p>You can check the <code>output</code> branch which is generated on my computer or the <code>spoiler</code> branch which is povided by the original author of the code. <del>I haven’t diff them</del></p>
-<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://github.com/mame/quine-relay" target="_blank" rel="noopener">quine</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1732,14 +1727,14 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">102</span>
+          <span class="site-state-item-count">103</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Blog/categories/">
           
-        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-count">43</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
