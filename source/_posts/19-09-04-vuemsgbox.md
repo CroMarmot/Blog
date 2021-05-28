@@ -116,4 +116,29 @@ const MessageBoxConstructor = Vue.extend(msgboxVue);
  * 因为我们visible设置为true是 异步里发生的,那么 这两个调用时 visible默认都是false,所以 只会最后一个生效
  * 如果我们异步调用两次msgbox,那么 后一个调用 会在`!visible`的地方为false,不会直接触发，但是因为设计了msgQueue,因此 会放在数组中，然后看到 上面的callback,会在调用oldCb以后 再调用showNextMsg,所以会在对话框回调以后 再回调 那个时刻，msgQueue里首个 并从数组中移除
 
+## 总结
+
+> 总流程实现
+
+也就是方法是`src/index.js`: `Vue.prototype.方法名 = 方法函数` 来让全局可用
+
+通过 `document.createElement('div')` 和 全局变量, 创建绑定维护对应的单例实例.
+
+这样就实现了 任何页面,不需要写组件,就能`this.方法名(参数)` 来弹窗
+
+适用场景,不需要业务定UI,否则需要页面`v-slot`之类插入业务内容
+
+> 参数设计(核心参数与可选参数与回调)
+
+核心参数是函数的直接参数
+
+可选参数组合成一个对象,提供默认值
+
+回调既有成功也有失败,随是promise,总觉得用reject来做取消和关闭其实不太好, 可以全resolve走自定义状态
+
+提供一定的重载实现
+
+> 内部具体
+
+队列, 同步异步, callback持有
 
