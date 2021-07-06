@@ -191,6 +191,197 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-04-09-snap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-04-09-snap/" class="post-title-link" itemprop="url">snap</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-04-09 11:20:14" itemprop="dateCreated datePublished" datetime="2019-04-09T11:20:14+08:00">2019-04-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-04-09-snap/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-04-09-snap/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Ubuntu推出的 软件管理程序(类似debian系列是apt，arch系列是pacman)，跨linux的</p>
+<p><img src="https://tutorials.ubuntu.com/es6-bundled/src/codelabs/basic-snap-usage/img/f9f287c2e1980df1.png" alt="linuxs"></p>
+<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><p>Arch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S snapd</span><br><span class="line"></span><br><span class="line"><span class="comment"># enable the snapd systemd service:</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> --now snapd.socket</span><br></pre></td></tr></table></figure>
+<p>Debian (Sid only)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install snapd</span><br></pre></td></tr></table></figure>
+<p><strong>注</strong>Ubuntu &gt;16.04默认安装了 </p>
+<p>Fedora</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install snapd</span><br></pre></td></tr></table></figure>
+<p>Gentoo</p>
+<p>Install the <a href="https://github.com/zyga/gentoo-snappy" target="_blank" rel="noopener">gentoo-snappy overlay.</a><br>OpenEmbedded/Yocto<br>Install the <a href="https://github.com/morphis/meta-snappy/blob/master/README.md" target="_blank" rel="noopener">snap meta layer.</a></p>
+<p>openSuSE</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo zypper addrepo http://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_42.2/ snappy</span><br><span class="line">sudo zypper install snapd</span><br></pre></td></tr></table></figure>
+<h1 id="start-using"><a href="#start-using" class="headerlink" title="start using"></a>start using</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">snap find hello</span><br><span class="line">sudo snap install hello</span><br><span class="line">hello</span><br><span class="line">snap list</span><br><span class="line">sudo snap refresh &lt;snap name&gt;</span><br><span class="line">sudo snap refresh</span><br><span class="line">sudo snap remove</span><br></pre></td></tr></table></figure>
+<p>好消息是snap每日自动在后台更新</p>
+<p>软件默认安装的是stable版本</p>
+<p>如果要其他版本则通过指定channel</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo snap refresh hello --channel=beta</span><br><span class="line">sudo snap refresh hello --beta</span><br></pre></td></tr></table></figure>
+<p>可选的channel有 <code>stable</code>稳定,<code>candidate</code>稍早于稳定版的版本,<code>beta</code>未完成但是一个里程碑的版本,<code>edge</code>每日构建的冒烟测试</p>
+<p>版本回滚</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap revert hello</span><br></pre></td></tr></table></figure>
+<h1 id="进阶snap用法"><a href="#进阶snap用法" class="headerlink" title="进阶snap用法"></a>进阶snap用法</h1><p>首先申请个账号<a href="https://login.ubuntu.com/" target="_blank" rel="noopener">https://login.ubuntu.com/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap login</span><br></pre></td></tr></table></figure>
+<p>登陆以后，你再使用snap就不需要sudo了，除非你执行了<code>snap logout</code></p>
+<p>可以看snap使用历史记录，以及一个历史记录的细节</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">snap changes</span><br><span class="line">snap change &lt;changes ID&gt;</span><br><span class="line">snap watch &lt;changes ID&gt;</span><br><span class="line">snap abort &lt;changes ID&gt;</span><br></pre></td></tr></table></figure>
+<p>snap安装的流程</p>
+<p>下载-&gt;验证-&gt;mount-&gt;备份老版本的一些data到另一个文件夹-&gt;The security profiles are set and snapd checks which interfaces to connect to.-&gt;添加到$PATH-&gt;设置aliases-&gt;运行snap中定义的services-&gt; 运行snap中定义的 configure钩子</p>
+<p>类似的可以查看refresh remove revert的过程</p>
+<h2 id="离线安装例子"><a href="#离线安装例子" class="headerlink" title="离线安装例子"></a>离线安装例子</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">snap download nethack</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<p>会下载本身的(.snap)包以及对应(.assert)文件</p>
+<p>直接 <code>snap install XXXX.snap</code>会报错 cannot find signatures</p>
+<p>解决方案(误，如果你勇敢或疯狂 想无视assertion的install)<code>snap install --dangerous XXXX.snap</code></p>
+<p><strong>注</strong><code>--devmode</code>内涵了<code>--dangerous</code></p>
+<p>正确的安装方式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">snap ack XXX.assert</span><br><span class="line">snap install XXX.snap</span><br></pre></td></tr></table></figure>
+<p>关于assert(大概了解 account-key, account, snap-declaration, snap-revision 各个部分的元数组)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat XXX.assert</span><br></pre></td></tr></table></figure>
+<p>查看已知(即是ack 过的)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap known snap-declaration snap-name=nethack</span><br></pre></td></tr></table></figure>
+<p>所有stable channel的是confined，相对的devmode是unconfined，意味有访问系统的权限，所以要么这个开发者是你，要么是你信任的</p>
+<h2 id="interfaces"><a href="#interfaces" class="headerlink" title="interfaces"></a>interfaces</h2><p>先安装<code>chuck-norris-webserver</code></p>
+<p>interfaces是可插拔插槽模式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap interfaces</span><br></pre></td></tr></table></figure>
+<p>你可以看到，<code>chuck-norris-webserver</code>绑定到了<code>nextwork-bind</code> 上,</p>
+<p>但有一些连接的Slot是空的(如camera)，这种 是认为非安全的，访问用户的摄像机</p>
+<p>执行<code>chuck-norris-webserver.cli</code> 你可以看到 有一些权限访问是被拒绝了的</p>
+<p>授权camera</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap connect chuck-norris-webserver:camera :camera</span><br></pre></td></tr></table></figure>
+<p>我们再执行<code>snap interfaces</code>可以看到camera被连接上了</p>
+<p>取消连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap disconnect chuck-norris-webserver:camera</span><br></pre></td></tr></table></figure>
+<p>例如,服务和cli请求访问不同的接口定义:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">node-service:</span><br><span class="line">   command: bin/chuck-norris-app</span><br><span class="line">   daemon: simple</span><br><span class="line">   restart-condition: always</span><br><span class="line">   plugs: [network-bind]</span><br><span class="line"> cli:</span><br><span class="line">   command: bin/chuck-norris-cli</span><br><span class="line">   plugs: [network, camera]</span><br></pre></td></tr></table></figure>
+<p>读写network，使用camera</p>
+<p>devmode 是用于开发者的不是 devil 23333</p>
+<p>保证devmode的不会在stable里，也就不会被snap find到</p>
+<p>你如果要安装，可以强制–beta,–devmode,前提是你信任它</p>
+<p>安装后你会在snap list的notes中看到 它的channel</p>
+<p>一种看法是把它看成container式的样子，在它上面运行的未授权的看不到根目录, 重定位</p>
+<p><code>--classic</code>强制使用 未重定位的包，这种classic的包和重定位的包不兼容，这种classic的包是能够读到宿主系统的目录的</p>
+<p>综上这么多模式虽然你可能不是开发者也可以了解一下，主要还是为开发设计的，</p>
+<ol>
+<li>先用classic模式开发</li>
+<li>再用重定位dev模式</li>
+<li>最后用严格模式包</li>
+</ol>
+<h2 id="snaps-amp-services的可用性，日志，状态"><a href="#snaps-amp-services的可用性，日志，状态" class="headerlink" title="snaps&amp;services的可用性，日志，状态"></a>snaps&amp;services的可用性，日志，状态</h2><ol>
+<li>当一个snap被安装，意味着，该snap命令在用户$PATH中可访问</li>
+<li>snap中包括的services都被启动，它们会跟随系统启动和关闭，而启动关闭，当它们crash可以自动重启</li>
+</ol>
+<p>你可以<code>snap enable</code>,<code>snap restart</code>,<code>snap disable</code>控制这些服务</p>
+<p>[原来我机器上有apache，然后安了这个用来讲例子的webserver，需要先stop apache再重启这个webserver]</p>
+<p><code>ll /etc/systemd/system/snap*</code></p>
+<p><code>cat /etc/systemd/system/snap.chuck-norris-webserver.node-service.service</code></p>
+<p>所以snap用的还是系统的systemd的工具来管理服务，所以可以用传统的systemctl来管理</p>
+<p><code>systemctl status -l snap.chuck-norris-webserver.node-service</code></p>
+<p>这里在讲systemctl就不记了</p>
+<p>同样可以查看日志<code>sudo journalctl -fu snap.chuck-norris-webserver.node-service</code></p>
+<h2 id="管理snap配置"><a href="#管理snap配置" class="headerlink" title="管理snap配置"></a>管理snap配置</h2><p><code>snap set</code></p>
+<p><code>snap set chuck-norris-webserver title=&quot;I can bind Chuck Norris to my will&quot;</code></p>
+<p><code>snap set chuck-norris-webserver port=81</code></p>
+<p>这应该是看具体应用提供的key和value范围了</p>
+<p><code>snap set &lt;snap-name&gt; key1=value1 [key2=value2...]</code></p>
+<p>与set对应的就是 get，可以获取值 <code>snap get &lt;snap-name&gt; key</code></p>
+<p><code>snap run --shell chuck-norris-webserver.cli</code></p>
+<p>中<code>--shell</code>会提供一个subshell</p>
+<p>subshell的环境<code>env | grep SNAP</code></p>
+<p>直接cd 和 touch都会无权,能够操作的是 <code>ls $SNAP</code>(可读 不可写),<code>touch $SNAP_USER_DATA/foo</code>(读+写),<code>$SNAP_USER_COMMON</code> (读+写)</p>
+<p>实际路径<code>echo $SNAP_USER_COMMON</code> =&gt; <code>/home/didrocks/snap/chuck-norris-webserver/common</code></p>
+<p>你通过snap set配置的值在<code>$SNAP_DATA/config</code></p>
+<p><code>snap info chuck-norris-webserver</code> ,相对于snap find可以看stable以及非stable的channel</p>
+<p>这里举例如果1.0.3(–beta)版本的revision是22(–edge)</p>
+<p>然后得到了一些反馈，修复了一些issues</p>
+<p>作者再提交，则还是1.0.3(–beta),但revision会变化可能就成了24(–edge)</p>
+<p><code>snap find --section</code></p>
+<h1 id="创建发布snap-TODO"><a href="#创建发布snap-TODO" class="headerlink" title="创建发布snap TODO"></a>创建发布snap TODO</h1><h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>总有人想搞统一 :-)</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://tutorials.ubuntu.com/tutorial/basic-snap-usage" target="_blank" rel="noopener">https://tutorials.ubuntu.com/tutorial/basic-snap-usage</a></p>
+<p><a href="https://tutorials.ubuntu.com/tutorial/advanced-snap-usage" target="_blank" rel="noopener">https://tutorials.ubuntu.com/tutorial/advanced-snap-usage</a></p>
+<p><a href="https://tutorials.ubuntu.com/tutorial/create-your-first-snap" target="_blank" rel="noopener">https://tutorials.ubuntu.com/tutorial/create-your-first-snap</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-04-01-vue-custom-v-model/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +413,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 09:25:14" itemprop="dateModified" datetime="2021-07-06T09:25:14+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -320,7 +511,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 09:25:14" itemprop="dateModified" datetime="2021-07-06T09:25:14+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -491,7 +682,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 09:25:14" itemprop="dateModified" datetime="2021-07-06T09:25:14+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -765,7 +956,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 09:25:14" itemprop="dateModified" datetime="2021-07-06T09:25:14+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -820,829 +1011,6 @@
 <p>Child</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span> <span class="attr">:data</span>=<span class="string">"data"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">  data() &#123;</span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">      data: [<span class="string">'Neinei'</span>,<span class="string">'Laoba'</span>,<span class="string">'Demi'</span>,<span class="string">'Feiyan'</span>]</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>父组件 这里的<code>.data</code> 和子组件的<code>:data</code>对应<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 循环数据列表 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Child</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot-scope</span>=<span class="string">"msg"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-for</span>=<span class="string">"item in msg.data"</span>&gt;</span>&#123;&#123;item&#125;&#125; <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Child</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">&lt;!-- 直接显示数据 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Child</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot-scope</span>=<span class="string">"msg"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;msg.data&#125;&#125; <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Child</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">&lt;!-- 不使用其提供的数据, 作用域插槽退变成匿名插槽 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Child</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是插槽<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Child</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/18-05-15-jvm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/18-05-15-jvm/" class="post-title-link" itemprop="url">深入理解java虚拟机 第二版 笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2018-07-12 01:01:01" itemprop="dateCreated datePublished" datetime="2018-07-12T01:01:01+08:00">2018-07-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 09:25:14" itemprop="dateModified" datetime="2021-07-06T09:25:14+08:00">2021-07-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/18-05-15-jvm/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="18-05-15-jvm/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>2018-05-15  -&gt;  2018-07-12</p>
-<h1 id="1-hello-world"><a href="#1-hello-world" class="headerlink" title="1 hello world"></a>1 hello world</h1><p>书:《深入理解java虚拟机》第二版</p>
-<h1 id="2-java内存区域与内存溢出异常"><a href="#2-java内存区域与内存溢出异常" class="headerlink" title="2 java内存区域与内存溢出异常"></a>2 java内存区域与内存溢出异常</h1><p>java自动管理内存释放</p>
-<p>运行时 数据区</p>
-<ul>
-<li>方法区 method area// 存储已被虚拟机加载的类信息 常量 静态变可以看做堆的逻辑部分 别名non-heap</li>
-<li>虚拟机栈VM stack // 线程私有 java 方法服务</li>
-<li>本地方法栈 native method stack// 虚拟机用到的native 方法服务</li>
-<li>堆heap// 几乎所有对象实例</li>
-<li><p>程序计数器 Program counter register// 这个java 模拟出类似汇编pc的一个自己字节码的pcr//当前在执行字节码时 有指向，执行机器码时指向空</p>
-</li>
-<li><p>运行时常量池 //方法区一部分  编译时期的字面量和符号引用</p>
-</li>
-</ul>
-<p>数据区以外</p>
-<ul>
-<li>直接内存，JDK中NIO库，以及相关操作方法，相当于更好的控制内存了？？？</li>
-</ul>
-<p>2.3.1 对象</p>
-<p>new</p>
-<ul>
-<li>去常量池中找类的符号引用，检查是否被加载解析 初始化过(7章)</li>
-<li>从堆上新生对象分配内存//赋值0  虚拟机中额外的标识操作 markword 比如哈希、GC分代年龄、元数据、偏向线程ID， init()</li>
-</ul>
-<p>访问</p>
-<ul>
-<li>通过栈上记录对对象的引用-&gt;句柄池(到对象实例数据的指针 到对象类型数据的指针)/到对象实例的指针 对象示例数据-&gt;实例</li>
-</ul>
-<p>outofmemory实战的VM参数<code>-Xms20m -Xmx20m -XX:+HeapDumpOnOutOfMemoryError</code>,前面参数是设置初始化和上限大小，后面是帮助dump</p>
-<p>可以用相应IDE的工具来查看GC Roots的引用链</p>
-<p>String.intern() 是native方法，如果字符串常量池中已经包含一个等于此String 对象的字符串，则返回代表池中这个字符串的String对象，否则将此String 对象所包含的字符串添加到常量池中，并且放回此string对象的引用// 1.6-&gt;1.7版本更换时的改动</p>
-<p>方法区溢出，类的回收判定咳咳，大量jsp或动态产生JSP文件的应用</p>
-<h1 id="3-垃圾收集器GC与内存分配策略"><a href="#3-垃圾收集器GC与内存分配策略" class="headerlink" title="3 垃圾收集器GC与内存分配策略"></a>3 垃圾收集器GC与内存分配策略</h1><ul>
-<li>哪些内容需要回收</li>
-<li>什么时候回收</li>
-<li>如何回收</li>
-</ul>
-<p>对象死亡判断–引用计数算法，引用+1，引用失效-1，简单 判定效率高，大部分情况下不错，但无法解决循环引用的问题</p>
-<p>example:  <code>struct s{s * next};s* a,s* b;a-&gt;next=&amp;b,b-&gt;next=&amp;a;a=NULL,b=NULL;</code></p>
-<p>VM 参数<code>-verbose:gc -Xmx20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:SurvivorRatio=8</code></p>
-<p>可达性算法，通过GC Roots 向下搜索(引用链)，java中可以作为GC Root的对象包括</p>
-<ul>
-<li>虚拟机栈(栈帧中的本地变量表)中引用的对象</li>
-<li>方法区中类静态属性引用的对象</li>
-<li>方法区中常量引用的对象</li>
-<li>本地方法栈中JNI(native方法)引用的对象</li>
-</ul>
-<p><code>引用</code>的定义</p>
-<ul>
-<li>强引用(Object obj = new Object())</li>
-<li>软引用(将要溢出时回收)</li>
-<li>弱引用(回收时 销毁)</li>
-<li>虚引用(用来作为被回收时的通知用的)</li>
-</ul>
-<p>没有覆盖finalize或finalize已经被调用过(也就是每个实例的finalize只会执行一次 所以也只有一个自救的机会)，则没有必要执行。所以finalize()时是最后一次逃脱销毁的时刻。然而笔者并不鼓励用这个方法，建议大奖忘掉，try-finally或其它方法可以做得更好</p>
-<p><strong>回收方法区</strong></p>
-<p>方法区(hotspot中的永久代)也有垃圾回收(主要是废弃常量 无用的类)，但性价比低。新生代中垃圾回收可以回收75-90%的空间，</p>
-<p>废弃常量比较容易判断</p>
-<p>无用的类 回收的前提条件(也只是 可以 回收，和对象不同 对象不使用必然回首):该类的所有实例被回收，加载该类的ClassLoader已经被回收,该类的java.lang.Class对象没有在任何地方被引用，无法在任何地方通过反射访问该类的方法。</p>
-<p><code>-verbose:class -XX:+TraceClassLoading -XX:+TraceClassUnLoading</code></p>
-<p>垃圾收集算法</p>
-<p>标记清除算法(mark-sweep):最基本的 也就是 标记一轮，收集一轮，后面的基于该算法改进</p>
-<p>复制算法copying,内存化为两半A、B，只用A，标记，收集把剩余的移动到B，只用B，标记B，收集把剩余的移动到A，代价是一半的内存，解决的是空闲碎片问题</p>
-<ul>
-<li>商业VM中采用这个方法来回收新生代，而IBM研究表明，98%的新生代 朝生夕死，所以并不需要1:1的分配，而是用一个大的Eden和两个小的survivor大约8:1:1的分类，也就是每次能用90%完整内存</li>
-</ul>
-<p>标记整理算法，标记，收集并整理，和复制不同的是不用浪费空间，而且相对来说 如果存活率高的化，这样的代价相对少，用于老年代</p>
-<p>分代收集=按需具体新生代、老年代不同的手机算法。</p>
-<h2 id="HotSpot-算法实现"><a href="#HotSpot-算法实现" class="headerlink" title="HotSpot 算法实现"></a>HotSpot 算法实现</h2><p>GC发生时需要停顿所有JAVA线程执行,所以从GC roots的扫描要快，HotSpot通过OopMap的数据结构，在类加载完成的时候就把对象内的偏移量对应的数据类型计算出，在JIT编译过程中也会记录栈和寄存器中哪些是引用，这样扫描就直接有信息了</p>
-<p>安全点：如果每条指令都生成对应OopMap将会要大量额外空间，所以只会在safepoint才会暂停开始GC，例如方法调用，循环跳转，异常跳转，并且让所有线程都运行到最近的安全点停下来，</p>
-<ul>
-<li>抢先式中断，让没跑到safepoint继续跑，已经到了的等待，，，，几乎没有VM这样用</li>
-<li>主动式中断，每个线程都去找GC的中断标志，在每次到safepoint时检查标志</li>
-</ul>
-<p>然而可能有线程sleep或blocked【也就是不执行】，需要安全区域（safe region）来解决，所谓安全区域是只一个 引用关系没有变化的区域，在线程离开safe region时，检查是否GC完成，没有则等待，</p>
-<h2 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h2><p>Yound generation/ tenured generation</p>
-<p>7种</p>
-<ul>
-<li>serial(年轻代) 单线程收集器-&gt;所有线程到safepoint-&gt;”stop the world”-&gt;GC ,在client模式下的VM中的新生代依然是一个好的选择</li>
-<li>ParNew(年轻代) serial的多线程版本，和上面不同的是 GC的过程是多线程收集，server模式下新生代首选， 只有它目前能和CMS配合工作</li>
-<li>Parallel Scavenge 是新生代收集器，复制算法 并行多线程手机，主要特点在于可控 CPU使用的吞吐量，能够动态根据吞吐量需求调整 大小</li>
-<li>serial old 老年代版本 标记整理 主要是client模式下vm用</li>
-<li>parallel old 老年代 标记整理,说这个配合paralle scavenge使用</li>
-<li>CMS 收集器 以获取最短回收停顿为目标的收集器，(Mark Sweep) 标记-清除算法</li>
-<li>G1 当今最前沿的成果之一 直到jdk7u4认为它达到足够成熟的商用程度</li>
-</ul>
-<p>CMS：</p>
-<ul>
-<li>初始标记 记录GC Roots能够直接关联道德对象 很快 // 需要stop the world</li>
-<li>并发标记 gc root tracing</li>
-<li>重标记 remark 【解决运行时产生的变动的部分？】 // 需要stop the world</li>
-<li>并发清除</li>
-</ul>
-<p>对CPU数量有要求，并发的定义适合用户线程，然后并行的并不是等到 空间使用完了才收集，而是在过程中 书上说68%老年代的会出现收集，，jdk1.6启动阈值92%，另外一个是碎片合并的问题，可以参数控制</p>
-<p>G1:</p>
-<ul>
-<li>并发并行，利用多CPU，缩短stop-the-world</li>
-<li>分带收集，能够独立管理所有代的 GC堆</li>
-<li>空间整合，从整体看是 标记–整理，局部看是复制算法，不会有碎片</li>
-<li>相对于CMS除了降低停顿时间，还能建立可预测的 停顿时间模型</li>
-</ul>
-<p>G1之前 其它收集器进行搜收集范围是整个新生代或者老年代。G1将堆划分为多个大小相等的独立Region，然后手机过程不是整个新生代或老年代，而是根据每个Region的垃圾堆积的价值大小，说着只是划分而已然而实现并不简单2004年就发了论文，然后10年时间才开发出商用版，</p>
-<p>回收步骤：</p>
-<ul>
-<li>初始标记</li>
-<li>并发标记</li>
-<li>最终标记 意思相当于上面的remark 并行，stop-the-world</li>
-<li>筛选回收 并行</li>
-</ul>
-<h2 id="理解GC日志"><a href="#理解GC日志" class="headerlink" title="理解GC日志"></a>理解GC日志</h2><p>学会如何阅读GC日志，<code>-XX:+PrintGCDetails</code>,这个demo很快理解了，然后具体要用再查就OK</p>
-<p>总结？ 垃圾回收这一块 jvm也是带了很多参数可以在运行时使用, 分配会一定程度和GC收集器相关、受到影响</p>
-<p>Eden?? TODO</p>
-<p>大多情况，对象优先在Eden区域分配，当 Eden区域没有足够空间时，虚拟机将发起一次Minor GC</p>
-<p>书上给了例子，4次分配，限制总空间和新生代空间，前三次能满足新生代空间，但第四次不能满足，同时vm没有找到可以回收的对象，为了满足分配保证机制，把前三次的送入老年代，然后第四次的在新生代分配，</p>
-<p>可以设置大对象阈值，超过该阈值的直接进入老年代</p>
-<p>Eden出生一次Minor到Survivor中，之后一次Minor GC年龄增长一岁，设置年龄界限参数，，然后还有一个同年龄的对象空间占用和达到一半会分入老年代的规则</p>
-<p>担保分配过程 -&gt; 一点统计参数+找可用剩余空间</p>
-<h1 id="4-章-虚拟机性能监控与故障处理工具"><a href="#4-章-虚拟机性能监控与故障处理工具" class="headerlink" title="4 章 虚拟机性能监控与故障处理工具"></a>4 章 虚拟机性能监控与故障处理工具</h1><p>介绍jdk除了java和javac的其它工具，jdk1.5以下要专门加参数开启</p>
-<p>可以搜<code>SUN JDK 监控和故障处理工具</code>命令行工具：</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>主要作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>jps</td>
-<td>jvm process status tool,显示指定系统内所有的hotspot虚拟机进程</td>
-</tr>
-<tr>
-<td>jstat</td>
-<td>jvm statistics monitoring tool,用于收集hotspot虚拟机各方面的运行数据</td>
-</tr>
-<tr>
-<td>jinfo</td>
-<td>configuration info for java，显示虚拟机配置信息</td>
-</tr>
-<tr>
-<td>jmap</td>
-<td>memory map for java,生成虚拟机的内存转储快照（heapdump文件）</td>
-</tr>
-<tr>
-<td>jhat</td>
-<td>jvm heap dump browser，用于分析heapmap文件，它会建立一个http/html服务器 让用户可以在浏览器上查看分析结果</td>
-</tr>
-<tr>
-<td>jstack</td>
-<td>stack trace for java ,显示虚拟机的线程快照</td>
-</tr>
-</tbody>
-</table>
-<p>HSDIS JIT生成反汇编 =。= 哇哦 毕竟生成java可执行码直接看不懂，而汇编相对玩过C++和汇编的来说就容易看懂了</p>
-<p>可视化工具:jconsole //可以通过线程观察等待的函数 甚至一些可以判定的死锁</p>
-<p>//运行我写的一个项目然后是Eden在产生和被回收，但是survivor一直是100% 没有进入老年代的为何？ 放久了有部分进入</p>
-<p>visualVM 官方提供 的可视化可插件的</p>
-<ul>
-<li>heap dump</li>
-<li>Btrace动态日志跟踪 插入代码</li>
-</ul>
-<h1 id="5-章-调优案例分析与实战"><a href="#5-章-调优案例分析与实战" class="headerlink" title="5 章 调优案例分析与实战"></a>5 章 调优案例分析与实战</h1><p>用案例说明</p>
-<p>案例1</p>
-<p>从32位低硬件转移到高硬件，就是一个高访问，然后要从磁盘读数据的，分配了12GB/16GB的，而一次Full GC(同时回收年轻代 年老代，永久代满会导致class method元信息的卸载）需要14s的停顿，且频率十几分钟一次</p>
-<p>文中举例64位的缺点：1.内存回收导致长时间停顿，无法dump【因为如果要dump 产生的文件大小能达到十多G 也无法分析，因为指针大小 对齐补白一般比32位内存使用更多</p>
-<p>然后说更多的还是用32位虚拟机集群，缺点：1.注意并行资源竞争 2.均摊性能，3。32位虚拟内存上限，4.大量本地缓存</p>
-<p>案例2</p>
-<p>分布式 有一定共享的竞争型数据库,改用全局缓存后出现内存溢出问题。 memorydump出的数据显示很多NAKACK，这个是JBossCache保证各个包有效顺序及重发，也就是为了保证顺序性会在内存中保留并且网络不佳时会有大量重发，就会堆积以至溢出。【这个只是说了能分析到原因，没说解决方案，我猜大概 使用更大内存空间？</p>
-<p>案例3</p>
-<p>小的基于B/S电子考试系统，服务器不定时异常，但是把堆开到最大32位下1.6GB，也没有效果甚至异常更频繁了，然后加heapdump 没用，异常时没有dump文件，然后用jstat监视，gc不频繁，多个代都没压力。最后从系统日志中找到异常堆栈</p>
-<p>Direct Memory不算如java的内存堆中，从输出的超过内存上界的报错看是direct 的allocate错误，虚拟机会对direct回收，但不会空间不足就触发像新生代老年代那样的回收，</p>
-<p>socket 连接的receive 和send两个缓存区</p>
-<p>案例4</p>
-<p>外部命令导致系统缓慢，数字校园应用系统，并发压力测试时请求响应慢，CPU使用率高，，通过跟踪发现时linux的fork，而java中最多有线程产生没有进程产生，再溯源到Runtime.getRuntime().exec() ，，，解决方案是去掉该shell脚本 改为java api去获取信息。</p>
-<p>案例5</p>
-<p>服务器jvm进程崩溃，日志看是socke上http上的，问题溯源是 异步服务速度不对等 积累的等待线程socket</p>
-<p>案例6</p>
-<p>不恰当数据结构导致内存占用过大，感觉要对hashmap的实现了解</p>
-<p>案例7</p>
-<p>偶尔出现GC长达1min左右，但是gc的执行时间不长，但是准备时间长，然后监测到最小化时，资源管理中内存大幅度减少，最后断定是 windows把内存临时交换到磁盘里去了 加参数解决</p>
-<p>实战调优</p>
-<p>笔者用eclipse开发装了很多插件，启动要4-5min，全默认配置,作为对比，先统计了最初的启动 时间，垃圾回收耗时，full gc次数耗时，minor gc次数耗时,加载类，编译时间。</p>
-<ul>
-<li>升级jdk，升级jdk从宏观意义上统计意义上能带来一定的性能提升，这里1.5到1.6 update21上用力说是提升了15%，但是实际启动时间并没有效果</li>
-</ul>
-<p>而且升级以后类加载时间更久了是原来的2倍，然后作者定位到？？？怎么定位，字节码验证部分耗时差距最大，然后加了一个禁用验证的参数，两个版本的时间才相近</p>
-<p>取消验证后 原来15s的 1.5版本变为13s，1.6版本变为12s</p>
-<p>然而升级以后 发生了内存溢出，visualvm检测到permgen的大小和最大值曲线重叠，解决方案是改配置文件的启动参数设置更大的永久代</p>
-<p>这里的编译时间是指JIT HotSpot把java字节码编译为本地代码【但是如果把编译关了 换来的是执行时间更久</p>
-<p>然后有不同优化程度的编译器，如果是长时间运行eclipse的话，那么用一个更多优化消耗更多编译时间的C2编译器，在运行速度中可以赚回来</p>
-<p>最后优化GC，因为minor GC太频繁 耗时多，而minor GC会让多个线程跑到安全点等待回收，过多minor GC会导致不必要的挂起和恢复</p>
-<p>minor通过参数增加eden大小，老年代回收日志显示 老年代在一次次扩容，然后 作者的做法一开始就设置好 减少自动扩展，然后这样设置以后 检测到的minor GC和full GC只有个位数次</p>
-<p>然后观察到 老年代没有满过但还是有gc，，，原因是代码显式 System.gc(),通过参数禁用显式 GC,至此只需要7+秒</p>
-<p>当前配置下eclipse进行代码编译中 老年代回收耗时长，CPU使用率最高才30%，通过参数指定 新生代和老年代的垃圾收集器，让老年代收集时间显著下降[实际上是CMS 和程序之间有并发时间 看上去停顿的时间降低显著]</p>
-<p>该章总结 是通过不同部分运行日志 来分析运行的瓶颈，从而加参数修改。 知识依赖就是对 jvm运行时熟悉</p>
-<h1 id="6-类文件结构"><a href="#6-类文件结构" class="headerlink" title="6 类文件结构"></a>6 类文件结构</h1><p>代码编译结果 从 本地机器码 变为字节码？？ 这说的不是物与物转换吧，是历史上的时间变为吧</p>
-<p>【看了第一章 果然是时间上的 不是 物 转为 物</p>
-<p>向java设计之初低头，说是最开始就拆分为 java语言规范 和 JVM规范，如现在有Groovy Scala等，大概就是 任何语言-&gt;编译器-&gt;.class字节码-&gt;在jvm上运行【突然感觉董哥之前的js on jvm好吊呀</p>
-<p>以及 jvm 所支持的 大于 java所支持的</p>
-<p>这里作者说有标准参考书《java 虚拟机规范(Java SE 7)》</p>
-<p>二进制流，必要数据，无分隔符，类似C语言的伪结构体——无符号数和表</p>
-<p>无符号数u1 u2 u4 u8，表<code>_info</code>格式结尾</p>
-<p>类型的集合：同一类型但数量不定的多个数据时，前置容量计数器加若干个连续的数据项的形式</p>
-<blockquote>
-<p>魔数与class文件版本</p>
-</blockquote>
-<p>magic number,class文件头的4个字节，唯一作用确定该文件是否是一个能被虚拟机接受的Class文件。很多文件存储标准中都使用魔数来身份识别.</p>
-<p>【例如gif jpeg文件头都有魔数</p>
-<p>class的魔数为0xCAFEBABE</p>
-<p>紧接着魔数的4个字节是版本号，我这边在linux下用vim+xxd可以看，想gui看的话可以ghex</p>
-<p>[0123][45][67]<br>[魔数][次版本号][主版本号]</p>
-<p>//即使代码没有变，低版本虚拟机也会拒绝高版本的class执行</p>
-<p>再后面是常量池入口 显示u2类型 常量池容量计数值，从1开始计数，主要存放两大常量：字面量(文本字符串 声明 final 常量)和符号引用(类和接口的全限定名,字段的名称和描述符，方法名称和描述符)，</p>
-<p>然后常量池中每一个常量是个表，，类型挺多的。。到1.7有14种了？</p>
-<p>[类型标识][按照类型的数据][类型标识][按照类型的数据]…</p>
-<p>所以 方法 字段名会受到这里的限制，所以方法变量名 最大长度不能超过65535</p>
-<p>然后有提到相应的工具 javap 带上-verbose参数，话说这个可以用来<code>反</code>编译咯</p>
-<p>其中可以看到 有部分常量没有在java代码中出现过，它们是自动生成的常量，如字段表 方法表 属性表</p>
-<p>此处有表&lt;常量池中的14种常量项的结构总表&gt;</p>
-<p>在常量池结束后是 两个字节访问标志(access_flags) 标识 类还是 接口 ，是否public ，是否被final，用的bit表示法,</p>
-<p>类索引(this_class)父类索引(super_class)u2类型数据，接口索引集合(interfaces)一组u2类型的数据集合 描述具体实现了哪些类</p>
-<p>除了java.lang.Object所有java类都有父类，</p>
-<p>这两个索引用u2索引值表示，它们各自指向一个类型为CONSTANT_Class_info的类型描述符常量,</p>
-<p>查找到具体类的流程就是</p>
-<p><code>this_class-&gt;CONSTANT_Class_info-&gt;CONSTANT_Utf8_info</code></p>
-<p>【这一段将得好无聊啊23333，感觉都是按照 位置对应内容+(操作符+内容)的格式，</p>
-<p>字段表集合，用于描述接口或者类中声明的变量。<code>access_flags，name_index,descriptor_index,attributes_count,attributes</code></p>
-<p>代码被编译存放在方法属性表集合中一个名为code的属性里面，，，然后java不能重载仅返回值不同的函数，但jvm标准的class文件中可以</p>
-<p>属性方法表，code属性表</p>
-<p>然后是javap 所得到的<code>args_size</code> 的值 在空时也为1，因为会隐式传入this</p>
-<p>在字节码指令之后是 异常处理表集合， 格式 是 代码起始行 代码结束行 处理函数地址 要catch的类型</p>
-<p>linenumbertable用于描述java源码行号与字节码行号之间的对应关系，可以用参数省去该表，但省去以后如果出现异常将无法直接定位源代码中所在行号</p>
-<p>localvariableTable是描述栈帧中布局与原代码中变量之间关系，也是可以参数省去</p>
-<p>以及sourceFile属性ConstantValue属性，InnerClasses，Deprecated 和Synthetic</p>
-<p>这几页 感觉看了也记不住，而且也不可能说背，毕竟表结构和参数对应辣么多，但对大自轮廓有了印象</p>
-<p>然后字节码简介 概括下来就是 基本仿照 真机器码的编码思想</p>
-<p>作者对这些分类讲解。。。。。</p>
-<p>局部变量加载到操作栈iload iload__n lload lload_n fload..</p>
-<p>将一个数值从操作数栈存储到局部变量表，储存istore…lstore..</p>
-<p>讲一个常量加载到操作数栈 bipush sipush ldc ldc_w ldc2_w aconst_null iconst_m1 iconst_i lconst_i</p>
-<p>扩充局部变量访问索引指令wide</p>
-<p>运算 基本按照 [变量类型][操作类型]来命名 ，比如 iadd isub ladd lsub</p>
-<p>这里有个疑问它字节码有iinc 局部变量自增，那这个操作算原子的吗？</p>
-<p>然后搜到说java中i++转换的字节码不是这个,然后我测了一下，局部变量还是会变成iinc的，但是全局的就不是，所以也就是说，iinc都只会在局部中出现咯，也就是并没有什么原子保证。</p>
-<p>浮点数方面是IEEE 754，遵守浮点数值和逐级下溢运算规则，</p>
-<p>转换指令 可以可以 向2=to,4=for低头 i2b,i2c等等</p>
-<p>创建new[…] ,读取[…]load存储[…]store,</p>
-<p>栈操作 pop… dup…复制+压入 swap</p>
-<p>方法调用invoke[调用的配型] 返回[类型]return</p>
-<p>看到这我还在想，为什么一个和寄存器有关的都没有，再想到java要一次编写，所以这是说靠jvm读字节码时再 和寄存器什么的相关咯</p>
-<p>monitorenter和monitorexit支持，java中的synchronized同步</p>
-<p>如果之前学过汇编，看这个就基本属于快速过掉，具体要查再查吧，这个的命名规则很是直接了，然后有部分 很明先汇编里没有的也大自看一看</p>
-<h1 id="7-虚拟机类加载机制"><a href="#7-虚拟机类加载机制" class="headerlink" title="7 虚拟机类加载机制"></a>7 虚拟机类加载机制</h1><p>加载到内存 ，校验，转换解析和初始化，最终形成过程都是在程序呢运行期间完成的，</p>
-<p>所以java是语言运行期类加载的特性</p>
-<p>类生命周期</p>
-<p>加载(Loading)-&gt;连接(Linking)(验证-&gt;准备-&gt;解析)-&gt;初始化-&gt;使用-&gt;卸载</p>
-<p>规定：5种需要立即 初始化</p>
-<ul>
-<li>new getstatic putstatic invokestatic字节码 且没有初始化时</li>
-<li>java.lang.reflect 对类进行反射调用时 且没有初始化???????? 那这个对应的字节码呢 这划分得一脸懵逼，</li>
-<li>初始化类时，如果其父类没有初始化，需要先触发其父类的初始化</li>
-<li>vm启动时，用户需要指定一个包含main方法的类，vm需要先初始话这个类，</li>
-<li>1.7版本的动态语言 中 <code>REF_第一条</code> 中的这些指令且没有初始化时</li>
-</ul>
-<p>然后说有且只有这5种会，称作主动引用，其它是被动引用</p>
-<p>静态字段只有直接定义这个字段的类才会被初始化</p>
-<p>样例见书: 父亲类（初始化静态输出1，静态变量value），子类(初始化静态输出2)， 调用样例<code>输出 子类.value</code>,因为value是父亲</p>
-<p>惊了 我去测了一圈 然后才知道java里父类和子类的成员变量竟然都记录了的，比如A.x ,然后B是A的子类，有B.x,当你把一个B转化成A以后访问x只能访问到A.x，但是如果是方法的话，就算把B转成A访问还是会调用B.x，相当于C++中的自带virtual了</p>
-<p>数组定义引用类不会触发， A[] arrA = new A[233];</p>
-<p>final static被常量传播优化于编译阶段时，不会触发类的初始化</p>
-<h2 id="类加载过程"><a href="#类加载过程" class="headerlink" title="类加载过程"></a>类加载过程</h2><p>加载 验证 准备 解析 初始化 这5个阶段</p>
-<h3 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h3><ul>
-<li>通过类全限定名获取定义此类的二进制流</li>
-<li>将所代表静态存储结构转化为方法区的运行时数据结构</li>
-<li>在内存中生成一个代表这个类的java.lang.Class对象，作为方法区这个类的各种数据入口</li>
-</ul>
-<p>因为规范相对宽松，也就成就了一些技术 从ZIP中读取如JAR EAR WAR，从网络中读取也就有了Applet，运行时计算生动态代理技术 java.lang.reflect.Proxy中,用了ProxyGenerator.generateProxyClass来为特定接口生成形式为,其它文件如jsp，数据库如sap</p>
-<p>数组类</p>
-<ul>
-<li>类是引用类型 则按该引用类去加载</li>
-<li>不是引用类型如int[]，Java虚拟机将会把数组标记为与引导类加载器关联。</li>
-<li>数组的可见性与它的组件类型的可见性一致，private/public</li>
-</ul>
-<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>确保字节流信息符合当前虚拟机需求，且不会危害虚拟机安全【本身相对于C/C++来说是安全的】，直接java代码到字节码已经是安全的，但是class文件也可以不由java编译产生，所以有必要检查class 如访问边界以外的数据啊这种操作。咦这样的意思是 可变边界的情况，就是由jvm来检查了吗？那比如A[]大小n，访问m，那比较这个是jvm做吗？A[3]访问x，由java直接写，但是转换出来的代码中会有检查吗？还是也丢给jvm做？再说A[x]访问x，在java中显示写x大小判断，还会被jvm检查吗？还是说有开关</p>
-<p>说验证在整个加载系统中占了很大一部分</p>
-<ul>
-<li>文件格式验证 如 魔数开头，主次版本是否满足当前虚拟机，常量池是否有不被支持的常量，指向常量索引是否指向不存在的，utf8编码格式部分是否符合utf8编码 等等等等等</li>
-<li>元数据验证，是否符合java语言规范？？？？不是jvm语言规范？？，说是例如 类是否有父类，或者不符合规则的重载</li>
-<li>字节码验证(最复杂)，通过数据流和控制流，分析语义是否合法，比如放入一个int，取出却按照long去除，跳转不会到方法体以外的字节码上，有增加一个StackMapTable来增加方法体基本快的描述 辅助验证</li>
-<li>符号引用验证，(在解析 阶段发生) 比如private protected 是否可以被当前类访问，引用通过字符串描述的全限定名是否能找到对应类</li>
-</ul>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>分配内存和设置初始值，非final的都是设置为0，final的是变成constantVluae赋值，例如<code>static int a=123;</code>是赋值为0的，在<clint>()中的putstatic才赋值为123</clint></p>
-<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>根据常量池符号引用替换为直接引用，相当于把名称描述换为具体的指针、偏移量什么的，只规定在具体的16个(见书)操作符号引用的字节码指令之前进行解析，</p>
-<p>以及上面说的解析完后会有符号引用验证比如访问权限，</p>
-<p>字段解析，如果本身有返回，否则去找父类，递归向上找</p>
-<p>类方法解析/接口方法解析，类似原理，但会先检查class_index的位置是否对应正确，如类的应该对应类，接口的对应接口</p>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>加载的最后一步，执行构造器<clinit>()方法的过程</clinit></p>
-<p>这个是由编译器自动收集类中的所有类变量的赋值动作和静态语句块static{}合并产生的，顺序根据收集顺序决定</p>
-<p>可以可以代码7-5有点意思哈</p>
-<p>然后保证父类的clinit在子类的clinit前执行，也就是vm执行的第一个clinit是java.lang.Object的</p>
-<p>保证多线程下一个类的clinit被正确加锁同步，多个线程同时初始化一个类，只有一个会执行clinit，也就是可能造成阻塞</p>
-<h2 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h2><p>类的全限定名-&gt;描述此类的二进制字节流 放在jvm外部实现</p>
-<p>层次划分、OSGi、热部署、代码加密等领域</p>
-<p>同一个Class文件同一个虚拟机加载，但只要类加载器不同，类就必定不同</p>
-<p>样例代码是，实现了一个动态获得Class的方法(区别于默认返回类，也就是这里是让jvm用一个不同的类加载器)，然后用该方法获得A的Class 为B，但是 判断 A instanceof B返回却是false</p>
-<p>对jvm来讲只有两种不同的，一个bootstrap类加载器(属于vm),其它所有类加载器(都由java语言实现 独立于虚拟机外部)</p>
-<p>或者分为bootstrap,extension,application三种加载器</p>
-<p>这里作者说，可以实验自己写一个rt.jar类库已有的重名java类，它可以正常编译，但永远无法执行</p>
-<p>以上是”双亲委派模型”给了源码，也就是找 前面描述的加载过程，也就意味着，不同的类加载器就算用同样的代码但 对应的数据不同，所以无法分别加载</p>
-<p>该模型可被破坏 对原来兼容(1.2以前)，需要回调(JNDI服务),程序动态性(代码热替换 模块热不熟 OSGi(非双亲 更复杂网状 以Bundle+类加载器整体替换) )</p>
-<h1 id="8-虚拟机字节码执行引擎"><a href="#8-虚拟机字节码执行引擎" class="headerlink" title="8 虚拟机字节码执行引擎"></a>8 虚拟机字节码执行引擎</h1><p>运行时栈帧(Stack Frame)结构, 包括 局部变量表 操作数栈 动态链接 方法返回地址 额外附加信息</p>
-<p>局部slot，再调用其它时才有可能gc，因为 这时才有可能复用，然后局部变量不能未赋初值就用</p>
-<p>操作数栈从描述上就是字面意思，在概念上是独立的，，在一些具体的实现优化过程中，会用重叠来减少复制传递</p>
-<p>返回方式 ret 正常的完成出口，异常出口 自动异常或者手动athrow</p>
-<p>然后在实现虚拟机时，可以附加一些规范外的辅助信息</p>
-<h2 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h2><p>也就是说invoke[…]对应的具体位置是哪，要经过解析把描述转化为具体的序号</p>
-<p>静态分派：样例代码 A a=new B()，对一个 实例对象 进行父类转化，再调用重载函数，重载函数选择的是父类对应的接口</p>
-<p>这里称A为静态类型在编译时期可知，B为实际类型，在运行时才可知，依赖静态类型来执行的叫做 方法重载</p>
-<p>然后重载 的话，对参数类型有它的一个优先顺序</p>
-<p>动态分配(Override): A a=new B(),调用方法f，也就是a.f(),jvm是如何定位的，通过javap得出的字节码，发现 样例代码中所有的都指向(静态类型)父类的函数 都是invokevirtual，然后这个过程是 先找实际类型，再逐个往上早父类的，其中只要成功找到就执行 再返回</p>
-<p>搜<code>静态单分派与动态多分派</code>，这个和我上面自己做的实验一致了，就是 父类没被覆盖的也存在没有dead，父类自己调用就是自己的,从字节码上看父类子类调用基类的函数时，都是invokevirtual指向基类</p>
-<p><a href="http://rednaxelafx.iteye.com/blog/260206" target="_blank" rel="noopener">补充 方法分派的几个例子</a></p>
-<p>所以java目前是 静态多分派，比如父类子类invokevirtual指向的同一个，动态单分派，具体指向动态的</p>
-<p>虚拟机动态分派实现:虚拟方法表vtable，以及虚拟接口方法表itable，emmmm就是每个类有个方法表中间存了方法入口地址233333</p>
-<blockquote>
-<p>动态类型语言支持</p>
-</blockquote>
-<p>静态类型 statically: 如果在编译时拒绝ill behaved程序，则是statically typed;</p>
-<p>动态类型dynamiclly: 如果在运行时拒绝ill behaviors, 则是dynamiclly typed。</p>
-<ul>
-<li>Reflection 是在模拟 Java 代码层次的方法调用，而 MethodHandle 是在模拟字节码层次的方法调用</li>
-<li>Reflection 包含信息更多更全重量级，MethodHandle轻量级，包含相关方法信息</li>
-<li>Reflection for JAVA，MethodHandle for jvm</li>
-</ul>
-<p>invokedynamic相对于MethodHandle来说一个是 字节码，一个是JavaAPI。。。然后invokedynamic面向的不是java是面向的其它语言生成的class</p>
-<p>invokedynamic分派逻辑不是由虚拟机决定，而是程序员决定</p>
-<h2 id="解释执行引擎"><a href="#解释执行引擎" class="headerlink" title="解释执行引擎"></a>解释执行引擎</h2><p>大多数语言，词法分析-&gt;语法分析-&gt;抽象与法树(AST)</p>
-<p>例如1+1基于栈是(可移植性)</p>
-<pre><code>iconst_1
-iconst_1
-iadd
-istore_0
-</code></pre><p>基于寄存器(性能)</p>
-<pre><code>mov 1 eax
-add 1 eax
-</code></pre><p>虚拟机可以把它转换</p>
-<h1 id="9-类加载及执行子系统的案例与实战"><a href="#9-类加载及执行子系统的案例与实战" class="headerlink" title="9 类加载及执行子系统的案例与实战"></a>9 类加载及执行子系统的案例与实战</h1><p>案例1 Tomcat等服务应用程序 正统的类加载器架构</p>
-<p>因为 重用类库，安全性，支持JSP等的HotSwap，，所以都有隔离单独的类加载器。</p>
-<p>下面是Tomcat为例，</p>
-<ul>
-<li>/common目录中：类库可被Tomcat和所有的Web应用程序共同使用。</li>
-<li>/server目录中：类库可被Tomcat使用，所有的Web应用程序都不可见。</li>
-<li>/shared目录中：类库可被所有的Web应用程序共同使用，但对Tomcat自己不可见。</li>
-<li>/WebApp/WEB-INF目录中：类库仅仅可以被此Web应用程序使用，对Tomcat和其他Web应用程序都不可见。</li>
-</ul>
-<p>Tomcat 自定义了多个类加载器，按照双亲委派模型实现</p>
-<p>Spring相当于在上层，用户的在下层，模型特点是 职能向上加载不能向下。所以spring是通过 线程上下文类加载器来实现 访问并不在其加载范围内的用户程序</p>
-<p>学习JEE规范，去看JBoss源码；学习类加载器，就去看OSGi（Open Service Gateway Initiative）源码</p>
-<p>OSGI从层次依赖变成平级依赖，可以import 或者 export，哇 这不是 typescript那些吗，难道typescript灵感来源于此</p>
-<p>OSGI可以热插拔，当一部分更新时，可以只停用，重新安装然后启用程序中一部分</p>
-<p>运行时网状结构</p>
-<p>但循环依赖可能出现死锁，</p>
-<p>逆向移植(把代码 放到更老的版本上去执行)Retrotranslator,jvm层面的做不到，但是可以 把java-&gt;jvm层面的做不少</p>
-<h2 id="远程执行功能"><a href="#远程执行功能" class="headerlink" title="远程执行功能"></a>远程执行功能</h2><ul>
-<li>不依赖JDK版本1.4-1.7都能执行</li>
-<li>不改变原有服务端程序部署，不依任何第三方库</li>
-<li>不侵入原有程序</li>
-<li>临时代码需要直接支持JAVA</li>
-<li>临时代码具备一定自由度，不需要依赖特定的库或接口</li>
-<li>执行结果 包括输出 异常 能返回到客户端</li>
-</ul>
-<p>惊了 说只要5个类+250行代码，1个半小时，，，对不起 我不会JAVA</p>
-<p>问题</p>
-<ol>
-<li>如何编译提交到服务器的java代码</li>
-<li>如何执行编译之后的java代码</li>
-<li>如何收集java代码的执行结果</li>
-</ol>
-<p>问题1 方案A 传代码，使用tools.jar 来编译，或者javac，缺点是服务端需要tools。 方案B 在客户端编译，传字节码到服务端</p>
-<p>问题2 让类加载器加载这个类生成Class对象，然后又反射调用某个方法就可以了，执行完后应当被卸载回收掉</p>
-<p>问题3 直接在执行的类中把对System.out的引用替换为准备的PrintSteam，，</p>
-<p>实现见 Remote-classload 仓库</p>
-<ol>
-<li>本地运行劫持err和out输出的HackSystem</li>
-<li>用户class-&gt;调用JavaClassExecuter.execute(byte[])</li>
-<li>ClassModifier+ByteUtils 两个类 把传入的class中 所有调用<code>java/lang/System</code>的换成你所运行的<code>HackSystem</code></li>
-<li>运行HotSwapClassLoader()，加载修改过后的class</li>
-<li>运行加载了的class</li>
-<li>其中有错误或者输出，则由HackSystem输出</li>
-</ol>
-<h1 id="10-早期-编译器-优化"><a href="#10-早期-编译器-优化" class="headerlink" title="10 早期(编译器)优化"></a>10 早期(编译器)优化</h1><ul>
-<li>前端编译器(java-&gt;class): ECJ，Java</li>
-<li>JIT(Just In Time Compiler)字节码-&gt;机器码: HotSpot VM的C1 C2编译器</li>
-<li>AOT(Ahead Of Time Compiler): GNU Compiler for the Java(GCJ)、Excelsior JET</li>
-</ul>
-<p>javac 几乎没有优化，对Java语言编码过程的优化措施来改善程序员编码风格和提高编码效率</p>
-<p>Javac 使用Java编写和少量C语言</p>
-<p>源码位置javac:</p>
-<pre><code>sudo apt install openjdk-8-source
-ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
-解压它 找 sun/tools/javac中
-</code></pre><p>eclipse 默认禁止一些代码访问规则，所以要调试javac的话需要 把这个开关关闭</p>
-<p>javac 的3个过程</p>
-<ul>
-<li>1解析与填充符号表过程</li>
-<li>2插入式注解处理器的注解处理过程</li>
-<li>3分析与字节码生成过程</li>
-</ul>
-<p>其中1、2 这两步可以<code>循环</code> -&gt;1-&gt;2-1-&gt;2-&gt;1-&gt;2-&gt;3-&gt;</p>
-<p>javac动作入口<code>com.sun.tools.javac.main.JavaCompiler</code>，上面3个步骤集中在类的compile()和compile2()方法中</p>
-<ol>
-<li>词法语法分析 parseFiles()完成</li>
-</ol>
-<p>词法分析com.sun.tools.javac.parser.Scanner类实现 源代码字节流转变为Token集合</p>
-<p>语法分析 com.sun.tools.javac.parser.Parser产生出com.sun.tools.javac.tree.JCTree类 是根据Token序列构造抽象语法树的过程AST,每个节点表示程序代码中的一个语法结构，例如Eclipse 有 AST View插件可以看</p>
-<ol start="2">
-<li>填充符号表 enterTrees()方法</li>
-</ol>
-<p>符号表(Symbol Table)是由一组符号地址和符号信息构成的表格，也就是Key-Value模式(有的是有序 有的是树状 有的是哈希 栈结构等)</p>
-<p>在语义分析中，符号表所登记的内容将用于语义检查和产生中间代码</p>
-<p>填充过程com.sun.tools.javac.comp.Enter类实现，过程出口是一个待处理表(To Do List)包含了每一个编译单元的抽象语法树的定级节点, 以及 package-info.java（如果存在的话）的顶级节点。</p>
-<ol start="3">
-<li>注解处理器(Annotation) 规范JSR-269</li>
-</ol>
-<p>可以看做插件，可以读取修改 抽象语法树 元素，这个过程执行后 编译器回到解析及符号填充表重新处理，直到所有插入式注解都结束</p>
-<p>插入式注解处理器 初始化过程<code>initProcessAnnotations()</code>，执行过程<code>processAnnotations()</code>判断是否还有注解如果有<code>com.sun.tools.javac.processing.JavacProcessingEnvironment</code> 类的<code>doProcessing()</code>方法生成一个新的JavaCompiler对象对编译的后续步骤进行处理。</p>
-<ol start="4">
-<li>语义分析与字节码生成</li>
-</ol>
-<p>语法树能表示一个结构正确的源程序的抽象，但无法保证源程序是符合逻辑的。[这里举例是不同类型做加法]</p>
-<ul>
-<li>标注检查 <code>attribute()</code> 比如类型 变量赋值类型的匹配，1+2折叠成3，具体的类是<code>com.sun.tools.javac.comp.Attr</code>和<code>com.sun.tools.javac.comp.Check</code></li>
-<li>数据及控制流分析 <code>flow()</code> 上下文，比如是否初始化局部变量，方法每条路径是否都有返回值，异常有没有被正确处理，具体由<code>com.sun.tools.javac.comp.Flow</code>处理</li>
-</ul>
-<p><code>变量的不变性仅仅由编译器在编译期间保障</code>,这里的例子是是否有final最终的class文件是没有区别的</p>
-<ol start="5">
-<li>解释语法糖</li>
-</ol>
-<p>java低糖语法 如 泛型、变长参数、自动装箱/拆箱 等。这些语法被编译器转换为 jvm支持的更基础的指令。解释过程由 desugar() 方法触发，在 com.sun.tools.javac.comp.TransTypes 类和com.sun.tools.javac.comp.Lower 类中完成。</p>
-<ol start="6">
-<li>字节码生成</li>
-</ol>
-<p>由<code>com.sun.tools.javac.jvm.Gen</code>类来完成,</p>
-<p>这个阶段把 init和clinit添加到语法树中，也就是生成构造器工作,以及一些代码替换工作如把字符串的加操作替换为 StringBuffer 或 StringBuilder的 append() 操作等</p>
-<h2 id="关于语法糖的背后"><a href="#关于语法糖的背后" class="headerlink" title="关于语法糖的背后"></a>关于语法糖的背后</h2><blockquote>
-<p>泛型与类型擦除</p>
-</blockquote>
-<p>也就是由C++的模板Template思想起,【之前没看过java的时候一个面试我C++的问我C++中的泛型我一脸懵逼</p>
-<p>老版本是强行转化，所以能不能转的风险交给程序员，</p>
-<p>如<code>List&lt;int&gt;</code>和<code>List&lt;String&gt;</code>是两个不同类型，在运行期间有不同的虚方法表和类型数据，称为<code>类型膨胀</code>。</p>
-<p>然后java中只有java中存在泛型，class文件中 已经都替换为原生类型</p>
-<p>【举例了两个 只接受List参数的函数 来进行编译和反编译，第二个例子下采用了不同类型返回值】这里说因为 采用类型擦除，只靠List内的类型不同已经不能区分，第二个例子 只有Sun JDK 1.6能编译，并且<code>违反</code>了返回值不参与的原则？</p>
-<p>测了一下报错<code>error: name clash: f(List&lt;String&gt;) and f(List&lt;Integer&gt;) have the same erasure</code></p>
-<p>真实原因是不同返回值以后, class文件下，擦除了类型的函数具体描述才能不同，才能共存于同一个class中。当然也只有Sun JDK 1.6支持</p>
-<p>下面一段没看懂Signature部分是啥 签名?感觉大自意思是 有的程序需要识别你<code>擦除</code>的部分，所以还需要额外的影响和改动。以及，从 Signature 属性的出现我们还可以得出结论，擦除法所谓的擦除，仅仅是对方法的 Code 属性中的字节码进行擦除，实际上元数据中还是保留了泛型信息，这也是我们能通过反射手段取得参数化类型的根本依据。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">由于 Java 泛型的引入，各种场景（虚拟机解析、反射等）下的方法调用都有可能对原有的基础产生影响和新的需求，如在泛型类中如何获取传入的参数化类型等。因此，JCP 组织对虚拟机规范作出了相应的修改，引入了诸如 Signature、LocalVariableTable 等新的属性用于解决伴随而来的参数类型的识别问题，Signature是其中最重要的一项属性，它的作用就是存储一个方法在字节码层面的特征签名，这个属性中保存的参数类型并不是原生类型，而是包括了参数化类型的信息。修改后的虚拟机规范要求所有能识别 49.0 以上版本的 Class 文件的虚拟机都要能正确地识别 Signature 参数。</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>自动装箱、拆箱与遍历循环(Foreach)</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; list = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>); <span class="comment">// 自动装箱</span></span><br><span class="line">    <span class="comment">// 如果在 JDK 1.8 中，还有另外一颗语法糖</span></span><br><span class="line">    <span class="comment">// 能让上面这句代码进一步简写成 List&lt;Integer&gt; list = [1, 2, 3, 4];</span></span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i : list) &#123; <span class="comment">// 循环遍历+自动拆箱 变成迭代器每一个元素取出 并 转换为int类型</span></span><br><span class="line">        sum += i;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(sum);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面包含了<code>泛型、自动装箱、自动拆箱、遍历循环与变长参数</code>5 种语法糖</p>
-<p>错误用法: 完了要是面试问下面这个输出 我就凉凉: <strong>包装类的“==” 运算在不遇到算术运算的情况下不会自动拆箱，以及它们 equals() 方法不处理数据转型的关系</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">    Integer a = 1;</span><br><span class="line">    Integer b = 2;</span><br><span class="line">    Integer c = 3;</span><br><span class="line">    Integer d = 3;</span><br><span class="line">    Integer e = 321;</span><br><span class="line">    Integer f = 321;</span><br><span class="line">    Long g = 3L;</span><br><span class="line">    System.out.println(c == d);// 比值</span><br><span class="line">    System.out.println(e == f);// 超过[-128,127]比地址</span><br><span class="line">    System.out.println(c == (a + b));// 被自动装箱 转换==</span><br><span class="line">    System.out.println(c.equals(a + b));// 自动装箱equals 比 值&amp;类型</span><br><span class="line">    System.out.println(g == (a + b)); // 自动装箱==</span><br><span class="line">    System.out.println(g.equals(a + b)); // 自动装箱equals 比 值&amp;类型</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>emmmm感觉java需要手工加类型转换[或者编译检测有参数选项可以打开?</p>
-<blockquote>
-<p>条件编译 解除语法糖阶段（com.sun.tools.javac.comp.Lower类中完成)</p>
-</blockquote>
-<p>如C++中 <code>#ifdef</code>,java可以用if+常量的方式实现条件编译，2333,66666,,, 其它判断没有这个能力</p>
-<blockquote>
-<p>除了上面的一些语法糖还有 内部类、枚举类、断言语句、对枚举和字符串（在 JDK 1.7 中支持）的 switch 支持、try 语句中定义和关闭资源（在 JDK 1.7 中支持）等</p>
-</blockquote>
-<h2 id="插入式注解处理器-实验"><a href="#插入式注解处理器-实验" class="headerlink" title="插入式注解处理器 实验"></a>插入式注解处理器 实验</h2><p>使用 JSR-296 中定义的插入式注解处理器 API 来对 JDK 编译子系统的行为产生一些影响。</p>
-<p>javac主要在于看 程序写得对不对，而少的去看程序写得好不好。有辅助工具 <code>CheckStyle、FindBug、Klocwork</code>等，基于java源码或字节码校验</p>
-<p>本实验是利用 注解处理器API来编写一款拥有自己编码风格校验工具 NameCheckProcessor</p>
-<p>功能:仅仅对Java程序明明进行检查</p>
-<ul>
-<li>类（或接口）：符合驼式命名法，首字母大写。</li>
-<li>方法：符合驼式命名法，首字母小写。</li>
-</ul>
-<blockquote>
-<p>字段：</p>
-</blockquote>
-<ul>
-<li>类或实例变量：符合驼式命名法、首字母小写。</li>
-<li>常量：要求全部由大写字母或下划线构成，并且第一个字符不能是下划线。</li>
-</ul>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>我们实现注解处理器的代码需要继承抽象类 <code>javax.annotation.processing.AbstractProcessor</code></p>
-<p>这个类只有一个必须覆盖的abstract方法<code>process()</code></p>
-<p>这个函数在javac执行注解处理器代码时要调用的过程，</p>
-<p><a href="https://docs.oracle.com/javase/7/docs/api/javax/annotation/processing/AbstractProcessor.html" target="_blank" rel="noopener">https://docs.oracle.com/javase/7/docs/api/javax/annotation/processing/AbstractProcessor.html</a></p>
-<p>上面这个链接的example</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">boolean</span></span><br><span class="line"></span><br><span class="line">process(Set&lt;? extends TypeElement&gt; annotations, RoundEnvironment roundEnv)</span><br><span class="line">Processes a set of annotation types on type elements originating from the prior round and returns whether or not these annotations are claimed by <span class="keyword">this</span> processor.</span><br></pre></td></tr></table></figure>
-<p>第一个参数 “annotations” 中获取到此注解处理器所要处理的注解集合，从第二个参数 “roundEnv” 中访问到当前这个 Round 中的语法树节点，每个语法树节点在这里表示为一个 Element。</p>
-<p>在 JDK 1.6 新增的 <code>javax.lang.model</code> 包中定义了 16 类 Element，包括了 Java 代码中最常用的元素，如：</p>
-<ul>
-<li>包（PACKAGE）</li>
-<li>枚举（Enum）</li>
-<li>类（CLASS）</li>
-<li>注解（ANNOTATION_TYPE）</li>
-<li>接口（INTERFACE）</li>
-<li>枚举值（ENUM_CONSTANT）</li>
-<li>字段（FIELD）</li>
-<li>参数（PARAMETER）</li>
-<li>本地变量（LOCAL_VARIABLE）</li>
-<li>异常（EXCEPTION_PARAMETER）</li>
-<li>方法（METHOD）</li>
-<li>构造函数（CONSTRUCTOR）</li>
-<li>静态语句块（STATIC_INIT，即 static{} 块）</li>
-<li>实例语句块（INSTANCE_INIT，即 {} 块）</li>
-<li>参数化类型（TYPE_PARAMERTER，既泛型尖括号内的类型）</li>
-<li>未定义的其他语法树节点（OTHER）</li>
-</ul>
-<p>除了 process() 方法的传入参数之外，还有一个很常用的实例变量 <code>processingEnv</code>，它是<code>AbstractProcessor</code> 中的一个<code>protected</code> 变量，在注解处理器初始化的时候（init() 方法执行的时候）创建，继承了 AbstractProcessor 的注解处理器代码可以直接访问到它。它代表了注解处理器框架提供的一个上下文环境，要创建新的代码、向编译器输出信息、获取其他工具类等都需要用到这个实例变量</p>
-<hr>
-<p>返回值 true/false表示是否对代码进行更改，如果未更改，javac也就不会再处理？</p>
-<p>所有的运行都是单例 这里要实现的 功能仅是检查，所以始终返回false</p>
-<p>注解处理器NameCheckProcessor</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以用 "*" 表示支持所有 Annotations  </span></span><br><span class="line"><span class="meta">@SupportedAnnotationTypes</span>(<span class="string">"*"</span>)  </span><br><span class="line"><span class="comment">// 只支持 JDK 1.6 的 Java 代码  </span></span><br><span class="line"><span class="meta">@SupportedSourceVersion</span>(SourceVersion.RELEASE_6)  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NameCheckProcessor</span> <span class="keyword">extends</span> <span class="title">AbstractProcessor</span></span>&#123;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">private</span> NameChecker nameChecker;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 初始化名称检查插件 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ProcessingEnvironment processingEnv)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">super</span>.init(processingEnv);  </span><br><span class="line">        nameChecker = <span class="keyword">new</span> NameChecker(processingEnv);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 对输入的语法树的各个节点进行名称检查 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">process</span><span class="params">(Set&lt;? extends TypeElement&gt; annotations, RoundEnvironment roundEnv)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">if</span> (!roundEnv.processingOver()) &#123;  </span><br><span class="line">            <span class="keyword">for</span> (Element element : roundEnv.getRootElements()) &#123;<span class="comment">// 获取当前Round的每一个 RootElement</span></span><br><span class="line">                nameChecker.checkNames(element); <span class="comment">// 检查</span></span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>具体检查代码太长就不贴全了，贴几个主要的函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public NameChecker(ProcessingEnvironment processingEnv) &#123;  </span><br><span class="line">    this.messager = processingEnv.getMessager(); // 之后可以调用messager.printMessage()来输出　信息比如　不符合规则的具体内容和具体规则 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>检查部分继承了<code>ElementScanner6&lt;Void, Void&gt;</code></p>
-<p>之后就是复写这个类的对应函数，对于访问element的部分根据文档 调用函数得到element的名字 和element的类型，对于名字判断就是if case的事情</p>
-<p>它通过一个继承于 javax.lang.model.util.ElementScanner6 的 NameCheckScanner 类，以 Visitor 模式来完成对语法树的遍历，分别执行 visitType()、visitVariable() 和 visitExecutable() 方法来访问类、字段和方法，这 3 个 visit 方法对各自的命名规则做相应的检查，checkCamelCase() 与  checkAllCaps() 方法则用于实现驼式命名法和全大写命名规则的检查。</p>
-<p>这一章 我有复制较多的原书上的话，我认为它们已经概括总结得不太能再简略了，就直接用了，也把不是很必要的代码省去</p>
-<h1 id="11-晚期-运行期-优化"><a href="#11-晚期-运行期-优化" class="headerlink" title="11 晚期(运行期)优化"></a>11 晚期(运行期)优化</h1><p>解释器+编译器(包含C1 client 编译器 C2 server编译器)并存</p>
-<p>C1 简单可靠优化 有必要时加入性能监控逻辑</p>
-<p>C2 耗时较长的优化，不可靠的激进优化</p>
-<p>触发从解释器到编译器： 采样热点(一定周期发现某个方法经常出现在栈上)，计数热点（阈值+计数器判定）</p>
-<p>触发编译器到解释器：如动态的类</p>
-<p>HotSpot 采用的是计数器热点探测， 包含两类计数器 (方法调用计数器，回边计数器) 都有各自的阈值</p>
-<p>除了单纯的计数 还有一个根据时间的热度半衰期 23333 学习于自然之中</p>
-<p>回边计数器是为了统计循环体代码执行的次数</p>
-<p>client下 回边计数阈值 = 调用计数阈值xOSR比率 (On Stack Replace Rercentage) / 100</p>
-<p>server下 回边计数阈值 = 调用计数阈值xOSR比率 (On Stack Replace Rercentage)xjiesh / 100</p>
-<p>[嗯！！！ 终于这个代码是hpp后缀的了 吼呀</p>
-<p>只要编译还没完成 都是按照解释器继续执行 而不是等待</p>
-<p>但可以 加参数禁用后台编译 则是 等待形编译</p>
-<p>第一个阶段 一个平台独立的前端将字节码构造成一种高级中间代码表示（High-Level Intermediate Representation，HIR</p>
-<p>在第二个阶段，一个平台相关的后端从 HIR 中产生低级中间代码表示（Low-Level Intermediate Representation，LIR），而在此之前会在 HIR 上完成另外一些优化，如空值检查消除、范围检查消除等，以便让 HIR 达到更高效的代码表示形式。</p>
-<p>最后阶段是在平台相关的后端使用线性扫描算法（Linear Scan Register Allocation）在 LIR 上分配寄存器，并在 LIR 上做窥孔（Peephole）优化，然后产生机器代码.几乎能达到 GNU C++ 编译器使用 -O2 参数时的优化强度，它会执行所有经典的优化动作，如无用代码消除（Dead Code Elimination）、循环展开（Loop Unrolling）、循环表达式外提（Loop Expression Hoisting）、消除公共子表达式（Common Subexpression Elimination）、常量传播（Constant Propagation）、基本块重排序（Basic Block Reordering）等</p>
-<p>还会实施一些与 Java 语言特性密切相关的优化技术，如范围检查消除（Range Check Elimination）、空值检查消除（Null Check Elimination，不过并非所有的控制检查消除都是依赖编译器优化的，有一些是在代码运行过程中自动优化了）等。另外，还可能根据解释器或 Client Compiler 提供的性能监控信息，进行一些不稳定的激进优化，如守护内联（Guarded Inlining）、分支频率预测（Branch Frequency Prediction）等</p>
-<hr>
-<p>-XX: +PrintCompilation要求虚拟机在即时编译时将被编译成本地代码的方法名称打印出来</p>
-<p>带有 % 的输出是由回边计数器触发的OSR</p>
-<p>-XX: +PrintInlinint 要求虚拟机输出方法内联信息</p>
-<p><strong>优化技术可以看Sun官方的Wiki，也可以搜索 即时编译器优化技术一览 ，向这么多方法低头</strong></p>
-<p>示例：</p>
-<ol>
-<li><p>类的get方法，如果用内联优化，就是把get的方法变成<code>点参数</code>，是可以减少栈帧的开销，又能为其它优化打好基础</p>
-</li>
-<li><p>访问同一个类的参数，可以消除冗余的访问</p>
-</li>
-<li><p>把没有意义的进行复写传播 以及无用的代码消除 如 y=x;z=y;k=z+x直接就变成k=x&lt;&lt;1</p>
-</li>
-</ol>
-<p>嗯。。。以前编译原理课都有讲过上面列举的</p>
-<ul>
-<li>语言无关的经典优化技术之一：公共子表达式消除。表达式计算过 在没有变化的情况下 再次计算</li>
-<li>语言相关的经典优化技术之一：数组范围检查消除。消除绝对没有越界的数组访问 和安全性相呼应【如果不确定是否越界还是要做的】</li>
-<li>最重要的优化技术之一：方法内联。</li>
-<li>最前沿的优化技术之一：逃逸分析。</li>
-</ul>
-<p>除了如数组边界检查优化这种尽可能把运行期检查提到编译期完成的思路之外，另外还有一种避免思路——隐式异常处理，Java 中空指针检查和算术运算中除数为零的检查都采用了这种思路</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (foo != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> foo.value;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> NullPointException();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在使用隐式异常优化之后，虚拟机会把上面伪代码所表示的访问过程变为如下伪代码。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">     <span class="keyword">return</span> foo.value;</span><br><span class="line">&#125; <span class="keyword">catch</span> (segment_fault) &#123;</span><br><span class="line">    uncommon_trap();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 虚拟机会注册一个 Segment Fault 信号的异常处理器（伪代码中的 uncommon_trap()），这样当 foo 不为空的时候，对 value 的访问是不会额外消耗一次对 foo 判空的开销的。代价就是当 foo 真的为空时，必须转入到异常处理器中恢复并抛出 NullPointException 异常，这个过程必须从用户态转到内核态中处理，结束后再回到用户态，速度远比一次判空检查慢。当 foo 极少为空的时候，隐式异常优化是值得的，但假如 foo 经常为空的话，这样的优化反而会让程序更慢，还好 HotSpot 虚拟机足够 “聪明”，它会根据运行期收集到的 Profile 信息自动选择最优方案。</p>
-<hr>
-<p>方法内联</p>
-<p>为了解决虚方法的内联问题，Java 虚拟机设计团队想了很多办法，首先是引入了一种名为 “类型继承关系分析”（Class Hierarchy Analysis，CHA）的技术，这是一种基于整个应用程序的类型分析技术，它用于确定在目前已加载的类中，某个接口是否有多于一种的实现，某个类是否存在子类、子类是否为抽象类等信息。</p>
-<p>编译器在进行内联时，如果是非虚方法，那么直接进行内联就可以了，这时候的内联是有稳定前提保障的。如果遇到虚方法，则会向 CHA 查询此方法在当前程序下是否有多个目标版本可供选择，如果查询结果只有一个版本，那也可以进行内联，不过这种内联就属于激进优化，需要预留一个 “逃生门”（Guard 条件不成立时的 Slow Path），称为守护内联（Guarded Inlining）</p>
-<hr>
-<p>逃逸分析（Escape Analysis）</p>
-<p>它与类型继承关系分析一样，并不是直接优化代码的手段，而是为其他优化手段提供依据的分析技术</p>
-<p>证明一个对象不会逃逸到方法或线程之外，也就是别的方法或线程无法通过任何途径访问到这个对象，则可能为这个变量进行一些高效的优化</p>
-<ul>
-<li>栈上分配（Stack Allocation）：Java 虚拟机中，在 Java 堆上分配创建对象的内存空间几乎是 Java 程序员都清楚的常识了，Java 堆中的对象对于各个线程都是共享和可见的，只要持有这个对象的引用，就可以访问堆中存储的对象数据。虚拟机的垃圾收集系统可以回收堆中不再使用的对象，但回收动作无论是筛选可回收对象，还是回收和整理内存都需要耗费时间。如果确定一个对象不会逃逸出方法之外，那让这个对象在栈上分配内存将会是一个很不错的注意，对象所占用的内存空间就可以随栈帧出栈而销毁。在一般应用中，不会逃逸的局部对象所占的比例很大，如果能使用栈上分配，那大量的对象就会随着方法的结束而自动销毁了，垃圾收集系统的压力将会小很多。</li>
-<li>同步消除（Synchronized Elimination）：线程同步本身是一个相对耗时的过程，如果逃逸分析能够确定一个变量不会逃逸出线程，无法被其他线程访问，那这个变量的读写肯定就不会有竞争，对这个变量实施的同步措施也就可以消除掉。</li>
-<li><p>标量替换（Scalar Replacement）：标量（Scalar）是指一个数据已经无法再分解成更小的数据来表示了，Java 虚拟机中的原始数据类型（int、long 等数值类型以及 reference 类型等）都不能再进一步分解，它们就可以称为标量。相对的，如果一个数据可以继续分解，那它就称作聚合量（Aggregate），Java 中的对象就是最典型的聚合量。如果把一个 Java 对象拆散，根据程序访问的情况，将其使用到的成员变量恢复原始类型来访问就叫做标量替换。如果逃逸分析证明一个对象不会被外部访问，并且这个对象可以被拆散的话，那程序真正执行的时候将可能不创建这个对象，而改为直接创建它的若干个被这个方法使用到的成员变量来代替。将对象拆分后，除了可以让对象的成员变量在栈上（栈上存储的数据，有很大的概率会被虚拟机分配至物理机器的告诉寄存器中存储）分配和读写之外，还可以为后续进一步的优化手段创建条件。</p>
-<p>关于逃逸分析的论文在 1999 年就已经发表，但直到 Sun JDK 1.6 才实现了逃逸分析，而且直到现在这项优化尚未足够成熟，仍有很大的改进余地。不成熟的原因主要是不能保证逃逸分析的性能收益必定高于它的消耗。</p>
-</li>
-</ul>
-<p>目前发展并不够成熟</p>
-<hr>
-<h2 id="Java与C-编译器对比"><a href="#Java与C-编译器对比" class="headerlink" title="Java与C++编译器对比"></a>Java与C++编译器对比</h2><ol>
-<li>即时编译器运行占用的是用户程序的运行时间， 因此即时编译器 不敢大量引入优化技术</li>
-<li>JAVA是动态的类型安全，因此有很多安全方面的检查开销 是不会彻底的被编译器优化掉的</li>
-<li>虽然java没有virtual但虚方法使用频率远大于C++，这方面的优化难度也更大</li>
-<li>动态语言，编译器难以看清全貌，职能运行时撤销或者重新进行一些优化</li>
-<li>C++有很多在栈上，而java很多在堆上，<code>垃圾回收</code>效率</li>
-</ol>
-<p>【可以 ，，，基本是java的劣势，但是 并不是说不如，而是说有 安全 动态性等所作出的 代价回报</p>
-<p>有java更容易分析的 <code>别名分析</code> Java 的类型安全保证了在类似如下代码中，只要 ClassA 和 ClassB 没有继承关系，那对象 objA 和 objB 就绝不可能是同一个对象，即不会是同一块内存两个不同别名。</p>
-<p>void foo(ClassA objA, ClassB objB) {<br>    objA.x = 123;<br>    objB.y = 456;<br>    // 只要 objB.y 不是 objA.x 的别名，下面就可以保证输出为 123<br>    print(objA.x);<br>}</p>
-<p>但是C++有union之类的？？？</p>
-<p>另外的话 JAVA能够在 运行期间有调用频率预测 分支频率预测 等动态的运行红利</p>
-<p>个人感觉就是 有大量相似、相同的优化技术，但因为优化的源和目标结果并不相同会有一些差异。差异可以概括为用性能换得了更多的可控和安全性(比如 安全性 是相对于同样精力编码来说的？因为C++要强行写应该也能做出安全保障吧？)，而优化技术可以看做基本都是那么些方法</p>
-<h1 id="12-Java内存模型与线程"><a href="#12-Java内存模型与线程" class="headerlink" title="12 Java内存模型与线程"></a>12 Java内存模型与线程</h1><p>震惊 希望计算机能同时做其他事的原因竟然是 io等其它速度太慢，把这些原本的等待时间 压榨出来</p>
-<p>java 带有的并发逻辑 更加容易让程序员关注业务逻辑，而不是协调</p>
-<p>现代 加上cache，但面临一致性问题，为了解决一致性缓存问题，协议有MSI MESI  MOSI Synapse Firefly Dragon Protocol</p>
-<hr>
-<p>内存模型JMM(java memory model)，用于让在不同的硬件和不同的操作系统上达到效果一致[相对于C++使用物理硬件来说]</p>
-<p>需要严谨 &amp; 宽松</p>
-<p>主内存与工作内存 之间的交互协议</p>
-<ul>
-<li>lock 作用于主内存的变量，它把一个变量标识为一条线程独占的状态</li>
-<li>unlock 作用于主内存的变量，它把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程锁定</li>
-<li>read 作用于主内存的变量，它把一个变量的值从主内存传输到线程的工作内存中</li>
-<li>load 作用于工作内存变量，把read 操作从主内存中得到的变量值放入工作内存的变量副本中</li>
-<li>use 作用于工作内存的变量，它把工作内存中一个变量的值传递给执行引擎，虚拟机需要使用变量的值得字节码指令时，将会执行这个操作</li>
-<li>assign 作用于工作内存变量 把执行引擎接收到的的值付给工作内存的变量，</li>
-<li>store 作用工作内存变量，把值传送到主内存方便以后write操作使用</li>
-<li>write 写入 作用于主内存的变量，它把store 操作从工作内存中得到的变量的值防御主内存中</li>
-</ul>
-<p>流线可以看作,【似乎下面的意思这些都原子 不需要lock，只有程序员想额外保证原子的再lock?</p>
-<p>read(主内存到线程内存) -&gt; read(从线程内存到变量副本中) -&gt; use(使用)</p>
-<p>assign(写) -&gt; store(变量副本到从线程内存) -&gt; write(写入主内存)</p>
-<ol>
-<li>不允许read和load、store和write操作之一单独出现，即不允许一个变量从主内存读取了但工作内存不接受，或者从工作内存发起回写了但主内存不接受的情况出现。</li>
-<li>不允许一个线程丢弃它的最近的assign操作，即变量在工作内存中改变了之后必须把该变化同步回主内存。</li>
-<li>不允许一个线程无原因地（没有发生过任何assign操作）把数据从线程的工作内存同步回主内存中。</li>
-<li>一个新的变量只能在主内存中“诞生”，不允许在工作内存中直接使用一个未被初始化（load或assign）的变量，换句话说，就是对一个变量实施use、store操作之前，必须先执行过了assign和load操作。</li>
-<li>一个变量在同一时刻只允许一条线程对其进行lock操作，但lock操作可以被同一条线程重复执行多次，多次执行lock后，只有执行相同次数的unlock操作，变量才会被解锁。</li>
-<li>如果对一个变量执行了lock操作，那将会清空工作内存中此变量的值，在执行引擎使用这个变量前， 需要重新执行load或assign操作初始化变量的值。</li>
-<li>如果一个变量事先没有被lock操作锁定，那就不允许对它执行unlock操作，也不允许去unlock一个被其它线程锁定住的变量。</li>
-<li>对一个变量执行unlock操作之前，必须把此变量同步回主内存中（执行store、write操作）。</li>
-</ol>
-<p>以及Volatile的规定，当一个变量定义为volatile之后，它将具备两种特性：</p>
-<ol>
-<li>保证此变量对所有线程的可见性；普通变量（没被volatile修饰）做不到这一点，普通变量的值在线程间传递均需要通过主内存来完成。</li>
-<li>volatile变量不是线程安全的；volatile变量在各个线程的工作内存中不存在一致性问题（在各个线程的工作内存中，volatile变量也可以存在不一致的情况，但由于每次使用之前都要先刷新，执行引擎看不到不一致的情况，因此可以认为不存在一致性问题），但是Java里面的运算并非原子操作，导致volatile变量的运算在并发下一样是不安全的。</li>
-</ol>
-<p>即使编译出来只有一条字节码指令，也并不意味执行这条指令就是一个原子操作。 所以需要同步保护（synchronized或 java.util.concurrent）</p>
-<p>这里是说用 lock add $0x0 (%esp)的技巧 来制作重排序屏障 理论上是比锁快</p>
-<blockquote>
-<p>对于long和double型变量的特殊规则</p>
-</blockquote>
-<p>要求上面lock unlock等8个操作都是原子性， 但允许没有被volatile的64位类型读写划分为两次32位操作，也就是64位 可以不保证load  store read write的原子性【 所以可能读到半个变量，虽然标准中没有原子规定，但是建议的虚拟机实现最好是原子的实现</p>
-<ul>
-<li>原子性： 内存模型直接保护 就是除了lock和unlock，如果用户需要更多原子性保护可以用lock和unlock，对于更高层次，虚拟机提供了monitorenter和monitorexit来隐式使用两个操作，再向上说就是java中 的synchronized</li>
-<li>可见性：volatile的特殊规则保证了新值能够立即 同步到主内存</li>
-<li>有序性: 线程内是有序的 volatile(包含禁止重排序的语义) synchronized(包含一个变量同一时刻只允许一条线程对其lock)</li>
-</ul>
-<p>顺序性</p>
-<ul>
-<li>程序次序规则：根据控制流来说 控制流前面的代码先执行</li>
-<li>管程锁定规则 一个unlock先于同一个锁的lock</li>
-<li>volatile 写先于（后面的）读</li>
-<li>线程启动规则，Thread对象的start()方法先行发生于次线程的每一个动作</li>
-<li>线程中断规则： 线程中断调用 先于 中断检测</li>
-<li>对象终结规则， 初始化先于finalize() </li>
-<li>传递性： A先于B B先于C 则 A先于C</li>
-</ul>
-<p>在满足上面的无同步手段保障时 可以随意重排序，线程不安全的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">private int value = 0;</span><br><span class="line">public void setValue(int value)&#123;</span><br><span class="line">  this.value = value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public int getValue()&#123;</span><br><span class="line">  return value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面规则都不适用，但是缺无法确定不同线程同时执行时这里的返回结果，所以它是线程不安全的</p>
-<p>修复问题 解决方案</p>
-<ol>
-<li>getter/setter都定义为synchronized方法 可以套用管程规则</li>
-<li>把值定义为volatile变量</li>
-</ol>
-<hr>
-<p>java提供了在不同硬件和操作系统平台下对线程操作的统一处理，每个已经执行start()且未结束的java.lang.Thread类的实例就代表了一个线程</p>
-<p>实现方法主要有3种：</p>
-<ul>
-<li>内核线程实现(Kernel-Level Thread) 直接让内核调度器调度，层级关系CPU-线程调度器-KLT-LWP(Light Weight Process)-程序使用</li>
-<li>用户线程实现 (User Thread), 完全建立在用户控件的线程库上，系统内核不能感知存在的，可以降低 用户态和内核态切换的消耗，java和ruby曾经用过最终放弃了？</li>
-<li>用户线程实现 加 轻量级进程混合实现，solaris HP-UX提供了相应的模型实现，和内核线程实现比起来是在LWP和程序使用之间 用UT</li>
-</ul>
-<hr>
-<p>线程调度 协同或者抢占式</p>
-<p>java设置了10个级别的线程优先级，windows 有7种，solaris有2^32种。。。。 windows还有一个 优先级推进器6666</p>
-<p>5个状态</p>
-<ul>
-<li>新建</li>
-<li>运行</li>
-<li>等待(无限等待 时间等待)</li>
-<li>阻塞 相对于等来说就是有一个明确的阻塞目标？？？</li>
-<li>结束</li>
-</ul>
-<h1 id="13-线程安全与锁优化"><a href="#13-线程安全与锁优化" class="headerlink" title="13 线程安全与锁优化"></a>13 线程安全与锁优化</h1><p>你看这个本书都说 google都找不到“线程安全”的标准定义了 ：-） 面试官还一天问个不停</p>
-<p>java中的线程安全</p>
-<ol>
-<li>不可变 -一定安全 只要被正确构建 final 以及例如java.lang.String 枚举类型等</li>
-<li>绝对线程安全,不管运行时环境如何，调用者都不需要任何额外的同步措施，，，，这里说理论上没有 绝对的库还能向上用，因为你上层的实现可能是对一个线程安全的进行分步操作，，，，</li>
-<li>相对线程安全，，通常意义的线程安全</li>
-<li>线程兼容，，，本身不是线程安全，但可以通过 同步手段让它们达到线程安全</li>
-<li>线程对立，，，无论如何都无法达到</li>
-</ol>
-<h2 id="线程安全的实现"><a href="#线程安全的实现" class="headerlink" title="线程安全的实现"></a>线程安全的实现</h2><ol>
-<li>互斥同步，临界区 互斥量 信号量 都是主要手段，。。。。互斥是因 同步是果，互斥是方法 同步是目的</li>
-</ol>
-<p>synchronized 同步 对同一个线程来说是可以重入的</p>
-<p>也可以使用java.util.concurrent 包中的重入锁（ReentrantLock）,相对于synchronized多了 三个功能，等待可中断，公平锁，锁绑定多个condition，，，然后性能说 单核多线程，线程数量上去后 ReentrantLock表现更好jdk1.5,之后版本优化得差不多，所以能直接sync实现也就不用麻烦</p>
-<ol start="2">
-<li>非阻塞同步  emmm这就是类似乐观锁 而上面就是悲观锁</li>
-</ol>
-<p>需要硬件支持</p>
-<ul>
-<li>测试并设置</li>
-<li>获取并增加</li>
-<li>交换</li>
-<li>比较并交换 CAS</li>
-<li>加载链接、条件存储</li>
-</ul>
-<ol start="3">
-<li>无同步方案</li>
-</ol>
-<p>只要保证可重入，没有因果关系，也可以实现</p>
-<h2 id="锁优化"><a href="#锁优化" class="headerlink" title="锁优化"></a>锁优化</h2><p>高效并发是jdk1.5到1.6的一个重要改进，如</p>
-<ul>
-<li>自旋锁与适应性自旋，相当于说 如果锁的交替很快，那么自旋锁实际就是通过帮你多等一会，来节省内核态切换的开销，默认等待次数10次，然后自旋锁再自适应次数，就能更准确的预测等待次数。</li>
-<li>锁清除，清除无意义的锁 也就是前面逃逸分析里提到过的</li>
-<li>锁粗化 原则上是同步块越小越好，但连续的拿锁放锁有较大不必要的性能消耗</li>
-<li>轻量级锁 使用CAS 相对于操作系统的互斥量的锁，并不是代替操作系统互斥量锁，，，emm相当于先简单的读写尝试 成功则运行，不然膨胀为重量级锁 允许多个线程获得 但不允许竞争</li>
-<li>偏向锁(Biased Locking) 和轻量级锁类似，但它向上升级就是轻量级锁 只允许一个线程获得</li>
-</ul>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><blockquote>
-<p>感觉看jvm最好先学C++一遍再看一遍操作系统,反而java不怎么需要看，感觉作者是站在你已经会C++的程度上来写的这本书</p>
-</blockquote>
-<h2 id="本Markdown文档依赖和感谢"><a href="#本Markdown文档依赖和感谢" class="headerlink" title="本Markdown文档依赖和感谢"></a>本Markdown文档依赖和感谢</h2><p>《深入理解Java虚拟机》盗版pdf XD</p>
-<p><code>Ubuntu 18.04 bionic</code> &amp;&amp; <code>java-8-openjdk-amd64</code> &amp;&amp; 各种工具了</p>
-<p>董哥的指路</p>
-<p>网上各个对该书的图文完全复制的博客，[以及chrome的去广告插件和自定义css插件</p>
-<p>google+stackoverflow对相关问题的回答</p>
-<p>github上搜到的书中所述的相关代码仓库</p>
-<p>在线java编辑编译器<code>https://www.tutorialspoint.com/compile_java_online.php</code></p>
-<p>[排序根据贡献从前到后]</p>
 
       
     </div>
@@ -1727,20 +1095,20 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">103</span>
+          <span class="site-state-item-count">104</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Blog/categories/">
           
-        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">123</span>
+        <span class="site-state-item-count">124</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -1838,59 +1206,6 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 

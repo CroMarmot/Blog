@@ -191,6 +191,164 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-07-08-gitlabserver/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-07-08-gitlabserver/" class="post-title-link" itemprop="url">gitlab server 搭建</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-07-08 01:01:01" itemprop="dateCreated datePublished" datetime="2019-07-08T01:01:01+08:00">2019-07-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-07-08-gitlabserver/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-07-08-gitlabserver/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><p>可以在私有环境下使用。如果想用非私有，现成的，可以考虑<a href="https://github.com" target="_blank" rel="noopener">https://github.com</a> 或 <a href="https://gitlab.com" target="_blank" rel="noopener">https://gitlab.com</a></p>
+<h1 id="手工安装-docker-ce"><a href="#手工安装-docker-ce" class="headerlink" title="手工安装 docker-ce"></a>手工安装 <code>docker-ce</code></h1><blockquote>
+<p>安装依赖</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ca-certificates curl openssh-server postfix</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>安装 gitlab-ce</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash</span><br><span class="line">sudo apt install gitlab-ce</span><br></pre></td></tr></table></figure>
+<p>注: 国内有不少镜像源 例如<code>https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/</code>，国内镜像会快很多，可以替换上面生成的<code>/etc/apt/sources.list.d/gitlab_gitlab-ce.list</code>中的路径</p>
+<p><code>sudo gitlab-ctl reconfigure</code></p>
+<p>按理说这里就可以用了</p>
+<blockquote>
+<p>你需要设置root的密码，和新建一个用户以及(设置该用户的密码)</p>
+</blockquote>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>然而 因为我本地apache服务和原来开启的nginx服务，有80冲突和原来nginx服务冲突(？)，导致我找问题找了很久很久[我似乎也没看到报错</p>
+<blockquote>
+<p>修改 <code>sudo vim /etc/gitlab/gitlab.rb</code></p>
+</blockquote>
+<p>中的<code>external_url</code> 为你的domain名称+port,如<code>http://192.168.1.51:8081</code></p>
+<p>最后我停掉两个服务再重启 <code>gitlab</code>就好了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 未使用了 如果本身还有nginx据说可以配一下</span></span><br><span class="line"><span class="comment"># nginx listen_port 配置</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">修改</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">`/etc/gitlab/gitlab.rb`</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">找到`nginx['listen_port']`修改为</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">nginx['listen_port'] = 8081</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">再执行`sudo gitlab-ctl reconfigure`</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">访问`你的domain:8081`即可</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h1 id="gitlab-on-docker"><a href="#gitlab-on-docker" class="headerlink" title="gitlab on docker"></a>gitlab on docker</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --detach --name gitlab \</span><br><span class="line">  --hostname gitlab.example.com \</span><br><span class="line">  --publish 30080:30080 \</span><br><span class="line">  --publish 30022:22 \</span><br><span class="line">  --env GITLAB_OMNIBUS_CONFIG=<span class="string">"external_url 'http://gitlab.example.com:30080'; gitlab_rails['gitlab_shell_ssh_port']=30022;"</span> \</span><br><span class="line">  gitlab/gitlab-ce:latest</span><br></pre></td></tr></table></figure>
+<p>好了 ssh 30022和http 30080都ok,docker真香了</p>
+<p><a href="https://developer.ibm.com/code/2017/07/13/step-step-guide-running-gitlab-ce-docker/" target="_blank" rel="noopener">https://developer.ibm.com/code/2017/07/13/step-step-guide-running-gitlab-ce-docker/</a></p>
+<p><a href="https://docs.gitlab.com/omnibus/docker/README.html" target="_blank" rel="noopener">https://docs.gitlab.com/omnibus/docker/README.html</a></p>
+<h1 id="问题-仓库通过ssh的git-clone报错"><a href="#问题-仓库通过ssh的git-clone报错" class="headerlink" title="问题:仓库通过ssh的git clone报错"></a>问题:仓库通过ssh的git clone报错</h1><p><code>http</code>的<code>clone</code>可用</p>
+<p>而<code>ssh</code>的<code>clone</code>报错: <code>fatal: protocol error: bad line length character: Welc</code></p>
+<p>gihub上很多说<code>sed -i &#39;s/session\s\+required\s\+pam_loginuid.so/# \0/&#39; /etc/pam.d/sshd</code> 就是注释掉 也没用(也restart 过)</p>
+<blockquote>
+<p>问题排查</p>
+</blockquote>
+<p>网上有很多 pam的 校验关闭都没有用</p>
+<p>然后 通过<code>ssh -vvv git@&lt;ip&gt;</code>得到<code>Exit status 254</code>,对应也是没有搜到可行方案,但感觉距离问题近了些</p>
+<p>查看<code>/var/log/auth.log</code>发现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Aug 20 14:24:03 RBEST systemd: pam_unix(systemd-user:session): session opened for user git by (uid=0)</span><br><span class="line">Aug 20 14:24:03 RBEST systemd-logind[941]: New session 170 of user git.</span><br><span class="line">Aug 20 14:24:03 RBEST sshd[16070]: error: PAM: pam_open_session(): Module is unknown</span><br><span class="line">Aug 20 14:24:03 RBEST sshd[16148]: Received disconnect from 192.168.1.51 port 48618:11: disconnected by user</span><br><span class="line">Aug 20 14:24:03 RBEST sshd[16148]: Disconnected from user git 192.168.1.51 port 48618</span><br><span class="line">Aug 20 14:24:03 RBEST systemd-logind[941]: Removed session 170.</span><br></pre></td></tr></table></figure>
+<p>这个error也搜不到对应的</p>
+<p>鸽了！ 用 docker来搞</p>
+<p>docker的方法测试</p>
+<p><code>ssh -vvv git@gitlab.example.com -p 30022</code>的exit code 是0 所以感觉还是 本地的ssh相关的东西配置有问题</p>
+<h2 id="修复-重装试试"><a href="#修复-重装试试" class="headerlink" title="修复(重装试试)"></a>修复(重装试试)</h2><p>上面我得到的信息是</p>
+<ol>
+<li>ssh git@应该是成功登录了 但是没有和gitlab联系上</li>
+<li>docker里看 只用简单配置 就应该能用</li>
+<li>我尝试新开了个空白虚拟机，装一遍gitlab是能用的</li>
+</ol>
+<p>于是按照<a href="https://askubuntu.com/a/824723/653605把" target="_blank" rel="noopener">https://askubuntu.com/a/824723/653605把</a> gitlab完全删除 再重装就好了？喵喵喵，虽然现在能用了，可是之前究竟是什么问题。</p>
+<h1 id="TODO-email"><a href="#TODO-email" class="headerlink" title="TODO email"></a>TODO email</h1><p><a href="https://docs.gitlab.com/omnibus/settings/nginx.html" target="_blank" rel="noopener">https://docs.gitlab.com/omnibus/settings/nginx.html</a></p>
+<h1 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h1><p>权限管理 <a href="https://docs.gitlab.com/ee/administration/#user-settings-and-permissions" target="_blank" rel="noopener">https://docs.gitlab.com/ee/administration/#user-settings-and-permissions</a></p>
+<p>用root权限用户登陆</p>
+<blockquote>
+<p><code>&lt;你的地址&gt;/admin/application_settings</code></p>
+</blockquote>
+<p>可见和可访问性</p>
+<p>的Restricted visibility levelsx限制为 内部和私有</p>
+<p>关闭了为所有项目默认 runner和默认CI/CD</p>
+<h1 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h1><p><code>/etc/gitlab/gitlab.rb</code> 设置</p>
+<p><code>external_url &#39;https://gitlab.xxx.com&#39;</code></p>
+<p>以及</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">letsencrypt[&apos;enable&apos;] = true</span><br><span class="line">letsencrypt[&apos;contact_emails&apos;] = [&apos;你的email&apos;]</span><br></pre></td></tr></table></figure>
+<p>再<code>gitlab-ctl reconfigure</code>就可以自动生成证书并且 启用https了</p>
+<h1 id="内存占用过大"><a href="#内存占用过大" class="headerlink" title="内存占用过大"></a>内存占用过大</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unicorn[&apos;worker_timeout&apos;] = 60</span><br><span class="line">unicorn[&apos;worker_processes&apos;] = 2</span><br></pre></td></tr></table></figure>
+<p>也有其它git server :<code>https://gogs.io/</code></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://about.gitlab.com/" target="_blank" rel="noopener">https://about.gitlab.com/</a></p>
+<p><a href="https://hub.docker.com/r/gitlab/gitlab-ce/" target="_blank" rel="noopener">https://hub.docker.com/r/gitlab/gitlab-ce/</a></p>
+<p><a href="https://gitlab.com/gitlab-org/gitlab-foss/-/issues/25840" target="_blank" rel="noopener">https://gitlab.com/gitlab-org/gitlab-foss/-/issues/25840</a></p>
+<p><a href="https://docs.gitlab.com/omnibus/settings/unicorn.html" target="_blank" rel="noopener">https://docs.gitlab.com/omnibus/settings/unicorn.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-06-27-rxjs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +380,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 09:25:14" itemprop="dateModified" datetime="2021-07-06T09:25:14+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -340,7 +498,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 09:25:14" itemprop="dateModified" datetime="2021-07-06T09:25:14+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -449,7 +607,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 09:25:14" itemprop="dateModified" datetime="2021-07-06T09:25:14+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -563,7 +721,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 09:25:14" itemprop="dateModified" datetime="2021-07-06T09:25:14+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -623,150 +781,6 @@
 <p>demo111 介绍了，如何对一个原来写过的原始工程，修改成Material Components的样式(基本就是 npm引入，js引入，css引入，换class，加js</p>
 <p>demo112 介绍了一个react工程上 改为material components</p>
 <p>最后 目前看下来 angular+material 最多star的是<a href="https://material.angular.io" target="_blank" rel="noopener">https://material.angular.io</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-06-10-TDD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-06-10-TDD/" class="post-title-link" itemprop="url">TDD 测试驱动开发</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-06-10 01:01:01" itemprop="dateCreated datePublished" datetime="2019-06-10T01:01:01+08:00">2019-06-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 09:25:14" itemprop="dateModified" datetime="2021-07-06T09:25:14+08:00">2021-07-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/test/" itemprop="url" rel="index"><span itemprop="name">test</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-06-10-TDD/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-06-10-TDD/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.cigniti.com/blog/7-best-practices-for-agile-test-driven-development/" target="_blank" rel="noopener">https://www.cigniti.com/blog/7-best-practices-for-agile-test-driven-development/</a></p>
-<p><a href="https://www.freecodecamp.org/news/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2/" target="_blank" rel="noopener">https://www.freecodecamp.org/news/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2/</a></p>
-<h1 id="避免过于复杂的函数"><a href="#避免过于复杂的函数" class="headerlink" title="避免过于复杂的函数"></a>避免过于复杂的函数</h1><p>保持每个函数 自扫门前雪,与团队讨论保证每个测试用例覆盖了所有期望的函数功能</p>
-<h1 id="聚焦于你真正需要实现的"><a href="#聚焦于你真正需要实现的" class="headerlink" title="聚焦于你真正需要实现的"></a>聚焦于你真正需要实现的</h1><p>测试用例要清晰描述 期望的 最终实现的功能，并按照这个原则编写。</p>
-<h1 id="Maintain-code-austerity"><a href="#Maintain-code-austerity" class="headerlink" title="Maintain code austerity"></a>Maintain code austerity</h1><p>在通过测试样例的前提下，尽可能保持代码可读，可迭代。</p>
-<h1 id="Test-repeatedly"><a href="#Test-repeatedly" class="headerlink" title="Test repeatedly"></a>Test repeatedly</h1><p>…编写过程中持续测试，CI等工具都可以</p>
-<h1 id="Maintain-code-sanctity"><a href="#Maintain-code-sanctity" class="headerlink" title="Maintain code sanctity"></a>Maintain code sanctity</h1><p>用git，Jenkins等工具…….?????</p>
-<h1 id="Application-knowledge"><a href="#Application-knowledge" class="headerlink" title="Application knowledge"></a>Application knowledge</h1><p>文档维护，</p>
-<p>In TDD, coding needs to be limited but effective in that it achieves its purpose without breaking anything else. Also, the new code should ideally pass the test case in the very first run. Maintaining adequate system documentation, including a repository of test cases and engaging team members with good application knowledge can ensure a smooth and successful project execution.</p>
-<h1 id="Know-when-to-use-TDD"><a href="#Know-when-to-use-TDD" class="headerlink" title="Know when to use TDD"></a>Know when to use TDD</h1><p>任何延长或复杂的测试都会破坏TDD的目的。</p>
-<h1 id="TDD-rules"><a href="#TDD-rules" class="headerlink" title="TDD rules"></a>TDD rules</h1><ul>
-<li><p>你不被允许编写任何让单元测试挂掉的代码</p>
-</li>
-<li><p>Write only enough of a unit test to fail.</p>
-</li>
-<li><p>Write only enough production code to make the failing unit test pass.</p>
-</li>
-</ul>
-<p>就是说，不论是测试代码还是业务代码，都是足量，但又尽量少，【例子 红绿灯</p>
-<h2 id="red-phase"><a href="#red-phase" class="headerlink" title="red phase"></a>red phase</h2><p>首先 写一些 用户会需要的 ’需求‘ 而不是 ’测试‘</p>
-<p>所以 你考虑的角度是类似BDD(行为驱动开发)的,你会在开发前首先写代码，假设它已经完成了</p>
-<p>这个阶段你需要考虑代码的出入参数 如何被使用，需要注意的是再该阶段 关注你核心需要的，而不是写大量的</p>
-<h2 id="green-phase"><a href="#green-phase" class="headerlink" title="green phase"></a>green phase</h2><p>编码</p>
-<p>注意的是，这部分主要关注的是按照 red phase部分的 代码，实现，在这部分，不需要过度关注 性能，代码复用，也不要改测试</p>
-<p>代码的优化应该在todolist 或 重构的时候清理 整理</p>
-<p>但你应该写 直接实现，且可迭代的代码</p>
-<p>新的feature只要还没有测试，就不应该先实现</p>
-<h2 id="refactor-phase"><a href="#refactor-phase" class="headerlink" title="refactor phase"></a>refactor phase</h2><p>代码抽象 去重 等等</p>
-<h2 id="Final-considerations-Q-amp-A"><a href="#Final-considerations-Q-amp-A" class="headerlink" title="Final considerations Q&amp;A"></a>Final considerations Q&amp;A</h2><blockquote>
-<p>TDD 需要很多 多于普通编码的时间</p>
-</blockquote>
-<p>当你熟练了 不会多很多，而在后续的持续开发中，将省时间</p>
-<blockquote>
-<p>需要写多少</p>
-</blockquote>
-<p>足够你测试开发的代码，的最少量，因为每个测试都会拖慢重构，但重构需要测试来支撑</p>
-<blockquote>
-<p>分析设计框架</p>
-</blockquote>
-<p>你依然需要，TDD无法替代，在TDD之前，应该先分析设计。</p>
-<p>这个是我具体实践起来感觉 很重要也有难度的，如果你对业务和功能，没有实践过，那么你可能分析得设计得不全面，这样的情况下你的测试样例也实现的 有缺失。一个可能就是编码的过程可能发现测试不够，这样一个办法就是继续走cycle再改。而我之前的写python的实践时，就直接把测试ban掉了XD。还是走了先代码后测试的老路</p>
-<blockquote>
-<p>100% coverage</p>
-</blockquote>
-<p>不必，视图等常变的微量逻辑毫无必要写TDD测试</p>
-<blockquote>
-<p>TDD 在examples上 工作得号，但实际代码上 很多代码未被测试</p>
-</blockquote>
-<p>emmmmmmm….. 作者用TDD方法 写了一个俄罗斯方块</p>
-<blockquote>
-<p>TDD 谁来写</p>
-</blockquote>
-<p>这里的观点是TDD是开发写，而真正的<code>测试</code>是测试人员来写</p>
 
       
     </div>
@@ -851,20 +865,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">103</span>
+          <span class="site-state-item-count">104</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Blog/categories/">
           
-        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">123</span>
+        <span class="site-state-item-count">124</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
