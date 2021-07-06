@@ -1,6 +1,6 @@
 ---
 title: 迁移到win
-date: 2021-07-06
+date: 2021-07-05
 tags: [win]
 category: [code, win]
 mathjax: true
