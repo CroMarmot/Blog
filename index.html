@@ -191,7 +191,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-07-06-migrate2win/">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-07-06-dockerharbor/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Blog/images/avatar.gif">
@@ -205,7 +205,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/Blog/21-07-06-migrate2win/" class="post-title-link" itemprop="url">迁移到win</a>
+            <a href="/Blog/21-07-06-dockerharbor/" class="post-title-link" itemprop="url">Docker Harbor on Ubuntu 20 on WSL2</a>
         </h2>
 
         <div class="post-meta">
@@ -216,8 +216,128 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2021-07-06 00:00:00 / 修改時間：13:56:27" itemprop="dateCreated datePublished" datetime="2021-07-06T00:00:00+08:00">2021-07-06</time>
+              <time title="創建時間：2021-07-06 00:00:00 / 修改時間：16:23:51" itemprop="dateCreated datePublished" datetime="2021-07-06T00:00:00+08:00">2021-07-06</time>
             </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/docker/harbor/" itemprop="url" rel="index"><span itemprop="name">harbor</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/21-07-06-dockerharbor/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-07-06-dockerharbor/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Docker-Harbor"><a href="#Docker-Harbor" class="headerlink" title="Docker Harbor"></a>Docker Harbor</h1><p>简单说，可以搭本地/局域网 docker仓库</p>
+<h1 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h1><p>Ubuntu 或 其它linux 或 Ubuntu on WSL2</p>
+<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>wsl2:</p>
+<p><code>sudo apt install docker.io docker-compose</code></p>
+<h1 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h1><p>经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2”私有”的目录下</p>
+<p><a href="https://github.com/goharbor/harbor/releases" target="_blank" rel="noopener">https://github.com/goharbor/harbor/releases</a></p>
+<p>解压 <code>tar xvzf harbor-offline-installer-*.tgz &amp;&amp; cd harbor</code></p>
+<h1 id="SSL等配置"><a href="#SSL等配置" class="headerlink" title="SSL等配置"></a>SSL等配置</h1><p>这玩意一定要SSL</p>
+<p>ip查看<code>ifconfig | grep inet</code></p>
+<p>自签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 3650 -out ca.crt</span><br></pre></td></tr></table></figure>
+<p><strong>注意替换成你的ip</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">YOURIP=192.168.1.203</span><br><span class="line">openssl req -newkey rsa:4096 -nodes -sha256 -keyout <span class="variable">$YOURIP</span> -out <span class="variable">$YOURIP</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"subjectAltName = IP:<span class="variable">$YOURIP</span>"</span> &gt; extfile.cnf</span><br><span class="line">openssl x509 -req -days 3650 -<span class="keyword">in</span> <span class="variable">$YOURIP</span> -CA ca.crt -CAkey ca.key -CAcreateserial -extfile extfile.cnf -out <span class="variable">$YOURIP</span></span><br><span class="line">sudo mkdir -p /etc/docker/certs.d/<span class="variable">$YOURIP</span></span><br><span class="line">sudo cp *.crt *.key /etc/docker/certs.d/<span class="variable">$YOURIP</span></span><br><span class="line">sed -i <span class="string">"s/^hostname.*/hostname: <span class="variable">$YOURIP</span>/"</span> harbor.yml</span><br><span class="line">sed -i <span class="string">"s@^\(\s*certificate\).*@\1: /etc/docker/certs.d/<span class="variable">$YOURIP</span>/ca.crt@"</span> harbor.yml</span><br><span class="line">sed -i <span class="string">"s@^\(\s*private_key\).*@\1: /etc/docker/certs.d/<span class="variable">$YOURIP</span>/ca.key@"</span> harbor.yml</span><br></pre></td></tr></table></figure>
+<p>如果有需要可以改动<code>harbor.yml</code>里面的端口配置</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./install.sh --with-clair</span><br></pre></td></tr></table></figure>
+<h1 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h1><p>localhost:你设置的端口</p>
+<p>wsl2需要做以下映射</p>
+<p>powershell:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=443 connectaddress=172.28.52.88</span><br></pre></td></tr></table></figure>
+<p>其中listenport是对外部暴露的端口</p>
+<p>connectport是你wsl2里的端口</p>
+<p>connectaddr是wsl2的地址</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://goharbor.io/docs/latest/install-config" target="_blank" rel="noopener">https://goharbor.io/docs/latest/install-config</a></p>
+<p><a href="https://thenewstack.io/tutorial-install-the-docker-harbor-registry-server-on-ubuntu-18-04/" target="_blank" rel="noopener">https://thenewstack.io/tutorial-install-the-docker-harbor-registry-server-on-ubuntu-18-04/</a></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/wsl/compare-versions#accessing-a-wsl-2-distribution-from-your-local-area-network-lan" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows/wsl/compare-versions#accessing-a-wsl-2-distribution-from-your-local-area-network-lan</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-07-05-migrate2win/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/21-07-05-migrate2win/" class="post-title-link" itemprop="url">迁移到win</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-07-05 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-05T00:00:00+08:00">2021-07-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -241,8 +361,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/21-07-06-migrate2win/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-07-06-migrate2win/" itemprop="commentCount"></span>
+    <a title="disqus" href="/Blog/21-07-05-migrate2win/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-07-05-migrate2win/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -367,7 +487,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -467,7 +587,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -569,7 +689,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -620,129 +740,6 @@
 <p>这里需要注意的是git设置用<code>[git@192.XXX.XXX.XXX:10022]:cromarmot/demo.git</code>的形式</p>
 <h1 id="合"><a href="#合" class="headerlink" title="合"></a>合</h1><p>这样就可以dota2+vmware+chrome+nextcloud+gogs了，好耶，虽然也不知道有啥卵用</p>
 <p><a href="https://github.com/gogs/gogs/tree/main/docker" target="_blank" rel="noopener">https://github.com/gogs/gogs/tree/main/docker</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-04-01-pointers/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/21-04-01-pointers/" class="post-title-link" itemprop="url">外部文章 索引</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-04-01 00:00:00" itemprop="dateCreated datePublished" datetime="2021-04-01T00:00:00+08:00">2021-04-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/notes/" itemprop="url" rel="index"><span itemprop="name">notes</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/21-04-01-pointers/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-04-01-pointers/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>有些别人整理过的，暂时也不太需要二次整理的文章，建立索引，缺点是可能失效链接和无法自己维护, 移除用twitter书签的, 手机 Pocket, 网页书签栏,</p>
-<h1 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h1><p><a href="https://blog.joway.io/posts/deep-into-distributed-filesystem/" target="_blank" rel="noopener">分布式文件系统的演化</a></p>
-<p><a href="https://coolshell.cn/articles/21263.html" target="_blank" rel="noopener">GO 编程模式：K8S VISITOR 模式</a></p>
-<p><a href="https://github.com/goharbor/community/blob/master/proposals/enhanced-default-processor.md" target="_blank" rel="noopener">proposals/enhanced-default-processor</a></p>
-<p><a href="https://twitter.com/angular/status/1377395280648097796" target="_blank" rel="noopener">ng packages</a></p>
-<p><a href="https://www.ximalaya.com/keji/29161862/" target="_blank" rel="noopener">牛油果烤面包</a></p>
-<p><a href="https://www.ximalaya.com/keji/24821511/" target="_blank" rel="noopener">捕蛇者说</a></p>
-<p><a href="https://blog.angular.io/ivys-internal-data-structures-f410509c7480" target="_blank" rel="noopener">ng ivy</a></p>
-<p><a href="https://tech.meituan.com/2021/02/04/2021-spring-festival-present.html" target="_blank" rel="noopener">美团技术团队</a></p>
-<p><a href="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-intro#architecture" target="_blank" rel="noopener">tidb</a></p>
-<p><a href="http://maizure.org/projects/decoded-gnu-coreutils/" target="_blank" rel="noopener">gnu core utils 源码</a></p>
-<p><a href="http://jimbly.github.io/regex-crossword/" target="_blank" rel="noopener">regex 填字游戏</a></p>
-<p><a href="https://huggingface.co/stanford-cs329s" target="_blank" rel="noopener">stanford cs 329s 机器学习设计</a></p>
-<p><a href="https://www.bilibili.com/video/BV1Zo4y1R7En/" target="_blank" rel="noopener">ncnn</a></p>
-<p><a href="https://draveness.me/golang/" target="_blank" rel="noopener">go语言设计与实现</a></p>
-<p><a href="https://www.bilibili.com/video/BV1rx411Z7LV" target="_blank" rel="noopener"> Learning How to Learn</a></p>
-<p><a href="https://github.com/b1f6c1c4/learn-git-the-super-hard-way" target="_blank" rel="noopener">git</a></p>
-<p><a href="https://www.hacker101.com/start-here" target="_blank" rel="noopener">hacker101</a></p>
-<p><a href="https://github.com/type-challenges/type-challenges" target="_blank" rel="noopener">typescript challenge</a></p>
-<p><a href="https://nhigham.com/2020/09/01/what-is-the-sylvester-equation/" target="_blank" rel="noopener">Sylvester Equation</a></p>
-<p><a href="https://github.com/pingcap/awesome-database-learning" target="_blank" rel="noopener">pingcap database learning path</a></p>
-<p><a href="https://github.com/facebook/folly/blob/master/folly/docs/FBVector.md" target="_blank" rel="noopener">FB vector</a></p>
-<p><a href="https://linux.die.net/man/8/logrotate" target="_blank" rel="noopener">logrotate</a></p>
-<p><a href="https://coolshell.cn/articles/21003.html" target="_blank" rel="noopener">timing attack</a></p>
-<p><a href="https://github.com/NickCarneiro/curlconverter" target="_blank" rel="noopener">py spider</a></p>
-<p><a href="http://aggregate.org/MAGIC/" target="_blank" rel="noopener">The Aggregate Magic Algorithms</a></p>
-<p><a href="https://www.youtube.com/watch?v=EFwGK3Lvr04&amp;ab_channel=PyConChina" target="_blank" rel="noopener">py command line</a></p>
-<p><a href="https://www.vadimbulavin.com/modern-mvvm-ios-app-architecture-with-combine-and-swiftui/" target="_blank" rel="noopener">Modern MVVM iOS App Architecture with Combine and SwiftUI</a></p>
-<p><a href="https://www.bilibili.com/video/av90473411" target="_blank" rel="noopener">k8s 调度</a></p>
-<p><a href="https://cloud.tsinghua.edu.cn/d/339de5f93d8c420ebbb7/?p=%2Faos-lec1&amp;mode=list" target="_blank" rel="noopener">tsinghua aos</a></p>
-<p><a href="https://coolshell.cn/articles/20845.html" target="_blank" rel="noopener">RUST语言的编程范式 coolshell</a></p>
-<p><a href="https://www.sourcetrail.com/blog/open_source/" target="_blank" rel="noopener">sourcetrail</a></p>
-<p><a href="https://www.cs.cmu.edu/~rwh/courses/hott/" target="_blank" rel="noopener">cmu type theory</a></p>
-<p><a href="https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6" target="_blank" rel="noopener">Abstract Algobra Youtube</a></p>
-<p><a href="https://github.com/caicloud/kube-ladder" target="_blank" rel="noopener">kube ladder</a></p>
-<p><a href="https://googleprojectzero.blogspot.com/" target="_blank" rel="noopener">Project Zero</a></p>
 
       
     </div>
@@ -827,14 +824,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-count">105</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Blog/categories/">
           
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">48</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">

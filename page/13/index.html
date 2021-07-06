@@ -191,6 +191,116 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-06-11-material/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-06-11-material/" class="post-title-link" itemprop="url">material学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-06-11 01:01:01" itemprop="dateCreated datePublished" datetime="2019-06-11T01:01:01+08:00">2019-06-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-06-11-material/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-06-11-material/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://material.io/collections/developer-tutorials/#web" target="_blank" rel="noopener">https://material.io/collections/developer-tutorials/#web</a></p>
+<p>很早就有人说过了material，不过在那时，1是不太能阅读英文文档，2是没有实际的需要，也没有要用的想法，没有阅读</p>
+<p>下面是个人整理 (大概需要的前置知识 node基本+html+js+css</p>
+<h1 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h1><p>跨平台，好看的，google出的ui标准 </p>
+<h1 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h1><p><code>git clone https://github.com/material-components/material-components-web-codelabs</code></p>
+<p>安装所有ui</p>
+<p><code>npm install material-components-web</code></p>
+<p>从文档和操作上来看 需要做3件事</p>
+<ol>
+<li>引入css 如<code>@import &quot;@material/textfield/mdc-text-field&quot;;</code></li>
+<li>在html的元素上 给对应的class</li>
+<li>js里引入组件和 对相应元素进行处理,如下</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;MDCTextField&#125; <span class="keyword">from</span> <span class="string">'@material/textfield'</span>;</span><br><span class="line"><span class="keyword">const</span> username = <span class="keyword">new</span> MDCTextField(<span class="built_in">document</span>.querySelector(<span class="string">'.username'</span>));</span><br></pre></td></tr></table></figure>
+<p>demo101 102里介绍了 输入框，按钮，图片，列表</p>
+<p>然后103 介绍了一些，theme(例如主题颜色)，subtitle(typography),elevation(实际是阴影效果 用来让页面元素有高低感觉),<code>mdc-image-list--masonry</code>非等长图片排列</p>
+<p>demo111 介绍了，如何对一个原来写过的原始工程，修改成Material Components的样式(基本就是 npm引入，js引入，css引入，换class，加js</p>
+<p>demo112 介绍了一个react工程上 改为material components</p>
+<p>最后 目前看下来 angular+material 最多star的是<a href="https://material.angular.io" target="_blank" rel="noopener">https://material.angular.io</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-06-10-TDD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +332,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -366,7 +476,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -487,7 +597,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -594,7 +704,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -641,115 +751,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Blog/19-04-12-principles/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-04-19-jsmore1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-04-19-jsmore1/" class="post-title-link" itemprop="url">js 基础&进阶 速查笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-04-19 11:20:14" itemprop="dateCreated datePublished" datetime="2019-04-19T11:20:14+08:00">2019-04-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-04-19-jsmore1/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-04-19-jsmore1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><p>个人笔记！不是文档！大家 尽量减少个人文档行为，多做公共wiki和文档翻译！</p>
-<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://zh.javascript.info" target="_blank" rel="noopener">https://zh.javascript.info</a></p>
-<p><a href="https://javascript.info" target="_blank" rel="noopener">https://javascript.info</a></p>
-<p>有精力的朋友还是建议读上面链接,如果它们的文档有帮助，也建议购买它们的 epub/pdf 作为支持</p>
-<p>本文是基于我C++的熟练，和一定时间js使用后的阅读知识补充整理,章节分化基本和上面链接的内容对应</p>
-<h1 id="JavaScript-基础知识-2"><a href="#JavaScript-基础知识-2" class="headerlink" title="JavaScript 基础知识 2"></a>JavaScript 基础知识 2</h1><h2 id="函数-2-15"><a href="#函数-2-15" class="headerlink" title="函数 2.15"></a>函数 2.15</h2><h3 id="函数表达式-vs-函数声明-2-16"><a href="#函数表达式-vs-函数声明-2-16" class="headerlink" title="函数表达式 vs 函数声明 2.16"></a>函数表达式 vs 函数声明 2.16</h3><p><code>function a(){}</code> vs <code>a = function(){}</code></p>
-<p>当 JavaScript 准备运行脚本或代码块时，它首先在其中查找函数声明并创建函数。我们可以将其视为“初始化阶段”。</p>
-<p>在处理完所有函数声明后，执行继续。</p>
-<p>所以以下可以而正常运行</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sayHi(<span class="string">"John"</span>); <span class="comment">// Hello, John</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  alert( <span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>`</span> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>声明还是有代码块的问题</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/19-04-19-jsmore1/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -838,14 +839,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-count">105</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Blog/categories/">
           
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">48</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">

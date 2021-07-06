@@ -191,6 +191,115 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-04-14-karma-jasmine/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-04-14-karma-jasmine/" class="post-title-link" itemprop="url">karma jasmine</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-04-15 11:20:14" itemprop="dateCreated datePublished" datetime="2020-04-15T11:20:14+08:00">2020-04-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-04-14-karma-jasmine/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-04-14-karma-jasmine/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn global add jasmine-core karma karma-chrome-launcher karma-jasmine karma-jasmine-html-reporter</span><br><span class="line">karma init <span class="comment"># 一路默认</span></span><br><span class="line">vim karma.conf.js</span><br></pre></td></tr></table></figure>
+<p>一些改动</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@@ -21,8 +21,12 @@ module.exports = function (config) &#123;</span><br><span class="line"> </span><br><span class="line">     // list of files / patterns to load in the browser</span><br><span class="line">     files: [</span><br><span class="line"><span class="addition">+      'src/**/*.js'</span></span><br><span class="line">     ],</span><br><span class="line"> </span><br><span class="line"><span class="addition">+    client: &#123;</span></span><br><span class="line"><span class="addition">+      clearContext: false, // leave Jasmine Spec Runner output visible in browser</span></span><br><span class="line"><span class="addition">+    &#125;,</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">     // list of files / patterns to exclude</span><br><span class="line">@@ -37,7 +41,7 @@ module.exports = function (config) &#123;</span><br><span class="line">     // test results reporter to use</span><br><span class="line">     // possible values: 'dots', 'progress'</span><br><span class="line">     // available reporters: https://npmjs.org/browse/keyword/karma-reporter</span><br><span class="line"><span class="deletion">-    reporters: ['progress'],</span></span><br><span class="line"><span class="addition">+    reporters: ['progress', 'kjhtml'],</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     // web server port</span><br></pre></td></tr></table></figure>
+<p>编写你的测试代码，语法见jasmine文档</p>
+<p>启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">karma start</span><br></pre></td></tr></table></figure>
+<p><code>karma-jasmine-html-reporter</code> 这个赞极少 却超高的周下载量 所以大多是连带下载的吧</p>
+<h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><h2 id="版本兼容各种问题"><a href="#版本兼容各种问题" class="headerlink" title="版本兼容各种问题"></a>版本兼容各种问题</h2><p>目前一组能用的</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"jasmine-core"</span>: <span class="string">"^3.5.0"</span>,</span><br><span class="line">    <span class="attr">"karma"</span>: <span class="string">"^5.0.1"</span>,</span><br><span class="line">    <span class="attr">"karma-chrome-launcher"</span>: <span class="string">"^3.1.0"</span>,</span><br><span class="line">    <span class="attr">"karma-jasmine"</span>: <span class="string">"^3.1.1"</span>,</span><br><span class="line">    <span class="attr">"karma-jasmine-html-reporter"</span>: <span class="string">"^1.5.3"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="cnpm"><a href="#cnpm" class="headerlink" title="cnpm"></a>cnpm</h2><p>不知道cnpm搞了什么私货，同样的命令 npm 能用 cnpm就是报错。目前采取全局yarn按加项目内karam.conf.js了 (感觉操作不科学啊</p>
+<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><p>报错 大概意思不在module内</p>
+<p>搜到很多加plugins或者在预处理调用webpack的，暂时没有采用</p>
+<p>可行的一种方案,目前把<code>files</code>的配置写成</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="attr">pattern</span>:<span class="string">'src/**/*.js'</span>,<span class="attr">type</span>:<span class="string">'module'</span>&#125;]</span><br></pre></td></tr></table></figure>
+<h2 id="files"><a href="#files" class="headerlink" title="files"></a>files</h2><p>需要包括源代码 和 测试代码</p>
+<h1 id="Repo"><a href="#Repo" class="headerlink" title="Repo"></a>Repo</h1><p><a href="https://github.com/CroMarmot/karma.jasmine.demo" target="_blank" rel="noopener">https://github.com/CroMarmot/karma.jasmine.demo</a></p>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="http://karma-runner.github.io/4.0/config/files.html" target="_blank" rel="noopener">http://karma-runner.github.io/4.0/config/files.html</a></p>
+<p><a href="http://karma-runner.github.io/4.0/intro/how-it-works.html" target="_blank" rel="noopener">http://karma-runner.github.io/4.0/intro/how-it-works.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-02-26-js-yield/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +331,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -325,7 +434,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -434,7 +543,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -551,7 +660,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
+                <time title="修改時間：2021-07-06 16:23:51" itemprop="dateModified" datetime="2021-07-06T16:23:51+08:00">2021-07-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -671,109 +780,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-12-20-netrelative/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-12-20-netrelative/" class="post-title-link" itemprop="url">net/ping/virus scan</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-12-20 11:20:14" itemprop="dateCreated datePublished" datetime="2019-12-20T11:20:14+08:00">2019-12-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-07-06 13:56:27" itemprop="dateModified" datetime="2021-07-06T13:56:27+08:00">2021-07-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-12-20-netrelative/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-12-20-netrelative/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="disable-ping"><a href="#disable-ping" class="headerlink" title="disable ping"></a>disable ping</h1><p><code>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all</code></p>
-<p><code>/etc/sysctl.conf</code> 追加</p>
-<p><code>net.ipv4.icmp_echo_ignore_all = 1</code></p>
-<h1 id="list-running-program"><a href="#list-running-program" class="headerlink" title="list running program"></a>list running program</h1><p><code>ps -ef  |  awk &#39;$8~/^\// {for(i=8;i&lt;=NF;i++)printf $i&quot; &quot;; print &quot;&quot; }&#39; | sort | uniq</code></p>
-<h1 id="port-and-net"><a href="#port-and-net" class="headerlink" title="port and net"></a>port and net</h1><p><code>lsof -i</code></p>
-<p><code>ifconfig</code> the value of <code>TX bytes</code></p>
-<p><code>hethogs</code></p>
-<h1 id="clamav"><a href="#clamav" class="headerlink" title="clamav"></a>clamav</h1><p><code>clamscan -r -i /home/ -l  /var/log/clamscan.log</code></p>
-<p><code>freshclam</code> before use</p>
-<p><code>clamtk</code> for ui</p>
-<h1 id="relative"><a href="#relative" class="headerlink" title="relative"></a>relative</h1><p>awk</p>
-<p>anti virus</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -843,14 +849,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-count">105</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Blog/categories/">
           
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">48</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
