@@ -21,18 +21,18 @@
     var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Docker Harbor简单说，可以搭本地/局域网 docker仓库 前置条件Ubuntu 或 其它linux 或 Ubuntu on WSL2 依赖wsl2: sudo apt install docker.io docker-compose 下载包经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2”私有”的目录下 https://github.com/goharbor/">
+  <meta name="description" content="Docker Harbor简单说，可以搭本地/局域网 docker仓库 前置条件Ubuntu 或 其它linux 或 Ubuntu on WSL2 依赖安装docker: 1sudo apt install docker.io docker-compose 下载包经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2 私有的目录下 https://github.com/gohar">
 <meta name="keywords" content="docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker Harbor on Ubuntu 20 on WSL2">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/21-07-06-dockerharbor/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
-<meta property="og:description" content="Docker Harbor简单说，可以搭本地/局域网 docker仓库 前置条件Ubuntu 或 其它linux 或 Ubuntu on WSL2 依赖wsl2: sudo apt install docker.io docker-compose 下载包经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2”私有”的目录下 https://github.com/goharbor/">
+<meta property="og:description" content="Docker Harbor简单说，可以搭本地/局域网 docker仓库 前置条件Ubuntu 或 其它linux 或 Ubuntu on WSL2 依赖安装docker: 1sudo apt install docker.io docker-compose 下载包经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2 私有的目录下 https://github.com/gohar">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2021-07-06T08:23:51.279Z">
+<meta property="og:updated_time" content="2021-07-20T07:33:31.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker Harbor on Ubuntu 20 on WSL2">
-<meta name="twitter:description" content="Docker Harbor简单说，可以搭本地/局域网 docker仓库 前置条件Ubuntu 或 其它linux 或 Ubuntu on WSL2 依赖wsl2: sudo apt install docker.io docker-compose 下载包经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2”私有”的目录下 https://github.com/goharbor/">
+<meta name="twitter:description" content="Docker Harbor简单说，可以搭本地/局域网 docker仓库 前置条件Ubuntu 或 其它linux 或 Ubuntu on WSL2 依赖安装docker: 1sudo apt install docker.io docker-compose 下载包经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2 私有的目录下 https://github.com/gohar">
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/21-07-06-dockerharbor/">
 
@@ -219,10 +219,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2021-07-06 00:00:00 / 修改時間：16:23:51" itemprop="dateCreated datePublished" datetime="2021-07-06T00:00:00+08:00">2021-07-06</time>
+              <time title="創建時間：2021-07-06 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-06T00:00:00+08:00">2021-07-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-07-20 15:33:31" itemprop="dateModified" datetime="2021-07-20T15:33:31+08:00">2021-07-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -268,26 +274,27 @@
       
         <h1 id="Docker-Harbor"><a href="#Docker-Harbor" class="headerlink" title="Docker Harbor"></a>Docker Harbor</h1><p>简单说，可以搭本地/局域网 docker仓库</p>
 <h1 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h1><p>Ubuntu 或 其它linux 或 Ubuntu on WSL2</p>
-<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>wsl2:</p>
-<p><code>sudo apt install docker.io docker-compose</code></p>
-<h1 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h1><p>经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2”私有”的目录下</p>
+<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>安装docker:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install docker.io docker-compose</span><br></pre></td></tr></table></figure>
+<h1 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h1><p>经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2 <strong>私有</strong>的目录下</p>
 <p><a href="https://github.com/goharbor/harbor/releases" target="_blank" rel="noopener">https://github.com/goharbor/harbor/releases</a></p>
-<p>解压 <code>tar xvzf harbor-offline-installer-*.tgz &amp;&amp; cd harbor</code></p>
-<h1 id="SSL等配置"><a href="#SSL等配置" class="headerlink" title="SSL等配置"></a>SSL等配置</h1><p>这玩意一定要SSL</p>
-<p>ip查看<code>ifconfig | grep inet</code></p>
-<p>自签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 3650 -out ca.crt</span><br></pre></td></tr></table></figure>
+<p>解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvzf harbor-offline-installer-*.tgz &amp;&amp; cd harbor</span><br></pre></td></tr></table></figure>
+<h1 id="SSL等配置"><a href="#SSL等配置" class="headerlink" title="SSL等配置"></a>SSL等配置</h1><p>这玩意一定要SSL, 这里用自签</p>
+<p>ip查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig | grep inet</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p><strong>注意替换成你的ip</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">YOURIP=192.168.1.203</span><br><span class="line">openssl req -newkey rsa:4096 -nodes -sha256 -keyout <span class="variable">$YOURIP</span> -out <span class="variable">$YOURIP</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"subjectAltName = IP:<span class="variable">$YOURIP</span>"</span> &gt; extfile.cnf</span><br><span class="line">openssl x509 -req -days 3650 -<span class="keyword">in</span> <span class="variable">$YOURIP</span> -CA ca.crt -CAkey ca.key -CAcreateserial -extfile extfile.cnf -out <span class="variable">$YOURIP</span></span><br><span class="line">sudo mkdir -p /etc/docker/certs.d/<span class="variable">$YOURIP</span></span><br><span class="line">sudo cp *.crt *.key /etc/docker/certs.d/<span class="variable">$YOURIP</span></span><br><span class="line">sed -i <span class="string">"s/^hostname.*/hostname: <span class="variable">$YOURIP</span>/"</span> harbor.yml</span><br><span class="line">sed -i <span class="string">"s@^\(\s*certificate\).*@\1: /etc/docker/certs.d/<span class="variable">$YOURIP</span>/ca.crt@"</span> harbor.yml</span><br><span class="line">sed -i <span class="string">"s@^\(\s*private_key\).*@\1: /etc/docker/certs.d/<span class="variable">$YOURIP</span>/ca.key@"</span> harbor.yml</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">YOURIP=192.168.1.203</span><br><span class="line">openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 3650 -out ca.crt</span><br><span class="line">openssl req -newkey rsa:4096 -nodes -sha256 -keyout <span class="variable">$YOURIP</span> -out <span class="variable">$YOURIP</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"subjectAltName = IP:<span class="variable">$YOURIP</span>"</span> &gt; extfile.cnf</span><br><span class="line">openssl x509 -req -days 3650 -<span class="keyword">in</span> <span class="variable">$YOURIP</span> -CA ca.crt -CAkey ca.key -CAcreateserial -extfile extfile.cnf -out <span class="variable">$YOURIP</span></span><br><span class="line">sudo mkdir -p /etc/docker/certs.d/<span class="variable">$YOURIP</span></span><br><span class="line">sudo cp *.crt *.key /etc/docker/certs.d/<span class="variable">$YOURIP</span></span><br><span class="line">sed -i <span class="string">"s/^hostname.*/hostname: <span class="variable">$YOURIP</span>/"</span> harbor.yml</span><br><span class="line">sed -i <span class="string">"s@^\(\s*certificate\).*@\1: /etc/docker/certs.d/<span class="variable">$YOURIP</span>/ca.crt@"</span> harbor.yml</span><br><span class="line">sed -i <span class="string">"s@^\(\s*private_key\).*@\1: /etc/docker/certs.d/<span class="variable">$YOURIP</span>/ca.key@"</span> harbor.yml</span><br></pre></td></tr></table></figure>
 <p>如果有需要可以改动<code>harbor.yml</code>里面的端口配置</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./install.sh --with-clair</span><br></pre></td></tr></table></figure>
 <h1 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h1><p>localhost:你设置的端口</p>
 <p>wsl2需要做以下映射</p>
 <p>powershell:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=443 connectaddress=172.28.52.88</span><br></pre></td></tr></table></figure>
-<p>其中listenport是对外部暴露的端口</p>
-<p>connectport是你wsl2里的端口</p>
-<p>connectaddr是wsl2的地址</p>
+<blockquote>
+<p>其中listenport是对外部暴露的端口<br>connectport是你wsl2里的端口<br>connectaddr是wsl2的地址</p>
+</blockquote>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://goharbor.io/docs/latest/install-config" target="_blank" rel="noopener">https://goharbor.io/docs/latest/install-config</a></p>
 <p><a href="https://thenewstack.io/tutorial-install-the-docker-harbor-registry-server-on-ubuntu-18-04/" target="_blank" rel="noopener">https://thenewstack.io/tutorial-install-the-docker-harbor-registry-server-on-ubuntu-18-04/</a></p>
 <p><a href="https://docs.microsoft.com/en-us/windows/wsl/compare-versions#accessing-a-wsl-2-distribution-from-your-local-area-network-lan" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows/wsl/compare-versions#accessing-a-wsl-2-distribution-from-your-local-area-network-lan</a></p>
