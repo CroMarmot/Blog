@@ -119,6 +119,9 @@ https://zhuanlan.zhihu.com/p/106225935
 
 https://nodejs.org/api/process.html#process_process_platform
 
+# win10更新和指纹问题
+
+https://answers.microsoft.com/zh-hans/windows/forum/all/%E6%9B%B4%E6%96%B0win10%E5%90%8E%E6%8C%87%E7%BA%B9/7fc55349-7234-4fd0-a3c1-04fcf20e2aaa
 
 # 文件传输
 
