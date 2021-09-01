@@ -16,7 +16,15 @@ mathjax: true
 
 set `git bash` as default terminal
 
+# windows terminal 
+
+windows terminal 双击点击鼠标选择 在单词和行选择切换,而非空格分割和行之间切换
+
+https://stackoverflow.com/questions/60441221/double-click-to-select-text-in-windows-terminal-selects-only-one-word
+
 # Git
+
+**更应该 不要 win和wsl共用磁盘**
 
 https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes
 
@@ -44,13 +52,11 @@ default browser( https://github.com/da2x/EdgeDeflector  )
 
 # firefox
 
-国内外登录地址一个有.cn 一个没有，所以不同地址相同邮箱账号不同
-
-fire 官方 developer 版本+ win x64 版本+English版本
+国内外登录地址一个有.cn 一个没有，所以不同地址相同邮箱账号不同, 选择firefox 官方 developer 版本+ win x64 版本+English版本
 
 https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-developer
 
-# Python
+# Python 被windows商店劫持
 
 https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python
 
@@ -61,6 +67,8 @@ https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-
 https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#step-1---enable-the-windows-subsystem-for-linux
 
 桌面方案xfce4+xrdp+windows远程桌面,xfce4相对轻量，也可以用gnome https://gist.github.com/Ta180m/e1471413f62e3ed94e72001d42e77e22
+
+`sudo update-alternatives --config x-session-manager` 默认桌面设置
 
 开发方案wsl2内部文件夹 + vscode wsl插件
 
@@ -156,3 +164,5 @@ filezilla 左连wsl文件夹，右连Ubuntu ssh，可以不受文件mode影响�
 1. 因为777等各种原因，开发丢在wsl2里面的文件夹里
 2. `/etc/resolv.conf` 每次是变化的，虽然一行命令能获取，但是`/etc/proxychains.conf` 里的配置不能配`$`还有点问题
 3. host能访问wsl2里暴露的端口，虽然好像端口冲突的报错有点不够理想，不过可以简单的靠改端口解决
+
+综上所述，要轻量，不如 VMware player + Xubuntu
