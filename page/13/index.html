@@ -191,6 +191,115 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-06-17-webpack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-06-17-webpack/" class="post-title-link" itemprop="url">webpack文档 阅读笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-06-17 01:01:01" itemprop="dateCreated datePublished" datetime="2019-06-17T01:01:01+08:00">2019-06-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-06-17-webpack/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-06-17-webpack/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://webpack.js.org/concepts/" target="_blank" rel="noopener">https://webpack.js.org/concepts/</a></p>
+<p><strong>警告！虽然有<code>.com</code>的中文文档，但是存在没有更新文档的问题，不是webpack4版本的文档！！例如CommonsChunkPlugin已经被弃用，CleanWebpackPlugin的引入和使用方法不同版本不同</strong></p>
+<h1 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h1><h2 id="入口entry"><a href="#入口entry" class="headerlink" title="入口entry"></a>入口entry</h2><p>对应配置中的<code>entry</code>属性</p>
+<p>如<code>webpack.config.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>常见 分离应用程序和三方库入口</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/app.js'</span>,</span><br><span class="line">    vendors: <span class="string">'./src/vendors.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>根据经验：每个 HTML 文档只使用一个入口起点。多页面应用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    pageOne: <span class="string">'./src/pageOne/index.js'</span>,</span><br><span class="line">    pageTwo: <span class="string">'./src/pageTwo/index.js'</span>,</span><br><span class="line">    pageThree: <span class="string">'./src/pageThree/index.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong> 以上都可以用<code>CommonsChunkPlugin</code>来优化公用代码</p>
+<h2 id="输出output"><a href="#输出output" class="headerlink" title="输出output"></a>输出output</h2><p>在哪里输出所建立的bundles以及命名</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/19-06-17-webpack/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-06-13-vue-declarative/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +331,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -336,7 +445,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -446,7 +555,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -590,7 +699,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -657,113 +766,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Blog/19-06-06-angular/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-05-03-oiTerminal/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-05-03-oiTerminal/" class="post-title-link" itemprop="url">oiTerminal</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-05-03 01:01:01" itemprop="dateCreated datePublished" datetime="2019-05-03T01:01:01+08:00">2019-05-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/notes/" itemprop="url" rel="index"><span itemprop="name">notes</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-05-03-oiTerminal/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-05-03-oiTerminal/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a href="https://github.com/CroMarmot/oiTerminal" target="_blank" rel="noopener">oiTerminal</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>能够通过命令行 打oj比赛</p>
-<h1 id="开发进度"><a href="#开发进度" class="headerlink" title="开发进度"></a>开发进度</h1><ul>
-<li>codeforces 已经完全支持 分析题目，上传，获取评测结果</li>
-<li><p>其它oj准备开工</p>
-<p>对任意oj都支持本地的代码测试了</p>
-</li>
-</ul>
-<h1 id="相关项目"><a href="#相关项目" class="headerlink" title="相关项目"></a>相关项目</h1><p><a href="https://github.com/xalanq/cf-tool" target="_blank" rel="noopener">cf-tool</a></p>
-<p><a href="https://github.com/endiliey/idne" target="_blank" rel="noopener">idne</a></p>
-<p><a href="https://github.com/CroMarmot/cfterminal" target="_blank" rel="noopener">cfTerminal</a></p>
-<p><a href="https://github.com/VirtualJudge/spider" target="_blank" rel="noopener">spider</a></p>
-<h1 id="开发过程中的一些想法"><a href="#开发过程中的一些想法" class="headerlink" title="开发过程中的一些想法"></a>开发过程中的一些想法</h1><p>首先 cfTerminal 是基于idne开发的</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/19-05-03-oiTerminal/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -852,7 +854,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-count">107</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -865,7 +867,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">123</span>
+        <span class="site-state-item-count">124</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

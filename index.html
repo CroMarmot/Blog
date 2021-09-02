@@ -191,6 +191,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-09-02-vue-transition/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/21-09-02-vue-transition/" class="post-title-link" itemprop="url">Vue transition</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2021-09-02 00:00:00 / 修改時間：17:43:00" itemprop="dateCreated datePublished" datetime="2021-09-02T00:00:00+08:00">2021-09-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/21-09-02-vue-transition/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-09-02-vue-transition/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="对于transition的一个核心问题是时间哪里来的"><a href="#对于transition的一个核心问题是时间哪里来的" class="headerlink" title="对于transition的一个核心问题是时间哪里来的"></a>对于transition的一个核心问题是时间哪里来的</h1><p>因为name这些感觉能拿到, 拼接也就当然</p>
+<p>而 transition包裹的内部元素销毁，如果能拿到时间，那其实跟keep-alive 原理类似，在时间以后再销毁即可</p>
+<p>然而我们并没有传递一个时间给元素，它却能知道时间</p>
+<h1 id="source-code"><a href="#source-code" class="headerlink" title="source code"></a>source code</h1><h2 id="vue2"><a href="#vue2" class="headerlink" title="vue2"></a>vue2</h2><p><code>src/platforms/web/runtime/transition-util.js</code></p>
+<p>中</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">export</span> function <span class="title">getTransitionInfo</span> <span class="params">(el: Element, expectedType?: ?<span class="built_in">string</span>)</span>: </span>&#123;</span><br><span class="line">  type: ?<span class="built_in">string</span>;</span><br><span class="line">  propCount: number;</span><br><span class="line">  timeout: number;</span><br><span class="line">  hasTransform: boolean;</span><br><span class="line">&#125; &#123;</span><br><span class="line">  <span class="keyword">const</span> styles: any = window.getComputedStyle(el)</span><br><span class="line">  <span class="comment">// JSDOM may return undefined for transition properties</span></span><br><span class="line">  const transitionDelays: Array&lt;string&gt; = (styles[transitionProp + 'Delay'] || '').split(', ')</span><br><span class="line">  const transitionDurations: Array&lt;string&gt; = (styles[transitionProp + 'Duration'] || '').split(', ')</span><br><span class="line">  <span class="keyword">const</span> transitionTimeout: number = getTimeout(transitionDelays, transitionDurations)</span><br><span class="line">  const animationDelays: Array&lt;string&gt; = (styles[animationProp + 'Delay'] || '').split(', ')</span><br><span class="line">  const animationDurations: Array&lt;string&gt; = (styles[animationProp + 'Duration'] || '').split(', ')</span><br><span class="line">  <span class="keyword">const</span> animationTimeout: number = getTimeout(animationDelays, animationDurations)</span><br></pre></td></tr></table></figure>
+<h2 id="vue3"><a href="#vue3" class="headerlink" title="vue3"></a>vue3</h2><p><code>packages/runtime-dom/src/components/Transition.ts</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">export function getTransitionInfo(</span><br><span class="line">  el: Element,</span><br><span class="line">  expectedType?: TransitionProps[&apos;type&apos;]</span><br><span class="line">): CSSTransitionInfo &#123;</span><br><span class="line">  const styles: any = window.getComputedStyle(el)</span><br><span class="line">  // JSDOM may return undefined for transition properties</span><br><span class="line">  const getStyleProperties = (key: string) =&gt; (styles[key] || &apos;&apos;).split(&apos;, &apos;)</span><br><span class="line">  const transitionDelays = getStyleProperties(TRANSITION + &apos;Delay&apos;)</span><br><span class="line">  const transitionDurations = getStyleProperties(TRANSITION + &apos;Duration&apos;)</span><br><span class="line">  const transitionTimeout = getTimeout(transitionDelays, transitionDurations)</span><br><span class="line">  const animationDelays = getStyleProperties(ANIMATION + &apos;Delay&apos;)</span><br><span class="line">  const animationDurations = getStyleProperties(ANIMATION + &apos;Duration&apos;)</span><br><span class="line">  const animationTimeout = getTimeout(animationDelays, animationDurations)</span><br></pre></td></tr></table></figure>
+<h2 id="所以"><a href="#所以" class="headerlink" title="所以"></a>所以</h2><p>核心是<code>window.getComputedStyle</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-07-06-dockerharbor/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +320,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -335,7 +433,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -452,7 +550,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -552,7 +650,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -605,107 +703,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-04-27-gogs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/21-04-27-gogs/" class="post-title-link" itemprop="url">gogs with docker 破事水</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-04-27 00:00:00" itemprop="dateCreated datePublished" datetime="2021-04-27T00:00:00+08:00">2021-04-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/21-04-27-gogs/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-04-27-gogs/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="起"><a href="#起" class="headerlink" title="起"></a>起</h1><p>众所周知，我电脑目前只有16G，虽然Ubuntu本身吃不了多少内存，要同时开Dota2,VMware，Chrome之类的，gitlab/jenkins对我来说已经太大了</p>
-<p>要想在自己本地电脑上玩个git server，（虽然也没啥卵用，毕竟一般来说私有的本地git就管理了不需要server，公开的都丢github</p>
-<p>就要找一个小内存占用的</p>
-<h1 id="用"><a href="#用" class="headerlink" title="用"></a>用</h1><p>建立一个宿主上的存放<code>gogs</code>数据的文件夹，我这边数据类都丢在<code>/data</code>里，所以我这是<code>mkdir -p /data/gogs</code></p>
-<p>然后启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /data/gogs:/data gogs/gogs</span><br></pre></td></tr></table></figure>
-<p>然后网页开<code>localhost:10080</code>就好了</p>
-<p>这里需要注意的是git设置用<code>[git@192.XXX.XXX.XXX:10022]:cromarmot/demo.git</code>的形式</p>
-<h1 id="合"><a href="#合" class="headerlink" title="合"></a>合</h1><p>这样就可以dota2+vmware+chrome+nextcloud+gogs了，好耶，虽然也不知道有啥卵用</p>
-<p><a href="https://github.com/gogs/gogs/tree/main/docker" target="_blank" rel="noopener">https://github.com/gogs/gogs/tree/main/docker</a></p>
-
       
     </div>
 
@@ -789,7 +786,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-count">107</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -802,7 +799,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">123</span>
+        <span class="site-state-item-count">124</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

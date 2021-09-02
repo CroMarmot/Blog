@@ -191,6 +191,142 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/13-01-01-trinity.rdf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/13-01-01-trinity.rdf/" class="post-title-link" itemprop="url">Trinity RDF</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2013-01-01 01:01:01" itemprop="dateCreated datePublished" datetime="2013-01-01T01:01:01+08:00">2013-01-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/notes/" itemprop="url" rel="index"><span itemprop="name">notes</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/13-01-01-trinity.rdf/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="13-01-01-trinity.rdf/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>dgraph engine for web scale rdf data</p>
+<h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><p>  现有的对于网络范围的RDF数据现有依然不是高效的,内部存储不用bitmap,other operations,</p>
+<h1 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h1><p>挑战:可扩展性(急切)和普遍性,需要分布式,现有依然三元组,join巨大中间结果,过大的开销 通常指数级 ,现有不支持更有意义的查询 仅仅对SPARQL优化</p>
+<p>作者的成就:分布式,处理billion even trillion triples ,不用 relational tables and bitmap matrices,build on top of a memory cloud,首先说 随机访问的情况下 用硬盘储存三元组不够优良 ,就算有好的索引也会因为额外的join操作,作为主要的查询中 耗时,in-memory graph exploration instead of join operations for SPARQL processing ,作为对比 之前的系统 孤立使用自己划分的三元组 没有用已有的 造成了很大的中间额外开销,介绍如何降低join 数量 如何降低中间过程的大小,并且就算没有足够好的划分 也有优秀的性能,我们允许大范围的图分析</p>
+<ol>
+<li>新的基于图表的管理RDF数据 ,有对于RDf 高效基于图查询 和 图分析 的可能性</li>
+<li>新的查询规范(相对于SPARQL)有效的提高性能 减少总监结果 和提高系统可扩展性</li>
+<li>新的价值模型 新的基数估计基数 分布式查询生成的优化算法 ,这些成果提供 在web 范围 RDF数据上 出色的性能</li>
+</ol>
+<p>Section 2  join操作 和 图探索 的区别. Section 3 Trinity.RDF 系统的架构. Section 4 how we model RDF data as native graphs. Section 5 describes SPARQL query processing techniques. Section 6 shows experimental results. We conclude in Section 8.</p>
+<h1 id="Join-vs-Graph-Exploration"><a href="#Join-vs-Graph-Exploration" class="headerlink" title="Join vs. Graph Exploration"></a>Join vs. Graph Exploration</h1><p>RDF and SPARQL 的介绍 和 缺点(join 耗费高 中间无用结果大)</p>
+<p>图探索 介绍方法 并说需要更高效的储存方式来适应这种方法 用native graph 会把原来的每次 读入O(log N)的时间复杂度降低为O(1) 需要搜索的顺序优化来 </p>
+<h1 id="System-Architecture"><a href="#System-Architecture" class="headerlink" title="System Architecture"></a>System Architecture</h1><p>就是图储存,并且完全存在内存里 (因为是分布式的所以才可以储存这么多)</p>
+<p>架构client,proxy,string server,trinity machine [看来陈榕老师就是按照这样的思路改的代码</p>
+<h1 id="Data-Modeling"><a href="#Data-Modeling" class="headerlink" title="Data Modeling"></a>Data Modeling</h1><p>(node-id, in-adjacency-list, out-adjacency-listi)</p>
+<p>讲图分割问题 对于自然图 用大度的点 连接点来决定放置未知 以及使用 in out<strong>间接id</strong>  可以有效减少发送数据交流量</p>
+<p>但是对于邻点少的来说用另一种方法更好 同一个点的in和out放在同一个机器上的方法</p>
+<p>还用了</p>
+<ul>
+<li>本地 谓词索引 sort all (predicate, node-id )</li>
+<li>全局的 谓词索引 (predicate, hsubject-list i , object-list i i)</li>
+</ul>
+<p>提供基本图操作</p>
+<ol>
+<li>LoadNodes(predicate, direction): Return nodes that have an incoming or outgoing edge labeled as predicate. 使用全局谓词索引</li>
+<li>LoadNeighborsOnMachine(node, direction, machine i): For a given node, return its incoming or outgoing neighbors that reside on machine i. 返回的是上面的间接id</li>
+<li>SelectByPredicate(nid, predicate): From a given partial adjacency list specified by nid, return nodes that are labeled with the given predicate.<br>Figure 4.<br>LoadNodes(l2 , out) finds n2 on machine 1, and n3 on machine 2. LoadNeighborsOnMachine(n0 , in, 1) returns the partial adjacency list’s id in1 , and SelectByP redicate(in1 , l2 ) returns n2 .</li>
+</ol>
+<h1 id="Query-Processing"><a href="#Query-Processing" class="headerlink" title="Query Processing"></a>Query Processing</h1><p>先把 查询Q拆分为 q1 q2 q3…qn，然后让它们并行寻找 再最后再和并</p>
+<h2 id="单个q的匹配方式"><a href="#单个q的匹配方式" class="headerlink" title="单个q的匹配方式"></a>单个q的匹配方式</h2><p>For a triple pattern q, our goal is to find all its matches R(q). Let P de[notes] the predicate in q, V denote the variables in q, and B(V ) denote the binding of V . If V is a free variable (not bound), we also use B(V ) to denote all possible values V can take.</p>
+<p>从 S 去找 O ,写作q→</p>
+<p>从 O 去找 S ,写作q←</p>
+<p>分为两个阶段</p>
+<p>src</p>
+<p>用LoadNodes(本机)找到基于 所有可能predicate 的所有可能的src </p>
+<p>对于所有可能src  在所有机器LoadNeighborsOnMachine(有远端操作)找<code>nid_i</code> 把结果M再发给所有机器</p>
+<p>tgt</p>
+<p>对于收到的结果M 的每一个(src,nid)</p>
+<p>找所有的可能的predicate</p>
+<p>用 SelectByPredicate(本机) 交 所有可能的tgt 得到R</p>
+<p>方案是 合并相邻 的操作来减少中间过程的损耗</p>
+<p>然后讲优化 也就是顺序优化</p>
+<p>注意到用了合并以后 前面j个操作 只要集合相同 那么结果与前面j个的内部顺序无关</p>
+<p>我们使用 启发式算法</p>
+<p>Heuristic 1. We expand a subgraph from its exploration point. We combine two subgraphs by connecting their exploration points.</p>
+<p>Property 1. We expand a subgraph or combine two subgraphs through an edge. The two nodes on both ends of the edge are valid exploration points in the new graph.</p>
+<p>Theorem 1. For a query graph G(V, E), the DP has time complexity O(n·|V |·|E|) where n is the number of connected subgraphs in G.</p>
+<p>Theorem 2. Any acyclic query Q with query graph G is guaranteed to have an exploration plan.</p>
+<p>Discussion. There are two cases we have not considered formally: i) G is cyclic, and ii) G contains a join on predicates.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/13-01-01-us-15-Seaborn-Exploiting-The-DRAM-Rowhammer-Bug-To-Gain-Kernel-Privileges/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +358,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -671,7 +807,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-count">107</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -684,7 +820,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">123</span>
+        <span class="site-state-item-count">124</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

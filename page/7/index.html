@@ -191,6 +191,134 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-05-21-vue-v-model-domProps/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-05-21-vue-v-model-domProps/" class="post-title-link" itemprop="url">vue vmodel domprops</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-05-21 11:20:14" itemprop="dateCreated datePublished" datetime="2020-05-21T11:20:14+08:00">2020-05-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-05-21-vue-v-model-domProps/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-05-21-vue-v-model-domProps/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>在业务页面 希望对输入框进行额外操作，例如 当输入长度大于 10则截取到前10位</p>
+<p>BUG产生，业务页面写了如下的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">data()&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    someInputValue:&apos;&apos;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">watch:&#123;</span><br><span class="line">  someInputValue(newVal)&#123;</span><br><span class="line">    this.someInputValue = newVal.substr(0,10);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后 前技术经理写的输入框 却可以一直输入</p>
+<p>我用render函数 写的没有问题</p>
+<p>直接裸的input也没问题</p>
+<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p>加了一堆console，基本确定bug的原理是</p>
+<ol>
+<li>内部输入更新</li>
+<li>触发组件emit</li>
+<li>业务页面得到超过长度的值</li>
+<li>修改为只有长度为10的值</li>
+<li>通过props传递给组件</li>
+<li>触发组件内对value的watch (这次能成功</li>
+<li>用户继续输入</li>
+<li>触发组件emit</li>
+<li>业务页面得到超过长度的值</li>
+<li>修改为只有长度为10的值</li>
+<li>通过props传递给组件</li>
+<li>没有触发组件内对value的watch</li>
+</ol>
+<h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><p>官方直接<code>input</code>能用，但不知道是怎么封装的</p>
+<p>我封装的是参考<code>https://cn.vuejs.org/v2/guide/render-function.html#v-model</code>的</p>
+<p>然而,如果你直接尝试上面所写的你会发现并不如愿</p>
+<p>没有使用watch，而是使用<code>domProps</code></p>
+<p>我封装的是参考<code>https://cn.vuejs.org/v2/guide/render-function.html#v-model</code>的没有使用watch，而是使用<code>domProps</code></p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>直接的话就是用<code>domProps</code> 但是有个问题，如果使用者</p>
+<p>另外的话，我本来实现的是会提供一个接受过滤函数的props，业务层可以传递过滤函数而不是通过外部watch</p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>目前看起来，双向绑定就应该做全，不要单向使用。</p>
+<p>有些时候不设置默认值？</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;v-model&lt;/h1&gt;</span><br><span class="line">    &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">      &lt;div&gt; input(默认)&lt;input v-model=&quot;x1&quot;&gt; &#123;&#123; x1 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input2(官方文档)&lt;Input2 v-model=&quot;x2&quot; /&gt;  &#123;&#123; x2 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input3(我)&lt;Input3 v-model=&quot;x3&quot; /&gt;      &#123;&#123; x3 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input4(历史遗留代码)&lt;Input4 v-model=&quot;x4&quot; /&gt;      &#123;&#123; x4 &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;h1&gt;@input only&lt;/h1&gt;</span><br><span class="line">    &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">      &lt;div&gt;input(默认)&lt;input @input=&quot;(e)=&gt;&#123;input1 = e.target.value;&#125;&quot;&gt;    &#123;&#123; input1 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input2(官方)&lt;Input2 @input=&quot;(v)=&gt;&#123;input2=v;&#125;&quot; /&gt;    &#123;&#123; input2 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input3(我)&lt;Input3 @input=&quot;(v)=&gt;&#123;input3=v;&#125;&quot; /&gt;    &#123;&#123; input3 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input4(历史遗留代码)&lt;Input4 @input=&quot;(v)=&gt;&#123;input4=v;&#125;&quot; /&gt;    &#123;&#123; input4 &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    Input3: &#123;</span><br><span class="line">      name: &apos;FormInputJsx&apos;,</span><br><span class="line">      // inheritAttrs: false,</span><br><span class="line">      props: &#123;</span><br><span class="line">        inputFilter: &#123;</span><br><span class="line">          type: Function,</span><br><span class="line">          default: null</span><br><span class="line">        &#125;,</span><br><span class="line">        // 传入类型</span><br><span class="line">        value: String</span><br><span class="line">      &#125;,</span><br><span class="line">      data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          valueIn: this.value</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      methods: &#123;</span><br><span class="line">        updateValue(value) &#123;</span><br><span class="line">          let newVal = value</span><br><span class="line">          if (this.inputFilter) &#123;</span><br><span class="line">            newVal = this.inputFilter(newVal)</span><br><span class="line">          &#125;</span><br><span class="line">          // this.valueIn = newVal</span><br><span class="line">          // if (this.$refs.input.value !== this.valueIn) &#123;</span><br><span class="line">          //   this.$refs.input.value = this.valueIn</span><br><span class="line">          // &#125;</span><br><span class="line">          this.$emit(&apos;input&apos;, newVal)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      render(h) &#123;</span><br><span class="line">        const inputConfig = &#123;</span><br><span class="line">          ref: &apos;input&apos;,</span><br><span class="line">          // input 原始属性不改动 自动下发-</span><br><span class="line">          // attrs: Object.assign(&#123; ...this.$attrs &#125;),</span><br><span class="line">          on: Object.assign(&#123; ...this.$listeners &#125;, &#123;</span><br><span class="line">            input: event =&gt; this.updateValue(event.target.value) // 输入框改变</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        if (typeof this.value !== &apos;undefined&apos;) &#123;</span><br><span class="line">          inputConfig.domProps = &#123;</span><br><span class="line">            value: this.value</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return h(&apos;input&apos;, inputConfig)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Input4: &#123;</span><br><span class="line">      render(h) &#123;</span><br><span class="line">        const self = this</span><br><span class="line">        return h(&apos;input&apos;, &#123;</span><br><span class="line">          domProps: &#123;</span><br><span class="line">            value: self.value</span><br><span class="line">          &#125;,</span><br><span class="line">          on: &#123;</span><br><span class="line">            input (event) &#123;</span><br><span class="line">              self.Amount = event.target.value</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      props: &#123;</span><br><span class="line">        value: &#123;</span><br><span class="line">          type: String,</span><br><span class="line">          default: &apos;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          Amount: &apos;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      watch: &#123;</span><br><span class="line">        value(newVal) &#123;</span><br><span class="line">          this.Amount = newVal</span><br><span class="line">        &#125;,</span><br><span class="line">        Amount(newVal) &#123;</span><br><span class="line">          // 从前截取 不带$</span><br><span class="line">          this.Amount = newVal.match(/^\d*(\.?\d&#123;0,2&#125;)/g)[0] || &apos;&apos;</span><br><span class="line">          if (isNaN(this.Amount)) &#123;</span><br><span class="line">            this.Amount = &apos;&apos;</span><br><span class="line">          &#125;</span><br><span class="line">          this.$emit(&apos;input&apos;, this.Amount)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Input2: &#123;</span><br><span class="line">      props: [&apos;value&apos;],</span><br><span class="line">      render (createElement) &#123;</span><br><span class="line">        const self = this</span><br><span class="line">        return createElement(&apos;input&apos;, &#123;</span><br><span class="line">          domProps: &#123;</span><br><span class="line">            value: self.value</span><br><span class="line">          &#125;,</span><br><span class="line">          on: &#123;</span><br><span class="line">            input (event) &#123;</span><br><span class="line">              self.$emit(&apos;input&apos;, event.target.value)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      x1: &apos;&apos;,</span><br><span class="line">      x2: &apos;&apos;,</span><br><span class="line">      x3: &apos;&apos;,</span><br><span class="line">      x4: &apos;&apos;,</span><br><span class="line">      input1: &apos;&apos;,</span><br><span class="line">      input2: &apos;&apos;,</span><br><span class="line">      input3: &apos;&apos;,</span><br><span class="line">      input4: &apos;&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    x1(nv) &#123;</span><br><span class="line">      this.x1 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x2(nv) &#123;</span><br><span class="line">      this.x2 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x3(nv) &#123;</span><br><span class="line">      this.x3 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x4(nv) &#123;</span><br><span class="line">      this.x4 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input1(nv) &#123;</span><br><span class="line">      this.input1 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input2(nv) &#123;</span><br><span class="line">      this.input2 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input3(nv) &#123;</span><br><span class="line">      this.input3 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input4(nv) &#123;</span><br><span class="line">      this.input4 = nv.substr(0, 3)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.row&#123;</span><br><span class="line">  display:flex;</span><br><span class="line">  flex-direction:column;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="https://cn.vuejs.org/v2/guide/render-function.html#v-model" target="_blank" rel="noopener">vue render v-model</a></p>
+<p><a href="https://github.com/vuejs/vue/pull/9331" target="_blank" rel="noopener">vue pull requests 9331</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-05-18-vue-v-model/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +350,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -331,7 +459,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -440,7 +568,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -543,7 +671,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -602,123 +730,6 @@
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Console/trace" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Console/trace</a></p>
 <p><a href="https://developers.google.com/web/tools/chrome-devtools/javascript/reference" target="_blank" rel="noopener">https://developers.google.com/web/tools/chrome-devtools/javascript/reference</a></p>
 <p><a href="https://developer.chrome.com/devtools/docs/blackboxing" target="_blank" rel="noopener">https://developer.chrome.com/devtools/docs/blackboxing</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-01-19-vsc-ENOSPC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-01-19-vsc-ENOSPC/" class="post-title-link" itemprop="url">vscode use out my file watchers</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-01-19 11:20:14" itemprop="dateCreated datePublished" datetime="2020-01-19T11:20:14+08:00">2020-01-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/ide/" itemprop="url" rel="index"><span itemprop="name">ide</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-01-19-vsc-ENOSPC/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-01-19-vsc-ENOSPC/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="ENOSPC"><a href="#ENOSPC" class="headerlink" title="ENOSPC"></a>ENOSPC</h1><p>启动其它项目报错 <code>ENOSPC: System limit for number of file watchers reached</code></p>
-<p>也可能它自己报<code>Visual Studio Code is unable to watch for file changes in this large workspace&quot; (error ENOSPC)</code></p>
-<p>多次尝试都是关掉vscode就好了，但之前一直没有更准确的定位问题,以及真的是它的锅吗</p>
-<p>网上更多的说改改系统的最大限制吧。</p>
-<p>先看看<code>cat /proc/sys/fs/inotify/max_user_watches</code>，大多都是8192，然后说改<code>/etc/sysctl.conf</code>改到<code>fs.inotify.max_user_watches=524288</code></p>
-<p>作为一个网易云音乐不用sudo启动不了就拒绝使用网易云音乐的人，又怎么会轻易该系统的东西//虽然linux是真的好改</p>
-<p>我先是自己去看了 <code>ps -aux | grep code/code | awk &#39;{print $2}&#39; | xargs -I {} ls -1  /proc/{}/fd | wc</code> 占用不算多也不算少但是和8192还是差几个数量级(以2为基的数量级)</p>
-<p>然后又搜了些资料，大概有<code>anon_inode</code>和<code>inotify</code>这两个关键字，但没具体说是怎么查看</p>
-<p>最后是搜到了这个脚本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line"># Get the procs sorted by the number of inotify watchers</span><br><span class="line">#</span><br><span class="line"># From `man find`: </span><br><span class="line">#    %h     Leading directories of file&apos;s name (all but the last element).  If the file name contains no slashes  (since  it</span><br><span class="line">#           is in the current directory) the %h specifier expands to `.&apos;.</span><br><span class="line">#    %f     File&apos;s name with any leading directories removed (only the last element).</span><br><span class="line">lines=$(</span><br><span class="line">    find /proc/*/fd \</span><br><span class="line">    -lname anon_inode:inotify \</span><br><span class="line">    -printf &apos;%hinfo/%f\n&apos; 2&gt;/dev/null \</span><br><span class="line">    \</span><br><span class="line">    | xargs grep -c &apos;^inotify&apos;  \</span><br><span class="line">    | sort -n -t: -k2 -r \</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">printf &quot;\n%10s\n&quot; &quot;INOTIFY&quot;</span><br><span class="line">printf &quot;%10s\n&quot; &quot;WATCHER&quot;</span><br><span class="line">printf &quot;%10s  %5s     %s\n&quot; &quot; COUNT &quot; &quot;PID&quot; &quot;CMD&quot;</span><br><span class="line">printf -- &quot;----------------------------------------\n&quot;</span><br><span class="line">for line in $lines; do</span><br><span class="line">    watcher_count=$(echo $line | sed -e &apos;s/.*://&apos;)</span><br><span class="line">    pid=$(echo $line | sed -e &apos;s/\/proc\/\([0-9]*\)\/.*/\1/&apos;)</span><br><span class="line">    cmdline=$(ps --columns 120 -o command -h -p $pid) </span><br><span class="line">    printf &quot;%8d  %7d  %s\n&quot; &quot;$watcher_count&quot; &quot;$pid&quot; &quot;$cmdline&quot;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-<p>也就是 <code>/proc/具体pid/fdinfo/具体文件</code> 的以inotify开头的</p>
-<p>这个也可以通过<code>/proc/具体pid/fd/具体fd -&gt; anon_inode:inotify</code>查看有哪个<code>symbolic link</code>是指向<code>anon_inode:inotify</code></p>
-<p>可以看到其它的程序都用很少，就<code>idea-IU-193.5662.53/bin/fsnotifier64</code>和<code>/usr/share/code/code</code>使用是在4000数量级的</p>
-<p>然后启动一个node 又是1000+</p>
-<p>所以最后还是<code>改系统配置</code>+<code>改vsc的排除文件</code></p>
-<h1 id="inotify"><a href="#inotify" class="headerlink" title="inotify"></a>inotify</h1><p>TODO 记录的意义，和具体文件查看</p>
-<p><code>1024    inotify wd:175 ino:a7cc6 sdev:800002 mask:fc6 ignored_mask:0 fhandle-bytes:8 fhandle-type:1 f_handle:c67c0a00f48cb089</code></p>
-<p>TODO 我记得最开始跑脚本有看到vscode用8000+ 的难道我看错了？反正后来暂时没有重现</p>
-<h1 id="vscode-的建议"><a href="#vscode-的建议" class="headerlink" title="vscode 的建议"></a>vscode 的建议</h1><p>一个也是改系统的</p>
-<p>另一个是增加配置中<code>files.watcherExclude</code>的文件glob描述,增加以后 再启动似乎从8000+降低到1000+ (需要重启)</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://howchoo.com/g/m2uzodviywm/node-increase-file-watcher-system-limit" target="_blank" rel="noopener">https://howchoo.com/g/m2uzodviywm/node-increase-file-watcher-system-limit</a></p>
-<p><a href="https://unix.stackexchange.com/questions/15509/whos-consuming-my-inotify-resources/426001#426001" target="_blank" rel="noopener">https://unix.stackexchange.com/questions/15509/whos-consuming-my-inotify-resources/426001#426001</a></p>
-<p><a href="https://github.com/fatso83/dotfiles/blob/master/utils/scripts/inotify-consumers" target="_blank" rel="noopener">https://github.com/fatso83/dotfiles/blob/master/utils/scripts/inotify-consumers</a></p>
-<p><a href="https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc" target="_blank" rel="noopener">https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc</a></p>
-<p><a href="https://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/proc.html" target="_blank" rel="noopener">https://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/proc.html</a></p>
-<p><a href="http://man7.org/linux/man-pages/man7/inotify.7.html" target="_blank" rel="noopener">http://man7.org/linux/man-pages/man7/inotify.7.html</a></p>
 
       
     </div>
@@ -803,7 +814,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-count">107</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -816,7 +827,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">123</span>
+        <span class="site-state-item-count">124</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

@@ -191,6 +191,118 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-09-21-tasks-microtasks-queues-and-schedules/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-09-21-tasks-microtasks-queues-and-schedules/" class="post-title-link" itemprop="url">宏任务 微任务</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-09-21 16:58:14" itemprop="dateCreated datePublished" datetime="2020-09-21T16:58:14+08:00">2020-09-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-09-21-tasks-microtasks-queues-and-schedules/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-09-21-tasks-microtasks-queues-and-schedules/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>setTimeout 启动的宏任务</p>
+<p>promise(以及await的写法) 和 observer 都是微任务</p>
+<p>执行是单线程，当宏任务执行完后，把所有等待的微任务执行后，才会执行下一个宏任务。</p>
+<p>然后作者举例了一个稍微特殊一点的，html的事件冒泡，父子元素都有点击事件。</p>
+<ul>
+<li><p>鼠标点击子元素。分发是靠浏览器分发，对于js的任务是两个click。</p>
+</li>
+<li><p>代码调用子元素点击事件，也会触发冒泡，但是对于js的任务是 这个调用代码。</p>
+</li>
+</ul>
+<p>因此上面两种看似相同的点击会有不同的执行顺序。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/" target="_blank" rel="noopener">https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/</a></p>
+<p>有精力建议，直接看上面原文，作者的demo做得很好的！</p>
+<p>以外的话 还有mdn的文档看</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide</a></p>
+<p><a href="https://zh.javascript.info/event-loop" target="_blank" rel="noopener">https://zh.javascript.info/event-loop</a></p>
+<p><a href="https://stackoverflow.com/questions/25915634/difference-between-microtask-and-macrotask-within-an-event-loop-context" target="_blank" rel="noopener">https://stackoverflow.com/questions/25915634/difference-between-microtask-and-macrotask-within-an-event-loop-context</a></p>
+<p>对于不应该阻塞事件循环的耗时长的繁重计算任务，我们可以使用 Web Workers。<a href="https://html.spec.whatwg.org/multipage/workers.html" target="_blank" rel="noopener">https://html.spec.whatwg.org/multipage/workers.html</a></p>
+<p>这是在另一个并行线程中运行代码的方式。</p>
+<p>Web Workers 可以与主线程交换消息，但是它们具有自己的变量和事件循环。</p>
+<p>Web Workers 没有访问 DOM 的权限，因此，它们对于同时使用多个 CPU 内核的计算非常有用。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-08-28-redisinit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +334,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -334,7 +446,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -437,7 +549,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -548,7 +660,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
+                <time title="修改時間：2021-09-02 17:43:00" itemprop="dateModified" datetime="2021-09-02T17:43:00+08:00">2021-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -602,98 +714,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-07-14-md5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-07-14-md5/" class="post-title-link" itemprop="url">md5</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-07-14 10:37:14" itemprop="dateCreated datePublished" datetime="2020-07-14T10:37:14+08:00">2020-07-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-09-01 10:10:57" itemprop="dateModified" datetime="2021-09-01T10:10:57+08:00">2021-09-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-07-14-md5/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-07-14-md5/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="数学事实"><a href="#数学事实" class="headerlink" title="数学事实"></a>数学事实</h1><p>反复线性和非线性交替计算</p>
-<h1 id="代码js"><a href="#代码js" class="headerlink" title="代码js"></a>代码js</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">md5</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">RotateLeft</span>(<span class="params">lValue, iShiftBits</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((lValue &lt;&lt; iShiftBits) | (lValue &gt;&gt;&gt; (<span class="number">32</span> - iShiftBits))) &amp; <span class="number">0xFFFFFFFF</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">unsignAdd</span>(<span class="params">lX, lY</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((lX &amp; <span class="number">0xFFFFFFFF</span>) + (lY &amp; <span class="number">0xFFFFFFFF</span>) ) &amp; <span class="number">0xFFFFFFFF</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// (a,b,c,d) = (d, ((a+f(b,c,d) + data + Ki)&lt;&lt;&lt; s)+b, b, c)</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a, b, c, d, x, s, ac, Fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> unsignAdd(RotateLeft(unsignAdd(a, unsignAdd(unsignAdd(Fn(b, c, d), x), ac)), s), b);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">ConvertToWordArray</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> lWordCount;</span><br><span class="line">    <span class="keyword">let</span> lMessageLength = string.length;</span><br><span class="line">    <span class="comment">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER</span></span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords_temp1 = lMessageLength + <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords_temp2 = (lNumberOfWords_temp1 - (lNumberOfWords_temp1 % <span class="number">64</span>)) / <span class="number">64</span>;</span><br><span class="line">    <span class="keyword">let</span> lNumberOfWords = (lNumberOfWords_temp2 + <span class="number">1</span>) * <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">let</span> lWordArray = <span class="built_in">Array</span>(lNumberOfWords - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">let</span> lBytePosition = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> lByteCount = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (lByteCount &lt; lMessageLength) &#123;</span><br><span class="line">      lWordCount = (lByteCount - (lByteCount % <span class="number">4</span>)) / <span class="number">4</span>;</span><br><span class="line">      lBytePosition = (lByteCount % <span class="number">4</span>) * <span class="number">8</span>;</span><br><span class="line">      lWordArray[lWordCount] = (lWordArray[lWordCount] | (string.charCodeAt(lByteCount) &lt;&lt; lBytePosition));</span><br><span class="line">      lByteCount++;</span><br><span class="line">    &#125;</span><br><span class="line">    lWordCount = (lByteCount - (lByteCount % <span class="number">4</span>)) / <span class="number">4</span>;</span><br><span class="line">    lBytePosition = (lByteCount % <span class="number">4</span>) * <span class="number">8</span>;</span><br><span class="line">    lWordArray[lWordCount] = lWordArray[lWordCount] | (<span class="number">0x80</span> &lt;&lt; lBytePosition);</span><br><span class="line">    lWordArray[lNumberOfWords - <span class="number">2</span>] = lMessageLength &lt;&lt; <span class="number">3</span>;</span><br><span class="line">    lWordArray[lNumberOfWords - <span class="number">1</span>] = lMessageLength &gt;&gt;&gt; <span class="number">29</span>;</span><br><span class="line">    <span class="keyword">return</span> lWordArray;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">WordToHex</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> WordToHexValue = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">      WordToHexValue += <span class="string">`0<span class="subst">$&#123;((v &gt;&gt;&gt; (i * <span class="number">8</span>)) &amp; <span class="number">0xFF</span>).toString(<span class="number">16</span>)&#125;</span>`</span>.substr(<span class="number">-2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> WordToHexValue;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Utf8Encode</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> utftext = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> n = <span class="number">0</span>; n &lt; string.length; n++) &#123;</span><br><span class="line">      <span class="keyword">let</span> c = string.charCodeAt(n);</span><br><span class="line">      <span class="keyword">if</span> (c &lt; <span class="number">128</span>) &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode(c);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> ((c &gt; <span class="number">127</span>) &amp;&amp; (c &lt; <span class="number">2048</span>)) &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &gt;&gt; <span class="number">6</span>) | <span class="number">192</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &gt;&gt; <span class="number">12</span>) | <span class="number">224</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode(((c &gt;&gt; <span class="number">6</span>) &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">        utftext += <span class="built_in">String</span>.fromCharCode((c &amp; <span class="number">63</span>) | <span class="number">128</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> utftext;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">let</span> x = ConvertToWordArray(Utf8Encode(string));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> funcs = [</span><br><span class="line">    (x,y,z) =&gt; ((x &amp; y) | ((~x) &amp; z) ),</span><br><span class="line">    (x,y,z) =&gt; ((x &amp; z) | (y &amp; (~z))),</span><br><span class="line">    (x,y,z) =&gt; (x ^ y ^ z),</span><br><span class="line">    (x,y,z) =&gt; (y ^ (x | (~z)))</span><br><span class="line">  ];</span><br><span class="line">  <span class="comment">// K = abs(sin(i+1))*(2^32) int part</span></span><br><span class="line">  <span class="comment">// https://softwareengineering.stackexchange.com/questions/89694/md5-implementation-notes</span></span><br><span class="line">  <span class="keyword">const</span> K = [ <span class="number">0xD76AA478</span> ,<span class="number">0xE8C7B756</span> ,<span class="number">0x242070DB</span> ,<span class="number">0xC1BDCEEE</span> ,<span class="number">0xF57C0FAF</span> ,<span class="number">0x4787C62A</span> ,<span class="number">0xA8304613</span> ,<span class="number">0xFD469501</span> ,<span class="number">0x698098D8</span> ,<span class="number">0x8B44F7AF</span> ,<span class="number">0xFFFF5BB1</span> ,<span class="number">0x895CD7BE</span> ,<span class="number">0x6B901122</span> ,<span class="number">0xFD987193</span> ,<span class="number">0xA679438E</span> ,<span class="number">0x49B40821</span> ,<span class="number">0xF61E2562</span> ,<span class="number">0xC040B340</span> ,<span class="number">0x265E5A51</span> ,<span class="number">0xE9B6C7AA</span> ,<span class="number">0xD62F105D</span> ,<span class="number">0x02441453</span> ,<span class="number">0xD8A1E681</span> ,<span class="number">0xE7D3FBC8</span> ,<span class="number">0x21E1CDE6</span> ,<span class="number">0xC33707D6</span> ,<span class="number">0xF4D50D87</span> ,<span class="number">0x455A14ED</span> ,<span class="number">0xA9E3E905</span> ,<span class="number">0xFCEFA3F8</span> ,<span class="number">0x676F02D9</span> ,<span class="number">0x8D2A4C8A</span> ,<span class="number">0xFFFA3942</span> ,<span class="number">0x8771F681</span> ,<span class="number">0x6D9D6122</span> ,<span class="number">0xFDE5380C</span> ,<span class="number">0xA4BEEA44</span> ,<span class="number">0x4BDECFA9</span> ,<span class="number">0xF6BB4B60</span> ,<span class="number">0xBEBFBC70</span> ,<span class="number">0x289B7EC6</span> ,<span class="number">0xEAA127FA</span> ,<span class="number">0xD4EF3085</span> ,<span class="number">0x04881D05</span> ,<span class="number">0xD9D4D039</span> ,<span class="number">0xE6DB99E5</span> ,<span class="number">0x1FA27CF8</span> ,<span class="number">0xC4AC5665</span> ,<span class="number">0xF4292244</span> ,<span class="number">0x432AFF97</span> ,<span class="number">0xAB9423A7</span> ,<span class="number">0xFC93A039</span> ,<span class="number">0x655B59C3</span> ,<span class="number">0x8F0CCC92</span> ,<span class="number">0xFFEFF47D</span> ,<span class="number">0x85845DD1</span> ,<span class="number">0x6FA87E4F</span> ,<span class="number">0xFE2CE6E0</span> ,<span class="number">0xA3014314</span> ,<span class="number">0x4E0811A1</span> ,<span class="number">0xF7537E82</span> ,<span class="number">0xBD3AF235</span> ,<span class="number">0x2AD7D2BB</span> ,<span class="number">0xEB86D391</span> ] ;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> S = [[<span class="number">7</span>,<span class="number">12</span>,<span class="number">17</span>,<span class="number">22</span>],[<span class="number">5</span>,<span class="number">9</span>,<span class="number">14</span>,<span class="number">20</span>],[<span class="number">4</span>,<span class="number">11</span>,<span class="number">16</span>,<span class="number">23</span>],[<span class="number">6</span>,<span class="number">10</span>,<span class="number">15</span>,<span class="number">21</span>]];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> offset = [[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">5</span>,<span class="number">1</span>],[<span class="number">3</span>,<span class="number">5</span>],[<span class="number">7</span>,<span class="number">0</span>]];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 01234567 89abcdef fedcba98 76543210</span></span><br><span class="line">  <span class="keyword">let</span> abcd = [<span class="number">0x67452301</span>,<span class="number">0xEFCDAB89</span>,<span class="number">0x98BADCFE</span>,<span class="number">0x10325476</span>];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// http://www.faqs.org/rfcs/rfc1321.html</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> idx = <span class="number">0</span>; idx &lt; x.length; idx += <span class="number">16</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> ABCD = [...abcd];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; <span class="number">4</span>;i ++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>;j &lt; <span class="number">4</span>;j ++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> k = <span class="number">0</span>;k &lt; <span class="number">4</span>;k ++)&#123;</span><br><span class="line">          abcd = [abcd[<span class="number">3</span>],f(...abcd, x[idx + ((offset[i][<span class="number">0</span>]*(j*<span class="number">4</span>+k) + offset[i][<span class="number">1</span>] ) %<span class="number">16</span>)], S[i][k], K[(i*<span class="number">4</span>+j)*<span class="number">4</span>+k], funcs[i]),abcd[<span class="number">1</span>],abcd[<span class="number">2</span>]];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    abcd = ABCD.map(<span class="function">(<span class="params">item,idx</span>)=&gt;</span> unsignAdd(item,abcd[idx]));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> abcd.map(<span class="function"><span class="params">item</span>=&gt;</span>WordToHex(item)).join(<span class="string">''</span>).toLowerCase();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(md5(<span class="string">""</span>))</span><br><span class="line"><span class="built_in">console</span>.log(md5(<span class="string">"demo"</span>))</span><br></pre></td></tr></table></figure>
-<p>两段看起来复杂的函数 其实 是字符串通过utf8/ascii之类转换成 数值</p>
-<p>其中一些值和公式的设计大自能有个想法感受了，还不明白的是offset和s的设计为什么是这样的,搜了半天也没搜到</p>
-<p><a href="https://en.wikipedia.org/wiki/MD5" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/MD5</a></p>
-
       
     </div>
 
@@ -777,7 +797,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-count">107</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -790,7 +810,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Blog/tags/">
           
-        <span class="site-state-item-count">123</span>
+        <span class="site-state-item-count">124</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
