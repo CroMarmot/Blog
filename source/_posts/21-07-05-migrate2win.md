@@ -165,4 +165,4 @@ filezilla 左连wsl文件夹，右连Ubuntu ssh，可以不受文件mode影响�
 2. `/etc/resolv.conf` 每次是变化的，虽然一行命令能获取，但是`/etc/proxychains.conf` 里的配置不能配`$`还有点问题
 3. host能访问wsl2里暴露的端口，虽然好像端口冲突的报错有点不够理想，不过可以简单的靠改端口解决
 
-综上所述，要轻量，不如 VMware player + Xubuntu
+综上所述，要轻量，不如 VMware player + Xubuntu ( 但 有一说一启动比vmware快还是很香的
