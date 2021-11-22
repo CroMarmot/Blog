@@ -40,13 +40,11 @@ linux/wsl/常用 linux 命令
 
 ## 前端包工具
 
-npm/yarn [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md)
+[npm](https://www.npmjs.com/)/[yarn](https://yarnpkg.com/) , [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md)
 
-[Webpack](https://webpack.js.org/)
+[Webpack](https://webpack.js.org/)/[Rollup](https://rollupjs.org/guide/en/)/[Parcel](https://parceljs.org/)
 
 [Angular CLI](https://angular.io/cli)/[Nuxt](https://nuxtjs.org/)/[Next](https://nextjs.org/)/[Gatsby](https://www.gatsbyjs.com/)/[CRA](https://create-react-app.dev/)
-
-[rollup](https://rollupjs.org/guide/en/)
 
 [Bazel](https://docs.bazel.build/versions/main/build-javascript.html)
 
@@ -55,6 +53,8 @@ npm/yarn [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md)
 ## 样式
 
 [sass](https://sass-lang.com/)/[less](https://lesscss.org/)/[postcss](https://postcss.org/)
+
+[tailwind](https://tailwindcss.com/)
 
 [Angular Material](https://material.angular.io/)/[Element UI](https://element.eleme.cn/)/[Ant Design](https://ant.design/)
 
@@ -90,6 +90,10 @@ npm/yarn [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md)
 
 SSR
 
+[Flutter](https://flutter.dev/)
+
+[WASM](https://webassembly.org/)
+
 ## Testing
 
 单元:[Jasmine](https://jasmine.github.io/)/[Karma](https://karma-runner.github.io/latest/index.html)/[Jest](https://jestjs.io/)
@@ -107,6 +111,10 @@ e2e:
 条形码 [jsbarcode](https://github.com/lindell/JsBarcode)
 
 二维码 [qrcode](https://github.com/soldair/node-qrcode#api)
+
+## 图
+
+![2021 frontend roadmap](https://ares.decipherzone.com/blog-manager/uploads/ckeditor_frontend-developer-roadmap.png)
 
 # 常用知识
 
