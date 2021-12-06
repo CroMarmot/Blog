@@ -191,6 +191,109 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-08-23-vuedevtools/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-08-23-vuedevtools/" class="post-title-link" itemprop="url">vue 强制生产可调试</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-08-23 16:58:14" itemprop="dateCreated datePublished" datetime="2020-08-23T16:58:14+08:00">2020-08-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/frontend/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-08-23-vuedevtools/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-08-23-vuedevtools/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>直接用devtools就不说了</p>
+<p>现在说生产强制可调是，iqiyi为例</p>
+<p>首先进入 vuejs.org 保证 控制版上有Vue标签</p>
+<p>然后用同样的网页打开iqiyi保证 这个标签还存在</p>
+<p>Sources-&gt;Page -&gt; 右键 top -&gt; search in all files</p>
+<p>输入<code>file:* devtools</code> 搜索出文件</p>
+<p>找到你觉得可能的文件（iqiyi是common.balabala…），格式化(chrome的花括号)，在<code>devtools:!1</code>执行后一句加断点。</p>
+<p>刷新页面,在console中执行修改，例如<code>G.devtools = true;</code>，点调试的pause（暂停继续）按钮，切回Vue标签即可</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-08-10-pyramidprinciple/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +325,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -333,7 +436,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -436,7 +539,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -528,7 +631,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -624,162 +727,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-07-06-karma/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-07-06-karma/" class="post-title-link" itemprop="url">karma</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-07-06 11:20:14" itemprop="dateCreated datePublished" datetime="2020-07-06T11:20:14+08:00">2020-07-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-07-06-karma/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-07-06-karma/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><p>目前看到angular2+ 官方的使用是 karma + jasmine</p>
-<p>Can I use Karma with testing framework X?</p>
-<p>Yes. There are plugins for most of the common testing frameworks (such as Jasmine, Mocha, QUnit). If there is no plugin for the testing framework you like, go ahead and write one. It is simple - you can start by looking into the source code of the existing ones.</p>
-<p>karma创建一个web server。</p>
-<p>浏览器通过手动方位 karma server 监听的地址(默认9876),或者自动让karma 知道运行哪个browsers，来让浏览器可以被捕获</p>
-<p>可用的列表<a href="http://karma-runner.github.io/5.0/config/browsers.html" target="_blank" rel="noopener">http://karma-runner.github.io/5.0/config/browsers.html</a></p>
-<h1 id="karma-能力"><a href="#karma-能力" class="headerlink" title="karma 能力"></a>karma 能力</h1><p>见下面 paper的pdf内容</p>
-<p>在真实环境中测试</p>
-<p>支持远程控制</p>
-<p>执行速度快</p>
-<p>可以跟第三方 IDE 进行交互</p>
-<p>支持 ci 服务</p>
-<p>高扩展性，支持插件开发</p>
-<p>支持调试</p>
-<h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><p>paper 3.1的表</p>
-<p><img src="http://gtms04.alicdn.com/tps/i4/TB1eweqLXXXXXbvaXXX0ucn3VXX-964-384.png#alt=tests_tools_comparison" alt="阿里云"></p>
-<h1 id="主要目标"><a href="#主要目标" class="headerlink" title="主要目标"></a>主要目标</h1><p>paper 2.1</p>
-<ol>
-<li><p>真实设备上运行测试</p>
-</li>
-<li><p>远程控制</p>
-</li>
-<li><p>高效, 无缝隙使用流程</p>
-</li>
-<li><p>Integration with IDEs and text editors</p>
-</li>
-<li><p>Integration with CI Servers</p>
-</li>
-<li><p>扩展性</p>
-</li>
-<li><p>Debugging</p>
-</li>
-</ol>
-<p>包含 client/server,基于Http 通信</p>
-<h1 id="设计和分析"><a href="#设计和分析" class="headerlink" title="设计和分析"></a>设计和分析</h1><p>Chapter 4</p>
-<ul>
-<li><p>速度</p>
-</li>
-<li><p>可靠性</p>
-</li>
-<li><p>在真实浏览器上测试 并</p>
-</li>
-<li><p>seamless workflow</p>
-</li>
-</ul>
-<h1 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h1><p>paper 4.1</p>
-<p>监听文件</p>
-<p>与 client 进行通讯</p>
-<p>向开发者输出测试结果</p>
-<p>提供 client 端所需的资源文件</p>
-<h2 id="Manager"><a href="#Manager" class="headerlink" title="Manager"></a>Manager</h2><p>跟client双向通讯，例如开始和结束测试，收集测试结果</p>
-<h2 id="Web-Server"><a href="#Web-Server" class="headerlink" title="Web Server"></a>Web Server</h2><p>Web Server, 给客户端提供静态资源文件</p>
-<h2 id="Reporter"><a href="#Reporter" class="headerlink" title="Reporter"></a>Reporter</h2><p>给开发者输出报告</p>
-<h2 id="File-System-Watcher"><a href="#File-System-Watcher" class="headerlink" title="File System Watcher"></a>File System Watcher</h2><p>检测变化并通知client，类似 一些热更新之类的？</p>
-<h1 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h1><p>可以 多client 对1个server</p>
-<h2 id="Manager-1"><a href="#Manager-1" class="headerlink" title="Manager"></a>Manager</h2><p>和server双向通信</p>
-<h2 id="Testing-Framework"><a href="#Testing-Framework" class="headerlink" title="Testing Framework"></a>Testing Framework</h2><p>框架内自己没有，可以用很多三方的framework，例如上面的jasmine</p>
-<h2 id="Tests-and-Code-under-Test"><a href="#Tests-and-Code-under-Test" class="headerlink" title="Tests and Code under Test"></a>Tests and Code under Test</h2><p>这是开发者编写的内容了</p>
-<p>…….我感觉阿里社区里面那个翻译也不错。。可以不用继续啃英文了</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>测试的代码 全部在客户端运行，这个客户端是真实的客户端，它可以是chrome,firefox等等</p>
-<p>karma主要的工作是支撑测试的提供，例如静态文件服务，文件变化监听等，而具体代码测试内容是在karma启动的客户端(浏览器)中，依靠用户编写的测试代码和第三方测试框架完成的。</p>
-<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a href="http://karma-runner.github.io/5.0/intro/how-it-works.html" target="_blank" rel="noopener">http://karma-runner.github.io/5.0/intro/how-it-works.html</a></p>
-<p><a href="https://raw.githubusercontent.com/karma-runner/karma/master/thesis.pdf" target="_blank" rel="noopener">https://raw.githubusercontent.com/karma-runner/karma/master/thesis.pdf</a></p>
-<p><a href="https://fed.taobao.org/blog/taofed/do71ct/karma-origin/" target="_blank" rel="noopener">https://fed.taobao.org/blog/taofed/do71ct/karma-origin/</a></p>
-<p><a href="https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347" target="_blank" rel="noopener">https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -849,7 +796,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">109</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

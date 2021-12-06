@@ -191,6 +191,114 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-11-11-mkfifo-nc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/20-11-11-mkfifo-nc/" class="post-title-link" itemprop="url">mkfifo sh nc</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-11 21:58:14" itemprop="dateCreated datePublished" datetime="2020-11-11T21:58:14+08:00">2020-11-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-11-11-mkfifo-nc/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-11-11-mkfifo-nc/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="mkpipe"><a href="#mkpipe" class="headerlink" title="mkpipe"></a>mkpipe</h1><p>众所周知</p>
+<p><code>ls | grep hey</code>中的竖线是pipe，</p>
+<p>同样，我们可以用mkfifo创建命名的管道</p>
+<p>创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfifo /tmp/pipedemo</span><br></pre></td></tr></table></figure>
+<p>输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls &gt; /tmp/pipedemo</span><br></pre></td></tr></table></figure>
+<p>读出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &lt; /tmp/pipedemo</span><br></pre></td></tr></table></figure>
+<p>输入和读出不用保证执行顺序</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/20-11-11-mkfifo-nc/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-11-09-scroll/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +330,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -322,7 +430,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -419,7 +527,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -531,7 +639,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -594,109 +702,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-08-23-vuedevtools/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/20-08-23-vuedevtools/" class="post-title-link" itemprop="url">vue 强制生产可调试</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-08-23 16:58:14" itemprop="dateCreated datePublished" datetime="2020-08-23T16:58:14+08:00">2020-08-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-08-23-vuedevtools/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-08-23-vuedevtools/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>直接用devtools就不说了</p>
-<p>现在说生产强制可调是，iqiyi为例</p>
-<p>首先进入 vuejs.org 保证 控制版上有Vue标签</p>
-<p>然后用同样的网页打开iqiyi保证 这个标签还存在</p>
-<p>Sources-&gt;Page -&gt; 右键 top -&gt; search in all files</p>
-<p>输入<code>file:* devtools</code> 搜索出文件</p>
-<p>找到你觉得可能的文件（iqiyi是common.balabala…），格式化(chrome的花括号)，在<code>devtools:!1</code>执行后一句加断点。</p>
-<p>刷新页面,在console中执行修改，例如<code>G.devtools = true;</code>，点调试的pause（暂停继续）按钮，切回Vue标签即可</p>
-
       
     </div>
 
@@ -780,7 +785,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">109</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

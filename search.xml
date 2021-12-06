@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>currying 加法</title>
+      <link href="/Blog/21-12-06-currying-add/"/>
+      <url>/Blog/21-12-06-currying-add/</url>
+      
+        <content type="html"><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>一个支持 任意多参数，可以柯里化的加法函数</p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>直接返回函数 保留已传内容的加和</p><p>toString 支持输出值</p><h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> createF = <span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> b = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> createF(v + [...arguments].reduce(<span class="function">(<span class="params">s, cur</span>) =&gt;</span> s + cur, <span class="number">0</span>));</span><br><span class="line">    &#125;;</span><br><span class="line">    b.toString = <span class="function"><span class="params">()</span> =&gt;</span> v;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> createF([...arguments].reduce(<span class="function">(<span class="params">s, cur</span>) =&gt;</span> s + cur, <span class="number">0</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(+add(<span class="number">1</span>));</span><br><span class="line"><span class="built_in">console</span>.log(+add(<span class="number">1</span>, <span class="number">2</span>));</span><br><span class="line"><span class="built_in">console</span>.log(+add(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>));</span><br><span class="line"><span class="built_in">console</span>.log(+add(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>));</span><br><span class="line"><span class="keyword">const</span> x = add(<span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(+x(<span class="number">6</span>));</span><br><span class="line"><span class="built_in">console</span>.log(+x(<span class="number">7</span>)(<span class="number">8</span>));</span><br><span class="line"><span class="keyword">const</span> y = x(<span class="number">9</span>)(<span class="number">9</span>, <span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(+y());</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> code </category>
+          
+          <category> js </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> frontend </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端资料链接</title>
       <link href="/Blog/21-11-22-frontEndRoadmap/"/>
       <url>/Blog/21-11-22-frontEndRoadmap/</url>

@@ -191,6 +191,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-12-06-currying-add/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/21-12-06-currying-add/" class="post-title-link" itemprop="url">currying 加法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2021-12-06 00:00:00 / 修改時間：12:03:43" itemprop="dateCreated datePublished" datetime="2021-12-06T00:00:00+08:00">2021-12-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/21-12-06-currying-add/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-12-06-currying-add/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>一个支持 任意多参数，可以柯里化的加法函数</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>直接返回函数 保留已传内容的加和</p>
+<p>toString 支持输出值</p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> createF = <span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> b = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> createF(v + [...arguments].reduce(<span class="function">(<span class="params">s, cur</span>) =&gt;</span> s + cur, <span class="number">0</span>));</span><br><span class="line">    &#125;;</span><br><span class="line">    b.toString = <span class="function"><span class="params">()</span> =&gt;</span> v;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> createF([...arguments].reduce(<span class="function">(<span class="params">s, cur</span>) =&gt;</span> s + cur, <span class="number">0</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(+add(<span class="number">1</span>));</span><br><span class="line"><span class="built_in">console</span>.log(+add(<span class="number">1</span>, <span class="number">2</span>));</span><br><span class="line"><span class="built_in">console</span>.log(+add(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>));</span><br><span class="line"><span class="built_in">console</span>.log(+add(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>));</span><br><span class="line"><span class="keyword">const</span> x = add(<span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(+x(<span class="number">6</span>));</span><br><span class="line"><span class="built_in">console</span>.log(+x(<span class="number">7</span>)(<span class="number">8</span>));</span><br><span class="line"><span class="keyword">const</span> y = x(<span class="number">9</span>)(<span class="number">9</span>, <span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(+y());</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-11-22-frontEndRoadmap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -214,10 +304,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2021-11-22 00:00:00 / 修改時間：10:34:09" itemprop="dateCreated datePublished" datetime="2021-11-22T00:00:00+08:00">2021-11-22</time>
+              <time title="創建時間：2021-11-22 00:00:00" itemprop="dateCreated datePublished" datetime="2021-11-22T00:00:00+08:00">2021-11-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -360,7 +456,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -467,7 +563,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -571,7 +667,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -630,123 +726,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Blog/21-07-06-dockerharbor/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-07-05-migrate2win/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/21-07-05-migrate2win/" class="post-title-link" itemprop="url">迁移到win</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-07-05 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-05T00:00:00+08:00">2021-07-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/win/" itemprop="url" rel="index"><span itemprop="name">win</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/21-07-05-migrate2win/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-07-05-migrate2win/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="apt"><a href="#apt" class="headerlink" title="apt"></a>apt</h1><p>怀念 Debian apt 的好, 在windows上腾讯软件管家成了我的“apt”</p>
-<h1 id="以下是一些问题记录"><a href="#以下是一些问题记录" class="headerlink" title="以下是一些问题记录"></a>以下是一些问题记录</h1><h1 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h1><p>set <code>git bash</code> as default terminal</p>
-<h1 id="windows-terminal"><a href="#windows-terminal" class="headerlink" title="windows terminal"></a>windows terminal</h1><p>windows terminal 双击点击鼠标选择 在单词和行选择切换,而非空格分割和行之间切换</p>
-<p><a href="https://stackoverflow.com/questions/60441221/double-click-to-select-text-in-windows-terminal-selects-only-one-word" target="_blank" rel="noopener">https://stackoverflow.com/questions/60441221/double-click-to-select-text-in-windows-terminal-selects-only-one-word</a></p>
-<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><strong>更应该 不要 win和wsl共用磁盘</strong></p>
-<p><a href="https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes" target="_blank" rel="noopener">https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes</a></p>
-<p><a href="https://stackoverflow.com/questions/50096060/how-to-switch-branch-when-filename-case-changes" target="_blank" rel="noopener">https://stackoverflow.com/questions/50096060/how-to-switch-branch-when-filename-case-changes</a></p>
-<p>git bash ssh-keygen (same as linux)</p>
-<p>wsl2 里 默认编辑器</p>
-<p><a href="https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits" target="_blank" rel="noopener">https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits</a></p>
-<p>中文乱码：log commit信息, diff 文件内容, 文件名</p>
-<p><a href="https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window" target="_blank" rel="noopener">https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window</a></p>
-<p><a href="https://gist.github.com/xkyii/1079783/3e77453c05f6bcbce133fd0ba128686683f75bf8" target="_blank" rel="noopener">https://gist.github.com/xkyii/1079783/3e77453c05f6bcbce133fd0ba128686683f75bf8</a></p>
-<p>win10有个Beta版本的区域utf-8设置，开了以后很多软件都是乱码，包括微信小程序开发工具,哎，</p>
-<h1 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h1><p>account sync</p>
-<p>default browser( <a href="https://github.com/da2x/EdgeDeflector" target="_blank" rel="noopener">https://github.com/da2x/EdgeDeflector</a>  )</p>
-<h1 id="firefox"><a href="#firefox" class="headerlink" title="firefox"></a>firefox</h1><p>国内外登录地址一个有.cn 一个没有，所以不同地址相同邮箱账号不同, 选择firefox 官方 developer 版本+ win x64 版本+English版本</p>
-<p><a href="https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-developer" target="_blank" rel="noopener">https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-developer</a></p>
-<h1 id="Python-被windows商店劫持"><a href="#Python-被windows商店劫持" class="headerlink" title="Python 被windows商店劫持"></a>Python 被windows商店劫持</h1><p><a href="https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python" target="_blank" rel="noopener">https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/21-07-05-migrate2win/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -835,7 +814,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">109</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

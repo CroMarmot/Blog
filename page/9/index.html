@@ -191,6 +191,109 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-12-20-netrelative/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-12-20-netrelative/" class="post-title-link" itemprop="url">net/ping/virus scan</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-12-20 11:20:14" itemprop="dateCreated datePublished" datetime="2019-12-20T11:20:14+08:00">2019-12-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-12-20-netrelative/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-12-20-netrelative/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="disable-ping"><a href="#disable-ping" class="headerlink" title="disable ping"></a>disable ping</h1><p><code>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all</code></p>
+<p><code>/etc/sysctl.conf</code> 追加</p>
+<p><code>net.ipv4.icmp_echo_ignore_all = 1</code></p>
+<h1 id="list-running-program"><a href="#list-running-program" class="headerlink" title="list running program"></a>list running program</h1><p><code>ps -ef  |  awk &#39;$8~/^\// {for(i=8;i&lt;=NF;i++)printf $i&quot; &quot;; print &quot;&quot; }&#39; | sort | uniq</code></p>
+<h1 id="port-and-net"><a href="#port-and-net" class="headerlink" title="port and net"></a>port and net</h1><p><code>lsof -i</code></p>
+<p><code>ifconfig</code> the value of <code>TX bytes</code></p>
+<p><code>hethogs</code></p>
+<h1 id="clamav"><a href="#clamav" class="headerlink" title="clamav"></a>clamav</h1><p><code>clamscan -r -i /home/ -l  /var/log/clamscan.log</code></p>
+<p><code>freshclam</code> before use</p>
+<p><code>clamtk</code> for ui</p>
+<h1 id="relative"><a href="#relative" class="headerlink" title="relative"></a>relative</h1><p>awk</p>
+<p>anti virus</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-12-16-mpaas-password/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +325,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -315,7 +418,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -518,7 +621,7 @@ export default {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -693,7 +796,7 @@ Local version: 4.0.2
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -737,166 +840,6 @@ Local version: 4.0.2
           <h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p><a href="https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba" target="_blank" rel="noopener">https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba</a></p>
 <p><a href="http://mywiki.wooledge.org/BashFAQ/031" target="_blank" rel="noopener">http://mywiki.wooledge.org/BashFAQ/031</a></p>
 <p><a href="https://scriptingosx.com/2018/02/single-brackets-vs-double-brackets/" target="_blank" rel="noopener">https://scriptingosx.com/2018/02/single-brackets-vs-double-brackets/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-10-22-nextCloud/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-10-22-nextCloud/" class="post-title-link" itemprop="url">nextCloud ! 真香</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-10-22 15:09:01" itemprop="dateCreated datePublished" datetime="2019-10-22T15:09:01+08:00">2019-10-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-10-22-nextCloud/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-10-22-nextCloud/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p>因为一些不可描述的原因，dropbox能用但是速度感人</p>
-<p>现在需要一款能够 在 android+Linux+iPadOS三端做同步的</p>
-<p>iPad上的Documents配上ssh可以完成Linux+iPadOS的同步, // android似乎并不行</p>
-<p>google drive就和dropbox是同样的问题</p>
-<p>baiduYunPan ??? 如果你不怕你的个人资料有一天变成 “根据相关法律法规” 的话 // 不过值得一提的是 这玩意支持linux了哦 虽然目测是个 浏览器壳 当然也就没有自动备份同步功能</p>
-<p>然后搜了搜开源的 ownCloud 和 nextCloud ,看介绍基本是一家的</p>
-<p>还有人说 用svn/git来搞，你确定喜欢在手机和ipad上输命令?</p>
-<h1 id="开干"><a href="#开干" class="headerlink" title="开干"></a>开干</h1><p>client就不说了,各个平台下下来安装就行,说说 server</p>
-<p>我目前的电脑环境<code>Ubuntu18.04 x86_64 Linux 4.15.0-65-generic , bash 4.4.20 , 15925MiB</code></p>
-<p><strong>警告第一条命令将会进入root,进入后你将有所有权限，请自重</strong></p>
-<pre><code>sudo -s
-apt install apache2
-service apache2 start
-apt install mariadb-server
-mysql_secure_installation
-apt install php libapache2-mod-php php-mysql php-gd php-json php-mysql php-curl php-mbstring php-intl php-imagick php-xml php-zip
-apt install phpmyadmin
-ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
-a2enconf phpmyadmin
-a2enmod ssl
-a2ensite default-ssl
-service apache2 reload
-mariadb
-MariaDB [(none)]&gt; CREATE DATABASE nextcloud;
-MariaDB [(none)]&gt; CREATE USER nextcloud IDENTIFIED BY &apos;p@ssc0de&apos;;
-MariaDB [(none)]&gt; grant usage on *.* TO nextcloud@localhost IDENTIFIED BY &apos;p@ssc0de&apos;;
-MariaDB [(none)]&gt; GRANT ALL privileges ON nextcloud.* TO nextcloud@localhost;
-MariaDB [(none)]&gt; FLUSH PRIVILEGES;
-</code></pre><p>访问 <a href="https://localhost/phpmyadmin/" target="_blank" rel="noopener">https://localhost/phpmyadmin/</a></p>
-<p>(用户名,密码)=(nextcloud,p@ssc0de)</p>
-<p>去<code>https://download.nextcloud.com/server/releases/nextcloud-17.0.0.zip</code>下载最新的zip包 解压到 <code>/var/www/html/nextcloud</code>里</p>
-<p>chown -R www-data:www-data nextcloud/</p>
-<p>通过<code>https://localhost/nextcloud</code>即可访问 设置admin 密码，填写刚刚的配置即可</p>
-<p>手机连接会无权限，跟着提示修改/var/www/html/nextcloud/config/config.php的配置即可</p>
-<h1 id="失败的尝试"><a href="#失败的尝试" class="headerlink" title="失败的尝试"></a>失败的尝试</h1><p>下载<code>wget https://raw.githubusercontent.com/nextcloud/vm/master/nextcloud_install_production.sh</code></p>
-<p>然后<code>sudo bash nextcloud_install_production.sh</code></p>
-<p><code>https://github.com/nextcloud/server</code> 下源码或者下releases</p>
-<h1 id="nextCloud-额外的应用"><a href="#nextCloud-额外的应用" class="headerlink" title="nextCloud 额外的应用"></a>nextCloud 额外的应用</h1><p>把搜到的release包解压到<code>/var/www/html/nextcloud/apps</code></p>
-<p>在<code>index.php/settings/apps</code>中启用</p>
-<p>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">calendar.tar.gz</span><br><span class="line">checksum.tar.gz</span><br><span class="line">files_readmemd.tar.gz</span><br><span class="line">richdocuments.tar.gz</span><br><span class="line">spreed-7.0.2.tar.gz</span><br></pre></td></tr></table></figure>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://docs.nextcloud.com/server/17/admin_manual/installation/source_installation.html#example-installation-on-ubuntu-18-04-lts-server" target="_blank" rel="noopener">https://docs.nextcloud.com/server/17/admin_manual/installation/source_installation.html#example-installation-on-ubuntu-18-04-lts-server</a></p>
-<p><a href="https://github.com/nextcloud/server.git" target="_blank" rel="noopener">https://github.com/nextcloud/server.git</a></p>
-<p><a href="https://nextcloud.com/install/#instructions-server" target="_blank" rel="noopener">https://nextcloud.com/install/#instructions-server</a></p>
-<p><a href="https://askubuntu.com/questions/387062/how-to-solve-the-phpmyadmin-not-found-issue-after-upgrading-php-and-apache" target="_blank" rel="noopener">https://askubuntu.com/questions/387062/how-to-solve-the-phpmyadmin-not-found-issue-after-upgrading-php-and-apache</a></p>
-<p><a href="https://www.youtube.com/watch?v=QXfsi0pwgYw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=QXfsi0pwgYw</a></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>现在看来主要问题在于 直接snap的 会和当前本地开得一堆服务或多或少冲突？？ 我查运行状态 都是在运行，查端口 没看到监听</p>
-<p>另外一个就是 文件夹权限要搞成 www-data:www-data</p>
-<p>在一个就是mysql的db和账户创建,只玩过CURD，很久没摸也忘了</p>
-<p>客户端口没啥难度</p>
-<p>emmmmmmmm 似乎也不能在ipados上搞… 只能网页勉强</p>
-<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><ol>
-<li>本地建立文件夹 <code>/data/nextcloudserver/</code> 给它存东西用</li>
-<li>一条docker命令<code>docker run -d -p 8080:80 -v /data/nextcloudserver/:/var/www/html --name=nextcloudserver nextcloud</code> ，注意docker的习惯冒号左边是宿主机器的东西，右边是容器内的东西，这里映射了端口和磁盘</li>
-</ol>
-<p>这样就可以跑了，本地访问都是ui操作，没啥好说的</p>
-<ol start="3">
-<li>配置<code>config/config.php</code>中的<code>trusted_domains</code> (无脑的话root进，或者docker起个busybox连接一下)，注意这里的写法是星号来匹配应该<code>192.168.*.*</code>，而不是<code>192.168.0.0/24</code>, 保存就行</li>
-</ol>
-<h2 id="或者官方的仓库下"><a href="#或者官方的仓库下" class="headerlink" title="或者官方的仓库下"></a>或者官方的仓库下</h2><p><a href="https://github.com/nextcloud/docker/blob/master" target="_blank" rel="noopener">https://github.com/nextcloud/docker/blob/master</a> 文件夹<code>.examples/docker-compose/insecure/mariadb/apache</code></p>
-<p>执行<code>docker-compose up -d</code></p>
-<h2 id="官方仓库自签https-证书"><a href="#官方仓库自签https-证书" class="headerlink" title="官方仓库自签https 证书"></a>官方仓库自签https 证书</h2><p>内网要用的话，可以考虑。毕竟没有CA中心，管内网的还是有办法搞你XD</p>
-<p><code>.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm</code></p>
-<p>sed玩得熟的可以sed替换哈</p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">diff --git a/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/db.env b/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/db.env</span><br><span class="line">index a436605..e9872a4 100644</span><br><span class="line"><span class="comment">--- a/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/db.env</span></span><br><span class="line"><span class="comment">+++ b/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/db.env</span></span><br><span class="line"><span class="meta">@@ -1,3 +1,3 @@</span></span><br><span class="line"><span class="deletion">-MYSQL_PASSWORD=</span></span><br><span class="line"><span class="addition">+MYSQL_PASSWORD=123</span></span><br><span class="line"> MYSQL_DATABASE=nextcloud</span><br><span class="line"> MYSQL_USER=nextcloud</span><br><span class="line">diff --git a/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/docker-compose.yml b/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/docker-compose.yml</span><br><span class="line">index 3d60f7e..0d9fa81 100644</span><br><span class="line"><span class="comment">--- a/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/docker-compose.yml</span></span><br><span class="line"><span class="comment">+++ b/.examples/docker-compose/with-nginx-proxy-self-signed-ssl/mariadb/fpm/docker-compose.yml</span></span><br><span class="line">@@ -8,7 +8,7 @@ services:</span><br><span class="line">     volumes:</span><br><span class="line">       - db:/var/lib/mysql</span><br><span class="line">     environment:</span><br><span class="line"><span class="deletion">-      - MYSQL_ROOT_PASSWORD=</span></span><br><span class="line"><span class="addition">+      - MYSQL_ROOT_PASSWORD=123</span></span><br><span class="line">     env_file:</span><br><span class="line">       - db.env</span><br><span class="line"> </span><br><span class="line">@@ -30,7 +30,7 @@ services:</span><br><span class="line">     volumes:</span><br><span class="line">       - nextcloud:/var/www/html:ro</span><br><span class="line">     environment:</span><br><span class="line"><span class="deletion">-      - VIRTUAL_HOST=</span></span><br><span class="line"><span class="addition">+      - VIRTUAL_HOST=nextcloud.cromarmot.com</span></span><br><span class="line">     depends_on:</span><br><span class="line">       - app</span><br><span class="line">     networks:</span><br><span class="line">@@ -59,11 +59,11 @@ services:</span><br><span class="line">     volumes:</span><br><span class="line">       - certs:/certs</span><br><span class="line">     environment:</span><br><span class="line"><span class="deletion">-      - SSL_SUBJECT=servhostname.local</span></span><br><span class="line"><span class="deletion">-      - CA_SUBJECT=my@example.com</span></span><br><span class="line"><span class="deletion">-      - SSL_KEY=/certs/servhostname.local.key</span></span><br><span class="line"><span class="deletion">-      - SSL_CSR=/certs/servhostname.local.csr</span></span><br><span class="line"><span class="deletion">-      - SSL_CERT=/certs/servhostname.local.crt</span></span><br><span class="line"><span class="addition">+      - SSL_SUBJECT=nextcloud.cromarmot.com</span></span><br><span class="line"><span class="addition">+      - CA_SUBJECT=cromarmot@example.com</span></span><br><span class="line"><span class="addition">+      - SSL_KEY=/certs/nextcloud.cromarmot.com.key</span></span><br><span class="line"><span class="addition">+      - SSL_CSR=/certs/nextcloud.cromarmot.com.csr</span></span><br><span class="line"><span class="addition">+      - SSL_CERT=/certs/nextcloud.cromarmot.com.crt</span></span><br><span class="line">     networks:</span><br><span class="line">       - proxy-tier</span><br></pre></td></tr></table></figure>
-<p>然后你需要在要连接的电脑上把hosts文件增加 ip到<code>nextcloud.cromarmot.com</code> 的映射</p>
-<p>执行<code>docker-compose up -d</code></p>
-<h1 id="移除"><a href="#移除" class="headerlink" title="移除"></a>移除</h1><p>执行<code>docker-compose down</code></p>
-<p>注意，只会移除container和network，不会移除volume, 如果要移除，要手动移除</p>
 
       
     </div>
@@ -981,7 +924,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">109</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

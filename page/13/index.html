@@ -191,6 +191,126 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-07-25-vsc_extension/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/19-07-25-vsc_extension/" class="post-title-link" itemprop="url">vsc extension 入门尝试</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-07-25 01:01:01" itemprop="dateCreated datePublished" datetime="2019-07-25T01:01:01+08:00">2019-07-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/ide/" itemprop="url" rel="index"><span itemprop="name">ide</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-07-25-vsc_extension/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-07-25-vsc_extension/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="开始-amp-安装"><a href="#开始-amp-安装" class="headerlink" title="开始 &amp; 安装"></a>开始 &amp; 安装</h1><h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p><a href="https://code.visualstudio.com/api/get-started/your-first-extension" target="_blank" rel="noopener">https://code.visualstudio.com/api/get-started/your-first-extension</a></p>
+<p><a href="https://github.com/microsoft/vscode-extension-samples" target="_blank" rel="noopener">https://github.com/microsoft/vscode-extension-samples</a></p>
+<h2 id="install-amp-Run"><a href="#install-amp-Run" class="headerlink" title="install &amp; Run"></a>install &amp; Run</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yo generator-code</span><br><span class="line">yo code</span><br></pre></td></tr></table></figure>
+<p>选择你希望的选项</p>
+<p><code>code ./新建目录</code></p>
+<p>按<code>F5</code>启动</p>
+<p>按<code>Ctrl+Shift+P</code>输入<code>Hello world</code>回车</p>
+<p>当你修改了代码后，在新打开的窗口<code>Ctrl+Shift+P</code>再输入<code>Reload Window</code>就重新加载了代码</p>
+<h1 id="解剖"><a href="#解剖" class="headerlink" title="解剖"></a>解剖</h1><p>看<code>package.json</code></p>
+<ul>
+<li>注册 <code>onCommand</code> Activation Event:<code>onCommand:extension.helloWorld</code> ,so the extension becomes activated when user runs the <code>Hello World</code> command.</li>
+<li>使用<code>contributes.commands</code> Contribution Point 来让<code>Hello World</code>命令 在Command Palette 可用，并且绑定到命令id<code>extension.helloWorld</code></li>
+<li><p>使用<code>commands.registerCommand</code>的VS Code API绑定到已注册的命令ID <code>extension.helloWorld</code></p>
+</li>
+<li><p><a href="https://code.visualstudio.com/api/references/activation-events" target="_blank" rel="noopener">Activation Events</a>: events upon which your extension becomes active.</p>
+</li>
+<li><a href="https://code.visualstudio.com/api/references/contribution-points" target="_blank" rel="noopener">Contribution Points</a>: static declarations that you make in the package.json Extension Manifest to extend VS Code.</li>
+<li>VS Code API: 代码中API，可以在你的extension代码中调起</li>
+</ul>
+<p>其它配置文件</p>
+<ul>
+<li><code>launch.json</code> used to configure VS Code Debugging</li>
+<li><code>tasks.json</code> for defining VS Code Tasks</li>
+<li><code>tsconfig.json</code> consult the TypeScript Handbook</li>
+</ul>
+<p>package.json</p>
+<p>vsc使用 <code>&lt;publisher&gt;.&lt;name&gt;</code>作为一个插件的<code>unique ID</code></p>
+<h1 id="tree-view"><a href="#tree-view" class="headerlink" title="tree-view"></a>tree-view</h1><p>emmmmmm 看了一会代码 发现有文档 <a href="https://code.visualstudio.com/api/extension-guides/tree-view" target="_blank" rel="noopener">https://code.visualstudio.com/api/extension-guides/tree-view</a></p>
+<p>直接看文档吧…</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-07-08-gitlabserver/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +342,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -380,7 +500,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -498,7 +618,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -607,7 +727,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -672,116 +792,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-06-11-material/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/19-06-11-material/" class="post-title-link" itemprop="url">material学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-06-11 01:01:01" itemprop="dateCreated datePublished" datetime="2019-06-11T01:01:01+08:00">2019-06-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-06-11-material/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-06-11-material/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://material.io/collections/developer-tutorials/#web" target="_blank" rel="noopener">https://material.io/collections/developer-tutorials/#web</a></p>
-<p>很早就有人说过了material，不过在那时，1是不太能阅读英文文档，2是没有实际的需要，也没有要用的想法，没有阅读</p>
-<p>下面是个人整理 (大概需要的前置知识 node基本+html+js+css</p>
-<h1 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h1><p>跨平台，好看的，google出的ui标准 </p>
-<h1 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h1><p><code>git clone https://github.com/material-components/material-components-web-codelabs</code></p>
-<p>安装所有ui</p>
-<p><code>npm install material-components-web</code></p>
-<p>从文档和操作上来看 需要做3件事</p>
-<ol>
-<li>引入css 如<code>@import &quot;@material/textfield/mdc-text-field&quot;;</code></li>
-<li>在html的元素上 给对应的class</li>
-<li>js里引入组件和 对相应元素进行处理,如下</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;MDCTextField&#125; <span class="keyword">from</span> <span class="string">'@material/textfield'</span>;</span><br><span class="line"><span class="keyword">const</span> username = <span class="keyword">new</span> MDCTextField(<span class="built_in">document</span>.querySelector(<span class="string">'.username'</span>));</span><br></pre></td></tr></table></figure>
-<p>demo101 102里介绍了 输入框，按钮，图片，列表</p>
-<p>然后103 介绍了一些，theme(例如主题颜色)，subtitle(typography),elevation(实际是阴影效果 用来让页面元素有高低感觉),<code>mdc-image-list--masonry</code>非等长图片排列</p>
-<p>demo111 介绍了，如何对一个原来写过的原始工程，修改成Material Components的样式(基本就是 npm引入，js引入，css引入，换class，加js</p>
-<p>demo112 介绍了一个react工程上 改为material components</p>
-<p>最后 目前看下来 angular+material 最多star的是<a href="https://material.angular.io" target="_blank" rel="noopener">https://material.angular.io</a></p>
-
       
     </div>
 
@@ -865,7 +875,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">109</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

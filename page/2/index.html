@@ -191,6 +191,123 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-07-05-migrate2win/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/21-07-05-migrate2win/" class="post-title-link" itemprop="url">迁移到win</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-07-05 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-05T00:00:00+08:00">2021-07-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/win/" itemprop="url" rel="index"><span itemprop="name">win</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/21-07-05-migrate2win/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-07-05-migrate2win/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="apt"><a href="#apt" class="headerlink" title="apt"></a>apt</h1><p>怀念 Debian apt 的好, 在windows上腾讯软件管家成了我的“apt”</p>
+<h1 id="以下是一些问题记录"><a href="#以下是一些问题记录" class="headerlink" title="以下是一些问题记录"></a>以下是一些问题记录</h1><h1 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h1><p>set <code>git bash</code> as default terminal</p>
+<h1 id="windows-terminal"><a href="#windows-terminal" class="headerlink" title="windows terminal"></a>windows terminal</h1><p>windows terminal 双击点击鼠标选择 在单词和行选择切换,而非空格分割和行之间切换</p>
+<p><a href="https://stackoverflow.com/questions/60441221/double-click-to-select-text-in-windows-terminal-selects-only-one-word" target="_blank" rel="noopener">https://stackoverflow.com/questions/60441221/double-click-to-select-text-in-windows-terminal-selects-only-one-word</a></p>
+<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><strong>更应该 不要 win和wsl共用磁盘</strong></p>
+<p><a href="https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes" target="_blank" rel="noopener">https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes</a></p>
+<p><a href="https://stackoverflow.com/questions/50096060/how-to-switch-branch-when-filename-case-changes" target="_blank" rel="noopener">https://stackoverflow.com/questions/50096060/how-to-switch-branch-when-filename-case-changes</a></p>
+<p>git bash ssh-keygen (same as linux)</p>
+<p>wsl2 里 默认编辑器</p>
+<p><a href="https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits" target="_blank" rel="noopener">https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits</a></p>
+<p>中文乱码：log commit信息, diff 文件内容, 文件名</p>
+<p><a href="https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window" target="_blank" rel="noopener">https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window</a></p>
+<p><a href="https://gist.github.com/xkyii/1079783/3e77453c05f6bcbce133fd0ba128686683f75bf8" target="_blank" rel="noopener">https://gist.github.com/xkyii/1079783/3e77453c05f6bcbce133fd0ba128686683f75bf8</a></p>
+<p>win10有个Beta版本的区域utf-8设置，开了以后很多软件都是乱码，包括微信小程序开发工具,哎，</p>
+<h1 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h1><p>account sync</p>
+<p>default browser( <a href="https://github.com/da2x/EdgeDeflector" target="_blank" rel="noopener">https://github.com/da2x/EdgeDeflector</a>  )</p>
+<h1 id="firefox"><a href="#firefox" class="headerlink" title="firefox"></a>firefox</h1><p>国内外登录地址一个有.cn 一个没有，所以不同地址相同邮箱账号不同, 选择firefox 官方 developer 版本+ win x64 版本+English版本</p>
+<p><a href="https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-developer" target="_blank" rel="noopener">https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-developer</a></p>
+<h1 id="Python-被windows商店劫持"><a href="#Python-被windows商店劫持" class="headerlink" title="Python 被windows商店劫持"></a>Python 被windows商店劫持</h1><p><a href="https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python" target="_blank" rel="noopener">https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/21-07-05-migrate2win/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-05-25-react-timer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +339,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -322,7 +439,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -424,7 +541,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -525,7 +642,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
+                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -613,119 +730,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-03-24-frontend-call-and-data/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/21-03-24-frontend-call-and-data/" class="post-title-link" itemprop="url">前端通信</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-03-24 00:00:00" itemprop="dateCreated datePublished" datetime="2021-03-24T00:00:00+08:00">2021-03-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-22 10:34:09" itemprop="dateModified" datetime="2021-11-22T10:34:09+08:00">2021-11-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/21-03-24-frontend-call-and-data/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-03-24-frontend-call-and-data/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h1><p>概念上, 这几类</p>
-<ol>
-<li>触发一个远端方法</li>
-<li>数据共享</li>
-<li>响应式触发</li>
-</ol>
-<h1 id="回顾经典"><a href="#回顾经典" class="headerlink" title="回顾经典"></a>回顾经典</h1><p>说道通信，那就回顾一下Linux的通信方式，IPC</p>
-<ul>
-<li>共享文件</li>
-<li>共享内存</li>
-<li>管道(命名和匿名)</li>
-<li>消息队列</li>
-<li>sockets</li>
-<li>signal</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/21-03-24-frontend-call-and-data/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -795,7 +799,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">109</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
