@@ -191,6 +191,105 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-12-21-anti-douban/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/21-12-21-anti-douban/" class="post-title-link" itemprop="url">豆瓣页面数据解密</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2021-12-21 00:00:00 / 修改時間：11:23:36" itemprop="dateCreated datePublished" datetime="2021-12-21T00:00:00+08:00">2021-12-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/21-12-21-anti-douban/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-12-21-anti-douban/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>个人的网页需要一些书目数据，印象中，老的豆瓣直接是页面还是接口，能获直接取到，可以作为爬虫入门练手</p>
+<p>然而前天一看，新版的豆瓣已经不明文返回数据了</p>
+<p><code>https://search.douban.com/book/subject_search?search_text=%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0&amp;cat=1001</code></p>
+<h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><p><code>C++函数调用</code>：这个知识点让你知道函数调用堆栈的常见设计</p>
+<p>js调试：chrome断点，格式化代码，console，js基本语法，</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h2 id="定位数据来源"><a href="#定位数据来源" class="headerlink" title="定位数据来源"></a>定位数据来源</h2><p>一般来说 只要页面不用花里胡哨的技巧，比如把数据放在png里的话，一般来说，数据只会在<code>Fetch/XHR</code>,<code>JS</code>,<code>html</code>，<code>ws</code> 中</p>
+<p>通过页面展示的<code>实变函数论</code> 去上述类型中搜索，结果没有任何内容中直接包含数据</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/21-12-21-anti-douban/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-12-06-currying-add/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -214,10 +313,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2021-12-06 00:00:00 / 修改時間：12:03:43" itemprop="dateCreated datePublished" datetime="2021-12-06T00:00:00+08:00">2021-12-06</time>
+              <time title="創建時間：2021-12-06 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-06T00:00:00+08:00">2021-12-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-12-21 11:23:36" itemprop="dateModified" datetime="2021-12-21T11:23:36+08:00">2021-12-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -312,7 +417,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
+                <time title="修改時間：2021-12-21 11:23:36" itemprop="dateModified" datetime="2021-12-21T11:23:36+08:00">2021-12-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -456,7 +561,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
+                <time title="修改時間：2021-12-21 11:23:36" itemprop="dateModified" datetime="2021-12-21T11:23:36+08:00">2021-12-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -563,7 +668,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
+                <time title="修改時間：2021-12-21 11:23:36" itemprop="dateModified" datetime="2021-12-21T11:23:36+08:00">2021-12-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -632,123 +737,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-07-06-dockerharbor/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/21-07-06-dockerharbor/" class="post-title-link" itemprop="url">Docker Harbor on Ubuntu 20 on WSL2</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-07-06 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-06T00:00:00+08:00">2021-07-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/docker/harbor/" itemprop="url" rel="index"><span itemprop="name">harbor</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/21-07-06-dockerharbor/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-07-06-dockerharbor/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Docker-Harbor"><a href="#Docker-Harbor" class="headerlink" title="Docker Harbor"></a>Docker Harbor</h1><p>简单说，可以搭本地/局域网 docker仓库</p>
-<h1 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h1><p>Ubuntu 或 其它linux 或 Ubuntu on WSL2</p>
-<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>安装docker:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install docker.io docker-compose</span><br></pre></td></tr></table></figure>
-<h1 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h1><p>经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2 <strong>私有</strong>的目录下</p>
-<p><a href="https://github.com/goharbor/harbor/releases" target="_blank" rel="noopener">https://github.com/goharbor/harbor/releases</a></p>
-<p>解压</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvzf harbor-offline-installer-*.tgz &amp;&amp; cd harbor</span><br></pre></td></tr></table></figure>
-<h1 id="SSL等配置"><a href="#SSL等配置" class="headerlink" title="SSL等配置"></a>SSL等配置</h1><p>这玩意一定要SSL, 这里用自签</p>
-<p>ip查看</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig | grep inet</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/21-07-06-dockerharbor/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/Blog/page/2/">2</a><a class="page-number" href="/Blog/page/4/">4</a><a class="page-number" href="/Blog/page/8/">8</a><a class="page-number" href="/Blog/page/16/">16</a><a class="page-number" href="/Blog/page/22/">22</a><a class="extend next" rel="next" href="/Blog/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/Blog/page/2/">2</a><a class="page-number" href="/Blog/page/4/">4</a><a class="page-number" href="/Blog/page/8/">8</a><a class="page-number" href="/Blog/page/16/">16</a><a class="page-number" href="/Blog/page/23/">23</a><a class="extend next" rel="next" href="/Blog/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -814,7 +806,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-count">111</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

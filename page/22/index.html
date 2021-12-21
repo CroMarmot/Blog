@@ -191,6 +191,107 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/14-12-07-coderecord/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/14-12-07-coderecord/" class="post-title-link" itemprop="url">code record</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2014-12-07 01:01:01" itemprop="dateCreated datePublished" datetime="2014-12-07T01:01:01+08:00">2014-12-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-12-21 11:23:36" itemprop="dateModified" datetime="2021-12-21T11:23:36+08:00">2021-12-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/notes/" itemprop="url" rel="index"><span itemprop="name">notes</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/14-12-07-coderecord/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="14-12-07-coderecord/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>String:<br>String.format<br>str.trim();// 返回 去前导 尾部空格 的字符串<br>import java.util.StringTokenizer;//P113<br>StringTokenizer(String str,String delim);//str 要去除空格的字符串 delim要去除的字符 返回去除后结果<br>StringBuffer<br>str.replaceAll(String regex,String replacement);//正则表达式<br>str.replace(String regex,String replacement);//字符(串)的替换<br>str.replaceFirst(regex,replacement);<br>str.split(delim);//会分出 无长字符<br>str.matches(String regex);//判断是否正则表达式<br>汉子匹配P133</p>
+<p>StringBuilder:<br>.append(String str);<br>.append(StringBuffer str);<br>.insert(int offset,String str);</p>
+<p>时间:<br>System.currentTimeMillis();//系统时间<br>Date date = new Date(); // 创建Date对象date</p>
+<p>多个类文件前面要加package com.lzw;</p>
+<p>import java.text.DecimalFormat;<br>DecimalFormat myFormat = new DecimalFormat(pattern);// 实例化DecimalFormat对象<br>String output = myFormat.format(value);<br>System.out.println(Object X)-&gt;调用String.valueof(X)-&gt;X.toString();//<br>自定义Class 调用Object默认的equals<br>getClass().getName();</p>
+<p>不定长<br>    public static int add(int… a) { // 定义不定长参数方法<br>        int s = 0;<br>        for (int i = 0; i &lt; a.length; i++)<br>            // 根据参数个数做循环操作<br>            s += a[i]; // 将每个参数累加<br>        return s; // 将计算结果返回<br>    }<br>add(1,2, 3,4, 5,6, 7, 8, 9);</p>
+<p>10.10 接口 向上转型</p>
+<p>A instanceof B;A和B的关系要是 A extends B or B extends A//返回A是否为B的子类<br>抽象类不能实例化</p>
+<p>new innerClass 11.07;<br>接口向上转型 直接调用内部类 11.08<br>e.printStackTrace;//catch (MyException e) </p>
+<p>WindowConstants.DISPOSE_ON_CLOSE<br>||<br>JFrame.DISPOSE_ON_CLOSE</p>
+<p>数据库:<br>加入数据<br>String sql= insert into tb_users (username,password,sex,age) values(‘adf’,’111’,’nan’,’22’)<br>Statement stmt = conn.createStatement();<br>stmt.executeUpdate(sql);</p>
+<p>String Sql =insert into tb_users (username,password,sex,age)value(?,?,?,?);<br>PreparedStatement ps =conn.prepareStatement(sql);<br>ps.setString(1,””);<br>ps.setString(2,””);<br>ps.setString(3,””);<br>ps.executeUpdate();<br>获得数据<br>String sql=select * from tb_users;<br>Statement stmt = conn.createStatement();<br>ResultSet rs =stmt.executeQuery(sql);<br>while(rs.next()){<br>    =rs.getInt(“id”);<br>    =rs.getStringInt(2);<br>    =rs.getString(“password”);<br>    =rs.getInt(4);<br>}</p>
+<p>更改数据<br>String sql=”update tb_users set age=20 where id=1”<br>Statement stmt = conn.createStatement();<br>stmt.executeUpdate(sql);</p>
+<p>String sql=”update tb_users set password=? where sex=?”<br>PreparedStatement ps=conn.prepareStatement(sql);<br>ps.setString(1,”admin”);<br>ps.setString(2,”nan”);<br>int count=ps.executeUpdate();<br>删除数据<br>String sql=”delete from tb_users where id=1”<br>Statement stmt=conn.createStatement();<br>stmt.executeUpdate;<br>模糊查询<br>Statement stmt=conn.createStatement();<br>String sql=”select * from tb_users where username like ‘%李%’”;//通配符%=0个或多个字符 下划线_=一个字符<br>ResultSet rs =stmt.executeQuery(sql);<br>while(rs.next()){<br>    =rs.getInt(“id”);<br>    =rs.getStringInt(2);<br>    =rs.getString(“password”);<br>    =rs.getInt(4);<br>}</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/13-01-01-RDF-3X/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +323,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
+                <time title="修改時間：2021-12-21 11:23:36" itemprop="dateModified" datetime="2021-12-21T11:23:36+08:00">2021-12-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -470,7 +571,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
+                <time title="修改時間：2021-12-21 11:23:36" itemprop="dateModified" datetime="2021-12-21T11:23:36+08:00">2021-12-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -635,7 +736,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
+                <time title="修改時間：2021-12-21 11:23:36" itemprop="dateModified" datetime="2021-12-21T11:23:36+08:00">2021-12-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -988,7 +1089,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
+                <time title="修改時間：2021-12-21 11:23:36" itemprop="dateModified" datetime="2021-12-21T11:23:36+08:00">2021-12-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1089,425 +1190,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/13-01-01-us-15-Seaborn-Exploiting-The-DRAM-Rowhammer-Bug-To-Gain-Kernel-Privileges/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/13-01-01-us-15-Seaborn-Exploiting-The-DRAM-Rowhammer-Bug-To-Gain-Kernel-Privileges/" class="post-title-link" itemprop="url">Exploiting-The-DRAM-Rowhammer</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2013-01-01 01:01:01" itemprop="dateCreated datePublished" datetime="2013-01-01T01:01:01+08:00">2013-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-06 12:03:43" itemprop="dateModified" datetime="2021-12-06T12:03:43+08:00">2021-12-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/security/" itemprop="url" rel="index"><span itemprop="name">security</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/13-01-01-us-15-Seaborn-Exploiting-The-DRAM-Rowhammer-Bug-To-Gain-Kernel-Privileges/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="13-01-01-us-15-Seaborn-Exploiting-The-DRAM-Rowhammer-Bug-To-Gain-Kernel-Privileges/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a href="https://www.blackhat.com/docs/us-15/materials/us-15-Seaborn-Exploiting-The-DRAM-Rowhammer-Bug-To-Gain-Kernel-Privileges.pdf" target="_blank" rel="noopener">Exploiting-The-DRAM-Rowhammer-Bug-To-Gain-Kernel-Privileges.pdf</a>阅读整理</p>
-<h2 id="它是什么"><a href="#它是什么" class="headerlink" title="它是什么"></a>它是什么</h2><p>重复行激活可导致相邻的行位翻转</p>
-<p>翻转导致可能的权限位变化</p>
-<p>2003 paper: “Using Memory Errors to Attack a Virtual Machine”</p>
-<ul>
-<li>by Sudhakar Govindavajhala, Andrew Appel</li>
-<li>Escape from Java VM </li>
-</ul>
-<p>完全随机的 vs  可控和可重复的</p>
-<ul>
-<li>触发方式相近</li>
-<li>但可重复的能提供更多控制力</li>
-</ul>
-<p>2014 paper: “Flipping Bits in Memory Without Accessing Them: An Experimental Study of DRAM Disturbance Errors”</p>
-<ul>
-<li>在一些桌面电脑测试,但它们有ECC – 能强力减轻这种bug</li>
-</ul>
-<p>DRAM badness by year <a href="https://www.blackhat.com/docs/us-15/materials/us-15-Seaborn-Exploiting-The-DRAM-Rowhammer-Bug-To-Gain-Kernel-Privileges.pdf#12" target="_blank" rel="noopener">graph</a></p>
-<h2 id="如何触发-触发方法"><a href="#如何触发-触发方法" class="headerlink" title="如何触发/触发方法"></a>如何触发/触发方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">code1a:</span><br><span class="line"> mov (X), %eax // Read from address X</span><br><span class="line"> mov (Y), %ebx // Read from address Y</span><br><span class="line"> clflush (X) // Flush cache for address X</span><br><span class="line"> clflush (Y) // Flush cache for address Y</span><br><span class="line"> // mfence // In CMU paper, but not actually needed</span><br><span class="line"> jmp code1a</span><br></pre></td></tr></table></figure>
-<p>必要条件1: 绕过cache 直接访问 →  x86 CLFLUSH 指令</p>
-<ul>
-<li>它是非特权指令</li>
-<li>无法禁用它(不像RDTSC)</li>
-</ul>
-<p>必要条件2: 找到坏行</p>
-<ul>
-<li>有一些的DRAM的坏行比其它的DRAM多</li>
-<li><p>申请大块内存,尝试很多地址</p>
-<p>DRAM 被分成了 banks → 每一个有它当前的行<br>必要条件3: 选中&gt;=2个地址</p>
-</li>
-<li>映射同一个bank的不同行</li>
-<li>行的地址冲突对(CMU 论文用的: Y = X + 8MB)</li>
-<li>需要能用物理地址</li>
-<li>Memtest: 在管理权限下运行 完全在硬件上的</li>
-<li>On Linux: 可以使用 /proc/$PID/pagemap</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Row #</th>
-<th>Bank 0</th>
-<th>Bank 1</th>
-<th>Bank 2</th>
-<th>…</th>
-<th>Bank 7</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td><strong><em>0</em></strong></td>
-<td>0x2000</td>
-<td>0x4000</td>
-<td>…</td>
-<td>0xe000</td>
-</tr>
-<tr>
-<td>1</td>
-<td>0x10000</td>
-<td>0x12000</td>
-<td>0x14000</td>
-<td>…</td>
-<td>0x1e000</td>
-</tr>
-<tr>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-<tr>
-<td>128…</td>
-<td><strong><em>0x800000</em></strong></td>
-<td>0x802000</td>
-<td>0x804000</td>
-<td>…</td>
-<td>0x80e000</td>
-</tr>
-</tbody>
-</table>
-<p>如果是随机地址</p>
-<ul>
-<li>那么有8 banks → 1/8 机会导致行冲突</li>
-</ul>
-<blockquote>
-<p>根据上面得出的精炼结论是: 尝试的地址数量 &gt;2 addresses, 比如 4 或 8 个</p>
-<ul>
-<li>一次测试更多的行</li>
-<li>增加行冲突的机会</li>
-<li>硬件通常有多个访问队列</li>
-</ul>
-</blockquote>
-<p>Double-sided row hammering</p>
-<ul>
-<li>激活这两个邻国的一行,不仅仅是少了一个数据</li>
-<li>现有的论文还没探索</li>
-</ul>
-<p>探索出DRAM 地址的映射机制</p>
-<ul>
-<li>通过位翻转观察</li>
-<li>通过时间<br>选择地址</li>
-<li>使用物理地址 – 禁用 /proc/PID/pagemap</li>
-<li>大页(2MB) – 不被禁用</li>
-<li>其它连续的物理块</li>
-</ul>
-<p>查询DRAM 的SPD 数据 <code>sudo decode-dimms</code></p>
-<p>以上理论的结果: <a href="https://github.com/google/rowhammer-test" target="_blank" rel="noopener">rowhammer-test</a></p>
-<ul>
-<li>在用户态运行 申请1GB 等待位翻转</li>
-<li>风险:可能破坏其它进程或者内核 在试验中 它也的确发生了</li>
-</ul>
-<p>它在2014年还测了更多的机器</p>
-<blockquote>
-<p>根据以上得出的精炼结论是:</p>
-<ul>
-<li>难度:易 找到冲突地址对 ( 通过运行一定时间 , 找到坏行更快) 也就是知道映射关系</li>
-<li>难度:易 在128ms(2倍行刷新时间)内 真实的产生这个bug ( 通过最大化行刷新时间间隔中的行激活 通过最大化造成坏行的机会(比如上面的一次多行))</li>
-<li>难度:较难 能利用(2-sided) ( 需要更多的物理地址知识)</li>
-</ul>
-</blockquote>
-<h2 id="如何利用-可利用性"><a href="#如何利用-可利用性" class="headerlink" title="如何利用/可利用性"></a>如何利用/可利用性</h2><p> 系统一直依赖内存</p>
-<p> 两个利用的地方</p>
-<p> 本地(NaCl)的Chrome 沙箱</p>
-<ul>
-<li>位翻转会被判为安全代码</li>
-<li><p>可以让chrome读代码来发现位翻转</p>
-<p>Linux 内核权限提升</p>
-</li>
-<li>在页表入口(PTE)翻转</li>
-<li><p>获得页表读写权</p>
-<p>密集的数据结构</p>
-<blockquote>
-<p>-</p>
-</blockquote>
-<p>本地客户端介绍(NaCl)</p>
-</li>
-<li>运行C/C++源码的沙箱</li>
-<li>Chrome 的一部分</li>
-<li>类似Asm.js, 但是代码生成器是不可信的</li>
-<li>安全子集的x86——软件故障隔离(x86安全检测,但它允许CLFLUSH指令)</li>
-<li>两个变体: PNaCl(on open web. Runs pexe (LLVM bitcode): compiled to nexe by in-browser translator. No CLFLUSH?),NNaCl(in Chrome Web Store. Could use CLFLUSH.)</li>
-<li>作者用的是NaCl :-) </li>
-</ul>
-<h3 id="利用-NaCl"><a href="#利用-NaCl" class="headerlink" title="利用 NaCl"></a>利用 NaCl</h3><p>安全命令序列:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">andl $~31, %eax // Truncate address to 32 bits</span><br><span class="line">                // and mask to be 32-byte-aligned.</span><br><span class="line">addq %r15, %rax // Add %r15, the sandbox base address.</span><br><span class="line">jmp *%rax       // Indirect jump.</span><br></pre></td></tr></table></figure></p>
-<p>NaCl 沙箱模型:</p>
-<ul>
-<li>防止跳到x86指令中间(意思是比如一条指令是 01 02 03 那么禁止跳到 02 开始的位置)</li>
-<li>直接跳转目标只能用32位 对齐地址</li>
-</ul>
-<p>位翻转导致部安全的方式</p>
-<ul>
-<li>可能导致允许跳转到非32位对齐的地址</li>
-<li>制作很多这个序列的备份 – 动态创代码(找寻位翻转 – 代码可读性)</li>
-<li>利用改变寄存器号(13%的位翻转可利用,测试驱动开发)</li>
-</ul>
-<p>NaCl 沙箱地址空间(1GB~4GB)</p>
-<table>
-<thead>
-<tr>
-<th>名</th>
-<th>读写执性</th>
-<th>大小</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>stack (initial thread)</td>
-<td>read+write</td>
-<td></td>
-</tr>
-<tr>
-<td>available for mmap()</td>
-<td>anything but exec</td>
-<td></td>
-</tr>
-<tr>
-<td>nexe rwdata segment</td>
-<td>read+write</td>
-<td>variable size</td>
-</tr>
-<tr>
-<td>nexe rodata segment</td>
-<td>read</td>
-<td>variable size</td>
-</tr>
-<tr>
-<td><strong>dynamic code area</strong></td>
-<td><strong>read+exec</strong></td>
-<td><strong>~256MB</strong></td>
-</tr>
-<tr>
-<td>nexe code segment</td>
-<td>read+exec</td>
-<td>variable size</td>
-</tr>
-<tr>
-<td>NaCl syscall trampolines</td>
-<td>read+exec</td>
-<td>64k</td>
-</tr>
-<tr>
-<td>zero page</td>
-<td>no access</td>
-<td>64k</td>
-</tr>
-</tbody>
-</table>
-<p>隐藏不安全代码的方法 in NaCl</p>
-<ul>
-<li><p>已存在利用”跳到代码中间”的技术Existing technique for exploiting non-bundle-aligned jump:</p>
-<p>20ea0: 48 b8 <strong>0f 05 eb 0c</strong> f4 f4 f4 f4</p>
-<p>movabs $0xf4f4f4f40<strong>ceb050f</strong>, %rax</p>
-</li>
-</ul>
-<p>隐藏以后:<br> 20ea2: <strong>0f 05</strong> syscall</p>
-<p> 20ea4: <strong>eb 0c</strong> jmp … // Jump to next hidden instr</p>
-<p> 20ea6: f4 hlt // Padding</p>
-<p>NaCl 减轻rowhammer的方法</p>
-<ul>
-<li>不允许 CLFLUSH</li>
-<li>也许对Hide code并没办法</li>
-</ul>
-<h3 id="利用-Kernel"><a href="#利用-Kernel" class="headerlink" title="利用 Kernel"></a>利用 Kernel</h3><p>x86页表条目(PTE)是密集的可信的</p>
-<ul>
-<li>他们控制物理内存访问权限，位翻转可以导致一个进程有权限访问另一个物理地址</li>
-<li>利用的目标: 得到页表访问权-&gt;得到所有物理地址的访问权</li>
-<li>尽量增大位翻转的有用性(用页表spray物理地址,先检测有用和可重复的位)</li>
-</ul>
-<p>x86-64 Page Table Entries (PTEs)</p>
-<p>Page table is a 4k page containing array of 512 PTEs</p>
-<ul>
-<li>Each PTE is 64 bits, containing:  <a href="https://www.blackhat.com/docs/us-15/materials/us-15-Seaborn-Exploiting-The-DRAM-Rowhammer-Bug-To-Gain-Kernel-Privileges.pdf#35" target="_blank" rel="noopener">graph</a></li>
-</ul>
-<p>可以翻转 :</p>
-<ul>
-<li>2% 的机会 可写位1bit</li>
-<li>31% 的机会 物理地址号: 20位/4GB 系统</li>
-</ul>
-<p>What happens when we repeatedly map a file with read-write permissions?</p>
-<ol>
-<li>PTEs in physical memory help resolve virtual addresses to physical pages.</li>
-<li>We can fill physical memory with PTEs. <a href="https://www.blackhat.com/docs/us-15/materials/us-15-Seaborn-Exploiting-The-DRAM-Rowhammer-Bug-To-Gain-Kernel-Privileges.pdf#48" target="_blank" rel="noopener">graphs</a></li>
-<li>Each of them points to pages in the same physical file mapping.</li>
-<li>If a bit in the right place in the PTE flips </li>
-<li>the corresponding virtual address now points to a wrong physical page - with RW access.</li>
-<li>Chances are this wrong page contains a page table itself.</li>
-<li>An attacker that can read / write page tables can use that to map any memory read-write.</li>
-</ol>
-<p>利用策略 (特权提升 7 个简单的步骤)</p>
-<ol>
-<li>Allocate a large chunk of memory</li>
-<li>Search for locations prone to flipping</li>
-<li>Check if they fall into the “right spot” in a PTE for allowing the exploit</li>
-<li>Return that particular area of memory to the operating system</li>
-<li>通过申请大量的地址空间 强迫系统为PTEs重用内存</li>
-<li>引起位翻转 即改变PTE的指向</li>
-<li>Abuse R/W access to all of physical memory In practice, there are many complications.</li>
-</ol>
-<p>可能出现的问题</p>
-<ol>
-<li>第6步 如果文件在内存中是连续的一块，有可能我们改变了PTE的指向 但是它任然指向的是文件内部 而非页表的部分 (解决方案:尽力分化文件在内存中所占的位置为分散的)</li>
-<li>第5步 很难让系统有规律的为PTE重用内存(作者说:我花了几个下午以某种方式探索Linux物理页分配器。不是很有趣的代码,结论Mark很聪明 他把系统内存压力逼到某个角落 系统表现得很好)</li>
-</ol>
-<p>减轻rowhammer</p>
-<ul>
-<li>CMU paper: “The industry has been aware of this problem since at least 2012”</li>
-<li>行业打算去减轻,但没有安全通告</li>
-<li>ECC(错误纠正机制 一位错纠正 两位错检测 3位以上没有但可能性很小) 但前提是运行的机器使用了ECC 评价:该减轻方案不理想 昂贵 不能保证工作</li>
-<li>TRR(目标行刷新) “理想”的方案 统计被激活行的次数 当达到阈值时刷新邻行(LPDDR4在使用，内存控制器pTRR,Intel也说Ivy桥用pTRR 虽然并没找到证据?)</li>
-<li>更高的DRAM刷新率,2x刷新率 当前CPU支持 很多厂商BIOS里可以设置这个参数tREFI(怎么验证刷新率？2x就够了么？)</li>
-</ul>
-<h3 id="我们能利用javascript-搞事情吗-产生rowhammer"><a href="#我们能利用javascript-搞事情吗-产生rowhammer" class="headerlink" title="我们能利用javascript 搞事情吗(产生rowhammer)"></a>我们能利用javascript 搞事情吗(产生rowhammer)</h3><p>通过正常缓存地址的访问在不适用CLFLUSH的情况下</p>
-<p>通过生成大量的cache misses</p>
-<p>JS的引擎速度不是问题 接近原生的访问数组 比如Asm.js</p>
-<p>cache missed 是缓慢的</p>
-<p>lavados正在搞这个</p>
-<h3 id="引发cache-misses"><a href="#引发cache-misses" class="headerlink" title="引发cache misses"></a>引发cache misses</h3><p>需要在所有cache层 都miss (L1, L2, L3)</p>
-<p>Row hammering by accident in benchmarks (see paper)</p>
-<p>Not with an inclusive cache</p>
-<ul>
-<li>被驱逐的cache line 从 L1 L2 L3 都被驱逐</li>
-<li>用的是Intel 的CPUs</li>
-</ul>
-<p>获取cache配置算法/找到L3 cache相同的映射关系</p>
-<p>比如 12路的 L3 cache 找13个地址 依次访问一定会造成一次miss 见paper: The Spy in the Sandbox – Practical Cache Attacks in Javascript</p>
-<ul>
-<li>通过一定时间的内存访问</li>
-<li>原始动机:L3 cache side channel 攻击</li>
-</ul>
-<p>Cache 剔除方案</p>
-<ul>
-<li>LRU 对于 12路cache 每次循环会发生13次misses</li>
-<li>减少6.5倍行激活。不理想</li>
-<li>理想的是每个迭代2个cache misses</li>
-</ul>
-<p>真实CPU</p>
-<ul>
-<li>Sandy Bridge: bit 伪 LRU 1bit/1cache line</li>
-<li>Ivy Bridge : Quad Age LRU 2bit/cache line</li>
-<li>增加适应性: “设置决斗(set duelling)”</li>
-</ul>
-<p>通过 Cache side channel 减弱rowhammer</p>
-<ul>
-<li>减少时间精度(performance.now()) Changes in Firefox, Chrome, Safari/WebKit</li>
-</ul>
-<p>也许没用</p>
-<ul>
-<li>用更长的时间还是可以获知cache配置算法</li>
-<li>多线程: 建立自己的时钟 ( PNaCl, SharedArrayBuffers in Javascript WebAssembly )</li>
-<li>CPU 性能计数器</li>
-</ul>
-<h2 id="未知"><a href="#未知" class="headerlink" title="未知:"></a>未知:</h2><ul>
-<li>ARM 和 移动设备 (cache 组织? CPU性能 和 内存控制器)</li>
-<li>损坏 Anecdotal observations</li>
-</ul>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p> 作为软件层面沙箱越来越吊,攻击者将去玩更深奥的缺陷,如硬件错误</p>
-<p> Rowhammer: 不只是可靠性的问题</p>
-<p> 难判定硬件达到了标准</p>
-<p><a href="https://groups.google.com/group/rowhammer-discuss/" target="_blank" rel="noopener">Mailing list</a></p>
-<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>利用clflUSH可以触发rowhammer，并找出提高触发率的一些访问方式(一轮多组 找冲突对)</p>
-<p>通过作者提供的方案步骤可以利用rowhammer</p>
-<p>有ECC TRR 提高刷新频率等应对/解决/减弱的方案</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/Blog/page/21/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/7/">7</a><a class="page-number" href="/Blog/page/15/">15</a><a class="page-number" href="/Blog/page/19/">19</a><a class="page-number" href="/Blog/page/21/">21</a><span class="page-number current">22</span>
+    <a class="extend prev" rel="prev" href="/Blog/page/21/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/7/">7</a><a class="page-number" href="/Blog/page/15/">15</a><a class="page-number" href="/Blog/page/19/">19</a><a class="page-number" href="/Blog/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/Blog/page/23/">23</a><a class="extend next" rel="next" href="/Blog/page/23/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -1573,7 +1259,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-count">111</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
