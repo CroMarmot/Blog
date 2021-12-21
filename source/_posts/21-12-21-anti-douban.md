@@ -34,7 +34,7 @@ js调试：chrome断点，格式化代码，console，js基本语法，
 
 接下来考虑，通过限制网速，切换到低速3G, 并增加截图，定位大概和哪个资源有关
 
-并伴随block地址，来看是哪个
+并伴随block地址，来看是哪个资源相关
 
 ---
 
@@ -262,11 +262,9 @@ var a = r(81).UINT64
 
 一个好消息是，这里的字段和输出提示，有不少没有被打包模糊掉
 
-通过关键字，搜索到一个bplist
+通过关键字，搜索到一个叫做bplist的东西, 把bplist的代码拷贝进来调用
 
-`https://github.com/firewalla/firewalla_nodemodules/blob/4f9e52918fda5b233e7e78d457c637ec4686fe04/.0.0.6%40bplist-parser/bplistParser.js`
-
-这一部分，就完全抠代码。其中还有不少`Uint8Array.prototype` 的函数
+剩下的内容就完全抠代码。其中有不少`Uint8Array.prototype` 的函数
 
 这里需要注意的是，豆瓣的`parseObject`中的`objType` 和 上面的`bplistParser.js`中的不一样
 
@@ -799,7 +797,7 @@ var parseBuffer = function(buffer) {
             // length is String length -> to get byte length multiply by 2, as 1 character takes 2 bytes in UTF-16
             length *= (isUtf16 + 1);
             if (length < maxObjectSize) {
-                var plistString = buffer.slice(offset + stroffset, offset + stroffset + length);
+                var plistString = Buffer.from(buffer.slice(offset + stroffset, offset + stroffset + length));
                 if (isUtf16) {
                     plistString = swapBytes(plistString);
                     enc = "ucs2";
@@ -888,7 +886,409 @@ console.warn(result1);
 console.warn(parseBuffer(result1))
 ```
 
+## 版本2 
 
+多个迹象表明，他们应该用的bufferjs，但是buffer只有node的，所以需要bufferjs的前端库`https://bundle.run/buffer@6.0.3`
+
+通过`script`标签和`var Buffer = buffer.Buffer`就可以使用了
+
+不幸的是，经过替换发现有个值转义失败了，检查传入数组没有问题，定位到问题在他被swapBytes了两次，
+
+也就是传值传址，Buffer和Uint8Array行为上有区别，解决方案是，swapBytes不操作传入数据, 或者在开始套上 `Buffer.from()`, github上有的代码这部分是错的
+
+```diff
+- var plistString = buffer.slice(offset + stroffset, offset + stroffset + length);
++ var plistString = Buffer.from(buffer.slice(offset + stroffset, offset + stroffset + length));
+```
+
+或
+
+```diff
+- function swapBytes(buffer) {
++ function swapBytes(buf) {
++  buffer = new Buffer(buf); // 这里需要修改 因为某个位置被访问了多次，修改了原始数据
+  var len = buffer.length;
+  for (var i = 0; i < len; i += 2) {
+    var a = buffer[i];
+    buffer[i] = buffer[i+1];
+    buffer[i+1] = a;
+  }
+  return buffer;
+}
+```
+
+因为 豆瓣对parse解析还有魔改（上面的映射），这里找到的库即是nodejs的，又和它不一致，这一部分就不找外部函数了，最终
+
+`index.html`
+
+```html
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body>
+	<script type="text/javascript" src="./feross.buffer.6.0.3.js"></script>
+	<script type="text/javascript" src="./xxhash.min.js"></script>
+	<script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
+```
+
+`index.js`
+
+```js
+var Buffer = buffer.Buffer
+
+var btool = function(r) {
+    let i = 16;
+    let a = Buffer.from(r, "base64");
+    let s = Math.max(Math.floor((a.length - 2 * i) / 3), 0)
+    let u = new Buffer(a.slice(s, s + i));
+    a = Buffer.concat([a.slice(0, s), a.slice(s + i)]);
+    var c = XXH.h64(Buffer.concat([u, Buffer.from("")]), 0xA1BD).toString(16);
+    return [c, a]
+}
+
+var decrypto = function(e, r) {
+    // "hjasbdn2ih823rgwudsde7e2dhsdhas";
+    "string" == typeof r && (r = [].map.call(r, function(t) {
+        return t.charCodeAt(0)
+    }));
+    for (var n, o = [], i = 0, a = new Buffer(e.length), s = 0; s < 256; s++)
+        o[s] = s;
+    for (s = 0; s < 256; s++)
+        i = (i + o[s] + r[s % r.length]) % 256,
+        n = o[s],
+        o[s] = o[i],
+        o[i] = n;
+    s = 0,
+    i = 0;
+    for (var u = 0; u < e.length; u++)
+        s = (s + 1) % 256,
+        i = (i + o[s]) % 256,
+        n = o[s],
+        o[s] = o[i],
+        o[i] = n,
+        a[u] = e[u] ^ o[(o[s] + o[i]) % 256];
+    return a
+}
+
+var debug = false;
+
+var maxObjectSize = 100 * 1000 * 1000;
+// 100Meg
+var maxObjectCount = 32768;
+
+// EPOCH = new SimpleDateFormat("yyyy MM dd zzz").parse("2001 01 01 GMT").getTime();
+// ...but that's annoying in a static initializer because it can throw exceptions, ick.
+// So we just hardcode the correct value.
+var EPOCH = 978307200000;
+
+// we're just going to toss the high order bits because javascript doesn't have 64-bit ints
+function readUInt64BE(buffer, start) {
+  var data = buffer.slice(start, start + 8);
+  return data.readUInt32BE(4, 8);
+}
+
+function swapBytes(buffer) {
+  var len = buffer.length;
+  for (var i = 0; i < len; i += 2) {
+    var a = buffer[i];
+    buffer[i] = buffer[i+1];
+    buffer[i+1] = a;
+  }
+  return buffer;
+}
+
+
+function readUInt(buffer, start) {
+  start = start || 0;
+
+  var l = 0;
+  for (var i = start; i < buffer.length; i++) {
+    l <<= 8;
+    l |= buffer[i] & 0xFF;
+  }
+  return l;
+}
+
+var parseBuffer = function(buffer) {
+    var result = {};
+    // Handle trailer, last 32 bytes of the file
+    var trailer = buffer.slice(buffer.length - 32, buffer.length);
+    // 6 null bytes (index 0 to 5)
+    var offsetSize = trailer.readUInt8(6);
+    if (debug) {
+        console.log("offsetSize: " + offsetSize);
+    }
+    var objectRefSize = trailer.readUInt8(7);
+    if (debug) {
+        console.log("objectRefSize: " + objectRefSize);
+    }
+    var numObjects = readUInt64BE(trailer, 8);
+    if (debug) {
+        console.log("numObjects: " + numObjects);
+    }
+    var topObject = readUInt64BE(trailer, 16);
+    if (debug) {
+        console.log("topObject: " + topObject);
+    }
+    var offsetTableOffset = readUInt64BE(trailer, 24);
+    if (debug) {
+        console.log("offsetTableOffset: " + offsetTableOffset);
+    }
+
+    if (numObjects > maxObjectCount) {
+        throw new Error("maxObjectCount exceeded");
+    }
+	console.log(JSON.stringify(buffer.slice(0,20)));
+
+    // Handle offset table
+    var offsetTable = [];
+
+    for (var i = 0; i < numObjects; i++) {
+        var offsetBytes = buffer.slice(offsetTableOffset + i * offsetSize, offsetTableOffset + (i + 1) * offsetSize);
+        offsetTable[i] = readUInt(offsetBytes, 0);
+        if (debug) {
+            console.log("Offset for Object #" + i + " is " + offsetTable[i] + " [" + offsetTable[i].toString(16) + "]");
+        }
+    }
+
+    // Parses an object inside the currently parsed binary property list.
+    // For the format specification check
+    // <a href="http://www.opensource.apple.com/source/CF/CF-635/CFBinaryPList.c">
+    // Apple's binary property list parser implementation</a>.
+    function parseObject(tableOffset) {
+		var offset = offsetTable[tableOffset];
+        var type = buffer[offset];
+        var objType = (type & 0xF0) >> 4;
+        //First  4 bits
+        var objInfo = (type & 0x0F);
+        //Second 4 bits
+        switch (objType) {
+        case 0x0:
+            return parseSimple();
+        case 0x1:
+            return parseInteger();
+        case 0x8:
+            return parseUID();
+        case 0x2:
+            return parseReal();
+        case 0x3:
+            return parseDate();
+        case 0x6:
+            return parseData();
+        case 0x4:
+            // ASCII
+            return parsePlistString();
+        case 0x5:
+            // UTF-16
+            return parsePlistString(true);
+        case 0xA:
+            return parseArray();
+        case 0xD:
+            return parseDictionary();
+        default:
+            throw new Error("Unhandled type 0x" + objType.toString(16));
+        }
+
+        function parseSimple() {
+            //Simple
+            switch (objInfo) {
+            case 0x0:
+                // null
+                return null;
+            case 0x8:
+                // false
+                return false;
+            case 0x9:
+                // true
+                return true;
+            case 0xF:
+                // filler byte
+                return null;
+            default:
+                throw new Error("Unhandled simple type 0x" + objType.toString(16));
+            }
+        }
+
+        function parseInteger() {
+            var length = Math.pow(2, objInfo);
+            if (length < maxObjectSize) {
+                return readUInt(buffer.slice(offset + 1, offset + 1 + length));
+            } else {
+                throw new Error("To little heap space available! Wanted to read " + length + " bytes, but only " + maxObjectSize + " are available.");
+            }
+        }
+
+        function parseUID() {
+            var length = objInfo + 1;
+            if (length < maxObjectSize) {
+                return readUInt(buffer.slice(offset + 1, offset + 1 + length));
+            } else {
+                throw new Error("To little heap space available! Wanted to read " + length + " bytes, but only " + maxObjectSize + " are available.");
+            }
+        }
+
+        function parseReal() {
+            var length = Math.pow(2, objInfo);
+            if (length < maxObjectSize) {
+                var realBuffer = buffer.slice(offset + 1, offset + 1 + length);
+                if (length === 4) {
+                    return realBuffer.readFloatBE(0);
+                } else if (length === 8) {
+                    return realBuffer.readDoubleBE(0);
+                }
+            } else {
+                throw new Error("To little heap space available! Wanted to read " + length + " bytes, but only " + maxObjectSize + " are available.");
+            }
+        }
+
+        function parseDate() {
+            if (objInfo != 0x3) {
+                console.error("Unknown date type :" + objInfo + ". Parsing anyway...");
+            }
+            var dateBuffer = buffer.slice(offset + 1, offset + 9);
+            return new Date(EPOCH + (1000 * dateBuffer.readDoubleBE(0)));
+        }
+
+        function parseData() {
+            var dataoffset = 1;
+            var length = objInfo;
+            if (objInfo == 0xF) {
+                var int_type = buffer[offset + 1];
+                var intType = (int_type & 0xF0) / 0x10;
+                if (intType != 0x1) {
+                    console.error("0x4: UNEXPECTED LENGTH-INT TYPE! " + intType);
+                }
+                var intInfo = int_type & 0x0F;
+                var intLength = Math.pow(2, intInfo);
+                dataoffset = 2 + intLength;
+                if (intLength < 3) {
+                    length = readUInt(buffer.slice(offset + 2, offset + 2 + intLength));
+                } else {
+                    length = readUInt(buffer.slice(offset + 2, offset + 2 + intLength));
+                }
+            }
+            if (length < maxObjectSize) {
+                return buffer.slice(offset + dataoffset, offset + dataoffset + length);
+            } else {
+                throw new Error("To little heap space available! Wanted to read " + length + " bytes, but only " + maxObjectSize + " are available.");
+            }
+        }
+
+        function parsePlistString(isUtf16) {
+            isUtf16 = isUtf16 || 0;
+            var enc = "utf8";
+            var length = objInfo;
+            var stroffset = 1;
+            if (objInfo == 0xF) {
+                var int_type = buffer[offset + 1];
+                var intType = (int_type & 0xF0) / 0x10;
+                if (intType != 0x1) {
+                    console.err("UNEXPECTED LENGTH-INT TYPE! " + intType);
+                }
+                var intInfo = int_type & 0x0F;
+                var intLength = Math.pow(2, intInfo);
+                var stroffset = 2 + intLength;
+                if (intLength < 3) {
+                    length = readUInt(buffer.slice(offset + 2, offset + 2 + intLength));
+                } else {
+                    length = readUInt(buffer.slice(offset + 2, offset + 2 + intLength));
+                }
+            }
+            // length is String length -> to get byte length multiply by 2, as 1 character takes 2 bytes in UTF-16
+            length *= (isUtf16 + 1);
+            if (length < maxObjectSize) {
+                var plistString = Buffer.from(buffer.slice(offset + stroffset, offset + stroffset + length));
+                if (isUtf16) {
+                    plistString = swapBytes(plistString);
+                    enc = "ucs2";
+                }
+                return plistString.toString(enc);
+            } else {
+                throw new Error("To little heap space available! Wanted to read " + length + " bytes, but only " + maxObjectSize + " are available.");
+            }
+        }
+
+        function parseArray() {
+            var length = objInfo;
+            var arrayoffset = 1;
+            if (objInfo == 0xF) {
+                var int_type = buffer[offset + 1];
+                var intType = (int_type & 0xF0) / 0x10;
+                if (intType != 0x1) {
+                    console.error("0xa: UNEXPECTED LENGTH-INT TYPE! " + intType);
+                }
+                var intInfo = int_type & 0x0F;
+                var intLength = Math.pow(2, intInfo);
+                arrayoffset = 2 + intLength;
+                if (intLength < 3) {
+                    length = readUInt(buffer.slice(offset + 2, offset + 2 + intLength));
+                } else {
+                    length = readUInt(buffer.slice(offset + 2, offset + 2 + intLength));
+                }
+            }
+            if (length * objectRefSize > maxObjectSize) {
+                throw new Error("To little heap space available!");
+            }
+            var array = [];
+            for (var i = 0; i < length; i++) {
+                var objRef = readUInt(buffer.slice(offset + arrayoffset + i * objectRefSize, offset + arrayoffset + (i + 1) * objectRefSize));
+                array[i] = parseObject(objRef);
+            }
+            return array;
+        }
+
+        function parseDictionary() {
+            var length = objInfo;
+            var dictoffset = 1;
+            if (objInfo == 0xF) {
+                var int_type = buffer[offset + 1];
+                var intType = (int_type & 0xF0) / 0x10;
+                if (intType != 0x1) {
+                    console.error("0xD: UNEXPECTED LENGTH-INT TYPE! " + intType);
+                }
+                var intInfo = int_type & 0x0F;
+                var intLength = Math.pow(2, intInfo);
+                dictoffset = 2 + intLength;
+                if (intLength < 3) {
+                    length = readUInt(buffer.slice(offset + 2, offset + 2 + intLength));
+                } else {
+                    length = readUInt(buffer.slice(offset + 2, offset + 2 + intLength));
+                }
+            }
+            if (length * 2 * objectRefSize > maxObjectSize) {
+                throw new Error("To little heap space available!");
+            }
+            if (debug) {
+                console.log("Parsing dictionary #" + tableOffset);
+            }
+            var dict = {};
+            for (var i = 0; i < length; i++) {
+                var keyRef = readUInt(buffer.slice(offset + dictoffset + i * objectRefSize, offset + dictoffset + (i + 1) * objectRefSize));
+                var valRef = readUInt(buffer.slice(offset + dictoffset + (length * objectRefSize) + i * objectRefSize, offset + dictoffset + (length * objectRefSize) + (i + 1) * objectRefSize));
+                var key = parseObject(keyRef);
+                var val = parseObject(valRef);
+                if (debug) {
+                    console.log("  DICT #" + tableOffset + ": Mapped " + key + " to " + val);
+                }
+                dict[key] = val;
+            }
+            return dict;
+        }
+    }
+
+    return [parseObject(topObject)];
+};
+
+// 你的数据放在`window.__DATA__` 中
+var result0 = btool(window.__DATA__);
+console.warn(result0);
+result1 = decrypto(result0[1], result0[0])
+console.warn(result1);
+window.result=parseBuffer(result1)
+console.warn(window.result)
+```
 
 # 总结
 
@@ -898,6 +1298,7 @@ console.warn(parseBuffer(result1))
 3. 虽然前端代码通过打包，让很多变量看不到了，但是依赖的库中的字符串，hash值依然是很容易入手的点，加上体验很好的chrome断点调试
 4. 毕竟js不是强类型，出现Buffer/Uint8array 这种比较模糊的，可以先实现，后整理
 5. 实际上后续发现，虽然搜索做了这个加密，但实际上，还有推荐`https://book.douban.com/j/subject_suggest?q=%E5%AE%9E%E5%8F%98%E5%87%BD+%E6%95%B0` 直接返回的json，另外点开`https://book.douban.com/subject/4828876/` 以后 也是html源码中就有数据，好像完全不需要本篇的破解
+6. 有些通用的能找到源码，但有些被魔改的部分还是需要手动定位。
 
 # Ref
 
@@ -909,4 +1310,7 @@ console.warn(parseBuffer(result1))
 
 [Uint8Array.prototype.copy](http://tnga.github.io/lib.ijs/docs/i_core.js.html)
 
-[bplistparser](https://github.com/firewalla/fnm.node8.aarch64/blob/aa65740209c1b57b8462d4ebe659c23341276e4e/.0.0.6%40bplist-parser/bplistParser.js)
+[bplistparser](https://github.com/joeferner/node-bplist-parser/blob/master/bplistParser.js)
+
+[buffer.min.js](https://bundle.run/buffer@6.0.3)
+
