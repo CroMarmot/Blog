@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>给老电脑换个ssd, cheatsheet</title>
+      <link href="/Blog/22-03-13-newssdforoldcomputer/"/>
+      <url>/Blog/22-03-13-newssdforoldcomputer/</url>
+      
+        <content type="html"><![CDATA[<p><strong>带sudo的一定小心, 别选错盘了</strong></p><h1 id="工具推荐"><a href="#工具推荐" class="headerlink" title="工具推荐"></a>工具推荐</h1><p>bcompare</p><p>gparted</p><h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>带进度拷贝</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync -aP &lt;源&gt; &lt;目标&gt;</span><br></pre></td></tr></table></figure><p>磁盘情况查看</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure><p>动态观察</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">watch</span><br></pre></td></tr></table></figure><p>文件夹统计</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du --max-depth=1 -h</span><br></pre></td></tr></table></figure><p>停用swap</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo swapoff -a</span><br></pre></td></tr></table></figure><p>磁盘使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iotop</span><br></pre></td></tr></table></figure><p>进程状态</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htop</span><br></pre></td></tr></table></figure><p>停止挂载</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">umount /xxxxx(根据df看)</span><br></pre></td></tr></table></figure><p>unmount时查看持有状态</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo fuser -mv /media/xxxxxx</span><br></pre></td></tr></table></figure><p>分区编辑</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo fdisk</span><br></pre></td></tr></table></figure><p>uuid</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blkid</span><br></pre></td></tr></table></figure><p>启动时mount <code>/etc/fstab</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> backend </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>豆瓣页面数据解密</title>
       <link href="/Blog/21-12-21-anti-douban/"/>
       <url>/Blog/21-12-21-anti-douban/</url>

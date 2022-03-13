@@ -191,6 +191,113 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/22-03-13-newssdforoldcomputer/" class="post-title-link" itemprop="url">给老电脑换个ssd, cheatsheet</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2022-03-13 00:00:00 / 修改時間：19:13:19" itemprop="dateCreated datePublished" datetime="2022-03-13T00:00:00+08:00">2022-03-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/22-03-13-newssdforoldcomputer/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="22-03-13-newssdforoldcomputer/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>带sudo的一定小心, 别选错盘了</strong></p>
+<h1 id="工具推荐"><a href="#工具推荐" class="headerlink" title="工具推荐"></a>工具推荐</h1><p>bcompare</p>
+<p>gparted</p>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>带进度拷贝</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync -aP &lt;源&gt; &lt;目标&gt;</span><br></pre></td></tr></table></figure>
+<p>磁盘情况查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+<p>动态观察</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">watch</span><br></pre></td></tr></table></figure>
+<p>文件夹统计</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du --max-depth=1 -h</span><br></pre></td></tr></table></figure>
+<p>停用swap</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo swapoff -a</span><br></pre></td></tr></table></figure>
+<p>磁盘使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iotop</span><br></pre></td></tr></table></figure>
+<p>进程状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htop</span><br></pre></td></tr></table></figure>
+<p>停止挂载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">umount /xxxxx(根据df看)</span><br></pre></td></tr></table></figure>
+<p>unmount时查看持有状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo fuser -mv /media/xxxxxx</span><br></pre></td></tr></table></figure>
+<p>分区编辑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo fdisk</span><br></pre></td></tr></table></figure>
+<p>uuid</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blkid</span><br></pre></td></tr></table></figure>
+<p>启动时mount <code>/etc/fstab</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-12-21-anti-douban/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -214,10 +321,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2021-12-21 00:00:00 / 修改時間：16:00:53" itemprop="dateCreated datePublished" datetime="2021-12-21T00:00:00+08:00">2021-12-21</time>
+              <time title="創建時間：2021-12-21 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-21T00:00:00+08:00">2021-12-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -321,7 +434,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -417,7 +530,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -561,7 +674,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -618,110 +731,6 @@
 <p>但 gitlab官方似乎已经改了</p>
 <p><a href="https://gitlab.com/YeXiaoRain/gitlab-pr-view-bug/-/merge_requests/1/diffs" target="_blank" rel="noopener">https://gitlab.com/YeXiaoRain/gitlab-pr-view-bug/-/merge_requests/1/diffs</a></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://gitlab.com/gitlab-org/gitlab-foss/-/issues/15140" target="_blank" rel="noopener">https://gitlab.com/gitlab-org/gitlab-foss/-/issues/15140</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-09-02-vue-transition/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/21-09-02-vue-transition/" class="post-title-link" itemprop="url">Vue transition</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-09-02 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-02T00:00:00+08:00">2021-09-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/21-09-02-vue-transition/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-09-02-vue-transition/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="对于transition的一个核心问题是时间哪里来的"><a href="#对于transition的一个核心问题是时间哪里来的" class="headerlink" title="对于transition的一个核心问题是时间哪里来的"></a>对于transition的一个核心问题是时间哪里来的</h1><p>因为name这些感觉能拿到, 拼接也就当然</p>
-<p>而 transition包裹的内部元素销毁，如果能拿到时间，那其实跟keep-alive 原理类似，在时间以后再销毁即可</p>
-<p>然而我们并没有传递一个时间给元素，它却能知道时间</p>
-<h1 id="source-code"><a href="#source-code" class="headerlink" title="source code"></a>source code</h1><h2 id="vue2"><a href="#vue2" class="headerlink" title="vue2"></a>vue2</h2><p><code>src/platforms/web/runtime/transition-util.js</code></p>
-<p>中</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">export</span> function <span class="title">getTransitionInfo</span> <span class="params">(el: Element, expectedType?: ?<span class="built_in">string</span>)</span>: </span>&#123;</span><br><span class="line">  type: ?<span class="built_in">string</span>;</span><br><span class="line">  propCount: number;</span><br><span class="line">  timeout: number;</span><br><span class="line">  hasTransform: boolean;</span><br><span class="line">&#125; &#123;</span><br><span class="line">  <span class="keyword">const</span> styles: any = window.getComputedStyle(el)</span><br><span class="line">  <span class="comment">// JSDOM may return undefined for transition properties</span></span><br><span class="line">  const transitionDelays: Array&lt;string&gt; = (styles[transitionProp + 'Delay'] || '').split(', ')</span><br><span class="line">  const transitionDurations: Array&lt;string&gt; = (styles[transitionProp + 'Duration'] || '').split(', ')</span><br><span class="line">  <span class="keyword">const</span> transitionTimeout: number = getTimeout(transitionDelays, transitionDurations)</span><br><span class="line">  const animationDelays: Array&lt;string&gt; = (styles[animationProp + 'Delay'] || '').split(', ')</span><br><span class="line">  const animationDurations: Array&lt;string&gt; = (styles[animationProp + 'Duration'] || '').split(', ')</span><br><span class="line">  <span class="keyword">const</span> animationTimeout: number = getTimeout(animationDelays, animationDurations)</span><br></pre></td></tr></table></figure>
-<h2 id="vue3"><a href="#vue3" class="headerlink" title="vue3"></a>vue3</h2><p><code>packages/runtime-dom/src/components/Transition.ts</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">export function getTransitionInfo(</span><br><span class="line">  el: Element,</span><br><span class="line">  expectedType?: TransitionProps[&apos;type&apos;]</span><br><span class="line">): CSSTransitionInfo &#123;</span><br><span class="line">  const styles: any = window.getComputedStyle(el)</span><br><span class="line">  // JSDOM may return undefined for transition properties</span><br><span class="line">  const getStyleProperties = (key: string) =&gt; (styles[key] || &apos;&apos;).split(&apos;, &apos;)</span><br><span class="line">  const transitionDelays = getStyleProperties(TRANSITION + &apos;Delay&apos;)</span><br><span class="line">  const transitionDurations = getStyleProperties(TRANSITION + &apos;Duration&apos;)</span><br><span class="line">  const transitionTimeout = getTimeout(transitionDelays, transitionDurations)</span><br><span class="line">  const animationDelays = getStyleProperties(ANIMATION + &apos;Delay&apos;)</span><br><span class="line">  const animationDurations = getStyleProperties(ANIMATION + &apos;Duration&apos;)</span><br><span class="line">  const animationTimeout = getTimeout(animationDelays, animationDurations)</span><br></pre></td></tr></table></figure>
-<h2 id="所以"><a href="#所以" class="headerlink" title="所以"></a>所以</h2><p>核心是<code>window.getComputedStyle</code></p>
 
       
     </div>
@@ -806,7 +815,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">111</span>
+          <span class="site-state-item-count">112</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -864,7 +873,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

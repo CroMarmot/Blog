@@ -191,6 +191,107 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-04-27-gogs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/21-04-27-gogs/" class="post-title-link" itemprop="url">gogs with docker 破事水</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-04-27 00:00:00" itemprop="dateCreated datePublished" datetime="2021-04-27T00:00:00+08:00">2021-04-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/code/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/21-04-27-gogs/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-04-27-gogs/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="起"><a href="#起" class="headerlink" title="起"></a>起</h1><p>众所周知，我电脑目前只有16G，虽然Ubuntu本身吃不了多少内存，要同时开Dota2,VMware，Chrome之类的，gitlab/jenkins对我来说已经太大了</p>
+<p>要想在自己本地电脑上玩个git server，（虽然也没啥卵用，毕竟一般来说私有的本地git就管理了不需要server，公开的都丢github</p>
+<p>就要找一个小内存占用的</p>
+<h1 id="用"><a href="#用" class="headerlink" title="用"></a>用</h1><p>建立一个宿主上的存放<code>gogs</code>数据的文件夹，我这边数据类都丢在<code>/data</code>里，所以我这是<code>mkdir -p /data/gogs</code></p>
+<p>然后启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /data/gogs:/data gogs/gogs</span><br></pre></td></tr></table></figure>
+<p>然后网页开<code>localhost:10080</code>就好了</p>
+<p>这里需要注意的是git设置用<code>[git@192.XXX.XXX.XXX:10022]:cromarmot/demo.git</code>的形式</p>
+<h1 id="合"><a href="#合" class="headerlink" title="合"></a>合</h1><p>这样就可以dota2+vmware+chrome+nextcloud+gogs了，好耶，虽然也不知道有啥卵用</p>
+<p><a href="https://github.com/gogs/gogs/tree/main/docker" target="_blank" rel="noopener">https://github.com/gogs/gogs/tree/main/docker</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-04-01-pointers/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +323,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -345,7 +446,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -458,7 +559,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -559,7 +660,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -656,107 +757,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-03-09-js-module/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/21-03-09-js-module/" class="post-title-link" itemprop="url">amd/cmd/commonjs/umd/esm/iife/systemjs</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-03-09 21:58:14" itemprop="dateCreated datePublished" datetime="2021-03-09T21:58:14+08:00">2021-03-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/21-03-09-js-module/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-03-09-js-module/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>为了模块拆分</p>
-<h1 id="AMD-asynchromous-module-definition-异步模块定义"><a href="#AMD-asynchromous-module-definition-异步模块定义" class="headerlink" title="AMD(asynchromous module definition 异步模块定义)"></a>AMD(asynchromous module definition 异步模块定义)</h1><p>RequireJS,前端，异步</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">'module1'</span>, [<span class="string">'jquery'</span>], ($) =&gt; &#123;</span><br><span class="line">  <span class="comment">//do something...</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">define(模块, [依赖的模块], ($) =&gt; &#123;</span><br><span class="line">  <span class="comment">//do something...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/21-03-09-js-module/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -826,7 +826,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">111</span>
+          <span class="site-state-item-count">112</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -884,7 +884,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -191,6 +191,221 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-01-21-node-mongo-angularjs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/17-01-21-node-mongo-angularjs/" class="post-title-link" itemprop="url">nodejs mongodb angularjs 个人笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2017-01-21 01:01:01" itemprop="dateCreated datePublished" datetime="2017-01-21T01:01:01+08:00">2017-01-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/notes/" itemprop="url" rel="index"><span itemprop="name">notes</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/17-01-21-node-mongo-angularjs/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-01-21-node-mongo-angularjs/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="mongodb-学习记录"><a href="#mongodb-学习记录" class="headerlink" title="mongodb 学习记录"></a>mongodb 学习记录</h1><h2 id="本文依赖"><a href="#本文依赖" class="headerlink" title="本文依赖"></a>本文依赖</h2><p><code>nodejs</code></p>
+<p><code>mongodb</code></p>
+<p><code>angularjs</code></p>
+<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p><a href="P7">工作总图</a></p>
+<h2 id="Detail"><a href="#Detail" class="headerlink" title="Detail"></a>Detail</h2><h3 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h3><p>事件驱动可扩展性，端到端</p>
+<blockquote>
+<p>npm install</p>
+</blockquote>
+<blockquote>
+<p>npm search</p>
+</blockquote>
+<blockquote>
+<p>npm install -g</p>
+</blockquote>
+<blockquote>
+<p>npm install -g npm-check</p>
+</blockquote>
+<blockquote>
+<p>npm-check -u -g</p>
+</blockquote>
+<p><a href="P43-45">模块封装</a></p>
+<p><a href="P51-P55">事件模型 阻塞I/O</a></p>
+<h4 id="发送接受P59"><a href="#发送接受P59" class="headerlink" title="发送接受P59"></a>发送接受P59</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">"events"</span>);</span><br><span class="line"><span class="keyword">var</span> emitter=events.EventEmitter();</span><br><span class="line">emitter.emit(eventName,data);</span><br><span class="line">.addListener(eventName,callback(data))</span><br><span class="line">.on(eventName,callback(data))</span><br><span class="line">.once(eventName,callback(data))</span><br></pre></td></tr></table></figure>
+<p>json/buffer/stream(网页流数据/压缩解压) -P90</p>
+<p>文件系统 -P107</p>
+<p>require(“fs”)</p>
+<p>HTTP:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">require(&quot;http&quot;)</span><br><span class="line">require(&quot;url&quot;)</span><br><span class="line">require(&quot;querystring&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>HTTPS:P127-<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">openssl genrsa -out server.pem 2048</span></span><br><span class="line"><span class="comment">openssl req -new -key server.pem -out server.csr</span></span><br><span class="line"><span class="comment">openssl x509 -req -days 365 -in server.csr -signkey server.pem -out server.crt</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> https = <span class="built_in">require</span>(<span class="string">"https"</span>);                                                                                                                          </span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">var</span> options = &#123;</span><br><span class="line">  key: fs.readFileSync(<span class="string">"./server.pem"</span>),</span><br><span class="line">  cert: fs.readFileSync(<span class="string">"./server.crt"</span>)</span><br><span class="line">&#125;;</span><br><span class="line">https.createServer(options,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">  res.writeHead(<span class="number">200</span>);</span><br><span class="line">  res.end(<span class="string">"Hello Secure World\n"</span>);</span><br><span class="line">&#125;).listen(<span class="number">8128</span>);</span><br></pre></td></tr></table></figure></p>
+<p>socket P132-</p>
+<p>多处理器</p>
+<p><code>process</code></p>
+<p><code>child_process</code></p>
+<p><code>cluster,worker</code>实现多个”线程”监听一个port并可自动处理<code>cluster_server.js /cluster_worker.js/cluster_client.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">process.stdin.on(&quot;data&quot;,function(data)&#123;;&#125;);</span><br><span class="line">process.on(&quot;SIGINT&quot;,function()&#123;;&#125;);</span><br><span class="line">process.on(&quot;SIGBREAK&quot;,function()&#123;;&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>https://raw.githubusercontent.com/bwdbooks/nodejs-mongodb-angularjs-web-development/master/ch09/process_info.js</code></p>
+<p><code>exec() / execFile()/spawn()</code></p>
+<p>其它模块介绍,runnoob上也有<a href="https://nodejs.org/api/" target="_blank" rel="noopener">https://nodejs.org/api/</a></p>
+<p><code>os</code>见<code>os_info.js</code></p>
+<p><code>util</code>有<code>format,log,debug,checktype,转对象为字串</code>原型继承见<code>util_inherit.js</code></p>
+<p><code>dns</code>有lookup不同level的resolve</p>
+<h4 id="Express-server"><a href="#Express-server" class="headerlink" title="Express(server)"></a>Express(server)</h4><p>npm install express</p>
+<p>route,Error handle,易于集成,cookie,会话缓存</p>
+<p><code>_http_https.js</code> <code>require(&#39;url&#39;)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(&apos;/user/:userid&apos;,function(req.res)&#123;</span><br><span class="line">	res.send(&quot;Get User: &quot;+ req.param(&quot;userid&quot;));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>express_routes.js</code> 路由demo/req.params/正则/Request对象/Response对象</p>
+<p><code>express_json.js/express_send_file.js/res.download([path])/res.redirect()</code></p>
+<p>模板引擎<code>ejs+jade</code>,<code>express_templates.js and other files</code></p>
+<p>中间件大法</p>
+<p><code>app.use(path,bodyParser()).use(path,bodyParser()).use(path,bodyParser());</code></p>
+<p><code>app.get(path,bodyParser(),function(req,res){});</code></p>
+<ul>
+<li><code>static 内置 流式处理静态文件访问</code></li>
+<li><code>express-logger</code></li>
+<li><code>basic-auth-connect基本身份验证</code></li>
+<li><code>cookie-parser读取设置cookie</code></li>
+<li><code>cookie-session/会话支持</code></li>
+<li><code>express-session,相当强大会话实现</code></li>
+<li><code>body-parser req正文中的JSON解析为req.body</code></li>
+<li><code>compression 对客户端大响应提供Gzip支持</code></li>
+<li><code>csurf 跨站点请求 伪造保护</code></li>
+</ul>
+<p>res.query. 用于查询把url转化为json</p>
+<p>静态文件服务</p>
+<p><code>app.use(pathurl,express.static(path_file_or_dir_local)[,config]);//maxAge hidden redirect index</code></p>
+<p><code>auth_session.js</code> 会话+验证</p>
+<h3 id="mongodb-NoSQL"><a href="#mongodb-NoSQL" class="headerlink" title="mongodb(NoSQL)"></a>mongodb(NoSQL)</h3><p>针对文档，高性能，高可用性，高可扩展性</p>
+<p><a href="https://docs.mongodb.com/manual/installation/" target="_blank" rel="noopener">安装</a></p>
+<p><a href="https://docs.mongodb.com/manual/reference/bson-types/" target="_blank" rel="noopener">mongodb类型</a></p>
+<p><a href="http://www.runoob.com/mongodb/mongodb-tutorial.html" target="_blank" rel="noopener">基础教程</a></p>
+<p>封顶集合(capped collection) 超过大小以旧的替代新的</p>
+<p>索引？分片？复制？</p>
+<p>生命周期？应用程序代码控制或者TTL</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">help &lt;option&gt;</span><br><span class="line">use &lt;database&gt;</span><br><span class="line">show &lt;option&gt; (such as dbs,collections,profile,log)</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+<p>用户管理身份验证-P196</p>
+<p>数据库管理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">db.copyDatabase(origin,destination)</span><br><span class="line">db.dropDatabase()</span><br><span class="line">db.createCollection(&quot;collectionname&quot;)</span><br><span class="line">coll =db.getCollection(&quot;collectionname&quot;)</span><br><span class="line">coll.drop()</span><br><span class="line">coll.find(&#123;&apos;key&apos;:&apos;value&apos;&#125;)</span><br><span class="line">coll.insert(&#123;&apos;key&apos;:&apos;value&apos;&#125;)</span><br><span class="line">coll.remove(&#123;&apos;key&apos;:&apos;value&apos;&#125;)</span><br><span class="line">coll.update(where,set,other option) //inc set push sort等update运算符</span><br></pre></td></tr></table></figure>
+<p>mongo+nodejs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install mongo</span><br><span class="line">npm install mongoose</span><br></pre></td></tr></table></figure>
+<p>见 <code>db_connect_object.js</code></p>
+<p><a href="http://www.cnblogs.com/zhongweiv/p/node_mongodb.html#node_mongodb" target="_blank" rel="noopener">demo</a></p>
+<p><code>db,Admin,Collection,Cursor</code>对象</p>
+<p><code>atomically:findAndModify()/findAndRemove()</code></p>
+<p><code>upsert()/save()/remove()</code></p>
+<p>mongo可以直接执行js :<code>generate_data.js</code></p>
+<p>count / limit</p>
+<p><code>aggregate([{$match:{tasdf:X&quot;}},{$group:{asdf:&quot;agqwe&quot;,sdfo:{$sum:&quot;agqwe&quot;}}}])</code> //mapreduce? 聚合</p>
+<p>mongoose结构化模式与验证 </p>
+<p><code>mongoose/schema/query/Document</code></p>
+<p><code>mongoose_find.js/_create.js/_save/_update_one</code></p>
+<p><code>***.validate(function(value){;})</code></p>
+<p>中间件</p>
+<p><code>pre/post</code></p>
+<p>mongoDB高级</p>
+<p>ensureIndex /MongoClient</p>
+<p>分片集群等等 GridFS/GridStore</p>
+<p>修复 备份</p>
+<h3 id="angularjs"><a href="#angularjs" class="headerlink" title="angularjs"></a>angularjs</h3><p> 数据绑定，可扩展性，整洁，可重用，整洁，支持，兼容性</p>
+<p>MVC</p>
+<p><code>node_server.js</code>simple demo</p>
+<p>专有对象提供器<code>animation,controller,filter,directive</code></p>
+<p>服务提供器<code>value,constant,factory,service,provider</code></p>
+<p>注入<code>21 injector.js</code></p>
+<p>作用域+<code>广播emit/broadcast/on</code>-&gt;<code>event</code>的属性<code>targetScope/currentScope/name/stopPropagation/preventDefault/defaultPrevented</code></p>
+<p><code>ng-model,data-ng-model,x-ng:model,ng_model</code> 都被规范化为<code>ngModel</code></p>
+<p>内置过滤器<code>currency,filter:exp:compare,json,limitTo:limit,lowercase,uppercase,number[:fraction],orderBy:exp:reverse,date[:format]</code></p>
+<p>DIY过滤器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">angular.module(***).filter(&apos;fff&apos;,function()&#123;return function(leftinput,argument)&#123;return result;&#125;&#125;)</span><br><span class="line">controller(&apos;aController&apos;,[&apos;$scope&apos;,&apos;fffFilter&apos;,function($scope,fffFilter)&#123;</span><br><span class="line">	;//直接在html上用 或者 用作函数也行</span><br><span class="line">&#125;])</span><br></pre></td></tr></table></figure></p>
+<p>支持AngularJS模板功能的指令/表单 P411-419</p>
+<p>24<code>directive_custom.js/html</code></p>
+<ul>
+<li><code>template</code>允许你定义插入指令的元素的AngularJS模板</li>
+<li><code>templateUrl</code>同上但是是url</li>
+<li><code>restrict</code>允许你指定该指令 <code>A</code>属性名<code>E</code>元素名<code>C</code>类名</li>
+<li><code>replace</code>取代元素</li>
+<li><code>transclude</code>内部是否可以访问内部作用域以外的作用域</li>
+<li><code>scope</code>指定内部作用域，<code>{}</code>隔离 <code>@funcname</code>/<code>@</code> 绑定到DOM <code>=</code> 双向绑定 <code>&amp;</code> 局部绑定到指定scope</li>
+<li><code>link</code>指定 作用域 DOM元素 和其它能操作DOM属性的链接函数</li>
+<li><code>controller</code></li>
+<li><code>require</code>所需要的其它指令</li>
+</ul>
+<p>内置常用服务</p>
+<p><code>animate(css),cacheFactory,compile,cookies,document,http,interval,locale,location,resource,rootElement,rootScope,route,sce,templateCache,timeout/interval,window.alert,</code></p>
+<p><code>$http</code> 请求<code>delete/get/head/jsonp/post/put</code></p>
+<p>26章完整登陆注册验证实例</p>
+<p>社交媒体账户作为身份验证来源 <code>npm install passport/passport-google/passport-facebook/passport-twitter</code> 已验证后的序列化和反序列化 <code>google_auth.js</code></p>
+<p>27定义评论回复照片和页面模型 /mongoose model schema的应用 更复杂的控制实现 和 angularJS的service应用/</p>
+<p>28购物车 mongoose model schema的应用</p>
+<p>建议的代码文件结构方式,代码编码顺序[bg(node)/view(html[css])/fg(angularJS)]</p>
+<p>29 选项卡 天气服务 可拖动组件 交互表格数据</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/16-06-02-Hello-World/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +437,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -557,7 +772,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -652,7 +867,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -994,7 +1209,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
+                <time title="修改時間：2022-03-13 19:13:19" itemprop="dateModified" datetime="2022-03-13T19:13:19+08:00">2022-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1039,105 +1254,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Blog/15-06-12-switchbackground/">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/15-06-11-aoyoulogo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/15-06-11-aoyoulogo/" class="post-title-link" itemprop="url">aoyoulogo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2015-06-11 00:00:00" itemprop="dateCreated datePublished" datetime="2015-06-11T00:00:00+08:00">2015-06-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-12-21 16:00:53" itemprop="dateModified" datetime="2021-12-21T16:00:53+08:00">2021-12-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/15-06-11-aoyoulogo/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="15-06-11-aoyoulogo/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>纯css实现遨游浏览器图标</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/15-06-11-aoyoulogo/">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -1226,7 +1342,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">111</span>
+          <span class="site-state-item-count">112</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1284,7 +1400,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
