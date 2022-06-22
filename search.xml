@@ -3162,9 +3162,9 @@
       
         <tags>
             
-            <tag> rdf </tag>
-            
             <tag> sparql </tag>
+            
+            <tag> rdf </tag>
             
         </tags>
       
