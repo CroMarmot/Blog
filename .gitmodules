@@ -1,0 +1,4 @@
+[submodule "themes_next"]
+	path = themes/next
+  url = git@github.com:CroMarmot/hexo-theme-next.git
+  branch = cmmblog
