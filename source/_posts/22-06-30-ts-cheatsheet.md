@@ -10,9 +10,9 @@ mathjax: true
 
 ## 为什么写这篇
 
-[antfu的题目](https://github.com/type-challenges/type-challenges) 大多就是基础方法+递归, issues充斥着重复内容, 最开始还有点TS的味道, 后面完全变成了只有基础方法, 组合出一个东西, 感觉这个更适合作为递归练习题, 而不是TS练习题 (没有加减强行用数组拼接+length
+[antfu的题目](https://github.com/type-challenges/type-challenges) 大多就是基础方法+递归, issues充斥着重复内容, 最开始还有点TS的味道, 后面完全变成了只有基础方法, 组合出一个东西, 感觉这个更适合作为递归练习题, 而不是TS练习题 (没有数值强行用数组拼接+length, 等等
 
-TS也有文档,但是英文的,难以用中文检索
+TS有文档,是英文的,难以用中文检索
 
 本篇呢,是cheatsheet,不是document,把实际会用到常用的一些列出来+一些场景描述
 
@@ -38,17 +38,15 @@ TS也有文档,但是英文的,难以用中文检索
 
 [类](https://www.typescriptlang.org/docs/handbook/2/classes.html)
 
-[https://www.typescriptlang.org/docs/handbook/2/modules.html](https://www.typescriptlang.org/docs/handbook/2/modules.html)
+[modules](https://www.typescriptlang.org/docs/handbook/2/modules.html)
 
-### playground
+### 工具
 
-https://www.typescriptlang.org/play
+[playground](https://www.typescriptlang.org/play)
 
-### 3方工具库
+[ts-toolbelt](https://www.npmjs.com/package/ts-toolbelt)
 
-https://www.npmjs.com/package/ts-toolbelt
-
-https://www.npmjs.com/package/utility-types
+[utility-types](https://www.npmjs.com/package/utility-types)
 
 ### 自定义类型名
 
@@ -64,7 +62,7 @@ type HelloWord<T,W = 默认值>
 
 ### 数组内容的类型Union
 
-https://www.typescriptlang.org/docs/handbook/2/conditional-types.html
+`T`是数组类型
 
 ```ts
 T[number]
@@ -93,7 +91,7 @@ type p3 = {x:3} extends {}?true:false
 
 ### 条件类型
 
-https://www.typescriptlang.org/docs/handbook/2/conditional-types.html
+[Conditional Types](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html)
 
 相当于引入了`if`逻辑, 有了这个你可以自定义很多默认未提供的操作符, 并且可以递归的定义
 
@@ -101,7 +99,7 @@ https://www.typescriptlang.org/docs/handbook/2/conditional-types.html
 T extends U ? X : Y
 ```
 
-注意的是 T 如果是Union类型, 会**分别**对Union的**每一个**进行校验, 见 https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types
+注意的是 T 如果是Union类型, 会**分别**对Union的**每一个**进行校验, 见 [distributive-conditional-types](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types)
 
 为了防止 Union 被拆散 可以套一层括号
 
@@ -123,7 +121,7 @@ type K = W<1|2>
 
 #### 在条件中提取未知的具体类型
 
-https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types
+[inferring-within-conditional-types](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types)
 
 ```ts
 type Flatten<Type> = Type extends Array<infer XXX> ? XXX : Type;
@@ -177,7 +175,7 @@ if (r.status == 'error'){
 
 ### 获取一个对象的所有键的字符串Union
 
-https://www.typescriptlang.org/docs/handbook/2/keyof-types.html
+[Keyof Type Operator](https://www.typescriptlang.org/docs/handbook/2/keyof-types.html)
 
 有了这个你可以去对对象键操作做校验
 
@@ -197,7 +195,7 @@ type P = Point[keyof Point];
 
 ### 同值类型不同键名
 
-https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type
+[Record<Keys, Type>](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)
 
 ```ts
 Record<Keys, Type>
@@ -222,11 +220,11 @@ const cats: Record<CatName, CatInfo> = {
 
 字段相关工具
 
-https://www.typescriptlang.org/docs/handbook/utility-types.html
+[Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html)
 
 从已有的类型中取其中部分字段建立新类型
 
-https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys
+[Pick<Type, Keys>](https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys)
 
 ```ts
 Pick<Type, Keys>
@@ -244,7 +242,7 @@ type TodoPreview = Pick<Todo, "title" | "completed">;
 
 从已有的类型中移除部分字段建立新类型
 
-https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys
+[Omit<Type, Keys>](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)
 
 ```ts
 Omit<Type, Keys>
@@ -263,7 +261,7 @@ type TodoPreview = Omit<Todo, "description">;
 
 自定义需要哪些键, 从哪个Type中取, 甚至做一些去除 `?`, 键名重定义`as`的操作(可以`as`到`never` 消除这个键)
 
-https://www.typescriptlang.org/docs/handbook/2/mapped-types.html
+[Mapped Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
 
 ```ts
 [XXX in keyof T]: ...
@@ -317,7 +315,7 @@ const todo2 = updateTodo(todo1, {
 
 ### Equal
 
-https://stackoverflow.com/questions/53807517/how-to-test-if-two-types-are-exactly-the-same/53808212#53808212
+[StackOverflow How to test if two types are exactly the same](https://stackoverflow.com/questions/53807517/how-to-test-if-two-types-are-exactly-the-same/53808212#53808212)
 
 ```ts
 type IfEquals<T, U, Y=unknown, N=never> =
@@ -333,7 +331,7 @@ type IfEquals<T, U, Y=unknown, N=never> =
 function freeze<Type>(obj: Type): Readonly<Type>;
 ```
 
-https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype
+[Readonly<Type>](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)
 
 ```ts
 Readonly<Type>
@@ -351,7 +349,7 @@ const todo: Readonly<Todo> = {
 
 ### 从Union Type中去掉指定的一些Type
 
-https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers
+[Exclude<UnionType, ExcludedMembers>](https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers)
 
 ```ts
 Exclude<UnionType, ExcludedMembers>
@@ -366,7 +364,7 @@ type T0 = Exclude<"a" | "b" | "c", "a">;
 
 参数数组
 
-https://www.typescriptlang.org/docs/handbook/utility-types.html#parameterstype
+[Parameters<Type>](https://www.typescriptlang.org/docs/handbook/utility-types.html#parameterstype)
 
 ```ts
 Parameters<Type>
@@ -379,7 +377,7 @@ type T1 = Parameters<(s: string) => void>;
 
 构造函数参数
 
-https://www.typescriptlang.org/docs/handbook/utility-types.html#constructorparameterstype
+[ConstructorParameters<Type>](https://www.typescriptlang.org/docs/handbook/utility-types.html#constructorparameterstype)
 
 ```ts
 ConstructorParameters<Type>
@@ -387,7 +385,7 @@ ConstructorParameters<Type>
 
 函数返回类型
 
-https://www.typescriptlang.org/docs/handbook/utility-types.html#returntypetype
+[ReturnType<Type>](https://www.typescriptlang.org/docs/handbook/utility-types.html#returntypetype)
 
 ```ts
 ReturnType<Type>
@@ -402,7 +400,7 @@ type T0 = ReturnType<() => string>;
 
 指定方法中/对象中的的this的字段, it serves as a marker for a contextual this type. Note that the noImplicitThis flag must be enabled to use this utility.
 
-https://www.typescriptlang.org/docs/handbook/utility-types.html#thistypetype
+[ThisType<Type>](https://www.typescriptlang.org/docs/handbook/utility-types.html#thistypetype)
 
 ```ts
 ThisType<Type>
@@ -451,19 +449,306 @@ const fiveToHex: OmitThisParameter<typeof toHex> = toHex.bind(5);
 console.log(fiveToHex());
 ```
 
+### 装饰器Decorators
+
+[Decorators](https://www.typescriptlang.org/docs/handbook/decorators.html)
+
+[比官方还详细的指南](https://saul-mirone.github.io/zh-hans/a-complete-guide-to-typescript-decorator)
+
+类装饰器, target 是类的构造器, 返回新的构造器
+
+例如我们可以添加一个toString方法给所有的类来覆盖它原有的toString方法。
+
+```ts
+type ClassDecorator = <TFunction extends Function>
+  (target: TFunction) => TFunction | void;
+```
+
+```ts
+type Consturctor = { new (...args: any[]): any };
+
+function toString<T extends Consturctor>(BaseClass: T) {
+  return class extends BaseClass {
+    toString() {
+      return JSON.stringify(this);
+    }
+  };
+}
+
+@toString
+class C {
+  public foo = "foo";
+  public num = 24;
+}
+
+console.log(new C().toString())
+```
+
+装饰器并没有类型保护，这意味着：[issues 4881](https://github.com/microsoft/TypeScript/issues/4881)
+
+```ts
+declare function Blah<T>(target: T): T & {foo: number}
+
+@Blah
+class Foo {
+  bar() {
+    return this.foo; // Property 'foo' does not exist on type 'Foo'
+  }
+}
+
+new Foo().foo; // Property 'foo' does not exist on type 'Foo'
+```
+
+解决方案
+
+```ts
+declare function Blah<T>(target: T): T & {foo: number}
+
+class Base {
+  foo: number;
+}
+
+@Blah
+class Foo extends Base {
+  bar() {
+    return this.foo;
+  }
+}
+
+new Foo().foo;
+```
+
+属性装饰器
+
+target: 对于静态成员来说是类的构造器，对于实例成员来说是类的原型链。
+
+propertyKey: 属性的名称
+
+除了用于收集信息外，属性装饰器也可以用来给类添加额外的方法和属性。 例如我们可以写一个装饰器来给某些属性添加监听器。
+
+```ts
+type PropertyDecorator =
+  (target: Object, propertyKey: string | symbol) => void;
+```
+
+```ts
+function capitalizeFirstLetter(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function observable(target: any, key: string): any {
+  // prop -> onPropChange
+  const targetKey = "on" + capitalizeFirstLetter(key) + "Change";
+
+  target[targetKey] =
+    function (fn: (prev: any, next: any) => void) {
+      let prev = this[key];
+      Reflect.defineProperty(this, key, {
+        set(next) {
+          fn(prev, next);
+          prev = next;
+        }
+      })
+    };
+}
+
+class C {
+  @observable
+  foo = -1;
+
+  @observable
+  bar = "bar";
+}
+
+const c = new C();
+
+c.onFooChange((prev, next) => console.log(`prev: ${prev}, next: ${next}`))
+c.onBarChange((prev, next) => console.log(`prev: ${prev}, next: ${next}`))
+
+c.foo = 100; // -> prev: -1, next: 100
+c.foo = -3.14; // -> prev: 100, next: -3.14
+c.bar = "baz"; // -> prev: bar, next: baz
+c.bar = "sing"; // -> prev: baz, next: sing
+```
+
+方法装饰器
+
+target: 对于静态成员来说是类的构造器，对于实例成员来说是类的原型链。
+
+propertyKey: 属性的名称。
+
+descriptor: 属性的描述器。
+
+返回： 如果返回了值，它会被用于替代属性的描述器。
+
+方法装饰器不同于属性装饰器的地方在于descriptor参数。 通过这个参数我们可以修改方法原本的实现，添加一些共用逻辑。 例如我们可以给一些方法添加打印输入与输出的能力：
 
 
 
+```ts
+type MethodDecorator = <T>(
+  target: Object,
+  propertyKey: string | symbol,
+  descriptor: TypedPropertyDescriptor<T>
+) => TypedPropertyDescriptor<T> | void;
+```
+
+
+
+访问器装饰器
+
+访问器装饰器总体上讲和方法装饰器很接近，唯一的区别在于描述器中有的key不同：
+
+方法装饰器的描述器的key为：
+
+- value
+
+- writable
+
+- enumerable
+
+- configurable
+
+访问器装饰器的描述器的key为：
+
+- get
+
+- set
+
+- enumerable
+
+- configurable
+
+例如，我们可以将某个属性的赋值 改为 展开拷贝：
+
+```ts
+function immutable(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  const original = descriptor.set;
+
+  descriptor.set = function (value: any) {
+    return original.call(this, { ...value })
+  }
+}
+
+class C {
+  private _point = { x: 0, y: 0 }
+
+  @immutable
+  set point(value: { x: number, y: number }) {
+    this._point = value;
+  }
+
+  get point() {
+    return this._point;
+  }
+}
+
+const c = new C();
+const point = { x: 1, y: 1 }
+c.point = point;
+
+console.log(c.point === point)
+// -> false
+```
+
+参数装饰器
+
+```ts
+type ParameterDecorator = (
+  target: Object,
+  propertyKey: string | symbol,
+  parameterIndex: number
+) => void;
+```
+
+target: 对于静态成员来说是类的构造器，对于实例成员来说是类的原型链。
+
+propertyKey: 属性的名称(注意是方法的名称，而不是参数的名称)。
+
+parameterIndex: 参数在方法中所处的位置的下标。
+
+---
+
+```ts
+function f(key: string): any {
+  console.log("evaluate: ", key);
+  return function () {
+    console.log("call: ", key);
+  };
+}
+
+@f("Class Decorator")
+class C {
+  @f("Static Property")
+  static prop?: number;
+
+  @f("Static Method")
+  static method(@f("Static Method Parameter") foo) {}
+
+  constructor(@f("Constructor Parameter") foo) {}
+
+  @f("Instance Method")
+  method(@f("Instance Method Parameter") foo) {}
+
+  @f("Instance Property")
+  prop?: number;
+}
+```
+
+顺序
+
+```text
+evaluate:  Instance Method
+evaluate:  Instance Method Parameter
+call:  Instance Method Parameter
+call:  Instance Method
+evaluate:  Instance Property
+call:  Instance Property
+evaluate:  Static Property
+call:  Static Property
+evaluate:  Static Method
+evaluate:  Static Method Parameter
+call:  Static Method Parameter
+call:  Static Method
+evaluate:  Class Decorator
+evaluate:  Constructor Parameter
+call:  Constructor Parameter
+call:  Class Decorator
+```
+
+---
+
+```ts
+function f(key: string) {
+  console.log("evaluate: ", key);
+  return function () {
+    console.log("call: ", key);
+  };
+}
+
+class C {
+  @f("Outer Method")
+  @f("Inner Method")
+  method() {}
+}
+```
+
+```text
+evaluate: Outer Method
+evaluate: Inner Method
+call: Inner Method
+call: Outer Method
+```
 
 ### 艹 Any,unknown,object,void,undefined,null,never
 
-https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any-unknown-object-void-undefined-null-and-never-assignability
+[Any,unknown,object,void,undefined,null, and never assignability](https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any-unknown-object-void-undefined-null-and-never-assignability)
 
 
 
 ### 字符串 大小写,首字母
 
-https://www.typescriptlang.org/docs/handbook/utility-types.html#intrinsic-string-manipulation-types
+[Intrinsic String Manipulation Types](https://www.typescriptlang.org/docs/handbook/utility-types.html#intrinsic-string-manipulation-types)
 
 ```ts
 Uppercase<StringType>
@@ -493,9 +778,9 @@ type Copy<T> = {
 
 ### 直接写和写template 不一致的情况
 
-https://stackoverflow.com/questions/72810324/why-does-typescript-union-mapped-types-work-differently-with-and-without-gener/72812486
+[StackOverflow Why does Typescript Union + Mapped Types work differently with and without Generics](https://stackoverflow.com/questions/72810324/why-does-typescript-union-mapped-types-work-differently-with-and-without-gener/72812486)
 
-https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types
+[Distributive Conditional Types](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types)
 
 ```ts
 type NodeA = {
@@ -534,15 +819,25 @@ type z1 = Exclude<w1,NodeA>
 // z1 = NodeB
 ```
 
-## Graphs
+## CheatSheet 图
+
+通过if的条件自动推断 运算区间内的类型, 如 Discriminated Unions 在处理不同的服务器范围类型时
+
+几种控制流示例
 
 ![控制流分析](https://www.typescriptlang.org/static/TypeScript%20Control%20Flow%20Analysis-8a549253ad8470850b77c4c5c351d457.png)
 
-![接口](https://www.typescriptlang.org/static/TypeScript%20Interfaces-34f1ad12132fb463bd1dfe5b85c5b2e6.png)
+内置类型, 内置对象, 字面量, 可扩展, interface 各种写法, 限制,重载, 多处书写自动merge,写法
 
-![类型](https://www.typescriptlang.org/static/TypeScript%20Types-4cbf7b9d45dc0ec8d18c6c7a0c516114.png)
+![接口interface](https://www.typescriptlang.org/static/TypeScript%20Interfaces-34f1ad12132fb463bd1dfe5b85c5b2e6.png)
 
-![类](https://www.typescriptlang.org/static/TypeScript%20Classes-83cc6f8e42ba2002d5e2c04221fa78f9.png)
+一个type唯一定义, 需要实例的结构和type描述完全一致,而interface 只是描述一定要的field, 写法,映射,条件推断, 模板union, 重定义名字, Tuple Type, Union,Intersecion,Type 字段索引,从数据/返回/module提取出type,
+
+![类型type](https://www.typescriptlang.org/static/TypeScript%20Types-4cbf7b9d45dc0ec8d18c6c7a0c516114.png)
+
+语法,Generics,虚类,构造函数,装饰器
+
+![类class](https://www.typescriptlang.org/static/TypeScript%20Classes-83cc6f8e42ba2002d5e2c04221fa78f9.png)
 
 ## Ref
 
