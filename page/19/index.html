@@ -191,6 +191,307 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-06-21-beauty-of-programing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="name" content="Cro-Marmot">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Blog/17-06-21-beauty-of-programing/" class="post-title-link" itemprop="url">编程之美个人整理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2017-06-21 01:01:01" itemprop="dateCreated datePublished" datetime="2017-06-21T01:01:01+08:00">2017-06-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-07-01 16:36:40" itemprop="dateModified" datetime="2022-07-01T16:36:40+08:00">2022-07-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/notes/" itemprop="url" rel="index"><span itemprop="name">notes</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Blog/categories/notes/book/" itemprop="url" rel="index"><span itemprop="name">book</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/17-06-21-beauty-of-programing/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-06-21-beauty-of-programing/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="总评"><a href="#总评" class="headerlink" title="总评"></a>总评</h1><p>整理开始日期:2017-01-23</p>
+<p>整理结束日期:2017-06-21</p>
+<p>如果你是准备学习算法，那么我非常不建议看这本书,去系统性的多刷刷题吧。</p>
+<p>本书适用人群:觉得无聊想了解一下算法有什么用的人，准备参加大公司面试，且技术方面已经准备好的人，学习累了想消遣一下的人。</p>
+<h2 id="第一章-游戏中碰到的题目"><a href="#第一章-游戏中碰到的题目" class="headerlink" title="第一章 游戏中碰到的题目"></a>第一章 游戏中碰到的题目</h2><table>
+<thead>
+<tr>
+<th>章节</th>
+<th>标题</th>
+<th>整理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1</td>
+<td>关于cpu的/window的相关</td>
+<td>主要用于装逼，和后面的题目毫无相似性</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>中国象棋将帅的问题</td>
+<td>最基础的编解码+C的struct知识</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td>一摞烙饼的排序，对一个数组每次取首部任意个进行翻转求最少次数</td>
+<td>深搜枚举剪枝 扩展问题很棒</td>
+</tr>
+<tr>
+<td>1.4</td>
+<td>买书，n(&lt;6)种物品每件物品价格相同，当同时买k种不同的物品各一件时将会有f(k)=((2,3,4,5)=&gt;(5%,10%,20%,25%)的折扣)求最大折扣</td>
+<td>动规</td>
+</tr>
+<tr>
+<td>1.5</td>
+<td>快速找出故障机器，找唯一的仅出现一次的数</td>
+<td>位表示</td>
+</tr>
+<tr>
+<td>1.6</td>
+<td>饮料供货，每个饮料容量为2的幂，</td>
+<td>记忆dp/基于数字特征的贪心</td>
+</tr>
+<tr>
+<td>1.7</td>
+<td>光影切割问题</td>
+<td>。。。</td>
+</tr>
+<tr>
+<td>1.8</td>
+<td>小飞的电梯调度算法，一堆整数的整数差值最小</td>
+<td>。。。</td>
+</tr>
+<tr>
+<td>1.9</td>
+<td>高效率地安排见面会</td>
+<td>图着色问题</td>
+</tr>
+<tr>
+<td>1.10</td>
+<td>双线程高效下载</td>
+<td></td>
+</tr>
+<tr>
+<td>1.11</td>
+<td>NIM（1）一排石头的游戏</td>
+<td>维持和问题</td>
+</tr>
+<tr>
+<td>1.12</td>
+<td>NIM（2）“拈”游戏分析</td>
+<td>反向递推博弈转化 XOR的转换和维持</td>
+</tr>
+<tr>
+<td>1.13</td>
+<td>NIM（3）两堆石头的游戏</td>
+<td>反向递推博弈转化 质数筛法！</td>
+</tr>
+<tr>
+<td>1.14</td>
+<td>连连看游戏设计</td>
+<td>。。</td>
+</tr>
+<tr>
+<td>1.15</td>
+<td>构造数独</td>
+<td>生成再去除</td>
+</tr>
+<tr>
+<td>1.16</td>
+<td>24点游戏</td>
+<td>注意分数。。</td>
+</tr>
+<tr>
+<td>1.17</td>
+<td>俄罗斯方块游戏</td>
+<td>如何移动旋转 估分(洞 过高)</td>
+</tr>
+<tr>
+<td>1.18</td>
+<td>挖雷游戏</td>
+<td>？？？</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第2章-数字之魅——数字中的技巧"><a href="#第2章-数字之魅——数字中的技巧" class="headerlink" title="第2章 数字之魅——数字中的技巧"></a>第2章 数字之魅——数字中的技巧</h2><table>
+<thead>
+<tr>
+<th>章节</th>
+<th>标题</th>
+<th>整理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.3</td>
+<td>寻找发帖“水王”</td>
+<td>求出现次数超过1/2的数</td>
+</tr>
+<tr>
+<td>2.7</td>
+<td>最大公约数问题</td>
+<td>剔除了同偶数共除2和有偶数去2的优化</td>
+</tr>
+<tr>
+<td>2.8</td>
+<td>找符合条件的整数</td>
+<td>寻找1、0组成的能整除的被除数 利用数值特性余数进行效率优化</td>
+</tr>
+<tr>
+<td>2.20</td>
+<td>程序理解和时间分析</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第3章-结构之法——字符串及链表的探索"><a href="#第3章-结构之法——字符串及链表的探索" class="headerlink" title="第3章 结构之法——字符串及链表的探索"></a>第3章 结构之法——字符串及链表的探索</h2><table>
+<thead>
+<tr>
+<th>章节</th>
+<th>标题</th>
+<th>整理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.6</td>
+<td>编程判断两个链表是否相交</td>
+<td>链表成环问题</td>
+</tr>
+<tr>
+<td>3.11</td>
+<td>程序改错</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第4章-数学之趣——数学游戏的乐趣"><a href="#第4章-数学之趣——数学游戏的乐趣" class="headerlink" title="第4章 数学之趣——数学游戏的乐趣"></a>第4章 数学之趣——数学游戏的乐趣</h2><table>
+<thead>
+<tr>
+<th>章节</th>
+<th>标题</th>
+<th>整理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.1</td>
+<td>金刚坐飞机问题</td>
+<td></td>
+</tr>
+<tr>
+<td>4.3</td>
+<td>买票找零</td>
+<td>卡特兰数</td>
+</tr>
+<tr>
+<td>4.4</td>
+<td>点是否在三角形内</td>
+<td>计算几何 向量叉乘</td>
+</tr>
+<tr>
+<td>4.5</td>
+<td>磁带文件存放优化</td>
+<td>数学。。</td>
+</tr>
+<tr>
+<td>4.6</td>
+<td>桶中取黑白球</td>
+<td>奇偶分析6666666 感觉可以加入洗脑密卷豪华套餐</td>
+</tr>
+<tr>
+<td>4.7</td>
+<td>蚂蚁爬杆</td>
+<td>等效转化！</td>
+</tr>
+<tr>
+<td>4.8</td>
+<td>三角形测试用例</td>
+<td>编码 测试用例应当足量</td>
+</tr>
+<tr>
+<td>4.9</td>
+<td>数独知多少</td>
+<td>思路与估值</td>
+</tr>
+<tr>
+<td>4.11</td>
+<td>挖雷游戏的概率</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-05-16-learnemacs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +523,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-06-22 19:28:21" itemprop="dateModified" datetime="2022-06-22T19:28:21+08:00">2022-06-22</time>
+                <time title="修改時間：2022-07-01 16:36:40" itemprop="dateModified" datetime="2022-07-01T16:36:40+08:00">2022-07-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -339,7 +640,7 @@ C-p
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-06-22 19:28:21" itemprop="dateModified" datetime="2022-06-22T19:28:21+08:00">2022-06-22</time>
+                <time title="修改時間：2022-07-01 16:36:40" itemprop="dateModified" datetime="2022-07-01T16:36:40+08:00">2022-07-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -513,7 +814,7 @@ C-p
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-06-22 19:28:21" itemprop="dateModified" datetime="2022-06-22T19:28:21+08:00">2022-06-22</time>
+                <time title="修改時間：2022-07-01 16:36:40" itemprop="dateModified" datetime="2022-07-01T16:36:40+08:00">2022-07-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -615,7 +916,7 @@ C-p
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-06-22 19:28:21" itemprop="dateModified" datetime="2022-06-22T19:28:21+08:00">2022-06-22</time>
+                <time title="修改時間：2022-07-01 16:36:40" itemprop="dateModified" datetime="2022-07-01T16:36:40+08:00">2022-07-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -786,139 +1087,6 @@ C-p
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-04-22-Java项目开发实录2008版个人整理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
-      <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Blog/17-04-22-Java项目开发实录2008版个人整理/" class="post-title-link" itemprop="url">java 个人整理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2017-04-22 11:20:14" itemprop="dateCreated datePublished" datetime="2017-04-22T11:20:14+08:00">2017-04-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-06-22 19:28:21" itemprop="dateModified" datetime="2022-06-22T19:28:21+08:00">2022-06-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/background/" itemprop="url" rel="index"><span itemprop="name">background</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/background/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/17-04-22-Java项目开发实录2008版个人整理/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-04-22-Java项目开发实录2008版个人整理/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>#Java 个人整理</p>
-<p><a href="http://www.studytonight.com/java/overview-of-java.php" target="_blank" rel="noopener">core java</a></p>
-<p>##《Java项目开发全程实录 第3版》个人整理</p>
-<h3 id="涉及知识一览"><a href="#涉及知识一览" class="headerlink" title="涉及知识一览"></a>涉及知识一览</h3><p><strong>按层次</strong></p>
-<ul>
-<li>Swing</li>
-<li><a href="http://www.runoob.com/w3cnote/basic-knowledge-summary-of-spring.html" target="_blank" rel="noopener">Spring</a>(<a href="http://www.cnblogs.com/jailu/archive/2006/08/18/479978.html" target="_blank" rel="noopener">控制反转/依赖注入DI</a>ioc(Inversion of Control),AOP(Aspect Oriented Programming)<a href="http://www.cnblogs.com/yanbincn/archive/2012/06/01/2530377.html" target="_blank" rel="noopener">面向切面编程</a>,<a href="http://jinnianshilongnian.iteye.com/blog/1474325" target="_blank" rel="noopener">2</a>)</li>
-<li><a href="http://blog.csdn.net/cping1982/article/details/2101247" target="_blank" rel="noopener">DAO(Data Access Object DAO)</a></li>
-<li><a href="http://wiki.jikexueyuan.com/project/hibernate/examples.html" target="_blank" rel="noopener">Hibernate(orm(Object Relational Mapping)框架)</a> 轻量级封装JDBC，服务于Dao+数据库</li>
-<li>JDBC(SQL Server 2000,JavaDB.Oracle,SQL Server 2005)</li>
-<li>PowerDesigner/Visio(E-R图)</li>
-</ul>
-<p>其它</p>
-<ul>
-<li>JUnit(Java单元测试框架)</li>
-<li><a href="http://blog.csdn.net/ritterliu/article/details/7764849" target="_blank" rel="noopener">Java 反射</a></li>
-<li>Java Mail</li>
-</ul>
-<p><strong>按目录</strong></p>
-<ol>
-<li>SQL Server 2000, PowerDesigner</li>
-<li>JavaDB</li>
-<li>Hibernate Oracle</li>
-<li>SQL Server 2005, Visio</li>
-<li>SQL Server 2000</li>
-<li>JavaDB, 短信猫 Java Mail</li>
-<li>Hibernate, Spring</li>
-<li>SQL Server 2005</li>
-<li>no Swing, jsp, javaBean, SQL Server 2000, Tomcat, Proxool</li>
-<li>Socket, thread</li>
-</ol>
-<hr>
-<p>TODO</p>
-<p>IoC</p>
-<p>AOP</p>
-<p>Spring</p>
-<p>Swing</p>
-<p>个人账目管理</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -988,7 +1156,7 @@ C-p
       <div class="site-state-item site-state-posts">
           <a href="/Blog/archives/">
         
-          <span class="site-state-item-count">112</span>
+          <span class="site-state-item-count">113</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
