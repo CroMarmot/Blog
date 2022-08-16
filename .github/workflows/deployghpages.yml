@@ -33,7 +33,7 @@ jobs:
           yarn
 
       - name: Build
-        run: yarn g
+        run: yarn build
 
       - name: Deploy to GitHub Pages
         uses: Cecilapp/GitHub-Pages-deploy@v3
