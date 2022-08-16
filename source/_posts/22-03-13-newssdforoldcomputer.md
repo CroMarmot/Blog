@@ -26,6 +26,8 @@ https://linuxreviews.org/HOWTO_Test_Disk_I/O_Performance#Testing_random_4K_reads
 
 随机4K读`fio --name TEST --eta-newline=5s --filename=temp.file --rw=randread --size=2g --io_size=10g --blocksize=4k --ioengine=libaio --fsync=1 --iodepth=1 --direct=1 --numjobs=32 --runtime=60 --group_reporting`
 
+<!-- more -->
+
 带进度拷贝
 
 ```

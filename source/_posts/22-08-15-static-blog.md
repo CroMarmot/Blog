@@ -16,6 +16,8 @@ mathjax: true
 
 毕竟主要产出在markdown而不是搭建
 
+<!-- more -->
+
 目前看起来有一些解决方案
 
 > vuepress
