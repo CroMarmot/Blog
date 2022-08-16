@@ -29,7 +29,7 @@
 <meta property="og:description" content="带sudo的一定小心, 别选错盘了 工具推荐bcompare gparted 常用命令io测试 https:&#x2F;&#x2F;linuxreviews.org&#x2F;HOWTO_Test_Disk_I&#x2F;O_Performance#Testing_random_4K_reads 大块读fio --name TEST --eta-newline&#x3D;5s --filename&#x3D;temp.file --rw&#x3D;read --si">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-03-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-16T02:24:46.013Z">
+<meta property="article:modified_time" content="2022-08-16T02:31:28.098Z">
 <meta property="article:author" content="Cro-Marmot">
 <meta property="article:tag" content="backend">
 <meta name="twitter:card" content="summary">
@@ -269,7 +269,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-08-16 10:24:46" itemprop="dateModified" datetime="2022-08-16T10:24:46+08:00">2022-08-16</time>
+      <time title="修改時間：2022-08-16 10:31:28" itemprop="dateModified" datetime="2022-08-16T10:31:28+08:00">2022-08-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -328,6 +328,8 @@
 <p>大块读<code>fio --name TEST --eta-newline=5s --filename=temp.file --rw=read --size=2g --io_size=10g --blocksize=1024k --ioengine=libaio --fsync=10000 --iodepth=32 --direct=1 --numjobs=1 --runtime=60 --group_reporting</code></p>
 <p>大块写<code>fio --name TEST --eta-newline=5s --filename=temp.file --rw=write --size=2g --io_size=10g --blocksize=1024k --ioengine=libaio --fsync=10000 --iodepth=32 --direct=1 --numjobs=1 --runtime=60 --group_reporting</code></p>
 <p>随机4K读<code>fio --name TEST --eta-newline=5s --filename=temp.file --rw=randread --size=2g --io_size=10g --blocksize=4k --ioengine=libaio --fsync=1 --iodepth=1 --direct=1 --numjobs=32 --runtime=60 --group_reporting</code></p>
+<span id="more"></span>
+
 <p>带进度拷贝</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync -aP &lt;源&gt; &lt;目标&gt;</span><br></pre></td></tr></table></figure>
 
