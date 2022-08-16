@@ -1,17 +1,18 @@
 # [Blog](https://cromarmot.github.io/Blog)
 
-```
+```bash
+yarn global add hexo-cli
 yarn
 ```
 
-# local server
+## local server
 
-```
-yarn s
+```bash
+hexo s
 ```
 
-# generate static pages
+## generate static pages
 
-```
-yarn g
+```bash
+hexo build
 ```
