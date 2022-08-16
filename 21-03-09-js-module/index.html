@@ -2,9 +2,10 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
@@ -14,92 +15,66 @@
 <link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-  <meta name="description" content="总为了模块拆分 AMD(asynchromous module definition 异步模块定义)RequireJS,前端，异步 1234567define(&apos;module1&apos;, [&apos;jquery&apos;], ($) =&amp;gt; &amp;#123;  //do something...&amp;#125;);define(模块, [依赖的模块], ($) =&amp;gt; &amp;#123;  //do something..">
-<meta name="keywords" content="js module">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="总为了模块拆分 AMD(asynchromous module definition 异步模块定义)RequireJS,前端，异步 1234567define(&amp;#x27;module1&amp;#x27;, [&amp;#x27;jquery&amp;#x27;], ($) &#x3D;&gt; &amp;#123;  &#x2F;&#x2F;do something...&amp;#125;);define(模块, [依赖的模块], ($) &#x3D;&gt; &amp;#12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="amd&#x2F;cmd&#x2F;commonjs&#x2F;umd&#x2F;esm&#x2F;iife&#x2F;systemjs">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/21-03-09-js-module/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
-<meta property="og:description" content="总为了模块拆分 AMD(asynchromous module definition 异步模块定义)RequireJS,前端，异步 1234567define(&apos;module1&apos;, [&apos;jquery&apos;], ($) =&amp;gt; &amp;#123;  //do something...&amp;#125;);define(模块, [依赖的模块], ($) =&amp;gt; &amp;#123;  //do something..">
-<meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2022-07-01T10:51:47.815Z">
+<meta property="og:description" content="总为了模块拆分 AMD(asynchromous module definition 异步模块定义)RequireJS,前端，异步 1234567define(&amp;#x27;module1&amp;#x27;, [&amp;#x27;jquery&amp;#x27;], ($) &#x3D;&gt; &amp;#123;  &#x2F;&#x2F;do something...&amp;#125;);define(模块, [依赖的模块], ($) &#x3D;&gt; &amp;#12">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-03-09T13:58:14.000Z">
+<meta property="article:modified_time" content="2022-08-16T02:17:23.733Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="js module">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="amd&#x2F;cmd&#x2F;commonjs&#x2F;umd&#x2F;esm&#x2F;iife&#x2F;systemjs">
-<meta name="twitter:description" content="总为了模块拆分 AMD(asynchromous module definition 异步模块定义)RequireJS,前端，异步 1234567define(&apos;module1&apos;, [&apos;jquery&apos;], ($) =&amp;gt; &amp;#123;  //do something...&amp;#125;);define(模块, [依赖的模块], ($) =&amp;gt; &amp;#123;  //do something..">
+
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/21-03-09-js-module/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-TW'
-  };
-</script>
 
-  <title>amd/cmd/commonjs/umd/esm/iife/systemjs | Cro-Marmot's Blog</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/21-03-09-js-module/","path":"21-03-09-js-module/","title":"amd/cmd/commonjs/umd/esm/iife/systemjs"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>amd/cmd/commonjs/umd/esm/iife/systemjs | Cro-Marmot's Blog</title>
   
 
 
 
 
 
-
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/Blog/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Cro-Marmot's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -112,34 +87,8 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">114</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">34</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">124</span></a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -150,23 +99,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜尋..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -174,76 +122,170 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB"><span class="nav-number">1.</span> <span class="nav-text">总</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AMD-asynchromous-module-definition-%E5%BC%82%E6%AD%A5%E6%A8%A1%E5%9D%97%E5%AE%9A%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">AMD(asynchromous module definition 异步模块定义)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CMD-Common-Module-Definition-%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97%E5%AE%9A%E4%B9%89-%E6%9C%89%E4%BA%9B%E5%9C%B0%E6%96%B9%E9%83%BD%E4%B8%8D%E5%86%8D%E5%8D%95%E7%8B%AC%E6%8F%90%E5%8F%8A"><span class="nav-number">3.</span> <span class="nav-text">CMD(Common Module Definition - 公共模块定义) 有些地方都不再单独提及</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CommonJS-cjs"><span class="nav-number">4.</span> <span class="nav-text">CommonJS(cjs)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#umd-Universal-Module-Definition-%E9%80%9A%E7%94%A8%E6%A8%A1%E5%9D%97%E5%AE%9A%E4%B9%89"><span class="nav-number">5.</span> <span class="nav-text">umd(Universal Module Definition - 通用模块定义)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ESM-ECMA-Script-Modules"><span class="nav-number">6.</span> <span class="nav-text">ESM(ECMA Script Modules)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#iife-%E7%AB%8B%E5%8D%B3-%E8%B0%83%E7%94%A8-%E5%87%BD%E6%95%B0-%E8%A1%A8%E8%BE%BE"><span class="nav-number">7.</span> <span class="nav-text">iife(立即 调用 函数 表达)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#systemjs"><span class="nav-number">8.</span> <span class="nav-text">systemjs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">9.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tree-Shaking"><span class="nav-number">10.</span> <span class="nav-text">Tree Shaking</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">11.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ref"><span class="nav-number">12.</span> <span class="nav-text">ref</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">124</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>
-  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>
-  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+    <div class="main-inner post posts-expand">
 
 
+  
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
-            
-
-    
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-03-09-js-module/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
       <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="amd/cmd/commonjs/umd/esm/iife/systemjs | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           amd/cmd/commonjs/umd/esm/iife/systemjs
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2021-03-09 21:58:14" itemprop="dateCreated datePublished" datetime="2021-03-09T21:58:14+08:00">2021-03-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-07-01 18:51:47" itemprop="dateModified" datetime="2022-07-01T18:51:47+08:00">2022-07-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
+      <time title="創建時間：2021-03-09 21:58:14" itemprop="dateCreated datePublished" datetime="2021-03-09T21:58:14+08:00">2021-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-08-16 10:17:23" itemprop="dateModified" datetime="2022-08-16T10:17:23+08:00">2022-08-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+    </span>
 
-          
+  
   
   <span class="post-meta-item">
     
@@ -258,6 +300,22 @@
   </span>
   
   
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>4.1k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>4 分鐘</span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -266,30 +324,40 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>为了模块拆分</p>
 <h1 id="AMD-asynchromous-module-definition-异步模块定义"><a href="#AMD-asynchromous-module-definition-异步模块定义" class="headerlink" title="AMD(asynchromous module definition 异步模块定义)"></a>AMD(asynchromous module definition 异步模块定义)</h1><p>RequireJS,前端，异步</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">'module1'</span>, [<span class="string">'jquery'</span>], ($) =&gt; &#123;</span><br><span class="line">  <span class="comment">//do something...</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">define(模块, [依赖的模块], ($) =&gt; &#123;</span><br><span class="line">  <span class="comment">//do something...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">define</span>(<span class="string">&#x27;module1&#x27;</span>, [<span class="string">&#x27;jquery&#x27;</span>], <span class="function">(<span class="params">$</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//do something...</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="title function_">define</span>(模块, [依赖的模块], <span class="function">(<span class="params">$</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//do something...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
 <h1 id="CMD-Common-Module-Definition-公共模块定义-有些地方都不再单独提及"><a href="#CMD-Common-Module-Definition-公共模块定义-有些地方都不再单独提及" class="headerlink" title="CMD(Common Module Definition - 公共模块定义) 有些地方都不再单独提及"></a>CMD(Common Module Definition - 公共模块定义) 有些地方都不再单独提及</h1><p>CMD是SeaJS在推广过程中对模块定义的规范化产出，对于模块的依赖，CMD是延迟执行</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function">(<span class="params"><span class="built_in">require</span>, exports, <span class="built_in">module</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    fun1: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'jquery'</span>);</span><br><span class="line">       <span class="keyword">return</span> $(<span class="string">'#test'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">define(<span class="function">(<span class="params"><span class="built_in">require</span>, exports, <span class="built_in">module</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    函数: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">var</span> $ = <span class="built_in">require</span>(依赖的模块);</span><br><span class="line">       <span class="keyword">return</span> $(<span class="string">'#test'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">define</span>(<span class="function">(<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="variable language_">module</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">fun1</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">&#x27;jquery&#x27;</span>);</span><br><span class="line">       <span class="keyword">return</span> $(<span class="string">&#x27;#test&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="title function_">define</span>(<span class="function">(<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="variable language_">module</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    函数: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">var</span> $ = <span class="built_in">require</span>(依赖的模块);</span><br><span class="line">       <span class="keyword">return</span> $(<span class="string">&#x27;#test&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <h1 id="CommonJS-cjs"><a href="#CommonJS-cjs" class="headerlink" title="CommonJS(cjs)"></a>CommonJS(cjs)</h1><p>CommonJS服务端,Node.js,同步</p>
-<p>使用require / module.exports</p>
+<p>使用require &#x2F; module.exports</p>
 <p>file1.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">moudle.exports = &#123;</span><br><span class="line">  a: <span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>file2.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f1 = <span class="built_in">require</span>(<span class="string">'./file1'</span>);</span><br><span class="line"><span class="keyword">var</span> v = f1.a + <span class="number">2</span>;</span><br><span class="line"><span class="built_in">module</span>.exports =&#123;</span><br><span class="line">  v: v</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">moudle.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">a</span>: <span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>file2.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f1 = <span class="built_in">require</span>(<span class="string">&#x27;./file1&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> v = f1.<span class="property">a</span> + <span class="number">2</span>;</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> =&#123;</span><br><span class="line">  <span class="attr">v</span>: v</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <h1 id="umd-Universal-Module-Definition-通用模块定义"><a href="#umd-Universal-Module-Definition-通用模块定义" class="headerlink" title="umd(Universal Module Definition - 通用模块定义)"></a>umd(Universal Module Definition - 通用模块定义)</h1><p>amd(浏览器，异步) 和 commonjs(服务器，同步) 合并</p>
-<p>使用诸如Rollup/ Webpack之类的bundler时通常用作备用模块</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function">(<span class="params">root, factory</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">'function'</span> &amp;&amp; define.amd) &#123;</span><br><span class="line">    <span class="comment">//AMD</span></span><br><span class="line">    define([<span class="string">'jquery'</span>], factory);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> exports === <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="comment">//CommonJS</span></span><br><span class="line">    <span class="built_in">module</span>.exports = factory(<span class="built_in">require</span>(<span class="string">'jquery'</span>));</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//都不是，浏览器全局定义</span></span><br><span class="line">    root.returnExports = factory(root.jQuery);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)(<span class="keyword">this</span>, ($) =&gt; &#123;</span><br><span class="line">  <span class="comment">//    方法</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">myFunc</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//    暴露公共方法</span></span><br><span class="line">  <span class="keyword">return</span> myFunc;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>使用诸如Rollup&#x2F; Webpack之类的bundler时通常用作备用模块</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function">(<span class="params">root, factory</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">&#x27;function&#x27;</span> &amp;&amp; define.<span class="property">amd</span>) &#123;</span><br><span class="line">    <span class="comment">//AMD</span></span><br><span class="line">    <span class="title function_">define</span>([<span class="string">&#x27;jquery&#x27;</span>], factory);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">exports</span> === <span class="string">&#x27;object&#x27;</span>) &#123;</span><br><span class="line">    <span class="comment">//CommonJS</span></span><br><span class="line">    <span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">factory</span>(<span class="built_in">require</span>(<span class="string">&#x27;jquery&#x27;</span>));</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//都不是，浏览器全局定义</span></span><br><span class="line">    root.<span class="property">returnExports</span> = <span class="title function_">factory</span>(root.<span class="property">jQuery</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)(<span class="variable language_">this</span>, <span class="function">(<span class="params">$</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//    方法</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">myFunc</span>(<span class="params"></span>)&#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//    暴露公共方法</span></span><br><span class="line">  <span class="keyword">return</span> myFunc;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <h1 id="ESM-ECMA-Script-Modules"><a href="#ESM-ECMA-Script-Modules" class="headerlink" title="ESM(ECMA Script Modules)"></a>ESM(ECMA Script Modules)</h1><p>es6 模块化规范 (nodejs新版本可直接用,现代化浏览器script标签加<code>type=&quot;module&quot;</code> 可用)</p>
-<p>常见的 export / import</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 写法一</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> m = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 写法二</span></span><br><span class="line"><span class="keyword">var</span> m = <span class="number">1</span>; <span class="keyword">export</span> &#123; m &#125;;</span><br><span class="line"><span class="comment">// 写法三</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>; <span class="keyword">export</span> &#123; n <span class="keyword">as</span> m &#125;;</span><br><span class="line"><span class="comment">// 写法四</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>; <span class="keyword">export</span> <span class="keyword">default</span> n;</span><br><span class="line"><span class="comment">// 写法五</span></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123; <span class="keyword">import</span>(<span class="string">'./myModule.js'</span>).then(<span class="function">(<span class="params">&#123; export1, export2 &#125;</span>) =&gt;</span> &#123; <span class="comment">/* ... */</span> &#125;); &#125;</span><br><span class="line"><span class="comment">// 写法六</span></span><br><span class="line"><span class="built_in">Promise</span>.all([<span class="keyword">import</span>(<span class="string">'./module1.js'</span>),</span><br><span class="line"><span class="keyword">import</span>(<span class="string">'./module2.js'</span>),</span><br><span class="line"><span class="keyword">import</span>(<span class="string">'./module3.js'</span>)]).then(<span class="function">(<span class="params">[module1, module2, module3]</span>) =&gt;</span> &#123; <span class="comment">/* ... */</span> &#125;);</span><br></pre></td></tr></table></figure>
+<p>常见的 export &#x2F; import</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 写法一</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> m = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 写法二</span></span><br><span class="line"><span class="keyword">var</span> m = <span class="number">1</span>; <span class="keyword">export</span> &#123; m &#125;;</span><br><span class="line"><span class="comment">// 写法三</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>; <span class="keyword">export</span> &#123; n <span class="keyword">as</span> m &#125;;</span><br><span class="line"><span class="comment">// 写法四</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>; <span class="keyword">export</span> <span class="keyword">default</span> n;</span><br><span class="line"><span class="comment">// 写法五</span></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123; <span class="title function_">import</span>(<span class="string">&#x27;./myModule.js&#x27;</span>).<span class="title function_">then</span>(<span class="function">(<span class="params">&#123; export1, export2 &#125;</span>) =&gt;</span> &#123; <span class="comment">/* ... */</span> &#125;); &#125;</span><br><span class="line"><span class="comment">// 写法六</span></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">all</span>([<span class="title function_">import</span>(<span class="string">&#x27;./module1.js&#x27;</span>),</span><br><span class="line"><span class="title function_">import</span>(<span class="string">&#x27;./module2.js&#x27;</span>),</span><br><span class="line"><span class="title function_">import</span>(<span class="string">&#x27;./module3.js&#x27;</span>)]).<span class="title function_">then</span>(<span class="function">(<span class="params">[module1, module2, module3]</span>) =&gt;</span> &#123; <span class="comment">/* ... */</span> &#125;);</span><br></pre></td></tr></table></figure>
+
 <h1 id="iife-立即-调用-函数-表达"><a href="#iife-立即-调用-函数-表达" class="headerlink" title="iife(立即 调用 函数 表达)"></a>iife(立即 调用 函数 表达)</h1><p>A self-executing function suitable for inclusion as a <code>&lt;script&gt;</code> tag. If you want to create a bundle for your application, you probably want to use this.</p>
 <p>示例</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// maths.js</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// This function gets included</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">cube</span> (<span class="params"> x </span>) </span>&#123;</span><br><span class="line">    <span class="comment">// rewrite this as `square( x ) * x`</span></span><br><span class="line">    <span class="comment">// and see what happens!</span></span><br><span class="line">    <span class="keyword">return</span> x * x * x;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* TREE-SHAKING */</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log( cube( <span class="number">5</span> ) ); <span class="comment">// 125</span></span><br><span class="line"></span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="string">&#x27;use strict&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// maths.js</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// This function gets included</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">cube</span> ( x ) &#123;</span><br><span class="line">    <span class="comment">// rewrite this as `square( x ) * x`</span></span><br><span class="line">    <span class="comment">// and see what happens!</span></span><br><span class="line">    <span class="keyword">return</span> x * x * x;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* TREE-SHAKING */</span></span><br><span class="line"></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>( <span class="title function_">cube</span>( <span class="number">5</span> ) ); <span class="comment">// 125</span></span><br><span class="line"></span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="systemjs"><a href="#systemjs" class="headerlink" title="systemjs"></a>systemjs</h1><p>示例</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">System.register(<span class="string">'myBundle'</span>, [], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    execute: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// maths.js</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// This function gets included</span></span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">cube</span> (<span class="params"> x </span>) </span>&#123;</span><br><span class="line">        <span class="comment">// rewrite this as `square( x ) * x`</span></span><br><span class="line">        <span class="comment">// and see what happens!</span></span><br><span class="line">        <span class="keyword">return</span> x * x * x;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">/* TREE-SHAKING */</span></span><br><span class="line"></span><br><span class="line">      <span class="built_in">console</span>.log( cube( <span class="number">5</span> ) ); <span class="comment">// 125</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">System</span>.<span class="title function_">register</span>(<span class="string">&#x27;myBundle&#x27;</span>, [], <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="string">&#x27;use strict&#x27;</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">execute</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// maths.js</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// This function gets included</span></span><br><span class="line">      <span class="keyword">function</span> <span class="title function_">cube</span> ( x ) &#123;</span><br><span class="line">        <span class="comment">// rewrite this as `square( x ) * x`</span></span><br><span class="line">        <span class="comment">// and see what happens!</span></span><br><span class="line">        <span class="keyword">return</span> x * x * x;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">/* TREE-SHAKING */</span></span><br><span class="line"></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>( <span class="title function_">cube</span>( <span class="number">5</span> ) ); <span class="comment">// 125</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>universal module loader that supports CJS, AMD, and ESM modules</p>
 <p>SystemJS is a hookable, standards-based module loader. It provides a workflow where code written for production workflows of native ES modules in browsers (like Rollup code-splitting builds), can be transpiled to the System.register module format to work in older browsers that don’t support native modules, running almost-native module speeds while supporting top-level await, dynamic import, circular references and live bindings, import.meta.url, module types, import maps, integrity and Content Security Policy with compatibility in older browsers back to IE11.</p>
 <p>简单说在老的浏览器依然可以跑native module,且效率不差</p>
@@ -305,8 +373,7 @@
 <th>systemjs</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>异步模块定义</td>
 <td>公共模块定义</td>
 <td>服务端模块规范</td>
@@ -329,191 +396,96 @@
 <td>相关seajs</td>
 <td>服务器(nodejs), (通过Browserify用于浏览器)</td>
 <td>先判断服务器再浏览器</td>
-<td>新版nodejs支持，老版本可以用webpack/rollup等打包</td>
+<td>新版nodejs支持，老版本可以用webpack&#x2F;rollup等打包</td>
 <td>浏览器script标签</td>
 <td>浏览器</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h1 id="Tree-Shaking"><a href="#Tree-Shaking" class="headerlink" title="Tree Shaking"></a>Tree Shaking</h1><p>rollup 提出</p>
 <p>见rollup 的 repl(Read-Eval-Print-Loop) 的在线 tree-shaking 示例, 上面的几种生成转换也是可以在在线的repl上看的</p>
 <ol>
 <li>只能作为模块顶层的语句出现，不能出现在 function 里面或是 if 里面。（ECMA-262 15.2)</li>
 <li>import 的模块名只能是字符串常量。(ECMA-262 15.2.2)</li>
 <li>不管 import 的语句出现的位置在哪里，在模块初始化的时候所有的 import 都必须已经导入完成。换句话说，ES6 imports are hoisted。(ECMA-262 15.2.1.16.4 - 8.a)</li>
-<li>import binding 是 immutable 的，类似 const。比如说你不能 import { a } from ‘./a’ 然后给 a 赋值个其他什么东西。(ECMA-262 15.2.1.16.4 - 12.c.3)</li>
+<li>import binding 是 immutable 的，类似 const。比如说你不能 import { a } from ‘.&#x2F;a’ 然后给 a 赋值个其他什么东西。(ECMA-262 15.2.1.16.4 - 12.c.3)</li>
 </ol>
 <p>切记副作用</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>上面提到的几种 仅仅是写法示例，完整的书写规则见各自的官方文档，或者下面的参考链接</p>
-<p>现代书写来说，基本就是书写esm了，剩下的事情就由 rollup/webpack之类的工具去完成了</p>
-<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://requirejs.org/docs/api.html#define" target="_blank" rel="noopener">requirejs::define a module</a></p>
-<p><a href="http://wiki.commonjs.org/wiki/Modules/Async/B" target="_blank" rel="noopener">commonjs</a></p>
-<p><a href="https://github.com/login?return_to=%2Fumdjs%2Fumd" target="_blank" rel="noopener">umd</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE" target="_blank" rel="noopener">iife</a></p>
-<p><a href="https://github.com/systemjs/systemjs#systemjs" target="_blank" rel="noopener">systemjs</a></p>
-<p><a href="https://rollupjs.org/repl" target="_blank" rel="noopener">rollup repl</a></p>
-<p><a href="https://www.zhihu.com/question/41922432/answer/93346223" target="_blank" rel="noopener">知乎 尤雨溪 tree-shaking</a></p>
+<p>现代书写来说，基本就是书写esm了，剩下的事情就由 rollup&#x2F;webpack之类的工具去完成了</p>
+<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a target="_blank" rel="noopener" href="https://requirejs.org/docs/api.html#define">requirejs::define a module</a></p>
+<p><a target="_blank" rel="noopener" href="http://wiki.commonjs.org/wiki/Modules/Async/B">commonjs</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/login?return_to=/umdjs/umd">umd</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE">iife</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/systemjs/systemjs#systemjs">systemjs</a></p>
+<p><a target="_blank" rel="noopener" href="https://rollupjs.org/repl">rollup repl</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/41922432/answer/93346223">知乎 尤雨溪 tree-shaking</a></p>
 
     </div>
 
     
     
     
+      
 
-      <footer class="post-footer">
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/21-03-09-js-module/" title="amd&#x2F;cmd&#x2F;commonjs&#x2F;umd&#x2F;esm&#x2F;iife&#x2F;systemjs">https://cromarmot.github.io/Blog/21-03-09-js-module/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
           <div class="post-tags">
-              <a href="/Blog/tags/js-module/" rel="tag"># js module</a>
+              <a href="/Blog/tags/js-module/" rel="tag"><i class="fa fa-tag"></i> js module</a>
           </div>
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/Blog/21-03-08-dotd-folder/" rel="prev" title=".d 文件夹">
-      <i class="fa fa-chevron-left"></i> .d 文件夹
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/Blog/21-03-11-vue2source/" rel="next" title="vue2源码阅读(由xmind笔记生成)">
-      vue2源码阅读(由xmind笔记生成) <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/21-03-08-dotd-folder/" rel="prev" title=".d 文件夹">
+                  <i class="fa fa-chevron-left"></i> .d 文件夹
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Blog/21-03-11-vue2source/" rel="next" title="vue2源码阅读(由xmind笔记生成)">
+                  vue2源码阅读(由xmind笔记生成) <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-  
-  
-  
+</div>
 
 
 
-          </div>
-          
+
+
+
     
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#总"><span class="nav-number">1.</span> <span class="nav-text">总</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AMD-asynchromous-module-definition-异步模块定义"><span class="nav-number">2.</span> <span class="nav-text">AMD(asynchromous module definition 异步模块定义)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CMD-Common-Module-Definition-公共模块定义-有些地方都不再单独提及"><span class="nav-number">3.</span> <span class="nav-text">CMD(Common Module Definition - 公共模块定义) 有些地方都不再单独提及</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CommonJS-cjs"><span class="nav-number">4.</span> <span class="nav-text">CommonJS(cjs)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#umd-Universal-Module-Definition-通用模块定义"><span class="nav-number">5.</span> <span class="nav-text">umd(Universal Module Definition - 通用模块定义)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ESM-ECMA-Script-Modules"><span class="nav-number">6.</span> <span class="nav-text">ESM(ECMA Script Modules)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#iife-立即-调用-函数-表达"><span class="nav-number">7.</span> <span class="nav-text">iife(立即 调用 函数 表达)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#systemjs"><span class="nav-number">8.</span> <span class="nav-text">systemjs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表格"><span class="nav-number">9.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tree-Shaking"><span class="nav-number">10.</span> <span class="nav-text">Tree Shaking</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">11.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ref"><span class="nav-number">12.</span> <span class="nav-text">ref</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
-  <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/Blog/archives/">
-        
-          <span class="site-state-item-count">113</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/Blog/categories/">
-          
-        <span class="site-state-item-count">52</span>
-        <span class="site-state-item-name">分類</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/Blog/tags/">
-          
-        <span class="site-state-item-count">126</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/CroMarmot" title="GitHub → https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces → https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>Codeforces</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://atcoder.jp/users/cromarmot" title="AtCoder → https://atcoder.jp/users/cromarmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>AtCoder</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
@@ -521,29 +493,37 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">645k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:47</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
   </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/Blog/lib/anime.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
-<script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script>
-<script src="/Blog/js/schemes/muse.js"></script>
-<script src="/Blog/js/next-boot.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
 
 
 
@@ -552,108 +532,17 @@
 
 
 
-  <script src="/Blog/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
-      
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
 
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
 
-    
-
-  
-
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://cromarmot.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://cromarmot.github.io/Blog/21-03-09-js-module/";
-    this.page.identifier = "21-03-09-js-module/";
-    this.page.title = "amd/cmd/commonjs/umd/esm/iife/systemjs";
-    };
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://cromarmot.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/21-03-09-js-module/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
 
 </body>
 </html>

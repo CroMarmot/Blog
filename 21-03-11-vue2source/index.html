@@ -2,9 +2,10 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
@@ -14,92 +15,68 @@
 <link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-  <meta name="description" content="源代码commit hash:4f81b5db9ab553ca0abe0706ac55ceb861344330 src server platforms core 6600 行 shared compiler sfc  134 ./sfc/parser.js    dist 生成的文件  typings TypeScript的定义文件  本地调试代码环境搭建 12yarnyarn dev -m">
-<meta name="keywords" content="js,vue2,source code">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="源代码commit hash:4f81b5db9ab553ca0abe0706ac55ceb861344330 src server  platforms  core 6600 行  shared  compiler  sfc  134 .&#x2F;sfc&#x2F;parser.js    dist 生成的文件  typings TypeScript的定义文件  本地调试代码环境搭建 yarn">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue2源码阅读(由xmind笔记生成)">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/21-03-11-vue2source/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
-<meta property="og:description" content="源代码commit hash:4f81b5db9ab553ca0abe0706ac55ceb861344330 src server platforms core 6600 行 shared compiler sfc  134 ./sfc/parser.js    dist 生成的文件  typings TypeScript的定义文件  本地调试代码环境搭建 12yarnyarn dev -m">
-<meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2022-07-01T10:51:47.815Z">
+<meta property="og:description" content="源代码commit hash:4f81b5db9ab553ca0abe0706ac55ceb861344330 src server  platforms  core 6600 行  shared  compiler  sfc  134 .&#x2F;sfc&#x2F;parser.js    dist 生成的文件  typings TypeScript的定义文件  本地调试代码环境搭建 yarn">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-03-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-16T02:17:23.733Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="js">
+<meta property="article:tag" content="vue2">
+<meta property="article:tag" content="source code">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue2源码阅读(由xmind笔记生成)">
-<meta name="twitter:description" content="源代码commit hash:4f81b5db9ab553ca0abe0706ac55ceb861344330 src server platforms core 6600 行 shared compiler sfc  134 ./sfc/parser.js    dist 生成的文件  typings TypeScript的定义文件  本地调试代码环境搭建 12yarnyarn dev -m">
+
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/21-03-11-vue2source/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-TW'
-  };
-</script>
 
-  <title>vue2源码阅读(由xmind笔记生成) | Cro-Marmot's Blog</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/21-03-11-vue2source/","path":"21-03-11-vue2source/","title":"vue2源码阅读(由xmind笔记生成)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>vue2源码阅读(由xmind笔记生成) | Cro-Marmot's Blog</title>
   
 
 
 
 
 
-
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/Blog/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Cro-Marmot's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -112,34 +89,8 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">114</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">34</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">124</span></a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -150,23 +101,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜尋..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -174,80 +124,174 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">源代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#commit-hash"><span class="nav-number">1.1.</span> <span class="nav-text">commit hash:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#src"><span class="nav-number">1.2.</span> <span class="nav-text">src</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dist"><span class="nav-number">1.3.</span> <span class="nav-text">dist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typings"><span class="nav-number">1.4.</span> <span class="nav-text">typings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%BB%A3%E7%A0%81%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">1.5.</span> <span class="nav-text">本地调试代码环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F"><span class="nav-number">1.6.</span> <span class="nav-text">响应式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93"><span class="nav-number">1.7.</span> <span class="nav-text">渲染</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Flow"><span class="nav-number">2.1.</span> <span class="nav-text">Flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E6%95%B4%E4%B8%AAVue%E7%9A%84%E5%8E%9F%E5%9E%8B%EF%BC%8C%E6%88%96%E8%80%85%E8%AF%B4Class-%E6%98%AF%E9%80%9A%E8%BF%87%E5%A4%9A%E5%B1%82%E4%B8%8D%E5%90%8C%E6%96%87%E4%BB%B6%E5%85%B1%E5%90%8C%E5%86%99%E4%B8%80%E4%B8%AAVue%E6%9D%A5%E5%AE%9E%E7%8E%B0%E7%9A%84%E3%80%82%E5%86%8D%E4%B9%8B%E5%90%8E%E4%BA%A7%E7%94%9F%E5%AE%9E%E4%BE%8B%E7%9A%84%E6%97%B6%E5%80%99%E6%98%AF%E9%80%9A%E8%BF%87%E9%85%8D%E5%90%88%E7%94%A8%E6%88%B7%E7%9A%84%E9%85%8D%E7%BD%AE%E8%A7%A6%E5%8F%91%E4%B8%80%E4%B8%AA-Vue-init-%E5%87%BD%E6%95%B0%EF%BC%8C%E5%86%8D%E8%A7%A6%E5%8F%91%E8%BF%99%E4%BA%9B%E4%B8%8D%E5%90%8C%E6%96%87%E4%BB%B6%E5%88%9B%E5%BB%BA%E7%9A%84%E6%96%B9%E6%B3%95%E6%9D%A5%E5%AE%8C%E6%88%90-%E5%AE%9E%E4%BE%8B%E5%8C%96%E5%AF%B9%E8%B1%A1%E3%80%82%E4%B9%8B%E5%90%8E%E5%B0%B1%E6%98%AF%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E5%BC%95%E5%8F%91%E5%88%9A%E5%88%9A%E5%AE%9E%E4%BE%8B%E5%8C%96%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%8F%91%E7%94%9F%EF%BC%8CVue%E5%AF%B9%E5%BA%94%E5%8F%98%E5%8C%96"><span class="nav-number">2.2.</span> <span class="nav-text">首先整个Vue的原型，或者说Class 是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个 Vue._init() 函数，再触发这些不同文件创建的方法来完成 实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">常见方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E9%AA%8C%E4%B8%8A%E9%9A%BE%E5%8F%97%E7%9A%84%E7%82%B9"><span class="nav-number">2.4.</span> <span class="nav-text">体验上难受的点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%86%85%E5%AE%B9"><span class="nav-number">2.5.</span> <span class="nav-text">抽象内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99xmind%EF%BC%8C%E7%94%9F%E6%88%90markdown%E6%AF%94%E7%9B%B4%E6%8E%A5markdown%E6%9B%B4%E8%88%92%E6%9C%8D"><span class="nav-number">2.6.</span> <span class="nav-text">写xmind，生成markdown比直接markdown更舒服</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#feature"><span class="nav-number">2.7.</span> <span class="nav-text">feature</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ref"><span class="nav-number">3.</span> <span class="nav-text">ref</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#https-github-com-numbbbbb-read-vue-source-code"><span class="nav-number">3.1.</span> <span class="nav-text">https:&#x2F;&#x2F;github.com&#x2F;numbbbbb&#x2F;read-vue-source-code&#x2F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-www-youtube-com-watch-v-OrxmtDw4pVI-amp-t-45s-amp-ab-channel-Honeypot"><span class="nav-number">3.2.</span> <span class="nav-text">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;OrxmtDw4pVI&amp;t&#x3D;45s&amp;ab_channel&#x3D;Honeypot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-www-bilibili-com-video-BV1d4411v7UX"><span class="nav-number">3.3.</span> <span class="nav-text">https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1d4411v7UX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-developer-mozilla-org-zh-CN-docs-Web-JavaScript-Reference-Global-Objects-Object-defineProperty"><span class="nav-number">3.4.</span> <span class="nav-text">https:&#x2F;&#x2F;developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Web&#x2F;JavaScript&#x2F;Reference&#x2F;Global_Objects&#x2F;Object&#x2F;defineProperty</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">124</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>
-  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>
-  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+    <div class="main-inner post posts-expand">
 
 
+  
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
-            
-
-    
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-03-11-vue2source/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
       <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="vue2源码阅读(由xmind笔记生成) | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           vue2源码阅读(由xmind笔记生成)
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2021-03-11 00:00:00" itemprop="dateCreated datePublished" datetime="2021-03-11T00:00:00+08:00">2021-03-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-07-01 18:51:47" itemprop="dateModified" datetime="2022-07-01T18:51:47+08:00">2022-07-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
-                </span>
-            </span>
+      <time title="創建時間：2021-03-11 00:00:00" itemprop="dateCreated datePublished" datetime="2021-03-11T00:00:00+08:00">2021-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-08-16 10:17:23" itemprop="dateModified" datetime="2022-08-16T10:17:23+08:00">2022-08-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/frontend/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+        </span>
+    </span>
 
-          
+  
   
   <span class="post-meta-item">
     
@@ -262,6 +306,22 @@
   </span>
   
   
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>23k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>21 分鐘</span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -270,18 +330,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><h2 id="commit-hash"><a href="#commit-hash" class="headerlink" title="commit hash:"></a>commit hash:</h2><p>4f81b5db9ab553ca0abe0706ac55ceb861344330</p>
 <h2 id="src"><a href="#src" class="headerlink" title="src"></a>src</h2><ul>
-<li>server</li>
-<li>platforms</li>
-<li>core 6600 行</li>
-<li>shared</li>
-<li>compiler</li>
+<li><p>server</p>
+</li>
+<li><p>platforms</p>
+</li>
+<li><p>core 6600 行</p>
+</li>
+<li><p>shared</p>
+</li>
+<li><p>compiler</p>
+</li>
 <li><p>sfc</p>
 <ul>
-<li>134 ./sfc/parser.js</li>
+<li>134 .&#x2F;sfc&#x2F;parser.js</li>
 </ul>
 </li>
 </ul>
@@ -292,225 +355,17 @@
 <li>TypeScript的定义文件</li>
 </ul>
 <h2 id="本地调试代码环境搭建"><a href="#本地调试代码环境搭建" class="headerlink" title="本地调试代码环境搭建"></a>本地调试代码环境搭建</h2><ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn</span><br><span class="line">yarn dev -m</span><br></pre></td></tr></table></figure>
-<ul>
-<li>产生的文件之后可以浏览器或node中调用输出</li>
-<li>-m 是 rollup 启用sourcemap</li>
-</ul>
-</li>
-<li><p><a href="https://github.com/numbbbbb/read-vue-source-code/issues/9" target="_blank" rel="noopener">https://github.com/numbbbbb/read-vue-source-code/issues/9</a></p>
-</li>
-</ul>
-<h2 id><a href="#" class="headerlink" title></a><a id="more"></a></h2><h1 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h1><h2 id="src-platforms-weex"><a href="#src-platforms-weex" class="headerlink" title="src/platforms/weex"></a>src/platforms/weex</h2><ul>
-<li>阿里之前的，已经弃用了？上次更改2020年1月</li>
-</ul>
-<h2 id="entry"><a href="#entry" class="headerlink" title="entry"></a>entry</h2><ul>
-<li><p>package.json: scripts::dev</p>
-<ul>
-<li><p><code>rollup -w -c scripts/config.js --environment TARGET:web-full-dev</code></p>
-<ul>
-<li>grep一下，在 scripts/config.js 中找到 web-full-dev 配置</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>配置指向 <code>resolve(&#39;web/entry-runtime-with-compiler.js&#39;)</code></p>
-<ul>
-<li><p>resolve基于alias，来自文件scripts/alias.js</p>
-<ul>
-<li><p><code>web =   resolve(&#39;src/platforms/web&#39;)</code> 相对路径解析</p>
-<ul>
-<li><p>vue 对应 <code>src/platforms/web/entry-runtime-with-compiler.js</code></p>
-<ul>
-<li><code>Vue = ./runtime/index</code></li>
-<li><p>把原来的Vue.prototype.$mount 做了一层校验包裹</p>
-<ul>
-<li>和把template通过 compileToFunctions 变成render和staticRenderFns </li>
-<li>调用 idToTemplate ， getOuterHTML</li>
-</ul>
-</li>
-<li><p><code>Vue.compile = ./compiler/index</code></p>
-<ul>
-<li>子主题 1</li>
-</ul>
-</li>
-<li><p>IE兼容</p>
-<ul>
-<li><code>import { shouldDecodeNewlines, shouldDecodeNewlinesForHref } from &#39;./util/compat&#39;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="src-platforms-web-runtime-index-js"><a href="#src-platforms-web-runtime-index-js" class="headerlink" title="src/platforms/web/runtime/index.js"></a>src/platforms/web/runtime/index.js</h2><ul>
-<li>通过core/index.js 引入Vue</li>
-<li><p>平台特有的utils</p>
-<ul>
-<li>vue.config.mustuseprop = mustuseprop</li>
-<li>vue.config.isreservedtag = isreservedtag</li>
-<li>vue.config.isreservedattr = isreservedattr</li>
-<li>vue.config.gettagnamespace = gettagnamespace</li>
-<li>vue.config.isunknownelement = isunknownelement</li>
-</ul>
-</li>
-<li><p><code>extend(Vue.options.directives, platformDirectives)</code></p>
-</li>
-<li><code>extend(Vue.options.components, platformComponents)</code></li>
-<li><p><code>Vue.prototype.__patch__ = inBrowser ? patch : noop</code></p>
-<ul>
-<li>更新操作DOM（稍后提到）</li>
-</ul>
-</li>
-<li><p><code>Vue.prototype.$mount</code> 定义</p>
-</li>
-<li>浏览器内，开发工具devtools相关的 console提示</li>
-</ul>
-<h2 id="core-index-js"><a href="#core-index-js" class="headerlink" title="core/index.js"></a>core/index.js</h2><ul>
-<li>通过core/instance/index引入Vue</li>
-<li>initGlobalAPI(Vue)</li>
-<li>$isServer （原型链）</li>
-<li>$ssrContext（原型链）</li>
-<li>FunctionalRenderContext</li>
-<li>.version</li>
-</ul>
-<h2 id="core-instance-index"><a href="#core-instance-index" class="headerlink" title="core/instance/index"></a>core/instance/index</h2><ul>
-<li><p>提供Vue函数，并调用多个 Mixin初始化</p>
-<p>函数本身 判断是否是new 产生的，并调用<code>this._init(options)</code></p>
-<ul>
-<li>这一部分都是实例化Vue对象之前，我们可以略过的看看方法的内部实现，因为这个阶段，只是把Vue上去定义 字段和函数，和Vue.prototype上去定义字段和函数，其函数内容都还尚未执行，在调用new 之后才会进入到真正实例化</li>
-</ul>
-</li>
-<li><p>这也是 在创建Vue的Class的最里层了</p>
-</li>
-<li><p><code>core/instance/init.js::initMixin(Vue)</code></p>
-<ul>
-<li>提供用户 new Vue({…..})时，会去调用的_init()函数</li>
-</ul>
-</li>
-<li><p><code>core/instance/state.js::stateMixin(Vue)</code></p>
-<ul>
-<li>Object.defineProperty(Vue.prototype, ‘$data’,{get : function () { return this._data }}</li>
-<li>Object.defineProperty(Vue.prototype, ‘$props’,{get : function () { return this._props }}</li>
-<li>原型链定义$set (target: Array<any> | Object, key: any, val: any): any {)</any></li>
-<li>原型链定义$delete(target: Array<any> | Object, key: any) {</any></li>
-<li>原型链定义$watch(expOrFn: string | Function,    cb: any,    options?: Object  ): Function {</li>
-</ul>
-</li>
-<li><p><code>core/instance/events.js::eventsMixin(Vue)</code></p>
-<ul>
-<li>这里数组 用的Array.isArray 判断的，而这个方法我查了一下， &lt; IE9 不支持，还是说有相关的polyfill</li>
-<li><p>原型链定义$on</p>
-<ul>
-<li>这为啥Array 还要递归，string直接，这还可以 $on([[],[],[[[]]]]) 这样来写？</li>
-<li><p>这里也可以看到为了把 _hasHookEvent 移动到 $on 判断，修改了代码，但是测试没有保护，而对应的$off 没有加任何操作, 所以这里从逻辑意义上实现已经不对了，做成enable的语义，不改变实现或许都更好</p>
-<ul>
-<li>对应的我们能找到提交记录 7ffa77f3df1d9ec5253657daa4a59bf7af7f503e</li>
-<li>果然根据提交记录，就是从原本始终都触发的变成了 增加字段来判断，而再删除时不对称，真的是十分业务的实现（假设的前提是 大量的代码不使用hook，否则这些实现增加字段降低效率）</li>
-<li>从callHook 可以看到 生命周期的事件会多一个 hook:<xxxx> 的事件出来</xxxx></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>原型链定义$once</p>
-<ul>
-<li><p>once，包裹了一层，在off里面 去fn.fn 去判断的相等</p>
-<ul>
-<li>也就是正常的函数 和 once 调用还有区别，一个是直接括号，一个是点fn括号</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>原型链定义$off</p>
-<ul>
-<li><p>if(!fn) 关掉所有 对应event…</p>
-<ul>
-<li>这里有 undifined/null/空数组/有值的数组，都有可能</li>
-<li>这里插入同一个函数可能插入多次，删除一次一个，从 尾部 找到 函数指针相等的删除</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>原型链定义$emit</p>
-<ul>
-<li><p>invokeWithErrorHandling</p>
-<ul>
-<li><p>调用函数，有错报错</p>
-<ul>
-<li>增加 _handled 来阻止 nested calls</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code>core/instance/lifecycle.js::lifecycleMixin(Vue)</code></p>
-<ul>
-<li><p>原型链定义_update 方法</p>
-<ul>
-<li>考虑说，vm._vnode 有无 而不是增加state去做状态判断,有点magic number的意味，也不完全是</li>
-<li><p><code>if (vm.$vnode &amp;&amp; vm.$parent &amp;&amp; vm.$vnode === vm.$parent._vnode) {</code> 父组件是高阶组件的判断？</p>
-<ul>
-<li>只替换高阶的 $el, 没替换 <code>__vue__</code>, _vnode 等？</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>原型链定义$forceUpdate 方法</p>
-<ul>
-<li>vm._watcher.update()</li>
-</ul>
-</li>
-<li><p>原型链定义$destroy 方法</p>
-<ul>
-<li>_isBeingDestroyed 状态</li>
-<li><p>hook</p>
-<ul>
-<li>和我们外部看到的生命周期相关了</li>
-</ul>
-</li>
-<li><p>拆卸 vm._watcher</p>
-<ul>
-<li>…. 怎么又是 watcher又是watchers 数组</li>
-</ul>
-</li>
-<li><p>引用计数 vmCount–</p>
-</li>
-<li><p>mountComponent 方法</p>
-<ul>
-<li>beforeMount的周期</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code>core/instance/render.js::renderMixin(Vue)</code></p>
-<ul>
-<li>一堆被压缩成 <code>_字母</code>的方法</li>
-<li>方法 $nextTick</li>
-<li>_render 方法</li>
-</ul>
-</li>
-</ul>
-<h2 id="Vue-init"><a href="#Vue-init" class="headerlink" title="Vue._init()"></a>Vue._init()</h2><ul>
-<li>前面的代码 都是在 new Vue 之前 import阶段发生的事情,往后就是，Vue整个类被构建好了，还是真正产生实例的过程</li>
-<li>这个函数是 initMixin 在原型链中定义的</li>
-<li>这部分的时候，先忽略 defineReactive，ast等，Watcher 相对复杂的实现，主要看一个流程 和 一些相对不那么复杂的调用实现。</li>
-<li><p>用户代码举例</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	el:<span class="string">'#app'</span>,</span><br><span class="line">	data()&#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			message: <span class="string">'Hello Vue!'</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<li><pre><code>yarn
+yarn dev -m
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	- 产生的文件之后可以浏览器或node中调用输出</span><br><span class="line">	- -m 是 rollup 启用sourcemap</span><br><span class="line"></span><br><span class="line">- https://github.com/numbbbbb/read-vue-source-code/issues/9</span><br><span class="line"></span><br><span class="line">## &lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line"># 阅读</span><br><span class="line"></span><br><span class="line">## src/platforms/weex</span><br><span class="line"></span><br><span class="line">- 阿里之前的，已经弃用了？上次更改2020年1月</span><br><span class="line"></span><br><span class="line">## entry</span><br><span class="line"></span><br><span class="line">- package.json: scripts::dev</span><br><span class="line"></span><br><span class="line">	- `rollup -w -c scripts/config.js --environment TARGET:web-full-dev`</span><br><span class="line"></span><br><span class="line">		- grep一下，在 scripts/config.js 中找到 web-full-dev 配置</span><br><span class="line"></span><br><span class="line">- 配置指向 `resolve(&#x27;web/entry-runtime-with-compiler.js&#x27;)`</span><br><span class="line"></span><br><span class="line">	- resolve基于alias，来自文件scripts/alias.js</span><br><span class="line"></span><br><span class="line">		- `web =   resolve(&#x27;src/platforms/web&#x27;)` 相对路径解析</span><br><span class="line"></span><br><span class="line">			- vue 对应 `src/platforms/web/entry-runtime-with-compiler.js`</span><br><span class="line"></span><br><span class="line">				- `Vue = ./runtime/index`</span><br><span class="line">				- 把原来的Vue.prototype.$mount 做了一层校验包裹</span><br><span class="line"></span><br><span class="line">					- 和把template通过 compileToFunctions 变成render和staticRenderFns </span><br><span class="line">					- 调用 idToTemplate ， getOuterHTML</span><br><span class="line"></span><br><span class="line">				- `Vue.compile = ./compiler/index`</span><br><span class="line"></span><br><span class="line">					- 子主题 1</span><br><span class="line"></span><br><span class="line">				- IE兼容</span><br><span class="line"></span><br><span class="line">					- `import &#123; shouldDecodeNewlines, shouldDecodeNewlinesForHref &#125; from &#x27;./util/compat&#x27;`</span><br><span class="line"></span><br><span class="line">## src/platforms/web/runtime/index.js</span><br><span class="line"></span><br><span class="line">- 通过core/index.js 引入Vue</span><br><span class="line">- 平台特有的utils</span><br><span class="line"></span><br><span class="line">	- vue.config.mustuseprop = mustuseprop</span><br><span class="line">	- vue.config.isreservedtag = isreservedtag</span><br><span class="line">	- vue.config.isreservedattr = isreservedattr</span><br><span class="line">	- vue.config.gettagnamespace = gettagnamespace</span><br><span class="line">	- vue.config.isunknownelement = isunknownelement</span><br><span class="line"></span><br><span class="line">- `extend(Vue.options.directives, platformDirectives)`</span><br><span class="line">- `extend(Vue.options.components, platformComponents)`</span><br><span class="line">- `Vue.prototype.__patch__ = inBrowser ? patch : noop`</span><br><span class="line"></span><br><span class="line">	- 更新操作DOM（稍后提到）</span><br><span class="line"></span><br><span class="line">- `Vue.prototype.$mount` 定义</span><br><span class="line">- 浏览器内，开发工具devtools相关的 console提示</span><br><span class="line"></span><br><span class="line">## core/index.js</span><br><span class="line"></span><br><span class="line">- 通过core/instance/index引入Vue</span><br><span class="line">- initGlobalAPI(Vue)</span><br><span class="line">- $isServer （原型链）</span><br><span class="line">- $ssrContext（原型链）</span><br><span class="line">- FunctionalRenderContext</span><br><span class="line">- .version</span><br><span class="line"></span><br><span class="line">## core/instance/index</span><br><span class="line"></span><br><span class="line">- 提供Vue函数，并调用多个 Mixin初始化</span><br><span class="line"></span><br><span class="line">  函数本身 判断是否是new 产生的，并调用`this._init(options)`</span><br><span class="line"></span><br><span class="line">	- 这一部分都是实例化Vue对象之前，我们可以略过的看看方法的内部实现，因为这个阶段，只是把Vue上去定义 字段和函数，和Vue.prototype上去定义字段和函数，其函数内容都还尚未执行，在调用new 之后才会进入到真正实例化</span><br><span class="line"></span><br><span class="line">- 这也是 在创建Vue的Class的最里层了</span><br><span class="line">- `core/instance/init.js::initMixin(Vue)`</span><br><span class="line"></span><br><span class="line">	- 提供用户 new Vue(&#123;.....&#125;)时，会去调用的_init()函数</span><br><span class="line"></span><br><span class="line">- `core/instance/state.js::stateMixin(Vue)`</span><br><span class="line"></span><br><span class="line">	- Object.defineProperty(Vue.prototype, &#x27;$data&#x27;,&#123;get : function () &#123; return this._data &#125;&#125;</span><br><span class="line">	- Object.defineProperty(Vue.prototype, &#x27;$props&#x27;,&#123;get : function () &#123; return this._props &#125;&#125;</span><br><span class="line">	- 原型链定义$set (target: Array&lt;any&gt; | Object, key: any, val: any): any &#123;)</span><br><span class="line">	- 原型链定义$delete(target: Array&lt;any&gt; | Object, key: any) &#123;</span><br><span class="line">	- 原型链定义$watch(expOrFn: string | Function,    cb: any,    options?: Object  ): Function &#123;</span><br><span class="line"></span><br><span class="line">- `core/instance/events.js::eventsMixin(Vue)`</span><br><span class="line"></span><br><span class="line">	- 这里数组 用的Array.isArray 判断的，而这个方法我查了一下， &lt; IE9 不支持，还是说有相关的polyfill</span><br><span class="line">	- 原型链定义$on</span><br><span class="line"></span><br><span class="line">		- 这为啥Array 还要递归，string直接，这还可以 $on([[],[],[[[]]]]) 这样来写？</span><br><span class="line">		- 这里也可以看到为了把 _hasHookEvent 移动到 $on 判断，修改了代码，但是测试没有保护，而对应的$off 没有加任何操作, 所以这里从逻辑意义上实现已经不对了，做成enable的语义，不改变实现或许都更好</span><br><span class="line"></span><br><span class="line">			- 对应的我们能找到提交记录 7ffa77f3df1d9ec5253657daa4a59bf7af7f503e</span><br><span class="line">			- 果然根据提交记录，就是从原本始终都触发的变成了 增加字段来判断，而再删除时不对称，真的是十分业务的实现（假设的前提是 大量的代码不使用hook，否则这些实现增加字段降低效率）</span><br><span class="line">			- 从callHook 可以看到 生命周期的事件会多一个 hook:&lt;xxxx&gt; 的事件出来</span><br><span class="line"></span><br><span class="line">	- 原型链定义$once</span><br><span class="line"></span><br><span class="line">		- once，包裹了一层，在off里面 去fn.fn 去判断的相等</span><br><span class="line"></span><br><span class="line">			- 也就是正常的函数 和 once 调用还有区别，一个是直接括号，一个是点fn括号</span><br><span class="line"></span><br><span class="line">	- 原型链定义$off</span><br><span class="line"></span><br><span class="line">		- if(!fn) 关掉所有 对应event...</span><br><span class="line"></span><br><span class="line">			- 这里有 undifined/null/空数组/有值的数组，都有可能</span><br><span class="line">			- 这里插入同一个函数可能插入多次，删除一次一个，从 尾部 找到 函数指针相等的删除</span><br><span class="line"></span><br><span class="line">	- 原型链定义$emit</span><br><span class="line"></span><br><span class="line">		- invokeWithErrorHandling</span><br><span class="line"></span><br><span class="line">			- 调用函数，有错报错</span><br><span class="line"></span><br><span class="line">				- 增加 _handled 来阻止 nested calls</span><br><span class="line"></span><br><span class="line">- `core/instance/lifecycle.js::lifecycleMixin(Vue)`</span><br><span class="line"></span><br><span class="line">	- 原型链定义_update 方法</span><br><span class="line"></span><br><span class="line">		- 考虑说，vm._vnode 有无 而不是增加state去做状态判断,有点magic number的意味，也不完全是</span><br><span class="line">		- `if (vm.$vnode &amp;&amp; vm.$parent &amp;&amp; vm.$vnode === vm.$parent._vnode) &#123;` 父组件是高阶组件的判断？</span><br><span class="line"></span><br><span class="line">			- 只替换高阶的 $el, 没替换 `__vue__`, _vnode 等？</span><br><span class="line"></span><br><span class="line">	- 原型链定义$forceUpdate 方法</span><br><span class="line"></span><br><span class="line">		- vm._watcher.update()</span><br><span class="line"></span><br><span class="line">	- 原型链定义$destroy 方法</span><br><span class="line"></span><br><span class="line">		- _isBeingDestroyed 状态</span><br><span class="line">		- hook</span><br><span class="line"></span><br><span class="line">			- 和我们外部看到的生命周期相关了</span><br><span class="line"></span><br><span class="line">		- 拆卸 vm._watcher</span><br><span class="line"></span><br><span class="line">			- .... 怎么又是 watcher又是watchers 数组</span><br><span class="line"></span><br><span class="line">		- 引用计数 vmCount--</span><br><span class="line">		- mountComponent 方法</span><br><span class="line"></span><br><span class="line">			- beforeMount的周期</span><br><span class="line"></span><br><span class="line">- `core/instance/render.js::renderMixin(Vue)`</span><br><span class="line"></span><br><span class="line">	- 一堆被压缩成 `_字母`的方法</span><br><span class="line">	- 方法 $nextTick</span><br><span class="line">	- _render 方法</span><br><span class="line"></span><br><span class="line">## Vue._init()</span><br><span class="line"></span><br><span class="line">- 前面的代码 都是在 new Vue 之前 import阶段发生的事情,往后就是，Vue整个类被构建好了，还是真正产生实例的过程</span><br><span class="line">- 这个函数是 initMixin 在原型链中定义的</span><br><span class="line">- 这部分的时候，先忽略 defineReactive，ast等，Watcher 相对复杂的实现，主要看一个流程 和 一些相对不那么复杂的调用实现。</span><br><span class="line">- 用户代码举例</span><br><span class="line"></span><br><span class="line">  ```js</span><br><span class="line">  new Vue(&#123;</span><br><span class="line">  	el:&#x27;#app&#x27;,</span><br><span class="line">  	data()&#123;</span><br><span class="line">  		return &#123;</span><br><span class="line">  			message: &#x27;Hello Vue!&#x27;</span><br><span class="line">  		&#125;</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+</code></pre>
 </li>
 <li><p><code>src/core/instance/init.js:: _init(options)</code></p>
 <ul>
-<li>_uid = uid++ (“全局” uid)</li>
-<li>_isVue = true</li>
+<li><p>_uid &#x3D; uid++ (“全局” uid)</p>
+</li>
+<li><p>_isVue &#x3D; true</p>
+</li>
 <li><p>$options</p>
 <ul>
 <li><p>根据_isComponent 静态创建</p>
@@ -526,11 +381,12 @@
 <ul>
 <li><p>function resolveConstructorOptions</p>
 <ul>
-<li>动态 递归向根节点的 解析options</li>
+<li><p>动态 递归向根节点的 解析options</p>
+</li>
 <li><p>resolveModifiedOptions</p>
 <ul>
 <li>支持热更新 修改 options</li>
-<li><a href="https://github.com/vuejs/vue/issues/4976" target="_blank" rel="noopener">https://github.com/vuejs/vue/issues/4976</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/vuejs/vue/issues/4976">https://github.com/vuejs/vue/issues/4976</a></li>
 </ul>
 </li>
 </ul>
@@ -558,19 +414,21 @@
 <li><code>$parent</code> (递归向上找，和$parent通过 上面的$children 建立联系)</li>
 <li><code>$root = parent ? parent.$root : vm</code></li>
 <li><code>$children = []</code></li>
-<li><code>$refs = {}</code></li>
-<li>_watcher = null</li>
-<li>_inactive = null</li>
-<li>_directInactive = false</li>
-<li>_isMounted = false</li>
-<li>_isDestroyed = false</li>
-<li>_isBeingDestroyed = false</li>
+<li><code>$refs = &#123;&#125;</code></li>
+<li>_watcher &#x3D; null</li>
+<li>_inactive &#x3D; null</li>
+<li>_directInactive &#x3D; false</li>
+<li>_isMounted &#x3D; false</li>
+<li>_isDestroyed &#x3D; false</li>
+<li>_isBeingDestroyed &#x3D; false</li>
 </ul>
 </li>
 <li><p>initEvents</p>
 <ul>
-<li>vm._events = Object.create(null)</li>
-<li>vm._hasHookEvent = false</li>
+<li><p>vm._events &#x3D; Object.create(null)</p>
+</li>
+<li><p>vm._hasHookEvent &#x3D; false</p>
+</li>
 <li><p>基于<code>vm.$options._parentListeners</code>增加listeners</p>
 <ul>
 <li><code>__WEEX__</code> 又塞进来了？</li>
@@ -581,21 +439,27 @@
 </li>
 <li><p>initRender</p>
 <ul>
-<li>_vnode = null</li>
-<li>_staticTrees = null</li>
-<li>$slots = resolveSlots(options._renderChildren, renderContext)</li>
-<li>$scopedSlots = emptyObject</li>
-<li><p>_c = (a, b, c, d) =&gt; createElement(vm, a, b, c, d, false)</p>
+<li><p>_vnode &#x3D; null</p>
+</li>
+<li><p>_staticTrees &#x3D; null</p>
+</li>
+<li><p>$slots &#x3D; resolveSlots(options._renderChildren, renderContext)</p>
+</li>
+<li><p>$scopedSlots &#x3D; emptyObject</p>
+</li>
+<li><p>_c &#x3D; (a, b, c, d) &#x3D;&gt; createElement(vm, a, b, c, d, false)</p>
 <ul>
 <li>这里可以看到在js实现函数重载然后封装的体验 XD</li>
 </ul>
 </li>
-<li><p>$createElement = (a, b, c, d) =&gt; createElement(vm, a, b, c, d, true)</p>
+<li><p>$createElement &#x3D; (a, b, c, d) &#x3D;&gt; createElement(vm, a, b, c, d, true)</p>
 </li>
 <li><p>$attrs</p>
 <ul>
 <li>通过defineReactive创建</li>
-<li>defineReactive(vm, ‘$attrs’, parentData &amp;&amp; parentData.attrs || emptyObject, null, true)</li>
+<li><pre><code>defineReactive(vm, &#39;$attrs&#39;, parentData &amp;&amp; parentData.attrs || emptyObject, null, true)
+</code></pre>
+</li>
 </ul>
 </li>
 <li><p>$listeners</p>
@@ -605,7 +469,8 @@
 <li>这一块用了，emptyObject, 一个不可更改的空对象，我真的不看变量名，看不出它不可更改， 但刚刚才看的另一段代码没有用…不一致啊</li>
 </ul>
 </li>
-<li><p>defineReactive(vm, ‘$listeners’, options._parentListeners || emptyObject, null, true)</p>
+<li><pre><code>defineReactive(vm, &#39;$listeners&#39;, options._parentListeners || emptyObject, null, true)
+</code></pre>
 </li>
 </ul>
 </li>
@@ -619,40 +484,49 @@
 <ul>
 <li><p>inject.js</p>
 <ul>
-<li>这个文件在上面的5个mixin中没有出现过，但是初始化会调用</li>
-<li>通过 toggleObserving 包裹，中间的部分不触发响应式相关的</li>
+<li><p>这个文件在上面的5个mixin中没有出现过，但是初始化会调用</p>
+</li>
+<li><p>通过 toggleObserving 包裹，中间的部分不触发响应式相关的</p>
+</li>
 <li><p>注入也是通过 defineReactive 挨个key注入</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="comment">// 核心实现</span></span><br><span class="line"><span class="keyword">const</span> result = ﻿resolveInject(vm.$options.inject, vm)</span><br><span class="line"><span class="built_in">Object</span>.keys(result).forEach(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">      defineReactive(vm, key, result[key])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="comment">// 核心实现</span></span><br><span class="line"><span class="keyword">const</span> result = ﻿<span class="title function_">resolveInject</span>(vm.<span class="property">$options</span>.<span class="property">inject</span>, vm)</span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">keys</span>(result).<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">defineReactive</span>(vm, key, result[key])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>来源 就是当前级别递归向上找<code>_provided</code></p>
 </li>
 </ul>
 </li>
-<li><p>resolve injections before data/props</p>
+<li><p>resolve injections before data&#x2F;props</p>
 </li>
-<li>对于使用者，当前级别或父/祖先级别提供provide的东西，任意层级子级别，需要用，直接写inject，就能获得到对应的数据，而中间层级完全不需要描述</li>
+<li><p>对于使用者，当前级别或父&#x2F;祖先级别提供provide的东西，任意层级子级别，需要用，直接写inject，就能获得到对应的数据，而中间层级完全不需要描述</p>
+</li>
 </ul>
 </li>
 <li><p>initState</p>
 <ul>
-<li>_watchers = []</li>
+<li><p>_watchers &#x3D; []</p>
+</li>
 <li><p>proxy 函数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">proxy</span> (<span class="params">target: Object, sourceKey: string, key: string</span>) </span>&#123;</span><br><span class="line">  sharedPropertyDefinition.get = <span class="function"><span class="keyword">function</span> <span class="title">proxyGetter</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>[sourceKey][key]</span><br><span class="line">  &#125;</span><br><span class="line">  sharedPropertyDefinition.set = <span class="function"><span class="keyword">function</span> <span class="title">proxySetter</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>[sourceKey][key] = val</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">Object</span>.defineProperty(target, key, sharedPropertyDefinition)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">proxy</span> (<span class="attr">target</span>: <span class="title class_">Object</span>, <span class="attr">sourceKey</span>: string, <span class="attr">key</span>: string) &#123;</span><br><span class="line">  sharedPropertyDefinition.<span class="property">get</span> = <span class="keyword">function</span> <span class="title function_">proxyGetter</span> () &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>[sourceKey][key]</span><br><span class="line">  &#125;</span><br><span class="line">  sharedPropertyDefinition.<span class="property">set</span> = <span class="keyword">function</span> <span class="title function_">proxySetter</span> (val) &#123;</span><br><span class="line">    <span class="variable language_">this</span>[sourceKey][key] = val</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(target, key, sharedPropertyDefinition)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>也可以看到这里的用了 defineProperty</li>
 </ul>
 </li>
 <li><p>porps 核心实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> props = vm._props = &#123;&#125;</span><br><span class="line">vm._propsKeys = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> vm.$options.props﻿) &#123;</span><br><span class="line">  defineReactive(props, key, value)</span><br><span class="line">  <span class="keyword">if</span> (!(key <span class="keyword">in</span> vm)) &#123;</span><br><span class="line">    proxy(vm, <span class="string">`_props`</span>, key)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> props = vm.<span class="property">_props</span> = &#123;&#125;</span><br><span class="line">vm.<span class="property">_propsKeys</span> = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> vm.<span class="property">$options</span>.<span class="property">props</span>﻿) &#123;</span><br><span class="line">  <span class="title function_">defineReactive</span>(props, key, value)</span><br><span class="line">  <span class="keyword">if</span> (!(key <span class="keyword">in</span> vm)) &#123;</span><br><span class="line">    <span class="title function_">proxy</span>(vm, <span class="string">`_props`</span>, key)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>非 root，都是关闭响应式 进行操作的</li>
 </ul>
 </li>
 <li><p>methods 核心实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> methods = vm.$options.methods</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> methods) &#123;</span><br><span class="line">  vm[key] = bind(methods[key], vm)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> methods = vm.<span class="property">$options</span>.<span class="property">methods</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> methods) &#123;</span><br><span class="line">  vm[key] = <span class="title function_">bind</span>(methods[key], vm)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>这一块有做 保留词判断，对于<code>$</code> 和 <code>_</code>开头的视作保留词 isReserved</li>
-<li>initMethods 中可以看到 和_props中做冲突检查，但是这里是直接提出了_props? 为啥不是专门建立冲突表，毕竟data，computed里都可能会有冲突检查</li>
+<li><p>这一块有做 保留词判断，对于<code>$</code> 和 <code>_</code>开头的视作保留词 isReserved</p>
+</li>
+<li><p>initMethods 中可以看到 和_props中做冲突检查，但是这里是直接提出了_props? 为啥不是专门建立冲突表，毕竟data，computed里都可能会有冲突检查</p>
+</li>
 <li><p>这里也可以看到，我面试喜欢问人 为啥function中的this是怎么来的，或者让你实现会怎么实现，这里bind</p>
 <ul>
 <li>稍微多dig一下代码，发现了还有nativebind和pollyfillBind 为了解决不支持默认的bind的情况</li>
@@ -663,7 +537,8 @@
 <li><p>_data</p>
 <ul>
 <li><p>有data时，核心实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="keyword">const</span> data = vm._data = <span class="keyword">typeof</span> data === <span class="string">'function'</span></span><br><span class="line">  ? getData(data, vm)</span><br><span class="line">  : data || &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> keys = <span class="built_in">Object</span>.keys(data)</span><br><span class="line"><span class="keyword">let</span> i = keys.length</span><br><span class="line"><span class="keyword">while</span> (i--) &#123;</span><br><span class="line">  <span class="keyword">const</span> key = keys[i]</span><br><span class="line">    proxy(vm, <span class="string">`_data`</span>, key)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// observe data</span></span><br><span class="line">observe(data, <span class="literal">true</span> <span class="comment">/* asRootData */</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="keyword">const</span> data = vm.<span class="property">_data</span> = <span class="keyword">typeof</span> data === <span class="string">&#x27;function&#x27;</span></span><br><span class="line">  ? <span class="title function_">getData</span>(data, vm)</span><br><span class="line">  : data || &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> keys = <span class="title class_">Object</span>.<span class="title function_">keys</span>(data)</span><br><span class="line"><span class="keyword">let</span> i = keys.<span class="property">length</span></span><br><span class="line"><span class="keyword">while</span> (i--) &#123;</span><br><span class="line">  <span class="keyword">const</span> key = keys[i]</span><br><span class="line">    <span class="title function_">proxy</span>(vm, <span class="string">`_data`</span>, key)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// observe data</span></span><br><span class="line"><span class="title function_">observe</span>(data, <span class="literal">true</span> <span class="comment">/* asRootData */</span>)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>…为啥相邻3个函数，传参设计还有的自己取，有的提取出来，再传入</li>
 <li>刚刚说了，冲突校验越写越多</li>
@@ -673,17 +548,19 @@
 <li>最后observe(data, true)</li>
 </ul>
 </li>
-<li><p>无data时，observe(vm._data={}, true)</p>
+<li><p>无data时，observe(vm._data&#x3D;{}, true)</p>
 </li>
 </ul>
 </li>
 <li><p>initComputed</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> watchers = vm._computedWatchers = <span class="built_in">Object</span>.create(<span class="literal">null</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> <span class="keyword">this</span>.$options.computed) &#123;</span><br><span class="line">  <span class="keyword">const</span> userDef = computed[key]</span><br><span class="line">  <span class="keyword">const</span> getter = <span class="keyword">typeof</span> userDef === <span class="string">'function'</span> ? userDef : userDef.get</span><br><span class="line">    watchers[key] = <span class="keyword">new</span> Watcher(</span><br><span class="line">      vm,</span><br><span class="line">      getter || noop,</span><br><span class="line">      noop,</span><br><span class="line">      computedWatcherOptions</span><br><span class="line">    )</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(target, key, sharedPropertyDefinition) <span class="comment">// 其中 sharedPropertyDefinition是基于用户提供的函数创建的 带有cache或直接的 调用函数﻿</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> watchers = vm.<span class="property">_computedWatchers</span> = <span class="title class_">Object</span>.<span class="title function_">create</span>(<span class="literal">null</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> <span class="variable language_">this</span>.<span class="property">$options</span>.<span class="property">computed</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> userDef = computed[key]</span><br><span class="line">  <span class="keyword">const</span> getter = <span class="keyword">typeof</span> userDef === <span class="string">&#x27;function&#x27;</span> ? userDef : userDef.<span class="property">get</span></span><br><span class="line">    watchers[key] = <span class="keyword">new</span> <span class="title class_">Watcher</span>(</span><br><span class="line">      vm,</span><br><span class="line">      getter || noop,</span><br><span class="line">      noop,</span><br><span class="line">      computedWatcherOptions</span><br><span class="line">    )</span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(target, key, sharedPropertyDefinition) <span class="comment">// 其中 sharedPropertyDefinition是基于用户提供的函数创建的 带有cache或直接的 调用函数﻿</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>this._computedWatchers = Object.create(null)</code> 真实存储在 这个field的键值对里</li>
 <li>对于 服务端渲染ssr的情况，computed就是作为getter计算</li>
 <li>这里可以看到，漏掉了和methods冲突校验？只有$data 和 props</li>
-<li><p>sharedPropertyDefinition.get = shouldCache       ? createComputedGetter(key) : createGetterInvoker(userDef)</p>
+<li><pre><code>sharedPropertyDefinition.get = shouldCache       ? createComputedGetter(key) : createGetterInvoker(userDef)
+</code></pre>
 <ul>
 <li>这两块实现细节与 响应式有关，在后面响应式讲解的地方再细说。总之从现在的视角就是通过把用户传入的包装后的函数</li>
 </ul>
@@ -691,18 +568,18 @@
 </ul>
 </li>
 <li><p>initWatch</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> <span class="keyword">this</span>.$options.watch) &#123;</span><br><span class="line">  vm.$watch(key,watch[key])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> <span class="variable language_">this</span>.<span class="property">$options</span>.<span class="property">watch</span>) &#123;</span><br><span class="line">  vm.$watch(key,watch[key])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$watch，闭包内watcher，留一个unwatchFn支持取消</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> watcher = <span class="keyword">new</span> <span class="title class_">Watcher</span>(vm, key, watch[key], &#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>这里代码做的是单watch的情况会走的代码，watch还可以数组函数, 可以immediate，这些官方文档上统统都没有</li>
+<li>createWatcher又见函数重载</li>
 </ul>
 </li>
 </ul>
-<pre><code>$watch，闭包内watcher，留一个unwatchFn支持取消
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> watcher = <span class="keyword">new</span> Watcher(vm, key, watch[key], &#123;&#125;)</span><br></pre></td></tr></table></figure>
-
-  - 这里代码做的是单watch的情况会走的代码，watch还可以数组函数, 可以immediate，这些官方文档上统统都没有
-  - createWatcher又见函数重载
-</code></pre><ul>
+</li>
 <li><p>initProvide</p>
 <ul>
 <li>函数则vm调用，值则直接取，放在 vm._provided</li>
@@ -710,19 +587,20 @@
 </li>
 <li><p>callHook(vm, ‘created’) 生命周期</p>
 </li>
-<li>上面就完成了js部分的创建，vm什么都好了，接下来就是渲染出html</li>
+<li><p>上面就完成了js部分的创建，vm什么都好了，接下来就是渲染出html</p>
+</li>
 <li><p>vm.$mount(vm.$options.el)</p>
 <ul>
 <li><p>来自上面在设置Class时多次包裹的$mount</p>
 <ul>
-<li>web/entry-runtime-with-compiler.js</li>
-<li>web/runtime/index.js</li>
-<li>core/instance/lifecycle.js:: mountComponent</li>
+<li>web&#x2F;entry-runtime-with-compiler.js</li>
+<li>web&#x2F;runtime&#x2F;index.js</li>
+<li>core&#x2F;instance&#x2F;lifecycle.js:: mountComponent</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>之后的内容就是用户操作和 对应函数/事件的触发了</p>
+<li><p>之后的内容就是用户操作和 对应函数&#x2F;事件的触发了</p>
 </li>
 </ul>
 <h2 id="响应式"><a href="#响应式" class="headerlink" title="响应式"></a>响应式</h2><ul>
@@ -733,18 +611,22 @@
 </li>
 <li><p>Dep</p>
 <ul>
-<li><p>core/observer/dep.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Dep</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> target: ?Watcher;</span><br><span class="line">  id: number;</span><br><span class="line">  subs: <span class="built_in">Array</span>&lt;Watcher&gt;;</span><br><span class="line">  <span class="keyword">constructor</span> () &#123;</span><br><span class="line">    <span class="keyword">this</span>.id = uid++</span><br><span class="line">    <span class="keyword">this</span>.subs = []</span><br><span class="line">  &#125;</span><br><span class="line">  addSub (sub: Watcher) </span><br><span class="line">  removeSub (sub: Watcher) </span><br><span class="line">  depend ()</span><br><span class="line">  notify () </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>core&#x2F;observer&#x2F;dep.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> <span class="title class_">Dep</span> &#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="attr">target</span>: ?<span class="title class_">Watcher</span>;</span><br><span class="line">  <span class="attr">id</span>: number;</span><br><span class="line">  <span class="attr">subs</span>: <span class="title class_">Array</span>&lt;<span class="title class_">Watcher</span>&gt;;</span><br><span class="line">  <span class="title function_">constructor</span> () &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">id</span> = uid++</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">subs</span> = []</span><br><span class="line">  &#125;</span><br><span class="line">  addSub (<span class="attr">sub</span>: <span class="title class_">Watcher</span>) </span><br><span class="line">  removeSub (<span class="attr">sub</span>: <span class="title class_">Watcher</span>) </span><br><span class="line">  depend ()</span><br><span class="line">  notify () </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>虽然我们直接看到的是 defineReactive, 但是我们从Dep开始看</p>
 </li>
-<li>这也会有一个自己的单增 uid</li>
-<li>Dep增删自己subs里的Watcher ： addSub/removeSub</li>
+<li><p>这也会有一个自己的单增 uid</p>
+</li>
+<li><p>Dep增删自己subs里的Watcher ： addSub&#x2F;removeSub</p>
+</li>
 <li><p>在当前Dep.target(是个Watcher)中增加自己 Dep.target.addDep(this)</p>
 <ul>
-<li>这里Dep.target又是，存在值/null/undefined 都有可能</li>
-<li>这是个静态成员</li>
-<li><p>通过 pushTarget/popTarget 来维护的，是个栈，啊 搞这么多变量干嘛，直接取栈顶不就好了。从代码看起来在其它地方有前置判断，目测还是所谓性能相关？<!--我就不懂了，perf都是靠这样破坏层级的搞，那还得了，真把自己当后端了--></p>
+<li><p>这里Dep.target又是，存在值&#x2F;null&#x2F;undefined 都有可能</p>
+</li>
+<li><p>这是个静态成员</p>
+</li>
+<li><p>通过 pushTarget&#x2F;popTarget 来维护的，是个栈，啊 搞这么多变量干嘛，直接取栈顶不就好了。从代码看起来在其它地方有前置判断，目测还是所谓性能相关？<!--我就不懂了，perf都是靠这样破坏层级的搞，那还得了，真把自己当后端了--></p>
 <ul>
 <li>看起来是 #7824 对应提交id： 6b1d431a8</li>
 </ul>
@@ -757,27 +639,35 @@
 </li>
 <li><p>Watcher</p>
 <ul>
-<li><p>core/observer/watcher.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Watcher</span> </span>&#123;</span><br><span class="line"> vm: Component;</span><br><span class="line"> expression: string;</span><br><span class="line"> cb: <span class="built_in">Function</span>;</span><br><span class="line"> id: number;</span><br><span class="line"> deep: boolean;</span><br><span class="line"> user: boolean;</span><br><span class="line"> lazy: boolean;</span><br><span class="line"> sync: boolean;</span><br><span class="line"> dirty: boolean;</span><br><span class="line"> active: boolean;</span><br><span class="line"> deps: <span class="built_in">Array</span>&lt;Dep&gt;;</span><br><span class="line"> newDeps: <span class="built_in">Array</span>&lt;Dep&gt;;</span><br><span class="line"> depIds: SimpleSet;</span><br><span class="line"> newDepIds: SimpleSet;</span><br><span class="line"> before: ?<span class="built_in">Function</span>;</span><br><span class="line"> getter: <span class="built_in">Function</span>;</span><br><span class="line"> value: any;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">constructor</span> (</span><br><span class="line">  vm: Component,</span><br><span class="line">  expOrFn: string | Function,</span><br><span class="line">  cb: Function,</span><br><span class="line">  options?: ?Object,</span><br><span class="line">  isRenderWatcher?: boolean</span><br><span class="line"> ) &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 计算getter并重新收集dep</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="keyword">get</span> () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 向当前watcher增加dep</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> addDep (dep: Dep) &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 清理dep</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> cleanupDeps () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 当dep改变时会被调用</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> update () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 调度器会调用</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> run () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 只有lazy watcher 会调用，计算值</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> evaluate () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 和所有收集的dep建立联系</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> depend () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 移除自身订阅的所有dep列表</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> teardown () &#123;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>core&#x2F;observer&#x2F;watcher.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> <span class="title class_">Watcher</span> &#123;</span><br><span class="line"> <span class="attr">vm</span>: <span class="title class_">Component</span>;</span><br><span class="line"> <span class="attr">expression</span>: string;</span><br><span class="line"> <span class="attr">cb</span>: <span class="title class_">Function</span>;</span><br><span class="line"> <span class="attr">id</span>: number;</span><br><span class="line"> <span class="attr">deep</span>: boolean;</span><br><span class="line"> <span class="attr">user</span>: boolean;</span><br><span class="line"> <span class="attr">lazy</span>: boolean;</span><br><span class="line"> <span class="attr">sync</span>: boolean;</span><br><span class="line"> <span class="attr">dirty</span>: boolean;</span><br><span class="line"> <span class="attr">active</span>: boolean;</span><br><span class="line"> <span class="attr">deps</span>: <span class="title class_">Array</span>&lt;<span class="title class_">Dep</span>&gt;;</span><br><span class="line"> <span class="attr">newDeps</span>: <span class="title class_">Array</span>&lt;<span class="title class_">Dep</span>&gt;;</span><br><span class="line"> <span class="attr">depIds</span>: <span class="title class_">SimpleSet</span>;</span><br><span class="line"> <span class="attr">newDepIds</span>: <span class="title class_">SimpleSet</span>;</span><br><span class="line"> <span class="attr">before</span>: ?<span class="title class_">Function</span>;</span><br><span class="line"> <span class="attr">getter</span>: <span class="title class_">Function</span>;</span><br><span class="line"> <span class="attr">value</span>: any;</span><br><span class="line"></span><br><span class="line"> <span class="title function_">constructor</span> (</span><br><span class="line">  <span class="attr">vm</span>: <span class="title class_">Component</span>,</span><br><span class="line">  <span class="attr">expOrFn</span>: string | <span class="title class_">Function</span>,</span><br><span class="line">  <span class="attr">cb</span>: <span class="title class_">Function</span>,</span><br><span class="line">  options?: ?<span class="title class_">Object</span>,</span><br><span class="line">  isRenderWatcher?: boolean</span><br><span class="line"> ) &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 计算getter并重新收集dep</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> get () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 向当前watcher增加dep</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> addDep (<span class="attr">dep</span>: <span class="title class_">Dep</span>) &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 清理dep</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> cleanupDeps () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 当dep改变时会被调用</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> update () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 调度器会调用</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> run () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 只有lazy watcher 会调用，计算值</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> evaluate () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 和所有收集的dep建立联系</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> depend () &#123;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 移除自身订阅的所有dep列表</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> teardown () &#123;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>vm._watcher = this</p>
+<li><p>vm._watcher &#x3D; this</p>
 </li>
-<li>vm.watchers.push(this)</li>
-<li>等等一堆初始化</li>
-<li>根据 expOrFn 产生this.getter</li>
-<li>最后    this.value = this.lazy ? undefined : this.get()</li>
+<li><p>vm.watchers.push(this)</p>
+</li>
+<li><p>等等一堆初始化</p>
+</li>
+<li><p>根据 expOrFn 产生this.getter</p>
+</li>
+<li><p>最后    this.value &#x3D; this.lazy ? undefined : this.get()</p>
+</li>
 <li><p>get(), 会把当前watcher通过dep里提供的 pushTarget 压栈，再调用 getter，结束后popTarget</p>
 <ul>
 <li>其中如果设置deep，会遍历对象元素，触发每个层级的计算其中用set避免递归无限循环</li>
-<li>注意到上面的Dep类，在get触发计算函数过程中会调用这里的addDep，在addDep的实现是通过 newDepIds/newDep 去记录，到最后结束的时候，通过cleanupDeps 函数完成 从new开头的移动到depIds/deps 中</li>
+<li>注意到上面的Dep类，在get触发计算函数过程中会调用这里的addDep，在addDep的实现是通过 newDepIds&#x2F;newDep 去记录，到最后结束的时候，通过cleanupDeps 函数完成 从new开头的移动到depIds&#x2F;deps 中</li>
 </ul>
 </li>
 <li><p>我们来看看Dep和Watcher之间的触发关系（不看移除）</p>
 <ul>
-<li>Dep::addSub 在dep中记录watcher</li>
-<li>Dep::depend 当前watchers栈顶的addDep方法传入dep</li>
-<li>Dep::notify 当前dep中的watchers 依次触发 update()</li>
-<li>Watcher::get 触发自己getter函数，收集依赖（通过依赖自己的addDep）,最后 cleanupDeps</li>
+<li><p>Dep::addSub 在dep中记录watcher</p>
+</li>
+<li><p>Dep::depend 当前watchers栈顶的addDep方法传入dep</p>
+</li>
+<li><p>Dep::notify 当前dep中的watchers 依次触发 update()</p>
+</li>
+<li><p>Watcher::get 触发自己getter函数，收集依赖（通过依赖自己的addDep）,最后 cleanupDeps</p>
+</li>
 <li><p>Watcher::update 调用自己的run 或 调用queueWatcher 或 标记dirty</p>
 <ul>
 <li><p>lazy</p>
@@ -797,11 +687,13 @@
 </li>
 <li><p>queueWatcher（传入当前Watcher）</p>
 <ul>
-<li>如果队列中没它，则加入到watcher队列中</li>
-<li>这里可以看到nextTick 的使用，从promise/MutationObserver/setImmediate/setTimeout0 逐级下降，所以不要靠 nextTick猜执行顺序来控制</li>
+<li><p>如果队列中没它，则加入到watcher队列中</p>
+</li>
+<li><p>这里可以看到nextTick 的使用，从promise&#x2F;MutationObserver&#x2F;setImmediate&#x2F;setTimeout0 逐级下降，所以不要靠 nextTick猜执行顺序来控制</p>
+</li>
 <li><p>通过 一个 scheduler 享有的has 集合，来记录 是否有当前的 watcher.id</p>
 <ul>
-<li>哎哟 好难受 又是 undefined/null/true 这里就是双等于，而不是三等于</li>
+<li>哎哟 好难受 又是 undefined&#x2F;null&#x2F;true 这里就是双等于，而不是三等于</li>
 </ul>
 </li>
 <li><p>是否flushing决定是 排到队列最后，还是根据id从尾部插入来排序</p>
@@ -811,7 +703,8 @@
 </li>
 <li><p>nextTick 再调用 flushSchedulerQueue</p>
 <ul>
-<li>本身队列会根据id来sort</li>
+<li><p>本身队列会根据id来sort</p>
+</li>
 <li><p>这里我们可以看到 watcher.before会被调用</p>
 <ul>
 <li>例如 mountComponent 中 new Watcher(vm,updateComponent) 提供的before函数 提供了 beforeUpdate 的生命周期</li>
@@ -819,7 +712,8 @@
 </li>
 <li><p>waiting 保证有且只有一个 queueWatcher 调用了或者 已经准备被调用了</p>
 </li>
-<li>flushing 意味着 queue是否在执行中</li>
+<li><p>flushing 意味着 queue是否在执行中</p>
+</li>
 </ul>
 </li>
 <li><p>本质上，实现了 队列加入和执行，同时支持执行时加入。保证单一执行队列</p>
@@ -842,18 +736,20 @@
 </li>
 </ul>
 </li>
-<li><p>也就是，我们把会收到影响的object push到Dep.target上，然后，每次运算中触发“响应式”的值相关的时候，会通过 dep.depend()-&gt;Target::addDep(dep) -&gt; dep.addSub (响应式属性) 和它建立影响关系，(数据的值) 也会 childOb.dep.depend() -&gt; .dep.depend()-&gt;Target::addDep(dep) -&gt; dep.addSub </p>
+<li><p>也就是，我们把会收到影响的object push到Dep.target上，然后，每次运算中触发“响应式”的值相关的时候，会通过 dep.depend()-&gt;Target::addDep(dep) -&gt; dep.addSub (响应式属性) 和它建立影响关系，(数据的值) 也会 childOb.dep.depend() -&gt; .dep.depend()-&gt;Target::addDep(dep) -&gt; dep.addSub</p>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>observer/index.js</p>
+<li><p>observer&#x2F;index.js</p>
 <ul>
 <li><p>Observer</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Observer</span> </span>&#123;</span><br><span class="line">  value: any;</span><br><span class="line">  dep: Dep;</span><br><span class="line">  vmCount: number; <span class="comment">// number of vms that have this object as root $data</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span> (value: any) &#123;</span><br><span class="line">    <span class="keyword">this</span>.value = value</span><br><span class="line">    <span class="keyword">this</span>.dep = <span class="keyword">new</span> Dep()</span><br><span class="line">    <span class="keyword">this</span>.vmCount = <span class="number">0</span></span><br><span class="line">    def(value, <span class="string">'__ob__'</span>, <span class="keyword">this</span>)</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(value)) &#123;</span><br><span class="line">      <span class="keyword">if</span> (hasProto) &#123;</span><br><span class="line">        protoAugment(value, arrayMethods)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        copyAugment(value, arrayMethods, arrayKeys)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">this</span>.observeArray(value)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.walk(value)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Walk through all properties and convert them into</span></span><br><span class="line"><span class="comment">   * getter/setters. This method should only be called when</span></span><br><span class="line"><span class="comment">   * value type is Object.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  walk (obj: <span class="built_in">Object</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> keys = <span class="built_in">Object</span>.keys(obj)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; keys.length; i++) &#123;</span><br><span class="line">      defineReactive(obj, keys[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 对数组每个元素 调用observe函数</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  observeArray (items: <span class="built_in">Array</span>&lt;any&gt;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">Observer</span> &#123;</span><br><span class="line">  <span class="attr">value</span>: any;</span><br><span class="line">  <span class="attr">dep</span>: <span class="title class_">Dep</span>;</span><br><span class="line">  <span class="attr">vmCount</span>: number; <span class="comment">// number of vms that have this object as root $data</span></span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span> (<span class="attr">value</span>: any) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">value</span> = value</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">dep</span> = <span class="keyword">new</span> <span class="title class_">Dep</span>()</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">vmCount</span> = <span class="number">0</span></span><br><span class="line">    <span class="title function_">def</span>(value, <span class="string">&#x27;__ob__&#x27;</span>, <span class="variable language_">this</span>)</span><br><span class="line">    <span class="keyword">if</span> (<span class="title class_">Array</span>.<span class="title function_">isArray</span>(value)) &#123;</span><br><span class="line">      <span class="keyword">if</span> (hasProto) &#123;</span><br><span class="line">        <span class="title function_">protoAugment</span>(value, arrayMethods)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="title function_">copyAugment</span>(value, arrayMethods, arrayKeys)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">observeArray</span>(value)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">walk</span>(value)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Walk through all properties and convert them into</span></span><br><span class="line"><span class="comment">   * getter/setters. This method should only be called when</span></span><br><span class="line"><span class="comment">   * value type is Object.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  walk (<span class="attr">obj</span>: <span class="title class_">Object</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> keys = <span class="title class_">Object</span>.<span class="title function_">keys</span>(obj)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; keys.<span class="property">length</span>; i++) &#123;</span><br><span class="line">      <span class="title function_">defineReactive</span>(obj, keys[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 对数组每个元素 调用observe函数</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  observeArray (<span class="attr">items</span>: <span class="title class_">Array</span>&lt;any&gt;)</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>只给 object 且 instanceof VNode 增加 可ob</li>
+<li><p>只给 object 且 instanceof VNode 增加 可ob</p>
+</li>
 <li><p><code>__ob__</code></p>
 <ul>
 <li>防止无限循环?指向 Observer实例，observe函数不会重复创建</li>
@@ -861,8 +757,10 @@
 </li>
 <li><p>value 为初始化传入的value</p>
 </li>
-<li>dep = new Dep()</li>
-<li>vmCount ( asRootData 时会增加</li>
+<li><p>dep &#x3D; new Dep()</p>
+</li>
+<li><p>vmCount ( asRootData 时会增加</p>
+</li>
 <li><p>如果是数组修改了数组的push之类的函数</p>
 <ul>
 <li>遍历每个 observe</li>
@@ -877,15 +775,16 @@
 </li>
 <li><p>observe 创建的是 Observer</p>
 <ul>
-<li>只会对对象创建，原始类型不会创建</li>
+<li><p>只会对对象创建，原始类型不会创建</p>
+</li>
 <li><p>observe 传递true时，自定义的vmCount计数会+1</p>
 <ul>
-<li>src/core/instance/lifecycle.js:      <code>vm._data.__ob__.vmCount--</code></li>
-<li>src/core/observer/index.js:  vmCount: number; // number of vms that have this object as root $data</li>
-<li>src/core/observer/index.js:    this.vmCount = 0</li>
-<li>src/core/observer/index.js:    ob.vmCount++</li>
-<li>src/core/observer/index.js:  if (target._isVue || (ob &amp;&amp; ob.vmCount)) {</li>
-<li>src/core/observer/index.js:  if (target._isVue || (ob &amp;&amp; ob.vmCount)) {</li>
+<li>src&#x2F;core&#x2F;instance&#x2F;lifecycle.js:      <code>vm._data.__ob__.vmCount--</code></li>
+<li>src&#x2F;core&#x2F;observer&#x2F;index.js:  vmCount: number; &#x2F;&#x2F; number of vms that have this object as root $data</li>
+<li>src&#x2F;core&#x2F;observer&#x2F;index.js:    this.vmCount &#x3D; 0</li>
+<li>src&#x2F;core&#x2F;observer&#x2F;index.js:    ob.vmCount++</li>
+<li>src&#x2F;core&#x2F;observer&#x2F;index.js:  if (target._isVue || (ob &amp;&amp; ob.vmCount)) {</li>
+<li>src&#x2F;core&#x2F;observer&#x2F;index.js:  if (target._isVue || (ob &amp;&amp; ob.vmCount)) {</li>
 <li>看起来，判断是否是root data的？</li>
 </ul>
 </li>
@@ -898,13 +797,13 @@
 <li>Object.getOwnPropertyDescriptor</li>
 </ul>
 </li>
-<li><p>修改的是原有的属性，自定义了set/get方法</p>
+<li><p>修改的是原有的属性，自定义了set&#x2F;get方法</p>
 </li>
 <li><p>自己比包内有dep，childOb和val来维持</p>
 <ul>
 <li><p>childOb</p>
 <ul>
-<li>在 $attrs/$listener 时失效，只做到最外层dep</li>
+<li>在 $attrs&#x2F;$listener 时失效，只做到最外层dep</li>
 <li>其余的会，对数据调用observe函数产生Observer对象，用对象内的dep建立关系</li>
 </ul>
 </li>
@@ -920,13 +819,18 @@
 </li>
 <li><p>最简单的测试是通过vue官网浏览器，console里面调用 </p>
 <ul>
-<li>const obj = {};</li>
-<li>obj._data = {xxx:’x value’,yyy:{zzz:’z value’,v:’v value’}};</li>
-<li>Vue.util.defineReactive(obj,’_data’);</li>
-<li>通过展开 可以看到，被defineReactive的obj本身会增加 <code>__ob__</code> 是个Observable, 内部的字段会递归的 defineReactive 变成 setter/getter. </li>
-<li><p>上面这些是直接在结构体上 / 属性上的，而dep 和 childOb和 val 不在结构体上，是在 闭包里的</p>
+<li><p>const obj &#x3D; {};</p>
+</li>
+<li><p>obj._data &#x3D; {xxx:’x value’,yyy:{zzz:’z value’,v:’v value’}};</p>
+</li>
+<li><p>Vue.util.defineReactive(obj,’_data’);</p>
+</li>
+<li><p>通过展开 可以看到，被defineReactive的obj本身会增加 <code>__ob__</code> 是个Observable, 内部的字段会递归的 defineReactive 变成 setter&#x2F;getter. </p>
+</li>
+<li><p>上面这些是直接在结构体上 &#x2F; 属性上的，而dep 和 childOb和 val 不在结构体上，是在 闭包里的</p>
 <ul>
-<li>因为这个缺点，想要尝试修改并运行代码，可以改 vue的源码然后，跑生成，再自己去调用 输出</li>
+<li><p>因为这个缺点，想要尝试修改并运行代码，可以改 vue的源码然后，跑生成，再自己去调用 输出</p>
+</li>
 <li><p>不论是读代码，还是调试，childOb 其实就是 通过 observe方法绑定在对应对象上的<code>__ob__</code></p>
 <ul>
 <li><p>本身observer上也会有 value,vmCount,dep</p>
@@ -944,17 +848,22 @@
 </li>
 <li><p>defineProperty 中的set</p>
 <ul>
-<li>如果和旧值一致，则返回</li>
-<li>这里有自己比较自己， 是因为？get方法可能返回不同值还是为什么？</li>
-<li>如果有设置函数调用设置函数</li>
-<li>通过闭包，修改childOb 和 val</li>
+<li><p>如果和旧值一致，则返回</p>
+</li>
+<li><p>这里有自己比较自己， 是因为？get方法可能返回不同值还是为什么？</p>
+</li>
+<li><p>如果有设置函数调用设置函数</p>
+</li>
+<li><p>通过闭包，修改childOb 和 val</p>
+</li>
 <li><p>dep.notify()</p>
 <ul>
 <li><p>被更新的内容 是调用的update()方法</p>
 <ul>
 <li><p>lazy，置dirty为true</p>
 <ul>
-<li>每次computedGetter()-&gt;state.js::evaluate()，先调用，dirty置为false， createComputedGetter</li>
+<li><p>每次computedGetter()-&gt;state.js::evaluate()，先调用，dirty置为false， createComputedGetter</p>
+</li>
 <li><p>从实现上讲，就是 如果配置的lazy，那么计算过程 和 更新过程就会走 lazy 单独的 方案</p>
 <ul>
 <li>从理解的角度，其实这里是手工去做了，C++里面的同父类指针不同子类指针的虚函数，实际上如果以C++的角度来写，就是根据是否lazy是不同的子类实现，从而提供不同的方法。</li>
@@ -989,7 +898,8 @@
 <ul>
 <li><p>场景，页面上 一个 , computed 里 something， something依赖data中某个 val</p>
 <ul>
-<li>当val变化了，如何触发</li>
+<li><p>当val变化了，如何触发</p>
+</li>
 <li><p>初始化时，一个 响应属性 val，两个Watcher: vm 和 computed watcher </p>
 <ul>
 <li>简单的方法就是 写个test.html和test.js，然后跑vue的run dev，在watcher的实现中增加 console.log(expOrFn,this.id)</li>
@@ -1017,17 +927,24 @@
 <h2 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h2><ul>
 <li><p>开端</p>
 <ul>
-<li>上面的部分，已经完成了 Class定义，实例产生，以及看了其中的实践方案，下面就是最后一步<code>$mount</code></li>
-<li>从实践上来讲，我们其实已经有响应式了，那么要做的是说把它运用到渲染里，因为从抽象层面讲，响应式不也就是一个函数么</li>
+<li><p>上面的部分，已经完成了 Class定义，实例产生，以及看了其中的实践方案，下面就是最后一步<code>$mount</code></p>
+</li>
+<li><p>从实践上来讲，我们其实已经有响应式了，那么要做的是说把它运用到渲染里，因为从抽象层面讲，响应式不也就是一个函数么</p>
+</li>
 <li><p>直接从<code>$mount</code>函数开始挖，核心就是</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">new</span> Watcher(vm, () =&gt; &#123;</span><br><span class="line">	vm.__patch__(vm._vnode,vm._render())</span><br><span class="line">&#125;, noop, &#123;</span><br><span class="line">  before () &#123;</span><br><span class="line">   <span class="keyword">if</span> (vm._isMounted &amp;&amp; !vm._isDestroyed) &#123;</span><br><span class="line">    callHook(vm, <span class="string">'beforeUpdate'</span>)</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;, <span class="literal">true</span> <span class="comment">/* isRenderWatcher */</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">new</span> <span class="title class_">Watcher</span>(vm, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">	vm.<span class="title function_">__patch__</span>(vm.<span class="property">_vnode</span>,vm.<span class="title function_">_render</span>())</span><br><span class="line">&#125;, noop, &#123;</span><br><span class="line">  before () &#123;</span><br><span class="line">   <span class="keyword">if</span> (vm.<span class="property">_isMounted</span> &amp;&amp; !vm.<span class="property">_isDestroyed</span>) &#123;</span><br><span class="line">    <span class="title function_">callHook</span>(vm, <span class="string">&#x27;beforeUpdate&#x27;</span>)</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;, <span class="literal">true</span> <span class="comment">/* isRenderWatcher */</span>)</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>_vnode 老的虚拟节点</li>
-<li>_render() 是计算新虚拟节点的</li>
-<li><code>__patch__</code>是做替换工作的，修改真正的html</li>
+<li><p>_vnode 老的虚拟节点</p>
+</li>
+<li><p>_render() 是计算新虚拟节点的</p>
+</li>
+<li><p><code>__patch__</code>是做替换工作的，修改真正的html</p>
+</li>
 <li><p>Watcher复用实现的响应式，来完成响应式触发</p>
 <ul>
-<li>lazy: false</li>
+<li><p>lazy: false</p>
+</li>
 <li><p>这里watcher传入设计上本来是getter，但实际上，这里就是返回undefined的箭头函数，所以 对应 Watcher实例里面的 value 一直undefined</p>
 <ul>
 <li>和直接的 响应式区别是，响应式实现的是变量，没有“直接的”的函数触发，例如这里的 updateComponent 实际上走的是getter的设计。所以说看上去有点“没有符合原始设计的实现方案”</li>
@@ -1039,43 +956,54 @@
 </li>
 </ul>
 </li>
-<li><p>core/instance/render.js::_render()</p>
+<li><p>core&#x2F;instance&#x2F;render.js::_render()</p>
 <ul>
-<li>根据父节点scopedSlots / slots / 之前计算的scopedSlots 生成当前节点的scopedSlots</li>
-<li><p>vm.$vnode = _parentVnode</p>
+<li><p>根据父节点scopedSlots &#x2F; slots &#x2F; 之前计算的scopedSlots 生成当前节点的scopedSlots</p>
+</li>
+<li><pre><code>vm.$vnode = _parentVnode
+</code></pre>
 <ul>
-<li>$vnode: VNode; // the placeholder node for the component in parent’s render tree</li>
+<li>$vnode: VNode; &#x2F;&#x2F; the placeholder node for the component in parent’s render tree</li>
 </ul>
 </li>
-<li><p>vnode = render.call(vm._renderProxy, vm.$createElement)</p>
+<li><pre><code>  vnode = render.call(vm._renderProxy, vm.$createElement)
+</code></pre>
 <ul>
-<li><p>render 根据平台不同而不同，对于web，在platforms/web/entry-runtime-with-compiler.js中找到实现，在$mount 调用时，当没有设置render函数时，由 compileToFunctions 返回</p>
-</li>
-<li><p>compiler/index.js :: createCompilerCreator</p>
-</li>
-<li>compiler/create-compiler.js</li>
-<li>函数返回函数，函数返回函数，层层返回</li>
-<li><p>ast = parse(template.trim(),options) , optimize(ast, options), {render,staticRenderFns} = generate(ast, options)</p>
+<li><p>render 根据平台不同而不同，对于web，在platforms&#x2F;web&#x2F;entry-runtime-with-compiler.js中找到实现，在$mount 调用时，当没有设置render函数时，由 compileToFunctions 返回</p>
 <ul>
-<li>其中，这一部分的 parse/optimize/generate 其实都是可以换的</li>
-<li>本质上 提供一个 (template,options) =&gt; {ast,render,staticRenderFns} 的函数就行</li>
-<li><a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Abstract_syntax_tree</a></li>
+<li><p>compiler&#x2F;index.js :: createCompilerCreator</p>
+</li>
+<li><p>compiler&#x2F;create-compiler.js</p>
+</li>
+<li><p>函数返回函数，函数返回函数，层层返回</p>
+</li>
+<li><p>ast &#x3D; parse(template.trim(),options) , optimize(ast, options), {render,staticRenderFns} &#x3D; generate(ast, options)</p>
+<ul>
+<li>其中，这一部分的 parse&#x2F;optimize&#x2F;generate 其实都是可以换的</li>
+<li>本质上 提供一个 (template,options) &#x3D;&gt; {ast,render,staticRenderFns} 的函数就行</li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">https://en.wikipedia.org/wiki/Abstract_syntax_tree</a></li>
 </ul>
 </li>
 <li><p>把上述函数提供给 createCompilerCreator, 就能得到真的 createCompiler, 它接受的是 baseOptions, 返回的依然是模板处理函数，最后这个函数也就是 compileToFunctions处理用户编写的 template，产生render函数</p>
 </li>
 </ul>
 </li>
-<li><p>vnode.parent = _parentVnode</p>
+</ul>
 </li>
-<li>return vnode</li>
-<li>虽然上面说是可选，但是我们可以看看 默认的实现</li>
-<li>当在浏览器中的时候 core/vdom/patch.js::createPatchFunction 创建的patch 函数</li>
-<li><p>parser:: compiler/parser/index.js</p>
+<li><pre><code>vnode.parent = _parentVnode
+</code></pre>
+</li>
+<li><p>return vnode</p>
+</li>
+<li><p>虽然上面说是可选，但是我们可以看看 默认的实现</p>
+</li>
+<li><p>当在浏览器中的时候 core&#x2F;vdom&#x2F;patch.js::createPatchFunction 创建的patch 函数</p>
+</li>
+<li><p>parser:: compiler&#x2F;parser&#x2F;index.js</p>
 <ul>
 <li><p>简单说就是把 字符串的 模版，变成 AST</p>
 <ul>
-<li>ASTELement 的结构体可以在 flow/compiler.js 里看到，很多字段</li>
+<li>ASTELement 的结构体可以在 flow&#x2F;compiler.js 里看到，很多字段</li>
 </ul>
 </li>
 <li><p>320 行的</p>
@@ -1087,7 +1015,7 @@
 </li>
 <li><p>黑箱视角</p>
 <ul>
-<li><p>我们在调用parse之后输出ast，然后， console.log(JSON.stringify(ast, (key, value) =&gt; {if (key === ‘’) {value.children.forEach(item =&gt; {item.parent = undefined;});}; return value; }, 2));</p>
+<li><p>我们在调用parse之后输出ast，然后， console.log(JSON.stringify(ast, (key, value) &#x3D;&gt; {if (key &#x3D;&#x3D;&#x3D; ‘’) {value.children.forEach(item &#x3D;&gt; {item.parent &#x3D; undefined;});}; return value; }, 2));</p>
 <ul>
 <li>html上的 花括号被 _s 函数包裹</li>
 </ul>
@@ -1096,23 +1024,25 @@
 </li>
 </ul>
 </li>
-<li><p>compiler/optimizer.js</p>
+<li><p>compiler&#x2F;optimizer.js</p>
 <ul>
 <li>优化 据说老版本始终调用，现在看 options.optmize 是否设置</li>
-<li>从调用的角度来说，从代码函数名字和 执行结果通过vimdiff看起来不会“更改” ast，只会在分析结果上 增加 static/staticRoot 字段</li>
+<li>从调用的角度来说，从代码函数名字和 执行结果通过vimdiff看起来不会“更改” ast，只会在分析结果上 增加 static&#x2F;staticRoot 字段</li>
 </ul>
 </li>
-<li><p>generate compiler/codegen/index.js</p>
+<li><p>generate compiler&#x2F;codegen&#x2F;index.js</p>
 <ul>
-<li>功能呢就是 从ast生成render</li>
+<li><p>功能呢就是 从ast生成render</p>
+</li>
 <li><p>我们把从code打出来，是 with(this) 开头的字符串</p>
 <ul>
-<li>其中我们可以看到 页面的click事件会变成 被 function($event) 包裹，再return的。一定程度上解释了，如果希望在for里既能接受内部的事件，又能传递例如index之类的值，为什么是写 $event</li>
+<li><p>其中我们可以看到 页面的click事件会变成 被 function($event) 包裹，再return的。一定程度上解释了，如果希望在for里既能接受内部的事件，又能传递例如index之类的值，为什么是写 $event</p>
+</li>
 <li><p>从构成上，看的到有 _v,_s,_c</p>
 <ul>
 <li><p>_s 目测 就是上面ast中能看到的模版中 的 双花括号解析</p>
 <ul>
-<li><p>core/instance/render-helpers/index.js</p>
+<li><p>core&#x2F;instance&#x2F;render-helpers&#x2F;index.js</p>
 <ul>
 <li>这里我们也能看到 json对象为啥可以直接花括号 输出</li>
 </ul>
@@ -1121,16 +1051,16 @@
 </li>
 <li><p>_c 就是如果我们手写render接受的那个h或者说createElement 函数</p>
 <ul>
-<li>core/instance/render.js</li>
+<li>core&#x2F;instance&#x2F;render.js</li>
 </ul>
 </li>
 <li><p>而_v 呢 目测 是想对于_c 更具体用于 渲染页面元素的？</p>
 <ul>
-<li><p>core/instance/render-helpers/index.js</p>
+<li><p>core&#x2F;instance&#x2F;render-helpers&#x2F;index.js</p>
 <ul>
-<li><p>这里的编码，甚至直接把，变量写作a,b,c,d,只有向下翻原函数，才知道是 tag/data/children/normalizationType</p>
+<li><p>这里的编码，甚至直接把，变量写作a,b,c,d,只有向下翻原函数，才知道是 tag&#x2F;data&#x2F;children&#x2F;normalizationType</p>
 <ul>
-<li>core/vdom/create-element.js</li>
+<li>core&#x2F;vdom&#x2F;create-element.js</li>
 </ul>
 </li>
 <li><p>但是实际上因为 前端喜欢 去模仿C++之类的支持 重载函数，所以也不一定是100%上面的顺序</p>
@@ -1143,7 +1073,7 @@
 </li>
 </ul>
 </li>
-<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with</a></p>
 <ul>
 <li>不推荐使用with，在 ECMAScript 5 严格模式中该标签已被禁止。推荐的替代方案是声明一个临时变量来承载你所需要的属性。</li>
 </ul>
@@ -1156,127 +1086,122 @@
 </li>
 <li><p><code>__patch__</code></p>
 <ul>
-<li>接受 render()计算的虚拟节点的结果</li>
-<li>如果是新的node，它会创建DOM节点</li>
-<li>如果是更新，它会更新DOM</li>
-<li><p>platforms/web/runtime/patch.js</p>
+<li><p>接受 render()计算的虚拟节点的结果</p>
+</li>
+<li><p>如果是新的node，它会创建DOM节点</p>
+</li>
+<li><p>如果是更新，它会更新DOM</p>
+</li>
+<li><p>platforms&#x2F;web&#x2F;runtime&#x2F;patch.js</p>
 <ul>
 <li><p>createPatchFunction({ nodeOps, modules })</p>
 <ul>
-<li><p>nodeOps: platforms/web/runtime/node-ops.js</p>
+<li><p>nodeOps: platforms&#x2F;web&#x2F;runtime&#x2F;node-ops.js</p>
 <ul>
-<li><a href="https://stackoverflow.com/questions/8173217/createelement-vs-createelementns" target="_blank" rel="noopener">https://stackoverflow.com/questions/8173217/createelement-vs-createelementns</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/8173217/createelement-vs-createelementns">https://stackoverflow.com/questions/8173217/createelement-vs-createelementns</a></li>
 <li>本质上做的是同名函数封装</li>
 </ul>
 </li>
 <li><p>modules</p>
 <ul>
-<li>core/vdom/modules/index.js</li>
-<li>platforms/web/runtime/modules/index.js</li>
-<li>包括一些 class/ attr 等操作</li>
+<li>core&#x2F;vdom&#x2F;modules&#x2F;index.js</li>
+<li>platforms&#x2F;web&#x2F;runtime&#x2F;modules&#x2F;index.js</li>
+<li>包括一些 class&#x2F; attr 等操作</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>优化dom操作效率</p>
 <ul>
-<li>抛开用户可见的讲，我们有的是vm层面和渲染函数，其中更新的部分由vue内部实现的响应式解决了，那么我们有了老的vdom和新的vdom，接下来就是 如何去做dom的替换了</li>
-<li>有一些跨语言经验的都知道，c++ 写的加法编译出来的的代码每秒大约1e8~1e9 次，但是一旦和显示相关，就会很慢的</li>
-<li><p>core/vdom/patch.js::createPatchFunction</p>
+<li><p>抛开用户可见的讲，我们有的是vm层面和渲染函数，其中更新的部分由vue内部实现的响应式解决了，那么我们有了老的vdom和新的vdom，接下来就是 如何去做dom的替换了</p>
+</li>
+<li><p>有一些跨语言经验的都知道，c++ 写的加法编译出来的的代码每秒大约1e8~1e9 次，但是一旦和显示相关，就会很慢的</p>
+</li>
+<li><p>core&#x2F;vdom&#x2F;patch.js::createPatchFunction</p>
 <ul>
-<li><p>顶部注释  * Virtual DOM patching algorithm based on Snabbdom by</p>
+<li>顶部注释  * Virtual DOM patching algorithm based on Snabbdom by</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <ul>
-<li>Simon Friis Vindum (@paldepind)</li>
+<li><p>Simon Friis Vindum (@paldepind)</p>
+<pre><code>         - 定义了蛮多 函数
+         - 我们专注一下 最后的 返回 return function patch
+
+             - 没新节点，销毁老节点
+             - 没老节点 createElm
+             - nodeType 判断?
+
+                 - https://developer.mozilla.org/zh-CN/docs/Web/API/Node/nodeType
+
+             - 不是真element(仅仅虚拟节点) 且 通过 key/tag/isComment/data/isAsyncPlaceholder/asyncFactory 等字段判断是同一个，调用 patchVnode
+
+                 - 函数名可以看出仅仅 虚拟vnode? 好像也不是 注释上是 patch existing root node
+                 - 这里我们看到有异步占位
+                 - 有static tree且 isCloned
+
+                     - hot-reload 相关
+
+                 - 如果都不是，则 触发 vnode.data.hook.prepatch(oldVnode,vnode)
+
+                     - 已经看到，这里开始放肆的用变量i了
+                     - 感觉如果有 Ng的问号写法支持，岂不好看又好用 vnode?.data?.hook?.prepatch?(oldVnode,vnode)
+
+                 - 之后 如果isPatchable, 把闭包内的cbs.update 数组的 函数触发一遍，并触发data.hook.update
+                 - 接着就是 updateChildren/addVnodes/removeVnodes/setTextContent 的修改
+
+                     - 如果有text就是叶子节点。。。。？
+                     - 除了updateChildren以外 都是直接的操作
+                     - updateChildren 递归操作
+
+                         - 函数里可以看到 removeOnly 在 trasition-group 里会 启用，也就是做动画效果 其实会影响 替换实现！
+                         - https://github.com/snabbdom/snabbdom/blob/d66905438dc6866b2a7ab21d719c45a156d1252e/src/package/init.ts#L203
+                         - 把原来的child子数组 和 新子数组 做4个包裹指针，（每个数组一个开头指针一个结尾指针）
+                         - 头同，patch 头
+                         - 尾同，patch尾
+                         - 原头=新尾，patch
+                         - 原尾=新头，patch
+                         - 剩余，通过建立老的元素的key到idx映射，然后把新放入时去查这个映射表，找到后记得删除老的表，继续while
+                         - 如果找不到创建新的
+                         - 感觉似乎很多面试喜欢问讲讲实现原理，实际上抽象出成问题可能也就一个leetcode easy难度
+
+                 - vnode.data.hook.postpatch(oldVnode,vnode)
+
+             - 是真节点
+
+                 - 这里我们看到了 硬编码1，虽然不灵活，但是不应该是用 Node.ELEMENT_NODE 来代替1吗, 还是serverside？？？
+                 - 然后这个isTrue函数 是认真的吗，不接受非零的其它值，只接受true值
+                 - 这里可以看到如果是ssr，渲染的节点 会有SSR_ATTR 属性，这里会移除它
+
+                     - 如果hydrate返回false且非生产，可以看到之前见过的 服务端和前端渲染不一致的提示
+                     - 最后如果不是 服务端渲染的，或者 hydrate失败 emptyNodeAt 来代替它
+</code></pre>
+</li>
 </ul>
-</li>
-<li><p>定义了蛮多 函数</p>
-</li>
-<li><p>我们专注一下 最后的 返回 return function patch</p>
 <ul>
-<li>没新节点，销毁老节点</li>
-<li>没老节点 createElm</li>
-<li><p>nodeType 判断?</p>
-<ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/nodeType" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Node/nodeType</a></li>
-</ul>
-</li>
-<li><p>不是真element(仅仅虚拟节点) 且 通过 key/tag/isComment/data/isAsyncPlaceholder/asyncFactory 等字段判断是同一个，调用 patchVnode</p>
-<ul>
-<li>函数名可以看出仅仅 虚拟vnode? 好像也不是 注释上是 patch existing root node</li>
-<li>这里我们看到有异步占位</li>
-<li><p>有static tree且 isCloned</p>
-<ul>
-<li>hot-reload 相关</li>
-</ul>
-</li>
-<li><p>如果都不是，则 触发 vnode.data.hook.prepatch(oldVnode,vnode)</p>
-<ul>
-<li>已经看到，这里开始放肆的用变量i了</li>
-<li>感觉如果有 Ng的问号写法支持，岂不好看又好用 vnode?.data?.hook?.prepatch?(oldVnode,vnode)</li>
-</ul>
-</li>
-<li><p>之后 如果isPatchable, 把闭包内的cbs.update 数组的 函数触发一遍，并触发data.hook.update</p>
-</li>
-<li><p>接着就是 updateChildren/addVnodes/removeVnodes/setTextContent 的修改</p>
-<ul>
-<li>如果有text就是叶子节点。。。。？</li>
-<li>除了updateChildren以外 都是直接的操作</li>
-<li><p>updateChildren 递归操作</p>
-<ul>
-<li>函数里可以看到 removeOnly 在 trasition-group 里会 启用，也就是做动画效果 其实会影响 替换实现！</li>
-<li><a href="https://github.com/snabbdom/snabbdom/blob/d66905438dc6866b2a7ab21d719c45a156d1252e/src/package/init.ts#L203" target="_blank" rel="noopener">https://github.com/snabbdom/snabbdom/blob/d66905438dc6866b2a7ab21d719c45a156d1252e/src/package/init.ts#L203</a></li>
-<li>把原来的child子数组 和 新子数组 做4个包裹指针，（每个数组一个开头指针一个结尾指针）</li>
-<li>头同，patch 头</li>
-<li>尾同，patch尾</li>
-<li>原头=新尾，patch</li>
-<li>原尾=新头，patch</li>
-<li>剩余，通过建立老的元素的key到idx映射，然后把新放入时去查这个映射表，找到后记得删除老的表，继续while</li>
-<li>如果找不到创建新的</li>
-<li>感觉似乎很多面试喜欢问讲讲实现原理，实际上抽象出成问题可能也就一个leetcode easy难度</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>vnode.data.hook.postpatch(oldVnode,vnode)</p>
-</li>
-</ul>
-</li>
-<li><p>是真节点</p>
-<ul>
-<li>这里我们看到了 硬编码1，虽然不灵活，但是不应该是用 Node.ELEMENT_NODE 来代替1吗, 还是serverside？？？</li>
-<li>然后这个isTrue函数 是认真的吗，不接受非零的其它值，只接受true值</li>
-<li><p>这里可以看到如果是ssr，渲染的节点 会有SSR_ATTR 属性，这里会移除它</p>
-<ul>
-<li>如果hydrate返回false且非生产，可以看到之前见过的 服务端和前端渲染不一致的提示</li>
-<li>最后如果不是 服务端渲染的，或者 hydrate失败 emptyNodeAt 来代替它</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
 <li><p>vm._update 是包裹<code>__patch__</code>更新节点</p>
 <ul>
-<li>这里我们可以看到keep-alive 相关的 setActiveInstance 方法</li>
+<li><p>这里我们可以看到keep-alive 相关的 setActiveInstance 方法</p>
+</li>
 <li><p>在 render.call(vm._renderProxy, vm.$createElement) 之后增加 console.log(vnode)</p>
 <ul>
 <li><p>定义两个 多个component，可以看到 render的顺序是 先父级别的，后子级别的</p>
 <ul>
-<li>在context里可以看到 前面的 _c / _data / _watchers</li>
+<li>在context里可以看到 前面的 _c &#x2F; _data &#x2F; _watchers</li>
 </ul>
 </li>
 <li><p>但是在children 数组里的tag会变成 “vue-component-1-&lt;你的组件名&gt;”</p>
 </li>
-<li>在子组件的vnode 输出里，parent的tag 是 “vue-component-1-&lt;你的组件名&gt;”</li>
-<li>而当 我们跟新数据的时候，能够看到vnode被重新计算</li>
+<li><p>在子组件的vnode 输出里，parent的tag 是 “vue-component-1-&lt;你的组件名&gt;”</p>
+</li>
+<li><p>而当 我们跟新数据的时候，能够看到vnode被重新计算</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -1285,19 +1210,22 @@
 </li>
 </ul>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="Flow"><a href="#Flow" class="headerlink" title="Flow"></a>Flow</h2><ul>
-<li>一个typescript类的工具，让编写的时候假装是强类型 可以转换成js</li>
-<li>区别 是静态代码检查</li>
-<li><p>Vue 2.0 为什么选用 Flow 进行静态代码检查而不是直接使用 TypeScript？ - 尤雨溪的回答 - 知乎<br><a href="https://www.zhihu.com/question/46397274/answer/101193678" target="_blank" rel="noopener">https://www.zhihu.com/question/46397274/answer/101193678</a></p>
+<li><p>一个typescript类的工具，让编写的时候假装是强类型 可以转换成js</p>
+</li>
+<li><p>区别 是静态代码检查</p>
+</li>
+<li><p>Vue 2.0 为什么选用 Flow 进行静态代码检查而不是直接使用 TypeScript？ - 尤雨溪的回答 - 知乎<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/46397274/answer/101193678">https://www.zhihu.com/question/46397274/answer/101193678</a></p>
 <ul>
 <li>尤雨溪说 还是历史依赖 导致的成本问题，下个版本用TS</li>
 </ul>
 </li>
-<li><p><a href="https://flow.org/en/" target="_blank" rel="noopener">https://flow.org/en/</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://flow.org/en/">https://flow.org/en/</a></p>
 </li>
-<li><a href="https://zhuanlan.zhihu.com/p/26204569" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/26204569</a></li>
+<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26204569">https://zhuanlan.zhihu.com/p/26204569</a></p>
+</li>
 </ul>
 <h2 id="首先整个Vue的原型，或者说Class-是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个-Vue-init-函数，再触发这些不同文件创建的方法来完成-实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化"><a href="#首先整个Vue的原型，或者说Class-是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个-Vue-init-函数，再触发这些不同文件创建的方法来完成-实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化" class="headerlink" title="首先整个Vue的原型，或者说Class 是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个 Vue._init() 函数，再触发这些不同文件创建的方法来完成 实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化"></a>首先整个Vue的原型，或者说Class 是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个 Vue._init() 函数，再触发这些不同文件创建的方法来完成 实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化</h2><ul>
-<li><p>而目前的方式一层层包裹，却都是在Vue这一个 实例/原型 上面 做操作</p>
+<li><p>而目前的方式一层层包裹，却都是在Vue这一个 实例&#x2F;原型 上面 做操作</p>
 <ul>
 <li><p>带来的问题是</p>
 <ul>
@@ -1312,22 +1240,22 @@
 </li>
 <li><p>定义Vue的类时包裹，包裹再包裹</p>
 <ul>
-<li><p>src/core/instance/index.js</p>
+<li><p>src&#x2F;core&#x2F;instance&#x2F;index.js</p>
 <ul>
 <li>导出Vue</li>
 </ul>
 </li>
-<li><p>src/core/index.js</p>
+<li><p>src&#x2F;core&#x2F;index.js</p>
 <ul>
 <li>包裹Vue并导出</li>
 </ul>
 </li>
-<li><p>src/platforms/web/runtime/index.js</p>
+<li><p>src&#x2F;platforms&#x2F;web&#x2F;runtime&#x2F;index.js</p>
 <ul>
 <li>包裹Vue并导出</li>
 </ul>
 </li>
-<li><p>src/platforms/web/entry-runtime-with-compiler.js</p>
+<li><p>src&#x2F;platforms&#x2F;web&#x2F;entry-runtime-with-compiler.js</p>
 <ul>
 <li>包裹Vue并导出</li>
 </ul>
@@ -1343,14 +1271,16 @@
 </li>
 <li><p>然后是依次init和 穿插hook的触发</p>
 </li>
-<li>vm.$mount(vm.$options.el)</li>
+<li><pre><code>vm.$mount(vm.$options.el)
+</code></pre>
+</li>
 </ul>
 </li>
 </ul>
 <h2 id="常见方法"><a href="#常见方法" class="headerlink" title="常见方法"></a>常见方法</h2><ul>
 <li><p>自定义alias</p>
 <ul>
-<li><p>scripts/alias.js</p>
+<li><p>scripts&#x2F;alias.js</p>
 <ul>
 <li>可能的替代方案，利用typescript+idea的重构功能</li>
 </ul>
@@ -1374,23 +1304,31 @@
 <li>handleError(error,vm,info)</li>
 </ul>
 </li>
-<li><p>用户可能不传true/false时的代码 = !!value</p>
+<li><p>用户可能不传true&#x2F;false时的代码 &#x3D; !!value</p>
 </li>
-<li>手工 实现 重载</li>
-<li>手工 实现 多态</li>
-<li>如果有比较复杂的历史bug，利用上github，在注释中，写上对应的issue id</li>
-<li>和其它语言写东西一样，都是主逻辑以外的错误判断有不少</li>
+<li><p>手工 实现 重载</p>
+</li>
+<li><p>手工 实现 多态</p>
+</li>
+<li><p>如果有比较复杂的历史bug，利用上github，在注释中，写上对应的issue id</p>
+</li>
+<li><p>和其它语言写东西一样，都是主逻辑以外的错误判断有不少</p>
+</li>
 </ul>
 <h2 id="体验上难受的点"><a href="#体验上难受的点" class="headerlink" title="体验上难受的点"></a>体验上难受的点</h2><ul>
-<li>阅读代码时，非纯函数的确读起来相对更头疼，但是我在想，虽然是非纯函数，但实际上 如果变成一个class，也是类似的，因为有些内容不应该暴露出来的，而对于class内部的一些状态，把它取出来判断再只调用class内的操作，还不如直接class封好</li>
-<li>文档也不全，官方档有些部分没三方博客描述全</li>
-<li>可以看到是入侵式编码 性能测试，用 NODE_ENV 包裹，这个利用了rollup/webpack等编译时能去掉，但从编码上还是入侵式的，如果有办法做切面编程是不是更好</li>
+<li><p>阅读代码时，非纯函数的确读起来相对更头疼，但是我在想，虽然是非纯函数，但实际上 如果变成一个class，也是类似的，因为有些内容不应该暴露出来的，而对于class内部的一些状态，把它取出来判断再只调用class内的操作，还不如直接class封好</p>
+</li>
+<li><p>文档也不全，官方档有些部分没三方博客描述全</p>
+</li>
+<li><p>可以看到是入侵式编码 性能测试，用 NODE_ENV 包裹，这个利用了rollup&#x2F;webpack等编译时能去掉，但从编码上还是入侵式的，如果有办法做切面编程是不是更好</p>
+</li>
 <li><!-- 在代码上，虽然都不愿意口头承认很多时候用的内容都是过度设计的，而现实的使用其实已经表明了观点，对于很多公司，其实jquery甚至都能胜任，在jquery上封一层类似框架或者ng1，vue1也都完全够用。而vue能火到今天的地步，是社区吹水+入门低+劣币驱逐良币等等的共同结果。随着源码阅读的深入，真的很惊叹这么多公司在用。 --></li>
 <li><p>不够完备的测试，不太能做到重构保护</p>
 <ul>
-<li>覆盖报告的 ignore</li>
-<li><p>例如事件的$on 设计是 有hook:冒号则置为true，否则是默认false，而测试覆盖 根本不全test/unit/features/options/lifecycle.spec.js 就简单做了覆盖</p>
-<p>if (hookRE.test(event)) {<br>  vm._hasHookEvent = true<br>}<br>改为 （语义变了，代码错了，测试依然通过）<br>vm._hasHookEvent = hookRE.test(event)</p>
+<li><p>覆盖报告的 ignore</p>
+</li>
+<li><p>例如事件的$on 设计是 有hook:冒号则置为true，否则是默认false，而测试覆盖 根本不全test&#x2F;unit&#x2F;features&#x2F;options&#x2F;lifecycle.spec.js 就简单做了覆盖</p>
+<p>if (hookRE.test(event)) {<br>  vm._hasHookEvent &#x3D; true<br>}<br>改为 （语义变了，代码错了，测试依然通过）<br>vm._hasHookEvent &#x3D; hookRE.test(event)</p>
 </li>
 <li><p>这样也就意味着，能用就不会再有代码更新，不炸就没有对应测试，这类的测试代码对应的测试报告形同虚设，真的是为了写测试代码而写测试代码</p>
 </li>
@@ -1406,16 +1344,22 @@
 <li>比如 if(a){f(a)}, 而不是在f里面判断</li>
 </ul>
 </li>
-<li><p>还是有不少的 ?Object / any / vm 飞来飞去，没有一个“严格”的类型管制，有些地方读代码还是比较困难，没有angular那样的注释，也是一个困难</p>
+<li><p>还是有不少的 ?Object &#x2F; any &#x2F; vm 飞来飞去，没有一个“严格”的类型管制，有些地方读代码还是比较困难，没有angular那样的注释，也是一个困难</p>
 </li>
-<li>又有undefined，又有null，阅读还是有些难受</li>
-<li>没有具体看weex相关的，但是就阅读体验来说，weex感觉是侵入的写到了vue里</li>
+<li><p>又有undefined，又有null，阅读还是有些难受</p>
+</li>
+<li><p>没有具体看weex相关的，但是就阅读体验来说，weex感觉是侵入的写到了vue里</p>
+</li>
 </ul>
 <h2 id="抽象内容"><a href="#抽象内容" class="headerlink" title="抽象内容"></a>抽象内容</h2><ul>
-<li>响应式触发</li>
-<li>空处理</li>
-<li>定义冲突校验</li>
-<li>生命周期</li>
+<li><p>响应式触发</p>
+</li>
+<li><p>空处理</p>
+</li>
+<li><p>定义冲突校验</p>
+</li>
+<li><p>生命周期</p>
+</li>
 <li><p>函数参数多时，参数顺序问题，代码格式一致</p>
 <ul>
 <li>所以还是done is better than perfect</li>
@@ -1423,177 +1367,84 @@
 </li>
 <li><p>有办法让 js的参数接受能像C++ 那样区别而优雅吗？</p>
 </li>
-<li>保留前缀判断</li>
+<li><p>保留前缀判断</p>
+</li>
 </ul>
 <h2 id="写xmind，生成markdown比直接markdown更舒服"><a href="#写xmind，生成markdown比直接markdown更舒服" class="headerlink" title="写xmind，生成markdown比直接markdown更舒服"></a>写xmind，生成markdown比直接markdown更舒服</h2><p>xmind可以在分支上增加笔记，好处是转换成markdown就不会变成目录层级，缺点是xmind上不能直接展开。 然后xmind不能指定导出的目录层级。<br>另外xmind写一遍，整理成markdown时能对读的过程进行修剪补充可以再温习一遍。</p>
 <h2 id="feature"><a href="#feature" class="headerlink" title="feature"></a>feature</h2><ul>
 <li>如何ssr</li>
 <li>如何keep-alive</li>
 </ul>
-<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><h2 id="https-github-com-numbbbbb-read-vue-source-code"><a href="#https-github-com-numbbbbb-read-vue-source-code" class="headerlink" title="https://github.com/numbbbbb/read-vue-source-code/"></a><a href="https://github.com/numbbbbb/read-vue-source-code/" target="_blank" rel="noopener">https://github.com/numbbbbb/read-vue-source-code/</a></h2><h2 id="https-www-youtube-com-watch-v-OrxmtDw4pVI-amp-t-45s-amp-ab-channel-Honeypot"><a href="#https-www-youtube-com-watch-v-OrxmtDw4pVI-amp-t-45s-amp-ab-channel-Honeypot" class="headerlink" title="https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot"></a><a href="https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot" target="_blank" rel="noopener">https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot</a></h2><h2 id="https-www-bilibili-com-video-BV1d4411v7UX"><a href="#https-www-bilibili-com-video-BV1d4411v7UX" class="headerlink" title="https://www.bilibili.com/video/BV1d4411v7UX"></a><a href="https://www.bilibili.com/video/BV1d4411v7UX" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1d4411v7UX</a></h2><h2 id="https-developer-mozilla-org-zh-CN-docs-Web-JavaScript-Reference-Global-Objects-Object-defineProperty"><a href="#https-developer-mozilla-org-zh-CN-docs-Web-JavaScript-Reference-Global-Objects-Object-defineProperty" class="headerlink" title="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty</a></h2><p><em>XMind - Trial Version</em></p>
+<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><h2 id="https-github-com-numbbbbb-read-vue-source-code"><a href="#https-github-com-numbbbbb-read-vue-source-code" class="headerlink" title="https://github.com/numbbbbb/read-vue-source-code/"></a><a target="_blank" rel="noopener" href="https://github.com/numbbbbb/read-vue-source-code/">https://github.com/numbbbbb/read-vue-source-code/</a></h2><h2 id="https-www-youtube-com-watch-v-OrxmtDw4pVI-amp-t-45s-amp-ab-channel-Honeypot"><a href="#https-www-youtube-com-watch-v-OrxmtDw4pVI-amp-t-45s-amp-ab-channel-Honeypot" class="headerlink" title="https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot"></a><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot">https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot</a></h2><h2 id="https-www-bilibili-com-video-BV1d4411v7UX"><a href="#https-www-bilibili-com-video-BV1d4411v7UX" class="headerlink" title="https://www.bilibili.com/video/BV1d4411v7UX"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1d4411v7UX">https://www.bilibili.com/video/BV1d4411v7UX</a></h2><h2 id="https-developer-mozilla-org-zh-CN-docs-Web-JavaScript-Reference-Global-Objects-Object-defineProperty"><a href="#https-developer-mozilla-org-zh-CN-docs-Web-JavaScript-Reference-Global-Objects-Object-defineProperty" class="headerlink" title="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty</a></h2><p><em>XMind - Trial Version</em></p>
 
     </div>
 
     
     
     
+      
 
-      <footer class="post-footer">
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/21-03-11-vue2source/" title="vue2源码阅读(由xmind笔记生成)">https://cromarmot.github.io/Blog/21-03-11-vue2source/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
           <div class="post-tags">
-              <a href="/Blog/tags/js/" rel="tag"># js</a>
-              <a href="/Blog/tags/vue2/" rel="tag"># vue2</a>
-              <a href="/Blog/tags/source-code/" rel="tag"># source code</a>
+              <a href="/Blog/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+              <a href="/Blog/tags/vue2/" rel="tag"><i class="fa fa-tag"></i> vue2</a>
+              <a href="/Blog/tags/source-code/" rel="tag"><i class="fa fa-tag"></i> source code</a>
           </div>
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/Blog/21-03-09-js-module/" rel="prev" title="amd/cmd/commonjs/umd/esm/iife/systemjs">
-      <i class="fa fa-chevron-left"></i> amd/cmd/commonjs/umd/esm/iife/systemjs
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/Blog/21-03-16-fiddler/" rel="next" title="fiddler android">
-      fiddler android <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/21-03-09-js-module/" rel="prev" title="amd/cmd/commonjs/umd/esm/iife/systemjs">
+                  <i class="fa fa-chevron-left"></i> amd/cmd/commonjs/umd/esm/iife/systemjs
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Blog/21-03-16-fiddler/" rel="next" title="fiddler android">
+                  fiddler android <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-  
-  
-  
+</div>
 
 
 
-          </div>
-          
+
+
+
     
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#源代码"><span class="nav-number">1.</span> <span class="nav-text">源代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#commit-hash"><span class="nav-number">1.1.</span> <span class="nav-text">commit hash:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#src"><span class="nav-number">1.2.</span> <span class="nav-text">src</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dist"><span class="nav-number">1.3.</span> <span class="nav-text">dist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typings"><span class="nav-number">1.4.</span> <span class="nav-text">typings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地调试代码环境搭建"><span class="nav-number">1.5.</span> <span class="nav-text">本地调试代码环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.6.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阅读"><span class="nav-number">2.</span> <span class="nav-text">阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#src-platforms-weex"><span class="nav-number">2.1.</span> <span class="nav-text">src/platforms/weex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#entry"><span class="nav-number">2.2.</span> <span class="nav-text">entry</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#src-platforms-web-runtime-index-js"><span class="nav-number">2.3.</span> <span class="nav-text">src/platforms/web/runtime/index.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#core-index-js"><span class="nav-number">2.4.</span> <span class="nav-text">core/index.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#core-instance-index"><span class="nav-number">2.5.</span> <span class="nav-text">core/instance/index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-init"><span class="nav-number">2.6.</span> <span class="nav-text">Vue._init()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式"><span class="nav-number">2.7.</span> <span class="nav-text">响应式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染"><span class="nav-number">2.8.</span> <span class="nav-text">渲染</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Flow"><span class="nav-number">3.1.</span> <span class="nav-text">Flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首先整个Vue的原型，或者说Class-是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个-Vue-init-函数，再触发这些不同文件创建的方法来完成-实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化"><span class="nav-number">3.2.</span> <span class="nav-text">首先整个Vue的原型，或者说Class 是通过多层不同文件共同写一个Vue来实现的。再之后产生实例的时候是通过配合用户的配置触发一个 Vue._init() 函数，再触发这些不同文件创建的方法来完成 实例化对象。之后就是用户操作引发刚刚实例化的事件发生，Vue对应变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见方法"><span class="nav-number">3.3.</span> <span class="nav-text">常见方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#体验上难受的点"><span class="nav-number">3.4.</span> <span class="nav-text">体验上难受的点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象内容"><span class="nav-number">3.5.</span> <span class="nav-text">抽象内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写xmind，生成markdown比直接markdown更舒服"><span class="nav-number">3.6.</span> <span class="nav-text">写xmind，生成markdown比直接markdown更舒服</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#feature"><span class="nav-number">3.7.</span> <span class="nav-text">feature</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ref"><span class="nav-number">4.</span> <span class="nav-text">ref</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#https-github-com-numbbbbb-read-vue-source-code"><span class="nav-number">4.1.</span> <span class="nav-text">https://github.com/numbbbbb/read-vue-source-code/</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-www-youtube-com-watch-v-OrxmtDw4pVI-amp-t-45s-amp-ab-channel-Honeypot"><span class="nav-number">4.2.</span> <span class="nav-text">https://www.youtube.com/watch?v=OrxmtDw4pVI&amp;t=45s&amp;ab_channel=Honeypot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-www-bilibili-com-video-BV1d4411v7UX"><span class="nav-number">4.3.</span> <span class="nav-text">https://www.bilibili.com/video/BV1d4411v7UX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-developer-mozilla-org-zh-CN-docs-Web-JavaScript-Reference-Global-Objects-Object-defineProperty"><span class="nav-number">4.4.</span> <span class="nav-text">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
-  <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/Blog/archives/">
-        
-          <span class="site-state-item-count">113</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/Blog/categories/">
-          
-        <span class="site-state-item-count">52</span>
-        <span class="site-state-item-name">分類</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/Blog/tags/">
-          
-        <span class="site-state-item-count">126</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/CroMarmot" title="GitHub → https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces → https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>Codeforces</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://atcoder.jp/users/cromarmot" title="AtCoder → https://atcoder.jp/users/cromarmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>AtCoder</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
@@ -1601,29 +1452,37 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">645k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:47</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
   </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/Blog/lib/anime.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
-<script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script>
-<script src="/Blog/js/schemes/muse.js"></script>
-<script src="/Blog/js/next-boot.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
 
 
 
@@ -1632,108 +1491,17 @@
 
 
 
-  <script src="/Blog/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
-      
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
 
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
 
-    
-
-  
-
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://cromarmot.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://cromarmot.github.io/Blog/21-03-11-vue2source/";
-    this.page.identifier = "21-03-11-vue2source/";
-    this.page.title = "vue2源码阅读(由xmind笔记生成)";
-    };
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://cromarmot.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/21-03-11-vue2source/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
 
 </body>
 </html>

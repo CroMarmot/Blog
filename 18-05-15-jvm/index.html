@@ -2,9 +2,10 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
@@ -14,92 +15,67 @@
 <link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-  <meta name="description" content="2018-05-15  -&amp;gt;  2018-07-12 1 hello world书:《深入理解java虚拟机》第二版 2 java内存区域与内存溢出异常java自动管理内存释放 运行时 数据区  方法区 method area// 存储已被虚拟机加载的类信息 常量 静态变可以看做堆的逻辑部分 别名non-heap 虚拟机栈VM stack // 线程私有 java 方法服务 本地方法栈 na">
-<meta name="keywords" content="java,jvm">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="2018-05-15  -&gt;  2018-07-12 1 hello world书:《深入理解java虚拟机》第二版 2 java内存区域与内存溢出异常java自动管理内存释放 运行时 数据区  方法区 method area&#x2F;&#x2F; 存储已被虚拟机加载的类信息 常量 静态变可以看做堆的逻辑部分 别名non-heap  虚拟机栈VM stack &#x2F;&#x2F; 线程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解java虚拟机 第二版 笔记">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/18-05-15-jvm/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
-<meta property="og:description" content="2018-05-15  -&amp;gt;  2018-07-12 1 hello world书:《深入理解java虚拟机》第二版 2 java内存区域与内存溢出异常java自动管理内存释放 运行时 数据区  方法区 method area// 存储已被虚拟机加载的类信息 常量 静态变可以看做堆的逻辑部分 别名non-heap 虚拟机栈VM stack // 线程私有 java 方法服务 本地方法栈 na">
-<meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2022-07-01T10:51:47.807Z">
+<meta property="og:description" content="2018-05-15  -&gt;  2018-07-12 1 hello world书:《深入理解java虚拟机》第二版 2 java内存区域与内存溢出异常java自动管理内存释放 运行时 数据区  方法区 method area&#x2F;&#x2F; 存储已被虚拟机加载的类信息 常量 静态变可以看做堆的逻辑部分 别名non-heap  虚拟机栈VM stack &#x2F;&#x2F; 线程">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2018-07-11T17:01:01.000Z">
+<meta property="article:modified_time" content="2022-08-16T02:17:23.725Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="jvm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解java虚拟机 第二版 笔记">
-<meta name="twitter:description" content="2018-05-15  -&amp;gt;  2018-07-12 1 hello world书:《深入理解java虚拟机》第二版 2 java内存区域与内存溢出异常java自动管理内存释放 运行时 数据区  方法区 method area// 存储已被虚拟机加载的类信息 常量 静态变可以看做堆的逻辑部分 别名non-heap 虚拟机栈VM stack // 线程私有 java 方法服务 本地方法栈 na">
+
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/18-05-15-jvm/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-TW'
-  };
-</script>
 
-  <title>深入理解java虚拟机 第二版 笔记 | Cro-Marmot's Blog</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/18-05-15-jvm/","path":"18-05-15-jvm/","title":"深入理解java虚拟机 第二版 笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>深入理解java虚拟机 第二版 笔记 | Cro-Marmot's Blog</title>
   
 
 
 
 
 
-
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/Blog/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Cro-Marmot's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -112,34 +88,8 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">114</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">34</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">124</span></a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -150,23 +100,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜尋..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -174,80 +123,174 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-hello-world"><span class="nav-number">1.</span> <span class="nav-text">1 hello world</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8"><span class="nav-number">2.</span> <span class="nav-text">2 java内存区域与内存溢出异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8GC%E4%B8%8E%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5"><span class="nav-number">3.</span> <span class="nav-text">3 垃圾收集器GC与内存分配策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HotSpot-%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.1.</span> <span class="nav-text">HotSpot 算法实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8"><span class="nav-number">3.2.</span> <span class="nav-text">垃圾收集器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3GC%E6%97%A5%E5%BF%97"><span class="nav-number">3.3.</span> <span class="nav-text">理解GC日志</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E7%AB%A0-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7%E4%B8%8E%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-number">4.</span> <span class="nav-text">4 章 虚拟机性能监控与故障处理工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E7%AB%A0-%E8%B0%83%E4%BC%98%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E6%88%98"><span class="nav-number">5.</span> <span class="nav-text">5 章 调优案例分析与实战</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E7%B1%BB%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-number">6.</span> <span class="nav-text">6 类文件结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6"><span class="nav-number">7.</span> <span class="nav-text">7 虚拟机类加载机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="nav-number">7.1.</span> <span class="nav-text">类加载过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD"><span class="nav-number">7.1.1.</span> <span class="nav-text">加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81"><span class="nav-number">7.1.2.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">7.1.3.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90"><span class="nav-number">7.1.4.</span> <span class="nav-text">解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">7.1.5.</span> <span class="nav-text">初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8"><span class="nav-number">7.2.</span> <span class="nav-text">类加载器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E"><span class="nav-number">8.</span> <span class="nav-text">8 虚拟机字节码执行引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8"><span class="nav-number">8.1.</span> <span class="nav-text">方法调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E"><span class="nav-number">8.2.</span> <span class="nav-text">解释执行引擎</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%8F%8A%E6%89%A7%E8%A1%8C%E5%AD%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A1%88%E4%BE%8B%E4%B8%8E%E5%AE%9E%E6%88%98"><span class="nav-number">9.</span> <span class="nav-text">9 类加载及执行子系统的案例与实战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E6%89%A7%E8%A1%8C%E5%8A%9F%E8%83%BD"><span class="nav-number">9.1.</span> <span class="nav-text">远程执行功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-%E6%97%A9%E6%9C%9F-%E7%BC%96%E8%AF%91%E5%99%A8-%E4%BC%98%E5%8C%96"><span class="nav-number">10.</span> <span class="nav-text">10 早期(编译器)优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E8%AF%AD%E6%B3%95%E7%B3%96%E7%9A%84%E8%83%8C%E5%90%8E"><span class="nav-number">10.1.</span> <span class="nav-text">关于语法糖的背后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%BC%8F%E6%B3%A8%E8%A7%A3%E5%A4%84%E7%90%86%E5%99%A8-%E5%AE%9E%E9%AA%8C"><span class="nav-number">10.2.</span> <span class="nav-text">插入式注解处理器 实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">10.2.1.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-%E6%99%9A%E6%9C%9F-%E8%BF%90%E8%A1%8C%E6%9C%9F-%E4%BC%98%E5%8C%96"><span class="nav-number">11.</span> <span class="nav-text">11 晚期(运行期)优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E4%B8%8EC-%E7%BC%96%E8%AF%91%E5%99%A8%E5%AF%B9%E6%AF%94"><span class="nav-number">11.1.</span> <span class="nav-text">Java与C++编译器对比</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-number">12.</span> <span class="nav-text">12 Java内存模型与线程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E4%B8%8E%E9%94%81%E4%BC%98%E5%8C%96"><span class="nav-number">13.</span> <span class="nav-text">13 线程安全与锁优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">13.1.</span> <span class="nav-text">线程安全的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%81%E4%BC%98%E5%8C%96"><span class="nav-number">13.2.</span> <span class="nav-text">锁优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">14.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%ACMarkdown%E6%96%87%E6%A1%A3%E4%BE%9D%E8%B5%96%E5%92%8C%E6%84%9F%E8%B0%A2"><span class="nav-number">14.1.</span> <span class="nav-text">本Markdown文档依赖和感谢</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">124</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>
-  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>
-  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+    <div class="main-inner post posts-expand">
 
 
+  
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
-            
-
-    
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/18-05-15-jvm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
       <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="深入理解java虚拟机 第二版 笔记 | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           深入理解java虚拟机 第二版 笔记
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2018-07-12 01:01:01" itemprop="dateCreated datePublished" datetime="2018-07-12T01:01:01+08:00">2018-07-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-07-01 18:51:47" itemprop="dateModified" datetime="2022-07-01T18:51:47+08:00">2022-07-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
-            </span>
+      <time title="創建時間：2018-07-12 01:01:01" itemprop="dateCreated datePublished" datetime="2018-07-12T01:01:01+08:00">2018-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-08-16 10:17:23" itemprop="dateModified" datetime="2022-08-16T10:17:23+08:00">2022-08-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/backend/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+        </span>
+    </span>
 
-          
+  
   
   <span class="post-meta-item">
     
@@ -262,6 +305,22 @@
   </span>
   
   
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>29k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>26 分鐘</span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -270,20 +329,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <p>2018-05-15  -&gt;  2018-07-12</p>
 <h1 id="1-hello-world"><a href="#1-hello-world" class="headerlink" title="1 hello world"></a>1 hello world</h1><p>书:《深入理解java虚拟机》第二版</p>
 <h1 id="2-java内存区域与内存溢出异常"><a href="#2-java内存区域与内存溢出异常" class="headerlink" title="2 java内存区域与内存溢出异常"></a>2 java内存区域与内存溢出异常</h1><p>java自动管理内存释放</p>
 <p>运行时 数据区</p>
 <ul>
-<li>方法区 method area// 存储已被虚拟机加载的类信息 常量 静态变可以看做堆的逻辑部分 别名non-heap</li>
-<li>虚拟机栈VM stack // 线程私有 java 方法服务</li>
-<li>本地方法栈 native method stack// 虚拟机用到的native 方法服务</li>
-<li>堆heap// 几乎所有对象实例</li>
-<li><p>程序计数器 Program counter register// 这个java 模拟出类似汇编pc的一个自己字节码的pcr//当前在执行字节码时 有指向，执行机器码时指向空</p>
+<li><p>方法区 method area&#x2F;&#x2F; 存储已被虚拟机加载的类信息 常量 静态变可以看做堆的逻辑部分 别名non-heap</p>
 </li>
-<li><p>运行时常量池 //方法区一部分  编译时期的字面量和符号引用</p>
+<li><p>虚拟机栈VM stack &#x2F;&#x2F; 线程私有 java 方法服务</p>
+</li>
+<li><p>本地方法栈 native method stack&#x2F;&#x2F; 虚拟机用到的native 方法服务</p>
+</li>
+<li><p>堆heap&#x2F;&#x2F; 几乎所有对象实例</p>
+</li>
+<li><p>程序计数器 Program counter register&#x2F;&#x2F; 这个java 模拟出类似汇编pc的一个自己字节码的pcr&#x2F;&#x2F;当前在执行字节码时 有指向，执行机器码时指向空</p>
+</li>
+<li><p>运行时常量池 &#x2F;&#x2F;方法区一部分  编译时期的字面量和符号引用</p>
 </li>
 </ul>
 <p>数据区以外</p>
@@ -294,15 +355,15 @@
 <p>new</p>
 <ul>
 <li>去常量池中找类的符号引用，检查是否被加载解析 初始化过(7章)</li>
-<li>从堆上新生对象分配内存//赋值0  虚拟机中额外的标识操作 markword 比如哈希、GC分代年龄、元数据、偏向线程ID， init()</li>
+<li>从堆上新生对象分配内存&#x2F;&#x2F;赋值0  虚拟机中额外的标识操作 markword 比如哈希、GC分代年龄、元数据、偏向线程ID， init()</li>
 </ul>
 <p>访问</p>
 <ul>
-<li>通过栈上记录对对象的引用-&gt;句柄池(到对象实例数据的指针 到对象类型数据的指针)/到对象实例的指针 对象示例数据-&gt;实例</li>
+<li>通过栈上记录对对象的引用-&gt;句柄池(到对象实例数据的指针 到对象类型数据的指针)&#x2F;到对象实例的指针 对象示例数据-&gt;实例</li>
 </ul>
 <p>outofmemory实战的VM参数<code>-Xms20m -Xmx20m -XX:+HeapDumpOnOutOfMemoryError</code>,前面参数是设置初始化和上限大小，后面是帮助dump</p>
 <p>可以用相应IDE的工具来查看GC Roots的引用链</p>
-<p>String.intern() 是native方法，如果字符串常量池中已经包含一个等于此String 对象的字符串，则返回代表池中这个字符串的String对象，否则将此String 对象所包含的字符串添加到常量池中，并且放回此string对象的引用// 1.6-&gt;1.7版本更换时的改动</p>
+<p>String.intern() 是native方法，如果字符串常量池中已经包含一个等于此String 对象的字符串，则返回代表池中这个字符串的String对象，否则将此String 对象所包含的字符串添加到常量池中，并且放回此string对象的引用&#x2F;&#x2F; 1.6-&gt;1.7版本更换时的改动</p>
 <p>方法区溢出，类的回收判定咳咳，大量jsp或动态产生JSP文件的应用</p>
 <h1 id="3-垃圾收集器GC与内存分配策略"><a href="#3-垃圾收集器GC与内存分配策略" class="headerlink" title="3 垃圾收集器GC与内存分配策略"></a>3 垃圾收集器GC与内存分配策略</h1><ul>
 <li>哪些内容需要回收</li>
@@ -310,7 +371,7 @@
 <li>如何回收</li>
 </ul>
 <p>对象死亡判断–引用计数算法，引用+1，引用失效-1，简单 判定效率高，大部分情况下不错，但无法解决循环引用的问题</p>
-<p>example:  <code>struct s{s * next};s* a,s* b;a-&gt;next=&amp;b,b-&gt;next=&amp;a;a=NULL,b=NULL;</code></p>
+<p>example:  <code>struct s&#123;s * next&#125;;s* a,s* b;a-&gt;next=&amp;b,b-&gt;next=&amp;a;a=NULL,b=NULL;</code></p>
 <p>VM 参数<code>-verbose:gc -Xmx20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:SurvivorRatio=8</code></p>
 <p>可达性算法，通过GC Roots 向下搜索(引用链)，java中可以作为GC Root的对象包括</p>
 <ul>
@@ -321,7 +382,7 @@
 </ul>
 <p><code>引用</code>的定义</p>
 <ul>
-<li>强引用(Object obj = new Object())</li>
+<li>强引用(Object obj &#x3D; new Object())</li>
 <li>软引用(将要溢出时回收)</li>
 <li>弱引用(回收时 销毁)</li>
 <li>虚引用(用来作为被回收时的通知用的)</li>
@@ -339,7 +400,7 @@
 <li>商业VM中采用这个方法来回收新生代，而IBM研究表明，98%的新生代 朝生夕死，所以并不需要1:1的分配，而是用一个大的Eden和两个小的survivor大约8:1:1的分类，也就是每次能用90%完整内存</li>
 </ul>
 <p>标记整理算法，标记，收集并整理，和复制不同的是不用浪费空间，而且相对来说 如果存活率高的化，这样的代价相对少，用于老年代</p>
-<p>分代收集=按需具体新生代、老年代不同的手机算法。</p>
+<p>分代收集&#x3D;按需具体新生代、老年代不同的手机算法。</p>
 <h2 id="HotSpot-算法实现"><a href="#HotSpot-算法实现" class="headerlink" title="HotSpot 算法实现"></a>HotSpot 算法实现</h2><p>GC发生时需要停顿所有JAVA线程执行,所以从GC roots的扫描要快，HotSpot通过OopMap的数据结构，在类加载完成的时候就把对象内的偏移量对应的数据类型计算出，在JIT编译过程中也会记录栈和寄存器中哪些是引用，这样扫描就直接有信息了</p>
 <p>安全点：如果每条指令都生成对应OopMap将会要大量额外空间，所以只会在safepoint才会暂停开始GC，例如方法调用，循环跳转，异常跳转，并且让所有线程都运行到最近的安全点停下来，</p>
 <ul>
@@ -347,7 +408,7 @@
 <li>主动式中断，每个线程都去找GC的中断标志，在每次到safepoint时检查标志</li>
 </ul>
 <p>然而可能有线程sleep或blocked【也就是不执行】，需要安全区域（safe region）来解决，所谓安全区域是只一个 引用关系没有变化的区域，在线程离开safe region时，检查是否GC完成，没有则等待，</p>
-<h2 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h2><p>Yound generation/ tenured generation</p>
+<h2 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h2><p>Yound generation&#x2F; tenured generation</p>
 <p>7种</p>
 <ul>
 <li>serial(年轻代) 单线程收集器-&gt;所有线程到safepoint-&gt;”stop the world”-&gt;GC ,在client模式下的VM中的新生代依然是一个好的选择</li>
@@ -360,9 +421,9 @@
 </ul>
 <p>CMS：</p>
 <ul>
-<li>初始标记 记录GC Roots能够直接关联道德对象 很快 // 需要stop the world</li>
+<li>初始标记 记录GC Roots能够直接关联道德对象 很快 &#x2F;&#x2F; 需要stop the world</li>
 <li>并发标记 gc root tracing</li>
-<li>重标记 remark 【解决运行时产生的变动的部分？】 // 需要stop the world</li>
+<li>重标记 remark 【解决运行时产生的变动的部分？】 &#x2F;&#x2F; 需要stop the world</li>
 <li>并发清除</li>
 </ul>
 <p>对CPU数量有要求，并发的定义适合用户线程，然后并行的并不是等到 空间使用完了才收集，而是在过程中 书上说68%老年代的会出现收集，，jdk1.6启动阈值92%，另外一个是碎片合并的问题，可以参数控制</p>
@@ -398,8 +459,7 @@
 <th>主要作用</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>jps</td>
 <td>jvm process status tool,显示指定系统内所有的hotspot虚拟机进程</td>
 </tr>
@@ -417,17 +477,16 @@
 </tr>
 <tr>
 <td>jhat</td>
-<td>jvm heap dump browser，用于分析heapmap文件，它会建立一个http/html服务器 让用户可以在浏览器上查看分析结果</td>
+<td>jvm heap dump browser，用于分析heapmap文件，它会建立一个http&#x2F;html服务器 让用户可以在浏览器上查看分析结果</td>
 </tr>
 <tr>
 <td>jstack</td>
 <td>stack trace for java ,显示虚拟机的线程快照</td>
 </tr>
-</tbody>
-</table>
-<p>HSDIS JIT生成反汇编 =。= 哇哦 毕竟生成java可执行码直接看不懂，而汇编相对玩过C++和汇编的来说就容易看懂了</p>
-<p>可视化工具:jconsole //可以通过线程观察等待的函数 甚至一些可以判定的死锁</p>
-<p>//运行我写的一个项目然后是Eden在产生和被回收，但是survivor一直是100% 没有进入老年代的为何？ 放久了有部分进入</p>
+</tbody></table>
+<p>HSDIS JIT生成反汇编 &#x3D;。&#x3D; 哇哦 毕竟生成java可执行码直接看不懂，而汇编相对玩过C++和汇编的来说就容易看懂了</p>
+<p>可视化工具:jconsole &#x2F;&#x2F;可以通过线程观察等待的函数 甚至一些可以判定的死锁</p>
+<p>&#x2F;&#x2F;运行我写的一个项目然后是Eden在产生和被回收，但是survivor一直是100% 没有进入老年代的为何？ 放久了有部分进入</p>
 <p>visualVM 官方提供 的可视化可插件的</p>
 <ul>
 <li>heap dump</li>
@@ -435,13 +494,13 @@
 </ul>
 <h1 id="5-章-调优案例分析与实战"><a href="#5-章-调优案例分析与实战" class="headerlink" title="5 章 调优案例分析与实战"></a>5 章 调优案例分析与实战</h1><p>用案例说明</p>
 <p>案例1</p>
-<p>从32位低硬件转移到高硬件，就是一个高访问，然后要从磁盘读数据的，分配了12GB/16GB的，而一次Full GC(同时回收年轻代 年老代，永久代满会导致class method元信息的卸载）需要14s的停顿，且频率十几分钟一次</p>
+<p>从32位低硬件转移到高硬件，就是一个高访问，然后要从磁盘读数据的，分配了12GB&#x2F;16GB的，而一次Full GC(同时回收年轻代 年老代，永久代满会导致class method元信息的卸载）需要14s的停顿，且频率十几分钟一次</p>
 <p>文中举例64位的缺点：1.内存回收导致长时间停顿，无法dump【因为如果要dump 产生的文件大小能达到十多G 也无法分析，因为指针大小 对齐补白一般比32位内存使用更多</p>
 <p>然后说更多的还是用32位虚拟机集群，缺点：1.注意并行资源竞争 2.均摊性能，3。32位虚拟内存上限，4.大量本地缓存</p>
 <p>案例2</p>
 <p>分布式 有一定共享的竞争型数据库,改用全局缓存后出现内存溢出问题。 memorydump出的数据显示很多NAKACK，这个是JBossCache保证各个包有效顺序及重发，也就是为了保证顺序性会在内存中保留并且网络不佳时会有大量重发，就会堆积以至溢出。【这个只是说了能分析到原因，没说解决方案，我猜大概 使用更大内存空间？</p>
 <p>案例3</p>
-<p>小的基于B/S电子考试系统，服务器不定时异常，但是把堆开到最大32位下1.6GB，也没有效果甚至异常更频繁了，然后加heapdump 没用，异常时没有dump文件，然后用jstat监视，gc不频繁，多个代都没压力。最后从系统日志中找到异常堆栈</p>
+<p>小的基于B&#x2F;S电子考试系统，服务器不定时异常，但是把堆开到最大32位下1.6GB，也没有效果甚至异常更频繁了，然后加heapdump 没用，异常时没有dump文件，然后用jstat监视，gc不频繁，多个代都没压力。最后从系统日志中找到异常堆栈</p>
 <p>Direct Memory不算如java的内存堆中，从输出的超过内存上界的报错看是direct 的allocate错误，虚拟机会对direct回收，但不会空间不足就触发像新生代老年代那样的回收，</p>
 <p>socket 连接的receive 和send两个缓存区</p>
 <p>案例4</p>
@@ -483,7 +542,7 @@
 <p>class的魔数为0xCAFEBABE</p>
 <p>紧接着魔数的4个字节是版本号，我这边在linux下用vim+xxd可以看，想gui看的话可以ghex</p>
 <p>[0123][45][67]<br>[魔数][次版本号][主版本号]</p>
-<p>//即使代码没有变，低版本虚拟机也会拒绝高版本的class执行</p>
+<p>&#x2F;&#x2F;即使代码没有变，低版本虚拟机也会拒绝高版本的class执行</p>
 <p>再后面是常量池入口 显示u2类型 常量池容量计数值，从1开始计数，主要存放两大常量：字面量(文本字符串 声明 final 常量)和符号引用(类和接口的全限定名,字段的名称和描述符，方法名称和描述符)，</p>
 <p>然后常量池中每一个常量是个表，，类型挺多的。。到1.7有14种了？</p>
 <p>[类型标识][按照类型的数据][类型标识][按照类型的数据]…</p>
@@ -517,7 +576,7 @@
 <p>这里有个疑问它字节码有iinc 局部变量自增，那这个操作算原子的吗？</p>
 <p>然后搜到说java中i++转换的字节码不是这个,然后我测了一下，局部变量还是会变成iinc的，但是全局的就不是，所以也就是说，iinc都只会在局部中出现咯，也就是并没有什么原子保证。</p>
 <p>浮点数方面是IEEE 754，遵守浮点数值和逐级下溢运算规则，</p>
-<p>转换指令 可以可以 向2=to,4=for低头 i2b,i2c等等</p>
+<p>转换指令 可以可以 向2&#x3D;to,4&#x3D;for低头 i2b,i2c等等</p>
 <p>创建new[…] ,读取[…]load存储[…]store,</p>
 <p>栈操作 pop… dup…复制+压入 swap</p>
 <p>方法调用invoke[调用的配型] 返回[类型]return</p>
@@ -540,7 +599,7 @@
 <p>静态字段只有直接定义这个字段的类才会被初始化</p>
 <p>样例见书: 父亲类（初始化静态输出1，静态变量value），子类(初始化静态输出2)， 调用样例<code>输出 子类.value</code>,因为value是父亲</p>
 <p>惊了 我去测了一圈 然后才知道java里父类和子类的成员变量竟然都记录了的，比如A.x ,然后B是A的子类，有B.x,当你把一个B转化成A以后访问x只能访问到A.x，但是如果是方法的话，就算把B转成A访问还是会调用B.x，相当于C++中的自带virtual了</p>
-<p>数组定义引用类不会触发， A[] arrA = new A[233];</p>
+<p>数组定义引用类不会触发， A[] arrA &#x3D; new A[233];</p>
 <p>final static被常量传播优化于编译阶段时，不会触发类的初始化</p>
 <h2 id="类加载过程"><a href="#类加载过程" class="headerlink" title="类加载过程"></a>类加载过程</h2><p>加载 验证 准备 解析 初始化 这5个阶段</p>
 <h3 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h3><ul>
@@ -553,9 +612,9 @@
 <ul>
 <li>类是引用类型 则按该引用类去加载</li>
 <li>不是引用类型如int[]，Java虚拟机将会把数组标记为与引导类加载器关联。</li>
-<li>数组的可见性与它的组件类型的可见性一致，private/public</li>
+<li>数组的可见性与它的组件类型的可见性一致，private&#x2F;public</li>
 </ul>
-<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>确保字节流信息符合当前虚拟机需求，且不会危害虚拟机安全【本身相对于C/C++来说是安全的】，直接java代码到字节码已经是安全的，但是class文件也可以不由java编译产生，所以有必要检查class 如访问边界以外的数据啊这种操作。咦这样的意思是 可变边界的情况，就是由jvm来检查了吗？那比如A[]大小n，访问m，那比较这个是jvm做吗？A[3]访问x，由java直接写，但是转换出来的代码中会有检查吗？还是也丢给jvm做？再说A[x]访问x，在java中显示写x大小判断，还会被jvm检查吗？还是说有开关</p>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>确保字节流信息符合当前虚拟机需求，且不会危害虚拟机安全【本身相对于C&#x2F;C++来说是安全的】，直接java代码到字节码已经是安全的，但是class文件也可以不由java编译产生，所以有必要检查class 如访问边界以外的数据啊这种操作。咦这样的意思是 可变边界的情况，就是由jvm来检查了吗？那比如A[]大小n，访问m，那比较这个是jvm做吗？A[3]访问x，由java直接写，但是转换出来的代码中会有检查吗？还是也丢给jvm做？再说A[x]访问x，在java中显示写x大小判断，还会被jvm检查吗？还是说有开关</p>
 <p>说验证在整个加载系统中占了很大一部分</p>
 <ul>
 <li>文件格式验证 如 魔数开头，主次版本是否满足当前虚拟机，常量池是否有不被支持的常量，指向常量索引是否指向不存在的，utf8编码格式部分是否符合utf8编码 等等等等等</li>
@@ -563,12 +622,12 @@
 <li>字节码验证(最复杂)，通过数据流和控制流，分析语义是否合法，比如放入一个int，取出却按照long去除，跳转不会到方法体以外的字节码上，有增加一个StackMapTable来增加方法体基本快的描述 辅助验证</li>
 <li>符号引用验证，(在解析 阶段发生) 比如private protected 是否可以被当前类访问，引用通过字符串描述的全限定名是否能找到对应类</li>
 </ul>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>分配内存和设置初始值，非final的都是设置为0，final的是变成constantVluae赋值，例如<code>static int a=123;</code>是赋值为0的，在<clint>()中的putstatic才赋值为123</clint></p>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>分配内存和设置初始值，非final的都是设置为0，final的是变成constantVluae赋值，例如<code>static int a=123;</code>是赋值为0的，在<clint>()中的putstatic才赋值为123</p>
 <h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>根据常量池符号引用替换为直接引用，相当于把名称描述换为具体的指针、偏移量什么的，只规定在具体的16个(见书)操作符号引用的字节码指令之前进行解析，</p>
 <p>以及上面说的解析完后会有符号引用验证比如访问权限，</p>
 <p>字段解析，如果本身有返回，否则去找父类，递归向上找</p>
-<p>类方法解析/接口方法解析，类似原理，但会先检查class_index的位置是否对应正确，如类的应该对应类，接口的对应接口</p>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>加载的最后一步，执行构造器<clinit>()方法的过程</clinit></p>
+<p>类方法解析&#x2F;接口方法解析，类似原理，但会先检查class_index的位置是否对应正确，如类的应该对应类，接口的对应接口</p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>加载的最后一步，执行构造器<clinit>()方法的过程</p>
 <p>这个是由编译器自动收集类中的所有类变量的赋值动作和静态语句块static{}合并产生的，顺序根据收集顺序决定</p>
 <p>可以可以代码7-5有点意思哈</p>
 <p>然后保证父类的clinit在子类的clinit前执行，也就是vm执行的第一个clinit是java.lang.Object的</p>
@@ -588,12 +647,12 @@
 <p>返回方式 ret 正常的完成出口，异常出口 自动异常或者手动athrow</p>
 <p>然后在实现虚拟机时，可以附加一些规范外的辅助信息</p>
 <h2 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h2><p>也就是说invoke[…]对应的具体位置是哪，要经过解析把描述转化为具体的序号</p>
-<p>静态分派：样例代码 A a=new B()，对一个 实例对象 进行父类转化，再调用重载函数，重载函数选择的是父类对应的接口</p>
+<p>静态分派：样例代码 A a&#x3D;new B()，对一个 实例对象 进行父类转化，再调用重载函数，重载函数选择的是父类对应的接口</p>
 <p>这里称A为静态类型在编译时期可知，B为实际类型，在运行时才可知，依赖静态类型来执行的叫做 方法重载</p>
 <p>然后重载 的话，对参数类型有它的一个优先顺序</p>
-<p>动态分配(Override): A a=new B(),调用方法f，也就是a.f(),jvm是如何定位的，通过javap得出的字节码，发现 样例代码中所有的都指向(静态类型)父类的函数 都是invokevirtual，然后这个过程是 先找实际类型，再逐个往上早父类的，其中只要成功找到就执行 再返回</p>
+<p>动态分配(Override): A a&#x3D;new B(),调用方法f，也就是a.f(),jvm是如何定位的，通过javap得出的字节码，发现 样例代码中所有的都指向(静态类型)父类的函数 都是invokevirtual，然后这个过程是 先找实际类型，再逐个往上早父类的，其中只要成功找到就执行 再返回</p>
 <p>搜<code>静态单分派与动态多分派</code>，这个和我上面自己做的实验一致了，就是 父类没被覆盖的也存在没有dead，父类自己调用就是自己的,从字节码上看父类子类调用基类的函数时，都是invokevirtual指向基类</p>
-<p><a href="http://rednaxelafx.iteye.com/blog/260206" target="_blank" rel="noopener">补充 方法分派的几个例子</a></p>
+<p><a target="_blank" rel="noopener" href="http://rednaxelafx.iteye.com/blog/260206">补充 方法分派的几个例子</a></p>
 <p>所以java目前是 静态多分派，比如父类子类invokevirtual指向的同一个，动态单分派，具体指向动态的</p>
 <p>虚拟机动态分派实现:虚拟方法表vtable，以及虚拟接口方法表itable，emmmm就是每个类有个方法表中间存了方法入口地址233333</p>
 <blockquote>
@@ -614,18 +673,20 @@
 iconst_1
 iadd
 istore_0
-</code></pre><p>基于寄存器(性能)</p>
+</code></pre>
+<p>基于寄存器(性能)</p>
 <pre><code>mov 1 eax
 add 1 eax
-</code></pre><p>虚拟机可以把它转换</p>
+</code></pre>
+<p>虚拟机可以把它转换</p>
 <h1 id="9-类加载及执行子系统的案例与实战"><a href="#9-类加载及执行子系统的案例与实战" class="headerlink" title="9 类加载及执行子系统的案例与实战"></a>9 类加载及执行子系统的案例与实战</h1><p>案例1 Tomcat等服务应用程序 正统的类加载器架构</p>
 <p>因为 重用类库，安全性，支持JSP等的HotSwap，，所以都有隔离单独的类加载器。</p>
 <p>下面是Tomcat为例，</p>
 <ul>
-<li>/common目录中：类库可被Tomcat和所有的Web应用程序共同使用。</li>
-<li>/server目录中：类库可被Tomcat使用，所有的Web应用程序都不可见。</li>
-<li>/shared目录中：类库可被所有的Web应用程序共同使用，但对Tomcat自己不可见。</li>
-<li>/WebApp/WEB-INF目录中：类库仅仅可以被此Web应用程序使用，对Tomcat和其他Web应用程序都不可见。</li>
+<li>&#x2F;common目录中：类库可被Tomcat和所有的Web应用程序共同使用。</li>
+<li>&#x2F;server目录中：类库可被Tomcat使用，所有的Web应用程序都不可见。</li>
+<li>&#x2F;shared目录中：类库可被所有的Web应用程序共同使用，但对Tomcat自己不可见。</li>
+<li>&#x2F;WebApp&#x2F;WEB-INF目录中：类库仅仅可以被此Web应用程序使用，对Tomcat和其他Web应用程序都不可见。</li>
 </ul>
 <p>Tomcat 自定义了多个类加载器，按照双亲委派模型实现</p>
 <p>Spring相当于在上层，用户的在下层，模型特点是 职能向上加载不能向下。所以spring是通过 线程上下文类加载器来实现 访问并不在其加载范围内的用户程序</p>
@@ -673,7 +734,8 @@ add 1 eax
 <pre><code>sudo apt install openjdk-8-source
 ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
 解压它 找 sun/tools/javac中
-</code></pre><p>eclipse 默认禁止一些代码访问规则，所以要调试javac的话需要 把这个开关关闭</p>
+</code></pre>
+<p>eclipse 默认禁止一些代码访问规则，所以要调试javac的话需要 把这个开关关闭</p>
 <p>javac 的3个过程</p>
 <ul>
 <li>1解析与填充符号表过程</li>
@@ -710,7 +772,7 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
 <ol start="5">
 <li>解释语法糖</li>
 </ol>
-<p>java低糖语法 如 泛型、变长参数、自动装箱/拆箱 等。这些语法被编译器转换为 jvm支持的更基础的指令。解释过程由 desugar() 方法触发，在 com.sun.tools.javac.comp.TransTypes 类和com.sun.tools.javac.comp.Lower 类中完成。</p>
+<p>java低糖语法 如 泛型、变长参数、自动装箱&#x2F;拆箱 等。这些语法被编译器转换为 jvm支持的更基础的指令。解释过程由 desugar() 方法触发，在 com.sun.tools.javac.comp.TransTypes 类和com.sun.tools.javac.comp.Lower 类中完成。</p>
 <ol start="6">
 <li>字节码生成</li>
 </ol>
@@ -727,14 +789,17 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
 <p>测了一下报错<code>error: name clash: f(List&lt;String&gt;) and f(List&lt;Integer&gt;) have the same erasure</code></p>
 <p>真实原因是不同返回值以后, class文件下，擦除了类型的函数具体描述才能不同，才能共存于同一个class中。当然也只有Sun JDK 1.6支持</p>
 <p>下面一段没看懂Signature部分是啥 签名?感觉大自意思是 有的程序需要识别你<code>擦除</code>的部分，所以还需要额外的影响和改动。以及，从 Signature 属性的出现我们还可以得出结论，擦除法所谓的擦除，仅仅是对方法的 Code 属性中的字节码进行擦除，实际上元数据中还是保留了泛型信息，这也是我们能通过反射手段取得参数化类型的根本依据。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">由于 Java 泛型的引入，各种场景（虚拟机解析、反射等）下的方法调用都有可能对原有的基础产生影响和新的需求，如在泛型类中如何获取传入的参数化类型等。因此，JCP 组织对虚拟机规范作出了相应的修改，引入了诸如 Signature、LocalVariableTable 等新的属性用于解决伴随而来的参数类型的识别问题，Signature是其中最重要的一项属性，它的作用就是存储一个方法在字节码层面的特征签名，这个属性中保存的参数类型并不是原生类型，而是包括了参数化类型的信息。修改后的虚拟机规范要求所有能识别 49.0 以上版本的 Class 文件的虚拟机都要能正确地识别 Signature 参数。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">由于 Java 泛型的引入，各种场景（虚拟机解析、反射等）下的方法调用都有可能对原有的基础产生影响和新的需求，如在泛型类中如何获取传入的参数化类型等。因此，JCP 组织对虚拟机规范作出了相应的修改，引入了诸如 Signature、LocalVariableTable 等新的属性用于解决伴随而来的参数类型的识别问题，Signature是其中最重要的一项属性，它的作用就是存储一个方法在字节码层面的特征签名，这个属性中保存的参数类型并不是原生类型，而是包括了参数化类型的信息。修改后的虚拟机规范要求所有能识别 49.0 以上版本的 Class 文件的虚拟机都要能正确地识别 Signature 参数。</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>自动装箱、拆箱与遍历循环(Foreach)</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; list = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>); <span class="comment">// 自动装箱</span></span><br><span class="line">    <span class="comment">// 如果在 JDK 1.8 中，还有另外一颗语法糖</span></span><br><span class="line">    <span class="comment">// 能让上面这句代码进一步简写成 List&lt;Integer&gt; list = [1, 2, 3, 4];</span></span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i : list) &#123; <span class="comment">// 循环遍历+自动拆箱 变成迭代器每一个元素取出 并 转换为int类型</span></span><br><span class="line">        sum += i;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(sum);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面包含了<code>泛型、自动装箱、自动拆箱、遍历循环与变长参数</code>5 种语法糖</p>
-<p>错误用法: 完了要是面试问下面这个输出 我就凉凉: <strong>包装类的“==” 运算在不遇到算术运算的情况下不会自动拆箱，以及它们 equals() 方法不处理数据转型的关系</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">    Integer a = 1;</span><br><span class="line">    Integer b = 2;</span><br><span class="line">    Integer c = 3;</span><br><span class="line">    Integer d = 3;</span><br><span class="line">    Integer e = 321;</span><br><span class="line">    Integer f = 321;</span><br><span class="line">    Long g = 3L;</span><br><span class="line">    System.out.println(c == d);// 比值</span><br><span class="line">    System.out.println(e == f);// 超过[-128,127]比地址</span><br><span class="line">    System.out.println(c == (a + b));// 被自动装箱 转换==</span><br><span class="line">    System.out.println(c.equals(a + b));// 自动装箱equals 比 值&amp;类型</span><br><span class="line">    System.out.println(g == (a + b)); // 自动装箱==</span><br><span class="line">    System.out.println(g.equals(a + b)); // 自动装箱equals 比 值&amp;类型</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    List&lt;Integer&gt; list = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>); <span class="comment">// 自动装箱</span></span><br><span class="line">    <span class="comment">// 如果在 JDK 1.8 中，还有另外一颗语法糖</span></span><br><span class="line">    <span class="comment">// 能让上面这句代码进一步简写成 List&lt;Integer&gt; list = [1, 2, 3, 4];</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : list) &#123; <span class="comment">// 循环遍历+自动拆箱 变成迭代器每一个元素取出 并 转换为int类型</span></span><br><span class="line">        sum += i;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(sum);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面包含了<code>泛型、自动装箱、自动拆箱、遍历循环与变长参数 </code>5 种语法糖</p>
+<p>错误用法: 完了要是面试问下面这个输出 我就凉凉: <strong>包装类的“&#x3D;&#x3D;” 运算在不遇到算术运算的情况下不会自动拆箱，以及它们 equals() 方法不处理数据转型的关系</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">    Integer a = 1;</span><br><span class="line">    Integer b = 2;</span><br><span class="line">    Integer c = 3;</span><br><span class="line">    Integer d = 3;</span><br><span class="line">    Integer e = 321;</span><br><span class="line">    Integer f = 321;</span><br><span class="line">    Long g = 3L;</span><br><span class="line">    System.out.println(c == d);// 比值</span><br><span class="line">    System.out.println(e == f);// 超过[-128,127]比地址</span><br><span class="line">    System.out.println(c == (a + b));// 被自动装箱 转换==</span><br><span class="line">    System.out.println(c.equals(a + b));// 自动装箱equals 比 值&amp;类型</span><br><span class="line">    System.out.println(g == (a + b)); // 自动装箱==</span><br><span class="line">    System.out.println(g.equals(a + b)); // 自动装箱equals 比 值&amp;类型</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>emmmm感觉java需要手工加类型转换[或者编译检测有参数选项可以打开?</p>
 <blockquote>
 <p>条件编译 解除语法糖阶段（com.sun.tools.javac.comp.Lower类中完成)</p>
@@ -761,9 +826,10 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>我们实现注解处理器的代码需要继承抽象类 <code>javax.annotation.processing.AbstractProcessor</code></p>
 <p>这个类只有一个必须覆盖的abstract方法<code>process()</code></p>
 <p>这个函数在javac执行注解处理器代码时要调用的过程，</p>
-<p><a href="https://docs.oracle.com/javase/7/docs/api/javax/annotation/processing/AbstractProcessor.html" target="_blank" rel="noopener">https://docs.oracle.com/javase/7/docs/api/javax/annotation/processing/AbstractProcessor.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/7/docs/api/javax/annotation/processing/AbstractProcessor.html">https://docs.oracle.com/javase/7/docs/api/javax/annotation/processing/AbstractProcessor.html</a></p>
 <p>上面这个链接的example</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">boolean</span></span><br><span class="line"></span><br><span class="line">process(Set&lt;? extends TypeElement&gt; annotations, RoundEnvironment roundEnv)</span><br><span class="line">Processes a set of annotation types on type elements originating from the prior round and returns whether or not these annotations are claimed by <span class="keyword">this</span> processor.</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="type">boolean</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">process</span><span class="params">(Set&lt;? extends TypeElement&gt; annotations, RoundEnvironment roundEnv)</span></span><br><span class="line">Processes a set of annotation types on type elements originating from the prior round and returns whether or not these annotations are claimed by <span class="built_in">this</span> processor.</span><br></pre></td></tr></table></figure>
+
 <p>第一个参数 “annotations” 中获取到此注解处理器所要处理的注解集合，从第二个参数 “roundEnv” 中访问到当前这个 Round 中的语法树节点，每个语法树节点在这里表示为一个 Element。</p>
 <p>在 JDK 1.6 新增的 <code>javax.lang.model</code> 包中定义了 16 类 Element，包括了 Java 代码中最常用的元素，如：</p>
 <ul>
@@ -786,12 +852,14 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
 </ul>
 <p>除了 process() 方法的传入参数之外，还有一个很常用的实例变量 <code>processingEnv</code>，它是<code>AbstractProcessor</code> 中的一个<code>protected</code> 变量，在注解处理器初始化的时候（init() 方法执行的时候）创建，继承了 AbstractProcessor 的注解处理器代码可以直接访问到它。它代表了注解处理器框架提供的一个上下文环境，要创建新的代码、向编译器输出信息、获取其他工具类等都需要用到这个实例变量</p>
 <hr>
-<p>返回值 true/false表示是否对代码进行更改，如果未更改，javac也就不会再处理？</p>
+<p>返回值 true&#x2F;false表示是否对代码进行更改，如果未更改，javac也就不会再处理？</p>
 <p>所有的运行都是单例 这里要实现的 功能仅是检查，所以始终返回false</p>
 <p>注解处理器NameCheckProcessor</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以用 "*" 表示支持所有 Annotations  </span></span><br><span class="line"><span class="meta">@SupportedAnnotationTypes</span>(<span class="string">"*"</span>)  </span><br><span class="line"><span class="comment">// 只支持 JDK 1.6 的 Java 代码  </span></span><br><span class="line"><span class="meta">@SupportedSourceVersion</span>(SourceVersion.RELEASE_6)  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NameCheckProcessor</span> <span class="keyword">extends</span> <span class="title">AbstractProcessor</span></span>&#123;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">private</span> NameChecker nameChecker;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 初始化名称检查插件 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ProcessingEnvironment processingEnv)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">super</span>.init(processingEnv);  </span><br><span class="line">        nameChecker = <span class="keyword">new</span> NameChecker(processingEnv);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 对输入的语法树的各个节点进行名称检查 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">process</span><span class="params">(Set&lt;? extends TypeElement&gt; annotations, RoundEnvironment roundEnv)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">if</span> (!roundEnv.processingOver()) &#123;  </span><br><span class="line">            <span class="keyword">for</span> (Element element : roundEnv.getRootElements()) &#123;<span class="comment">// 获取当前Round的每一个 RootElement</span></span><br><span class="line">                nameChecker.checkNames(element); <span class="comment">// 检查</span></span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以用 &quot;*&quot; 表示支持所有 Annotations  </span></span><br><span class="line"><span class="meta">@SupportedAnnotationTypes(&quot;*&quot;)</span>  </span><br><span class="line"><span class="comment">// 只支持 JDK 1.6 的 Java 代码  </span></span><br><span class="line"><span class="meta">@SupportedSourceVersion(SourceVersion.RELEASE_6)</span>  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">NameCheckProcessor</span> <span class="keyword">extends</span> <span class="title class_">AbstractProcessor</span>&#123;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">private</span> NameChecker nameChecker;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 初始化名称检查插件 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(ProcessingEnvironment processingEnv)</span> &#123;  </span><br><span class="line">        <span class="built_in">super</span>.init(processingEnv);  </span><br><span class="line">        nameChecker = <span class="keyword">new</span> <span class="title class_">NameChecker</span>(processingEnv);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 对输入的语法树的各个节点进行名称检查 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">process</span><span class="params">(Set&lt;? extends TypeElement&gt; annotations, RoundEnvironment roundEnv)</span> &#123;  </span><br><span class="line">        <span class="keyword">if</span> (!roundEnv.processingOver()) &#123;  </span><br><span class="line">            <span class="keyword">for</span> (Element element : roundEnv.getRootElements()) &#123;<span class="comment">// 获取当前Round的每一个 RootElement</span></span><br><span class="line">                nameChecker.checkNames(element); <span class="comment">// 检查</span></span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
 <p>具体检查代码太长就不贴全了，贴几个主要的函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public NameChecker(ProcessingEnvironment processingEnv) &#123;  </span><br><span class="line">    this.messager = processingEnv.getMessager(); // 之后可以调用messager.printMessage()来输出　信息比如　不符合规则的具体内容和具体规则 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public NameChecker(ProcessingEnvironment processingEnv) &#123;  </span><br><span class="line">    this.messager = processingEnv.getMessager(); // 之后可以调用messager.printMessage()来输出　信息比如　不符合规则的具体内容和具体规则 </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
 <p>检查部分继承了<code>ElementScanner6&lt;Void, Void&gt;</code></p>
 <p>之后就是复写这个类的对应函数，对于访问element的部分根据文档 调用函数得到element的名字 和element的类型，对于名字判断就是if case的事情</p>
 <p>它通过一个继承于 javax.lang.model.util.ElementScanner6 的 NameCheckScanner 类，以 Visitor 模式来完成对语法树的遍历，分别执行 visitType()、visitVariable() 和 visitExecutable() 方法来访问类、字段和方法，这 3 个 visit 方法对各自的命名规则做相应的检查，checkCamelCase() 与  checkAllCaps() 方法则用于实现驼式命名法和全大写命名规则的检查。</p>
@@ -804,8 +872,8 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
 <p>HotSpot 采用的是计数器热点探测， 包含两类计数器 (方法调用计数器，回边计数器) 都有各自的阈值</p>
 <p>除了单纯的计数 还有一个根据时间的热度半衰期 23333 学习于自然之中</p>
 <p>回边计数器是为了统计循环体代码执行的次数</p>
-<p>client下 回边计数阈值 = 调用计数阈值xOSR比率 (On Stack Replace Rercentage) / 100</p>
-<p>server下 回边计数阈值 = 调用计数阈值xOSR比率 (On Stack Replace Rercentage)xjiesh / 100</p>
+<p>client下 回边计数阈值 &#x3D; 调用计数阈值xOSR比率 (On Stack Replace Rercentage) &#x2F; 100</p>
+<p>server下 回边计数阈值 &#x3D; 调用计数阈值xOSR比率 (On Stack Replace Rercentage)xjiesh &#x2F; 100</p>
 <p>[嗯！！！ 终于这个代码是hpp后缀的了 吼呀</p>
 <p>只要编译还没完成 都是按照解释器继续执行 而不是等待</p>
 <p>但可以 加参数禁用后台编译 则是 等待形编译</p>
@@ -824,7 +892,7 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
 </li>
 <li><p>访问同一个类的参数，可以消除冗余的访问</p>
 </li>
-<li><p>把没有意义的进行复写传播 以及无用的代码消除 如 y=x;z=y;k=z+x直接就变成k=x&lt;&lt;1</p>
+<li><p>把没有意义的进行复写传播 以及无用的代码消除 如 y&#x3D;x;z&#x3D;y;k&#x3D;z+x直接就变成k&#x3D;x&lt;&lt;1</p>
 </li>
 </ol>
 <p>嗯。。。以前编译原理课都有讲过上面列举的</p>
@@ -835,9 +903,11 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
 <li>最前沿的优化技术之一：逃逸分析。</li>
 </ul>
 <p>除了如数组边界检查优化这种尽可能把运行期检查提到编译期完成的思路之外，另外还有一种避免思路——隐式异常处理，Java 中空指针检查和算术运算中除数为零的检查都采用了这种思路</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (foo != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> foo.value;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> NullPointException();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (foo != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> foo.value;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">NullPointException</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>在使用隐式异常优化之后，虚拟机会把上面伪代码所表示的访问过程变为如下伪代码。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">     <span class="keyword">return</span> foo.value;</span><br><span class="line">&#125; <span class="keyword">catch</span> (segment_fault) &#123;</span><br><span class="line">    uncommon_trap();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p> 虚拟机会注册一个 Segment Fault 信号的异常处理器（伪代码中的 uncommon_trap()），这样当 foo 不为空的时候，对 value 的访问是不会额外消耗一次对 foo 判空的开销的。代价就是当 foo 真的为空时，必须转入到异常处理器中恢复并抛出 NullPointException 异常，这个过程必须从用户态转到内核态中处理，结束后再回到用户态，速度远比一次判空检查慢。当 foo 极少为空的时候，隐式异常优化是值得的，但假如 foo 经常为空的话，这样的优化反而会让程序更慢，还好 HotSpot 虚拟机足够 “聪明”，它会根据运行期收集到的 Profile 信息自动选择最优方案。</p>
 <hr>
 <p>方法内联</p>
@@ -850,10 +920,9 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
 <ul>
 <li>栈上分配（Stack Allocation）：Java 虚拟机中，在 Java 堆上分配创建对象的内存空间几乎是 Java 程序员都清楚的常识了，Java 堆中的对象对于各个线程都是共享和可见的，只要持有这个对象的引用，就可以访问堆中存储的对象数据。虚拟机的垃圾收集系统可以回收堆中不再使用的对象，但回收动作无论是筛选可回收对象，还是回收和整理内存都需要耗费时间。如果确定一个对象不会逃逸出方法之外，那让这个对象在栈上分配内存将会是一个很不错的注意，对象所占用的内存空间就可以随栈帧出栈而销毁。在一般应用中，不会逃逸的局部对象所占的比例很大，如果能使用栈上分配，那大量的对象就会随着方法的结束而自动销毁了，垃圾收集系统的压力将会小很多。</li>
 <li>同步消除（Synchronized Elimination）：线程同步本身是一个相对耗时的过程，如果逃逸分析能够确定一个变量不会逃逸出线程，无法被其他线程访问，那这个变量的读写肯定就不会有竞争，对这个变量实施的同步措施也就可以消除掉。</li>
-<li><p>标量替换（Scalar Replacement）：标量（Scalar）是指一个数据已经无法再分解成更小的数据来表示了，Java 虚拟机中的原始数据类型（int、long 等数值类型以及 reference 类型等）都不能再进一步分解，它们就可以称为标量。相对的，如果一个数据可以继续分解，那它就称作聚合量（Aggregate），Java 中的对象就是最典型的聚合量。如果把一个 Java 对象拆散，根据程序访问的情况，将其使用到的成员变量恢复原始类型来访问就叫做标量替换。如果逃逸分析证明一个对象不会被外部访问，并且这个对象可以被拆散的话，那程序真正执行的时候将可能不创建这个对象，而改为直接创建它的若干个被这个方法使用到的成员变量来代替。将对象拆分后，除了可以让对象的成员变量在栈上（栈上存储的数据，有很大的概率会被虚拟机分配至物理机器的告诉寄存器中存储）分配和读写之外，还可以为后续进一步的优化手段创建条件。</p>
-<p>关于逃逸分析的论文在 1999 年就已经发表，但直到 Sun JDK 1.6 才实现了逃逸分析，而且直到现在这项优化尚未足够成熟，仍有很大的改进余地。不成熟的原因主要是不能保证逃逸分析的性能收益必定高于它的消耗。</p>
-</li>
+<li>标量替换（Scalar Replacement）：标量（Scalar）是指一个数据已经无法再分解成更小的数据来表示了，Java 虚拟机中的原始数据类型（int、long 等数值类型以及 reference 类型等）都不能再进一步分解，它们就可以称为标量。相对的，如果一个数据可以继续分解，那它就称作聚合量（Aggregate），Java 中的对象就是最典型的聚合量。如果把一个 Java 对象拆散，根据程序访问的情况，将其使用到的成员变量恢复原始类型来访问就叫做标量替换。如果逃逸分析证明一个对象不会被外部访问，并且这个对象可以被拆散的话，那程序真正执行的时候将可能不创建这个对象，而改为直接创建它的若干个被这个方法使用到的成员变量来代替。将对象拆分后，除了可以让对象的成员变量在栈上（栈上存储的数据，有很大的概率会被虚拟机分配至物理机器的告诉寄存器中存储）分配和读写之外，还可以为后续进一步的优化手段创建条件。</li>
 </ul>
+<p> 关于逃逸分析的论文在 1999 年就已经发表，但直到 Sun JDK 1.6 才实现了逃逸分析，而且直到现在这项优化尚未足够成熟，仍有很大的改进余地。不成熟的原因主要是不能保证逃逸分析的性能收益必定高于它的消耗。</p>
 <p>目前发展并不够成熟</p>
 <hr>
 <h2 id="Java与C-编译器对比"><a href="#Java与C-编译器对比" class="headerlink" title="Java与C++编译器对比"></a>Java与C++编译器对比</h2><ol>
@@ -865,7 +934,7 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
 </ol>
 <p>【可以 ，，，基本是java的劣势，但是 并不是说不如，而是说有 安全 动态性等所作出的 代价回报</p>
 <p>有java更容易分析的 <code>别名分析</code> Java 的类型安全保证了在类似如下代码中，只要 ClassA 和 ClassB 没有继承关系，那对象 objA 和 objB 就绝不可能是同一个对象，即不会是同一块内存两个不同别名。</p>
-<p>void foo(ClassA objA, ClassB objB) {<br>    objA.x = 123;<br>    objB.y = 456;<br>    // 只要 objB.y 不是 objA.x 的别名，下面就可以保证输出为 123<br>    print(objA.x);<br>}</p>
+<p>void foo(ClassA objA, ClassB objB) {<br>    objA.x &#x3D; 123;<br>    objB.y &#x3D; 456;<br>    &#x2F;&#x2F; 只要 objB.y 不是 objA.x 的别名，下面就可以保证输出为 123<br>    print(objA.x);<br>}</p>
 <p>但是C++有union之类的？？？</p>
 <p>另外的话 JAVA能够在 运行期间有调用频率预测 分支频率预测 等动态的运行红利</p>
 <p>个人感觉就是 有大量相似、相同的优化技术，但因为优化的源和目标结果并不相同会有一些差异。差异可以概括为用性能换得了更多的可控和安全性(比如 安全性 是相对于同样精力编码来说的？因为C++要强行写应该也能做出安全保障吧？)，而优化技术可以看做基本都是那么些方法</p>
@@ -926,11 +995,12 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
 <li>传递性： A先于B B先于C 则 A先于C</li>
 </ul>
 <p>在满足上面的无同步手段保障时 可以随意重排序，线程不安全的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">private int value = 0;</span><br><span class="line">public void setValue(int value)&#123;</span><br><span class="line">  this.value = value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public int getValue()&#123;</span><br><span class="line">  return value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">private int value = 0;</span><br><span class="line">public void setValue(int value)&#123;</span><br><span class="line">  this.value = value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public int getValue()&#123;</span><br><span class="line">  return value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>上面规则都不适用，但是缺无法确定不同线程同时执行时这里的返回结果，所以它是线程不安全的</p>
 <p>修复问题 解决方案</p>
 <ol>
-<li>getter/setter都定义为synchronized方法 可以套用管程规则</li>
+<li>getter&#x2F;setter都定义为synchronized方法 可以套用管程规则</li>
 <li>把值定义为volatile变量</li>
 </ol>
 <hr>
@@ -1006,162 +1076,68 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
     
     
     
+      
 
-      <footer class="post-footer">
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/18-05-15-jvm/" title="深入理解java虚拟机 第二版 笔记">https://cromarmot.github.io/Blog/18-05-15-jvm/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
           <div class="post-tags">
-              <a href="/Blog/tags/java/" rel="tag"># java</a>
-              <a href="/Blog/tags/jvm/" rel="tag"># jvm</a>
+              <a href="/Blog/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+              <a href="/Blog/tags/jvm/" rel="tag"><i class="fa fa-tag"></i> jvm</a>
           </div>
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/Blog/17-11-12-quine/" rel="prev" title="quine">
-      <i class="fa fa-chevron-left"></i> quine
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/Blog/19-03-20-vueslot/" rel="next" title="vue slot">
-      vue slot <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/17-11-12-quine/" rel="prev" title="quine">
+                  <i class="fa fa-chevron-left"></i> quine
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Blog/19-03-20-vueslot/" rel="next" title="vue slot">
+                  vue slot <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-  
-  
-  
+</div>
 
 
 
-          </div>
-          
+
+
+
     
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-hello-world"><span class="nav-number">1.</span> <span class="nav-text">1 hello world</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-java内存区域与内存溢出异常"><span class="nav-number">2.</span> <span class="nav-text">2 java内存区域与内存溢出异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-垃圾收集器GC与内存分配策略"><span class="nav-number">3.</span> <span class="nav-text">3 垃圾收集器GC与内存分配策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HotSpot-算法实现"><span class="nav-number">3.1.</span> <span class="nav-text">HotSpot 算法实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾收集器"><span class="nav-number">3.2.</span> <span class="nav-text">垃圾收集器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解GC日志"><span class="nav-number">3.3.</span> <span class="nav-text">理解GC日志</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-章-虚拟机性能监控与故障处理工具"><span class="nav-number">4.</span> <span class="nav-text">4 章 虚拟机性能监控与故障处理工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-章-调优案例分析与实战"><span class="nav-number">5.</span> <span class="nav-text">5 章 调优案例分析与实战</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-类文件结构"><span class="nav-number">6.</span> <span class="nav-text">6 类文件结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-虚拟机类加载机制"><span class="nav-number">7.</span> <span class="nav-text">7 虚拟机类加载机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载过程"><span class="nav-number">7.1.</span> <span class="nav-text">类加载过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加载"><span class="nav-number">7.1.1.</span> <span class="nav-text">加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证"><span class="nav-number">7.1.2.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">7.1.3.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析"><span class="nav-number">7.1.4.</span> <span class="nav-text">解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">7.1.5.</span> <span class="nav-text">初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载器"><span class="nav-number">7.2.</span> <span class="nav-text">类加载器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-虚拟机字节码执行引擎"><span class="nav-number">8.</span> <span class="nav-text">8 虚拟机字节码执行引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法调用"><span class="nav-number">8.1.</span> <span class="nav-text">方法调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解释执行引擎"><span class="nav-number">8.2.</span> <span class="nav-text">解释执行引擎</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-类加载及执行子系统的案例与实战"><span class="nav-number">9.</span> <span class="nav-text">9 类加载及执行子系统的案例与实战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#远程执行功能"><span class="nav-number">9.1.</span> <span class="nav-text">远程执行功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-早期-编译器-优化"><span class="nav-number">10.</span> <span class="nav-text">10 早期(编译器)优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于语法糖的背后"><span class="nav-number">10.1.</span> <span class="nav-text">关于语法糖的背后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入式注解处理器-实验"><span class="nav-number">10.2.</span> <span class="nav-text">插入式注解处理器 实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">10.2.1.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-晚期-运行期-优化"><span class="nav-number">11.</span> <span class="nav-text">11 晚期(运行期)优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java与C-编译器对比"><span class="nav-number">11.1.</span> <span class="nav-text">Java与C++编译器对比</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-Java内存模型与线程"><span class="nav-number">12.</span> <span class="nav-text">12 Java内存模型与线程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-线程安全与锁优化"><span class="nav-number">13.</span> <span class="nav-text">13 线程安全与锁优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程安全的实现"><span class="nav-number">13.1.</span> <span class="nav-text">线程安全的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锁优化"><span class="nav-number">13.2.</span> <span class="nav-text">锁优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">14.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本Markdown文档依赖和感谢"><span class="nav-number">14.1.</span> <span class="nav-text">本Markdown文档依赖和感谢</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
-  <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/Blog/archives/">
-        
-          <span class="site-state-item-count">113</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/Blog/categories/">
-          
-        <span class="site-state-item-count">52</span>
-        <span class="site-state-item-name">分類</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/Blog/tags/">
-          
-        <span class="site-state-item-count">126</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/CroMarmot" title="GitHub → https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces → https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>Codeforces</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://atcoder.jp/users/cromarmot" title="AtCoder → https://atcoder.jp/users/cromarmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>AtCoder</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
@@ -1169,29 +1145,37 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
   </span>
   <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">645k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:47</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
   </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/Blog/lib/anime.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
-<script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script>
-<script src="/Blog/js/schemes/muse.js"></script>
-<script src="/Blog/js/next-boot.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
 
 
 
@@ -1200,108 +1184,17 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
 
 
 
-  <script src="/Blog/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
-      
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
 
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
 
-    
-
-  
-
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://cromarmot.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://cromarmot.github.io/Blog/18-05-15-jvm/";
-    this.page.identifier = "18-05-15-jvm/";
-    this.page.title = "深入理解java虚拟机 第二版 笔记";
-    };
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://cromarmot.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/18-05-15-jvm/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
 
 </body>
 </html>

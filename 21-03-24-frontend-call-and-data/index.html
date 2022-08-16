@@ -2,9 +2,10 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
@@ -14,92 +15,68 @@
 <link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-  <meta name="description" content="交互概念上, 这几类  触发一个远端方法 数据共享 响应式触发  回顾经典说道通信，那就回顾一下Linux的通信方式，IPC  共享文件 共享内存 管道(命名和匿名) 消息队列 sockets signal">
-<meta name="keywords" content="vue2,Angular2+,React">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="交互概念上, 这几类  触发一个远端方法 数据共享 响应式触发  回顾经典说道通信，那就回顾一下Linux的通信方式，IPC  共享文件 共享内存 管道(命名和匿名) 消息队列 sockets signal">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端通信">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/21-03-24-frontend-call-and-data/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
 <meta property="og:description" content="交互概念上, 这几类  触发一个远端方法 数据共享 响应式触发  回顾经典说道通信，那就回顾一下Linux的通信方式，IPC  共享文件 共享内存 管道(命名和匿名) 消息队列 sockets signal">
-<meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2022-07-01T10:51:47.815Z">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-03-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-16T02:17:23.733Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="vue2">
+<meta property="article:tag" content="Angular2+">
+<meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端通信">
-<meta name="twitter:description" content="交互概念上, 这几类  触发一个远端方法 数据共享 响应式触发  回顾经典说道通信，那就回顾一下Linux的通信方式，IPC  共享文件 共享内存 管道(命名和匿名) 消息队列 sockets signal">
+
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/21-03-24-frontend-call-and-data/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-TW'
-  };
-</script>
 
-  <title>前端通信 | Cro-Marmot's Blog</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/21-03-24-frontend-call-and-data/","path":"21-03-24-frontend-call-and-data/","title":"前端通信"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>前端通信 | Cro-Marmot's Blog</title>
   
 
 
 
 
 
-
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/Blog/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Cro-Marmot's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -112,34 +89,8 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">114</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">34</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">124</span></a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -150,23 +101,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜尋..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -174,76 +124,170 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A4%E4%BA%92"><span class="nav-number">1.</span> <span class="nav-text">交互</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE%E7%BB%8F%E5%85%B8"><span class="nav-number">2.</span> <span class="nav-text">回顾经典</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue"><span class="nav-number">3.</span> <span class="nav-text">Vue</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React"><span class="nav-number">4.</span> <span class="nav-text">React</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Angular2"><span class="nav-number">5.</span> <span class="nav-text">Angular2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E5%8F%AF%E8%A1%8C%E6%96%B9%E6%B3%95%E4%B8%8A"><span class="nav-number">6.1.</span> <span class="nav-text">从可行方法上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E7%90%86%E8%AE%BA-%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8%E4%B8%8A"><span class="nav-number">6.2.</span> <span class="nav-text">从理论+实际使用上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%AE%9E%E9%99%85%E4%B8%80%E7%82%B9"><span class="nav-number">6.3.</span> <span class="nav-text">更实际一点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%83%B3%E6%B3%95"><span class="nav-number">7.</span> <span class="nav-text">想法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">124</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>
-  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>
-  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+    <div class="main-inner post posts-expand">
 
 
+  
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
-            
-
-    
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-03-24-frontend-call-and-data/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
       <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="前端通信 | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           前端通信
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2021-03-24 00:00:00" itemprop="dateCreated datePublished" datetime="2021-03-24T00:00:00+08:00">2021-03-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-07-01 18:51:47" itemprop="dateModified" datetime="2022-07-01T18:51:47+08:00">2022-07-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-                </span>
-            </span>
+      <time title="創建時間：2021-03-24 00:00:00" itemprop="dateCreated datePublished" datetime="2021-03-24T00:00:00+08:00">2021-03-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-08-16 10:17:23" itemprop="dateModified" datetime="2022-08-16T10:17:23+08:00">2022-08-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+    </span>
 
-          
+  
   
   <span class="post-meta-item">
     
@@ -258,6 +302,22 @@
   </span>
   
   
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>3.4k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -266,8 +326,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <h1 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h1><p>概念上, 这几类</p>
 <ol>
 <li>触发一个远端方法</li>
@@ -283,11 +341,12 @@
 <li>sockets</li>
 <li>signal</li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
+
 <p>众所周知 进程是资源最小单位，所以线程内对数据来说是默认共享的，而进程之间需要 memorymap之类的操作，</p>
 <p>共享文件，当然加锁，慢，但数据量可以很大。</p>
-<p>signal 比如中文博客常见的暴力杀人 <code>kill -9</code> //不是，<code>Ctrl+C</code>,<code>Ctrl+Z</code>。一般来说这个古老，小巧，系统</p>
-<p>管道，常见的就是linux中 通过竖线连接的命令，这些命令呢是shell在 程序外建立的临时管道，因此对于程序本身来说和读stdin/stdout 的行为没区别。实现基本就是linux所有东西都是文件+同步+锁+一个读一个写+文件数据结构到物理页的映射. 也可以 mkfifo 创建文件来pipe通信, 本质上是字节流为单位</p>
+<p>signal 比如中文博客常见的暴力杀人 <code>kill -9</code> &#x2F;&#x2F;不是，<code>Ctrl+C</code>,<code>Ctrl+Z</code>。一般来说这个古老，小巧，系统</p>
+<p>管道，常见的就是linux中 通过竖线连接的命令，这些命令呢是shell在 程序外建立的临时管道，因此对于程序本身来说和读stdin&#x2F;stdout 的行为没区别。实现基本就是linux所有东西都是文件+同步+锁+一个读一个写+文件数据结构到物理页的映射. 也可以 mkfifo 创建文件来pipe通信, 本质上是字节流为单位</p>
 <p>消息队列，单位是消息不是字节流，其它是消息单位以上的信息内容,比如优先级，获得第x条消息, 实现上每个消息一个结构体,链表链接</p>
 <p>socket 就是套接字(domain,type,protocol)，除了网络套接字还有 unix domain socket,(domain,type,protocol,socketfd[2])</p>
 <p>另外有一句话叫不要用共享内存来通信，而是通信来共享内存, 我们能见到的内存共享基本就是虚拟地址和物理地址映，其共享的是数据内容，而一般会通过其它方式来做控制通信,比如semaphore,</p>
@@ -299,9 +358,8 @@
 <th>特点</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td><code>props</code>/<code>$emit</code></td>
+<tbody><tr>
+<td><code>props</code>&#x2F;<code>$emit</code></td>
 <td>父子，props下去的是值，$emit 上来的是带有值的事件，可以通过<code>$attrs,$listener</code>穿透, 虽然看似watch能变成事件，但本身上是别扭的并且有基础类型不触发的问题</td>
 </tr>
 <tr>
@@ -313,23 +371,22 @@
 <td>本质上是共享响应式的数据, 非事件,虽然是事件的方式操作的vuex里的数据</td>
 </tr>
 <tr>
-<td>手工一个共享对象/或<code>event = new Vue()</code>，可以支持<code>on/emit</code>方法，共享这个方法通信。</td>
+<td>手工一个共享对象&#x2F;或<code>event = new Vue()</code>，可以支持<code>on/emit</code>方法，共享这个方法通信。</td>
 <td>对象共享，可以非父子，都是事件</td>
 </tr>
 <tr>
-<td>(vuex/公共js) + (on/emit)</td>
+<td>(vuex&#x2F;公共js) + (on&#x2F;emit)</td>
 <td>明确事件 + 跨级访问，只要都能触及的对象即可</td>
 </tr>
 <tr>
-<td>provide/inject</td>
+<td>provide&#x2F;inject</td>
 <td>祖先级别，单向，默认非响应式，当然通过共享对象，原理同上也是能做到多向通信</td>
 </tr>
 <tr>
-<td>ref/ $parent</td>
+<td>ref&#x2F; $parent</td>
 <td>获取实例直接操作值或函数，父子，一定程度破坏闭包性质，可以考虑文档协定那些是作为不会变暴露的，哪些是私有不应该操作的</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><table>
 <thead>
 <tr>
@@ -337,13 +394,12 @@
 <th>特点</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>props</td>
 <td>单向，但实际上已经够了，基于这个单向的，提供回调，就能完成上面的 props+回调式</td>
 </tr>
 <tr>
-<td>context/redux</td>
+<td>context&#x2F;redux</td>
 <td>同vuex</td>
 </tr>
 <tr>
@@ -354,9 +410,8 @@
 <td>ref</td>
 <td>虽然是单向，其实有props和自身也可以做大$parent的语义, 官方</td>
 </tr>
-</tbody>
-</table>
-<h1 id="Angular2"><a href="#Angular2" class="headerlink" title="Angular2"></a>Angular2</h1><p><a href="https://angular.cn/guide/component-interaction" target="_blank" rel="noopener">https://angular.cn/guide/component-interaction</a></p>
+</tbody></table>
+<h1 id="Angular2"><a href="#Angular2" class="headerlink" title="Angular2"></a>Angular2</h1><p><a target="_blank" rel="noopener" href="https://angular.cn/guide/component-interaction">https://angular.cn/guide/component-interaction</a></p>
 <table>
 <thead>
 <tr>
@@ -364,9 +419,8 @@
 <th>特点</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>@Input/@Output</td>
+<tbody><tr>
+<td>@Input&#x2F;@Output</td>
 <td>向下值(可以通过setter截听等各种操作)，向上事件，上述回调等也是都可以去做，不过大可不必</td>
 </tr>
 <tr>
@@ -379,16 +433,15 @@
 </tr>
 <tr>
 <td>service+rxjs</td>
-<td>看起来像Vuex/Redux, 但本质是服务实现而不是响应式状态共享实现</td>
+<td>看起来像Vuex&#x2F;Redux, 但本质是服务实现而不是响应式状态共享实现</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="从可行方法上"><a href="#从可行方法上" class="headerlink" title="从可行方法上"></a>从可行方法上</h2><ol>
 <li>直接通信 向下传递值，向上发送事件</li>
 <li>向下传递回调，但上级别不需要回调的时候的兼容处理(比较好的是如果有ts，可以直接<code>?.</code>)</li>
 <li>共享通信通道（传递通道（可以孤立和复用），共同引入通道（访问一定命名空间下的））</li>
-<li>其它不是<code>操作</code>而仅仅是数据共享/ localStorge/ vuex/redux/ng service/router params, 除了路由本身这些的通信属性是远远低于数据共享属性的</li>
-<li>获取实例直接操作（依赖注入/props/ref/$parent/$child) 总之不论是啥框架这都是非优先的考虑，在解决一些上述解决不了的时候才考虑，见react的英文文档</li>
+<li>其它不是<code>操作</code>而仅仅是数据共享&#x2F; localStorge&#x2F; vuex&#x2F;redux&#x2F;ng service&#x2F;router params, 除了路由本身这些的通信属性是远远低于数据共享属性的</li>
+<li>获取实例直接操作（依赖注入&#x2F;props&#x2F;ref&#x2F;$parent&#x2F;$child) 总之不论是啥框架这都是非优先的考虑，在解决一些上述解决不了的时候才考虑，见react的英文文档</li>
 <li>当然基于本质是js的想法，你可以父传递回调函数给子组件，子组件回调给你一个有调用方法的实例，父对象在调用这个实例上的方法 XD等等花里胡哨的</li>
 </ol>
 <h2 id="从理论-实际使用上"><a href="#从理论-实际使用上" class="headerlink" title="从理论+实际使用上"></a>从理论+实际使用上</h2><ol>
@@ -399,185 +452,91 @@
 <p>而 实例，watch等不是明确事件的，虽然你可以各种手段去搞一个像是可以用作事件的，而这种东西如果能封装出可用的也不是不行，但没有封装到处这样写的话，那就是缺失语义的屎山代码的开端</p>
 <p>当需要更多的应用时, js方法都可以用，毕竟本质都是js</p>
 <p>React完全就是核心实现了props，其余非核心必要都交给用户</p>
-<p>Vue2，$emit/ref/$child/$parent , 提供的杂乱的不一致 的可用方案，优点是相对常用，缺点是破坏封装性</p>
+<p>Vue2，$emit&#x2F;ref&#x2F;$child&#x2F;$parent , 提供的杂乱的不一致 的可用方案，优点是相对常用，缺点是破坏封装性</p>
 <p>Angular2+ 看起来还是最清晰详细的，有测试示例，有传递的各种处理工具，有0代码html上的组件交互，提供了公私分明(写起来比Vue还简洁)，也提供访问实例，还有Service+RxJs，而且这里文档实例也是“生产”的写法，并没有能跑就行，比如MissionService 的Subject使用（见我翻译的另一篇rxjs的文章）</p>
-<p>react 提供核心，Vue2半成品即视感（当然react/vue2都给了你绩效机会比如你可以像有赞的代码一样封装一个好用的通信），Angular就是一个你能想到的完整实现了</p>
+<p>react 提供核心，Vue2半成品即视感（当然react&#x2F;vue2都给了你绩效机会比如你可以像有赞的代码一样封装一个好用的通信），Angular就是一个你能想到的完整实现了</p>
 <h2 id="更实际一点"><a href="#更实际一点" class="headerlink" title="更实际一点"></a>更实际一点</h2><p>暴论：考虑到有些代码，不在意代码质量，未来维护等等，以出产品为第一要义，你也可以，多获取实例调用，至少如果你的依赖组件几年不变的话，私有性等等其实是过度需求的，甚至写起来比上述的简单，也有一定的局部性保障。</p>
 <p>这是根据看了不少线上源码得出来的结论,现实世界用户产品的优先级就是高于甚至远高于代码质量</p>
 <h1 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h1><p>这里看到的是，如何在响应式框架中做通信，</p>
 <p>React直接只提供传递，剩余的事情并不关心，你要做的就是用原生js去做就行了</p>
 <p>Vue2看上去书写上看似比React多了点东西，但稍微有需求时，为了使用愿意破坏封装，要更有意义的实现，需要不少的额外手工操作代价，或者和React一样，Vue2的文档经常写一些自己的eslint过不了的示例代码。</p>
 <p>Angular2看似你只需要读一边官方文档就好了。</p>
-<p>再回顾最开始讲的linux通信，看起来都是创建一个通信通道，然后要通信的双方通过通道进行交流，而再看ipc/rpc，就是利用各种可能的通道，在上面做了一层看起来是直接调用方法的方案，而本质上只是同名和映射，使用体验上是直接调用，当然这个局限是建立在互相不能获操作对方实例的基础上的通信方案</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://vuejs.org/v2/guide/components-props.html" target="_blank" rel="noopener">https://vuejs.org/v2/guide/components-props.html</a></p>
-<p><a href="https://reactjs.org/docs/refs-and-the-dom.html" target="_blank" rel="noopener">https://reactjs.org/docs/refs-and-the-dom.html</a></p>
-<p><a href="https://angular.io/guide/component-interaction" target="_blank" rel="noopener">https://angular.io/guide/component-interaction</a></p>
-<p><a href="https://github.com/youzan/vant/blob/2.x/src/mixins/relation.js" target="_blank" rel="noopener">有赞relation</a></p>
-<p><a href="https://tldp.org/LDP/tlk/ipc/ipc.html" target="_blank" rel="noopener">https://tldp.org/LDP/tlk/ipc/ipc.html</a></p>
-<p><a href="https://man7.org/linux/man-pages/man7/mq_overview.7.html" target="_blank" rel="noopener">https://man7.org/linux/man-pages/man7/mq_overview.7.html</a></p>
+<p>再回顾最开始讲的linux通信，看起来都是创建一个通信通道，然后要通信的双方通过通道进行交流，而再看ipc&#x2F;rpc，就是利用各种可能的通道，在上面做了一层看起来是直接调用方法的方案，而本质上只是同名和映射，使用体验上是直接调用，当然这个局限是建立在互相不能获操作对方实例的基础上的通信方案</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://vuejs.org/v2/guide/components-props.html">https://vuejs.org/v2/guide/components-props.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://reactjs.org/docs/refs-and-the-dom.html">https://reactjs.org/docs/refs-and-the-dom.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://angular.io/guide/component-interaction">https://angular.io/guide/component-interaction</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/youzan/vant/blob/2.x/src/mixins/relation.js">有赞relation</a></p>
+<p><a target="_blank" rel="noopener" href="https://tldp.org/LDP/tlk/ipc/ipc.html">https://tldp.org/LDP/tlk/ipc/ipc.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://man7.org/linux/man-pages/man7/mq_overview.7.html">https://man7.org/linux/man-pages/man7/mq_overview.7.html</a></p>
 
     </div>
 
     
     
     
+      
 
-      <footer class="post-footer">
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/21-03-24-frontend-call-and-data/" title="前端通信">https://cromarmot.github.io/Blog/21-03-24-frontend-call-and-data/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
           <div class="post-tags">
-              <a href="/Blog/tags/vue2/" rel="tag"># vue2</a>
-              <a href="/Blog/tags/Angular2/" rel="tag"># Angular2+</a>
-              <a href="/Blog/tags/React/" rel="tag"># React</a>
+              <a href="/Blog/tags/vue2/" rel="tag"><i class="fa fa-tag"></i> vue2</a>
+              <a href="/Blog/tags/Angular2/" rel="tag"><i class="fa fa-tag"></i> Angular2+</a>
+              <a href="/Blog/tags/React/" rel="tag"><i class="fa fa-tag"></i> React</a>
           </div>
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/Blog/21-03-16-fiddler/" rel="prev" title="fiddler android">
-      <i class="fa fa-chevron-left"></i> fiddler android
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/Blog/21-04-01-pointers/" rel="next" title="外部文章 索引">
-      外部文章 索引 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/21-03-16-fiddler/" rel="prev" title="fiddler android">
+                  <i class="fa fa-chevron-left"></i> fiddler android
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Blog/21-04-01-pointers/" rel="next" title="外部文章 索引">
+                  外部文章 索引 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-  
-  
-  
+</div>
 
 
 
-          </div>
-          
+
+
+
     
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#交互"><span class="nav-number">1.</span> <span class="nav-text">交互</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回顾经典"><span class="nav-number">2.</span> <span class="nav-text">回顾经典</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue"><span class="nav-number">3.</span> <span class="nav-text">Vue</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React"><span class="nav-number">4.</span> <span class="nav-text">React</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Angular2"><span class="nav-number">5.</span> <span class="nav-text">Angular2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从可行方法上"><span class="nav-number">6.1.</span> <span class="nav-text">从可行方法上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从理论-实际使用上"><span class="nav-number">6.2.</span> <span class="nav-text">从理论+实际使用上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更实际一点"><span class="nav-number">6.3.</span> <span class="nav-text">更实际一点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#想法"><span class="nav-number">7.</span> <span class="nav-text">想法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
-  <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/Blog/archives/">
-        
-          <span class="site-state-item-count">113</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/Blog/categories/">
-          
-        <span class="site-state-item-count">52</span>
-        <span class="site-state-item-name">分類</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/Blog/tags/">
-          
-        <span class="site-state-item-count">126</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/CroMarmot" title="GitHub → https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces → https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>Codeforces</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://atcoder.jp/users/cromarmot" title="AtCoder → https://atcoder.jp/users/cromarmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>AtCoder</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
@@ -585,29 +544,37 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">645k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:47</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
   </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/Blog/lib/anime.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
-<script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script>
-<script src="/Blog/js/schemes/muse.js"></script>
-<script src="/Blog/js/next-boot.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
 
 
 
@@ -616,108 +583,17 @@
 
 
 
-  <script src="/Blog/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
-      
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
 
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
 
-    
-
-  
-
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://cromarmot.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://cromarmot.github.io/Blog/21-03-24-frontend-call-and-data/";
-    this.page.identifier = "21-03-24-frontend-call-and-data/";
-    this.page.title = "前端通信";
-    };
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://cromarmot.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/21-03-24-frontend-call-and-data/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
 
 </body>
 </html>

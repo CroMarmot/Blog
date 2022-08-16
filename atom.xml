@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Cro-Marmot&#39;s Blog</title>
+  <icon>https://cromarmot.github.io/Blog/icon.png</icon>
+  
+  <link href="https://cromarmot.github.io/Blog/atom.xml" rel="self"/>
+  
+  <link href="https://cromarmot.github.io/Blog/"/>
+  <updated>2022-08-16T02:17:23.733Z</updated>
+  <id>https://cromarmot.github.io/Blog/</id>
+  
+  <author>
+    <name>Cro-Marmot</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo Static Blog in 2022</title>
+    <link href="https://cromarmot.github.io/Blog/22-08-15-static-blog/"/>
+    <id>https://cromarmot.github.io/Blog/22-08-15-static-blog/</id>
+    <published>2022-08-14T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;写在-2022-年的-静态博客选择&quot;&gt;&lt;a href=&quot;#写在-2022-年的-静态博客选择&quot; class=&quot;headerlink&quot; title=&quot;写在 2022 年的 静态博客选择&quot;&gt;&lt;/a&gt;写在 2022 年的 静态博客选择&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="framework" scheme="https://cromarmot.github.io/Blog/categories/framework/"/>
+    
+    <category term="blog" scheme="https://cromarmot.github.io/Blog/categories/framework/blog/"/>
+    
+    
+    <category term="frontend" scheme="https://cromarmot.github.io/Blog/tags/frontend/"/>
+    
+    <category term="static blog" scheme="https://cromarmot.github.io/Blog/tags/static-blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TS Cheat Sheet</title>
+    <link href="https://cromarmot.github.io/Blog/22-06-30-ts-cheatsheet/"/>
+    <id>https://cromarmot.github.io/Blog/22-06-30-ts-cheatsheet/</id>
+    <published>2022-06-29T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;TS-Cheat-Sheet&quot;&gt;&lt;a href=&quot;#TS-Cheat-Sheet&quot; class=&quot;headerlink&quot; title=&quot;TS Cheat Sheet&quot;&gt;&lt;/a&gt;TS Cheat Sheet&lt;/h1&gt;&lt;h2 id=&quot;为什么写这篇&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    
+    <category term="frontend" scheme="https://cromarmot.github.io/Blog/tags/frontend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>给老电脑换个ssd, cheatsheet</title>
+    <link href="https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/"/>
+    <id>https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/</id>
+    <published>2022-03-12T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;带sudo的一定小心, 别选错盘了&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;工具推荐&quot;&gt;&lt;a href=&quot;#工具推荐&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    
+    <category term="backend" scheme="https://cromarmot.github.io/Blog/tags/backend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>豆瓣页面数据解密</title>
+    <link href="https://cromarmot.github.io/Blog/21-12-21-anti-douban/"/>
+    <id>https://cromarmot.github.io/Blog/21-12-21-anti-douban/</id>
+    <published>2021-12-20T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;个人的网页需要一些书目数据，印象中，老的豆瓣直接是页面还是接口，能获直接取到，可以作为爬虫入门练手&lt;/p&gt;
+&lt;p&gt;然而前天一看，新版的豆瓣已经不明文返回数据了&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://search.douban.com/book/subject_search?search_text=%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0&amp;amp;cat=1001&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&quot;预备知识&quot;&gt;&lt;a href=&quot;#预备知识&quot; class=&quot;headerlink&quot; title=&quot;预备知识&quot;&gt;&lt;/a&gt;预备知识&lt;/h1&gt;&lt;p&gt;&lt;code&gt;C++函数调用&lt;/code&gt;：这个知识点让你知道函数调用堆栈的常见设计&lt;/p&gt;
+&lt;p&gt;js调试：chrome断点，格式化代码，console，js基本语法，&lt;/p&gt;
+&lt;h1 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h1&gt;&lt;h2 id=&quot;定位数据来源&quot;&gt;&lt;a href=&quot;#定位数据来源&quot; class=&quot;headerlink&quot; title=&quot;定位数据来源&quot;&gt;&lt;/a&gt;定位数据来源&lt;/h2&gt;&lt;p&gt;一般来说 只要页面不用花里胡哨的技巧，比如把数据放在png里的话，一般来说，数据只会在&lt;code&gt;Fetch/XHR&lt;/code&gt;,&lt;code&gt;JS&lt;/code&gt;,&lt;code&gt;html&lt;/code&gt;，&lt;code&gt;ws&lt;/code&gt; 中&lt;/p&gt;
+&lt;p&gt;通过页面展示的&lt;code&gt;实变函数论&lt;/code&gt; 去上述类型中搜索，结果没有任何内容中直接包含数据&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="js" scheme="https://cromarmot.github.io/Blog/categories/code/js/"/>
+    
+    
+    <category term="frontend" scheme="https://cromarmot.github.io/Blog/tags/frontend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>currying 加法</title>
+    <link href="https://cromarmot.github.io/Blog/21-12-06-currying-add/"/>
+    <id>https://cromarmot.github.io/Blog/21-12-06-currying-add/</id>
+    <published>2021-12-05T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;一个支持 任意多参数，可以柯里化的加法函数&lt;/p&gt;
+&lt;h1 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="js" scheme="https://cromarmot.github.io/Blog/categories/code/js/"/>
+    
+    
+    <category term="frontend" scheme="https://cromarmot.github.io/Blog/tags/frontend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端资料链接</title>
+    <link href="https://cromarmot.github.io/Blog/21-11-22-frontEndRoadmap/"/>
+    <id>https://cromarmot.github.io/Blog/21-11-22-frontEndRoadmap/</id>
+    <published>2021-11-21T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="vue" scheme="https://cromarmot.github.io/Blog/categories/code/vue/"/>
+    
+    <category term="angular" scheme="https://cromarmot.github.io/Blog/categories/code/vue/angular/"/>
+    
+    
+    <category term="frontend" scheme="https://cromarmot.github.io/Blog/tags/frontend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你所见的pr可能不是真正的变化(Gitlab/Github pr view diff bug</title>
+    <link href="https://cromarmot.github.io/Blog/21-11-16-gitlab-github-pr-view-bug/"/>
+    <id>https://cromarmot.github.io/Blog/21-11-16-gitlab-github-pr-view-bug/</id>
+    <published>2021-11-15T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;因为工期，项目上有多个长分支，而最近在看pr的时候，发现有些已经合并过的，在页面上还是展示了变更，但是命令行里</summary>
+        
+      
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="git" scheme="https://cromarmot.github.io/Blog/categories/code/git/"/>
+    
+    
+    <category term="git" scheme="https://cromarmot.github.io/Blog/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue transition</title>
+    <link href="https://cromarmot.github.io/Blog/21-09-02-vue-transition/"/>
+    <id>https://cromarmot.github.io/Blog/21-09-02-vue-transition/</id>
+    <published>2021-09-01T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;对于transition的一个核心问题是时间哪里来的&quot;&gt;&lt;a href=&quot;#对于transition的一个核心问题是时间哪里来的&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/code/frontend/"/>
+    
+    <category term="vue" scheme="https://cromarmot.github.io/Blog/categories/code/frontend/vue/"/>
+    
+    
+    <category term="vue" scheme="https://cromarmot.github.io/Blog/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker Harbor on Ubuntu 20 on WSL2</title>
+    <link href="https://cromarmot.github.io/Blog/21-07-06-dockerharbor/"/>
+    <id>https://cromarmot.github.io/Blog/21-07-06-dockerharbor/</id>
+    <published>2021-07-05T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Docker-Harbor&quot;&gt;&lt;a href=&quot;#Docker-Harbor&quot; class=&quot;headerlink&quot; title=&quot;Docker Harbor&quot;&gt;&lt;/a&gt;Docker Harbor&lt;/h1&gt;&lt;p&gt;简单说，可以搭本地&amp;#x2F;局域网 docker仓库&lt;/p&gt;
+&lt;h1 id=&quot;前置条件&quot;&gt;&lt;a href=&quot;#前置条件&quot; class=&quot;headerlink&quot; title=&quot;前置条件&quot;&gt;&lt;/a&gt;前置条件&lt;/h1&gt;&lt;p&gt;Ubuntu 或 其它linux 或 Ubuntu on WSL2&lt;/p&gt;
+&lt;h1 id=&quot;依赖&quot;&gt;&lt;a href=&quot;#依赖&quot; class=&quot;headerlink&quot; title=&quot;依赖&quot;&gt;&lt;/a&gt;依赖&lt;/h1&gt;&lt;p&gt;安装docker:&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt install docker.io docker-compose&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;下载包&quot;&gt;&lt;a href=&quot;#下载包&quot; class=&quot;headerlink&quot; title=&quot;下载包&quot;&gt;&lt;/a&gt;下载包&lt;/h1&gt;&lt;p&gt;经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2 &lt;strong&gt;私有&lt;/strong&gt;的目录下&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/goharbor/harbor/releases&quot;&gt;https://github.com/goharbor/harbor/releases&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解压&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar xvzf harbor-offline-installer-*.tgz &amp;amp;&amp;amp; cd harbor&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;SSL等配置&quot;&gt;&lt;a href=&quot;#SSL等配置&quot; class=&quot;headerlink&quot; title=&quot;SSL等配置&quot;&gt;&lt;/a&gt;SSL等配置&lt;/h1&gt;&lt;p&gt;这玩意一定要SSL, 这里用自签&lt;/p&gt;
+&lt;p&gt;ip查看&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ifconfig | grep inet&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="docker" scheme="https://cromarmot.github.io/Blog/categories/code/docker/"/>
+    
+    <category term="harbor" scheme="https://cromarmot.github.io/Blog/categories/code/docker/harbor/"/>
+    
+    
+    <category term="docker" scheme="https://cromarmot.github.io/Blog/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>迁移到win</title>
+    <link href="https://cromarmot.github.io/Blog/21-07-05-migrate2win/"/>
+    <id>https://cromarmot.github.io/Blog/21-07-05-migrate2win/</id>
+    <published>2021-07-04T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;apt&quot;&gt;&lt;a href=&quot;#apt&quot; class=&quot;headerlink&quot; title=&quot;apt&quot;&gt;&lt;/a&gt;apt&lt;/h1&gt;&lt;p&gt;怀念 Debian apt 的好, 在windows上腾讯软件管家成了我的“apt”&lt;/p&gt;
+&lt;h1 id=&quot;以下是一些问题记录&quot;&gt;&lt;a href=&quot;#以下是一些问题记录&quot; class=&quot;headerlink&quot; title=&quot;以下是一些问题记录&quot;&gt;&lt;/a&gt;以下是一些问题记录&lt;/h1&gt;&lt;h1 id=&quot;vscode&quot;&gt;&lt;a href=&quot;#vscode&quot; class=&quot;headerlink&quot; title=&quot;vscode&quot;&gt;&lt;/a&gt;vscode&lt;/h1&gt;&lt;p&gt;set &lt;code&gt;git bash&lt;/code&gt; as default terminal&lt;/p&gt;
+&lt;h1 id=&quot;windows-terminal&quot;&gt;&lt;a href=&quot;#windows-terminal&quot; class=&quot;headerlink&quot; title=&quot;windows terminal&quot;&gt;&lt;/a&gt;windows terminal&lt;/h1&gt;&lt;p&gt;windows terminal 双击点击鼠标选择 在单词和行选择切换,而非空格分割和行之间切换&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/60441221/double-click-to-select-text-in-windows-terminal-selects-only-one-word&quot;&gt;https://stackoverflow.com/questions/60441221/double-click-to-select-text-in-windows-terminal-selects-only-one-word&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Git&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;更应该 不要 win和wsl共用磁盘&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes&quot;&gt;https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/50096060/how-to-switch-branch-when-filename-case-changes&quot;&gt;https://stackoverflow.com/questions/50096060/how-to-switch-branch-when-filename-case-changes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;git bash ssh-keygen (same as linux)&lt;/p&gt;
+&lt;p&gt;wsl2 里 默认编辑器&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits&quot;&gt;https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;中文乱码：log commit信息, diff 文件内容, 文件名&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window&quot;&gt;https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com/xkyii/1079783/3e77453c05f6bcbce133fd0ba128686683f75bf8&quot;&gt;https://gist.github.com/xkyii/1079783/3e77453c05f6bcbce133fd0ba128686683f75bf8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;win10有个Beta版本的区域utf-8设置，开了以后很多软件都是乱码，包括微信小程序开发工具,哎，&lt;/p&gt;
+&lt;h1 id=&quot;Chrome&quot;&gt;&lt;a href=&quot;#Chrome&quot; class=&quot;headerlink&quot; title=&quot;Chrome&quot;&gt;&lt;/a&gt;Chrome&lt;/h1&gt;&lt;p&gt;account sync&lt;/p&gt;
+&lt;p&gt;default browser( &lt;a href=&quot;https://github.com/da2x/EdgeDeflector&quot;&gt;https://github.com/da2x/EdgeDeflector&lt;/a&gt;  )&lt;/p&gt;
+&lt;h1 id=&quot;firefox&quot;&gt;&lt;a href=&quot;#firefox&quot; class=&quot;headerlink&quot; title=&quot;firefox&quot;&gt;&lt;/a&gt;firefox&lt;/h1&gt;&lt;p&gt;国内外登录地址一个有.cn 一个没有，所以不同地址相同邮箱账号不同, 选择firefox 官方 developer 版本+ win x64 版本+English版本&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-developer&quot;&gt;https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-developer&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Python-被windows商店劫持&quot;&gt;&lt;a href=&quot;#Python-被windows商店劫持&quot; class=&quot;headerlink&quot; title=&quot;Python 被windows商店劫持&quot;&gt;&lt;/a&gt;Python 被windows商店劫持&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python&quot;&gt;https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="win" scheme="https://cromarmot.github.io/Blog/categories/code/win/"/>
+    
+    
+    <category term="win" scheme="https://cromarmot.github.io/Blog/tags/win/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react 计时器与 useRef, useState</title>
+    <link href="https://cromarmot.github.io/Blog/21-05-25-react-timer/"/>
+    <id>https://cromarmot.github.io/Blog/21-05-25-react-timer/</id>
+    <published>2021-05-24T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;开始&quot;&gt;&lt;a href=&quot;#开始&quot; class=&quot;headerlink&quot; title=&quot;开始&quot;&gt;&lt;/a&gt;开始&lt;/h1&gt;&lt;p&gt;一般来说tutorial, 是从有什么讲什么的开始&lt;/p&gt;
+&lt;p&gt;这里我们假设一个已经能写js的,但只是搜索react的用法,然后就开始用,可能遇到的问题(坑?)&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="react" scheme="https://cromarmot.github.io/Blog/categories/code/react/"/>
+    
+    
+    <category term="react" scheme="https://cromarmot.github.io/Blog/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>latex on debian</title>
+    <link href="https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/"/>
+    <id>https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/</id>
+    <published>2021-05-11T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;&lt;code&gt;sudo apt install texlive-full&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;包还蛮大的，3GB下载，5GB展开&lt;/p&gt;
+&lt;h1 id=&quot;Interface-zh-CN&quot;&gt;&lt;a href=&quot;#Interface-zh-CN&quot; class=&quot;headerlink&quot; title=&quot;Interface zh_CN&quot;&gt;&lt;/a&gt;Interface zh_CN&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Options-&amp;gt;Configure TeXstudio-&amp;gt;General-&amp;gt;Language&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Hello-world&quot;&gt;&lt;a href=&quot;#Hello-world&quot; class=&quot;headerlink&quot; title=&quot;Hello world&quot;&gt;&lt;/a&gt;Hello world&lt;/h1&gt;&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;% !TEX program = xelatex&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;% !Mode:: &amp;quot;TeX:UTF-8&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;%Save as UTF-8, run xelatex.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\documentclass&lt;/span&gt;&amp;#123;article&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\usepackage&lt;/span&gt;&amp;#123;xeCJK&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\begin&lt;/span&gt;&amp;#123;document&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hello,你好&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\end&lt;/span&gt;&amp;#123;document&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="latex" scheme="https://cromarmot.github.io/Blog/categories/code/latex/"/>
+    
+    
+    <category term="latex" scheme="https://cromarmot.github.io/Blog/tags/latex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gogs with docker 破事水</title>
+    <link href="https://cromarmot.github.io/Blog/21-04-27-gogs/"/>
+    <id>https://cromarmot.github.io/Blog/21-04-27-gogs/</id>
+    <published>2021-04-26T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;起&quot;&gt;&lt;a href=&quot;#起&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="git" scheme="https://cromarmot.github.io/Blog/categories/code/git/"/>
+    
+    
+    <category term="git" scheme="https://cromarmot.github.io/Blog/tags/git/"/>
+    
+    <category term="gogs" scheme="https://cromarmot.github.io/Blog/tags/gogs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>外部文章 索引</title>
+    <link href="https://cromarmot.github.io/Blog/21-04-01-pointers/"/>
+    <id>https://cromarmot.github.io/Blog/21-04-01-pointers/</id>
+    <published>2021-03-31T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;总&quot;&gt;&lt;a href=&quot;#总&quot; class=&quot;headerlink&quot; title=&quot;总&quot;&gt;&lt;/a&gt;总&lt;/h1&gt;&lt;p&gt;有些别人整理过的，暂时也不太需要二次整理的文章，建立索引，缺点是可能失效链接和无法自己维护, 移除用twitter书签的, 手机 Pocket,</summary>
+        
+      
+    
+    
+    
+    <category term="notes" scheme="https://cromarmot.github.io/Blog/categories/notes/"/>
+    
+    
+    <category term="article" scheme="https://cromarmot.github.io/Blog/tags/article/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端通信</title>
+    <link href="https://cromarmot.github.io/Blog/21-03-24-frontend-call-and-data/"/>
+    <id>https://cromarmot.github.io/Blog/21-03-24-frontend-call-and-data/</id>
+    <published>2021-03-23T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;交互&quot;&gt;&lt;a href=&quot;#交互&quot; class=&quot;headerlink&quot; title=&quot;交互&quot;&gt;&lt;/a&gt;交互&lt;/h1&gt;&lt;p&gt;概念上, 这几类&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;触发一个远端方法&lt;/li&gt;
+&lt;li&gt;数据共享&lt;/li&gt;
+&lt;li&gt;响应式触发&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;回顾经典&quot;&gt;&lt;a href=&quot;#回顾经典&quot; class=&quot;headerlink&quot; title=&quot;回顾经典&quot;&gt;&lt;/a&gt;回顾经典&lt;/h1&gt;&lt;p&gt;说道通信，那就回顾一下Linux的通信方式，IPC&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;共享文件&lt;/li&gt;
+&lt;li&gt;共享内存&lt;/li&gt;
+&lt;li&gt;管道(命名和匿名)&lt;/li&gt;
+&lt;li&gt;消息队列&lt;/li&gt;
+&lt;li&gt;sockets&lt;/li&gt;
+&lt;li&gt;signal&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/code/frontend/"/>
+    
+    
+    <category term="vue2" scheme="https://cromarmot.github.io/Blog/tags/vue2/"/>
+    
+    <category term="Angular2+" scheme="https://cromarmot.github.io/Blog/tags/Angular2/"/>
+    
+    <category term="React" scheme="https://cromarmot.github.io/Blog/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fiddler android</title>
+    <link href="https://cromarmot.github.io/Blog/21-03-16-fiddler/"/>
+    <id>https://cromarmot.github.io/Blog/21-03-16-fiddler/</id>
+    <published>2021-03-15T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;fiddler&quot;&gt;&lt;a href=&quot;#fiddler&quot; class=&quot;headerlink&quot; title=&quot;fiddler&quot;&gt;&lt;/a&gt;fiddler&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.telerik.com/download/fiddler/fiddler-everywhere-linux&quot;&gt;https://www.telerik.com/download/fiddler/fiddler-everywhere-linux&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;android&quot;&gt;&lt;a href=&quot;#android&quot; class=&quot;headerlink&quot; title=&quot;android&quot;&gt;&lt;/a&gt;android&lt;/h1&gt;&lt;p&gt;fiddler 开个代理，手机wifi 自定义过去&lt;/p&gt;
+&lt;p&gt;http没啥说的&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="android" scheme="https://cromarmot.github.io/Blog/categories/code/android/"/>
+    
+    
+    <category term="fiddler" scheme="https://cromarmot.github.io/Blog/tags/fiddler/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue2源码阅读(由xmind笔记生成)</title>
+    <link href="https://cromarmot.github.io/Blog/21-03-11-vue2source/"/>
+    <id>https://cromarmot.github.io/Blog/21-03-11-vue2source/</id>
+    <published>2021-03-10T16:00:00.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;源代码&quot;&gt;&lt;a href=&quot;#源代码&quot; class=&quot;headerlink&quot; title=&quot;源代码&quot;&gt;&lt;/a&gt;源代码&lt;/h1&gt;&lt;h2 id=&quot;commit-hash&quot;&gt;&lt;a href=&quot;#commit-hash&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/code/frontend/"/>
+    
+    <category term="vue" scheme="https://cromarmot.github.io/Blog/categories/code/frontend/vue/"/>
+    
+    
+    <category term="js" scheme="https://cromarmot.github.io/Blog/tags/js/"/>
+    
+    <category term="vue2" scheme="https://cromarmot.github.io/Blog/tags/vue2/"/>
+    
+    <category term="source code" scheme="https://cromarmot.github.io/Blog/tags/source-code/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>amd/cmd/commonjs/umd/esm/iife/systemjs</title>
+    <link href="https://cromarmot.github.io/Blog/21-03-09-js-module/"/>
+    <id>https://cromarmot.github.io/Blog/21-03-09-js-module/</id>
+    <published>2021-03-09T13:58:14.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;总&quot;&gt;&lt;a href=&quot;#总&quot; class=&quot;headerlink&quot; title=&quot;总&quot;&gt;&lt;/a&gt;总&lt;/h1&gt;&lt;p&gt;为了模块拆分&lt;/p&gt;
+&lt;h1 id=&quot;AMD-asynchromous-module-definition-异步模块定义&quot;&gt;&lt;a href=&quot;#AMD-asynchromous-module-definition-异步模块定义&quot; class=&quot;headerlink&quot; title=&quot;AMD(asynchromous module definition 异步模块定义)&quot;&gt;&lt;/a&gt;AMD(asynchromous module definition 异步模块定义)&lt;/h1&gt;&lt;p&gt;RequireJS,前端，异步&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title function_&quot;&gt;define&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&amp;#x27;module1&amp;#x27;&lt;/span&gt;, [&lt;span class=&quot;string&quot;&gt;&amp;#x27;jquery&amp;#x27;&lt;/span&gt;], &lt;span class=&quot;function&quot;&gt;(&lt;span class=&quot;params&quot;&gt;$&lt;/span&gt;) =&amp;gt;&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//do something...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title function_&quot;&gt;define&lt;/span&gt;(模块, [依赖的模块], &lt;span class=&quot;function&quot;&gt;(&lt;span class=&quot;params&quot;&gt;$&lt;/span&gt;) =&amp;gt;&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//do something...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/code/frontend/"/>
+    
+    
+    <category term="js module" scheme="https://cromarmot.github.io/Blog/tags/js-module/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.d 文件夹</title>
+    <link href="https://cromarmot.github.io/Blog/21-03-08-dotd-folder/"/>
+    <id>https://cromarmot.github.io/Blog/21-03-08-dotd-folder/</id>
+    <published>2021-03-08T13:58:14.000Z</published>
+    <updated>2022-08-16T02:17:23.733Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;d-文件夹&quot;&gt;&lt;a href=&quot;#d-文件夹&quot; class=&quot;headerlink&quot; title=&quot;.d 文件夹&quot;&gt;&lt;/a&gt;.d 文件夹&lt;/h1&gt;&lt;p&gt;众所周知， debian系列的软件源列表, 从最早手动的改动&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;,到后面在&lt;code&gt;/etc/apt/sources.list.d/&lt;/code&gt; 中手动增加，以及有软件可以直接更换不需要手动改&lt;/p&gt;
+&lt;p&gt;apache2 也从直接&lt;code&gt;conf&lt;/code&gt;变成了&lt;code&gt;sites-enabled/&lt;/code&gt; 和&lt;code&gt;sites-available/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;nginx 也从&lt;code&gt;nginx.conf&lt;/code&gt; 变成去配置 &lt;code&gt;conf.d/&lt;/code&gt; 里的&lt;/p&gt;
+&lt;p&gt;虽然老的方法也可以用, 但更多的都变成&lt;code&gt;.d&lt;/code&gt; 文件夹之类的&lt;/p&gt;
+&lt;p&gt;然而一堆文章还在改 主配置文件文件&lt;/p&gt;
+&lt;p&gt;甚至 例如 fail2ban的配置文件 已经明确说了, 还是有人在改主conf&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="linux" scheme="https://cromarmot.github.io/Blog/categories/code/linux/"/>
+    
+    
+    <category term="server" scheme="https://cromarmot.github.io/Blog/tags/server/"/>
+    
+    <category term="linux" scheme="https://cromarmot.github.io/Blog/tags/linux/"/>
+    
+    <category term="config" scheme="https://cromarmot.github.io/Blog/tags/config/"/>
+    
+    <category term="etc" scheme="https://cromarmot.github.io/Blog/tags/etc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>v-for, ngFor, react(for) 列表真的需要key吗</title>
+    <link href="https://cromarmot.github.io/Blog/21-02-18-html-for/"/>
+    <id>https://cromarmot.github.io/Blog/21-02-18-html-for/</id>
+    <published>2021-02-18T13:58:14.000Z</published>
+    <updated>2022-08-16T02:17:23.729Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;总述问题&quot;&gt;&lt;a href=&quot;#总述问题&quot; class=&quot;headerlink&quot; title=&quot;总述问题&quot;&gt;&lt;/a&gt;总述问题&lt;/h1&gt;&lt;p&gt;列表渲染时，在对列表插入和移除之类的操作时，会因为其设计的“替换算法”，导致语义上的对应映射错误&lt;/p&gt;
+&lt;p&gt;原始列表&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[ ] A&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[勾选] B&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[ ] C&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;Related-articles&quot;&gt;&lt;a href=&quot;#Related-articles&quot; class=&quot;headerlink&quot; title=&quot;Related articles&quot;&gt;&lt;/a&gt;Related articles&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://vuejs.org/v2/guide/list.html#Maintaining-State&quot;&gt;https://vuejs.org/v2/guide/list.html#Maintaining-State&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://forum.vuejs.org/t/v-for-with-simple-arrays-what-key-to-use/13692&quot;&gt;https://forum.vuejs.org/t/v-for-with-simple-arrays-what-key-to-use/13692&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.jianshu.com/p/4bd5e745ce95&quot;&gt;https://www.jianshu.com/p/4bd5e745ce95&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/61064119&quot;&gt;https://www.zhihu.com/question/61064119&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="code" scheme="https://cromarmot.github.io/Blog/categories/code/"/>
+    
+    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/code/frontend/"/>
+    
+    
+    <category term="vue2" scheme="https://cromarmot.github.io/Blog/tags/vue2/"/>
+    
+    <category term="Angular2+" scheme="https://cromarmot.github.io/Blog/tags/Angular2/"/>
+    
+    <category term="react" scheme="https://cromarmot.github.io/Blog/tags/react/"/>
+    
+    <category term="for" scheme="https://cromarmot.github.io/Blog/tags/for/"/>
+    
+  </entry>
+  
+</feed>

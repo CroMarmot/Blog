@@ -2,9 +2,10 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
@@ -14,94 +15,68 @@
 <link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-  <meta name="description" content="apt怀念 Debian apt 的好, 在windows上腾讯软件管家成了我的“apt” 以下是一些问题记录vscodeset git bash as default terminal windows terminalwindows terminal 双击点击鼠标选择 在单词和行选择切换,而非空格分割和行之间切换 https://stackoverflow.com/questions/60441">
-<meta name="keywords" content="win">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="apt怀念 Debian apt 的好, 在windows上腾讯软件管家成了我的“apt” 以下是一些问题记录vscodeset git bash as default terminal windows terminalwindows terminal 双击点击鼠标选择 在单词和行选择切换,而非空格分割和行之间切换 https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;60441">
 <meta property="og:type" content="article">
 <meta property="og:title" content="迁移到win">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/21-07-05-migrate2win/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
-<meta property="og:description" content="apt怀念 Debian apt 的好, 在windows上腾讯软件管家成了我的“apt” 以下是一些问题记录vscodeset git bash as default terminal windows terminalwindows terminal 双击点击鼠标选择 在单词和行选择切换,而非空格分割和行之间切换 https://stackoverflow.com/questions/60441">
-<meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="https://cromarmot.github.io/Blog/images/migrate2win.png">
-<meta property="og:updated_time" content="2022-07-01T10:51:47.815Z">
+<meta property="og:description" content="apt怀念 Debian apt 的好, 在windows上腾讯软件管家成了我的“apt” 以下是一些问题记录vscodeset git bash as default terminal windows terminalwindows terminal 双击点击鼠标选择 在单词和行选择切换,而非空格分割和行之间切换 https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;60441">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://cromarmot.github.io/Blog/Blog/images/migrate2win.png">
+<meta property="article:published_time" content="2021-07-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-16T02:17:23.733Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="win">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="迁移到win">
-<meta name="twitter:description" content="apt怀念 Debian apt 的好, 在windows上腾讯软件管家成了我的“apt” 以下是一些问题记录vscodeset git bash as default terminal windows terminalwindows terminal 双击点击鼠标选择 在单词和行选择切换,而非空格分割和行之间切换 https://stackoverflow.com/questions/60441">
-<meta name="twitter:image" content="https://cromarmot.github.io/Blog/images/migrate2win.png">
+<meta name="twitter:image" content="https://cromarmot.github.io/Blog/Blog/images/migrate2win.png">
+
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/21-07-05-migrate2win/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-TW'
-  };
-</script>
 
-  <title>迁移到win | Cro-Marmot's Blog</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/21-07-05-migrate2win/","path":"21-07-05-migrate2win/","title":"迁移到win"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>迁移到win | Cro-Marmot's Blog</title>
   
 
 
 
 
 
-
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/Blog/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Cro-Marmot's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -114,34 +89,8 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">114</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">34</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">124</span></a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -152,23 +101,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜尋..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -176,76 +124,170 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#apt"><span class="nav-number">1.</span> <span class="nav-text">apt</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5%E4%B8%8B%E6%98%AF%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95"><span class="nav-number">2.</span> <span class="nav-text">以下是一些问题记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vscode"><span class="nav-number">3.</span> <span class="nav-text">vscode</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#windows-terminal"><span class="nav-number">4.</span> <span class="nav-text">windows terminal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">5.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chrome"><span class="nav-number">6.</span> <span class="nav-text">Chrome</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#firefox"><span class="nav-number">7.</span> <span class="nav-text">firefox</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-%E8%A2%ABwindows%E5%95%86%E5%BA%97%E5%8A%AB%E6%8C%81"><span class="nav-number">8.</span> <span class="nav-text">Python 被windows商店劫持</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#wsl2-777%E7%9C%8B%E5%BE%97%E6%88%91%E6%9C%89%E7%82%B9%E5%A4%B4%E7%96%BC%EF%BC%8C%E4%B8%8D%E8%BF%87%E5%AE%98%E6%96%B9%E5%BB%BA%E8%AE%AE%E4%B8%80%E8%88%AC%E6%9D%A5%E8%AF%B4%E4%B8%8D%E8%A6%81%E5%85%B1%E7%94%A8%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">9.</span> <span class="nav-text">wsl2 (777看得我有点头疼，不过官方建议一般来说不要共用文件夹)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#proxy"><span class="nav-number">10.</span> <span class="nav-text">proxy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ADB"><span class="nav-number">11.</span> <span class="nav-text">ADB</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nvm-nodejs"><span class="nav-number">12.</span> <span class="nav-text">nvm(nodejs)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#symlink"><span class="nav-number">13.</span> <span class="nav-text">symlink</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#win10%E6%9B%B4%E6%96%B0%E5%92%8C%E6%8C%87%E7%BA%B9%E9%97%AE%E9%A2%98"><span class="nav-number">14.</span> <span class="nav-text">win10更新和指纹问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93"><span class="nav-number">15.</span> <span class="nav-text">文件传输</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">16.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">124</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>
-  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>
-  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+    <div class="main-inner post posts-expand">
 
 
+  
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
-            
-
-    
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-07-05-migrate2win/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
       <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="迁移到win | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           迁移到win
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2021-07-05 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-05T00:00:00+08:00">2021-07-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-07-01 18:51:47" itemprop="dateModified" datetime="2022-07-01T18:51:47+08:00">2022-07-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/win/" itemprop="url" rel="index"><span itemprop="name">win</span></a>
-                </span>
-            </span>
+      <time title="創建時間：2021-07-05 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-05T00:00:00+08:00">2021-07-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-08-16 10:17:23" itemprop="dateModified" datetime="2022-08-16T10:17:23+08:00">2022-08-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/win/" itemprop="url" rel="index"><span itemprop="name">win</span></a>
+        </span>
+    </span>
 
-          
+  
   
   <span class="post-meta-item">
     
@@ -260,6 +302,22 @@
   </span>
   
   
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>3.3k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -268,56 +326,55 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <h1 id="apt"><a href="#apt" class="headerlink" title="apt"></a>apt</h1><p>怀念 Debian apt 的好, 在windows上腾讯软件管家成了我的“apt”</p>
 <h1 id="以下是一些问题记录"><a href="#以下是一些问题记录" class="headerlink" title="以下是一些问题记录"></a>以下是一些问题记录</h1><h1 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h1><p>set <code>git bash</code> as default terminal</p>
 <h1 id="windows-terminal"><a href="#windows-terminal" class="headerlink" title="windows terminal"></a>windows terminal</h1><p>windows terminal 双击点击鼠标选择 在单词和行选择切换,而非空格分割和行之间切换</p>
-<p><a href="https://stackoverflow.com/questions/60441221/double-click-to-select-text-in-windows-terminal-selects-only-one-word" target="_blank" rel="noopener">https://stackoverflow.com/questions/60441221/double-click-to-select-text-in-windows-terminal-selects-only-one-word</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/60441221/double-click-to-select-text-in-windows-terminal-selects-only-one-word">https://stackoverflow.com/questions/60441221/double-click-to-select-text-in-windows-terminal-selects-only-one-word</a></p>
 <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><strong>更应该 不要 win和wsl共用磁盘</strong></p>
-<p><a href="https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes" target="_blank" rel="noopener">https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes</a></p>
-<p><a href="https://stackoverflow.com/questions/50096060/how-to-switch-branch-when-filename-case-changes" target="_blank" rel="noopener">https://stackoverflow.com/questions/50096060/how-to-switch-branch-when-filename-case-changes</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes">https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/50096060/how-to-switch-branch-when-filename-case-changes">https://stackoverflow.com/questions/50096060/how-to-switch-branch-when-filename-case-changes</a></p>
 <p>git bash ssh-keygen (same as linux)</p>
 <p>wsl2 里 默认编辑器</p>
-<p><a href="https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits" target="_blank" rel="noopener">https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits">https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits</a></p>
 <p>中文乱码：log commit信息, diff 文件内容, 文件名</p>
-<p><a href="https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window" target="_blank" rel="noopener">https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window</a></p>
-<p><a href="https://gist.github.com/xkyii/1079783/3e77453c05f6bcbce133fd0ba128686683f75bf8" target="_blank" rel="noopener">https://gist.github.com/xkyii/1079783/3e77453c05f6bcbce133fd0ba128686683f75bf8</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window">https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window</a></p>
+<p><a target="_blank" rel="noopener" href="https://gist.github.com/xkyii/1079783/3e77453c05f6bcbce133fd0ba128686683f75bf8">https://gist.github.com/xkyii/1079783/3e77453c05f6bcbce133fd0ba128686683f75bf8</a></p>
 <p>win10有个Beta版本的区域utf-8设置，开了以后很多软件都是乱码，包括微信小程序开发工具,哎，</p>
 <h1 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h1><p>account sync</p>
-<p>default browser( <a href="https://github.com/da2x/EdgeDeflector" target="_blank" rel="noopener">https://github.com/da2x/EdgeDeflector</a>  )</p>
+<p>default browser( <a target="_blank" rel="noopener" href="https://github.com/da2x/EdgeDeflector">https://github.com/da2x/EdgeDeflector</a>  )</p>
 <h1 id="firefox"><a href="#firefox" class="headerlink" title="firefox"></a>firefox</h1><p>国内外登录地址一个有.cn 一个没有，所以不同地址相同邮箱账号不同, 选择firefox 官方 developer 版本+ win x64 版本+English版本</p>
-<p><a href="https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-developer" target="_blank" rel="noopener">https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-developer</a></p>
-<h1 id="Python-被windows商店劫持"><a href="#Python-被windows商店劫持" class="headerlink" title="Python 被windows商店劫持"></a>Python 被windows商店劫持</h1><p><a href="https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python" target="_blank" rel="noopener">https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python</a></p>
-<a id="more"></a>
-<h1 id="wsl2-777看得我有点头疼，不过官方建议一般来说不要共用文件夹"><a href="#wsl2-777看得我有点头疼，不过官方建议一般来说不要共用文件夹" class="headerlink" title="wsl2 (777看得我有点头疼，不过官方建议一般来说不要共用文件夹)"></a>wsl2 (777看得我有点头疼，不过官方建议一般来说不要共用文件夹)</h1><p><a href="https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#step-1---enable-the-windows-subsystem-for-linux" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#step-1---enable-the-windows-subsystem-for-linux</a></p>
-<p>桌面方案xfce4+xrdp+windows远程桌面,xfce4相对轻量，也可以用gnome <a href="https://gist.github.com/Ta180m/e1471413f62e3ed94e72001d42e77e22" target="_blank" rel="noopener">https://gist.github.com/Ta180m/e1471413f62e3ed94e72001d42e77e22</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-developer">https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-developer</a></p>
+<h1 id="Python-被windows商店劫持"><a href="#Python-被windows商店劫持" class="headerlink" title="Python 被windows商店劫持"></a>Python 被windows商店劫持</h1><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python">https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python</a></p>
+<span id="more"></span>
+
+<h1 id="wsl2-777看得我有点头疼，不过官方建议一般来说不要共用文件夹"><a href="#wsl2-777看得我有点头疼，不过官方建议一般来说不要共用文件夹" class="headerlink" title="wsl2 (777看得我有点头疼，不过官方建议一般来说不要共用文件夹)"></a>wsl2 (777看得我有点头疼，不过官方建议一般来说不要共用文件夹)</h1><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#step-1---enable-the-windows-subsystem-for-linux">https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#step-1---enable-the-windows-subsystem-for-linux</a></p>
+<p>桌面方案xfce4+xrdp+windows远程桌面,xfce4相对轻量，也可以用gnome <a target="_blank" rel="noopener" href="https://gist.github.com/Ta180m/e1471413f62e3ed94e72001d42e77e22">https://gist.github.com/Ta180m/e1471413f62e3ed94e72001d42e77e22</a></p>
 <p><code>sudo update-alternatives --config x-session-manager</code> 默认桌面设置</p>
 <p>开发方案wsl2内部文件夹 + vscode wsl插件</p>
 <p>网络问题</p>
 <p><code>New-NetFirewallRule -DisplayName &quot;WSL&quot; -Direction Inbound  -InterfaceAlias &quot;vEthernet (WSL)&quot;  -Action Allow</code></p>
-<p><a href="https://github.com/microsoft/WSL/issues/5805#issuecomment-686807121" target="_blank" rel="noopener">https://github.com/microsoft/WSL/issues/5805#issuecomment-686807121</a></p>
-<p><a href="https://github.com/microsoft/WSL/issues/4585" target="_blank" rel="noopener">https://github.com/microsoft/WSL/issues/4585</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/issues/5805#issuecomment-686807121">https://github.com/microsoft/WSL/issues/5805#issuecomment-686807121</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/issues/4585">https://github.com/microsoft/WSL/issues/4585</a></p>
 <p>oh-my-zsh 字体</p>
-<p><a href="https://blog.nillsf.com/index.php/2020/02/17/setting-up-wsl2-windows-terminal-and-oh-my-zsh/" target="_blank" rel="noopener">https://blog.nillsf.com/index.php/2020/02/17/setting-up-wsl2-windows-terminal-and-oh-my-zsh/</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.nillsf.com/index.php/2020/02/17/setting-up-wsl2-windows-terminal-and-oh-my-zsh/">https://blog.nillsf.com/index.php/2020/02/17/setting-up-wsl2-windows-terminal-and-oh-my-zsh/</a></p>
 <p>vim (ctrl+shift+v粘贴)</p>
-<p><a href="https://stackoverflow.com/questions/61824177/visual-block-mode-not-working-in-vim-with-c-v-on-wslwindows-10" target="_blank" rel="noopener">https://stackoverflow.com/questions/61824177/visual-block-mode-not-working-in-vim-with-c-v-on-wslwindows-10</a></p>
-<p><a href="https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/61824177/visual-block-mode-not-working-in-vim-with-c-v-on-wslwindows-10">https://stackoverflow.com/questions/61824177/visual-block-mode-not-working-in-vim-with-c-v-on-wslwindows-10</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions">https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions</a></p>
 <p>当然需要一点网络基础知识，无脑的话，把server地址设为0.0.0.0</p>
-<p><a href="https://github.com/Microsoft/WSL/issues/1032" target="_blank" rel="noopener">https://github.com/Microsoft/WSL/issues/1032</a></p>
-<h1 id="proxy"><a href="#proxy" class="headerlink" title="proxy"></a>proxy</h1><p><a href="https://github.com/Qv2ray/Qv2ray" target="_blank" rel="noopener">https://github.com/Qv2ray/Qv2ray</a></p>
-<p><a href="https://github.com/v2ray/v2ray-core" target="_blank" rel="noopener">https://github.com/v2ray/v2ray-core</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Microsoft/WSL/issues/1032">https://github.com/Microsoft/WSL/issues/1032</a></p>
+<h1 id="proxy"><a href="#proxy" class="headerlink" title="proxy"></a>proxy</h1><p><a target="_blank" rel="noopener" href="https://github.com/Qv2ray/Qv2ray">https://github.com/Qv2ray/Qv2ray</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/v2ray/v2ray-core">https://github.com/v2ray/v2ray-core</a></p>
 <p>访问主机见上面微软的文档</p>
-<p><a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="noopener">https://github.com/rofl0r/proxychains-ng</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/rofl0r/proxychains-ng">https://github.com/rofl0r/proxychains-ng</a></p>
 <h1 id="ADB"><a href="#ADB" class="headerlink" title="ADB"></a>ADB</h1><p>idea + android + PATH 设置</p>
-<h1 id="nvm-nodejs"><a href="#nvm-nodejs" class="headerlink" title="nvm(nodejs)"></a>nvm(nodejs)</h1><p><a href="https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows</a></p>
-<h1 id="symlink"><a href="#symlink" class="headerlink" title="symlink"></a>symlink</h1><p><a href="https://docs.microsoft.com/zh-cn/windows/security/threat-protection/security-policy-settings/create-symbolic-links" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows/security/threat-protection/security-policy-settings/create-symbolic-links</a></p>
-<p><a href="https://stackoverflow.com/questions/18641864/git-bash-shell-fails-to-create-symbolic-links" target="_blank" rel="noopener">https://stackoverflow.com/questions/18641864/git-bash-shell-fails-to-create-symbolic-links</a></p>
-<p><a href="https://github.community/t/git-bash-symbolic-links-on-windows/522/12" target="_blank" rel="noopener">https://github.community/t/git-bash-symbolic-links-on-windows/522/12</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/106225935" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/106225935</a></p>
+<h1 id="nvm-nodejs"><a href="#nvm-nodejs" class="headerlink" title="nvm(nodejs)"></a>nvm(nodejs)</h1><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows">https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows</a></p>
+<h1 id="symlink"><a href="#symlink" class="headerlink" title="symlink"></a>symlink</h1><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/security/threat-protection/security-policy-settings/create-symbolic-links">https://docs.microsoft.com/zh-cn/windows/security/threat-protection/security-policy-settings/create-symbolic-links</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/18641864/git-bash-shell-fails-to-create-symbolic-links">https://stackoverflow.com/questions/18641864/git-bash-shell-fails-to-create-symbolic-links</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.community/t/git-bash-symbolic-links-on-windows/522/12">https://github.community/t/git-bash-symbolic-links-on-windows/522/12</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/106225935">https://zhuanlan.zhihu.com/p/106225935</a></p>
 <p>有的人的win上直接能用，是专业版，我这个是家庭版，为了不要因为用工具改配置，我做成了根据系统决定是拷贝还是symlink</p>
-<p><a href="https://nodejs.org/api/process.html#process_process_platform" target="_blank" rel="noopener">https://nodejs.org/api/process.html#process_process_platform</a></p>
-<h1 id="win10更新和指纹问题"><a href="#win10更新和指纹问题" class="headerlink" title="win10更新和指纹问题"></a>win10更新和指纹问题</h1><p><a href="https://answers.microsoft.com/zh-hans/windows/forum/all/%E6%9B%B4%E6%96%B0win10%E5%90%8E%E6%8C%87%E7%BA%B9/7fc55349-7234-4fd0-a3c1-04fcf20e2aaa" target="_blank" rel="noopener">https://answers.microsoft.com/zh-hans/windows/forum/all/%E6%9B%B4%E6%96%B0win10%E5%90%8E%E6%8C%87%E7%BA%B9/7fc55349-7234-4fd0-a3c1-04fcf20e2aaa</a></p>
+<p><a target="_blank" rel="noopener" href="https://nodejs.org/api/process.html#process_process_platform">https://nodejs.org/api/process.html#process_process_platform</a></p>
+<h1 id="win10更新和指纹问题"><a href="#win10更新和指纹问题" class="headerlink" title="win10更新和指纹问题"></a>win10更新和指纹问题</h1><p><a target="_blank" rel="noopener" href="https://answers.microsoft.com/zh-hans/windows/forum/all/%E6%9B%B4%E6%96%B0win10%E5%90%8E%E6%8C%87%E7%BA%B9/7fc55349-7234-4fd0-a3c1-04fcf20e2aaa">https://answers.microsoft.com/zh-hans/windows/forum/all/%E6%9B%B4%E6%96%B0win10%E5%90%8E%E6%8C%87%E7%BA%B9/7fc55349-7234-4fd0-a3c1-04fcf20e2aaa</a></p>
 <h1 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h1><p>据说有</p>
 <p>scp</p>
 <p>ftp(中文 字符集问题)</p>
@@ -330,7 +387,7 @@
 <p>我东西蛮多,蛮大的比如wechat，然后samba等搭了半天没搞好，scp又慢，还是主要移动硬盘拷贝</p>
 <p>filezilla 左连wsl文件夹，右连Ubuntu ssh，可以不受文件mode影响的拷贝文件</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>目前看起来最理想的架起来大概</p>
-<p><img src="/Blog/images/migrate2win.png" alt="migrate2win"></p>
+<p><img data-src="/Blog/Blog/images/migrate2win.png" alt="migrate2win"></p>
 <ol>
 <li>因为777等各种原因，开发丢在wsl2里面的文件夹里</li>
 <li><code>/etc/resolv.conf</code> 每次是变化的，虽然一行命令能获取，但是<code>/etc/proxychains.conf</code> 里的配置不能配<code>$</code>还有点问题</li>
@@ -343,161 +400,67 @@
     
     
     
+      
 
-      <footer class="post-footer">
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/21-07-05-migrate2win/" title="迁移到win">https://cromarmot.github.io/Blog/21-07-05-migrate2win/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
           <div class="post-tags">
-              <a href="/Blog/tags/win/" rel="tag"># win</a>
+              <a href="/Blog/tags/win/" rel="tag"><i class="fa fa-tag"></i> win</a>
           </div>
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/Blog/21-05-25-react-timer/" rel="prev" title="react 计时器与 useRef, useState">
-      <i class="fa fa-chevron-left"></i> react 计时器与 useRef, useState
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/Blog/21-07-06-dockerharbor/" rel="next" title="Docker Harbor on Ubuntu 20 on WSL2">
-      Docker Harbor on Ubuntu 20 on WSL2 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/21-05-25-react-timer/" rel="prev" title="react 计时器与 useRef, useState">
+                  <i class="fa fa-chevron-left"></i> react 计时器与 useRef, useState
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Blog/21-07-06-dockerharbor/" rel="next" title="Docker Harbor on Ubuntu 20 on WSL2">
+                  Docker Harbor on Ubuntu 20 on WSL2 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-  
-  
-  
+</div>
 
 
 
-          </div>
-          
+
+
+
     
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#apt"><span class="nav-number">1.</span> <span class="nav-text">apt</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#以下是一些问题记录"><span class="nav-number">2.</span> <span class="nav-text">以下是一些问题记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vscode"><span class="nav-number">3.</span> <span class="nav-text">vscode</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#windows-terminal"><span class="nav-number">4.</span> <span class="nav-text">windows terminal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">5.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chrome"><span class="nav-number">6.</span> <span class="nav-text">Chrome</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#firefox"><span class="nav-number">7.</span> <span class="nav-text">firefox</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-被windows商店劫持"><span class="nav-number">8.</span> <span class="nav-text">Python 被windows商店劫持</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#wsl2-777看得我有点头疼，不过官方建议一般来说不要共用文件夹"><span class="nav-number">9.</span> <span class="nav-text">wsl2 (777看得我有点头疼，不过官方建议一般来说不要共用文件夹)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#proxy"><span class="nav-number">10.</span> <span class="nav-text">proxy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ADB"><span class="nav-number">11.</span> <span class="nav-text">ADB</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nvm-nodejs"><span class="nav-number">12.</span> <span class="nav-text">nvm(nodejs)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#symlink"><span class="nav-number">13.</span> <span class="nav-text">symlink</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#win10更新和指纹问题"><span class="nav-number">14.</span> <span class="nav-text">win10更新和指纹问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件传输"><span class="nav-number">15.</span> <span class="nav-text">文件传输</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">16.</span> <span class="nav-text">总结</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
-  <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/Blog/archives/">
-        
-          <span class="site-state-item-count">113</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/Blog/categories/">
-          
-        <span class="site-state-item-count">52</span>
-        <span class="site-state-item-name">分類</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/Blog/tags/">
-          
-        <span class="site-state-item-count">126</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/CroMarmot" title="GitHub → https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces → https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>Codeforces</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://atcoder.jp/users/cromarmot" title="AtCoder → https://atcoder.jp/users/cromarmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>AtCoder</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
@@ -505,29 +468,37 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">645k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:47</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
   </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/Blog/lib/anime.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
-<script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script>
-<script src="/Blog/js/schemes/muse.js"></script>
-<script src="/Blog/js/next-boot.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
 
 
 
@@ -536,108 +507,17 @@
 
 
 
-  <script src="/Blog/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
-      
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
 
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
 
-    
-
-  
-
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://cromarmot.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://cromarmot.github.io/Blog/21-07-05-migrate2win/";
-    this.page.identifier = "21-07-05-migrate2win/";
-    this.page.title = "迁移到win";
-    };
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://cromarmot.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/21-07-05-migrate2win/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
 
 </body>
 </html>

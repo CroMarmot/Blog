@@ -2,9 +2,10 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
@@ -14,92 +15,68 @@
 <link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-  <meta name="description" content="Why模拟生产环境 尝试 升级 gitlab-ce 从 11.6 到 12.2, 以及尝试模拟之前产生的错误 官方说 先要到11.11.X再到12.X 物料准备 vmware on Ubuntu 18.04 LTS gitlab-ce-11.6.5-ce.0.el6.x86_64.rpm gitlab-ce-11.11.0-ce.0.el6.x86_64.rpm gitlab-ce-12.2.5-">
-<meta name="keywords" content="gitlab,redhat,update">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="Why模拟生产环境 尝试 升级 gitlab-ce 从 11.6 到 12.2, 以及尝试模拟之前产生的错误 官方说 先要到11.11.X再到12.X 物料准备 vmware on Ubuntu 18.04 LTS gitlab-ce-11.6.5-ce.0.el6.x86_64.rpm gitlab-ce-11.11.0-ce.0.el6.x86_64.rpm gitlab-ce-12.2.5-">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redhat7 + gitlab-ce版本更新 11.6-&gt;12.2">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/19-09-23-redhat_gitlabserver_update/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
 <meta property="og:description" content="Why模拟生产环境 尝试 升级 gitlab-ce 从 11.6 到 12.2, 以及尝试模拟之前产生的错误 官方说 先要到11.11.X再到12.X 物料准备 vmware on Ubuntu 18.04 LTS gitlab-ce-11.6.5-ce.0.el6.x86_64.rpm gitlab-ce-11.11.0-ce.0.el6.x86_64.rpm gitlab-ce-12.2.5-">
-<meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2022-07-01T10:51:47.811Z">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2019-09-23T07:09:01.000Z">
+<meta property="article:modified_time" content="2022-08-16T02:17:23.729Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="gitlab">
+<meta property="article:tag" content="redhat">
+<meta property="article:tag" content="update">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="redhat7 + gitlab-ce版本更新 11.6-&gt;12.2">
-<meta name="twitter:description" content="Why模拟生产环境 尝试 升级 gitlab-ce 从 11.6 到 12.2, 以及尝试模拟之前产生的错误 官方说 先要到11.11.X再到12.X 物料准备 vmware on Ubuntu 18.04 LTS gitlab-ce-11.6.5-ce.0.el6.x86_64.rpm gitlab-ce-11.11.0-ce.0.el6.x86_64.rpm gitlab-ce-12.2.5-">
+
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/19-09-23-redhat_gitlabserver_update/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-TW'
-  };
-</script>
 
-  <title>redhat7 + gitlab-ce版本更新 11.6->12.2 | Cro-Marmot's Blog</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/19-09-23-redhat_gitlabserver_update/","path":"19-09-23-redhat_gitlabserver_update/","title":"redhat7 + gitlab-ce版本更新 11.6->12.2"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>redhat7 + gitlab-ce版本更新 11.6->12.2 | Cro-Marmot's Blog</title>
   
 
 
 
 
 
-
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/Blog/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Cro-Marmot's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -112,34 +89,8 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">114</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">34</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">124</span></a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -150,23 +101,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜尋..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -174,76 +124,170 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why"><span class="nav-number">1.</span> <span class="nav-text">Why</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-OS"><span class="nav-number">2.</span> <span class="nav-text">Install OS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-Software"><span class="nav-number">3.</span> <span class="nav-text">Install Software</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#authorized-keys"><span class="nav-number">4.</span> <span class="nav-text">authorized_keys</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%87"><span class="nav-number">5.</span> <span class="nav-text">哇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gitlab-ce-11-6-%E5%AE%89%E8%A3%85"><span class="nav-number">6.</span> <span class="nav-text">gitlab-ce 11.6 安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E5%88%B011-11-0"><span class="nav-number">7.</span> <span class="nav-text">升级到11.11.0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E5%88%B012-2-5"><span class="nav-number">8.</span> <span class="nav-text">升级到12.2.5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E4%B8%AD%E5%B0%9D%E8%AF%95%E8%BF%87%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">9.</span> <span class="nav-text">生产中尝试过的操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E5%B7%A5%E5%85%B7%E7%AD%89-%E5%8F%AF%E8%83%BD%E6%9C%89%E9%81%97%E6%BC%8F"><span class="nav-number">10.</span> <span class="nav-text">使用到的工具等(可能有遗漏)</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">124</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>
-  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>
-  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+    <div class="main-inner post posts-expand">
 
 
+  
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
-            
-
-    
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-23-redhat_gitlabserver_update/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
       <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="redhat7 + gitlab-ce版本更新 11.6->12.2 | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           redhat7 + gitlab-ce版本更新 11.6->12.2
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2019-09-23 15:09:01" itemprop="dateCreated datePublished" datetime="2019-09-23T15:09:01+08:00">2019-09-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-07-01 18:51:47" itemprop="dateModified" datetime="2022-07-01T18:51:47+08:00">2022-07-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
-                </span>
-            </span>
+      <time title="創建時間：2019-09-23 15:09:01" itemprop="dateCreated datePublished" datetime="2019-09-23T15:09:01+08:00">2019-09-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-08-16 10:17:23" itemprop="dateModified" datetime="2022-08-16T10:17:23+08:00">2022-08-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+        </span>
+    </span>
 
-          
+  
   
   <span class="post-meta-item">
     
@@ -258,6 +302,22 @@
   </span>
   
   
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.5k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>2 分鐘</span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -266,8 +326,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><p>模拟生产环境 尝试 升级 gitlab-ce 从 11.6 到 12.2, 以及尝试模拟之前产生的错误</p>
 <p>官方说 先要到<code>11.11.X</code>再到<code>12.X</code></p>
 <p>物料准备</p>
@@ -276,15 +334,16 @@
 <p>gitlab-ce-11.11.0-ce.0.el6.x86_64.rpm</p>
 <p>gitlab-ce-12.2.5-ce.0.el7.x86_64.rpm</p>
 <p>rhel-server-7.7-x86_64-dvd.iso</p>
-<h1 id="Install-OS"><a href="#Install-OS" class="headerlink" title="Install OS"></a>Install OS</h1><p><a href="https://access.redhat.com/downloads/content/69/ver=/rhel---7/7.7/x86_64/product-software" target="_blank" rel="noopener">https://access.redhat.com/downloads/content/69/ver=/rhel---7/7.7/x86_64/product-software</a></p>
+<h1 id="Install-OS"><a href="#Install-OS" class="headerlink" title="Install OS"></a>Install OS</h1><p><a target="_blank" rel="noopener" href="https://access.redhat.com/downloads/content/69/ver=/rhel---7/7.7/x86_64/product-software">https://access.redhat.com/downloads/content/69/ver=/rhel---7/7.7/x86_64/product-software</a></p>
 <p>注册 下载 安装</p>
 <p>需要注意的是 下4GB左右的 而不是boot.iso</p>
 <blockquote>
 <p>为什么是7 不是8(当前最新)</p>
 </blockquote>
 <p>因为想和某个生产环境保持一致 尝试 模拟某些操作</p>
-<a id="more"></a>
-<h1 id="Install-Software"><a href="#Install-Software" class="headerlink" title="Install Software"></a>Install Software</h1><p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/installing-software" target="_blank" rel="noopener">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/installing-software</a></p>
+<span id="more"></span>
+
+<h1 id="Install-Software"><a href="#Install-Software" class="headerlink" title="Install Software"></a>Install Software</h1><p><a target="_blank" rel="noopener" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/installing-software">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/installing-software</a></p>
 <p>401 还用不了 TODO</p>
 <h1 id="authorized-keys"><a href="#authorized-keys" class="headerlink" title="authorized_keys"></a>authorized_keys</h1><p>印象来说<code>~/.ssh/authorized_keys</code>中把pub丢进去 就好了</p>
 <p>然而并没有</p>
@@ -292,7 +351,7 @@
 <p>最后是<code>/etc/ssh/sshd_config</code> 中配置<code>StrictModes no</code>再重启sshd 好的</p>
 <p>这主要是为了方便 我直接 ssh进去 可以更方便的copypaste</p>
 <h1 id="哇"><a href="#哇" class="headerlink" title="哇"></a>哇</h1><p>默认</p>
-<p>alias rm=’rm -i’<br>alias cp=’cp -i’<br>alias mv=’mv -i’</p>
+<p>alias rm&#x3D;’rm -i’<br>alias cp&#x3D;’cp -i’<br>alias mv&#x3D;’mv -i’</p>
 <p>虽然 感觉要是按熟了 形成肌肉记忆 也阻止不了按y XD</p>
 <h1 id="gitlab-ce-11-6-安装"><a href="#gitlab-ce-11-6-安装" class="headerlink" title="gitlab-ce 11.6 安装"></a>gitlab-ce 11.6 安装</h1><p>也是模拟全靠离线包安装 没有配yum</p>
 <p>之前一直用的是Debian系列的Linux，对rpm并不熟 搜一搜 常用命令 <code>rpm -i</code> 或者 <code>rpm -ivh</code> 即可</p>
@@ -312,190 +371,97 @@
 <h1 id="升级到11-11-0"><a href="#升级到11-11-0" class="headerlink" title="升级到11.11.0"></a>升级到11.11.0</h1><p><code>rpm -Uvh gitlab-ce-11.11.0-ce.0.el6.x86_64.rpm</code></p>
 <p>也没有输命令停止什么 然后 竟然无错运行了?</p>
 <h1 id="升级到12-2-5"><a href="#升级到12-2-5" class="headerlink" title="升级到12.2.5"></a>升级到12.2.5</h1><p><code>rpm -Uvh gitlab-ce-12.2.5-ce.0.el7.x86_64.rpm</code></p>
-<p>哎 也无错升级了 =.=</p>
+<p>哎 也无错升级了 &#x3D;.&#x3D;</p>
 <p>好吧 重现不了 GG</p>
 <h1 id="生产中尝试过的操作"><a href="#生产中尝试过的操作" class="headerlink" title="生产中尝试过的操作"></a>生产中尝试过的操作</h1><p>虽然是 “生产” 但 实际只有50-人使用,所以 简单 弄下来，让大家停止使用</p>
 <p>然后 生产 也不是我操作的，过程中不知道哪个步骤挂了</p>
 <p>大概 现象是 升级到12了 但是 报500,查log 是 某个提示，搜对应提示找到issues都是建议<code>gitlab-rake db:migrate</code>搞一搞</p>
-<p>然而<code>gitlab-rake</code>报错 数据库太老要先升级到11.11, emmmm 也就是 之前 从11.6到11.11应该就挂了但没人发现,我也是服气的=。=?</p>
-<p>然后 搜了半天downgrade 也没有搜到明确指示，他们不敢downgrade=。= ? 感觉downgrade 也比 重装 影响小啊</p>
-<p>解决过程 就把内容先 全搞下来 =。=，然后 完全删除 gitlab-ce 大概</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gitlab-ctl stop</span><br><span class="line">rpm -e gitlab-ce</span><br><span class="line">ps aux | grep gitlab</span><br><span class="line">kill -9 &lt;上面一个runsvdir 带很长点的一个&gt;</span><br><span class="line">find / -name gitlab | xargs rm -rf</span><br></pre></td></tr></table></figure>
-<p>对应服务器是专门开的一个没有其它服务,所以最后一句 执行 还好=.=</p>
+<p>然而<code>gitlab-rake</code>报错 数据库太老要先升级到11.11, emmmm 也就是 之前 从11.6到11.11应该就挂了但没人发现,我也是服气的&#x3D;。&#x3D;?</p>
+<p>然后 搜了半天downgrade 也没有搜到明确指示，他们不敢downgrade&#x3D;。&#x3D; ? 感觉downgrade 也比 重装 影响小啊</p>
+<p>解决过程 就把内容先 全搞下来 &#x3D;。&#x3D;，然后 完全删除 gitlab-ce 大概</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gitlab-ctl stop</span><br><span class="line">rpm -e gitlab-ce</span><br><span class="line">ps aux | grep gitlab</span><br><span class="line">kill -9 &lt;上面一个runsvdir 带很长点的一个&gt;</span><br><span class="line">find / -name gitlab | xargs rm -rf</span><br></pre></td></tr></table></figure>
+
+<p>对应服务器是专门开的一个没有其它服务,所以最后一句 执行 还好&#x3D;.&#x3D;</p>
 <p>然后 安 12.2</p>
 <p>一个是需要runit，下载+安装</p>
 <p>一个是运行时卡住<code>] action run</code>, 某个东西 lock? 可能是他们之前熟练的使用kill -9 造成的? 然后google一下,启动一哈对应服务</p>
 <p>一个是报错 三个配置 找不到,ls去看 是三个conf 软链接 指向空的, 删掉它们</p>
-<p>然后就能用=.=</p>
-<p>所以 最后生产还是重装的 2333,然后把各个仓库导入进去=。= 我不知道是谁做的备份，只备份了仓库 也没有各个用户关系之类的=。=，估计他是clone的而没有用rake，所以也没尝试用 rake 去恢复</p>
+<p>然后就能用&#x3D;.&#x3D;</p>
+<p>所以 最后生产还是重装的 2333,然后把各个仓库导入进去&#x3D;。&#x3D; 我不知道是谁做的备份，只备份了仓库 也没有各个用户关系之类的&#x3D;。&#x3D;，估计他是clone的而没有用rake，所以也没尝试用 rake 去恢复</p>
 <p>最后 客户端 内容太大,需要 清除就到了<a href="/Blog/19-09-20-gitbiguselessfile/">这一篇</a></p>
 <h1 id="使用到的工具等-可能有遗漏"><a href="#使用到的工具等-可能有遗漏" class="headerlink" title="使用到的工具等(可能有遗漏)"></a>使用到的工具等(可能有遗漏)</h1><p>ssh wget vim rpm htop netstat ifconfig grep nmap systemctl iptables ping</p>
-<p><a href="https://docs.gitlab.com/omnibus/update/" target="_blank" rel="noopener">https://docs.gitlab.com/omnibus/update/</a></p>
-<p><a href="https://docs.gitlab.com/ce/update/#upgrading-without-downtime" target="_blank" rel="noopener">https://docs.gitlab.com/ce/update/#upgrading-without-downtime</a></p>
-<p><a href="https://linuxconfig.org/how-to-stop-start-and-disable-enable-firewall-on-redhat-7-linux-system" target="_blank" rel="noopener">https://linuxconfig.org/how-to-stop-start-and-disable-enable-firewall-on-redhat-7-linux-system</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.gitlab.com/omnibus/update/">https://docs.gitlab.com/omnibus/update/</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.gitlab.com/ce/update/#upgrading-without-downtime">https://docs.gitlab.com/ce/update/#upgrading-without-downtime</a></p>
+<p><a target="_blank" rel="noopener" href="https://linuxconfig.org/how-to-stop-start-and-disable-enable-firewall-on-redhat-7-linux-system">https://linuxconfig.org/how-to-stop-start-and-disable-enable-firewall-on-redhat-7-linux-system</a></p>
 
     </div>
 
     
     
     
+      
 
-      <footer class="post-footer">
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/19-09-23-redhat_gitlabserver_update/" title="redhat7 + gitlab-ce版本更新 11.6-&gt;12.2">https://cromarmot.github.io/Blog/19-09-23-redhat_gitlabserver_update/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
           <div class="post-tags">
-              <a href="/Blog/tags/gitlab/" rel="tag"># gitlab</a>
-              <a href="/Blog/tags/redhat/" rel="tag"># redhat</a>
-              <a href="/Blog/tags/update/" rel="tag"># update</a>
+              <a href="/Blog/tags/gitlab/" rel="tag"><i class="fa fa-tag"></i> gitlab</a>
+              <a href="/Blog/tags/redhat/" rel="tag"><i class="fa fa-tag"></i> redhat</a>
+              <a href="/Blog/tags/update/" rel="tag"><i class="fa fa-tag"></i> update</a>
           </div>
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/Blog/19-09-20-gitbiguselessfile/" rel="prev" title="git 在历史版本中 完全移除文件">
-      <i class="fa fa-chevron-left"></i> git 在历史版本中 完全移除文件
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/Blog/19-09-27-Dont_follow_RxJS_Best_Practices/" rel="next" title="别遵循RxJS的最佳实践">
-      别遵循RxJS的最佳实践 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/19-09-20-gitbiguselessfile/" rel="prev" title="git 在历史版本中 完全移除文件">
+                  <i class="fa fa-chevron-left"></i> git 在历史版本中 完全移除文件
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Blog/19-09-27-Dont_follow_RxJS_Best_Practices/" rel="next" title="别遵循RxJS的最佳实践">
+                  别遵循RxJS的最佳实践 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-  
-  
-  
+</div>
 
 
 
-          </div>
-          
+
+
+
     
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why"><span class="nav-number">1.</span> <span class="nav-text">Why</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-OS"><span class="nav-number">2.</span> <span class="nav-text">Install OS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-Software"><span class="nav-number">3.</span> <span class="nav-text">Install Software</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#authorized-keys"><span class="nav-number">4.</span> <span class="nav-text">authorized_keys</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哇"><span class="nav-number">5.</span> <span class="nav-text">哇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gitlab-ce-11-6-安装"><span class="nav-number">6.</span> <span class="nav-text">gitlab-ce 11.6 安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#升级到11-11-0"><span class="nav-number">7.</span> <span class="nav-text">升级到11.11.0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#升级到12-2-5"><span class="nav-number">8.</span> <span class="nav-text">升级到12.2.5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生产中尝试过的操作"><span class="nav-number">9.</span> <span class="nav-text">生产中尝试过的操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用到的工具等-可能有遗漏"><span class="nav-number">10.</span> <span class="nav-text">使用到的工具等(可能有遗漏)</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
-  <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/Blog/archives/">
-        
-          <span class="site-state-item-count">113</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/Blog/categories/">
-          
-        <span class="site-state-item-count">52</span>
-        <span class="site-state-item-name">分類</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/Blog/tags/">
-          
-        <span class="site-state-item-count">126</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/CroMarmot" title="GitHub → https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces → https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>Codeforces</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://atcoder.jp/users/cromarmot" title="AtCoder → https://atcoder.jp/users/cromarmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>AtCoder</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
@@ -503,29 +469,37 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">645k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:47</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
   </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/Blog/lib/anime.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
-<script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script>
-<script src="/Blog/js/schemes/muse.js"></script>
-<script src="/Blog/js/next-boot.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
 
 
 
@@ -534,108 +508,17 @@
 
 
 
-  <script src="/Blog/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
-      
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
 
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
 
-    
-
-  
-
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://cromarmot.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://cromarmot.github.io/Blog/19-09-23-redhat_gitlabserver_update/";
-    this.page.identifier = "19-09-23-redhat_gitlabserver_update/";
-    this.page.title = "redhat7 + gitlab-ce版本更新 11.6->12.2";
-    };
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://cromarmot.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/19-09-23-redhat_gitlabserver_update/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
 
 </body>
 </html>

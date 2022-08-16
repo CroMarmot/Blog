@@ -2,9 +2,10 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
@@ -14,92 +15,66 @@
 <link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-  <meta name="description" content="该书版本2015.06 基于个人已有知识整理 低分享价值 章节 java 是什么 java web是什么 各种java web容器 以及IDE的使用 Servlet without jsp basic jsp syntax ,jsp 和servlet 在server端的互相forward cookie/session 以及相关安全知识 jsp 表达式语句 $,# jsp 标签库 c fmt fn">
-<meta name="keywords" content="java">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="该书版本2015.06 基于个人已有知识整理 低分享价值 章节 java 是什么 java web是什么 各种java web容器 以及IDE的使用 Servlet without jsp basic jsp syntax ,jsp 和servlet 在server端的互相forward cookie&#x2F;session 以及相关安全知识 jsp 表达式语句 $,# jsp 标签库 c fm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javaforwebapplications 笔记">
-<meta property="og:url" content="https://cromarmot.github.io/Blog/17-04-26-ProfessionalJavaForWebApplications个人整理/index.html">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/17-04-26-ProfessionalJavaForWebApplications%E4%B8%AA%E4%BA%BA%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
-<meta property="og:description" content="该书版本2015.06 基于个人已有知识整理 低分享价值 章节 java 是什么 java web是什么 各种java web容器 以及IDE的使用 Servlet without jsp basic jsp syntax ,jsp 和servlet 在server端的互相forward cookie/session 以及相关安全知识 jsp 表达式语句 $,# jsp 标签库 c fmt fn">
-<meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2022-07-01T10:51:47.807Z">
+<meta property="og:description" content="该书版本2015.06 基于个人已有知识整理 低分享价值 章节 java 是什么 java web是什么 各种java web容器 以及IDE的使用 Servlet without jsp basic jsp syntax ,jsp 和servlet 在server端的互相forward cookie&#x2F;session 以及相关安全知识 jsp 表达式语句 $,# jsp 标签库 c fm">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2017-04-26T03:20:14.000Z">
+<meta property="article:modified_time" content="2022-08-16T02:17:23.725Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javaforwebapplications 笔记">
-<meta name="twitter:description" content="该书版本2015.06 基于个人已有知识整理 低分享价值 章节 java 是什么 java web是什么 各种java web容器 以及IDE的使用 Servlet without jsp basic jsp syntax ,jsp 和servlet 在server端的互相forward cookie/session 以及相关安全知识 jsp 表达式语句 $,# jsp 标签库 c fmt fn">
-
-<link rel="canonical" href="https://cromarmot.github.io/Blog/17-04-26-ProfessionalJavaForWebApplications个人整理/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-TW'
-  };
-</script>
+<link rel="canonical" href="https://cromarmot.github.io/Blog/17-04-26-ProfessionalJavaForWebApplications%E4%B8%AA%E4%BA%BA%E6%95%B4%E7%90%86/">
 
-  <title>javaforwebapplications 笔记 | Cro-Marmot's Blog</title>
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/17-04-26-ProfessionalJavaForWebApplications%E4%B8%AA%E4%BA%BA%E6%95%B4%E7%90%86/","path":"17-04-26-ProfessionalJavaForWebApplications个人整理/","title":"javaforwebapplications 笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>javaforwebapplications 笔记 | Cro-Marmot's Blog</title>
   
 
 
 
 
 
-
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/Blog/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Cro-Marmot's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -112,34 +87,8 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">114</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">34</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">124</span></a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -150,23 +99,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜尋..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -174,80 +122,174 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AB%A0%E8%8A%82"><span class="nav-number">1.</span> <span class="nav-text">章节</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Source-code"><span class="nav-number">2.</span> <span class="nav-text">Source code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3"><span class="nav-number">3.</span> <span class="nav-text">相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tomcat-%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3"><span class="nav-number">4.</span> <span class="nav-text">tomcat 个人理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96"><span class="nav-number">5.</span> <span class="nav-text">依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#servlet"><span class="nav-number">6.</span> <span class="nav-text">servlet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jsp"><span class="nav-number">7.</span> <span class="nav-text">jsp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="nav-number">8.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebSocket"><span class="nav-number">9.</span> <span class="nav-text">WebSocket</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A5%E5%BF%97%E7%9B%91%E6%8E%A7"><span class="nav-number">10.</span> <span class="nav-text">日志监控</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-framework"><span class="nav-number">11.</span> <span class="nav-text">Spring framework</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-number">12.</span> <span class="nav-text">其它</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">124</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>
-  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>
-  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+    <div class="main-inner post posts-expand">
 
 
+  
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
-            
-
-    
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-04-26-ProfessionalJavaForWebApplications个人整理/">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/17-04-26-ProfessionalJavaForWebApplications%E4%B8%AA%E4%BA%BA%E6%95%B4%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
       <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="javaforwebapplications 笔记 | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           javaforwebapplications 笔记
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2017-04-26 11:20:14" itemprop="dateCreated datePublished" datetime="2017-04-26T11:20:14+08:00">2017-04-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-07-01 18:51:47" itemprop="dateModified" datetime="2022-07-01T18:51:47+08:00">2022-07-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/backend/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
-            </span>
+      <time title="創建時間：2017-04-26 11:20:14" itemprop="dateCreated datePublished" datetime="2017-04-26T11:20:14+08:00">2017-04-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-08-16 10:17:23" itemprop="dateModified" datetime="2022-08-16T10:17:23+08:00">2022-08-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/backend/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+        </span>
+    </span>
 
-          
+  
   
   <span class="post-meta-item">
     
@@ -256,12 +298,28 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/Blog/17-04-26-ProfessionalJavaForWebApplications个人整理/#disqus_thread" itemprop="discussionUrl">
+    <a title="disqus" href="/Blog/17-04-26-ProfessionalJavaForWebApplications%E4%B8%AA%E4%BA%BA%E6%95%B4%E7%90%86/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="17-04-26-ProfessionalJavaForWebApplications个人整理/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>4.4k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>4 分鐘</span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -270,8 +328,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <p>该书版本2015.06</p>
 <p><strong>基于个人已有知识整理 低分享价值</strong></p>
 <h1 id="章节"><a href="#章节" class="headerlink" title="章节"></a>章节</h1><ol>
@@ -279,19 +335,33 @@
 <li>各种java web容器 以及IDE的使用</li>
 <li>Servlet without jsp</li>
 <li>basic jsp syntax ,jsp 和servlet 在server端的互相forward</li>
-<li>cookie/session 以及相关安全知识</li>
+<li>cookie&#x2F;session 以及相关安全知识</li>
 <li>jsp 表达式语句 $,#</li>
 <li>jsp 标签库 c fmt fn x sql</li>
 <li>jsp 自定义标签与函数库 .tag .tld</li>
-<li>过滤器 (日志 验证 压缩加密 错误处理)<ol start="10">
+<li>过滤器 (日志 验证 压缩加密 错误处理)</li>
 <li>WebSocket 进行交互 (ajax,adobe flash等 各类访问 的设计) 在线对战井字棋 集群</li>
 <li>日志监控</li>
-<li>Spring<br>13.<br>14.<br>15.<br>16.<br>17.<br>18.<br>19.<br>20.<br>21.<br>22.<br>23.<br>24.<br>25.<br>26.<br>27.<br>28.</li>
+<li>Spring</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
 </ol>
-</li>
-</ol>
-<h1 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h1><p><a href="https://github.com/YeXiaoRain/Professional-Java-for-Web-Applications" target="_blank" rel="noopener">Here</a></p>
-<h1 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h1><p><a href="http://www.runoob.com/jsp" target="_blank" rel="noopener">runnoob jsp</a></p>
+<h1 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h1><p><a target="_blank" rel="noopener" href="https://github.com/YeXiaoRain/Professional-Java-for-Web-Applications">Here</a></p>
+<h1 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h1><p><a target="_blank" rel="noopener" href="http://www.runoob.com/jsp">runnoob jsp</a></p>
 <h1 id="tomcat-个人理解"><a href="#tomcat-个人理解" class="headerlink" title="tomcat 个人理解"></a>tomcat 个人理解</h1><p>和php+apache类似</p>
 <p>遇到请求是jsp则找jsp</p>
 <p>如果是其它url则根据<code>/WEB-INF/web.xml</code>的servlet配置去找对应的class (这些都没有main函数 继承自HttpServlet)</p>
@@ -299,27 +369,31 @@
 <h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p><code>sudo apt-get install default-jdk idea tomcat8</code></p>
 <p>把个人用户添加到tomcat8的组里[???必要么]</p>
 <h1 id="servlet"><a href="#servlet" class="headerlink" title="servlet"></a>servlet</h1><p>文件上传 @MultipartConfig()</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MultipartConfig</span>(</span><br><span class="line">        fileSizeThreshold = <span class="number">5_242_880</span>,<span class="comment">//小于5MB保存在内存中</span></span><br><span class="line">        maxFileSize = <span class="number">20_231L</span> ,       <span class="comment">//5~20MB保存在location(可设置 不设置则java默认)</span></span><br><span class="line">        maxRequestSize = <span class="number">41_943_040L</span>  <span class="comment">//拒绝&gt;20MB文件 或 &gt;40MB请求</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MultipartConfig(</span></span><br><span class="line"><span class="meta">        fileSizeThreshold = 5_242_880,//小于5MB保存在内存中</span></span><br><span class="line"><span class="meta">        maxFileSize = 20_231L ,       //5~20MB保存在location(可设置 不设置则java默认)</span></span><br><span class="line"><span class="meta">        maxRequestSize = 41_943_040L  //拒绝&gt;20MB文件 或 &gt;40MB请求</span></span><br><span class="line"><span class="meta">)</span></span><br></pre></td></tr></table></figure>
+
 <p>通过request.getParameter(“action”)来判断 是要 请求 上传 下载 还是什么操作(下载需要注意设置返回头)</p>
 <p>request.getPart(“file1”)来接受上传的文件</p>
-<h1 id="jsp"><a href="#jsp" class="headerlink" title="jsp"></a>jsp</h1><p>&lt;%@ 指令 %&gt;  例如说明文档 类型 引入依赖等<br>&lt;% page  %&gt;<br>&lt;% include  %&gt;<br>&lt;% taglib  %&gt;<br>&lt;%! 声明 %&gt;  如声明定义变量 函数<br>&lt;% 脚本 %&gt;   赋值运算 貌似也可以在这里声明<br>&lt;%= 表达式 %&gt;运算<br>&lt;%– 注释 –%&gt;运算</p>
+<h1 id="jsp"><a href="#jsp" class="headerlink" title="jsp"></a>jsp</h1><p>&lt;%@ 指令 %&gt;  例如说明文档 类型 引入依赖等<br>&lt;% page  %&gt;<br>&lt;% include  %&gt;<br>&lt;% taglib  %&gt;<br>&lt;%! 声明 %&gt;  如声明定义变量 函数<br>&lt;% 脚本 %&gt;   赋值运算 貌似也可以在这里声明<br>&lt;%&#x3D; 表达式 %&gt;运算<br>&lt;%– 注释 –%&gt;运算</p>
 <p>表达式语句保留字 true false null instanceof empty div mod and or not eq ne lt gt le ge</p>
 <p>表达式 的流处理 以及lambda</p>
 <p>java 标准标签库规范的5个标签库 c 核心,fmt 格式化, fn 函数, sql, x XML</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">"c"</span> uri=<span class="string">"https://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"fmt"</span> uri=<span class="string">"https://java.sun.com/jsp/jstl/fmt"</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"fn"</span> uri=<span class="string">"https://java.sun.com/jsp/jstl/fn"</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"sql"</span> uri=<span class="string">"https://java.sun.com/jsp/jstl/sql"</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"x"</span> uri=<span class="string">"https://java.sun.com/jsp/jstl/x"</span> %&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;c:out value=<span class="string">"$&#123;exp&#125;"</span> <span class="keyword">default</span>=<span class="string">"value is null"</span>&gt;</span><br><span class="line">&lt;c:out value="$&#123;exp&#125;"&gt;value is null&lt;/c:out&gt;</span><br><span class="line"></span><br><span class="line">&lt;c:url value=<span class="string">"http://....../today.jsp"</span>&gt;</span><br><span class="line">  &lt;c:param name=<span class="string">"story"</span> value=<span class="string">"$&#123;storyId&#125;"</span>&gt;</span><br><span class="line">  &lt;c:param name=<span class="string">"seo"</span> value=<span class="string">"$&#123;seoString&#125;"</span>&gt;</span><br><span class="line">&lt;/c:url&gt;</span><br><span class="line"></span><br><span class="line">&lt;c:<span class="keyword">if</span> test=&gt;</span><br><span class="line">balabala</span><br><span class="line">&lt;/c:if&gt;</span><br><span class="line">c:choose c:when c:otherwise c:forEach c:forTokens c:redirect c:<span class="keyword">import</span> c:set c:remove</span><br><span class="line"></span><br><span class="line">fmt:message fmt:setLocale fmt:bundle fmt:setBundle fmt:requestEncoding fmt:timeZone fmt:setTimeZone fmt:formatDate fmt:parseDate fmt:formatNumber fmt:parseNumber</span><br><span class="line">对应还有i18n的配置</span><br><span class="line"></span><br><span class="line">(不推荐)sql:transaction sql:update sql:param sql:dateParam sql:query</span><br><span class="line"></span><br><span class="line">(x 命名空间)</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;c&quot;</span> uri=<span class="string">&quot;https://java.sun.com/jsp/jstl/core&quot;</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;fmt&quot;</span> uri=<span class="string">&quot;https://java.sun.com/jsp/jstl/fmt&quot;</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;fn&quot;</span> uri=<span class="string">&quot;https://java.sun.com/jsp/jstl/fn&quot;</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;sql&quot;</span> uri=<span class="string">&quot;https://java.sun.com/jsp/jstl/sql&quot;</span> %&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;x&quot;</span> uri=<span class="string">&quot;https://java.sun.com/jsp/jstl/x&quot;</span> %&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;c:out value=<span class="string">&quot;$&#123;exp&#125;&quot;</span> <span class="keyword">default</span>=<span class="string">&quot;value is null&quot;</span>&gt;</span><br><span class="line">&lt;c:out value=<span class="string">&quot;$&#123;exp&#125;&quot;</span>&gt;value is <span class="literal">null</span>&lt;/c:out&gt;</span><br><span class="line"></span><br><span class="line">&lt;c:url value=<span class="string">&quot;http://....../today.jsp&quot;</span>&gt;</span><br><span class="line">  &lt;c:param name=<span class="string">&quot;story&quot;</span> value=<span class="string">&quot;$&#123;storyId&#125;&quot;</span>&gt;</span><br><span class="line">  &lt;c:param name=<span class="string">&quot;seo&quot;</span> value=<span class="string">&quot;$&#123;seoString&#125;&quot;</span>&gt;</span><br><span class="line">&lt;/c:url&gt;</span><br><span class="line"></span><br><span class="line">&lt;c:<span class="keyword">if</span> test=&gt;</span><br><span class="line">balabala</span><br><span class="line">&lt;/c:<span class="keyword">if</span>&gt;</span><br><span class="line">c:choose c:when c:otherwise c:forEach c:forTokens c:redirect c:<span class="keyword">import</span> c:set c:remove</span><br><span class="line"></span><br><span class="line">fmt:message fmt:setLocale fmt:bundle fmt:setBundle fmt:requestEncoding fmt:timeZone fmt:setTimeZone fmt:formatDate fmt:parseDate fmt:formatNumber fmt:parseNumber</span><br><span class="line">对应还有i18n的配置</span><br><span class="line"></span><br><span class="line">(不推荐)sql:transaction sql:update sql:param sql:dateParam sql:query</span><br><span class="line"></span><br><span class="line">(x 命名空间)</span><br></pre></td></tr></table></figure>
+
 <h1 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h1><p>继承Filter 重写函数doFilter init destroy，通过chain.doFilter向下传递</p>
 <p>也可以在java内用代码配置 FilterGegistration</p>
 <p>因为排序问题请勿使用注解来配置过滤器 (URL映射优先级 &gt; Servlet映射)</p>
 <p><code>filter-mapping</code>可以用 不同方式配置 需要过滤的链接</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>myf<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>com.wrox.fff<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>myf<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/foo<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ticketServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>压缩过滤器extends HttpServletResponnseWrapper</p>
-<h1 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h1><p>会使用443(wss)端口 以及Http/1.1中的 Connection:Upgrade</p>
+<h1 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h1><p>会使用443(wss)端口 以及Http&#x2F;1.1中的 Connection:Upgrade</p>
 <p>HTTP开始 然后用TCP连接的WebSocket交流</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> connection = <span class="keyword">new</span> WebSocket(<span class="string">'ws://www.example.net/safsd'</span>);</span><br><span class="line"><span class="keyword">var</span> connection = <span class="keyword">new</span> WebSocket(<span class="string">'wss://secure.example.net/safsd'</span>);</span><br><span class="line"><span class="keyword">var</span> connection = <span class="keyword">new</span> WebSocket(<span class="string">'ws://www.example.net/safsd'</span>,<span class="string">'asdf'</span>);</span><br><span class="line"><span class="keyword">var</span> connection = <span class="keyword">new</span> WebSocket(<span class="string">'ws://www.example.net/safsd'</span>,&#123;<span class="string">'wer'</span>,<span class="string">'qwef'</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(connection.readyState == WebServlet.OPEN)&#123;qwer;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">connection.onopen = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;&#125;</span><br><span class="line">connection.onclose = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;&#125;</span><br><span class="line">connection.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;&#125;</span><br><span class="line">connection.onmessag = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> connection = <span class="keyword">new</span> <span class="title class_">WebSocket</span>(<span class="string">&#x27;ws://www.example.net/safsd&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> connection = <span class="keyword">new</span> <span class="title class_">WebSocket</span>(<span class="string">&#x27;wss://secure.example.net/safsd&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> connection = <span class="keyword">new</span> <span class="title class_">WebSocket</span>(<span class="string">&#x27;ws://www.example.net/safsd&#x27;</span>,<span class="string">&#x27;asdf&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> connection = <span class="keyword">new</span> <span class="title class_">WebSocket</span>(<span class="string">&#x27;ws://www.example.net/safsd&#x27;</span>,&#123;<span class="string">&#x27;wer&#x27;</span>,<span class="string">&#x27;qwef&#x27;</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(connection.<span class="property">readyState</span> == <span class="title class_">WebServlet</span>.<span class="property">OPEN</span>)&#123;qwer;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">connection.<span class="property">onopen</span> = <span class="keyword">function</span>(<span class="params">event</span>)&#123;&#125;</span><br><span class="line">connection.<span class="property">onclose</span> = <span class="keyword">function</span>(<span class="params">event</span>)&#123;&#125;</span><br><span class="line">connection.<span class="property">onerror</span> = <span class="keyword">function</span>(<span class="params">event</span>)&#123;&#125;</span><br><span class="line">connection.<span class="property">onmessag</span> = <span class="keyword">function</span>(<span class="params">event</span>)&#123;&#125;</span><br></pre></td></tr></table></figure>
+
 <p>利用WebSocket可以实现 在线对战游戏 比如 井字棋</p>
 <p>Server:</p>
 <p>session来记录用户</p>
-<p><code>@ServerEndpoint(&quot;/ticTacToe/{gameId}/{username}&quot;)</code></p>
+<p><code>@ServerEndpoint(&quot;/ticTacToe/&#123;gameId&#125;/&#123;username&#125;&quot;)</code></p>
 <p><code>onOpen()</code></p>
 <p><code>onMessage()</code></p>
 <p><code>onClose()</code></p>
@@ -334,184 +408,90 @@
 <p>做用户端的 extends HttpServlet</p>
 <h1 id="日志监控"><a href="#日志监控" class="headerlink" title="日志监控"></a>日志监控</h1><p>maven -&gt; <code>org.apache.logging.log4j</code> -&gt; <code>log4j-api/log4j-core/...</code> </p>
 <p><code>System.err.println/Sytem.out.println</code>并不完美 因为它们永远启用 并在代码中</p>
-<p>要记录的内容:错误/警告/错误类型/栈/JVM状态/一些需要审核的事的记录 比如医院</p>
-<p>记录方法:普通的println/平面日志/XML/JSON/ linux的syslog/套接字/SMTP SMS/DB</p>
-<p>分级:重要性 n MB/s的日志 = 无日志 ,例如<code>java.util.logging.Level</code>分类 (也有其它分类 如apache的不同级别)</p>
+<p>要记录的内容:错误&#x2F;警告&#x2F;错误类型&#x2F;栈&#x2F;JVM状态&#x2F;一些需要审核的事的记录 比如医院</p>
+<p>记录方法:普通的println&#x2F;平面日志&#x2F;XML&#x2F;JSON&#x2F; linux的syslog&#x2F;套接字&#x2F;SMTP SMS&#x2F;DB</p>
+<p>分级:重要性 n MB&#x2F;s的日志 &#x3D; 无日志 ,例如<code>java.util.logging.Level</code>分类 (也有其它分类 如apache的不同级别)</p>
 <ul>
-<li>致命/崩溃 无常量</li>
+<li>致命&#x2F;崩溃 无常量</li>
 <li>错误 SEVERE</li>
 <li>警告 WARNING</li>
 <li>信息 INFO</li>
 <li>配置细节 CONFIG</li>
 <li>调试 FINE</li>
-<li>追踪1/2 FINER FINEST</li>
+<li>追踪1&#x2F;2 FINER FINEST</li>
 </ul>
 <p>通过 <code>java.util.logging.LogManager</code>解耦合，注意日志必要性和性能影响的权衡</p>
 <p>框架 log4j,slf4j,logback,log4j2</p>
 <p>log4j2的 记录器(),日志储存器,布局,过滤器</p>
 <p>log4j2将寻找 <code>log4j2</code>或<code>log4j2-test</code>支持的扩展类型有<code>.xml</code>,<code>.json</code>和<code>.jsn</code></p>
-<h1 id="Spring-framework"><a href="#Spring-framework" class="headerlink" title="Spring framework"></a>Spring framework</h1><h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p>java编译后 单个实现不能超过65535个字节=.=……….</p>
+<h1 id="Spring-framework"><a href="#Spring-framework" class="headerlink" title="Spring framework"></a>Spring framework</h1><h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p>java编译后 单个实现不能超过65535个字节&#x3D;.&#x3D;……….</p>
 
     </div>
 
     
     
     
+      
 
-      <footer class="post-footer">
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/17-04-26-ProfessionalJavaForWebApplications%E4%B8%AA%E4%BA%BA%E6%95%B4%E7%90%86/" title="javaforwebapplications 笔记">https://cromarmot.github.io/Blog/17-04-26-ProfessionalJavaForWebApplications个人整理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
           <div class="post-tags">
-              <a href="/Blog/tags/java/" rel="tag"># java</a>
+              <a href="/Blog/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           </div>
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/Blog/17-04-23-javase/" rel="prev" title="javase">
-      <i class="fa fa-chevron-left"></i> javase
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/Blog/17-05-16-learnemacs/" rel="next" title="emacs 笔记">
-      emacs 笔记 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/17-04-23-javase/" rel="prev" title="javase">
+                  <i class="fa fa-chevron-left"></i> javase
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Blog/17-05-16-learnemacs/" rel="next" title="emacs 笔记">
+                  emacs 笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-  
-  
-  
+</div>
 
 
 
-          </div>
-          
+
+
+
     
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#章节"><span class="nav-number">1.</span> <span class="nav-text">章节</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Source-code"><span class="nav-number">2.</span> <span class="nav-text">Source code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关"><span class="nav-number">3.</span> <span class="nav-text">相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tomcat-个人理解"><span class="nav-number">4.</span> <span class="nav-text">tomcat 个人理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#依赖"><span class="nav-number">5.</span> <span class="nav-text">依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#servlet"><span class="nav-number">6.</span> <span class="nav-text">servlet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jsp"><span class="nav-number">7.</span> <span class="nav-text">jsp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过滤器"><span class="nav-number">8.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebSocket"><span class="nav-number">9.</span> <span class="nav-text">WebSocket</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#日志监控"><span class="nav-number">10.</span> <span class="nav-text">日志监控</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-framework"><span class="nav-number">11.</span> <span class="nav-text">Spring framework</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其它"><span class="nav-number">12.</span> <span class="nav-text">其它</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
-  <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/Blog/archives/">
-        
-          <span class="site-state-item-count">113</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/Blog/categories/">
-          
-        <span class="site-state-item-count">52</span>
-        <span class="site-state-item-name">分類</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/Blog/tags/">
-          
-        <span class="site-state-item-count">126</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/CroMarmot" title="GitHub → https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces → https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>Codeforces</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://atcoder.jp/users/cromarmot" title="AtCoder → https://atcoder.jp/users/cromarmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>AtCoder</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
@@ -519,29 +499,37 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">645k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:47</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
   </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/Blog/lib/anime.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
-<script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script>
-<script src="/Blog/js/schemes/muse.js"></script>
-<script src="/Blog/js/next-boot.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
 
 
 
@@ -550,55 +538,17 @@
 
 
 
-  <script src="/Blog/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
 
-  
 
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://cromarmot.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://cromarmot.github.io/Blog/17-04-26-ProfessionalJavaForWebApplications个人整理/";
-    this.page.identifier = "17-04-26-ProfessionalJavaForWebApplications个人整理/";
-    this.page.title = "javaforwebapplications 笔记";
-    };
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://cromarmot.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/17-04-26-ProfessionalJavaForWebApplications%E4%B8%AA%E4%BA%BA%E6%95%B4%E7%90%86/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
 
 </body>
 </html>

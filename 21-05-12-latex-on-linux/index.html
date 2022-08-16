@@ -2,9 +2,10 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
@@ -14,92 +15,66 @@
 <link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"cromarmot.github.io","root":"/Blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-  <meta name="description" content="安装sudo apt install texlive-full 包还蛮大的，3GB下载，5GB展开 Interface zh_CNOptions-&amp;gt;Configure TeXstudio-&amp;gt;General-&amp;gt;Language Hello world12345678910111213% !TEX program = xelatex% !Mode:: &quot;TeX:UTF-8&quot;%Save">
-<meta name="keywords" content="latex">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="安装sudo apt install texlive-full 包还蛮大的，3GB下载，5GB展开 Interface zh_CNOptions-&gt;Configure TeXstudio-&gt;General-&gt;Language Hello world12345678910111213% !TEX program &#x3D; xelatex% !Mode:: &quot;TeX:UTF-8&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="latex on debian">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
-<meta property="og:description" content="安装sudo apt install texlive-full 包还蛮大的，3GB下载，5GB展开 Interface zh_CNOptions-&amp;gt;Configure TeXstudio-&amp;gt;General-&amp;gt;Language Hello world12345678910111213% !TEX program = xelatex% !Mode:: &quot;TeX:UTF-8&quot;%Save">
-<meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2022-07-01T10:51:47.815Z">
+<meta property="og:description" content="安装sudo apt install texlive-full 包还蛮大的，3GB下载，5GB展开 Interface zh_CNOptions-&gt;Configure TeXstudio-&gt;General-&gt;Language Hello world12345678910111213% !TEX program &#x3D; xelatex% !Mode:: &quot;TeX:UTF-8&amp;">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-05-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-16T02:17:23.733Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="latex">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="latex on debian">
-<meta name="twitter:description" content="安装sudo apt install texlive-full 包还蛮大的，3GB下载，5GB展开 Interface zh_CNOptions-&amp;gt;Configure TeXstudio-&amp;gt;General-&amp;gt;Language Hello world12345678910111213% !TEX program = xelatex% !Mode:: &quot;TeX:UTF-8&quot;%Save">
+
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-TW'
-  };
-</script>
 
-  <title>latex on debian | Cro-Marmot's Blog</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/","path":"21-05-12-latex-on-linux/","title":"latex on debian"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>latex on debian | Cro-Marmot's Blog</title>
   
 
 
 
 
 
-
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/Blog/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Cro-Marmot's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -112,34 +87,8 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">114</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">34</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">124</span></a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -150,23 +99,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜尋..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -174,76 +122,170 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Interface-zh-CN"><span class="nav-number">2.</span> <span class="nav-text">Interface zh_CN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hello-world"><span class="nav-number">3.</span> <span class="nav-text">Hello world</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Big-Demo"><span class="nav-number">4.</span> <span class="nav-text">Big Demo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">文件类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%84"><span class="nav-number">6.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#more-tutorial"><span class="nav-number">7.</span> <span class="nav-text">more tutorial</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">124</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-  <a href="https://codeforces.com/profile/Cro-Marmot" class="codeforces-corner" title="Star me on Codeforces" aria-label="Star me on Codeforces" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L250,250 L250,0 Z"></path>
-  <path d="M125,10 125,125 240,125" fill="currentColor" style="transform-origin: 125px 125px;" class="octo-arm"></path>
-  <path d="M125,10 240,10 240,125 Z" fill="currentColor" class="octo-body"></path></svg></a>
+    <div class="main-inner post posts-expand">
 
 
+  
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
-            
-
-    
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
       <meta itemprop="name" content="Cro-Marmot">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="latex on debian | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           latex on debian
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2021-05-12 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-12T00:00:00+08:00">2021-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-07-01 18:51:47" itemprop="dateModified" datetime="2022-07-01T18:51:47+08:00">2022-07-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/code/latex/" itemprop="url" rel="index"><span itemprop="name">latex</span></a>
-                </span>
-            </span>
+      <time title="創建時間：2021-05-12 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-12T00:00:00+08:00">2021-05-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-08-16 10:17:23" itemprop="dateModified" datetime="2022-08-16T10:17:23+08:00">2022-08-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/code/latex/" itemprop="url" rel="index"><span itemprop="name">latex</span></a>
+        </span>
+    </span>
 
-          
+  
   
   <span class="post-meta-item">
     
@@ -258,6 +300,22 @@
   </span>
   
   
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>6.3k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>6 分鐘</span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -266,22 +324,23 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><code>sudo apt install texlive-full</code></p>
 <p>包还蛮大的，3GB下载，5GB展开</p>
 <h1 id="Interface-zh-CN"><a href="#Interface-zh-CN" class="headerlink" title="Interface zh_CN"></a>Interface zh_CN</h1><p><code>Options-&gt;Configure TeXstudio-&gt;General-&gt;Language</code></p>
-<h1 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h1><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% !TEX program = xelatex</span></span><br><span class="line"><span class="comment">% !Mode:: "TeX:UTF-8"</span></span><br><span class="line"><span class="comment">%Save as UTF-8, run xelatex.</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">&#123;article&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;xeCJK&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line"></span><br><span class="line">hello,你好</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;document&#125;</span></span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h1 id="Big-Demo"><a href="#Big-Demo" class="headerlink" title="Big Demo"></a>Big Demo</h1><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% !TEX program = xelatex</span></span><br><span class="line"><span class="comment">% !Mode:: "TeX:UTF-8"</span></span><br><span class="line"><span class="comment">% Save as UTF-8, run xelatex.</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">&#123;article&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">title</span><span class="string">&#123;My first document&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">date</span><span class="string">&#123;2013-09-01&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">author</span><span class="string">&#123;John Doe \thanks&#123;funded by the Overleaf team&#125;</span></span>&#125;</span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;xeCJK&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line">	<span class="tag">\<span class="name">pagenumbering</span><span class="string">&#123;gobble&#125;</span></span></span><br><span class="line">	<span class="tag">\<span class="name">maketitle</span></span></span><br><span class="line">	<span class="tag">\<span class="name">newpage</span></span></span><br><span class="line">	<span class="tag">\<span class="name">pagenumbering</span><span class="string">&#123;arabic&#125;</span></span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">\<span class="name">begin</span><span class="string">&#123;abstract&#125;</span></span></span><br><span class="line">		This is a simple paragraph at the beginning of the </span><br><span class="line">		document. A brief introduction about the main subject.</span><br><span class="line">	<span class="tag">\<span class="name">end</span><span class="string">&#123;abstract&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">tableofcontents</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;Introduction&#125;</span></span></span><br><span class="line"></span><br><span class="line">This is the first section.</span><br><span class="line"></span><br><span class="line">Lorem  ipsum  dolor  sit  amet,  consectetuer  adipiscing  </span><br><span class="line">elit.   Etiam  lobortisfacilisis sem.  Nullam nec mi et </span><br><span class="line">neque pharetra sollicitudin.  Praesent imperdietmi nec ante. </span><br><span class="line">Donec ullamcorper, felis non sodales...</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">subsection</span><span class="string">&#123;First Subsection&#125;</span></span></span><br><span class="line">Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales...</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">subsection</span><span class="string">&#123;Second Subsection&#125;</span></span></span><br><span class="line">Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales...</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">subsubsection</span><span class="string">&#123;subsubsection&#125;</span></span></span><br><span class="line">subsubsection</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">paragraph</span><span class="string">&#123;paragraph&#125;</span></span></span><br><span class="line">paragraph</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">subparagraph</span><span class="string">&#123;subparagraph&#125;</span></span></span><br><span class="line">subparagraph</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;Second Section&#125;</span></span></span><br><span class="line"></span><br><span class="line">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  </span><br><span class="line">Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra </span><br><span class="line">sollicitudin.  Praesent imperdiet mi necante...</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">section*</span><span class="string">&#123;Unnumbered Section&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">addcontentsline</span><span class="string">&#123;toc&#125;</span><span class="string">&#123;section&#125;</span><span class="string">&#123;Unnumbered Section&#125;</span></span></span><br><span class="line"></span><br><span class="line">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  </span><br><span class="line">Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra </span><br><span class="line">sollicitudin.  Praesent imperdiet mi necante...</span><br><span class="line"></span><br><span class="line">hello,你好 <span class="tag">\<span class="name">LaTeX</span><span class="string">&#123;&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">% This line here is a comment. It will not be printed in the document.</span></span><br><span class="line"></span><br><span class="line">Some of the <span class="tag">\<span class="name">textbf</span><span class="string">&#123;greatest&#125;</span></span></span><br><span class="line">discoveries in <span class="tag">\<span class="name">underline</span><span class="string">&#123;science&#125;</span></span> </span><br><span class="line">were made by <span class="tag">\<span class="name">textbf</span><span class="string">&#123;\textit&#123;accident&#125;</span></span>&#125;.</span><br><span class="line"></span><br><span class="line"><span class="comment">% Unordered lists</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;itemize&#125;</span></span></span><br><span class="line">	<span class="tag">\<span class="name">item</span></span> The individual entries are indicated with a black dot, a so-called bullet.</span><br><span class="line">	<span class="tag">\<span class="name">item</span></span> The text in the entries may be of any length.</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;itemize&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">%Ordered lists</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;enumerate&#125;</span></span></span><br><span class="line">	<span class="tag">\<span class="name">item</span></span> This is the first entry in our list</span><br><span class="line">	<span class="tag">\<span class="name">item</span></span> The list numbers increase with each entry we add</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;enumerate&#125;</span></span></span><br><span class="line"></span><br><span class="line">In physics, the mass-energy equivalence is stated </span><br><span class="line">by the equation <span class="formula">$E=mc^2$</span>, discovered in 1905 by Albert Einstein.</span><br><span class="line"></span><br><span class="line">The mass-energy equivalence is described by the famous equation</span><br><span class="line"><span class="tag">\<span class="name">[</span></span> E=mc^2 <span class="tag">\<span class="name">]</span></span></span><br><span class="line">discovered in 1905 by Albert Einstein. </span><br><span class="line">In natural units (<span class="formula">$c = 1$</span>), the formula expresses the identity</span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line">	E=m</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;equation&#125;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Subscripts in math mode are written as <span class="formula">$a_b$</span> and superscripts are written as <span class="formula">$a^b$</span>. These can be combined an nested to write expressions such as</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">[</span></span> T^&#123;i_1 i_2 <span class="tag">\<span class="name">dots</span></span> i_p&#125;_&#123;j_1 j_2 <span class="tag">\<span class="name">dots</span></span> j_q&#125; = T(x^&#123;i_1&#125;,<span class="tag">\<span class="name">dots</span></span>,x^&#123;i_p&#125;,e_&#123;j_1&#125;,<span class="tag">\<span class="name">dots</span></span>,e_&#123;j_q&#125;) <span class="tag">\<span class="name">]</span></span></span><br><span class="line"></span><br><span class="line">We write integrals using <span class="formula">$<span class="tag">\<span class="name">int</span></span>$</span> and fractions using <span class="formula">$<span class="tag">\<span class="name">frac</span><span class="string">&#123;a&#125;</span><span class="string">&#123;b&#125;</span></span>$</span>. Limits are placed on integrals using superscripts and subscripts:</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">[</span></span> <span class="tag">\<span class="name">int</span></span>_0^1 <span class="tag">\<span class="name">frac</span><span class="string">&#123;dx&#125;</span><span class="string">&#123;e^x&#125;</span> =  </span><span class="tag">\<span class="name">frac</span><span class="string">&#123;e-1&#125;</span><span class="string">&#123;e&#125;</span></span> <span class="tag">\<span class="name">]</span></span></span><br><span class="line"></span><br><span class="line">Lower case Greek letters are written as <span class="formula">$<span class="tag">\<span class="name">omega</span></span>$</span> <span class="formula">$<span class="tag">\<span class="name">delta</span></span>$</span> etc. while upper case Greek letters are written as <span class="formula">$<span class="tag">\<span class="name">Omega</span></span>$</span> <span class="formula">$<span class="tag">\<span class="name">Delta</span></span>$</span>.</span><br><span class="line"></span><br><span class="line">Mathematical operators are prefixed with a backslash as <span class="formula">$<span class="tag">\<span class="name">sin</span></span>(<span class="tag">\<span class="name">beta</span></span>)$</span>, <span class="formula">$<span class="tag">\<span class="name">cos</span></span>(<span class="tag">\<span class="name">alpha</span></span>)$</span>, <span class="formula">$<span class="tag">\<span class="name">log</span></span>(x)$</span> etc.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;center&#125;</span></span></span><br><span class="line">	<span class="tag">\<span class="name">begin</span><span class="string">&#123;tabular&#125;</span><span class="string">&#123; c c c &#125;</span></span></span><br><span class="line">		cell1 &amp; cell2 &amp; cell3 <span class="tag">\<span class="name">\</span></span> </span><br><span class="line">		cell4 &amp; cell5 &amp; cell6 <span class="tag">\<span class="name">\</span></span>  </span><br><span class="line">		cell7 &amp; cell8 &amp; cell9    </span><br><span class="line">	<span class="tag">\<span class="name">end</span><span class="string">&#123;tabular&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;center&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;center&#125;</span></span></span><br><span class="line">	<span class="tag">\<span class="name">begin</span><span class="string">&#123;tabular&#125;</span><span class="string">&#123; |c|c|c| &#125;</span></span> </span><br><span class="line">		<span class="tag">\<span class="name">hline</span></span></span><br><span class="line">		cell1 &amp; cell2 &amp; cell3 <span class="tag">\<span class="name">\</span></span> </span><br><span class="line">		cell4 &amp; cell5 &amp; cell6 <span class="tag">\<span class="name">\</span></span> </span><br><span class="line">		cell7 &amp; cell8 &amp; cell9 <span class="tag">\<span class="name">\</span></span> </span><br><span class="line">		<span class="tag">\<span class="name">hline</span></span></span><br><span class="line">	<span class="tag">\<span class="name">end</span><span class="string">&#123;tabular&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;center&#125;</span></span></span><br><span class="line"></span><br><span class="line">Table <span class="tag">\<span class="name">ref</span><span class="string">&#123;table:data&#125;</span></span> is an example of referenced <span class="tag">\<span class="name">LaTeX</span><span class="string">&#123;&#125;</span></span> elements.</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;table&#125;</span><span class="string">[h!]</span></span></span><br><span class="line">	<span class="tag">\<span class="name">centering</span></span></span><br><span class="line">	<span class="tag">\<span class="name">begin</span><span class="string">&#123;tabular&#125;</span><span class="string">&#123;||c c c c||&#125;</span></span> </span><br><span class="line">		<span class="tag">\<span class="name">hline</span></span></span><br><span class="line">		Col1 &amp; Col2 &amp; Col2 &amp; Col3 <span class="tag">\<span class="name">\</span></span> [0.5ex]</span><br><span class="line">		<span class="tag">\<span class="name">hline</span></span><span class="tag">\<span class="name">hline</span></span></span><br><span class="line">		1 &amp; 6 &amp; 87837 &amp; 787 <span class="tag">\<span class="name">\</span></span> </span><br><span class="line">		2 &amp; 7 &amp; 78 &amp; 5415 <span class="tag">\<span class="name">\</span></span></span><br><span class="line">		3 &amp; 545 &amp; 778 &amp; 7507 <span class="tag">\<span class="name">\</span></span></span><br><span class="line">		4 &amp; 545 &amp; 18744 &amp; 7560 <span class="tag">\<span class="name">\</span></span></span><br><span class="line">		5 &amp; 88 &amp; 788 &amp; 6344 <span class="tag">\<span class="name">\</span></span> [1ex] </span><br><span class="line">		<span class="tag">\<span class="name">hline</span></span></span><br><span class="line">	<span class="tag">\<span class="name">end</span><span class="string">&#123;tabular&#125;</span></span></span><br><span class="line">	<span class="tag">\<span class="name">caption</span><span class="string">&#123;Table to test captions and labels&#125;</span></span></span><br><span class="line">	<span class="tag">\<span class="name">label</span><span class="string">&#123;table:data&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;table&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;document&#125;</span></span></span><br></pre></td></tr></table></figure>
-<h1 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h1><p><a href="https://hopf.math.purdue.edu/doc/html/suffixes.html" target="_blank" rel="noopener">https://hopf.math.purdue.edu/doc/html/suffixes.html</a></p>
+<h1 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h1><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">% !TEX program = xelatex</span></span><br><span class="line"><span class="comment">% !Mode:: &quot;TeX:UTF-8&quot;</span></span><br><span class="line"><span class="comment">%Save as UTF-8, run xelatex.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;xeCJK&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"></span><br><span class="line">hello,你好</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="Big-Demo"><a href="#Big-Demo" class="headerlink" title="Big Demo"></a>Big Demo</h1><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">% !TEX program = xelatex</span></span><br><span class="line"><span class="comment">% !Mode:: &quot;TeX:UTF-8&quot;</span></span><br><span class="line"><span class="comment">% Save as UTF-8, run xelatex.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\documentclass</span>&#123;article&#125;</span><br><span class="line"><span class="keyword">\title</span>&#123;My first document&#125;</span><br><span class="line"><span class="keyword">\date</span>&#123;2013-09-01&#125;</span><br><span class="line"><span class="keyword">\author</span>&#123;John Doe <span class="keyword">\thanks</span>&#123;funded by the Overleaf team&#125;&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;xeCJK&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line">	<span class="keyword">\pagenumbering</span>&#123;gobble&#125;</span><br><span class="line">	<span class="keyword">\maketitle</span></span><br><span class="line">	<span class="keyword">\newpage</span></span><br><span class="line">	<span class="keyword">\pagenumbering</span>&#123;arabic&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">\begin</span>&#123;abstract&#125;</span><br><span class="line">		This is a simple paragraph at the beginning of the </span><br><span class="line">		document. A brief introduction about the main subject.</span><br><span class="line">	<span class="keyword">\end</span>&#123;abstract&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\tableofcontents</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\section</span>&#123;Introduction&#125;</span><br><span class="line"></span><br><span class="line">This is the first section.</span><br><span class="line"></span><br><span class="line">Lorem  ipsum  dolor  sit  amet,  consectetuer  adipiscing  </span><br><span class="line">elit.   Etiam  lobortisfacilisis sem.  Nullam nec mi et </span><br><span class="line">neque pharetra sollicitudin.  Praesent imperdietmi nec ante. </span><br><span class="line">Donec ullamcorper, felis non sodales...</span><br><span class="line"></span><br><span class="line"><span class="keyword">\subsection</span>&#123;First Subsection&#125;</span><br><span class="line">Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales...</span><br><span class="line"></span><br><span class="line"><span class="keyword">\subsection</span>&#123;Second Subsection&#125;</span><br><span class="line">Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales...</span><br><span class="line"></span><br><span class="line"><span class="keyword">\subsubsection</span>&#123;subsubsection&#125;</span><br><span class="line">subsubsection</span><br><span class="line"></span><br><span class="line"><span class="keyword">\paragraph</span>&#123;paragraph&#125;</span><br><span class="line">paragraph</span><br><span class="line"></span><br><span class="line"><span class="keyword">\subparagraph</span>&#123;subparagraph&#125;</span><br><span class="line">subparagraph</span><br><span class="line"></span><br><span class="line"><span class="keyword">\section</span>&#123;Second Section&#125;</span><br><span class="line"></span><br><span class="line">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  </span><br><span class="line">Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra </span><br><span class="line">sollicitudin.  Praesent imperdiet mi necante...</span><br><span class="line"></span><br><span class="line"><span class="keyword">\section</span>*&#123;Unnumbered Section&#125;</span><br><span class="line"><span class="keyword">\addcontentsline</span>&#123;toc&#125;&#123;section&#125;&#123;Unnumbered Section&#125;</span><br><span class="line"></span><br><span class="line">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  </span><br><span class="line">Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra </span><br><span class="line">sollicitudin.  Praesent imperdiet mi necante...</span><br><span class="line"></span><br><span class="line">hello,你好 <span class="keyword">\LaTeX</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% This line here is a comment. It will not be printed in the document.</span></span><br><span class="line"></span><br><span class="line">Some of the <span class="keyword">\textbf</span>&#123;greatest&#125;</span><br><span class="line">discoveries in <span class="keyword">\underline</span>&#123;science&#125; </span><br><span class="line">were made by <span class="keyword">\textbf</span>&#123;<span class="keyword">\textit</span>&#123;accident&#125;&#125;.</span><br><span class="line"></span><br><span class="line"><span class="comment">% Unordered lists</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">	<span class="keyword">\item</span> The individual entries are indicated with a black dot, a so-called bullet.</span><br><span class="line">	<span class="keyword">\item</span> The text in the entries may be of any length.</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">%Ordered lists</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;enumerate&#125;</span><br><span class="line">	<span class="keyword">\item</span> This is the first entry in our list</span><br><span class="line">	<span class="keyword">\item</span> The list numbers increase with each entry we add</span><br><span class="line"><span class="keyword">\end</span>&#123;enumerate&#125;</span><br><span class="line"></span><br><span class="line">In physics, the mass-energy equivalence is stated </span><br><span class="line">by the equation <span class="built_in">$</span>E=mc<span class="built_in">^</span>2<span class="built_in">$</span>, discovered in 1905 by Albert Einstein.</span><br><span class="line"></span><br><span class="line">The mass-energy equivalence is described by the famous equation</span><br><span class="line"><span class="keyword">\[</span> E=mc<span class="built_in">^</span>2 <span class="keyword">\]</span></span><br><span class="line">discovered in 1905 by Albert Einstein. </span><br><span class="line">In natural units (<span class="built_in">$</span>c = 1<span class="built_in">$</span>), the formula expresses the identity</span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line">	E=m</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Subscripts in math mode are written as <span class="built_in">$</span>a<span class="built_in">_</span>b<span class="built_in">$</span> and superscripts are written as <span class="built_in">$</span>a<span class="built_in">^</span>b<span class="built_in">$</span>. These can be combined an nested to write expressions such as</span><br><span class="line"></span><br><span class="line"><span class="keyword">\[</span> T<span class="built_in">^</span>&#123;i<span class="built_in">_</span>1 i<span class="built_in">_</span>2 <span class="keyword">\dots</span> i<span class="built_in">_</span>p&#125;<span class="built_in">_</span>&#123;j<span class="built_in">_</span>1 j<span class="built_in">_</span>2 <span class="keyword">\dots</span> j<span class="built_in">_</span>q&#125; = T(x<span class="built_in">^</span>&#123;i<span class="built_in">_</span>1&#125;,<span class="keyword">\dots</span>,x<span class="built_in">^</span>&#123;i<span class="built_in">_</span>p&#125;,e<span class="built_in">_</span>&#123;j<span class="built_in">_</span>1&#125;,<span class="keyword">\dots</span>,e<span class="built_in">_</span>&#123;j<span class="built_in">_</span>q&#125;) <span class="keyword">\]</span></span><br><span class="line"></span><br><span class="line">We write integrals using <span class="built_in">$</span><span class="keyword">\int</span><span class="built_in">$</span> and fractions using <span class="built_in">$</span><span class="keyword">\frac</span>&#123;a&#125;&#123;b&#125;<span class="built_in">$</span>. Limits are placed on integrals using superscripts and subscripts:</span><br><span class="line"></span><br><span class="line"><span class="keyword">\[</span> <span class="keyword">\int</span><span class="built_in">_</span>0<span class="built_in">^</span>1 <span class="keyword">\frac</span>&#123;dx&#125;&#123;e<span class="built_in">^</span>x&#125; =  <span class="keyword">\frac</span>&#123;e-1&#125;&#123;e&#125; <span class="keyword">\]</span></span><br><span class="line"></span><br><span class="line">Lower case Greek letters are written as <span class="built_in">$</span><span class="keyword">\omega</span><span class="built_in">$</span> <span class="built_in">$</span><span class="keyword">\delta</span><span class="built_in">$</span> etc. while upper case Greek letters are written as <span class="built_in">$</span><span class="keyword">\Omega</span><span class="built_in">$</span> <span class="built_in">$</span><span class="keyword">\Delta</span><span class="built_in">$</span>.</span><br><span class="line"></span><br><span class="line">Mathematical operators are prefixed with a backslash as <span class="built_in">$</span><span class="keyword">\sin</span>(<span class="keyword">\beta</span>)<span class="built_in">$</span>, <span class="built_in">$</span><span class="keyword">\cos</span>(<span class="keyword">\alpha</span>)<span class="built_in">$</span>, <span class="built_in">$</span><span class="keyword">\log</span>(x)<span class="built_in">$</span> etc.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;tabular&#125;&#123; c c c &#125;</span><br><span class="line">		cell1 <span class="built_in">&amp;</span> cell2 <span class="built_in">&amp;</span> cell3 <span class="keyword">\\</span> </span><br><span class="line">		cell4 <span class="built_in">&amp;</span> cell5 <span class="built_in">&amp;</span> cell6 <span class="keyword">\\</span>  </span><br><span class="line">		cell7 <span class="built_in">&amp;</span> cell8 <span class="built_in">&amp;</span> cell9    </span><br><span class="line">	<span class="keyword">\end</span>&#123;tabular&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;center&#125;</span><br><span class="line">	<span class="keyword">\begin</span>&#123;tabular&#125;&#123; |c|c|c| &#125; </span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		cell1 <span class="built_in">&amp;</span> cell2 <span class="built_in">&amp;</span> cell3 <span class="keyword">\\</span> </span><br><span class="line">		cell4 <span class="built_in">&amp;</span> cell5 <span class="built_in">&amp;</span> cell6 <span class="keyword">\\</span> </span><br><span class="line">		cell7 <span class="built_in">&amp;</span> cell8 <span class="built_in">&amp;</span> cell9 <span class="keyword">\\</span> </span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">	<span class="keyword">\end</span>&#123;tabular&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;center&#125;</span><br><span class="line"></span><br><span class="line">Table <span class="keyword">\ref</span>&#123;table:data&#125; is an example of referenced <span class="keyword">\LaTeX</span>&#123;&#125; elements.</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;table&#125;[h!]</span><br><span class="line">	<span class="keyword">\centering</span></span><br><span class="line">	<span class="keyword">\begin</span>&#123;tabular&#125;&#123;||c c c c||&#125; </span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">		Col1 <span class="built_in">&amp;</span> Col2 <span class="built_in">&amp;</span> Col2 <span class="built_in">&amp;</span> Col3 <span class="keyword">\\</span> [0.5ex]</span><br><span class="line">		<span class="keyword">\hline</span><span class="keyword">\hline</span></span><br><span class="line">		1 <span class="built_in">&amp;</span> 6 <span class="built_in">&amp;</span> 87837 <span class="built_in">&amp;</span> 787 <span class="keyword">\\</span> </span><br><span class="line">		2 <span class="built_in">&amp;</span> 7 <span class="built_in">&amp;</span> 78 <span class="built_in">&amp;</span> 5415 <span class="keyword">\\</span></span><br><span class="line">		3 <span class="built_in">&amp;</span> 545 <span class="built_in">&amp;</span> 778 <span class="built_in">&amp;</span> 7507 <span class="keyword">\\</span></span><br><span class="line">		4 <span class="built_in">&amp;</span> 545 <span class="built_in">&amp;</span> 18744 <span class="built_in">&amp;</span> 7560 <span class="keyword">\\</span></span><br><span class="line">		5 <span class="built_in">&amp;</span> 88 <span class="built_in">&amp;</span> 788 <span class="built_in">&amp;</span> 6344 <span class="keyword">\\</span> [1ex] </span><br><span class="line">		<span class="keyword">\hline</span></span><br><span class="line">	<span class="keyword">\end</span>&#123;tabular&#125;</span><br><span class="line">	<span class="keyword">\caption</span>&#123;Table to test captions and labels&#125;</span><br><span class="line">	<span class="keyword">\label</span>&#123;table:data&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;table&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h1><p><a target="_blank" rel="noopener" href="https://hopf.math.purdue.edu/doc/html/suffixes.html">https://hopf.math.purdue.edu/doc/html/suffixes.html</a></p>
 <p><code>.log</code> … denotes a log file for any flavour of TeX</p>
 <p><code>.aux</code> … denotes an auxiliary file generated by running latex (or etex) on a source file. It typically contains information latex needs on a second pass to construct \refs and \cites and information that bibtex needs to construct a .bbl file. See BibTeX.</p>
 <p><code>.toc</code> … denotes an table of contents file generated by latex when the source file contains the line <code>\tableofcontents</code></p>
 <p><code>.bib</code> … denotes a BibTeX source file such files contain the database from which the <code>.bbl</code> bibliography file is generated. See BibTeX.</p>
 <p><code>.bst</code> … denotes a BibTeX style file the style in which bibtex presents the <code>.bbl</code> bibliography file.</p>
 <p><code>.cls</code> … denotes a LaTeX 2e class file</p>
-<p><code>.sty</code> … denotes a LaTeX (or AmS-TeX) package/style file LaTeX 2.09 made no distinction between classes and packages … all such files were style files - hence the suffix. LaTeX 2e has retained the suffix for what it now terms as packages</p>
+<p><code>.sty</code> … denotes a LaTeX (or AmS-TeX) package&#x2F;style file LaTeX 2.09 made no distinction between classes and packages … all such files were style files - hence the suffix. LaTeX 2e has retained the suffix for what it now terms as packages</p>
 <h1 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h1><ul>
 <li>preamble<ul>
 <li>documentclass 引入class文件，常见的article，和自定义</li>
@@ -291,180 +350,86 @@
 </li>
 </ul>
 </li>
-<li>main document 以 <code>\begin{document} \end{document}</code>包裹<ul>
-<li>section/subsection/subsubsection/paragraph/subparagraph/author/title/date/maketitle/tableofcontents/newpage 完成层级相关的操作</li>
-<li>图片 $\begin{figure} \end{figure}$ 包裹, includegraphics/caption</li>
-<li>section/label/ref  段落引用</li>
-<li>usepackage{biblatex}  / bibliography{FILENAME}, 和 bib文件来 引别的书目内容, printbibliography</li>
-<li>通过csv文件生产table/plot图 等 <a href="https://latex-tutorial.com/tutorials/pgfplotstable/" target="_blank" rel="noopener">https://latex-tutorial.com/tutorials/pgfplotstable/</a></li>
-<li>tikz 绘图 <a href="https://latex-tutorial.com/tutorials/tikz/" target="_blank" rel="noopener">https://latex-tutorial.com/tutorials/tikz/</a></li>
+<li>main document 以 <code>\begin&#123;document&#125; \end&#123;document&#125;</code>包裹<ul>
+<li>section&#x2F;subsection&#x2F;subsubsection&#x2F;paragraph&#x2F;subparagraph&#x2F;author&#x2F;title&#x2F;date&#x2F;maketitle&#x2F;tableofcontents&#x2F;newpage 完成层级相关的操作</li>
+<li>图片 $\begin{figure} \end{figure}$ 包裹, includegraphics&#x2F;caption</li>
+<li>section&#x2F;label&#x2F;ref  段落引用</li>
+<li>usepackage{biblatex}  &#x2F; bibliography{FILENAME}, 和 bib文件来 引别的书目内容, printbibliography</li>
+<li>通过csv文件生产table&#x2F;plot图 等 <a target="_blank" rel="noopener" href="https://latex-tutorial.com/tutorials/pgfplotstable/">https://latex-tutorial.com/tutorials/pgfplotstable/</a></li>
+<li>tikz 绘图 <a target="_blank" rel="noopener" href="https://latex-tutorial.com/tutorials/tikz/">https://latex-tutorial.com/tutorials/tikz/</a></li>
 </ul>
 </li>
 </ul>
-<h1 id="more-tutorial"><a href="#more-tutorial" class="headerlink" title="more tutorial"></a>more tutorial</h1><p><a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes" target="_blank" rel="noopener">https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes</a></p>
-<p><a href="https://latex-tutorial.com/wp-content/uploads/2021/03/latex-quick-start-tutorial.pdf" target="_blank" rel="noopener">https://latex-tutorial.com/wp-content/uploads/2021/03/latex-quick-start-tutorial.pdf</a></p>
-<p><a href="https://latex-tutorial.com/quick-start/" target="_blank" rel="noopener">https://latex-tutorial.com/quick-start/</a></p>
+<h1 id="more-tutorial"><a href="#more-tutorial" class="headerlink" title="more tutorial"></a>more tutorial</h1><p><a target="_blank" rel="noopener" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes</a></p>
+<p><a target="_blank" rel="noopener" href="https://latex-tutorial.com/wp-content/uploads/2021/03/latex-quick-start-tutorial.pdf">https://latex-tutorial.com/wp-content/uploads/2021/03/latex-quick-start-tutorial.pdf</a></p>
+<p><a target="_blank" rel="noopener" href="https://latex-tutorial.com/quick-start/">https://latex-tutorial.com/quick-start/</a></p>
 
     </div>
 
     
     
     
+      
 
-      <footer class="post-footer">
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/" title="latex on debian">https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
           <div class="post-tags">
-              <a href="/Blog/tags/latex/" rel="tag"># latex</a>
+              <a href="/Blog/tags/latex/" rel="tag"><i class="fa fa-tag"></i> latex</a>
           </div>
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/Blog/21-04-27-gogs/" rel="prev" title="gogs with docker 破事水">
-      <i class="fa fa-chevron-left"></i> gogs with docker 破事水
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/Blog/21-05-25-react-timer/" rel="next" title="react 计时器与 useRef, useState">
-      react 计时器与 useRef, useState <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/21-04-27-gogs/" rel="prev" title="gogs with docker 破事水">
+                  <i class="fa fa-chevron-left"></i> gogs with docker 破事水
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Blog/21-05-25-react-timer/" rel="next" title="react 计时器与 useRef, useState">
+                  react 计时器与 useRef, useState <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-  
-  
-  
+</div>
 
 
 
-          </div>
-          
+
+
+
     
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Interface-zh-CN"><span class="nav-number">2.</span> <span class="nav-text">Interface zh_CN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hello-world"><span class="nav-number">3.</span> <span class="nav-text">Hello world</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Big-Demo"><span class="nav-number">4.</span> <span class="nav-text">Big Demo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件类型"><span class="nav-number">5.</span> <span class="nav-text">文件类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结构"><span class="nav-number">6.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#more-tutorial"><span class="nav-number">7.</span> <span class="nav-text">more tutorial</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
-  <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/Blog/archives/">
-        
-          <span class="site-state-item-count">113</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/Blog/categories/">
-          
-        <span class="site-state-item-count">52</span>
-        <span class="site-state-item-name">分類</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/Blog/tags/">
-          
-        <span class="site-state-item-count">126</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/CroMarmot" title="GitHub → https://github.com/CroMarmot" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://codeforces.com/profile/Cro-Marmot" title="Codeforces → https://codeforces.com/profile/Cro-Marmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>Codeforces</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://atcoder.jp/users/cromarmot" title="AtCoder → https://atcoder.jp/users/cromarmot" rel="noopener" target="_blank"><i class="bug fa-fw"></i>AtCoder</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
@@ -472,29 +437,37 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">645k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:47</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
   </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/Blog/lib/anime.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
-<script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script>
-<script src="/Blog/js/schemes/muse.js"></script>
-<script src="/Blog/js/next-boot.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
 
 
 
@@ -503,108 +476,17 @@
 
 
 
-  <script src="/Blog/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
   
 
-  
-      
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
 
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
 
-    
-
-  
-
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://cromarmot.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/";
-    this.page.identifier = "21-05-12-latex-on-linux/";
-    this.page.title = "latex on debian";
-    };
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://cromarmot.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
 
 </body>
 </html>
