@@ -1,7 +1,7 @@
 ---
 title: Vue transition
 date: 2021-09-02
-tags: [vue]
+tags: [vue2]
 category: [code, frontend, vue]
 mathjax: true
 ---
