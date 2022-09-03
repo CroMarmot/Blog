@@ -6,7 +6,7 @@
   <link href="https://cromarmot.github.io/Blog/atom.xml" rel="self"/>
   
   <link href="https://cromarmot.github.io/Blog/"/>
-  <updated>2022-09-02T03:58:14.954Z</updated>
+  <updated>2022-09-03T01:33:28.204Z</updated>
   <id>https://cromarmot.github.io/Blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://cromarmot.github.io/Blog/22-08-15-static-blog/"/>
     <id>https://cromarmot.github.io/Blog/22-08-15-static-blog/</id>
     <published>2022-08-14T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.204Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;写在-2022-年的-静态博客选择&quot;&gt;&lt;a href=&quot;#写在-2022-年的-静态博客选择&quot; class=&quot;headerlink&quot; title=&quot;写在 2022 年的 静态博客选择&quot;&gt;&lt;/a&gt;写在 2022 年的 静态博客选择&lt;/h1&gt;&lt;h2 id=&quot;调研&quot;&gt;&lt;a href=&quot;#调研&quot; class=&quot;headerlink&quot; title=&quot;调研&quot;&gt;&lt;/a&gt;调研&lt;/h2&gt;&lt;p&gt;用了Hexo很久了,期间也有不少其它产品, 也试了试这些框架&lt;/p&gt;
@@ -46,7 +46,7 @@
     <link href="https://cromarmot.github.io/Blog/22-06-30-ts-cheatsheet/"/>
     <id>https://cromarmot.github.io/Blog/22-06-30-ts-cheatsheet/</id>
     <published>2022-06-29T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.204Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;TS-Cheat-Sheet&quot;&gt;&lt;a href=&quot;#TS-Cheat-Sheet&quot; class=&quot;headerlink&quot; title=&quot;TS Cheat Sheet&quot;&gt;&lt;/a&gt;TS Cheat Sheet&lt;/h1&gt;&lt;h2 id=&quot;为什么写这篇&quot;&gt;&lt;a href=&quot;#为什么写这篇&quot; class=&quot;headerlink&quot; title=&quot;为什么写这篇&quot;&gt;&lt;/a&gt;为什么写这篇&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/type-challenges/type-challenges&quot;&gt;antfu的题目&lt;/a&gt; 大多就是基础方法+递归, issues充斥着重复内容, 最开始还有点TS的味道, 后面完全变成了只有基础方法, 组合出一个东西, 感觉这个更适合作为递归练习题, 而不是TS练习题 (没有数值强行用数组拼接+length, 等等&lt;/p&gt;
@@ -67,7 +67,7 @@
     <link href="https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/"/>
     <id>https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/</id>
     <published>2022-03-12T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.204Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;带sudo的一定小心, 别选错盘了&lt;/strong&gt;&lt;/p&gt;
@@ -93,7 +93,7 @@
     <link href="https://cromarmot.github.io/Blog/21-12-21-anti-douban/"/>
     <id>https://cromarmot.github.io/Blog/21-12-21-anti-douban/</id>
     <published>2021-12-20T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.204Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;个人的网页需要一些书目数据，印象中，老的豆瓣直接是页面还是接口，能获直接取到，可以作为爬虫入门练手&lt;/p&gt;
@@ -120,7 +120,7 @@
     <link href="https://cromarmot.github.io/Blog/21-12-06-currying-add/"/>
     <id>https://cromarmot.github.io/Blog/21-12-06-currying-add/</id>
     <published>2021-12-05T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.204Z</updated>
     
     
       
@@ -148,7 +148,7 @@
     <link href="https://cromarmot.github.io/Blog/21-11-22-frontEndRoadmap/"/>
     <id>https://cromarmot.github.io/Blog/21-11-22-frontEndRoadmap/</id>
     <published>2021-11-21T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.204Z</updated>
     
     
       
@@ -177,7 +177,7 @@
     <link href="https://cromarmot.github.io/Blog/21-11-16-gitlab-github-pr-view-bug/"/>
     <id>https://cromarmot.github.io/Blog/21-11-16-gitlab-github-pr-view-bug/</id>
     <published>2021-11-15T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
       
@@ -204,7 +204,7 @@
     <link href="https://cromarmot.github.io/Blog/21-09-02-vue-transition/"/>
     <id>https://cromarmot.github.io/Blog/21-09-02-vue-transition/</id>
     <published>2021-09-01T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
       
@@ -224,7 +224,7 @@
     <category term="vue" scheme="https://cromarmot.github.io/Blog/categories/code/frontend/vue/"/>
     
     
-    <category term="vue" scheme="https://cromarmot.github.io/Blog/tags/vue/"/>
+    <category term="vue2" scheme="https://cromarmot.github.io/Blog/tags/vue2/"/>
     
   </entry>
   
@@ -233,7 +233,7 @@
     <link href="https://cromarmot.github.io/Blog/21-07-06-dockerharbor/"/>
     <id>https://cromarmot.github.io/Blog/21-07-06-dockerharbor/</id>
     <published>2021-07-05T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;Docker-Harbor&quot;&gt;&lt;a href=&quot;#Docker-Harbor&quot; class=&quot;headerlink&quot; title=&quot;Docker Harbor&quot;&gt;&lt;/a&gt;Docker Harbor&lt;/h1&gt;&lt;p&gt;简单说，可以搭本地&amp;#x2F;局域网 docker仓库&lt;/p&gt;
@@ -268,7 +268,7 @@
     <link href="https://cromarmot.github.io/Blog/21-07-05-migrate2win/"/>
     <id>https://cromarmot.github.io/Blog/21-07-05-migrate2win/</id>
     <published>2021-07-04T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;apt&quot;&gt;&lt;a href=&quot;#apt&quot; class=&quot;headerlink&quot; title=&quot;apt&quot;&gt;&lt;/a&gt;apt&lt;/h1&gt;&lt;p&gt;怀念 Debian apt 的好, 在windows上腾讯软件管家成了我的“apt”&lt;/p&gt;
@@ -307,7 +307,7 @@
     <link href="https://cromarmot.github.io/Blog/21-05-25-react-timer/"/>
     <id>https://cromarmot.github.io/Blog/21-05-25-react-timer/</id>
     <published>2021-05-24T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;开始&quot;&gt;&lt;a href=&quot;#开始&quot; class=&quot;headerlink&quot; title=&quot;开始&quot;&gt;&lt;/a&gt;开始&lt;/h1&gt;&lt;p&gt;一般来说tutorial, 是从有什么讲什么的开始&lt;/p&gt;
@@ -329,7 +329,7 @@
     <link href="https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/"/>
     <id>https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/</id>
     <published>2021-05-11T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;&lt;code&gt;sudo apt install texlive-full&lt;/code&gt;&lt;/p&gt;
@@ -353,7 +353,7 @@
     <link href="https://cromarmot.github.io/Blog/21-04-27-gogs/"/>
     <id>https://cromarmot.github.io/Blog/21-04-27-gogs/</id>
     <published>2021-04-26T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
       
@@ -382,7 +382,7 @@
     <link href="https://cromarmot.github.io/Blog/21-04-01-pointers/"/>
     <id>https://cromarmot.github.io/Blog/21-04-01-pointers/</id>
     <published>2021-03-31T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
       
@@ -407,7 +407,7 @@
     <link href="https://cromarmot.github.io/Blog/21-03-24-frontend-call-and-data/"/>
     <id>https://cromarmot.github.io/Blog/21-03-24-frontend-call-and-data/</id>
     <published>2021-03-23T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;交互&quot;&gt;&lt;a href=&quot;#交互&quot; class=&quot;headerlink&quot; title=&quot;交互&quot;&gt;&lt;/a&gt;交互&lt;/h1&gt;&lt;p&gt;概念上, 这几类&lt;/p&gt;
@@ -446,7 +446,7 @@
     <link href="https://cromarmot.github.io/Blog/21-03-16-fiddler/"/>
     <id>https://cromarmot.github.io/Blog/21-03-16-fiddler/</id>
     <published>2021-03-15T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;fiddler&quot;&gt;&lt;a href=&quot;#fiddler&quot; class=&quot;headerlink&quot; title=&quot;fiddler&quot;&gt;&lt;/a&gt;fiddler&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.telerik.com/download/fiddler/fiddler-everywhere-linux&quot;&gt;https://www.telerik.com/download/fiddler/fiddler-everywhere-linux&lt;/a&gt;&lt;/p&gt;
@@ -469,7 +469,7 @@
     <link href="https://cromarmot.github.io/Blog/21-03-11-vue2source/"/>
     <id>https://cromarmot.github.io/Blog/21-03-11-vue2source/</id>
     <published>2021-03-10T16:00:00.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
       
@@ -502,7 +502,7 @@
     <link href="https://cromarmot.github.io/Blog/21-03-09-js-module/"/>
     <id>https://cromarmot.github.io/Blog/21-03-09-js-module/</id>
     <published>2021-03-09T13:58:14.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;总&quot;&gt;&lt;a href=&quot;#总&quot; class=&quot;headerlink&quot; title=&quot;总&quot;&gt;&lt;/a&gt;总&lt;/h1&gt;&lt;p&gt;为了模块拆分&lt;/p&gt;
@@ -525,7 +525,7 @@
     <link href="https://cromarmot.github.io/Blog/21-03-08-dotd-folder/"/>
     <id>https://cromarmot.github.io/Blog/21-03-08-dotd-folder/</id>
     <published>2021-03-08T13:58:14.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;d-文件夹&quot;&gt;&lt;a href=&quot;#d-文件夹&quot; class=&quot;headerlink&quot; title=&quot;.d 文件夹&quot;&gt;&lt;/a&gt;.d 文件夹&lt;/h1&gt;&lt;p&gt;众所周知， debian系列的软件源列表, 从最早手动的改动&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;,到后面在&lt;code&gt;/etc/apt/sources.list.d/&lt;/code&gt; 中手动增加，以及有软件可以直接更换不需要手动改&lt;/p&gt;
@@ -557,7 +557,7 @@
     <link href="https://cromarmot.github.io/Blog/21-02-18-html-for/"/>
     <id>https://cromarmot.github.io/Blog/21-02-18-html-for/</id>
     <published>2021-02-18T13:58:14.000Z</published>
-    <updated>2022-09-02T03:58:14.954Z</updated>
+    <updated>2022-09-03T01:33:28.200Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;总述问题&quot;&gt;&lt;a href=&quot;#总述问题&quot; class=&quot;headerlink&quot; title=&quot;总述问题&quot;&gt;&lt;/a&gt;总述问题&lt;/h1&gt;&lt;p&gt;列表渲染时，在对列表插入和移除之类的操作时，会因为其设计的“替换算法”，导致语义上的对应映射错误&lt;/p&gt;
