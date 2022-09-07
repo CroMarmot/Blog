@@ -1436,7 +1436,7 @@
 
 <h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1><p>This README.md is used to testing all kinds of syntax of GitHub Flavored Markdown.</p>
 <hr>
-<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-119-108-121-x72-105-99-x73-64-x31-x36-x33-x2e-99-x6f-x6d"><a href="#E-mail-119-108-121-x72-105-99-x73-64-x31-x36-x33-x2e-99-x6f-x6d" class="headerlink" title="E-mail:&#119;&#108;&#121;&#x72;&#105;&#99;&#x73;&#64;&#x31;&#x36;&#x33;&#x2e;&#99;&#x6f;&#x6d;"></a>E-mail:<a href="mailto:&#119;&#108;&#121;&#x72;&#105;&#99;&#x73;&#64;&#x31;&#x36;&#x33;&#x2e;&#99;&#x6f;&#x6d;">&#119;&#108;&#121;&#x72;&#105;&#99;&#x73;&#64;&#x31;&#x36;&#x33;&#x2e;&#99;&#x6f;&#x6d;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-x77-108-121-x72-105-99-115-64-x31-x36-x33-x2e-99-111-x6d"><a href="#E-mail-x77-108-121-x72-105-99-115-64-x31-x36-x33-x2e-99-111-x6d" class="headerlink" title="E-mail:&#x77;&#108;&#121;&#x72;&#105;&#99;&#115;&#64;&#x31;&#x36;&#x33;&#x2e;&#99;&#111;&#x6d;"></a>E-mail:<a href="mailto:&#x77;&#108;&#121;&#x72;&#105;&#99;&#115;&#64;&#x31;&#x36;&#x33;&#x2e;&#99;&#111;&#x6d;">&#x77;&#108;&#121;&#x72;&#105;&#99;&#115;&#64;&#x31;&#x36;&#x33;&#x2e;&#99;&#111;&#x6d;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a name="index"/>目录</h2><ul>
 <li><a href="#line">横线</a></li>
 <li><a href="#title">标题</a></li>
@@ -14326,6 +14326,64 @@ yarn dev -m
       <tags>
         <tag>frontend</tag>
         <tag>static blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ubuntu + pip + setuptool bug 体验</title>
+    <url>/Blog/22-09-08-fuck-pip/</url>
+    <content><![CDATA[<h1 id="第一次被pip搞了几个小时"><a href="#第一次被pip搞了几个小时" class="headerlink" title="第一次被pip搞了几个小时"></a>第一次被pip搞了几个小时</h1><p>壮着胆子,在Ubuntu 22.10还没发布前,把系统从20.04.5升级到了22.04.1, 以我从12-&gt;14,14-&gt;16,16-&gt;18,18-&gt;20多年的经验来看, 这次竟然没问题! 厉害了, 以前每次升级都会炸点东西, 然后最终还是重装式升级, 这次竟然没啥严重的炸掉</p>
+<p>然后<code>pip3 install -e .</code>出问题了</p>
+<p>先是报没权限,但看报的路径,没往用户目录下写,在写root, 作为一个胆小的人, 向来杜绝777的</p>
+<p>翻了半天google和github</p>
+<p>看到一个<a href="https://github.com/pypa/pip/issues/7953#issuecomment-645133255">方案</a>:<code>setup.py</code>中加上</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import site</span><br><span class="line">import sys</span><br><span class="line">site.ENABLE_USER_SITE = &quot;--user&quot; in sys.argv[1:]</span><br></pre></td></tr></table></figure>
+
+<p>加完以后, 恩 是没有问题了</p>
+<p>然后报错</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">× python setup.py develop did not run successfully.</span><br><span class="line">│ exit code: 1</span><br><span class="line">╰─&gt; [29 lines of output]</span><br><span class="line">    running develop</span><br><span class="line">    /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.</span><br><span class="line">      warnings.warn(</span><br><span class="line">    Traceback (most recent call last):</span><br><span class="line">      File &quot;&lt;string&gt;&quot;, line 2, in &lt;module&gt;</span><br><span class="line">      File &quot;&lt;pip-setuptools-caller&gt;&quot;, line 34, in &lt;module&gt;</span><br><span class="line">      File &quot;/home/cromarmot/Documents/computer/oiTerminalv2dev/setup.py&quot;, line 6, in &lt;module&gt;</span><br><span class="line">        setup()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/__init__.py&quot;, line 153, in setup</span><br><span class="line">        return distutils.core.setup(**attrs)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/core.py&quot;, line 148, in setup</span><br><span class="line">        return run_commands(dist)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/core.py&quot;, line 163, in run_commands</span><br><span class="line">        dist.run_commands()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/dist.py&quot;, line 967, in run_commands</span><br><span class="line">        self.run_command(cmd)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/dist.py&quot;, line 985, in run_command</span><br><span class="line">        cmd_obj.ensure_finalized()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/cmd.py&quot;, line 107, in ensure_finalized</span><br><span class="line">        self.finalize_options()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/develop.py&quot;, line 52, in finalize_options</span><br><span class="line">        easy_install.finalize_options(self)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&quot;, line 270, in finalize_options</span><br><span class="line">        self._fix_install_dir_for_user_site()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&quot;, line 400, in _fix_install_dir_for_user_site</span><br><span class="line">        self.select_scheme(scheme_name)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&quot;, line 741, in select_scheme</span><br><span class="line">        scheme = INSTALL_SCHEMES[name]</span><br><span class="line">    KeyError: &#x27;unix_user&#x27;</span><br><span class="line">    [end of output]</span><br></pre></td></tr></table></figure>
+
+<p>又搜,发现的确是setuptools有bug,然后<a href="https://github.com/pypa/setuptools/issues/2938#issuecomment-998293346">60.0.2修复了</a></p>
+<p>我看了下<code>pip3 list | grep setuptools</code>, 版本是59</p>
+<p>升级了一下到65 依然不行</p>
+<p>而且上面的所有操作前后,只要是<code>venv</code>里,就没问题</p>
+<p>又搜了半天,一个发现是,似乎大家都是ubuntu</p>
+<hr>
+<p>另一问题是我注意到名称是UNKNOWN, 就去搜了下这个UNKNOWN</p>
+<p>后来看到<a href="https://github.com/pypa/setuptools/issues/3269#issuecomment-1100426325">这个issue</a></p>
+<p>还学到了一下py隔离环境快速搭建和测试, 她似乎也是<a href="https://github.com/pypa/setuptools/issues/3269#issuecomment-1100434792">venv可以但是外面不行</a></p>
+<p>然后我也跟着清理了一下dist和egg-info 都没用, 说查看pip, 我看了pip也是都是2.22.2</p>
+<p>老哥说 可能是 <a href="https://github.com/pypa/pip/issues/6264#issuecomment-1086882745">pypa&#x2F;pip#6264 (comment)</a></p>
+<p>也就是debian提供的</p>
+<p>让升级一下<code>/usr/local/lib/python3.10/dist-packages/setuptools</code></p>
+<p>然后,她通过把系统的<code>setuptools</code>给卸载了就好了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt purge python3-setuptools</span><br></pre></td></tr></table></figure>
+
+<h2 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h2><p>这样看起来是 setuptools 实际写了bug</p>
+<p>然后ubuntu目前apt里版本就正好是有bug的</p>
+<p>然后pip list的setuptools版本, 和执行install的版本竟然不一样???????</p>
+<p>这真是搞锤子</p>
+<p>看看linux的whereis which 都教了你们如何对多个公共同名的做处理的, 竟然pip还能有这个锅, 就离谱</p>
+<p>然后删除以后,连setup.py里加东西也不需要了</p>
+<h2 id="学一手-py-隔离环境测试"><a href="#学一手-py-隔离环境测试" class="headerlink" title="学一手 py 隔离环境测试"></a>学一手 py 隔离环境测试</h2><p>虽然我一般习惯是用venv</p>
+<hr>
+<p>本机+virtualenv</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/nschloe/setuptools-UNKNOWN-bug.git</span><br><span class="line"><span class="built_in">cd</span> setuptools-UNKNOWN-bug</span><br><span class="line"></span><br><span class="line">virtualenv -p python3.10 .venv</span><br><span class="line">.venv/bin/python -m pip install .</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">docker</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>docker run –rm -it python:3.10-bullseye &#x2F;bin&#x2F;bash</p>
+</blockquote>
+<p>cd &#x2F;tmp<br>git clone <a href="https://github.com/nschloe/setuptools-UNKNOWN-bug.git">https://github.com/nschloe/setuptools-UNKNOWN-bug.git</a><br>cd setuptools-UNKNOWN-bug<br>pip install .</p>
+<pre><code>
+</code></pre>
+]]></content>
+      <categories>
+        <category>backend</category>
+        <category>python3</category>
+      </categories>
+      <tags>
+        <tag>backend</tag>
+        <tag>python3</tag>
+        <tag>pip</tag>
+        <tag>setuptool</tag>
       </tags>
   </entry>
 </search>
