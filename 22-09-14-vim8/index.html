@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="历史我也是用了 spf13-vim + vundle 有七八年了, 之中还用过Pathogen 之类的 这次随着ubuntu $20\to 22$的升级, 有不少之前的插件不支持vim8,不能用了, 虽然根据官网消息,似乎vim9已经出来了 vim8 也有自带的package管理方案:h packages, 看起来需要自己用git维护, 而用vim-plug只需要维护vimrc, 而在8之上还有d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim8 插件升级">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/22-09-14-vim8/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="历史我也是用了 spf13-vim + vundle 有七八年了, 之中还用过Pathogen 之类的 这次随着ubuntu $20\to 22$的升级, 有不少之前的插件不支持vim8,不能用了, 虽然根据官网消息,似乎vim9已经出来了 vim8 也有自带的package管理方案:h packages, 看起来需要自己用git维护, 而用vim-plug只需要维护vimrc, 而在8之上还有d">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-09-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-09-14T13:34:31.006Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="vim">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/22-09-14-vim8/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/22-09-14-vim8/","path":"22-09-14-vim8/","title":"vim8 插件升级"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>vim8 插件升级 | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">117</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">38</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">128</span></a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%86%E5%8F%B2"><span class="nav-number">1.</span> <span class="nav-text">历史</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8vim-plug%E6%9B%BF%E4%BB%A3%E5%8E%9F%E6%9D%A5%E7%9A%84Vundle"><span class="nav-number">1.1.</span> <span class="nav-text">使用vim-plug替代原来的Vundle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vimrc"><span class="nav-number">1.2.</span> <span class="nav-text">.vimrc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#YouCompleteMe-%E9%A2%9D%E5%A4%96%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.</span> <span class="nav-text">YouCompleteMe 额外操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ref"><span class="nav-number">1.5.</span> <span class="nav-text">Ref</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">117</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">128</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/22-09-14-vim8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="vim8 插件升级 | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vim8 插件升级
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2022-09-14 00:00:00 / 修改時間：21:34:31" itemprop="dateCreated datePublished" datetime="2022-09-14T00:00:00+08:00">2022-09-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/backend/vim/" itemprop="url" rel="index"><span itemprop="name">vim</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/22-09-14-vim8/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="22-09-14-vim8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>7.5k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>7 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h1><p>我也是用了 spf13-vim + vundle 有七八年了, 之中还用过Pathogen 之类的</p>
+<p>这次随着ubuntu $20\to 22$的升级, 有不少之前的插件不支持vim8,不能用了, 虽然根据官网消息,似乎vim9已经出来了</p>
+<p>vim8 也有自带的package管理方案<code>:h packages</code>, 看起来需要自己用git维护, 而用vim-plug只需要维护vimrc, 而在8之上还有dein,minpac的插件管理工具</p>
+<p>而且还有nvim和vscode+vim键位的一些解决方案</p>
+<p>但我有点懒 宁愿多配配 也暂时没想着改习惯</p>
+<p>本机是ubuntu, 就没管win和mac的, 其它的看各种工具的官方文档吧</p>
+<span id="more"></span>
+
+<h2 id="使用vim-plug替代原来的Vundle"><a href="#使用vim-plug替代原来的Vundle" class="headerlink" title="使用vim-plug替代原来的Vundle"></a>使用vim-plug替代原来的Vundle</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure>
+
+<h2 id="vimrc"><a href="#vimrc" class="headerlink" title=".vimrc"></a>.vimrc</h2><figure class="highlight vim"><figcaption><span>~/.vimrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> nocompatible            <span class="comment">&quot; Must be first line</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; Initialize directories &#123;</span></span><br><span class="line"><span class="keyword">function!</span> <span class="title">InitializeDirectories</span><span class="params">()</span></span><br><span class="line">  <span class="keyword">let</span> parent = $HOME</span><br><span class="line">  <span class="keyword">let</span> prefix = <span class="string">&#x27;vim&#x27;</span></span><br><span class="line">  <span class="keyword">let</span> dir_list = &#123;</span><br><span class="line">        \ <span class="string">&#x27;backup&#x27;</span>: <span class="string">&#x27;backupdir&#x27;</span>,</span><br><span class="line">        \ <span class="string">&#x27;views&#x27;</span>: <span class="string">&#x27;viewdir&#x27;</span>,</span><br><span class="line">        \ <span class="string">&#x27;swap&#x27;</span>: <span class="string">&#x27;directory&#x27;</span>,</span><br><span class="line">        \ <span class="string">&#x27;undo&#x27;</span>: <span class="string">&#x27;undodir&#x27;</span>,&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">&quot; To specify a different directory in which to place the vimbackup,</span></span><br><span class="line">  <span class="comment">&quot; vimviews, vimundo, and vimswap files/directories, add the following to</span></span><br><span class="line">  <span class="comment">&quot; your .vimrc.before.local file:</span></span><br><span class="line">  <span class="comment">&quot;   let g:spf13_consolidated_directory = &lt;full path to desired directory&gt;</span></span><br><span class="line">  <span class="comment">&quot;   eg: let g:spf13_consolidated_directory = $HOME . &#x27;/.vim/&#x27;</span></span><br><span class="line">  <span class="keyword">let</span> common_dir = parent . <span class="string">&#x27;/.&#x27;</span> . prefix</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> [dirname, settingname] in <span class="built_in">items</span>(dir_list)</span><br><span class="line">    <span class="keyword">let</span> directory = common_dir . dirname . <span class="string">&#x27;/&#x27;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">exists</span>(<span class="string">&quot;*mkdir&quot;</span>)</span><br><span class="line">      <span class="keyword">if</span> !isdirectory(directory)</span><br><span class="line">        <span class="keyword">call</span> <span class="built_in">mkdir</span>(directory)</span><br><span class="line">      <span class="keyword">endif</span></span><br><span class="line">    <span class="keyword">endif</span></span><br><span class="line">    <span class="keyword">if</span> !isdirectory(directory)</span><br><span class="line">      <span class="keyword">echo</span> <span class="string">&quot;Warning: Unable to create backup directory: &quot;</span> . directory</span><br><span class="line">      <span class="keyword">echo</span> <span class="string">&quot;Try: mkdir -p &quot;</span> . directory</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="keyword">let</span> directory = <span class="keyword">substitute</span>(directory, <span class="string">&quot; &quot;</span>, <span class="string">&quot;\\\\ &quot;</span>, <span class="string">&quot;g&quot;</span>)</span><br><span class="line">      exec <span class="string">&quot;set &quot;</span> . settingname . <span class="string">&quot;=&quot;</span> . directory</span><br><span class="line">    <span class="keyword">endif</span></span><br><span class="line">  <span class="keyword">endfor</span></span><br><span class="line"><span class="keyword">endfunction</span></span><br><span class="line"><span class="keyword">call</span> InitializeDirectories()</span><br><span class="line"><span class="comment">&quot; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; Vim-Plug &#123;</span></span><br><span class="line"><span class="keyword">call</span> plug#begin(<span class="string">&#x27;~/.vim/plugged&#x27;</span>)</span><br><span class="line">Plug <span class="string">&#x27;vim-airline/vim-airline&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;vim-airline/vim-airline-themes&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;powerline/fonts&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;bling/vim-bufferline&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;preservim/nerdtree&#x27;</span>, &#123; <span class="string">&#x27;on&#x27;</span>: <span class="string">&#x27;NERDTreeToggle&#x27;</span>&#125;</span><br><span class="line">Plug <span class="string">&#x27;ctrlpvim/ctrlp.vim&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;rhysd/conflict-marker.vim&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;tacahiroy/ctrlp-funky&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;tpope/vim-surround&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;preservim/nerdcommenter&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;vim-syntastic/syntastic&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;myusuf3/numbers.vim&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;tpope/vim-fugitive&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;easymotion/vim-easymotion&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;tibabit/vim-templates&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;flazz/vim-colorschemes&#x27;</span></span><br><span class="line"><span class="comment">&quot; Plug &#x27;mg979/vim-visual-multi&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;vim-scripts/sessionman.vim&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;mbbill/undotree&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;nathanaelkane/vim-indent-guides&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;vim-scripts/restore_view.vim&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;wakatime/vim-wakatime&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;mhinz/vim-signify&#x27;</span></span><br><span class="line"><span class="comment">&quot;Plug &#x27;godlygeek/tabular&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;Valloric/YouCompleteMe&#x27;</span></span><br><span class="line"><span class="keyword">call</span> plug#end()</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; config vim-templates</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:tmpl_author_email</span>=<span class="string">&quot;yexiaorain@gmail.com&quot;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:tmpl_license</span>=<span class="string">&quot;GPL&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:syntastic_cpp_compiler_options</span> = <span class="string">&#x27; -std=c++17&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_powerline_fonts</span> = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">colorscheme</span> molokai</span><br><span class="line"><span class="comment">&quot; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; Basics &#123;</span></span><br><span class="line">  <span class="keyword">let</span> mapleader = <span class="string">&#x27;,&#x27;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&quot; set foldmarker=&#123;,&#125;</span></span><br><span class="line">  <span class="comment">&quot; set foldlevel=0</span></span><br><span class="line">  <span class="comment">&quot; set foldmethod=marker</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">filetype</span> plugin <span class="built_in">indent</span> <span class="keyword">on</span>   <span class="comment">&quot; Automatically detect file types.</span></span><br><span class="line">  <span class="keyword">syntax</span> <span class="keyword">on</span>                   <span class="comment">&quot; Syntax highlighting</span></span><br><span class="line">  <span class="keyword">set</span> mouse=<span class="keyword">a</span>                 <span class="comment">&quot; Automatically enable mouse usage</span></span><br><span class="line">  <span class="keyword">set</span> mousehide               <span class="comment">&quot; Hide the mouse cursor while typing</span></span><br><span class="line">  <span class="keyword">scriptencoding</span> utf-<span class="number">8</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">set</span> shortmess+=filmnrxoOtT          <span class="comment">&quot; Abbrev. of messages (avoids &#x27;hit enter&#x27;)</span></span><br><span class="line">  <span class="keyword">set</span> viewoptions=folds,<span class="keyword">options</span>,<span class="built_in">cursor</span>,unix,slash <span class="comment">&quot; Better Unix / Windows compatibility</span></span><br><span class="line">  <span class="keyword">set</span> virtualedit=onemore             <span class="comment">&quot; Allow for cursor beyond last character</span></span><br><span class="line">  <span class="keyword">set</span> <span class="keyword">history</span>=<span class="number">1000</span>                    <span class="comment">&quot; Store a ton of history (default is 20)</span></span><br><span class="line"><span class="comment">&quot; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; Formatting &#123;</span></span><br><span class="line">  <span class="keyword">set</span> wrap                        <span class="comment">&quot; wrap long lines</span></span><br><span class="line">  <span class="keyword">set</span> textwidth=<span class="number">0</span>                 <span class="comment">&quot; soft wrap</span></span><br><span class="line">  <span class="keyword">set</span> linebreak                   <span class="comment">&quot; soft wrap</span></span><br><span class="line">  <span class="keyword">set</span> nolist                      <span class="comment">&quot; </span></span><br><span class="line">  <span class="keyword">set</span> autoindent                  <span class="comment">&quot; Indent at the same level of the previous line</span></span><br><span class="line">  <span class="keyword">set</span> <span class="built_in">shiftwidth</span>=<span class="number">2</span>                <span class="comment">&quot; Use indents of 4 spaces</span></span><br><span class="line">  <span class="keyword">set</span> expandtab                   <span class="comment">&quot; Tabs are spaces, not tabs</span></span><br><span class="line">  <span class="keyword">set</span> tabstop=<span class="number">2</span>                   <span class="comment">&quot; An indentation every four columns</span></span><br><span class="line">  <span class="keyword">set</span> softtabstop=<span class="number">2</span>               <span class="comment">&quot; Let backspace delete indent</span></span><br><span class="line">  <span class="comment">&quot;autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre &lt;buffer&gt; if !exists(&#x27;g:spf13_keep_trailing_whitespace&#x27;) | call StripTrailingWhitespace() | endif</span></span><br><span class="line"><span class="comment">&quot; &#125;</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">&quot; UI &#123;</span></span><br><span class="line">  <span class="keyword">set</span> backspace=<span class="built_in">indent</span>,eol,start  <span class="comment">&quot; Backspace for dummies</span></span><br><span class="line">  <span class="keyword">set</span> linespace=<span class="number">0</span>                 <span class="comment">&quot; No extra spaces between rows</span></span><br><span class="line">  <span class="keyword">set</span> <span class="keyword">number</span>                      <span class="comment">&quot; Line numbers on</span></span><br><span class="line">  <span class="keyword">set</span> showmatch                   <span class="comment">&quot; Show matching brackets/parenthesis</span></span><br><span class="line">  <span class="keyword">set</span> incsearch                   <span class="comment">&quot; Find as you type search</span></span><br><span class="line">  <span class="keyword">set</span> hlsearch                    <span class="comment">&quot; Highlight search terms</span></span><br><span class="line">  <span class="keyword">set</span> wildmenu                    <span class="comment">&quot; Show list instead of just completing</span></span><br><span class="line">  <span class="keyword">set</span> wildmode=lis<span class="variable">t:longest</span>,full  <span class="comment">&quot; Command &lt;Tab&gt; completion, list matches, then longest common part, then all.</span></span><br><span class="line">  <span class="keyword">set</span> whichwrap=<span class="keyword">b</span>,s,h,<span class="keyword">l</span>,&lt;,&gt;,[,]   <span class="comment">&quot; Backspace and cursor keys wrap too</span></span><br><span class="line">  <span class="keyword">set</span> scrolljump=<span class="number">5</span>                <span class="comment">&quot; Lines to scroll when cursor leaves screen</span></span><br><span class="line">  <span class="keyword">set</span> scrolloff=<span class="number">3</span>                 <span class="comment">&quot; Minimum lines to keep above and below cursor</span></span><br><span class="line">  <span class="keyword">set</span> foldenable                  <span class="comment">&quot; Auto fold code</span></span><br><span class="line">  <span class="keyword">set</span> splitright                  <span class="comment">&quot; Puts new vsplit windows to the right of the current</span></span><br><span class="line">  <span class="keyword">set</span> splitbelow                  <span class="comment">&quot; Puts new split windows to the bottom of the current</span></span><br><span class="line">  <span class="keyword">set</span> <span class="keyword">list</span></span><br><span class="line">  <span class="keyword">set</span> listchars=<span class="keyword">tab</span>:›\ ,trail:•,extends:#,nbsp:. <span class="comment">&quot; Highlight problematic whitespace</span></span><br><span class="line"><span class="comment">&quot; &#125;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">set</span> clipboard=unnamed,unnamedplus <span class="comment">&quot; yy to clipboard</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; undo &#123;</span></span><br><span class="line">  <span class="keyword">set</span> backup</span><br><span class="line">  <span class="keyword">set</span> <span class="built_in">undofile</span>                <span class="comment">&quot; So is persistent undo ...</span></span><br><span class="line">  <span class="keyword">set</span> undolevels=<span class="number">1000</span>         <span class="comment">&quot; Maximum number of changes that can be undone</span></span><br><span class="line">  <span class="keyword">set</span> undoreload=<span class="number">10000</span>        <span class="comment">&quot; Maximum number lines to save for undo on a buffer reload</span></span><br><span class="line"><span class="comment">&quot; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> laststatus=<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; highlight &#123;</span></span><br><span class="line">  <span class="keyword">highlight</span> clear SignColumn      <span class="comment">&quot; SignColumn should match background</span></span><br><span class="line">  <span class="keyword">highlight</span> clear LineNr          <span class="comment">&quot; Current line number row will have same background color in relative mode</span></span><br><span class="line">  <span class="keyword">hi</span> Normal ctermbg=None</span><br><span class="line">  <span class="comment">&quot;hi CursorLine   cterm=NONE ctermbg=darkgray ctermfg=black  guibg=#004488 guifg=white</span></span><br><span class="line">  <span class="keyword">set</span> cursorline <span class="comment">&quot; Highlight current line</span></span><br><span class="line">  <span class="keyword">hi</span> CursorLine     cterm=NONE ctermbg=darkgray ctermfg=white guibg=#<span class="number">004488</span> guifg=white</span><br><span class="line">  <span class="keyword">set</span> cursorcolumn <span class="comment">&quot; Highlight current line</span></span><br><span class="line">  <span class="keyword">hi</span> CursorColumn   cterm=NONE ctermbg=darkgray ctermfg=white guibg=#<span class="number">004488</span> guifg=white</span><br><span class="line">  <span class="keyword">hi</span> Visual ctermbg=white ctermfg=black guibg=Grey</span><br><span class="line"><span class="comment">&quot; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; keymap &#123;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title">CompileByFileType</span><span class="params">()</span></span><br><span class="line">  <span class="keyword">if</span> &amp;<span class="keyword">filetype</span> == <span class="string">&quot;cpp&quot;</span></span><br><span class="line">    <span class="string">&quot;!clang++ -o &quot;</span>%&lt;<span class="string">&quot; &quot;</span>%<span class="comment">&quot; -std=gnu++17 -O2 -g -Wall -Wcomma</span></span><br><span class="line">    <span class="string">&quot;!clang++ -o &quot;</span>%&lt;<span class="string">&quot; &quot;</span>%<span class="comment">&quot; -std=gnu++20 -O2 -g -Wall -Wcomma -Wextra -fsanitize=integer,undefined,null,alignment</span></span><br><span class="line">    !clang++ -<span class="keyword">o</span> <span class="string">&quot;%&lt;&quot;</span> <span class="string">&quot;%&quot;</span> -std=gnu++<span class="number">14</span> -O2 -g -Wall -Wcomma -Wextra -fsanitize=integer,undefined,null,alignment</span><br><span class="line">    <span class="string">&quot; !clang++ -o &quot;</span>%&lt;<span class="string">&quot; &quot;</span>%<span class="comment">&quot; -std=gnu++11 -O2 -g -Wall -Wcomma</span></span><br><span class="line">    <span class="string">&quot;!clang++ -o &quot;</span>%&lt;<span class="string">&quot; &quot;</span>%<span class="comment">&quot; -std=gnu++17 -g -Wall -Wcomma</span></span><br><span class="line">    <span class="string">&quot;!g++ -o &quot;</span>%&lt;<span class="string">&quot; &quot;</span>%<span class="comment">&quot; -std=gnu++14 -O2 -g -Wall</span></span><br><span class="line">  <span class="keyword">elseif</span> &amp;<span class="keyword">filetype</span> == <span class="string">&quot;c&quot;</span></span><br><span class="line">    !gcc -<span class="keyword">o</span> <span class="string">&quot;%&lt;&quot;</span> <span class="string">&quot;%&quot;</span> -O2 -g</span><br><span class="line">  <span class="keyword">elseif</span> &amp;<span class="keyword">filetype</span> == <span class="string">&quot;python&quot;</span></span><br><span class="line">    !python3 <span class="string">&quot;%&quot;</span></span><br><span class="line">  <span class="keyword">elseif</span> &amp;<span class="keyword">filetype</span> == <span class="string">&quot;go&quot;</span></span><br><span class="line">    !go run <span class="string">&quot;%&quot;</span></span><br><span class="line">  <span class="keyword">elseif</span> &amp;<span class="keyword">filetype</span> == <span class="string">&quot;rust&quot;</span></span><br><span class="line">    !rustc <span class="string">&quot;%&quot;</span> -O</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;UNKNOWN FILETYPE : &quot;</span>&amp;<span class="keyword">filetype</span></span><br><span class="line">  <span class="keyword">endif</span></span><br><span class="line"><span class="keyword">endfunction</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;F9&gt;</span> :<span class="keyword">call</span> CompileByFileType() <span class="symbol">&lt;CR&gt;</span></span><br><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;F8&gt;</span> :!gdb <span class="string">&quot;%&lt;&quot;</span><span class="symbol">&lt;CR&gt;</span></span><br><span class="line"><span class="comment">&quot; &#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="YouCompleteMe-额外操作"><a href="#YouCompleteMe-额外操作" class="headerlink" title="YouCompleteMe 额外操作"></a>YouCompleteMe 额外操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.vim/plugged/YouCompleteMe</span><br><span class="line">git submodule update --init --recursive --depth=1</span><br><span class="line">/usr/bin/python3 ~/.vim/plugged/YouCompleteMe/third_party/ycmd/build.py --all</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>vim的好处就是默认的很足, 即使我在删掉了所有<code>~/.vim</code>时,用起来依然顺手</p>
+<p>看着这些老仓库,好多从个人帐号下的变成了组织帐号下的</p>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><p><a target="_blank" rel="noopener" href="https://github.com/junegunn/vim-plug">vim-plug</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.reddit.com/r/vim/comments/drets8/plugin_managers_vs_vim_packages/">Reddit::plugin managers vs vim packages</a></p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/22-09-14-vim8/" title="vim8 插件升级">https://cromarmot.github.io/Blog/22-09-14-vim8/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Blog/tags/vim/" rel="tag"><i class="fa fa-tag"></i> vim</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/22-09-08-fuck-pip/" rel="prev" title="ubuntu + pip + setuptool bug 体验">
+                  <i class="fa fa-chevron-left"></i> ubuntu + pip + setuptool bug 体验
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">658k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">9:58</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/22-09-14-vim8/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
