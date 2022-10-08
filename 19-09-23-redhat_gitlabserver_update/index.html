@@ -29,7 +29,7 @@
 <meta property="og:description" content="Why模拟生产环境 尝试 升级 gitlab-ce 从 11.6 到 12.2, 以及尝试模拟之前产生的错误 官方说 先要到11.11.X再到12.X 物料准备 vmware on Ubuntu 18.04 LTS gitlab-ce-11.6.5-ce.0.el6.x86_64.rpm gitlab-ce-11.11.0-ce.0.el6.x86_64.rpm gitlab-ce-12.2.5-">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2019-09-23T07:09:01.000Z">
-<meta property="article:modified_time" content="2022-09-15T14:40:55.962Z">
+<meta property="article:modified_time" content="2022-10-08T17:06:37.501Z">
 <meta property="article:author" content="Cro-Marmot">
 <meta property="article:tag" content="gitlab">
 <meta property="article:tag" content="redhat">
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why"><span class="nav-number">1.</span> <span class="nav-text">Why</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-OS"><span class="nav-number">2.</span> <span class="nav-text">Install OS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-Software"><span class="nav-number">3.</span> <span class="nav-text">Install Software</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#authorized-keys"><span class="nav-number">4.</span> <span class="nav-text">authorized_keys</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%87"><span class="nav-number">5.</span> <span class="nav-text">哇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gitlab-ce-11-6-%E5%AE%89%E8%A3%85"><span class="nav-number">6.</span> <span class="nav-text">gitlab-ce 11.6 安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E5%88%B011-11-0"><span class="nav-number">7.</span> <span class="nav-text">升级到11.11.0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E5%88%B012-2-5"><span class="nav-number">8.</span> <span class="nav-text">升级到12.2.5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E4%B8%AD%E5%B0%9D%E8%AF%95%E8%BF%87%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">9.</span> <span class="nav-text">生产中尝试过的操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E5%B7%A5%E5%85%B7%E7%AD%89-%E5%8F%AF%E8%83%BD%E6%9C%89%E9%81%97%E6%BC%8F"><span class="nav-number">10.</span> <span class="nav-text">使用到的工具等(可能有遗漏)</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why"><span class="nav-text">Why</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-OS"><span class="nav-text">Install OS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-Software"><span class="nav-text">Install Software</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#authorized-keys"><span class="nav-text">authorized_keys</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%87"><span class="nav-text">哇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gitlab-ce-11-6-%E5%AE%89%E8%A3%85"><span class="nav-text">gitlab-ce 11.6 安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E5%88%B011-11-0"><span class="nav-text">升级到11.11.0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E5%88%B012-2-5"><span class="nav-text">升级到12.2.5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E4%B8%AD%E5%B0%9D%E8%AF%95%E8%BF%87%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-text">生产中尝试过的操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E5%B7%A5%E5%85%B7%E7%AD%89-%E5%8F%AF%E8%83%BD%E6%9C%89%E9%81%97%E6%BC%8F"><span class="nav-text">使用到的工具等(可能有遗漏)</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -271,7 +271,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-09-15 22:40:55" itemprop="dateModified" datetime="2022-09-15T22:40:55+08:00">2022-09-15</time>
+      <time title="修改時間：2022-10-09 01:06:37" itemprop="dateModified" datetime="2022-10-09T01:06:37+08:00">2022-10-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
