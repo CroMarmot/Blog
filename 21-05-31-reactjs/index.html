@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="一点总结提炼 Thinking in reacthttps:&#x2F;&#x2F;reactjs.org&#x2F;docs&#x2F;thinking-in-react.html  从UI和后台获得设计稿和接口以及接口返回 单一功能原则 组件层级划分 编写静态html(无用户交互,官方上面没有,仅结构,无样式?) 转换成静态react(无用户交互,无state,仅展示,数据流均为父向子) 最小(且完整)的state状态,其它的内容全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react js 笔记">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/21-05-31-reactjs/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="一点总结提炼 Thinking in reacthttps:&#x2F;&#x2F;reactjs.org&#x2F;docs&#x2F;thinking-in-react.html  从UI和后台获得设计稿和接口以及接口返回 单一功能原则 组件层级划分 编写静态html(无用户交互,官方上面没有,仅结构,无样式?) 转换成静态react(无用户交互,无state,仅展示,数据流均为父向子) 最小(且完整)的state状态,其它的内容全">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-05-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-11T13:02:37.340Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="react">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/21-05-31-reactjs/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/21-05-31-reactjs/","path":"21-05-31-reactjs/","title":"react js 笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>react js 笔记 | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">123</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">32</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">143</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Thinking-in-react"><span class="nav-text">Thinking in react</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#props-vs-state"><span class="nav-text">props vs state</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#setState-%E9%9D%9E%E5%90%8C%E6%AD%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%BE%E4%BE%8B"><span class="nav-text">setState 非同步的一些举例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Flux-%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="nav-text">Flux 单向数据流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#redux"><span class="nav-text">redux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E6%AF%94Vue"><span class="nav-text">对比Vue</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%B6%E4%BC%B8%E9%98%85%E8%AF%BB"><span class="nav-text">延伸阅读</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">123</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">143</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-05-31-reactjs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="react js 笔记 | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          react js 笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2021-05-31 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-31T00:00:00+08:00">2021-05-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-11-11 21:02:37" itemprop="dateModified" datetime="2022-11-11T21:02:37+08:00">2022-11-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/21-05-31-reactjs/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-05-31-reactjs/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>4.9k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>4 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>一点总结提炼</p>
+<h1 id="Thinking-in-react"><a href="#Thinking-in-react" class="headerlink" title="Thinking in react"></a>Thinking in react</h1><p><a target="_blank" rel="noopener" href="https://reactjs.org/docs/thinking-in-react.html">https://reactjs.org/docs/thinking-in-react.html</a></p>
+<ol>
+<li>从UI和后台获得设计稿和接口以及接口返回</li>
+<li>单一功能原则 组件层级划分</li>
+<li>编写静态html(无用户交互,官方上面没有,仅结构,无样式?)</li>
+<li>转换成静态react(无用户交互,无state,仅展示,数据流均为父向子)</li>
+<li>最小(且完整)的state状态,其它的内容全部由这些state产生, (例如保存数组,而不需要专门保存数组长度的变量), 主要完成的内容是 <strong>单向数据流与state</strong>,注意:父组件传递的不应该是state,随时间推移的不应该是state, 能由其它state计算得到的不应该存储</li>
+<li>反向数据流</li>
+</ol>
+<p>有一点不同的是, 真实开发中, 可能不会一个业务+组件同时提供. 思考顺序会变为,开发组件,再开发业务,而上面的思路其实也是有效的. 而对组件开发的思路比较像是, 先考虑出入参数,就像思考函数一样,考虑它的复用性以及编码迭代改版的设计性</p>
+<h1 id="props-vs-state"><a href="#props-vs-state" class="headerlink" title="props vs state"></a>props vs state</h1><p><a target="_blank" rel="noopener" href="https://reactjs.org/docs/faq-state.html#what-is-the-difference-between-state-and-props">https://reactjs.org/docs/faq-state.html#what-is-the-difference-between-state-and-props</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/uberVU/react-guide/blob/master/props-vs-state.md">https://github.com/uberVU/react-guide/blob/master/props-vs-state.md</a></p>
+<p><a target="_blank" rel="noopener" href="https://lucybain.com/blog/2016/react-state-vs-pros/">https://lucybain.com/blog/2016/react-state-vs-pros/</a></p>
+<p>props: 外部传递给组件, 应该看成只读的, 传递回调函数</p>
+<p>state: 组件内部自己管理, 初始状态主要由客户事件变化, setState异步(一般传递函数, 这是实现细节,注意官方文档说不要依赖这种实现,相关问题可以看最近发生的rust的二分搜索引发的问题(与react无关))</p>
+<p>相同点: 纯js对象, 变化触发更新, 相同的(props,state)输入输出应该是恒定的(for就有问题?)</p>
+<p>?? state不可由子组件修改, props, state不应太多?</p>
+<hr>
+<p>就目前项目实践的感受,对于业务开发, 基本只有业务层关联的(顶层)需要state,而基础组件内都不持有state,主要是事件触发和props渲染.</p>
+<h1 id="setState-非同步的一些举例"><a href="#setState-非同步的一些举例" class="headerlink" title="setState 非同步的一些举例"></a>setState 非同步的一些举例</h1><p><a target="_blank" rel="noopener" href="https://github.com/facebook/react/issues/11527#issuecomment-360199710">https://github.com/facebook/react/issues/11527#issuecomment-360199710</a></p>
+<p>即使 state同步,props是不同步的, react的props 是只读不会变的,和vue是对象引用不同</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">state触发</span><br><span class="line">props 触发</span><br><span class="line">state触发</span><br><span class="line">props 触发 // 这种情况 可能是老的props,而真实的props或许已经更新了</span><br><span class="line">state触发</span><br></pre></td></tr></table></figure>
+
+<p>为了说明不是理论上的,然后还翻出了多个历史issue</p>
+<h1 id="Flux-单向数据流"><a href="#Flux-单向数据流" class="headerlink" title="Flux 单向数据流"></a>Flux 单向数据流</h1><p><a target="_blank" rel="noopener" href="https://facebook.github.io/flux/docs/in-depth-overview">https://facebook.github.io/flux/docs/in-depth-overview</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=nYkdrAPrdcw&amp;list=PLb0IAmt7-GS188xDYE-u1ShQmFFGbrk0v&amp;t=621s&amp;ab_channel=FacebookDevelopers">https://www.youtube.com/watch?v=nYkdrAPrdcw&amp;list=PLb0IAmt7-GS188xDYE-u1ShQmFFGbrk0v&amp;t=621s&amp;ab_channel=FacebookDevelopers</a></p>
+<p><a target="_blank" rel="noopener" href="https://facebook.github.io/flux/docs/overview">https://facebook.github.io/flux/docs/overview</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/facebook/flux/tree/master/examples">https://github.com/facebook/flux/tree/master/examples</a></p>
+<p><a target="_blank" rel="noopener" href="https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207">https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207</a></p>
+<p>action -&gt; dispatcher -&gt; store -&gt; view -&gt; action</p>
+<p>action: type + payload</p>
+<p>dispatcher(同步), 可以waitFor 等待其它dispatcher</p>
+<p>store: 数据储存 更新view</p>
+<p>controller view &amp; view: store变化被通知,让view把数据渲染</p>
+<blockquote>
+<p>执行流程</p>
+</blockquote>
+<p>初始state数据</p>
+<p>state去dispatcher “订阅”?</p>
+<p>controller view 从state获取数据,给view渲染</p>
+<p>controller view 去store “订阅”?</p>
+<blockquote>
+<p>用户事件</p>
+</blockquote>
+<p>view 通知 action, 或其它Action</p>
+<p>action 通知dispatcher</p>
+<p>dispatcher 给对应的store</p>
+<p>store内部处理,如果需要更新state,更新完以后,通知controller view , 根据 type 分发</p>
+<p>controller view获取新state并通知view渲染</p>
+<p>从根本上讲,仅从上述的角度来看, 根本在规范了流程和代码位置, 对于新进入的开发来说, 能直接通过代码,知道各个层级的内容. 本质上解决的更多是一个软件工程的质量管理工程经验得到解决方案, 甚至可以脱离redux到不同的框架内使用. 相对于MVC是 给MVC内部调用关系错综复杂的解决方案</p>
+<p>从另一个角度讲, 只能通过触发Action来修改store里的内容</p>
+<p>单元测试更容易!</p>
+<p>从其它技术来讲,现在有rxjs, 直接描述关系式的开发,和vue这样的自己实现的reactive的关系式描述开发, 当然也有 rxjs + flux 的方案</p>
+<p>不过facebook说他们的消息显示1 的更新问题,现在还有不少应用持续有这种bug :-)</p>
+<p>然后看youtube视频上小姐姐的展示,实际上再回想开发, 这里的数据流的每一条线,实际上是多条线</p>
+<h1 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h1><p><code>npx create-react-app redux-ts-demo --template redux-typescript</code></p>
+<blockquote>
+<p>redux有可以与react无关单独使用的<code>redux core</code>, 也就是一个具体的flux实现?</p>
+</blockquote>
+<p>官方的 <a target="_blank" rel="noopener" href="https://redux.js.org/introduction/getting-started#basic-example">Basic Example</a> 里能看到</p>
+<p>用户实现reducer, 提供 createStore(reducer), subscribe(fn), getState(), dispatch()</p>
+<blockquote>
+<p>有<code>@reduxjs/toolkit</code></p>
+</blockquote>
+<p>提供 createSlice(提供导出 acitions,reducer), configureStore(替代上面的 createStore, reducer可以单个或者store的map)</p>
+<p>其它getState,subscribe,dispatch上面有的还是有</p>
+<p>同样要用户实现reducer,不过写法可以像是操作state(之所以说像是,是因为它并不是真的更改,而是toolkit内Immer去做的变化检测一类,也要注意因为只有这里用Immer,所以只能在createSlice或createReducer里面这样写)</p>
+<p>Redux Slices: A “slice” is a collection of Redux reducer logic and actions for a single feature in your app</p>
+<p>这个角度是对root state的划分,</p>
+<p>同时简化了reducer和actions的写法,并且在ts加持下能不再靠字符串(或额外自己写控制)保持一致</p>
+<p>reducer规则:</p>
+<ol>
+<li>计算结果应该只由old state和 action的传入相关(也就是不依赖 其它变量), 纯函数能让它”可以预测”易测试,更加工程友好</li>
+<li>不修改现有state,而是产生新的修改后的state</li>
+<li>不应该有异步或其它副作用</li>
+</ol>
+<p>time-travel debugging 也是一个特点</p>
+<blockquote>
+<p>thunks 异步, 直接使用是<code>redux-thunk</code>,现有的toolkit里<code>configureStore</code>能简化</p>
+</blockquote>
+<p>外部是包裹,返回thunk函数, 中间是异步</p>
+<p>内部是调用dispatch 和 getState</p>
+<p>官方demo( async+await看起来就很自然舒服了, 对于外部调用thunk的包裹, 也是直接和同步调用看上去类似,fetchUserById()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the outside &quot;thunk creator&quot; function</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">fetchUserById</span> = userId =&gt; &#123;</span><br><span class="line">  <span class="comment">// the inside &quot;thunk function&quot;</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">async</span> (dispatch, getState) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// make an async call in the thunk</span></span><br><span class="line">      <span class="keyword">const</span> user = <span class="keyword">await</span> userAPI.<span class="title function_">fetchById</span>(userId)</span><br><span class="line">      <span class="comment">// dispatch an action when we get the response back</span></span><br><span class="line">      <span class="title function_">dispatch</span>(<span class="title function_">userLoaded</span>(user))</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">      <span class="comment">// If something went wrong, handle it here</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>import &#123; useSelector, useDispatch &#125; from &#39;react-redux&#39; </code> 可以 解决把redux中的state用在react里和调用redux里的dispatch ( 作为对比默认是useState</p>
+<p>官方说, 还是通过使用react提供的useState和useEffect,来构建自己的逻辑</p>
+<p>在ts demo生成的模板里是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export const useAppDispatch = () =&gt; useDispatch&lt;AppDispatch&gt;();</span><br><span class="line">export const useAppSelector: TypedUseSelectorHook&lt;RootState&gt; = useSelector;</span><br></pre></td></tr></table></figure>
+
+<p>官方<code>export const selectCount = (state: RootState) =&gt; state.counter.value;</code></p>
+<p>并且注释说,也可以不定义直接在使用的地方写<code>useSelector((state) =&gt; state.counter.value)</code></p>
+<p>你也可以不完全是暴露值,也可以是函数处理映射后<code>const countPlusTwo = useSelector(state =&gt; state.counter.value + 2)</code></p>
+<p>The answer is NO. Global state that is needed across the app should go in the Redux store. State that’s only needed in one place should be kept in component state.</p>
+<p>提供了+1,+n,条件+2,异步+的四种demo</p>
+<blockquote>
+<p>总结</p>
+</blockquote>
+<p>redux基本是一个flux的实现</p>
+<p><code>@reactjs/toolkit</code> 简化了redux中 actions,reducer 编写和使用</p>
+<p>thunk: 异步的 </p>
+<h1 id="对比Vue"><a href="#对比Vue" class="headerlink" title="对比Vue"></a>对比Vue</h1><p>TODO 三个框架的工程解决方案和实际产出对比</p>
+<ol>
+<li>props, Vue也提供,但是没有强制限死为只读,导致接手的不少前端经理的代码还有修改props的行为, 而即使不是因为代码也会因为用户操作,没有对应的vm更改时,展示的页面不是”vm渲染的”, 最常见的就是input只传value</li>
+<li>Vue凡是要渲染的 都是data&#x2F;computed&#x2F;props, 但对于这种完全, 其实没有静态的划分,虽然可以通过const配置 + js语法引入到data里</li>
+<li>回调和emit的区别就是需要忽略时的体验了</li>
+<li>flux&#x2F;redux vs vuex, vuex(以我的视角vuex一定上是为了仿照其它框架的解决产物,其设计理念一定程度上和vue本身是相互违背的, vuex完成了简单共享js完成不了的动态触发(其实核心是调用了Vue.data), 提供了 mutation&#x2F;actions 看上去划分了 同步异步, 也可以devtools调试, 也可以有插件支持,但就我看目前的开发来说,很多很多只是使用了 数据共享这一点, 而vue的简单设计理念,在我看来更适合直接等号而不是修改需要调用函数,+声明化的使用,剩下的就是module和这里无关, 所以vuex本质是一个vue reactive + flux 的类似实现)</li>
+</ol>
+<h1 id="延伸阅读"><a href="#延伸阅读" class="headerlink" title="延伸阅读"></a>延伸阅读</h1><p><a target="_blank" rel="noopener" href="https://github.com/type-challenges/type-challenges">ts</a></p>
+<p><a target="_blank" rel="noopener" href="https://immerjs.github.io/immer/">Immer</a></p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/21-05-31-reactjs/" title="react js 笔记">https://cromarmot.github.io/Blog/21-05-31-reactjs/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Blog/tags/react/" rel="tag"><i class="fa fa-tag"></i> react</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/21-05-25-react-timer/" rel="prev" title="react 计时器与 useRef, useState">
+                  <i class="fa fa-chevron-left"></i> react 计时器与 useRef, useState
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Blog/21-07-05-migrate2win/" rel="next" title="迁移到win">
+                  迁移到win <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">679k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">10:17</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/21-05-31-reactjs/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

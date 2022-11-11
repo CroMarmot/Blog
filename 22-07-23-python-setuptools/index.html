@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="Step by Stepinstall build 1pip install --upgrade build  基础使用提供pyproject.toml文件, 包含build-system section 12345678910[build-system]requires &#x3D; [&quot;setuptools&quot;]build-backend &#x3D; &quot;setuptools.buil">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python3 setuptools 发包">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/22-07-23-python-setuptools/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="Step by Stepinstall build 1pip install --upgrade build  基础使用提供pyproject.toml文件, 包含build-system section 12345678910[build-system]requires &#x3D; [&quot;setuptools&quot;]build-backend &#x3D; &quot;setuptools.buil">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-07-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-11T13:02:37.340Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="python3">
+<meta property="article:tag" content="setuptools">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/22-07-23-python-setuptools/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/22-07-23-python-setuptools/","path":"22-07-23-python-setuptools/","title":"python3 setuptools 发包"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>python3 setuptools 发包 | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">123</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">32</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">143</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Step-by-Step"><span class="nav-text">Step by Step</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="nav-text">基础使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%A6%82%E8%A7%88"><span class="nav-text">常用概览</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%8C%85%E5%8F%91%E7%8E%B0"><span class="nav-text">打包发现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8F%90%E4%BE%9B"><span class="nav-text">命令行提供</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="nav-text">依赖管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E5%90%ABData-Files"><span class="nav-text">包含Data Files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F"><span class="nav-text">开发模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E4%BB%A5%E5%A4%96%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="nav-text">打包文件以外的项目结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Twine-%E5%8F%91%E5%B8%83"><span class="nav-text">Twine 发布</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">123</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">143</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/22-07-23-python-setuptools/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="python3 setuptools 发包 | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python3 setuptools 发包
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-07-23 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-23T00:00:00+08:00">2022-07-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-11-11 21:02:37" itemprop="dateModified" datetime="2022-11-11T21:02:37+08:00">2022-11-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/backend/python3/" itemprop="url" rel="index"><span itemprop="name">python3</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/22-07-23-python-setuptools/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="22-07-23-python-setuptools/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.3k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>2 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Step-by-Step"><a href="#Step-by-Step" class="headerlink" title="Step by Step"></a>Step by Step</h1><p>install build</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade build</span><br></pre></td></tr></table></figure>
+
+<h2 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h2><p>提供<code>pyproject.toml</code>文件, 包含<code>build-system</code> section</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[build-system]</span><br><span class="line">requires = [&quot;setuptools&quot;]</span><br><span class="line">build-backend = &quot;setuptools.build_meta&quot;</span><br><span class="line"></span><br><span class="line">[project]</span><br><span class="line">name = &quot;yourname-packagename&quot;</span><br><span class="line">version = &quot;0.0.1&quot;</span><br><span class="line">dependencies = [</span><br><span class="line">    &quot;requests&quot;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>描述依赖的library 和library中被实际用到的</p>
+<p>除此以外, 还可以提供<code>metadata, contents, dependencies</code> 等描述, (老式的配置在<code>setup.py / setup.cfg</code>中</p>
+<p><code>pyproject.toml</code> 可选配置参数 <a target="_blank" rel="noopener" href="https://setuptools.pypa.io/en/stable/userguide/pyproject_config.html">https://setuptools.pypa.io/en/stable/userguide/pyproject_config.html</a></p>
+<hr>
+<p>目前来说<code>pip</code> 仍然需要 setup.py 来支持可编辑安装</p>
+<p><code>setup.py</code> 一个简单版本</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> setuptools <span class="keyword">import</span> setup</span><br><span class="line"></span><br><span class="line">setup()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>至此 执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m</span><br></pre></td></tr></table></figure>
+
+<p>就可以打包了</p>
+<p>打包输出到dist文件夹, 会产生tar.gz 和whl文件</p>
+<h2 id="常用概览"><a href="#常用概览" class="headerlink" title="常用概览"></a>常用概览</h2><p>** 以下均是 <code>pyproject.toml</code>的配置, 如果需要setup.cfg&#x2F;setup.py 的配置方法, 在 <a target="_blank" rel="noopener" href="https://setuptools.pypa.io/en/stable/userguide/quickstart.html">https://setuptools.pypa.io/en/stable/userguide/quickstart.html</a> 上阅读 **</p>
+<h3 id="打包发现"><a href="#打包发现" class="headerlink" title="打包发现"></a>打包发现</h3><p>简单的项目, <code>setuptools</code> 可以自动检测所有 packges 和 namespaces</p>
+<p>但对于复杂的来说, 哪些需要被打包, 哪些不需要被打包, 无法自动分别, 可以通过自定义配置</p>
+<p>默认</p>
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[tool.setuptools.packages]</span></span><br><span class="line"><span class="attr">find</span> = &#123;&#125;  <span class="comment"># Scan the project directory with the default parameters</span></span><br></pre></td></tr></table></figure>
+
+<p>指定 文件夹, 包含 和 不包含</p>
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[tool.setuptools.packages.find]</span></span><br><span class="line"><span class="attr">where</span> = [<span class="string">&quot;src&quot;</span>]  <span class="comment"># [&quot;.&quot;] by default</span></span><br><span class="line"><span class="attr">include</span> = [<span class="string">&quot;mypackage*&quot;</span>]  <span class="comment"># [&quot;*&quot;] by default</span></span><br><span class="line"><span class="attr">exclude</span> = [<span class="string">&quot;mypackage.tests*&quot;</span>]  <span class="comment"># empty by default</span></span><br><span class="line"><span class="attr">namespaces</span> = <span class="literal">false</span>  <span class="comment"># true by default</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="命令行提供"><a href="#命令行提供" class="headerlink" title="命令行提供"></a>命令行提供</h3><p>如果你的包, 期望安装完后, 能直接有个命令行工具</p>
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[project.scripts]</span></span><br><span class="line"><span class="attr">cli-name</span> = <span class="string">&quot;mypkg.mymodule:some_func&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>cli-name</code> 就是你期望的工具的名称</p>
+<p>后面一截对应你编写的某个 脚本文件 <code>mypkg/mymodule.py</code></p>
+<h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><p>你的工具 运行时 依赖于其它工具</p>
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[project]</span></span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line"><span class="attr">dependencies</span> = [</span><br><span class="line">    <span class="string">&quot;docutils&quot;</span>,</span><br><span class="line">    <span class="string">&quot;requires &lt;= 0.4&quot;</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h3 id="包含Data-Files"><a href="#包含Data-Files" class="headerlink" title="包含Data Files"></a>包含Data Files</h3><figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[tool.setuptools]</span></span><br><span class="line"><span class="attr">include-package-data</span> = <span class="literal">true</span></span><br><span class="line"><span class="comment"># 如果使用pyproject.toml默认就是true</span></span><br><span class="line"><span class="comment"># 可以通过`include-package-data = false` 关闭</span></span><br></pre></td></tr></table></figure>
+
+<p>会自动包含所有在 <code>MANIFEST.in</code> 中声名的Data Files</p>
+<h3 id="开发模式"><a href="#开发模式" class="headerlink" title="开发模式"></a>开发模式</h3><p>通过链接形式把你开发中的包 安装到你要用的地方</p>
+<p>在本地其它项目中预先使用包进行调试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --editable &lt;你的包的路径&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="打包文件以外的项目结构"><a href="#打包文件以外的项目结构" class="headerlink" title="打包文件以外的项目结构"></a>打包文件以外的项目结构</h3><p><a target="_blank" rel="noopener" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">https://packaging.python.org/en/latest/tutorials/packaging-projects/</a></p>
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">packaging_tutorial/</span><br><span class="line">├── LICENSE</span><br><span class="line">├── pyproject.toml</span><br><span class="line">├── README.md</span><br><span class="line">├── src/</span><br><span class="line">│   └── example_package_YOUR_USERNAME_HERE/</span><br><span class="line">│       ├── __init__.py</span><br><span class="line">│       └── example.py</span><br><span class="line">└── tests/</span><br></pre></td></tr></table></figure>
+
+<p>文件<code>example.py</code>内容:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add_one</span>(<span class="params">number</span>):</span><br><span class="line">    <span class="keyword">return</span> number + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Twine-发布"><a href="#Twine-发布" class="headerlink" title="Twine 发布"></a>Twine 发布</h2><p><a target="_blank" rel="noopener" href="https://twine.readthedocs.io/en/stable/">https://twine.readthedocs.io/en/stable/</a></p>
+<p>安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install twine</span><br></pre></td></tr></table></figure>
+
+<p><code>build</code>打包以后</p>
+<p>为了避免真的传上去出问题,可以先传到<a target="_blank" rel="noopener" href="https://packaging.python.org/en/latest/guides/using-testpypi/">Test PyPI</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">twine upload -r testpypi dist/*</span><br></pre></td></tr></table></figure>
+
+<p>测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m pip install --index-url https://test.pypi.org/simple/ your-package</span><br></pre></td></tr></table></figure>
+
+<p>真实发布到<code>PyPI</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">twine upload dist/*</span><br></pre></td></tr></table></figure>
+
+<p>发布前登录<code>twine register</code></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://setuptools.pypa.io/en/stable/userguide/quickstart.html">https://setuptools.pypa.io/en/stable/userguide/quickstart.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">https://packaging.python.org/en/latest/tutorials/packaging-projects/</a></p>
+<p>包的下载量统计</p>
+<p><a target="_blank" rel="noopener" href="https://pepy.tech/">https://pepy.tech/</a></p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/22-07-23-python-setuptools/" title="python3 setuptools 发包">https://cromarmot.github.io/Blog/22-07-23-python-setuptools/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Blog/tags/python3/" rel="tag"><i class="fa fa-tag"></i> python3</a>
+              <a href="/Blog/tags/setuptools/" rel="tag"><i class="fa fa-tag"></i> setuptools</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/22-06-30-ts-cheatsheet/" rel="prev" title="TS Cheat Sheet">
+                  <i class="fa fa-chevron-left"></i> TS Cheat Sheet
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Blog/22-08-15-static-blog/" rel="next" title="Hexo Static Blog in 2022">
+                  Hexo Static Blog in 2022 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">679k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">10:17</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/22-07-23-python-setuptools/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

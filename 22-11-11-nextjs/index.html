@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="https:&#x2F;&#x2F;github.com&#x2F;CroMarmot&#x2F;ReactDemo&#x2F;commits&#x2F;master Next工具   功能 doc    Head https:&#x2F;&#x2F;github.com&#x2F;CroMarmot&#x2F;ReactDemo&#x2F;commit&#x2F;00dc0b74d4363e3be39433647a63c3fbe8a96d66   Script https:&#x2F;&#x2F;github.com&#x2F;CroMarm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nextjs and cheetsheat">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/22-11-11-nextjs/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="https:&#x2F;&#x2F;github.com&#x2F;CroMarmot&#x2F;ReactDemo&#x2F;commits&#x2F;master Next工具   功能 doc    Head https:&#x2F;&#x2F;github.com&#x2F;CroMarmot&#x2F;ReactDemo&#x2F;commit&#x2F;00dc0b74d4363e3be39433647a63c3fbe8a96d66   Script https:&#x2F;&#x2F;github.com&#x2F;CroMarm">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-11-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-11T13:02:37.340Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="nextjs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/22-11-11-nextjs/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/22-11-11-nextjs/","path":"22-11-11-nextjs/","title":"nextjs and cheetsheat"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>nextjs and cheetsheat | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">123</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">32</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">143</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Next"><span class="nav-text">Next</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7"><span class="nav-text">工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vercel-%E9%83%A8%E7%BD%B2"><span class="nav-text">Vercel 部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Init"><span class="nav-text">Init</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React"><span class="nav-text">React</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F"><span class="nav-text">严格模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8A%B6%E6%80%81"><span class="nav-text">状态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Class%E7%BB%84%E4%BB%B6"><span class="nav-text">Class组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6"><span class="nav-text">函数式组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E5%8F%82"><span class="nav-text">传参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E7%BB%84%E4%BB%B6-slot"><span class="nav-text">子组件 slot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8A%B6%E6%80%81-useState"><span class="nav-text">状态 useState</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%A8%E5%B1%82%E7%BA%A7%E5%8F%98%E9%87%8F-useContext"><span class="nav-text">跨层级变量 useContext</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E9%93%BE-useEffect"><span class="nav-text">响应链 useEffect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM%E5%AF%B9%E8%B1%A1-useRef"><span class="nav-text">DOM对象 useRef</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89-state-%E7%9A%84%E5%A4%84%E7%90%86%E9%80%BB%E8%BE%91-useReducer"><span class="nav-text">自定义 state 的处理逻辑 useReducer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E7%94%A8-useMemo-useCallback"><span class="nav-text">复用 useMemo , useCallback</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%B7%E6%80%9D"><span class="nav-text">迷思</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83"><span class="nav-text">回调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#children-x2F-slot-%E5%8F%AF%E8%83%BD%E7%A0%B4%E5%9D%8F-%E6%8A%BD%E7%A6%BB%E7%AD%89%E4%BB%B7"><span class="nav-text">children&#x2F;slot 可能破坏 抽离等价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for%E7%9A%84key-%E5%A4%A7%E5%A4%9A%E6%95%B0%E6%83%85%E5%86%B5%E6%98%AF%E6%B5%AA%E8%B4%B9%E7%9A%84"><span class="nav-text">for的key 大多数情况是浪费的</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">123</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">143</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/22-11-11-nextjs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="nextjs and cheetsheat | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          nextjs and cheetsheat
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2022-11-11 00:00:00 / 修改時間：21:02:37" itemprop="dateCreated datePublished" datetime="2022-11-11T00:00:00+08:00">2022-11-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/22-11-11-nextjs/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="22-11-11-nextjs/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>8.5k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>8 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><a target="_blank" rel="noopener" href="https://github.com/CroMarmot/ReactDemo/commits/master">https://github.com/CroMarmot/ReactDemo/commits/master</a></p>
+<h1 id="Next"><a href="#Next" class="headerlink" title="Next"></a>Next</h1><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>doc</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Head</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/CroMarmot/ReactDemo/commit/00dc0b74d4363e3be39433647a63c3fbe8a96d66">https://github.com/CroMarmot/ReactDemo/commit/00dc0b74d4363e3be39433647a63c3fbe8a96d66</a></td>
+</tr>
+<tr>
+<td>Script</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/CroMarmot/ReactDemo/commit/0cb1c2aac95b276a689bb49e31f7a147d78c159e">https://github.com/CroMarmot/ReactDemo/commit/0cb1c2aac95b276a689bb49e31f7a147d78c159e</a></td>
+</tr>
+<tr>
+<td>静态生成,Link,route,404</td>
+<td>getStaticPaths getStaticProps</td>
+</tr>
+<tr>
+<td>global css, module css</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/CroMarmot/ReactDemo/commit/bf504ce48b4b34a3c7ac3bba2d66e051e74c5476">commit</a></td>
+</tr>
+<tr>
+<td>static image</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/CroMarmot/ReactDemo/commit/0a826c74cef03573ced89c2eb36c70a763401fba">https://github.com/CroMarmot/ReactDemo/commit/0a826c74cef03573ced89c2eb36c70a763401fba</a></td>
+</tr>
+</tbody></table>
+<h2 id="Vercel-部署"><a href="#Vercel-部署" class="headerlink" title="Vercel 部署"></a>Vercel 部署</h2><p><a target="_blank" rel="noopener" href="https://vercel.com/new">https://vercel.com/new</a></p>
+<h2 id="Init"><a href="#Init" class="headerlink" title="Init"></a>Init</h2><p><a target="_blank" rel="noopener" href="https://nextjs.org/learn/foundations/">https://nextjs.org/learn/foundations/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-next-app@latest --ts</span><br></pre></td></tr></table></figure>
+
+<h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><p>React use Babel to compile JSX</p>
+<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; <span class="title class_">StrictMode</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line"> <span class="language-xml"><span class="tag">&lt;<span class="name">StrictMode</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">   <span class="tag">&lt;<span class="name">App</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml"> <span class="tag">&lt;/<span class="name">StrictMode</span>&gt;</span></span>,</span><br><span class="line"> <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h2><h3 id="Class组件"><a href="#Class组件" class="headerlink" title="Class组件"></a>Class组件</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ExampleClassComponent</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line"> <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Example Class Component<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数式组件"><a href="#函数式组件" class="headerlink" title="函数式组件"></a>函数式组件</h3><p>React component names must begin with an uppercase letter.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">ExampleFunctionalComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Example Class Component<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">ExampleFunctionalComponent</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Example Class Component<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; memo &#125; <span class="keyword">from</span> <span class="string">&#x27;React&#x27;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> <span class="title class_">ExamplePureComponent</span> = <span class="title function_">memo</span>(&#123; portal &#125;) =&gt; &#123;</span><br><span class="line"> <span class="keyword">return</span> (</span><br><span class="line">   <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Welcome to &#123;portal&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">PropsExample</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line"> <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">   <span class="keyword">const</span> &#123; portalName &#125; = <span class="variable language_">this</span>.<span class="property">props</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Welcome to &#123;portalName&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">PropsExample</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Welcome to &#123;props.portalName&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">PropsExample</span> = (<span class="params">&#123; portalName &#125;</span>) =&gt; &#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Welcome to &#123;portalName&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">PropTypes</span> <span class="keyword">from</span> <span class="string">&#x27;prop-types&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params">&#123; name, age, rightHanded &#125;</span>) =&gt; &#123;</span><br><span class="line"> <span class="keyword">return</span> (</span><br><span class="line">   <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">     <span class="tag">&lt;<span class="name">p</span>&gt;</span>Name: &#123;name.firstName&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">     <span class="tag">&lt;<span class="name">p</span>&gt;</span>Surname: &#123;name.lastName&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">     <span class="tag">&lt;<span class="name">p</span>&gt;</span>Age: &#123;age&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">     <span class="tag">&lt;<span class="name">p</span>&gt;</span>Dominant hand: &#123;rightHanded ? &#x27;right&#x27; : &#x27;left&#x27;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"> );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">App</span>.<span class="property">propTypes</span> = &#123;</span><br><span class="line"> <span class="attr">name</span>: <span class="title class_">PropTypes</span>.<span class="title function_">shape</span>(&#123;</span><br><span class="line">   <span class="attr">firstName</span>: <span class="title class_">PropTypes</span>.<span class="property">string</span>,</span><br><span class="line">   <span class="attr">lastName</span>: <span class="title class_">PropTypes</span>.<span class="property">string</span></span><br><span class="line"> &#125;),</span><br><span class="line"> <span class="attr">age</span>: <span class="title class_">PropTypes</span>.<span class="property">number</span>,</span><br><span class="line"> <span class="attr">rightHanded</span>: <span class="title class_">PropTypes</span>.<span class="title function_">oneOf</span>([<span class="literal">true</span>, <span class="literal">false</span>]),</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="子组件-slot"><a href="#子组件-slot" class="headerlink" title="子组件 slot"></a>子组件 slot</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">const App = () =&gt; &#123;</span><br><span class="line"> return (</span><br><span class="line">   &lt;&gt;</span><br><span class="line">     &lt;ParentComponent&gt;</span><br><span class="line">       &lt;ul&gt;</span><br><span class="line">         &lt;li&gt;This&lt;/li&gt;</span><br><span class="line">         &lt;li&gt;is&lt;/li&gt;</span><br><span class="line">         &lt;li&gt;children&lt;/li&gt;</span><br><span class="line">         &lt;li&gt;element&lt;/li&gt;</span><br><span class="line">       &lt;/ul&gt;</span><br><span class="line">     &lt;/ParentComponent&gt;</span><br><span class="line">   &lt;/&gt;</span><br><span class="line"> );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const ParentComponent = (&#123; children &#125;) =&gt; &#123;</span><br><span class="line"> return (</span><br><span class="line">   &lt;div&gt;</span><br><span class="line">     &#123;children&#125;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line"> );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="状态-useState"><a href="#状态-useState" class="headerlink" title="状态 useState"></a>状态 <code>useState</code></h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Counter</span> <span class="keyword">from</span> <span class="string">&#x27;./User&#x27;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line"> <span class="keyword">const</span> [year, setYear] = <span class="title function_">useState</span>(<span class="number">1237</span>)</span><br><span class="line"> <span class="keyword">return</span> (</span><br><span class="line">   <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">     <span class="tag">&lt;<span class="name">Counter</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">       <span class="attr">warning</span>=<span class="string">&#123;</span>`<span class="attr">Current</span> <span class="attr">year</span> <span class="attr">is</span> $&#123;<span class="attr">year</span>&#125;`&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">     /&gt;</span></span></span><br><span class="line"><span class="language-xml">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"> );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class UserAccount extends React.Component &#123;</span><br><span class="line"> constructor(props) &#123;</span><br><span class="line">   super(props);</span><br><span class="line">   this.state = &#123;</span><br><span class="line">     username: &#x27;mike123&#x27;,</span><br><span class="line">     userAge: 21</span><br><span class="line">   &#125;;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> render() &#123;</span><br><span class="line">   return (</span><br><span class="line">     &lt;div&gt;</span><br><span class="line">       &lt;h2&gt;User account&lt;/h2&gt;</span><br><span class="line">       &lt;ul&gt;</span><br><span class="line">         &lt;li&gt;Username: &#123;this.state.username&#125;&lt;/li&gt;</span><br><span class="line">         &lt;li&gt;Age: &#123;this.state.userAge&#125;&lt;/li&gt;</span><br><span class="line">       &lt;/ul&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">   );</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="跨层级变量-useContext"><a href="#跨层级变量-useContext" class="headerlink" title="跨层级变量 useContext"></a>跨层级变量 useContext</h2><p>提供</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; createContext &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> &lt;context-name&gt; = <span class="title function_">createContext</span>();</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line"> &lt;&lt;context-name&gt;.<span class="property">Provider</span> value=&#123;&lt;context-value&gt;&#125;&gt;</span><br><span class="line">   <span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span></span><br><span class="line"> &lt;/&lt;context-name&gt;.<span class="property">Provider</span>&gt;,</span><br><span class="line"> <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>使用</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useContext &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; &lt;context-name&gt; &#125; <span class="keyword">from</span> <span class="string">&#x27;./index&#x27;</span>;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="keyword">const</span> &lt;context-variable&gt; = <span class="title function_">useContext</span>(&lt;context-name&gt;);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(&lt;context-variable&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="响应链-useEffect"><a href="#响应链-useEffect" class="headerlink" title="响应链 useEffect"></a>响应链 <code>useEffect</code></h2><p><a target="_blank" rel="noopener" href="https://www.reddit.com/r/reactjs/comments/v5ypd9/goodbye_useeffect_reactathon_2022/">https://www.reddit.com/r/reactjs/comments/v5ypd9/goodbye_useeffect_reactathon_2022/</a></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useEffect &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line"> <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">fetchData</span> = <span class="keyword">async</span> (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">   ...</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">fetchData</span>()</span><br><span class="line"> &#125;, []);</span><br><span class="line"> </span><br><span class="line"> <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>We’re calling the fetchData function that’s responsible for fetching data from the server. We execute it on every re-render because the dependency array is empty.</p>
+<h2 id="DOM对象-useRef"><a href="#DOM对象-useRef" class="headerlink" title="DOM对象 useRef"></a>DOM对象 useRef</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState, useEffect, useRef &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&quot;react-dom/client&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [inputValue, setInputValue] = <span class="title function_">useState</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">  <span class="keyword">const</span> count = <span class="title function_">useRef</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    count.<span class="property">current</span> = count.<span class="property">current</span> + <span class="number">1</span>;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">input</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">type</span>=<span class="string">&quot;text&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">value</span>=<span class="string">&#123;inputValue&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> setInputValue(e.target.value)&#125;</span></span><br><span class="line"><span class="language-xml">      /&gt;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Render Count: &#123;count.current&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="自定义-state-的处理逻辑-useReducer"><a href="#自定义-state-的处理逻辑-useReducer" class="headerlink" title="自定义 state 的处理逻辑 useReducer"></a>自定义 state 的处理逻辑 useReducer</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useReducer &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&quot;react-dom/client&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> initialTodos = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">title</span>: <span class="string">&quot;Todo 1&quot;</span>,</span><br><span class="line">    <span class="attr">complete</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">title</span>: <span class="string">&quot;Todo 2&quot;</span>,</span><br><span class="line">    <span class="attr">complete</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">reducer</span> = (<span class="params">state, action</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.<span class="property">type</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;COMPLETE&quot;</span>:</span><br><span class="line">      <span class="keyword">return</span> state.<span class="title function_">map</span>(<span class="function">(<span class="params">todo</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (todo.<span class="property">id</span> === action.<span class="property">id</span>) &#123;</span><br><span class="line">          <span class="keyword">return</span> &#123; ...todo, <span class="attr">complete</span>: !todo.<span class="property">complete</span> &#125;;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> todo;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="attr">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Todos</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [todos, dispatch] = <span class="title function_">useReducer</span>(reducer, initialTodos);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">handleComplete</span> = (<span class="params">todo</span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">dispatch</span>(&#123; <span class="attr">type</span>: <span class="string">&quot;COMPLETE&quot;</span>, <span class="attr">id</span>: todo.<span class="property">id</span> &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;todos.map((todo) =&gt; (</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;todo.id&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">input</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">              <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">              <span class="attr">checked</span>=<span class="string">&#123;todo.complete&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">              <span class="attr">onChange</span>=<span class="string">&#123;()</span> =&gt;</span> handleComplete(todo)&#125;</span></span><br><span class="line"><span class="language-xml">            /&gt;</span></span><br><span class="line"><span class="language-xml">            &#123;todo.title&#125;</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      ))&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Todos</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="复用-useMemo-useCallback"><a href="#复用-useMemo-useCallback" class="headerlink" title="复用 useMemo , useCallback"></a>复用 useMemo , useCallback</h2><p>包裹自己的话, 用React.memo的高阶函数包裹</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState, useMemo &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> calculation = <span class="title function_">useMemo</span>(<span class="function">() =&gt;</span> <span class="title function_">expensiveCalculation</span>(count), [count]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">expensiveCalculation</span> = (<span class="params">num</span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Calculating...&quot;</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000000000</span>; i++) &#123;</span><br><span class="line">    num += <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> num;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+<p>这种情况 count是 数字不会影响</p>
+<p>而如果 props中有传回调函数, 而组件自身会变化, 那么回调函数地址会变化, useMemo无法做到希望的”入参不变不重渲染”</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState, useCallback &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&quot;react-dom/client&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Todos</span> <span class="keyword">from</span> <span class="string">&quot;./Todos&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> [todos, setTodos] = <span class="title function_">useState</span>([]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">increment</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setCount</span>(<span class="function">(<span class="params">c</span>) =&gt;</span> c + <span class="number">1</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">const</span> addTodo = <span class="title function_">useCallback</span>(<span class="function">() =&gt;</span> &#123; <span class="comment">// todos 不变时, count变化, 不会重新创建addTodo</span></span><br><span class="line">    <span class="title function_">setTodos</span>(<span class="function">(<span class="params">t</span>) =&gt;</span> [...t, <span class="string">&quot;New Todo&quot;</span>]);</span><br><span class="line">  &#125;, [todos]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Todos</span> <span class="attr">todos</span>=<span class="string">&#123;todos&#125;</span> <span class="attr">addTodo</span>=<span class="string">&#123;addTodo&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        Count: &#123;count&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;increment&#125;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; memo &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Todos</span> = (<span class="params">&#123; todos, addTodo &#125;</span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;child render&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h2</span>&gt;</span>My Todos<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;todos.map((todo, index) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">        return <span class="tag">&lt;<span class="name">p</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>&#123;todo&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">      &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;addTodo&#125;</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">memo</span>(<span class="title class_">Todos</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="迷思"><a href="#迷思" class="headerlink" title="迷思"></a>迷思</h2><h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>看起来 React单向数据流似乎很简洁, 但实际上 本身就有大量回调存在的可能性, 而这种回调在state变化状态下 竟然会变, 否则要自己加useCallback去管理, 感觉好蠢, 并且这样的设计下, 使用者可能有不需要的”回调”, 又变成在内部要判断未传递时的情况, 真的越想越蠢</p>
+<h3 id="children-x2F-slot-可能破坏-抽离等价"><a href="#children-x2F-slot-可能破坏-抽离等价" class="headerlink" title="children&#x2F;slot 可能破坏 抽离等价"></a>children&#x2F;slot 可能破坏 抽离等价</h3><p>antd的Select, 下面的可以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Select&gt;</span><br><span class="line">  &#123;items.map(item =&gt; &lt;Option key=&#123;item&#125; value=&#123;item&#125;&gt;&#123;item&#125;&lt;/Option&gt;)&#125;</span><br><span class="line">&lt;/Select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>而下面的不行(看起来有所谓的抽离等价, 实际上配上Select具体内部实现又没有了抽离等价, 问题属于slot&#x2F;children的问题)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const StringOption = (&#123;value&#125;) =&gt; &lt;Option key=&#123;value&#125; value=&#123;value&#125;&gt;&#123;value&#125;&lt;/Option&gt;;</span><br><span class="line"></span><br><span class="line">&lt;Select&gt;</span><br><span class="line">  &#123;items.map(item =&gt; &lt;StringOption value=&#123;item&#125; /&gt;)&#125;</span><br><span class="line">&lt;/Select&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="for的key-大多数情况是浪费的"><a href="#for的key-大多数情况是浪费的" class="headerlink" title="for的key 大多数情况是浪费的"></a>for的key 大多数情况是浪费的</h3><p>vue 同</p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/22-11-11-nextjs/" title="nextjs and cheetsheat">https://cromarmot.github.io/Blog/22-11-11-nextjs/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Blog/tags/react/" rel="tag"><i class="fa fa-tag"></i> react</a>
+              <a href="/Blog/tags/nextjs/" rel="tag"><i class="fa fa-tag"></i> nextjs</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/22-10-25-cors/" rel="prev" title="CORS Demos">
+                  <i class="fa fa-chevron-left"></i> CORS Demos
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">679k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">10:17</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/22-11-11-nextjs/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
