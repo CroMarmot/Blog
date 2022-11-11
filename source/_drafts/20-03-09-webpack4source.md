@@ -1,8 +1,8 @@
 ---
 title: webpack 4 source code
 date: 2020-03-09 11:20:14
-tags: frontend
-category: [code,js,webpack]
+tags: [webpack4, webpack]
+category: [frontend,webpack]
 ---
 
 两个仓库 `git@github.com:webpack/webpack.git` 和`git@github.com:webpack/webpack-cli.git `

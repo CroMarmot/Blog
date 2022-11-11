@@ -2,7 +2,7 @@
 title: emacs 笔记
 date: 2017-05-16 11:20:14
 tags: [ide, emacs]
-category: [code, ide]
+category: [software, ide]
 ---
 
 突然无聊 学学emacs [该记录用vim编写]

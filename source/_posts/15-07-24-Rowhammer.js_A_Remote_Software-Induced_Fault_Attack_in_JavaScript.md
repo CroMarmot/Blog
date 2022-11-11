@@ -3,7 +3,7 @@ title: Rowhammer.js
 mathjax: true
 date: 2015-07-24 01:01:01
 tags: [rowhammer]
-categories: [code, security]
+categories: [software, security]
 ---
 
 

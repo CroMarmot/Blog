@@ -1,8 +1,8 @@
 ---
 title: Docker Harbor on Ubuntu 20 on WSL2
 date: 2021-07-06
-tags: [docker]
-category: [code, docker, harbor]
+tags: [docker,harbor]
+category: [backend, docker]
 mathjax: true
 ---
 

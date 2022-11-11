@@ -1,8 +1,8 @@
 ---
 title: webpack4 loader
 date: 2020-03-10 11:20:14
-tags: frontend
-category: [code,js,webpack,loader]
+tags: [webpack,loader]
+category: [frontend,webpack]
 ---
 
 # from scratch

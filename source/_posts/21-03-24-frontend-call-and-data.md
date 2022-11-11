@@ -2,7 +2,7 @@
 title: 前端通信
 date: 2021-03-24
 tags: [vue2,React,Angular2+]
-category: [code, frontend]
+category: [ frontend]
 mathjax: true
 ---
 

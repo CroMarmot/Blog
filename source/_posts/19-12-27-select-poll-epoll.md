@@ -1,8 +1,8 @@
 ---
 title: select/poll/epoll
 date: 2019-12-27 11:20:14
-tags: [computer,backend,io,system]
-category: [code, linux]
+tags: [computer,backend,io,system,select,poll,epoll]
+category: [software, linux]
 ---
 
 同步多路IO复用

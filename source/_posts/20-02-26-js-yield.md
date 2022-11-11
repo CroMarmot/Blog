@@ -2,7 +2,7 @@
 title: js yield
 date: 2020-02-26 11:20:14
 tags: [yield]
-category: [code, frontend]
+category: [ frontend]
 ---
 
 # refs

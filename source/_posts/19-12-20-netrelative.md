@@ -1,8 +1,8 @@
 ---
 title: net/ping/virus scan
 date: 2019-12-20 11:20:14
-tags: [backend,virus]
-category: [code, linux]
+tags: [ping, virus]
+category: [software, linux]
 ---
 
 # disable ping

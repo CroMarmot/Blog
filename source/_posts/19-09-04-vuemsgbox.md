@@ -2,7 +2,7 @@
 title: eleme vue msgbox 简单看看实现原理
 date: 2019-09-04 11:20:14
 tags: [vue2, msgbox, element-ui, alert]
-category: [code, frontend, vue]
+category: [ frontend, vue2]
 ---
 
 # 依赖版本

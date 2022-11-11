@@ -3,7 +3,7 @@ title: redhat7 + gitlab-ce版本更新 11.6->12.2
 mathjax: true
 date: 2019-09-23 15:09:01
 tags: [gitlab, redhat, update]
-categories: [code, git]
+categories: [software, git]
 ---
 
 # Why

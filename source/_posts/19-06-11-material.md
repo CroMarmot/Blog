@@ -3,7 +3,7 @@ title: material学习
 mathjax: true
 date: 2019-06-11 01:01:01
 tags: [Angular2+, material design]
-categories: [code, frontend]
+categories: [ frontend]
 ---
 
 # 参考

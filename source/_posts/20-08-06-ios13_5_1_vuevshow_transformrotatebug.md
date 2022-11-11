@@ -2,7 +2,7 @@
 title: ios13.5.1+, vue2 vShow,css transform rotate, BUG
 date: 2020-08-06 10:37:14
 tags: [ios13.5.1,ios,vue2,bug]
-category: [code, frontend]
+category: [ frontend]
 mathjax: true
 ---
 

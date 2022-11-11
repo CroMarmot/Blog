@@ -2,8 +2,8 @@
 title: jenkins 入门尝试
 mathjax: true
 date: 2019-07-26 01:01:01
-tags: [server,CI]
-categories: [code, devops]
+tags: [CI,devops,jenkins]
+categories: [backend, devops]
 ---
 
 # Why

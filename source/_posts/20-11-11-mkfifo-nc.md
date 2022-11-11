@@ -2,7 +2,7 @@
 title: mkfifo sh nc
 date: 2020-11-11 21:58:14
 tags: [linux, mkfifo]
-category: [code, linux]
+category: [software,linux]
 mathjax: true
 ---
 

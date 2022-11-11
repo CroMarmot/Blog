@@ -1,8 +1,8 @@
 ---
 title: android 11 wireless adb
 date: 2020-11-13 21:58:14
-tags: [linux,android 11,wireless adb]
-category: [code, android]
+tags: [linux,android 11,wireless adb,adb]
+category: [frontend, android]
 mathjax: true
 ---
 

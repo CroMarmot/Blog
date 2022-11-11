@@ -3,7 +3,7 @@ title: gitlab server 搭建
 mathjax: true
 date: 2019-07-08 01:01:01
 tags: [gitlab, git]
-categories: [code, git]
+categories: [software, git]
 ---
 
 # Why

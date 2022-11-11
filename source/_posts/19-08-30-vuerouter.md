@@ -2,7 +2,7 @@
 title: vue router 源码阅读
 date: 2019-08-30 11:20:14
 tags: [vue2, router,source code]
-category: [code, frontend, vue]
+category: [ frontend, vue2]
 ---
 
 本文对应版本 `638278b334199f17e052a54a0837c97624940c0c`

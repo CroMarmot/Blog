@@ -2,7 +2,7 @@
 title: latex on debian
 date: 2021-05-12
 tags: [latex]
-category: [code, latex]
+category: [ latex]
 mathjax: true
 ---
 

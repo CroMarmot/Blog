@@ -1,8 +1,8 @@
 ---
 title: fiddler android
 date: 2021-03-16
-tags: [fiddler]
-category: [code, android]
+tags: [fiddler,android]
+category: [frontend, android]
 mathjax: true
 ---
 

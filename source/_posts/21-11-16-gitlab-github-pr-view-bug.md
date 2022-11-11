@@ -1,8 +1,8 @@
 ---
 title: 你所见的pr可能不是真正的变化(Gitlab/Github pr view diff bug
 date: 2021-11-16
-tags: [git]
-category: [code, git]
+tags: [git,pull request]
+category: [software, git]
 mathjax: true
 ---
 

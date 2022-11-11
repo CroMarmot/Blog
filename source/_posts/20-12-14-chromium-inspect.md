@@ -1,7 +1,7 @@
 ---
 title: chrome inspect 404
 date: 2020-12-14
-tags: [frontend,debug,chrome]
+tags: [debug, chrome, android]
 category: [frontend]
 ---
 

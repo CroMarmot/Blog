@@ -1,8 +1,8 @@
 ---
 title: Hexo Static Blog in 2022
 date: 2022-08-15
-tags: [frontend,static blog]
-category: [framework, blog]
+tags: [static blog]
+category: [frontend,framework]
 mathjax: true
 ---
 

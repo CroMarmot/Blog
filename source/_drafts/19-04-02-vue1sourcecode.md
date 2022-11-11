@@ -1,8 +1,8 @@
 ---
 title: vue1 source code
 date: 2019-04-02 11:20:14
-tags: 
-category: [code,js,vue]
+tags: [vue1]
+category: [frontend,vue1]
 ---
 
 # TODO & 补充

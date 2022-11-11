@@ -1,8 +1,8 @@
 ---
 title: vue router cache or refresh
 date: 2020-05-15 11:20:14
-tags: frontend
-category: [code,js,router,vuex]
+tags: [vue2,vuex,router]
+category: [frontend,vue2]
 ---
 
 # 问题

@@ -1,8 +1,8 @@
 ---
 title: 给老电脑换个ssd, cheatsheet
 date: 2022-03-13
-tags: [backend]
-category: [code]
+tags: [ubuntu,ssd]
+category: [backend,ubuntu]
 mathjax: true
 ---
 

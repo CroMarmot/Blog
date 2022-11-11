@@ -2,7 +2,7 @@
 title: 宏任务 微任务
 date: 2020-09-21 16:58:14
 tags: [microTasks,macroTasks,schedule]
-category: [code, frontend]
+category: [ frontend]
 mathjax: true
 ---
 

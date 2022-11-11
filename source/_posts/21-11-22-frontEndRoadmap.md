@@ -1,8 +1,8 @@
 ---
 title: 前端资料链接
 date: 2021-11-22
-tags: [frontend]
-category: [code, vue, angular]
+tags: [vue2,Angular2+]
+category: [frontend]
 mathjax: true
 ---
 

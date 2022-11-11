@@ -2,7 +2,7 @@
 title: mpaas password
 date: 2019-12-16 11:20:14
 tags: [encrypt]
-category: [code, encrypt]
+category: [software, encrypt]
 ---
 
 ```js

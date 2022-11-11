@@ -2,7 +2,7 @@
 title: console source url
 date: 2020-02-19 11:20:14
 tags: [chrome, debug, code]
-category: [code, frontend]
+category: [ frontend]
 ---
 
 # 问题

@@ -1,8 +1,8 @@
 ---
 title: TS Cheat Sheet
 date: 2022-06-30
-tags: [frontend]
-category: [code]
+tags: [typescript]
+category: [frontend,typescript]
 mathjax: true
 ---
 

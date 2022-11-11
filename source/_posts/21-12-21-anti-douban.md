@@ -1,8 +1,8 @@
 ---
 title: 豆瓣页面数据解密 
 date: 2021-12-21
-tags: [frontend]
-category: [code, js]
+tags: [豆瓣,js]
+category: [frontend]
 mathjax: true
 ---
 

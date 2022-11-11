@@ -3,7 +3,7 @@ title: 闪耀暖暖 耗材计算器 rxjs + angular2+
 mathjax: true
 date: 2019-09-30 15:09:01
 tags: [nikki4, Angular2+]
-categories: [code, frontend, Angular]
+categories: [ frontend, Angular]
 ---
 
 # What

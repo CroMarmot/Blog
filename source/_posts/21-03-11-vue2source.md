@@ -2,7 +2,7 @@
 title: vue2源码阅读(由xmind笔记生成)
 date: 2021-03-11
 tags: [js,vue2,source code]
-category: [code, frontend, vue]
+category: [ frontend, vue2]
 mathjax: true
 ---
 

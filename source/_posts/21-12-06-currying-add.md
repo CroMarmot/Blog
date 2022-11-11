@@ -1,8 +1,8 @@
 ---
 title: currying 加法
 date: 2021-12-06
-tags: [frontend]
-category: [code, js]
+tags: [js]
+category: [frontend]
 mathjax: true
 ---
 

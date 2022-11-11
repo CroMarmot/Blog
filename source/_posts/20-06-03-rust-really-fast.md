@@ -2,7 +2,7 @@
 title: rust真的快
 date: 2020-06-03 11:20:14
 tags: [rust, cplusplus]
-category: [code, backend, rust]
+category: [ backend, rust]
 ---
 
 # ProjectEuler 74 题

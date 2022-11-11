@@ -2,7 +2,7 @@
 title: webpack文档 阅读笔记
 mathjax: true
 date: 2019-06-17 01:01:01
-categories: [code, frontend]
+categories: [ frontend]
 tags: [webpack]
 ---
 

@@ -3,7 +3,7 @@ title: 别遵循RxJS的最佳实践
 mathjax: true
 date: 2019-09-27 01:01:01
 tags: [Angular2+, rxjs, observable]
-categories: [code, frontend, Angular]
+categories: [ frontend, Angular]
 ---
 
 # 依赖

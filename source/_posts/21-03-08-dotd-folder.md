@@ -2,7 +2,7 @@
 title: .d 文件夹
 date: 2021-03-08 21:58:14
 tags: [config, server, etc, linux]
-category: [code, linux]
+category: [software, linux]
 mathjax: true
 ---
 

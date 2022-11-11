@@ -3,7 +3,7 @@ title: git 在历史版本中 完全移除文件
 mathjax: true
 date: 2019-09-20 15:09:01
 tags: [git]
-categories: [code, git]
+categories: [software, git]
 ---
 
 # How

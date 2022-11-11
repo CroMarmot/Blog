@@ -1,9 +1,9 @@
 ---
 title: Trinity RDF
 mathjax: true
-date: 2013-01-01 01:01:01
+date: 2016-01-03
 tags: [graph, rdf]
-categories: [notes]
+categories: [backend,rdf]
 ---
 
 dgraph engine for web scale rdf data

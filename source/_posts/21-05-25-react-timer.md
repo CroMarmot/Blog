@@ -2,7 +2,7 @@
 title: react 计时器与 useRef, useState
 date: 2021-05-25
 tags: [react]
-category: [code, react]
+category: [frontend, react]
 mathjax: true
 ---
 
