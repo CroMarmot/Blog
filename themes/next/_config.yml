@@ -97,9 +97,10 @@ open_graph:
 menu:
   home: / || fa fa-home
   archives: /archives/ || fa fa-archive
-  rss: /atom.xml || fa fa-rss
-  categories: /categories/ || fa fa-th
+  yearmonth: /yearmonth/ || fa fa-calendar-days
+  categories: /categories/ || fa fa-shapes
   tags: /tags/ || fa fa-tags
+  rss: /atom.xml || fa fa-rss
   about: /20-07-13-rsa/#contact || fa fa-user
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
@@ -241,7 +242,7 @@ footer:
 # ---------------------------------------------------------------
 
 # Automatically excerpt description in homepage as preamble text.
-excerpt_description: true
+excerpt_description: false
 
 # Read more button
 # If true, the read more button will be displayed in excerpt section.
@@ -318,6 +319,7 @@ tagcloud:
   amount: 0 # Total amount of tags
   orderby: length # Order of tags
   order: -1 # Sort order
+  show_count: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page.
@@ -345,8 +347,8 @@ preconnect: false
 # Set the text alignment in posts / pages.
 text_align:
   # Available values: start | end | left | right | center | justify | justify-all | match-parent
-  desktop: justify
-  mobile: justify
+  desktop: left
+  mobile: left
 
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
@@ -842,7 +844,7 @@ mermaid:
 # Use Animate.css to animate everything.
 # For more information: https://animate.style
 motion:
-  enable: true
+  enable: false
   async: false
   transition:
     # All available transition variants: https://theme-next.js.org/animate/

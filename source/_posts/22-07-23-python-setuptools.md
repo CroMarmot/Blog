@@ -1,8 +1,8 @@
 ---
 title: python3 setuptools 发包
-date: 2022-07-23 12:00
-tags: [python3, setuptools, 发包]
-category: tutorial
+date: 2022-07-23
+tags: [python3, setuptools]
+category: [backend,python3]
 ---
 
 # Step by Step

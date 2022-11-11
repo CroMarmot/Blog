@@ -1,8 +1,8 @@
 ---
 title: chrome inspect 404
-date: 2020-12-14 11:20:14
-tags: [code,js,debug,chrome,inspect,ubuntu,snap]
-categories: frontend
+date: 2020-12-14
+tags: [frontend,debug,chrome]
+category: [frontend]
 ---
 
 # 问题
