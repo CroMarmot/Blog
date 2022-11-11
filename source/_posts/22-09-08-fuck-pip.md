@@ -65,6 +65,8 @@ site.ENABLE_USER_SITE = "--user" in sys.argv[1:]
 
 又搜,发现的确是setuptools有bug,然后[60.0.2修复了](https://github.com/pypa/setuptools/issues/2938#issuecomment-998293346)
 
+<!--more-->
+
 我看了下`pip3 list | grep setuptools`, 版本是59
 
 升级了一下到65 依然不行

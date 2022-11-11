@@ -30,6 +30,8 @@ dependencies = [
 ]
 ```
 
+<!--more-->
+
 描述依赖的library 和library中被实际用到的
 
 除此以外, 还可以提供`metadata, contents, dependencies` 等描述, (老式的配置在`setup.py / setup.cfg`中

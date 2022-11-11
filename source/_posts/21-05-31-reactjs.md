@@ -1,7 +1,7 @@
 ---
-title: react js 提炼笔记 and more
-date: 2021-05-31 11:20:14
-tags: reactjs
+title: react js 笔记
+date: 2021-05-31
+tags: [react]
 category: [frontend, react]
 ---
 
