@@ -170,7 +170,11 @@ https://twine.readthedocs.io/en/stable/
 pip install twine
 ```
 
-`build`打包以后
+`build`打包
+
+```
+python -m build
+```
 
 为了避免真的传上去出问题,可以先传到[Test PyPI](https://packaging.python.org/en/latest/guides/using-testpypi/)
 
