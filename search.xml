@@ -1438,7 +1438,7 @@
 
 <h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1><p>This README.md is used to testing all kinds of syntax of GitHub Flavored Markdown.</p>
 <hr>
-<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-x77-x6c-x79-x72-105-x63-115-64-49-54-x33-x2e-x63-x6f-x6d"><a href="#E-mail-x77-x6c-x79-x72-105-x63-115-64-49-54-x33-x2e-x63-x6f-x6d" class="headerlink" title="E-mail:&#x77;&#x6c;&#x79;&#x72;&#105;&#x63;&#115;&#64;&#49;&#54;&#x33;&#x2e;&#x63;&#x6f;&#x6d;"></a>E-mail:<a href="mailto:&#x77;&#x6c;&#x79;&#x72;&#105;&#x63;&#115;&#64;&#49;&#54;&#x33;&#x2e;&#x63;&#x6f;&#x6d;">&#x77;&#x6c;&#x79;&#x72;&#105;&#x63;&#115;&#64;&#49;&#54;&#x33;&#x2e;&#x63;&#x6f;&#x6d;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-119-108-x79-x72-x69-99-115-64-x31-x36-51-x2e-x63-111-109"><a href="#E-mail-119-108-x79-x72-x69-99-115-64-x31-x36-51-x2e-x63-111-109" class="headerlink" title="E-mail:&#119;&#108;&#x79;&#x72;&#x69;&#99;&#115;&#64;&#x31;&#x36;&#51;&#x2e;&#x63;&#111;&#109;"></a>E-mail:<a href="mailto:&#119;&#108;&#x79;&#x72;&#x69;&#99;&#115;&#64;&#x31;&#x36;&#51;&#x2e;&#x63;&#111;&#109;">&#119;&#108;&#x79;&#x72;&#x69;&#99;&#115;&#64;&#x31;&#x36;&#51;&#x2e;&#x63;&#111;&#109;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a name="index"/>目录</h2><ul>
 <li><a href="#line">横线</a></li>
 <li><a href="#title">标题</a></li>
@@ -14461,7 +14461,9 @@ yarn dev -m
 <p>安装</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install twine</span><br></pre></td></tr></table></figure>
 
-<p><code>build</code>打包以后</p>
+<p><code>build</code>打包</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python -m build</span><br></pre></td></tr></table></figure>
+
 <p>为了避免真的传上去出问题,可以先传到<a href="https://packaging.python.org/en/latest/guides/using-testpypi/">Test PyPI</a></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">twine upload -r testpypi dist/*</span><br></pre></td></tr></table></figure>
 
