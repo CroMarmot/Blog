@@ -6,7 +6,7 @@
   <link href="https://cromarmot.github.io/Blog/atom.xml" rel="self"/>
   
   <link href="https://cromarmot.github.io/Blog/"/>
-  <updated>2023-02-15T19:52:07.368Z</updated>
+  <updated>2023-02-15T21:36:46.473Z</updated>
   <id>https://cromarmot.github.io/Blog/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JS GC</title>
+    <link href="https://cromarmot.github.io/Blog/23-02-16-js_gc/"/>
+    <id>https://cromarmot.github.io/Blog/23-02-16-js_gc/</id>
+    <published>2023-02-15T16:00:00.000Z</published>
+    <updated>2023-02-15T21:36:46.473Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;那么多&lt;code&gt;面经&lt;/code&gt;在说引用计数, 循环引用会无法gc,而以我对jvm python等多个有gc语言的了解，js</summary>
+        
+      
+    
+    
+    
+    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/frontend/"/>
+    
+    
+    <category term="js" scheme="https://cromarmot.github.io/Blog/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Custom Reduce</title>
     <link href="https://cromarmot.github.io/Blog/23-02-15-custom_reduce/"/>
     <id>https://cromarmot.github.io/Blog/23-02-15-custom_reduce/</id>
     <published>2023-02-14T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
       
@@ -43,11 +68,37 @@
   </entry>
   
   <entry>
+    <title>Simple Deep Clone</title>
+    <link href="https://cromarmot.github.io/Blog/23-02-14-js_deep_clone/"/>
+    <id>https://cromarmot.github.io/Blog/23-02-14-js_deep_clone/</id>
+    <published>2023-02-13T16:00:00.000Z</published>
+    <updated>2023-02-15T21:36:46.473Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;实现一个简单的deepclone 支持循环结构体&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/frontend/"/>
+    
+    
+    <category term="js" scheme="https://cromarmot.github.io/Blog/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>nextjs and cheetsheat</title>
     <link href="https://cromarmot.github.io/Blog/22-11-11-nextjs/"/>
     <id>https://cromarmot.github.io/Blog/22-11-11-nextjs/</id>
     <published>2022-11-10T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/CroMarmot/ReactDemo/commits/master&quot;&gt;https://github.com/CroMarmot/ReactDemo/commits/master&lt;/a&gt;&lt;/p&gt;
@@ -111,7 +162,7 @@
     <link href="https://cromarmot.github.io/Blog/22-10-25-cors/"/>
     <id>https://cromarmot.github.io/Blog/22-10-25-cors/</id>
     <published>2022-10-24T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;CORS&quot;&gt;&lt;a href=&quot;#CORS&quot; class=&quot;headerlink&quot; title=&quot;CORS&quot;&gt;&lt;/a&gt;CORS&lt;/h1&gt;&lt;p&gt;The server is responsible for reporting the allowed origins. The web browser is responsible for enforcing that requests are only sent from allowed domains.&lt;/p&gt;
@@ -134,7 +185,7 @@
     <link href="https://cromarmot.github.io/Blog/22-09-14-vim8/"/>
     <id>https://cromarmot.github.io/Blog/22-09-14-vim8/</id>
     <published>2022-09-13T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;历史&quot;&gt;&lt;a href=&quot;#历史&quot; class=&quot;headerlink&quot; title=&quot;历史&quot;&gt;&lt;/a&gt;历史&lt;/h1&gt;&lt;p&gt;我也是用了 spf13-vim + vundle 有七八年了, 之中还用过Pathogen 之类的&lt;/p&gt;
@@ -160,7 +211,7 @@
     <link href="https://cromarmot.github.io/Blog/22-09-08-fuck-pip/"/>
     <id>https://cromarmot.github.io/Blog/22-09-08-fuck-pip/</id>
     <published>2022-09-07T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;第一次被pip搞了几个小时&quot;&gt;&lt;a href=&quot;#第一次被pip搞了几个小时&quot; class=&quot;headerlink&quot; title=&quot;第一次被pip搞了几个小时&quot;&gt;&lt;/a&gt;第一次被pip搞了几个小时&lt;/h1&gt;&lt;p&gt;壮着胆子,在Ubuntu 22.10还没发布前,把系统从20.04.5升级到了22.04.1, 以我从12-&amp;gt;14,14-&amp;gt;16,16-&amp;gt;18,18-&amp;gt;20多年的经验来看, 这次竟然没问题! 厉害了, 以前每次升级都会炸点东西, 然后最终还是重装式升级, 这次竟然没啥严重的炸掉&lt;/p&gt;
@@ -198,7 +249,7 @@
     <link href="https://cromarmot.github.io/Blog/22-08-15-static-blog/"/>
     <id>https://cromarmot.github.io/Blog/22-08-15-static-blog/</id>
     <published>2022-08-14T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;写在-2022-年的-静态博客选择&quot;&gt;&lt;a href=&quot;#写在-2022-年的-静态博客选择&quot; class=&quot;headerlink&quot; title=&quot;写在 2022 年的 静态博客选择&quot;&gt;&lt;/a&gt;写在 2022 年的 静态博客选择&lt;/h1&gt;&lt;h2 id=&quot;调研&quot;&gt;&lt;a href=&quot;#调研&quot; class=&quot;headerlink&quot; title=&quot;调研&quot;&gt;&lt;/a&gt;调研&lt;/h2&gt;&lt;p&gt;用了Hexo很久了,期间也有不少其它产品, 也试了试这些框架&lt;/p&gt;
@@ -221,7 +272,7 @@
     <link href="https://cromarmot.github.io/Blog/22-07-23-python-setuptools/"/>
     <id>https://cromarmot.github.io/Blog/22-07-23-python-setuptools/</id>
     <published>2022-07-22T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;Step-by-Step&quot;&gt;&lt;a href=&quot;#Step-by-Step&quot; class=&quot;headerlink&quot; title=&quot;Step by Step&quot;&gt;&lt;/a&gt;Step by Step&lt;/h1&gt;&lt;p&gt;install build&lt;/p&gt;
@@ -248,7 +299,7 @@
     <link href="https://cromarmot.github.io/Blog/22-06-30-ts-cheatsheet/"/>
     <id>https://cromarmot.github.io/Blog/22-06-30-ts-cheatsheet/</id>
     <published>2022-06-29T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;TS-Cheat-Sheet&quot;&gt;&lt;a href=&quot;#TS-Cheat-Sheet&quot; class=&quot;headerlink&quot; title=&quot;TS Cheat Sheet&quot;&gt;&lt;/a&gt;TS Cheat Sheet&lt;/h1&gt;&lt;h2 id=&quot;为什么写这篇&quot;&gt;&lt;a href=&quot;#为什么写这篇&quot; class=&quot;headerlink&quot; title=&quot;为什么写这篇&quot;&gt;&lt;/a&gt;为什么写这篇&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/type-challenges/type-challenges&quot;&gt;antfu的题目&lt;/a&gt; 大多就是基础方法+递归, issues充斥着重复内容, 最开始还有点TS的味道, 后面完全变成了只有基础方法, 组合出一个东西, 感觉这个更适合作为递归练习题, 而不是TS练习题 (没有数值强行用数组拼接+length, 等等&lt;/p&gt;
@@ -271,7 +322,7 @@
     <link href="https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/"/>
     <id>https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/</id>
     <published>2022-03-12T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;带sudo的一定小心, 别选错盘了&lt;/strong&gt;&lt;/p&gt;
@@ -301,7 +352,7 @@
     <link href="https://cromarmot.github.io/Blog/21-12-21-anti-douban/"/>
     <id>https://cromarmot.github.io/Blog/21-12-21-anti-douban/</id>
     <published>2021-12-20T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;个人的网页需要一些书目数据，印象中，老的豆瓣直接是页面还是接口，能获直接取到，可以作为爬虫入门练手&lt;/p&gt;
@@ -328,7 +379,7 @@
     <link href="https://cromarmot.github.io/Blog/21-12-06-currying-add/"/>
     <id>https://cromarmot.github.io/Blog/21-12-06-currying-add/</id>
     <published>2021-12-05T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
       
@@ -354,7 +405,7 @@
     <link href="https://cromarmot.github.io/Blog/21-11-22-frontEndRoadmap/"/>
     <id>https://cromarmot.github.io/Blog/21-11-22-frontEndRoadmap/</id>
     <published>2021-11-21T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
       
@@ -381,7 +432,7 @@
     <link href="https://cromarmot.github.io/Blog/21-11-16-gitlab-github-pr-view-bug/"/>
     <id>https://cromarmot.github.io/Blog/21-11-16-gitlab-github-pr-view-bug/</id>
     <published>2021-11-15T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
       
@@ -410,7 +461,7 @@
     <link href="https://cromarmot.github.io/Blog/21-09-02-vue-transition/"/>
     <id>https://cromarmot.github.io/Blog/21-09-02-vue-transition/</id>
     <published>2021-09-01T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
       
@@ -437,7 +488,7 @@
     <link href="https://cromarmot.github.io/Blog/21-07-06-dockerharbor/"/>
     <id>https://cromarmot.github.io/Blog/21-07-06-dockerharbor/</id>
     <published>2021-07-05T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;Docker-Harbor&quot;&gt;&lt;a href=&quot;#Docker-Harbor&quot; class=&quot;headerlink&quot; title=&quot;Docker Harbor&quot;&gt;&lt;/a&gt;Docker Harbor&lt;/h1&gt;&lt;p&gt;简单说，可以搭本地&amp;#x2F;局域网 docker仓库&lt;/p&gt;
@@ -472,7 +523,7 @@
     <link href="https://cromarmot.github.io/Blog/21-07-05-migrate2win/"/>
     <id>https://cromarmot.github.io/Blog/21-07-05-migrate2win/</id>
     <published>2021-07-04T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;apt&quot;&gt;&lt;a href=&quot;#apt&quot; class=&quot;headerlink&quot; title=&quot;apt&quot;&gt;&lt;/a&gt;apt&lt;/h1&gt;&lt;p&gt;怀念 Debian apt 的好, 在windows上腾讯软件管家成了我的“apt”&lt;/p&gt;
@@ -511,7 +562,7 @@
     <link href="https://cromarmot.github.io/Blog/21-05-31-reactjs/"/>
     <id>https://cromarmot.github.io/Blog/21-05-31-reactjs/</id>
     <published>2021-05-30T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
       
@@ -539,7 +590,7 @@
     <link href="https://cromarmot.github.io/Blog/21-05-25-react-timer/"/>
     <id>https://cromarmot.github.io/Blog/21-05-25-react-timer/</id>
     <published>2021-05-24T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
+    <updated>2023-02-15T21:36:46.473Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;开始&quot;&gt;&lt;a href=&quot;#开始&quot; class=&quot;headerlink&quot; title=&quot;开始&quot;&gt;&lt;/a&gt;开始&lt;/h1&gt;&lt;p&gt;一般来说tutorial, 是从有什么讲什么的开始&lt;/p&gt;
@@ -553,57 +604,6 @@
     
     
     <category term="react" scheme="https://cromarmot.github.io/Blog/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>latex on debian</title>
-    <link href="https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/"/>
-    <id>https://cromarmot.github.io/Blog/21-05-12-latex-on-linux/</id>
-    <published>2021-05-11T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;&lt;code&gt;sudo apt install texlive-full&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;包还蛮大的，3GB下载，5GB展开&lt;/p&gt;
-&lt;h1 id=&quot;Interface-zh-CN&quot;&gt;&lt;a href=&quot;#Interface-zh-CN&quot; class=&quot;headerlink&quot; title=&quot;Interface zh_CN&quot;&gt;&lt;/a&gt;Interface zh_CN&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Options-&amp;gt;Configure TeXstudio-&amp;gt;General-&amp;gt;Language&lt;/code&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Hello-world&quot;&gt;&lt;a href=&quot;#Hello-world&quot; class=&quot;headerlink&quot; title=&quot;Hello world&quot;&gt;&lt;/a&gt;Hello world&lt;/h1&gt;&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;% !TEX program = xelatex&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;% !Mode:: &amp;quot;TeX:UTF-8&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;%Save as UTF-8, run xelatex.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\documentclass&lt;/span&gt;&amp;#123;article&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\usepackage&lt;/span&gt;&amp;#123;xeCJK&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\begin&lt;/span&gt;&amp;#123;document&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hello,你好&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;\end&lt;/span&gt;&amp;#123;document&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="latex" scheme="https://cromarmot.github.io/Blog/categories/latex/"/>
-    
-    
-    <category term="latex" scheme="https://cromarmot.github.io/Blog/tags/latex/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>gogs with docker</title>
-    <link href="https://cromarmot.github.io/Blog/21-04-27-gogs/"/>
-    <id>https://cromarmot.github.io/Blog/21-04-27-gogs/</id>
-    <published>2021-04-26T16:00:00.000Z</published>
-    <updated>2023-02-15T19:52:07.368Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;起&quot;&gt;&lt;a href=&quot;#起&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="software" scheme="https://cromarmot.github.io/Blog/categories/software/"/>
-    
-    <category term="git" scheme="https://cromarmot.github.io/Blog/categories/software/git/"/>
-    
-    
-    <category term="git" scheme="https://cromarmot.github.io/Blog/tags/git/"/>
-    
-    <category term="gogs" scheme="https://cromarmot.github.io/Blog/tags/gogs/"/>
     
   </entry>
   
