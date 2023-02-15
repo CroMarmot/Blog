@@ -82,7 +82,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">123</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">32</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">143</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">124</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">32</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">143</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -153,7 +153,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/Blog/archives/">
-          <span class="site-state-item-count">123</span>
+          <span class="site-state-item-count">124</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -225,6 +225,125 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-12-06-currying-add/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/21-12-06-currying-add/" class="post-title-link" itemprop="url">currying 加法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2021-12-06 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-06T00:00:00+08:00">2021-12-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-02-16 03:52:07" itemprop="dateModified" datetime="2023-02-16T03:52:07+08:00">2023-02-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/21-12-06-currying-add/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-12-06-currying-add/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>501</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>一个支持 任意多参数，可以柯里化的加法函数</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>直接返回函数 保留已传内容的加和</p>
+<p>toString 支持输出值</p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">createF</span> = (<span class="params">v</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> b = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="title function_">createF</span>(v + [...<span class="variable language_">arguments</span>].<span class="title function_">reduce</span>(<span class="function">(<span class="params">s, cur</span>) =&gt;</span> s + cur, <span class="number">0</span>));</span><br><span class="line">    &#125;;</span><br><span class="line">    b.<span class="property">toString</span> = <span class="function">() =&gt;</span> v;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">createF</span>([...<span class="variable language_">arguments</span>].<span class="title function_">reduce</span>(<span class="function">(<span class="params">s, cur</span>) =&gt;</span> s + cur, <span class="number">0</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">add</span>(<span class="number">1</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>));</span><br><span class="line"><span class="keyword">const</span> x = <span class="title function_">add</span>(<span class="number">5</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">x</span>(<span class="number">6</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">x</span>(<span class="number">7</span>)(<span class="number">8</span>));</span><br><span class="line"><span class="keyword">const</span> y = <span class="title function_">x</span>(<span class="number">9</span>)(<span class="number">9</span>, <span class="number">10</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">y</span>());</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-11-22-frontEndRoadmap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -261,7 +380,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-02-16 02:09:04" itemprop="dateModified" datetime="2023-02-16T02:09:04+08:00">2023-02-16</time>
+      <time title="修改時間：2023-02-16 03:52:07" itemprop="dateModified" datetime="2023-02-16T03:52:07+08:00">2023-02-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -423,7 +542,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-02-16 02:09:04" itemprop="dateModified" datetime="2023-02-16T02:09:04+08:00">2023-02-16</time>
+      <time title="修改時間：2023-02-16 03:52:07" itemprop="dateModified" datetime="2023-02-16T03:52:07+08:00">2023-02-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -558,7 +677,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-02-16 02:09:04" itemprop="dateModified" datetime="2023-02-16T02:09:04+08:00">2023-02-16</time>
+      <time title="修改時間：2023-02-16 03:52:07" itemprop="dateModified" datetime="2023-02-16T03:52:07+08:00">2023-02-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -688,7 +807,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-02-16 02:09:04" itemprop="dateModified" datetime="2023-02-16T02:09:04+08:00">2023-02-16</time>
+      <time title="修改時間：2023-02-16 03:52:07" itemprop="dateModified" datetime="2023-02-16T03:52:07+08:00">2023-02-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -825,7 +944,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-02-16 02:09:04" itemprop="dateModified" datetime="2023-02-16T02:09:04+08:00">2023-02-16</time>
+      <time title="修改時間：2023-02-16 03:52:07" itemprop="dateModified" datetime="2023-02-16T03:52:07+08:00">2023-02-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -964,7 +1083,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-02-16 02:09:04" itemprop="dateModified" datetime="2023-02-16T02:09:04+08:00">2023-02-16</time>
+      <time title="修改時間：2023-02-16 03:52:07" itemprop="dateModified" datetime="2023-02-16T03:52:07+08:00">2023-02-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1192,7 +1311,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-02-16 02:09:04" itemprop="dateModified" datetime="2023-02-16T02:09:04+08:00">2023-02-16</time>
+      <time title="修改時間：2023-02-16 03:52:07" itemprop="dateModified" datetime="2023-02-16T03:52:07+08:00">2023-02-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1318,7 +1437,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-02-16 02:09:04" itemprop="dateModified" datetime="2023-02-16T02:09:04+08:00">2023-02-16</time>
+      <time title="修改時間：2023-02-16 03:52:07" itemprop="dateModified" datetime="2023-02-16T03:52:07+08:00">2023-02-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1442,7 +1561,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-02-16 02:09:04" itemprop="dateModified" datetime="2023-02-16T02:09:04+08:00">2023-02-16</time>
+      <time title="修改時間：2023-02-16 03:52:07" itemprop="dateModified" datetime="2023-02-16T03:52:07+08:00">2023-02-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1526,155 +1645,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-04-01-pointers/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/21-04-01-pointers/" class="post-title-link" itemprop="url">外部文章 索引</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2021-04-01 00:00:00" itemprop="dateCreated datePublished" datetime="2021-04-01T00:00:00+08:00">2021-04-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-02-16 02:09:04" itemprop="dateModified" datetime="2023-02-16T02:09:04+08:00">2023-02-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/notes/" itemprop="url" rel="index"><span itemprop="name">notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/21-04-01-pointers/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-04-01-pointers/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>561</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>有些别人整理过的，暂时也不太需要二次整理的文章，建立索引，缺点是可能失效链接和无法自己维护, 移除用twitter书签的, 手机 Pocket, 网页书签栏,</p>
-<h1 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h1><p><a target="_blank" rel="noopener" href="https://blog.joway.io/posts/deep-into-distributed-filesystem/">分布式文件系统的演化</a></p>
-<p><a target="_blank" rel="noopener" href="https://coolshell.cn/articles/21263.html">GO 编程模式：K8S VISITOR 模式</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/goharbor/community/blob/master/proposals/enhanced-default-processor.md">proposals&#x2F;enhanced-default-processor</a></p>
-<p><a target="_blank" rel="noopener" href="https://twitter.com/angular/status/1377395280648097796">ng packages</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.ximalaya.com/keji/29161862/">牛油果烤面包</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.ximalaya.com/keji/24821511/">捕蛇者说</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.angular.io/ivys-internal-data-structures-f410509c7480">ng ivy</a></p>
-<p><a target="_blank" rel="noopener" href="https://tech.meituan.com/2021/02/04/2021-spring-festival-present.html">美团技术团队</a></p>
-<p><a target="_blank" rel="noopener" href="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-intro#architecture">tidb</a></p>
-<p><a target="_blank" rel="noopener" href="http://maizure.org/projects/decoded-gnu-coreutils/">gnu core utils 源码</a></p>
-<p><a target="_blank" rel="noopener" href="http://jimbly.github.io/regex-crossword/">regex 填字游戏</a></p>
-<p><a target="_blank" rel="noopener" href="https://huggingface.co/stanford-cs329s">stanford cs 329s 机器学习设计</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Zo4y1R7En/">ncnn</a></p>
-<p><a target="_blank" rel="noopener" href="https://draveness.me/golang/">go语言设计与实现</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rx411Z7LV"> Learning How to Learn</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/b1f6c1c4/learn-git-the-super-hard-way">git</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.hacker101.com/start-here">hacker101</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/type-challenges/type-challenges">typescript challenge</a></p>
-<p><a target="_blank" rel="noopener" href="https://nhigham.com/2020/09/01/what-is-the-sylvester-equation/">Sylvester Equation</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/pingcap/awesome-database-learning">pingcap database learning path</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/facebook/folly/blob/master/folly/docs/FBVector.md">FB vector</a></p>
-<p><a target="_blank" rel="noopener" href="https://linux.die.net/man/8/logrotate">logrotate</a></p>
-<p><a target="_blank" rel="noopener" href="https://coolshell.cn/articles/21003.html">timing attack</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/NickCarneiro/curlconverter">py spider</a></p>
-<p><a target="_blank" rel="noopener" href="http://aggregate.org/MAGIC/">The Aggregate Magic Algorithms</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=EFwGK3Lvr04&ab_channel=PyConChina">py command line</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.vadimbulavin.com/modern-mvvm-ios-app-architecture-with-combine-and-swiftui/">Modern MVVM iOS App Architecture with Combine and SwiftUI</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av90473411">k8s 调度</a></p>
-<p><a target="_blank" rel="noopener" href="https://cloud.tsinghua.edu.cn/d/339de5f93d8c420ebbb7/?p=/aos-lec1&mode=list">tsinghua aos</a></p>
-<p><a target="_blank" rel="noopener" href="https://coolshell.cn/articles/20845.html">RUST语言的编程范式 coolshell</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.sourcetrail.com/blog/open_source/">sourcetrail</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cs.cmu.edu/~rwh/courses/hott/">cmu type theory</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLi01XoE8jYoi3SgnnGorR_XOW3IcK-TP6">Abstract Algobra Youtube</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/caicloud/kube-ladder">kube ladder</a></p>
-<p><a target="_blank" rel="noopener" href="https://googleprojectzero.blogspot.com/">Project Zero</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/Blog/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/Blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/Blog/page/3/">3</a><a class="page-number" href="/Blog/page/5/">5</a><a class="page-number" href="/Blog/page/9/">9</a><a class="page-number" href="/Blog/page/13/">13</a><a class="extend next" rel="next" href="/Blog/page/3/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
@@ -1699,13 +1669,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">683k</span>
+    <span title="總字數">684k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">10:21</span>
+    <span title="所需總閱讀時間">10:22</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
