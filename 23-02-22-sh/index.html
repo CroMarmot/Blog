@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="&#x2F;bin&#x2F;sh, bash, dash, zsh, dash">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux shell">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/23-02-22-sh/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="&#x2F;bin&#x2F;sh, bash, dash, zsh, dash">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://zsh.sourceforge.io/Images/wizard.gif">
+<meta property="article:published_time" content="2023-02-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-02-22T16:50:43.322Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="shell">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zsh.sourceforge.io/Images/wizard.gif">
+
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/23-02-22-sh/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/23-02-22-sh/","path":"23-02-22-sh/","title":"Linux shell"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Linux shell | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">127</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">32</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">143</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-shell"><span class="nav-text">Linux shell</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sh"><span class="nav-text">sh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bash-GNU-Bourne-Again-SHell"><span class="nav-text">Bash(GNU Bourne-Again SHell)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dash-Debian-Almquist-shell"><span class="nav-text">Dash(Debian Almquist shell)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Z-Shell"><span class="nav-text">Z Shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fish"><span class="nav-text">Fish</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#benchmark"><span class="nav-text">benchmark</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B-%E5%88%87%E6%8D%A2"><span class="nav-text">查看,切换</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">127</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">143</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/23-02-22-sh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Linux shell | Cro-Marmot's Blog">
+      <meta itemprop="description" content="/bin/sh, bash, dash, zsh, dash">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux shell
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2023-02-22 00:00:00" itemprop="dateCreated datePublished" datetime="2023-02-22T00:00:00+08:00">2023-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-02-23 00:50:43" itemprop="dateModified" datetime="2023-02-23T00:50:43+08:00">2023-02-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/" itemprop="url" rel="index"><span itemprop="name">software</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/23-02-22-sh/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="23-02-22-sh/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>3.4k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
+
+            <div class="post-description">/bin/sh, bash, dash, zsh, dash</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Linux-shell"><a href="#Linux-shell" class="headerlink" title="Linux shell"></a>Linux shell</h1><h2 id="sh"><a href="#sh" class="headerlink" title="sh"></a>sh</h2><p>linux默认的 <code>/bin/sh</code></p>
+<h2 id="Bash-GNU-Bourne-Again-SHell"><a href="#Bash-GNU-Bourne-Again-SHell" class="headerlink" title="Bash(GNU Bourne-Again SHell)"></a>Bash(GNU Bourne-Again SHell)</h2><p><a target="_blank" rel="noopener" href="https://www.gnu.org/software/bash/">https://www.gnu.org/software/bash/</a></p>
+<p>ubuntu默认的, 我一直以来用的最多的</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --rm ubuntu</span><br><span class="line">echo $SHELL</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">或者</span></span><br><span class="line">grep root /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>bash提供的增强包括:</p>
+<ul>
+<li>命令行编辑</li>
+<li>无限大小的命令历史</li>
+<li>job control,</li>
+<li>shell函数和 aliases</li>
+<li>无限大的indexed arrays</li>
+<li>从2到64的任何基数的整数算术</li>
+</ul>
+<p>以及日常自己写点shell脚本来增强一下就行了</p>
+<h2 id="Dash-Debian-Almquist-shell"><a href="#Dash-Debian-Almquist-shell" class="headerlink" title="Dash(Debian Almquist shell)"></a>Dash(Debian Almquist shell)</h2><p><a target="_blank" rel="noopener" href="http://gondor.apana.org.au/~herbert/dash/">http://gondor.apana.org.au/~herbert/dash/</a></p>
+<p>POSIX-兼容的 &#x2F;bin&#x2F;sh实现，目标是尽量小（且不牺牲速度），大多数情况比Bash快</p>
+<p>但因此用户体验就不太好了</p>
+<p><a target="_blank" rel="noopener" href="https://lwn.net/Articles/343924/">A tale of two shells: bash or dash</a></p>
+<h2 id="Z-Shell"><a href="#Z-Shell" class="headerlink" title="Z Shell"></a>Z Shell</h2><p><a target="_blank" rel="noopener" href="https://zsh.sourceforge.io/">https://zsh.sourceforge.io/</a></p>
+<p><a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Zsh">https://wiki.archlinuxcn.org/wiki/Zsh</a></p>
+<p><img data-src="https://zsh.sourceforge.io/Images/wizard.gif" alt="z shell logo"></p>
+<p>zsh是一个为交互式使用而设计的shell，尽管它也是一种强大的脚本语言。bash、ksh和tcsh的许多有用的功能都被整合到了zsh中；同时还增加了许多原创的功能。</p>
+<p>直接看目录 <a target="_blank" rel="noopener" href="https://zsh.sourceforge.io/Intro/intro_toc.html">https://zsh.sourceforge.io/Intro/intro_toc.html</a></p>
+<p>以及官方的FAQ: <a target="_blank" rel="noopener" href="https://zsh.sourceforge.io/FAQ/">https://zsh.sourceforge.io/FAQ/</a></p>
+<p>Bourne-Again Shell，bash，是另一个增强的类似Bourne的shell；与zsh最明显的区别是，它并不试图模仿Korn shell。由于这两个shell都在积极开发中，所以在这里说得太具体可能不太明智。大体上说，bash更关注标准的遵守（即POSIX），而且到目前为止，它避免了zsh所具有的更多的深奥的交互功能（可编程完成等）。</p>
+<hr>
+<p>很久很久以前用过一下<a target="_blank" rel="noopener" href="https://ohmyz.sh/">oh my zsh</a>, 但是它的启动速度给我劝退了, 现在似乎修复了?</p>
+<p>然后似乎time在zsh是一行需要改TIMEFMT</p>
+<p>安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install zsh</span><br><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Oh My Zsh是一个令人愉快的、开源的、社区驱动的框架，用于管理你的Zsh配置。它捆绑了数以千计的有用功能、助手、插件、主题，还有一些让你大呼过瘾的东西。</p>
+<h2 id="Fish"><a href="#Fish" class="headerlink" title="Fish"></a>Fish</h2><p><a target="_blank" rel="noopener" href="https://fishshell.com/">https://fishshell.com/</a></p>
+<ul>
+<li>自动建议命令</li>
+<li>辉煌的VGA色彩: fish支持24位真彩色，是终端技术中最先进的技术。看哪，单空格的彩虹。</li>
+<li>理智的脚本编写: fish是完全可编写脚本的，其语法简单、干净、一致。你不会再写esac了。</li>
+<li>基于网络的配置: 对于那些拥有图形计算机的幸运儿来说，你可以在网页上设置你的颜色并查看功能、变量和历史记录。</li>
+<li>man Page 补全:其他shell支持可编程的补语，但只有fish通过解析你安装的man page自动生成补语。</li>
+<li>开箱即用: fish会让你感到高兴，因为它具有标签完成和语法高亮等功能，而且没有任何新内容需要学习或配置。</li>
+</ul>
+<hr>
+<p>安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-add-repository ppa:fish-shell/release-3</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install fish</span><br></pre></td></tr></table></figure>
+
+<p>配置, 我配了个Dracula颜色 + Informative(prompt)的和我之前bash自己配的比较接近</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fish_config</span><br></pre></td></tr></table></figure>
+
+<p>然后改了一下十分痛苦, 例如 它自带的很多函数，是靠配置变量再调用的，十分奇怪而不是传参</p>
+<p>以及它自己的一套脚本语言, 虽说是开箱即用但是自定义化还是很痛苦</p>
+<p>配置页面能看一些东西，但是没有自动关联文档跳转, 提供的prompt 也没有直接展示源码</p>
+<p>配置修改后触发command 存在未使用新的样式的问题, 估计哪里cache出问题了 还是没检测到文件变化, 对于本来命令行就需要高速操作来说</p>
+<hr>
+<p>官方git里有个share&#x2F;functions (<a target="_blank" rel="noopener" href="https://github.com/fish-shell/fish-shell/tree/master/share/functions)%E9%87%8C%E9%9D%A2%E4%BC%BC%E4%B9%8E%E6%9C%89%E7%82%B9%E6%9C%89%E4%B8%8D%E5%B0%91%E6%9C%89%E7%94%A8%E7%9A%84%EF%BC%8C%E4%BD%86%E6%98%AF%E4%B8%8D%E6%98%AF%E6%88%91%E8%87%AA%E5%B7%B1%E5%8F%91%E7%8E%B0%E7%9A%84%E8%AF%9D%EF%BC%8C%E4%BB%96%E6%96%87%E6%A1%A3%E4%B8%8A%E4%BC%BC%E4%B9%8E%E5%AE%8C%E5%85%A8%E6%B2%A1%E8%AF%B4%E4%BD%93%E9%AA%8C%E5%BE%88%E5%B7%AE">https://github.com/fish-shell/fish-shell/tree/master/share/functions)里面似乎有点有不少有用的，但是不是我自己发现的话，他文档上似乎完全没说体验很差</a></p>
+<p>所以 感觉fish有些想法是好的(比如从历史里命令 来做建议,所以其实体验下来吵闹大于帮助，跟copilot一样的感觉), 但迁移并不是那么容易</p>
+<p>写了个 <code>~/.config/fish/functions/fish_prompt.fish</code>, 但依然有些需要没有</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function show_ipv4 --description &quot;display ip only&quot;</span><br><span class="line">  ifconfig | awk &#x27;/^(\t)|(\s*)inet / &#123; printf &quot;%s &quot;,$2 &#125; &#x27;</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">function fish_prompt --description &#x27;Informative prompt&#x27;</span><br><span class="line">    #Save the return status of the previous command</span><br><span class="line">    set -l last_pipestatus $pipestatus</span><br><span class="line">    set -lx __fish_last_status $status # Export for __fish_print_pipestatus.</span><br><span class="line"></span><br><span class="line">    if functions -q fish_is_root_user; and fish_is_root_user</span><br><span class="line">        printf &#x27;%s@%s %s%s%s# &#x27; $USER (prompt_hostname) (set -q fish_color_cwd_root</span><br><span class="line">                                                         and set_color $fish_color_cwd_root</span><br><span class="line">                                                         or set_color $fish_color_cwd) \</span><br><span class="line">            (prompt_pwd) (set_color normal)</span><br><span class="line">    else</span><br><span class="line">        set -l status_color (set_color $fish_color_status)</span><br><span class="line">        set -l statusb_color (set_color --bold $fish_color_status)</span><br><span class="line">        set -l pipestatus_string (__fish_print_pipestatus &quot;[&quot; &quot;]&quot; &quot;|&quot; &quot;$status_color&quot; &quot;$statusb_color&quot; $last_pipestatus)</span><br><span class="line">        printf &quot;\n%s%s %s%s \n&quot; (set_color normal) (date &quot;+%Y/%m/%d %H:%M:%S&quot;) \</span><br><span class="line">          (set_color $fish_color_comment) (show_ipv4)</span><br><span class="line">        printf &#x27;%s%s %s%s %s%s %s%s %s \n&#x27; (set_color brblue) $USER \</span><br><span class="line">          (set_color $fish_color_cwd) (prompt_pwd -D 99) \</span><br><span class="line">          (set_color normal) (__fish_vcs_prompt) \</span><br><span class="line">          $pipestatus_string \</span><br><span class="line">            (set_color normal)</span><br><span class="line">        echo</span><br><span class="line">    end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<h1 id="benchmark"><a href="#benchmark" class="headerlink" title="benchmark"></a>benchmark</h1><figure class="highlight sh"><figcaption><span>bench.sh</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $(<span class="built_in">seq</span> 1 1000);</span><br><span class="line">  <span class="keyword">do</span> bash -c <span class="string">&quot;:&quot;</span> ;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">time dash bench.sh</span><br><span class="line">time bash bench.sh</span><br><span class="line">time zsh bench.sh</span><br><span class="line">time fish bench.sh</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/shellspec/shellbench">https://github.com/shellspec/shellbench</a></p>
+<h1 id="查看-切换"><a href="#查看-切换" class="headerlink" title="查看,切换"></a>查看,切换</h1><p>查看</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /etc/shells</span><br></pre></td></tr></table></figure>
+
+<p>切换</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/bash</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/23-02-22-sh/" title="Linux shell">https://cromarmot.github.io/Blog/23-02-22-sh/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Blog/tags/shell/" rel="tag"><i class="fa fa-tag"></i> shell</a>
+              <a href="/Blog/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/23-02-16-js_gc/" rel="prev" title="JS GC">
+                  <i class="fa fa-chevron-left"></i> JS GC
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">688k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">10:26</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/23-02-22-sh/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
