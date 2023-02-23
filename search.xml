@@ -1438,7 +1438,7 @@
 
 <h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1><p>This README.md is used to testing all kinds of syntax of GitHub Flavored Markdown.</p>
 <hr>
-<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-x77-x6c-x79-114-x69-x63-x73-64-x31-54-51-x2e-x63-x6f-109"><a href="#E-mail-x77-x6c-x79-114-x69-x63-x73-64-x31-54-51-x2e-x63-x6f-109" class="headerlink" title="E-mail:&#x77;&#x6c;&#x79;&#114;&#x69;&#x63;&#x73;&#64;&#x31;&#54;&#51;&#x2e;&#x63;&#x6f;&#109;"></a>E-mail:<a href="mailto:&#x77;&#x6c;&#x79;&#114;&#x69;&#x63;&#x73;&#64;&#x31;&#54;&#51;&#x2e;&#x63;&#x6f;&#109;">&#x77;&#x6c;&#x79;&#114;&#x69;&#x63;&#x73;&#64;&#x31;&#54;&#51;&#x2e;&#x63;&#x6f;&#109;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-x77-108-x79-114-x69-x63-x73-64-x31-54-x33-46-99-x6f-x6d"><a href="#E-mail-x77-108-x79-114-x69-x63-x73-64-x31-54-x33-46-99-x6f-x6d" class="headerlink" title="E-mail:&#x77;&#108;&#x79;&#114;&#x69;&#x63;&#x73;&#64;&#x31;&#54;&#x33;&#46;&#99;&#x6f;&#x6d;"></a>E-mail:<a href="mailto:&#x77;&#108;&#x79;&#114;&#x69;&#x63;&#x73;&#64;&#x31;&#54;&#x33;&#46;&#99;&#x6f;&#x6d;">&#x77;&#108;&#x79;&#114;&#x69;&#x63;&#x73;&#64;&#x31;&#54;&#x33;&#46;&#99;&#x6f;&#x6d;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a name="index"/>目录</h2><ul>
 <li><a href="#line">横线</a></li>
 <li><a href="#title">标题</a></li>
@@ -14967,6 +14967,15 @@ yarn dev -m
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo apt install zsh</span><br><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>Oh My Zsh是一个令人愉快的、开源的、社区驱动的框架，用于管理你的Zsh配置。它捆绑了数以千计的有用功能、助手、插件、主题，还有一些让你大呼过瘾的东西。</p>
+<hr>
+<p>插件</p>
+<p><a href="https://github.com/zsh-users/antigen">https://github.com/zsh-users/antigen</a></p>
+<p><a href="https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md">https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md</a></p>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search">https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search</a></p>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory">https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory</a></p>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history">https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history</a></p>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/z">https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/z</a></p>
+<p><a href="https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md">https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md</a></p>
 <h2 id="Fish"><a href="#Fish" class="headerlink" title="Fish"></a>Fish</h2><p><a href="https://fishshell.com/">https://fishshell.com/</a></p>
 <ul>
 <li>自动建议命令</li>
