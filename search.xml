@@ -1438,7 +1438,7 @@
 
 <h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1><p>This README.md is used to testing all kinds of syntax of GitHub Flavored Markdown.</p>
 <hr>
-<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-x77-x6c-121-114-x69-x63-115-x40-x31-54-x33-x2e-99-111-109"><a href="#E-mail-x77-x6c-121-114-x69-x63-115-x40-x31-54-x33-x2e-99-111-109" class="headerlink" title="E-mail:&#x77;&#x6c;&#121;&#114;&#x69;&#x63;&#115;&#x40;&#x31;&#54;&#x33;&#x2e;&#99;&#111;&#109;"></a>E-mail:<a href="mailto:&#x77;&#x6c;&#121;&#114;&#x69;&#x63;&#115;&#x40;&#x31;&#54;&#x33;&#x2e;&#99;&#111;&#109;">&#x77;&#x6c;&#121;&#114;&#x69;&#x63;&#115;&#x40;&#x31;&#54;&#x33;&#x2e;&#99;&#111;&#109;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-119-x6c-x79-x72-x69-99-x73-64-49-x36-51-46-99-x6f-109"><a href="#E-mail-119-x6c-x79-x72-x69-99-x73-64-49-x36-51-46-99-x6f-109" class="headerlink" title="E-mail:&#119;&#x6c;&#x79;&#x72;&#x69;&#99;&#x73;&#64;&#49;&#x36;&#51;&#46;&#99;&#x6f;&#109;"></a>E-mail:<a href="mailto:&#119;&#x6c;&#x79;&#x72;&#x69;&#99;&#x73;&#64;&#49;&#x36;&#51;&#46;&#99;&#x6f;&#109;">&#119;&#x6c;&#x79;&#x72;&#x69;&#99;&#x73;&#64;&#49;&#x36;&#51;&#46;&#99;&#x6f;&#109;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a name="index"/>目录</h2><ul>
 <li><a href="#line">横线</a></li>
 <li><a href="#title">标题</a></li>
@@ -14973,6 +14973,96 @@ yarn dev -m
       </categories>
       <tags>
         <tag>shell</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>dev in VSCode + docker</title>
+    <url>/Blog/23-03-09-vscode-docker-dev/</url>
+    <content><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>众所周知，在以前，通过vim+ssh可以容易的远端开发, 并且当我的主系统一直是Ubuntu时，连vmware里，连windows的wsl2里的linux都十分容易</p>
+<p>但现实是很多win下的程序员,和不会vim的程序员, 以及大的项目需要用一下vscode</p>
+<p>以及手上项目各种各样，不同语言的，同语言不同版本的，不同工具依赖同样三方库的不同版本的(虽然现在不少语言的隔离有了各自的方案，而且五花八门的，这个直接从上层解决了,甚至同时帮助了系统更换)</p>
+<h2 id="解决了什么问题"><a href="#解决了什么问题" class="headerlink" title="解决了什么问题"></a>解决了什么问题</h2><ul>
+<li>远离了windows的ntfs,使用了Unix file permissions防止777</li>
+<li>统一了环境，即使linux也是一堆环境，解决了下游环境安装难的问题，现在只需要安装docker</li>
+<li>使用了现代化vscode(可以vim插件支持vim快捷键)</li>
+<li>性能不差</li>
+</ul>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p><strong>2023年了,我以前还会给点官方文档的链接，现在不论是google还是newbing都可以瞬间得到官方文档链接，所以直接给keywords</strong></p>
+<ul>
+<li>例如python2&#x2F;pthon3&#x2F;clang++&#x2F;g++&#x2F;nodejs(nvm)&#x2F;…在不同系统下的安装, win,debian,archlinux,macos</li>
+<li>不同语言的依赖库的管理工具pip&#x2F;npm&#x2F;…</li>
+<li>docker的基础命令，docker与虚拟机的区别</li>
+<li>git(用起来似乎外部的git配置会被自动带入到docker里)</li>
+</ul>
+<p>并且完成docker,vscode,git的安装</p>
+<h2 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h2><p>扩展 -&gt; 安装 <code>Dev Containers</code></p>
+<p>使用Demo仓库: <code>git clone https://github.com/MicrosoftDocs/mslearn-python-products</code></p>
+<p>在vscode中打开 这个clone的文件夹</p>
+<p>按<code>F1</code>,输入<code>Dev containers</code>,选择<code>Dev Containers: Add Development Container Configuration Files.</code></p>
+<p>三次输入框分别选择</p>
+<table>
+<thead>
+<tr>
+<th>提示</th>
+<th>选择</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Select a container configuration template</td>
+<td>Python 3</td>
+</tr>
+<tr>
+<td>Python version</td>
+<td>3.11</td>
+</tr>
+<tr>
+<td>Select additional features to install</td>
+<td>Select “OK”</td>
+</tr>
+</tbody></table>
+<p>你会发现 vscode的这个插件创建了<code>.devcontainer/devcontainer.json</code></p>
+<p>再次<code>F1</code>, 输入<code>reopen in container</code>,选择<code>Dev Containers: Reopen in Container</code> 即可</p>
+<hr>
+<p>在内部就可以开发了, 在container的terminal中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 安装依赖</span><br><span class="line">pip3 install --user -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<p>运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python app.py</span><br></pre></td></tr></table></figure>
+
+<p>在外部浏览器查看<code>http://127.0.0.1:5000</code></p>
+<hr>
+<p>这解决了 原来在实机上开发变成了docker里开发</p>
+<p>还有问题是，环境安装依然是手动的，如何自定义更多</p>
+<p>办法就是 修改<code>.devcontainer/devcontainer.json</code>中的image为你的image (也就是自己去做一个docker image)</p>
+<p>比如一些features: <a href="https://containers.dev/features">https://containers.dev/features</a> ,例如</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;features&quot;:&#123;</span><br><span class="line">    &quot;ghcr.io/devcontainers/features/git:1&quot;: &#123;</span><br><span class="line">      &quot;version&quot;: &quot;latest&quot;,</span><br><span class="line">      &quot;ppa&quot;: &quot;false&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;ghcr.io/devcontainers/features/node:1&quot;: &#123;</span><br><span class="line">      &quot;version&quot;: &quot;18&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F; 这样在你的python3的container里也可以用node</p>
+<p>比如对于container和本地之间的端口映射，就是<code>devcontainer.json</code>中的<code>forwardPorts</code></p>
+<p>比如要自动运行依赖安装<code>postCreateCommand</code>中增加命令</p>
+<p>其实这些都在自动生成的<code>devcontainer.json</code>中的注释中了</p>
+<p>这是 微软的例子: <a href="https://github.com/devcontainers/images/blob/main/src/python/.devcontainer/devcontainer.json">https://github.com/devcontainers/images/blob/main/src/python/.devcontainer/devcontainer.json</a></p>
+<p>对于vscode插件的添加,例如<code>jinja</code>,在插件的齿轮按钮中复制它的<code>extensions ID</code>,或者直接点击<code>add to devcontainer.json</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;customizations&quot;: &#123;</span><br><span class="line">		&quot;vscode&quot;: &#123;</span><br><span class="line">			&quot;extensions&quot;: [</span><br><span class="line">				&quot;wholroyd.jinja&quot;</span><br><span class="line">			]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>基于Dockerfile</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;build&quot;: &#123; &quot;dockerfile&quot;: &quot;Dockerfile&quot; &#125;,</span><br><span class="line">  // 不要&quot;image&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h1><p>总的来说，自定义docker可以自己改image, 也可以不提供image直接基于Dockerfile</p>
+<p>如果用基于微软提供的image，可以通过配置features, postCreateCommand来安装额外需要的功能</p>
+<p><code>customizations.vscode.extensions</code>可以来指定预安装内部的vscode插件</p>
+<p>缺点也是有的，一个是体积，像pnpm, pip3 这些对于多个项目相同的都安在根下不重复安装肯定更小，但实际上就使用来说，有时也会开venv一类的，所以这个缺点其实还好</p>
+<p>第二个就是依赖还不稳定时，每次rebuild都需要全部重新下载, 很耗时，所以没稳定之前为了节省时间，还是每次增加依赖时，先不要rebuild, 累积到一定稳定程度或者时间后再rebuild</p>
+]]></content>
+      <categories>
+        <category>software</category>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>vscode</tag>
         <tag>linux</tag>
       </tags>
   </entry>
