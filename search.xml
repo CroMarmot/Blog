@@ -1438,7 +1438,7 @@
 
 <h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1><p>This README.md is used to testing all kinds of syntax of GitHub Flavored Markdown.</p>
 <hr>
-<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-119-x6c-x79-x72-x69-99-x73-64-49-x36-51-46-99-x6f-109"><a href="#E-mail-119-x6c-x79-x72-x69-99-x73-64-49-x36-51-46-99-x6f-109" class="headerlink" title="E-mail:&#119;&#x6c;&#x79;&#x72;&#x69;&#99;&#x73;&#64;&#49;&#x36;&#51;&#46;&#99;&#x6f;&#109;"></a>E-mail:<a href="mailto:&#119;&#x6c;&#x79;&#x72;&#x69;&#99;&#x73;&#64;&#49;&#x36;&#51;&#46;&#99;&#x6f;&#109;">&#119;&#x6c;&#x79;&#x72;&#x69;&#99;&#x73;&#64;&#49;&#x36;&#51;&#46;&#99;&#x6f;&#109;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-x77-108-x79-x72-105-99-x73-64-x31-54-51-46-99-x6f-x6d"><a href="#E-mail-x77-108-x79-x72-105-99-x73-64-x31-54-51-46-99-x6f-x6d" class="headerlink" title="E-mail:&#x77;&#108;&#x79;&#x72;&#105;&#99;&#x73;&#64;&#x31;&#54;&#51;&#46;&#99;&#x6f;&#x6d;"></a>E-mail:<a href="mailto:&#x77;&#108;&#x79;&#x72;&#105;&#99;&#x73;&#64;&#x31;&#54;&#51;&#46;&#99;&#x6f;&#x6d;">&#x77;&#108;&#x79;&#x72;&#105;&#99;&#x73;&#64;&#x31;&#54;&#51;&#46;&#99;&#x6f;&#x6d;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a name="index"/>目录</h2><ul>
 <li><a href="#line">横线</a></li>
 <li><a href="#title">标题</a></li>
@@ -15064,6 +15064,45 @@ yarn dev -m
         <tag>docker</tag>
         <tag>vscode</tag>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ng zone</title>
+    <url>/Blog/23-03-10-ng-zone/</url>
+    <content><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>众所周知, change detect要解决的事情，就是数据变化 触发 视图变化，而最常见的两个问题是如何探测变化，和如何减少不必要的更新</p>
+<p>vue用修改getter&#x2F;setter或proxy的方式 来完成依赖收集和变化通知，使用lazy watcher来减少更新</p>
+<p>svelte 采用编译时更改代码的行为, 避免检测</p>
+<p>react 采用setState函数调用 和 队列控制批量更新</p>
+<p>那ng呢</p>
+<h2 id="NgZone"><a href="#NgZone" class="headerlink" title="NgZone"></a>NgZone</h2><p>ng: 什么时候会有视图更新</p>
+<ul>
+<li>用户的操作事件: click&#x2F;change&#x2F;input</li>
+<li>去后台请求响应后</li>
+<li>Timers:</li>
+</ul>
+<hr>
+<p>zone.js 能够维持运行时上下文, zone有生命周期钩子, 且Monkey-patched了一些方法(<code>setInterval</code>,<code>alert</code>,<code>prompt</code>,<code>addEventListener</code>,<code>removeEventListener</code>)</p>
+<p>NgZone, 提供 <code>run(callback)/runOutsideAngular(callback)</code>, 分别用于当三方api中的异步回调想要修改内容时触发检查，和普通的操作中希望避开检查</p>
+<p>你还可以设置 <code>ChangeDetectionStrategy.OnPush</code>, 手动触发更新检查</p>
+<p>你也可以动态的通过ChangeDetectorRef进行检查的启用和停用</p>
+<p>甚至你可以 通过 module 中 <code>&#123; ngZone : &#39;noop&#39;&#125;</code> 去一定层级禁用它，然后自己实现响应式都可以</p>
+<p>而react是把数据与视图绑定的叫做state,没绑定的叫做ref</p>
+<h1 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h1><p>以渲染10000个可以draggle的svg作为例子, 通过cdr并不能完全避免检测，因为你的mouse move也会触发检测，只是没有变化发生而已</p>
+<p>而通过在mouseDown中的runOutsideAngular中给mousemove绑定，就可以实现mouse move 也不触发检测, 再在mouseUp中移除监听，并且通过this.zone.run触发更新检测</p>
+<p>而对于多个异步的调用过程，在zone的加持下也容易看到调用的“栈结构”</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.youtube.com/watch?v=3IqtmUscE_U">youtube zone</a></p>
+<p><a href="https://github.com/angular/angular/tree/main/packages/zone.js">https://github.com/angular/angular/tree/main/packages/zone.js</a></p>
+<p><a href="https://angular.io/guide/zone">https://angular.io/guide/zone</a></p>
+<p><a href="https://angular.io/api/core/ChangeDetectionStrategy">https://angular.io/api/core/ChangeDetectionStrategy</a></p>
+<p><a href="https://angular.io/api/core/ChangeDetectorRef">https://angular.io/api/core/ChangeDetectorRef</a></p>
+]]></content>
+      <categories>
+        <category>frontend</category>
+        <category>Angular</category>
+      </categories>
+      <tags>
+        <tag>Angular</tag>
+        <tag>change detection</tag>
       </tags>
   </entry>
 </search>

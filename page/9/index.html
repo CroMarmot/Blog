@@ -82,7 +82,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">125</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">32</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">143</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">126</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">32</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">145</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -153,7 +153,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/Blog/archives/">
-          <span class="site-state-item-count">125</span>
+          <span class="site-state-item-count">126</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -164,7 +164,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Blog/tags/">
-        <span class="site-state-item-count">143</span>
+        <span class="site-state-item-count">145</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -225,6 +225,142 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-06-13-vue-declarative/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/19-06-13-vue-declarative/" class="post-title-link" itemprop="url">vue声明式交互能力 & vue3.0 进展</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2019-06-13 01:01:01" itemprop="dateCreated datePublished" datetime="2019-06-13T01:01:01+08:00">2019-06-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-03-10 23:44:13" itemprop="dateModified" datetime="2023-03-10T23:44:13+08:00">2023-03-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/vue2/" itemprop="url" rel="index"><span itemprop="name">vue2</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-06-13-vue-declarative/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-06-13-vue-declarative/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av37345007?from=search&amp;seid=12943305398860809438">https://www.bilibili.com/video/av37345007?from=search&amp;seid=12943305398860809438</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av55286346?from=search&amp;seid=13529674123410117444">https://www.bilibili.com/video/av55286346?from=search&amp;seid=13529674123410117444</a></p>
+<h1 id="吹什么"><a href="#吹什么" class="headerlink" title="吹什么"></a>吹什么</h1><p>vue的 声明式写法，最常见讲是computed</p>
+<p>比如<code>0 js代码</code> ，直接组件实现 阶乘，斐波那契数列的计算</p>
+<p>和 命令式相比，</p>
+<p>历史发展向讲解</p>
+<p>就 应用程序 实体举例</p>
+<p>跨语言啊交互举例 <a target="_blank" rel="noopener" href="https://weex.apache.org/zh/docs/components/recycle-list.html">recycle-list</a></p>
+<p>简单说 原来的命令式 比较常用的是 事件-&gt;执行的代码</p>
+<p>现在 实现 大概是 数据 &#x3D; 构成来源</p>
+<h1 id="vue3"><a href="#vue3" class="headerlink" title="vue3"></a>vue3</h1><p>chrome devTools 周活用户90万 &#x2F; react的160万</p>
+<p>what’s target?</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/19-06-13-vue-declarative/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-06-11-material/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -261,7 +397,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-03-10 05:04:25" itemprop="dateModified" datetime="2023-03-10T05:04:25+08:00">2023-03-10</time>
+      <time title="修改時間：2023-03-10 23:44:13" itemprop="dateModified" datetime="2023-03-10T23:44:13+08:00">2023-03-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -394,7 +530,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-03-10 05:04:25" itemprop="dateModified" datetime="2023-03-10T05:04:25+08:00">2023-03-10</time>
+      <time title="修改時間：2023-03-10 23:44:13" itemprop="dateModified" datetime="2023-03-10T23:44:13+08:00">2023-03-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -560,7 +696,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-03-10 05:04:25" itemprop="dateModified" datetime="2023-03-10T05:04:25+08:00">2023-03-10</time>
+      <time title="修改時間：2023-03-10 23:44:13" itemprop="dateModified" datetime="2023-03-10T23:44:13+08:00">2023-03-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -703,7 +839,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-03-10 05:04:25" itemprop="dateModified" datetime="2023-03-10T05:04:25+08:00">2023-03-10</time>
+      <time title="修改時間：2023-03-10 23:44:13" itemprop="dateModified" datetime="2023-03-10T23:44:13+08:00">2023-03-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -835,7 +971,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-03-10 05:04:25" itemprop="dateModified" datetime="2023-03-10T05:04:25+08:00">2023-03-10</time>
+      <time title="修改時間：2023-03-10 23:44:13" itemprop="dateModified" datetime="2023-03-10T23:44:13+08:00">2023-03-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -962,7 +1098,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-03-10 05:04:25" itemprop="dateModified" datetime="2023-03-10T05:04:25+08:00">2023-03-10</time>
+      <time title="修改時間：2023-03-10 23:44:13" itemprop="dateModified" datetime="2023-03-10T23:44:13+08:00">2023-03-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1094,7 +1230,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-03-10 05:04:25" itemprop="dateModified" datetime="2023-03-10T05:04:25+08:00">2023-03-10</time>
+      <time title="修改時間：2023-03-10 23:44:13" itemprop="dateModified" datetime="2023-03-10T23:44:13+08:00">2023-03-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1328,7 +1464,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-03-10 05:04:25" itemprop="dateModified" datetime="2023-03-10T05:04:25+08:00">2023-03-10</time>
+      <time title="修改時間：2023-03-10 23:44:13" itemprop="dateModified" datetime="2023-03-10T23:44:13+08:00">2023-03-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1448,7 +1584,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-03-10 05:04:25" itemprop="dateModified" datetime="2023-03-10T05:04:25+08:00">2023-03-10</time>
+      <time title="修改時間：2023-03-10 23:44:13" itemprop="dateModified" datetime="2023-03-10T23:44:13+08:00">2023-03-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1612,327 +1748,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-03-21-vuex/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/19-03-21-vuex/" class="post-title-link" itemprop="url">vuex 源码阅读</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2019-03-21 11:20:14" itemprop="dateCreated datePublished" datetime="2019-03-21T11:20:14+08:00">2019-03-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-03-10 05:04:25" itemprop="dateModified" datetime="2023-03-10T05:04:25+08:00">2023-03-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/frontend/vue2/" itemprop="url" rel="index"><span itemprop="name">vue2</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-03-21-vuex/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-03-21-vuex/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>12k</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>11 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本文对应版本 <code>b58d3d6a6426e901175a04bf6dcf206561cc82f5</code></p>
-<blockquote>
-<p>获得代码</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin https://github.com/vuejs/vuex.git</span><br><span class="line">git fetch origin</span><br><span class="line">git checkout b58d3d6a6426e901175a04bf6dcf206561cc82f5</span><br></pre></td></tr></table></figure>
-
-<h1 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h1><p>是个啥，状态管理工具</p>
-<p>先了解如何用</p>
-<p>前置知识</p>
-<p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/mixins.html">https://cn.vuejs.org/v2/guide/mixins.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/plugins.html">https://cn.vuejs.org/v2/guide/plugins.html</a></p>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">./</span><br><span class="line">├── helpers.js 简化 一些映射代码的编写，建议最后看【以下文档写的是按照我的阅读顺序写的】</span><br><span class="line">├── index.esm.js 为了注入Vue</span><br><span class="line">├── index.js 为了注入Vue</span><br><span class="line">├── mixin.js 为了注入Vue</span><br><span class="line">├── module</span><br><span class="line">│   ├── module-collection.js 模块化的树状结构，主要对原来json配置的改为内部的实现结构</span><br><span class="line">│   └── module.js 模块化的实现 单个模块</span><br><span class="line">├── plugins</span><br><span class="line">│   ├── devtool.js 辅助</span><br><span class="line">│   └── logger.js 辅助</span><br><span class="line">├── store.js 核心实现，实现commit，dispatch 等，对module分析结果 进行再解构，让访问简洁，同时做一些 访问保护检测</span><br><span class="line">└── util.js 单纯工具与vuex 关系性极小</span><br></pre></td></tr></table></figure>
-
-<h2 id="依赖-表面的"><a href="#依赖-表面的" class="headerlink" title="依赖(表面的)"></a>依赖(表面的)</h2><table>
-<thead>
-<tr>
-<th>文件</th>
-<th>import 依赖</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>mixin</td>
-<td></td>
-</tr>
-<tr>
-<td>util</td>
-<td></td>
-</tr>
-<tr>
-<td>helpers</td>
-<td></td>
-</tr>
-<tr>
-<td>store.js</td>
-<td>依赖见下方</td>
-</tr>
-<tr>
-<td>index.js&#x2F;index.esm.js</td>
-<td>store.js &amp; helpers.js</td>
-</tr>
-<tr>
-<td>plugins&#x2F;devtool</td>
-<td></td>
-</tr>
-<tr>
-<td>plugins&#x2F;logger</td>
-<td>util:deepCopy</td>
-</tr>
-<tr>
-<td>module&#x2F;module</td>
-<td>util:forEachValue</td>
-</tr>
-<tr>
-<td>module&#x2F;module-collection</td>
-<td>module:Module , util:{ assert, forEachValue }</td>
-</tr>
-</tbody></table>
-<p><strong>注</strong> 之所以说是表面的，实际上比如logger是有调用store里面的方法的，比如subscribe</p>
-<h1 id="代码阅读"><a href="#代码阅读" class="headerlink" title="代码阅读"></a>代码阅读</h1><h2 id="index-x2F-index-esm-js"><a href="#index-x2F-index-esm-js" class="headerlink" title="index&#x2F;index.esm.js"></a>index&#x2F;index.esm.js</h2><p>主要是方法导出</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Store, install &#125; from &#x27;./store&#x27;</span><br><span class="line">import &#123; mapState, mapMutations, mapGetters, mapActions, createNamespacedHelpers &#125; from &#x27;./helpers&#x27;</span><br></pre></td></tr></table></figure>
-
-<h2 id="mixin-js"><a href="#mixin-js" class="headerlink" title="mixin.js"></a>mixin.js</h2><p>主要是按照vue的mixin规则，根绝vue版本，向vue里注入 vuex，也就是$store</p>
-<p>规则是,有this.$options.store则 this.$store&#x3D; $options.store&#x2F;store() 根据是不是函数</p>
-<p>没有的话，用this.$options.parent.$store</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">vuexInit</span> () &#123;</span><br><span class="line">  <span class="keyword">const</span> options = <span class="variable language_">this</span>.<span class="property">$options</span></span><br><span class="line">  <span class="comment">// store injection</span></span><br><span class="line">  <span class="keyword">if</span> (options.<span class="property">store</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">$store</span> = <span class="keyword">typeof</span> options.<span class="property">store</span> === <span class="string">&#x27;function&#x27;</span></span><br><span class="line">      ? options.<span class="title function_">store</span>()</span><br><span class="line">      : options.<span class="property">store</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (options.<span class="property">parent</span> &amp;&amp; options.<span class="property">parent</span>.<span class="property">$store</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">$store</span> = options.<span class="property">parent</span>.<span class="property">$store</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="util-js"><a href="#util-js" class="headerlink" title="util.js"></a>util.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">find</span> (list, f) <span class="comment">//list中f函数返回true的第一个值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">deepCopy</span> (obj, cache = []) <span class="comment">// 带有处理指针循环结构的 deepCopy</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">forEachValue</span> (obj, fn) <span class="comment">// 遍历obj的所有k-v</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">isObject</span> (obj)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">isPromise</span> (val)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">assert</span> (condition, msg)</span><br></pre></td></tr></table></figure>
-
-<h2 id="plugins-x2F"><a href="#plugins-x2F" class="headerlink" title="plugins&#x2F;"></a>plugins&#x2F;</h2><h3 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a>devtool</h3><p>目测是一些调试相关的钩子挂载，TODO</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target = <span class="keyword">typeof</span> <span class="variable language_">window</span> !== <span class="string">&#x27;undefined&#x27;</span></span><br><span class="line">  ? <span class="variable language_">window</span></span><br><span class="line">  : <span class="keyword">typeof</span> <span class="variable language_">global</span> !== <span class="string">&#x27;undefined&#x27;</span></span><br><span class="line">    ? <span class="variable language_">global</span></span><br><span class="line">    : &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> devtoolHook = target.<span class="property">__VUE_DEVTOOLS_GLOBAL_HOOK__</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">devtoolPlugin</span> (store) &#123;</span><br><span class="line">  <span class="keyword">if</span> (!devtoolHook) <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">  store.<span class="property">_devtoolHook</span> = devtoolHook</span><br><span class="line"></span><br><span class="line">  devtoolHook.<span class="title function_">emit</span>(<span class="string">&#x27;vuex:init&#x27;</span>, store)</span><br><span class="line"></span><br><span class="line">  devtoolHook.<span class="title function_">on</span>(<span class="string">&#x27;vuex:travel-to-state&#x27;</span>, <span class="function"><span class="params">targetState</span> =&gt;</span> &#123;</span><br><span class="line">    store.<span class="title function_">replaceState</span>(targetState)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  store.<span class="title function_">subscribe</span>(<span class="function">(<span class="params">mutation, state</span>) =&gt;</span> &#123;</span><br><span class="line">    devtoolHook.<span class="title function_">emit</span>(<span class="string">&#x27;vuex:mutation&#x27;</span>, mutation, state)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="logger"><a href="#logger" class="headerlink" title="logger"></a>logger</h3><p>嗯 第一行 <code>// Credits: borrowed code from fcomb/redux-logger</code></p>
-<p>借来的代码，依赖上 只用了util的deepCopy</p>
-<p>基本上是输出 state状况用于调试的</p>
-<h2 id="module-x2F"><a href="#module-x2F" class="headerlink" title="module&#x2F;"></a>module&#x2F;</h2><h3 id="module"><a href="#module" class="headerlink" title="module"></a>module</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Module:</span><br><span class="line">  constructor (rawModule, runtime) &#123;</span><br><span class="line">    this.runtime = runtime</span><br><span class="line">    this._children = Object.create(null)</span><br><span class="line">    this._rawModule = rawModule</span><br><span class="line">    const rawState = rawModule.state</span><br><span class="line">    this.state = (typeof rawState === &#x27;function&#x27; ? rawState() : rawState) || &#123;&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>child 操作:对<code>this._children</code>的增删</p>
-<p>update(rawModule):对namespaced,actions,mutations,getters 有则覆盖的更新</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">update (rawModule) &#123;</span><br><span class="line">  this._rawModule.namespaced = rawModule.namespaced</span><br><span class="line">  if (rawModule.actions) &#123;</span><br><span class="line">    this._rawModule.actions = rawModule.actions</span><br><span class="line">  &#125;</span><br><span class="line">  if (rawModule.mutations) &#123;</span><br><span class="line">    this._rawModule.mutations = rawModule.mutations</span><br><span class="line">  &#125;</span><br><span class="line">  if (rawModule.getters) &#123;</span><br><span class="line">    this._rawModule.getters = rawModule.getters</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>除此以外就是 在该class上 foreach再封装了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">forEachChild (fn) </span><br><span class="line">forEachGetter (fn) </span><br><span class="line">forEachAction (fn) </span><br><span class="line">forEachMutation (fn) </span><br></pre></td></tr></table></figure>
-
-<h3 id="module-collection"><a href="#module-collection" class="headerlink" title="module-collection"></a>module-collection</h3><p>export:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export default class ModuleCollection &#123;</span><br><span class="line">  constructor (rawRootModule) &#123;</span><br><span class="line">    // register root module (Vuex.Store options)</span><br><span class="line">    this.register([], rawRootModule, false)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>这边一个runtime有啥用,这里传的false，下面默不传是true，在Module里只是存一下，TODO</p>
-<p>function makeAssertionMessage &#x2F;&#x2F; 生成 assert错误message</p>
-<p>使用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> functionAssert = &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> objectAssert = &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> assertTypes = &#123;</span><br><span class="line">  <span class="attr">getters</span>: functionAssert,</span><br><span class="line">  <span class="attr">mutations</span>: functionAssert,</span><br><span class="line">  <span class="attr">actions</span>: objectAssert</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">assertRawModule</span> (path, rawModule) &#123;</span><br></pre></td></tr></table></figure>
-
-<p>来检测是否是个合法的RawModule</p>
-<p>这里实现可以看到，rawModule也可以不含getters&#x2F;mutations&#x2F;actions，如果含有则需要分别是function&#x2F;function&#x2F;object(function &#x2F; obj.handler &#x3D;&#x3D; function)</p>
-<p>然后发现一个有点意思的东西，之前没看过源码还不知道， <code>process.env.NODE_ENV !== &#39;production&#39;</code>才会assert</p>
-<p>也就是开发环境才会assert，产品环境去掉</p>
-<p>get:按照 从this.root开始，按照上面设计的Module Class的层级访问, <code>this.root._children[path[0]]._children[path[1]]...</code></p>
-<p>解释register</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">register (path, rawModule, runtime = true) &#123;</span><br></pre></td></tr></table></figure>
-
-<p>靠外部传来的rawModule，作用是把 rawModule中描述的层级关系的modules，递归的解析成为内部实现的Module，这里的path只是配合内部实现的get，方便查找树状上的Module，是临时生成的一个传递变量</p>
-<p>这里也可以看到，实现过程中重名的话是后者覆盖前者.</p>
-<p>unregister (path) {&#x2F;&#x2F;通过path定位 也就是上面get的办法，然后删除，需要满足 路径上的runtime都为true TODO</p>
-<blockquote>
-<p>getNamespace (path) { </p>
-</blockquote>
-<p>看起来像是 <code>path.join(&#39;/&#39;)</code>实际上，是只会join有namespaced的每一层</p>
-<blockquote>
-<p>update (rawRootModule) &#x2F; function update (path, targetModule, newModule) {</p>
-</blockquote>
-<p>这两个update的作用就是在已经建立Module树上，进行更新，其中如果遇到树的结构不同则忽略掉，更新的过程不会变更树结构，只会对namespaced、actions、mutations、getters进行替换(更新)</p>
-<h2 id="helpers"><a href="#helpers" class="headerlink" title="helpers"></a>helpers</h2><p>export:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export const createNamespacedHelpers = (namespace) =&gt; (&#123;</span><br><span class="line">  mapState: mapState.bind(null, namespace),</span><br><span class="line">  mapGetters: mapGetters.bind(null, namespace),</span><br><span class="line">  mapMutations: mapMutations.bind(null, namespace),</span><br><span class="line">  mapActions: mapActions.bind(null, namespace)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-<p><code>function normalizeMap (map) </code> 把array，obj转化成<code>[&#123;&#39;key&#39;:,&#39;val&#39;:&#125;,...]</code></p>
-<p><code>function normalizeNamespace (fn) &#123; // 函数参数预处理(namespace,map) -&gt; fn(namespace,map)</code></p>
-<p><code>function getModuleByNamespace (store, helper, namespace) &#123; return store._modulesNamespaceMap[namespace]</code></p>
-<p>上面封了一层以后，每个<code>map×××</code> 被export出的都是单参数了</p>
-<p>看了具体实现</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mapState: .vuex=true &#123;支持devtools&#125;</span><br><span class="line">mapMutations: </span><br><span class="line">mapActions: </span><br><span class="line">mapGetters: .vuex=true &#123;支持devtools&#125;</span><br></pre></td></tr></table></figure>
-
-<p>除了getter，其它都是有namespace用namespace所指的，没有就用全局的<code>this.$store</code>里的</p>
-<p>getter 特殊在全是在<code>this.$store.getters[]</code>里，如果有namespace则是<code>namespace+val</code>构成新的<code>val</code></p>
-<h2 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h2><p>最后，最大的一个,505行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import applyMixin from &#x27;./mixin&#x27;</span><br><span class="line">import devtoolPlugin from &#x27;./plugins/devtool&#x27;</span><br><span class="line">import ModuleCollection from &#x27;./module/module-collection&#x27;</span><br><span class="line">import &#123; forEachValue, isObject, isPromise, assert &#125; from &#x27;./util&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>export:</p>
-<p><code>install &amp;&amp; Class Store</code></p>
-<p>先看install，也就是调用applyMixin(Vue)进行注入</p>
-<p>Store上这里分析源码，省略一些错误判断的解释了，只要说说逻辑</p>
-<p>Store:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">constructor (options = &#123;&#125;) &#123;</span><br><span class="line">  const &#123;</span><br><span class="line">    plugins = [],</span><br><span class="line">    strict = false</span><br><span class="line">  &#125; = options</span><br><span class="line"></span><br><span class="line">  // store internal state</span><br><span class="line">  this._committing = false</span><br><span class="line">  this._actions = Object.create(null)</span><br><span class="line">  this._actionSubscribers = []</span><br><span class="line">  this._mutations = Object.create(null)</span><br><span class="line">  this._wrappedGetters = Object.create(null)</span><br><span class="line">  this._modules = new ModuleCollection(options) // 这里调用前面实现的 递归解析options中的modules</span><br><span class="line">  this._modulesNamespaceMap = Object.create(null)</span><br><span class="line">  this._subscribers = []</span><br><span class="line">  this._watcherVM = new Vue() // TODO 这个是什么用</span><br><span class="line"></span><br><span class="line">  // bind commit and dispatch to self // 这一段没有看懂，是为了兼容哪个版本的js吗，这两个本身已经实现了在下面了啊 怎么还要再绑定一次 TODO</span><br><span class="line">  const store = this</span><br><span class="line">  const &#123; dispatch, commit &#125; = this</span><br><span class="line">  this.dispatch = function boundDispatch (type, payload) &#123;</span><br><span class="line">    return dispatch.call(store, type, payload)</span><br><span class="line">  &#125;</span><br><span class="line">  this.commit = function boundCommit (type, payload, options) &#123;</span><br><span class="line">    return commit.call(store, type, payload, options)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // strict mode //控制是否启用StrictMode store._vm.$watch(function () &#123; return this._data.$$state &#125;, 严格要求禁止在mutation handler以外的地方修改_data.$$state</span><br><span class="line"></span><br><span class="line">  实现原理是 利用vue进行watch</span><br><span class="line"></span><br><span class="line">  在允许的函数修改的时候修改`_committing 为 true` 环绕 见`_withCommit`</span><br><span class="line">  </span><br><span class="line">  当watch到修改时，判断是否`_committing=true`这样就可以判断是否被外部修改</span><br><span class="line"></span><br><span class="line">  this.strict = strict</span><br><span class="line"></span><br><span class="line">  const state = this._modules.root.state // 获取的是 生成的module的根部的state</span><br><span class="line"></span><br><span class="line">  // 递归初始化 root module 以及所有子modules.</span><br><span class="line">  // 并且收集所有module getters mutation等  到store._下面 比如`_wrappedGetters`</span><br><span class="line">  installModule(this, state, [], this._modules.root)</span><br><span class="line"></span><br><span class="line">  // 初始化 store._vm , 作为回调的使用</span><br><span class="line">  // (also registers _wrappedGetters as computed properties)</span><br><span class="line">  resetStoreVM(this, state)</span><br><span class="line"></span><br><span class="line">  // 使用插件</span><br><span class="line">  plugins.forEach(plugin =&gt; plugin(this))</span><br><span class="line"></span><br><span class="line">  const useDevtools = options.devtools !== undefined ? options.devtools : Vue.config.devtools</span><br><span class="line">  if (useDevtools) &#123;</span><br><span class="line">    devtoolPlugin(this)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>function unifyObjectStyle (type, payload, options) { &#x2F;&#x2F;感觉是特殊处理type的情况 返回{type,payload,options}</p>
-<h3 id="makeLocalContext-store-namespace-path"><a href="#makeLocalContext-store-namespace-path" class="headerlink" title="makeLocalContext(store,namespace,path)"></a>makeLocalContext(store,namespace,path)</h3><p>如果没有namespace 就用root上的</p>
-<p>如果有则建立 本地化 的 dispatch commit getters 和 state</p>
-<p>建立的实现过程 一个是调用unifyObjectStyle处理type的特殊情况，另一个就是给type 加上namespace</p>
-<p>getters和state，使用defineProperties写到local上，注释说是因为它们会被vm更新，应该lazily的获取</p>
-<p>其中getters的makeLocalGetters的原理是 namespace对比，和从<code>store.getters[type]</code>中读取</p>
-<p>makeLocalContext的结果会写入到module.context</p>
-<h3 id="installModule"><a href="#installModule" class="headerlink" title="installModule"></a>installModule</h3><p>如果当前路径有namespace， 那把它丢到<code>store._modulesNamespaceMap[namespace]</code> 和之前的获取对应</p>
-<p>有点没看懂 set state，按理说 在 new ModuleCollection(options)就应该已经 在 new Module的部分设置了state，这里是为了触发Vue.set()?</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="title function_">forEachMutation</span>(<span class="function">(<span class="params">mutation, key</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> namespacedType = namespace + key</span><br><span class="line">  <span class="title function_">registerMutation</span>(store, namespacedType, mutation, local)</span><br><span class="line">  <span class="comment">// 简单的讲 就是把 所有mutations压入 `store._mutations[namespace+mutationname]，之所以是压入，是因为 可能出现多个相同的 namespace+mutationname</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="title function_">forEachAction</span>(<span class="function">(<span class="params">action, key</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> type = action.<span class="property">root</span> ? key : namespace + key</span><br><span class="line">  <span class="keyword">const</span> handler = action.<span class="property">handler</span> || action</span><br><span class="line">  <span class="title function_">registerAction</span>(store, type, handler, local)</span><br><span class="line">  <span class="comment">// 入口参数和上面还是类似，这个是塞入 store._actions</span></span><br><span class="line">  <span class="comment">// 但是看了源码才知道，action的交付的第二个参数</span></span><br><span class="line">  <span class="comment">// &#123;</span></span><br><span class="line">  <span class="comment">//  dispatch: local.dispatch,</span></span><br><span class="line">  <span class="comment">//  commit: local.commit,</span></span><br><span class="line">  <span class="comment">//  getters: local.getters,</span></span><br><span class="line">  <span class="comment">//  state: local.state,</span></span><br><span class="line">  <span class="comment">//  rootGetters: store.getters,</span></span><br><span class="line">  <span class="comment">//  rootState: store.state &#125;</span></span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="title function_">forEachGetter</span>(<span class="function">(<span class="params">getter, key</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> namespacedType = namespace + key</span><br><span class="line">  <span class="title function_">registerGetter</span>(store, namespacedType, getter, local)</span><br><span class="line">  <span class="comment">// 入口参数和上面还是类似，这个是塞入 store._wrappedGetters</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">并对所有子<span class="variable language_">module</span> <span class="title function_">installModule</span>()</span><br></pre></td></tr></table></figure>
-
-<p>整个install就是把 构建出的module 拆出所有的 操作函数</p>
-<h3 id="resetStoreVM"><a href="#resetStoreVM" class="headerlink" title="resetStoreVM"></a>resetStoreVM</h3><p><code>store._vm = new Vue(&#123;data:&#123;$$state:state&#125;,computed&#125;)</code> 其中 computed是 上面 提取出的<code>_wrappedGetters</code>改动的，改动出的computed将 有和getters相同的keys，区别是 它会从<code>store._vm[key]</code>的方式去读数据</p>
-<p>在这一步设置<code>_vm</code>时，临时设置Vue.config.silent</p>
-<p>如果原来有<code>._vm</code>则调用销毁</p>
-<h2 id="vuex-API"><a href="#vuex-API" class="headerlink" title="vuex API"></a>vuex API</h2><p>至此 内部的基本结构就结束了，来看看调用api对应的实现</p>
-<p>先看 官网的图 <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/vuejs/vuex/dev/docs/.vuepress/public/vuex.png">VUEX</a></p>
-<h3 id="store-state-xxx"><a href="#store-state-xxx" class="headerlink" title="store.state.xxx"></a>store.state.xxx</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">get state () &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">_vm</span>.<span class="property">_data</span>.<span class="property">$$state</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="commit-type-payload-options"><a href="#commit-type-payload-options" class="headerlink" title="commit(type,payload,options)"></a>commit(type,payload,options)</h3><p>这里实现的过程，通过解构出的<code>this._mutations[type]</code>得到type对应的mutations 的函数句柄，</p>
-<p>然后调用有withcommit包围的，进行 函数 执行</p>
-<p>所有执行以后，对所有<code>_subscribers</code> 通知<code>(mutation,new state)</code> , 简单的订阅模式</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">&quot;subscribe&quot;</span> *</span><br><span class="line">plugins/logger.js:    store.subscribe((mutation, state) =&gt; &#123;</span><br><span class="line">plugins/devtool.js:  store.subscribe((mutation, state) =&gt; &#123;</span><br></pre></td></tr></table></figure>
-
-<h3 id="dispatch-type-payload"><a href="#dispatch-type-payload" class="headerlink" title="dispatch (type, payload)"></a>dispatch (type, payload)</h3><p>同理 通过解构出的<code>this._actions[type]</code>获得actions</p>
-<p>区别是 action的订阅者 可以指定 before 和 after，分别会在action发生前后调用，</p>
-<p><code>subscribeAction (fn) </code> 如果fn是函数则 默认变为订阅action发生前 ,否则fn应该是类似<code>&#123;&#39;before&#39;:()=&gt;&#123;&#125;,&#39;after&#39;:()=&gt;&#123;&#125;&#125;</code>的格式</p>
-<p>关于订阅的调用，目前只在测试里看到有，其它部分没有调用</p>
-<p>除了环绕的订阅以外，就是执行对应的action,entry,如果是多个 调用Promise.all(),如果是一个直接entry<a href="payload">0</a></p>
-<h2 id="剩余的"><a href="#剩余的" class="headerlink" title="剩余的"></a>剩余的</h2><p>剩余的 hotUpdate，replaceState等 应该属于调试时使用的不属于核心功能了,watch 基本是靠的Vue的$watch</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol start="0">
-<li>整个源码阅读完后，才发现原来根本没有用到<a href="%60https://vuex.vuejs.org/guide/modules.html%60">module</a>这一部分，甚至都不知道，看来是没仔细读文档，原来这一块已经实现好了。</li>
-<li>从Module部分可以看到，实现rawModule相关 过程是 加了一层套把rawModule套了一层，保护了树的结构，做到期望内的更新</li>
-<li>潜在bug？ 从外部传入rawModule 的第一次构建是 <code>_rawModule=rawModule</code>,而在后面update的过程中是修改<code>_rawModule</code>的字段，可能导致 期望外的修改？ 不过根据代码，这一部分只会发生在hotUpdate</li>
-</ol>
-<h2 id="个人其它收获"><a href="#个人其它收获" class="headerlink" title="个人其它收获"></a>个人其它收获</h2><ol start="0">
-<li>实际实现的代码 除了实现想法外还有很多细节，这些细节感觉也蛮庞大？的</li>
-<li>这样path的写法? 省一些指针?感觉每次get代价会大一些</li>
-<li>reduce 的用法(<a target="_blank" rel="noopener" href="http://www.runoob.com/jsref/jsref-reduce.html">http://www.runoob.com/jsref/jsref-reduce.html</a>)</li>
-<li>bind的用法(<a target="_blank" rel="noopener" href="https://blog.csdn.net/kongjunchao159/article/details/59113129">https://blog.csdn.net/kongjunchao159/article/details/59113129</a>)</li>
-<li>es6 destructuring (<a target="_blank" rel="noopener" href="https://www.deadcoderising.com/2017-03-28-es6-destructuring-an-elegant-way-of-extracting-data-from-arrays-and-objects-in-javascript/">https://www.deadcoderising.com/2017-03-28-es6-destructuring-an-elegant-way-of-extracting-data-from-arrays-and-objects-in-javascript/</a>)</li>
-<li>get,defineProperties , 都是在调用时才计算，区别是get在原型上，而defineProperties 是在实例上(<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get#Smart_self-overwriting_lazy_getters">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get#Smart_self-overwriting_lazy_getters</a>)</li>
-<li>同时 其中实现，有些注释错误，有些函数的默认参数没有设置 &#x3D;false，不过个人对js不太熟，要是c++的强迫症话 感觉还是要加的</li>
-<li>getters ,函数-&gt;计算属性</li>
-<li>普通对象变化不会影响刷新，需要有getter和setter的，简单的方法就是用 new Vue({data:{xxx}});来包裹会自动加上 getter和setter</li>
-<li>发布订阅</li>
-<li>strict通过 包裹限制 只有mutation改动数据， 但建议仅在开发时使用,在发布时为了性能不使用strict</li>
-</ol>
-<p>其他:</p>
-<p>感觉要去看看Promise的源码 以及 Vue的源码了</p>
-<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><p>Module 里的runtime有啥用</p>
-<p>重复注册state、mutation等等? 有文章说是 因为module的原因，</p>
-<p>modules使用</p>
-<p>modules{<br>  模块名:{<br>    state{<br>      x:1,<br>      y:1<br>    }<br>  },<br>  模块名2:{</p>
-<p>  }<br>}</p>
-<p>模块内的mutations,getters,actions 不同层级都会被调用!? 都会被合并到根上</p>
-<p>所以要做的是方法映射出来，但是 把每个方法的所属模块的state绑定过去</p>
-<p>但是 只有mutations和actions是数组，getters是由 defineProperties来的所以只会有一个</p>
-<h1 id="TODO-1"><a href="#TODO-1" class="headerlink" title="TODO"></a>TODO</h1><p>namespace:true 可以让模块化，不让actions等绑定在global上 通过<code>module/module</code>路径访问,实现就是 根下的 map[ 拼接的module namespace路径实现的]</p>
-<p>registerModule 动态注册模块</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">registerModule (path, rawModule, options = &#123;&#125;) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_modules</span>.<span class="title function_">register</span>(path, rawModule)</span><br><span class="line">    <span class="title function_">installModule</span>(<span class="variable language_">this</span>, <span class="variable language_">this</span>.<span class="property">state</span>, path, <span class="variable language_">this</span>.<span class="property">_modules</span>.<span class="title function_">get</span>(path), options.<span class="property">preserveState</span>)</span><br><span class="line">    <span class="comment">// reset store to update getters...</span></span><br><span class="line">    <span class="title function_">resetStoreVM</span>(<span class="variable language_">this</span>, <span class="variable language_">this</span>.<span class="property">state</span>)</span><br></pre></td></tr></table></figure>
-
-<p>store.subscribe() vuex中间件?? ,也是发布订阅模式</p>
-<p>注册的是 和 函数指针放入数组，返回移出数组的函数，这个和vue-router里的registerHooks一样</p>
-<p>commit后</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">commit里</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">_withCommit</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      entry.<span class="title function_">forEach</span>(<span class="keyword">function</span> <span class="title function_">commitIterator</span> (handler) &#123;</span><br><span class="line">        <span class="title function_">handler</span>(payload)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 提交后 调用 所有订阅</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_subscribers</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">sub</span> =&gt;</span> <span class="title function_">sub</span>(mutation, <span class="variable language_">this</span>.<span class="property">state</span>))</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/Blog/page/8/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/2/">2</a><a class="page-number" href="/Blog/page/6/">6</a><a class="page-number" href="/Blog/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/Blog/page/10/">10</a><a class="page-number" href="/Blog/page/12/">12</a><a class="page-number" href="/Blog/page/13/">13</a><a class="extend next" rel="next" href="/Blog/page/10/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
@@ -1957,13 +1772,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">690k</span>
+    <span title="總字數">691k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">10:27</span>
+    <span title="所需總閱讀時間">10:28</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
