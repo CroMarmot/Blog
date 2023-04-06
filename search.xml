@@ -1438,7 +1438,7 @@
 
 <h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1><p>This README.md is used to testing all kinds of syntax of GitHub Flavored Markdown.</p>
 <hr>
-<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-x77-108-x79-x72-105-99-x73-64-x31-54-51-46-99-x6f-x6d"><a href="#E-mail-x77-108-x79-x72-105-99-x73-64-x31-54-51-46-99-x6f-x6d" class="headerlink" title="E-mail:&#x77;&#108;&#x79;&#x72;&#105;&#99;&#x73;&#64;&#x31;&#54;&#51;&#46;&#99;&#x6f;&#x6d;"></a>E-mail:<a href="mailto:&#x77;&#108;&#x79;&#x72;&#105;&#99;&#x73;&#64;&#x31;&#54;&#51;&#46;&#99;&#x6f;&#x6d;">&#x77;&#108;&#x79;&#x72;&#105;&#99;&#x73;&#64;&#x31;&#54;&#51;&#46;&#99;&#x6f;&#x6d;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-x77-x6c-x79-114-105-99-115-x40-x31-54-51-x2e-x63-x6f-x6d"><a href="#E-mail-x77-x6c-x79-114-105-99-115-x40-x31-54-51-x2e-x63-x6f-x6d" class="headerlink" title="E-mail:&#x77;&#x6c;&#x79;&#114;&#105;&#99;&#115;&#x40;&#x31;&#54;&#51;&#x2e;&#x63;&#x6f;&#x6d;"></a>E-mail:<a href="mailto:&#x77;&#x6c;&#x79;&#114;&#105;&#99;&#115;&#x40;&#x31;&#54;&#51;&#x2e;&#x63;&#x6f;&#x6d;">&#x77;&#x6c;&#x79;&#114;&#105;&#99;&#115;&#x40;&#x31;&#54;&#51;&#x2e;&#x63;&#x6f;&#x6d;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a name="index"/>目录</h2><ul>
 <li><a href="#line">横线</a></li>
 <li><a href="#title">标题</a></li>
@@ -15055,6 +15055,8 @@ yarn dev -m
 <p><code>customizations.vscode.extensions</code>可以来指定预安装内部的vscode插件</p>
 <p>缺点也是有的，一个是体积，像pnpm, pip3 这些对于多个项目相同的都安在根下不重复安装肯定更小，但实际上就使用来说，有时也会开venv一类的，所以这个缺点其实还好</p>
 <p>第二个就是依赖还不稳定时，每次rebuild都需要全部重新下载, 很耗时，所以没稳定之前为了节省时间，还是每次增加依赖时，先不要rebuild, 累积到一定稳定程度或者时间后再rebuild</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>微软提供的docker bash的默认自动补全支持似乎不好,比如git的</p>
+<p>对git subdir支持不好, 会识别不到git</p>
 ]]></content>
       <categories>
         <category>software</category>
