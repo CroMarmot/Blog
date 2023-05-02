@@ -1438,7 +1438,7 @@
 
 <h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1><p>This README.md is used to testing all kinds of syntax of GitHub Flavored Markdown.</p>
 <hr>
-<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-119-108-x79-x72-105-x63-115-x40-49-x36-51-x2e-x63-111-109"><a href="#E-mail-119-108-x79-x72-105-x63-115-x40-49-x36-51-x2e-x63-111-109" class="headerlink" title="E-mail:&#119;&#108;&#x79;&#x72;&#105;&#x63;&#115;&#x40;&#49;&#x36;&#51;&#x2e;&#x63;&#111;&#109;"></a>E-mail:<a href="mailto:&#119;&#108;&#x79;&#x72;&#105;&#x63;&#115;&#x40;&#49;&#x36;&#51;&#x2e;&#x63;&#111;&#109;">&#119;&#108;&#x79;&#x72;&#105;&#x63;&#115;&#x40;&#49;&#x36;&#51;&#x2e;&#x63;&#111;&#109;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-119-x6c-121-114-x69-99-115-x40-x31-x36-51-x2e-99-111-x6d"><a href="#E-mail-119-x6c-121-114-x69-99-115-x40-x31-x36-51-x2e-99-111-x6d" class="headerlink" title="E-mail:&#119;&#x6c;&#121;&#114;&#x69;&#99;&#115;&#x40;&#x31;&#x36;&#51;&#x2e;&#99;&#111;&#x6d;"></a>E-mail:<a href="mailto:&#119;&#x6c;&#121;&#114;&#x69;&#99;&#115;&#x40;&#x31;&#x36;&#51;&#x2e;&#99;&#111;&#x6d;">&#119;&#x6c;&#121;&#114;&#x69;&#99;&#115;&#x40;&#x31;&#x36;&#51;&#x2e;&#99;&#111;&#x6d;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a name="index"/>目录</h2><ul>
 <li><a href="#line">横线</a></li>
 <li><a href="#title">标题</a></li>
@@ -4159,6 +4159,22 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
       </tags>
   </entry>
   <entry>
+    <title>vue custom v-model</title>
+    <url>/Blog/19-04-01-vue-custom-v-model/</url>
+    <content><![CDATA[<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component">https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component</a></p>
+<p>To let our component support v-model two-way binding, I stated earlier that the component needs to accept a <code>value</code> prop and emit an <code>input</code> event.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">input</span>=<span class="string">&quot;handleInput&quot;</span> /&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">prop</span>: [<span class="string">&#x27;value&#x27;</span>],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  data () &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">content</span>: <span class="variable language_">this</span>.<span class="property">value</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">methods</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    handleInput (e) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">this</span>.$emit(<span class="string">&#x27;input&#x27;</span>, <span class="variable language_">this</span>.<span class="property">content</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>frontend</category>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>v-model</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>promises分析</title>
     <url>/Blog/19-03-22-promise/</url>
     <content><![CDATA[<p>个人其实建议阅读下方的参考链接<code>zh.javascript.info</code>,本篇整理的主要是基于个人已有经验进行提要，简化和再解释，不够完整</p>
@@ -4262,22 +4278,6 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
       </categories>
       <tags>
         <tag>promise</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue custom v-model</title>
-    <url>/Blog/19-04-01-vue-custom-v-model/</url>
-    <content><![CDATA[<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component">https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component</a></p>
-<p>To let our component support v-model two-way binding, I stated earlier that the component needs to accept a <code>value</code> prop and emit an <code>input</code> event.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">input</span>=<span class="string">&quot;handleInput&quot;</span> /&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">prop</span>: [<span class="string">&#x27;value&#x27;</span>],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  data () &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">content</span>: <span class="variable language_">this</span>.<span class="property">value</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">methods</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    handleInput (e) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">this</span>.$emit(<span class="string">&#x27;input&#x27;</span>, <span class="variable language_">this</span>.<span class="property">content</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>frontend</category>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>v-model</tag>
       </tags>
   </entry>
   <entry>
