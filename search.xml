@@ -1438,7 +1438,7 @@
 
 <h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1><p>This README.md is used to testing all kinds of syntax of GitHub Flavored Markdown.</p>
 <hr>
-<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-x77-x6c-121-114-105-x63-115-x40-49-x36-51-x2e-99-x6f-109"><a href="#E-mail-x77-x6c-121-114-105-x63-115-x40-49-x36-51-x2e-99-x6f-109" class="headerlink" title="E-mail:&#x77;&#x6c;&#121;&#114;&#105;&#x63;&#115;&#x40;&#49;&#x36;&#51;&#x2e;&#99;&#x6f;&#109;"></a>E-mail:<a href="mailto:&#x77;&#x6c;&#121;&#114;&#105;&#x63;&#115;&#x40;&#49;&#x36;&#51;&#x2e;&#99;&#x6f;&#109;">&#x77;&#x6c;&#121;&#114;&#105;&#x63;&#115;&#x40;&#49;&#x36;&#51;&#x2e;&#99;&#x6f;&#109;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-119-x6c-x79-x72-x69-99-x73-x40-x31-x36-51-46-99-x6f-x6d"><a href="#E-mail-119-x6c-x79-x72-x69-99-x73-x40-x31-x36-51-46-99-x6f-x6d" class="headerlink" title="E-mail:&#119;&#x6c;&#x79;&#x72;&#x69;&#99;&#x73;&#x40;&#x31;&#x36;&#51;&#46;&#99;&#x6f;&#x6d;"></a>E-mail:<a href="mailto:&#119;&#x6c;&#x79;&#x72;&#x69;&#99;&#x73;&#x40;&#x31;&#x36;&#51;&#46;&#99;&#x6f;&#x6d;">&#119;&#x6c;&#x79;&#x72;&#x69;&#99;&#x73;&#x40;&#x31;&#x36;&#51;&#46;&#99;&#x6f;&#x6d;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a name="index"/>目录</h2><ul>
 <li><a href="#line">横线</a></li>
 <li><a href="#title">标题</a></li>
@@ -5459,98 +5459,6 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
       </tags>
   </entry>
   <entry>
-    <title>oiTerminal</title>
-    <url>/Blog/19-05-03-oiTerminal/</url>
-    <content><![CDATA[<p><a href="https://github.com/CroMarmot/oiTerminal">oiTerminal</a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>能够通过命令行 打oj比赛</p>
-<h1 id="开发进度"><a href="#开发进度" class="headerlink" title="开发进度"></a>开发进度</h1><ul>
-<li>codeforces 已经完全支持 分析题目，上传，获取评测结果</li>
-<li>其它oj准备开工</li>
-</ul>
-<p> 对任意oj都支持本地的代码测试了</p>
-<h1 id="相关项目"><a href="#相关项目" class="headerlink" title="相关项目"></a>相关项目</h1><p><a href="https://github.com/xalanq/cf-tool">cf-tool</a></p>
-<p><a href="https://github.com/endiliey/idne">idne</a></p>
-<p><a href="https://github.com/CroMarmot/cfterminal">cfTerminal</a></p>
-<p><a href="https://github.com/VirtualJudge/spider">spider</a></p>
-<h1 id="开发过程中的一些想法"><a href="#开发过程中的一些想法" class="headerlink" title="开发过程中的一些想法"></a>开发过程中的一些想法</h1><p>首先 cfTerminal 是基于idne开发的</p>
-<span id="more"></span>
-
-<p>而本仓库也是收到 spider 启发而开发的</p>
-<h2 id="idne-gt-cfTerminal"><a href="#idne-gt-cfTerminal" class="headerlink" title="idne -&gt; cfTerminal"></a>idne <code>-&gt;</code> cfTerminal</h2><p>robobrower 把我们需要的浏览器模拟完成了，感谢！这也是这个仓库运行起来的体验比oiTerminal稳定，实际是因为网络环境不太好的时候，oiTerminal会报网络错误</p>
-<p>idne 上次阅读有些久了，没太多印象了。</p>
-<ol>
-<li><p>大概有重排列一下它的代码，修复了time使用的问题，修复了不能提交比赛时代码的问题。</p>
-</li>
-<li><p>idne 有一个缺点是，用户每次都要多输入很多信息，以及每次都需要运行“环境命令”,通过从用户使用的角度反向思考，改动了接受的参数，并且通过复制脚本省去环境命令</p>
-</li>
-<li><p>如果使用过idne，你可以发现，结果文件都放在项目根目录了，既没有.gitignore,也感觉有点乱。解决的方法是 全丢到dist文件夹里，并且让<code>config.json</code>不进版本，所以创造了模板<code>_config.json</code></p>
-</li>
-<li><p>解决了一下 新出的题目名，原来都是单字母，现在出现了 <code>D1</code>,<code>D2</code>这种题目名</p>
-</li>
-<li><p>原来是靠拼接字符串生成的测试shell脚本XD，然后我改成了 接受参数的通用shell脚本</p>
-</li>
-<li><p>简化了依赖，虽然不必要，用argparse代替click,毕竟原来就稍微用了一下</p>
-</li>
-<li><p>把上面 复制测试和提交文件，改为了 用软链接。</p>
-</li>
-<li><p>设计了language.json 简单键值对，可以 控制来做多语言</p>
-</li>
-</ol>
-<p>然后这样可用度很高了，我就没啥动力继续改下去了。</p>
-<h2 id="spider-gt-oiTerminal"><a href="#spider-gt-oiTerminal" class="headerlink" title="spider -&gt; oiTerminal"></a>spider -&gt; oiTerminal</h2><p>本身spider那个项目就是一个支持很多oj的项目</p>
-<p>感觉我主要做的是删代码XD，然后移动代码。</p>
-<ol>
-<li><p>首先还是说毕竟本身不是用于打比赛的，我把题目分析样例数据和测试的部分移动了过来</p>
-</li>
-<li><p>我想尽力 支持跨平台用py代替sh，但实际代码中还有调用linux命令的，例如cat，例如diff，XD，不过我转念一想，现在不是都有ubuntu on windows了吗，还有啥支持原生windows的必要，2333 现在是py不是sh了</p>
-</li>
-<li><p>做一些用户使用的工具，目前新做的中最有用的就是<code>lang.py</code>可以查看本地支持的语言，和远程的语言键值对(用于配置)</p>
-</li>
-<li><p>因为这边是基于一个Base设计的，我在第一轮修改的时候，也没有大改，主要增加我需要的功能为主</p>
-</li>
-<li><p>这里没有用特殊的浏览器，这里就靠纯获取+bs4来提取页面。</p>
-</li>
-<li><p>这里说是有cookie优化，实际只有提交部分有，并没有做本地cookie存储，未来可能会支持？</p>
-</li>
-<li><p>加个thread 分析题目，就几道题 也快不了多少</p>
-</li>
-<li><p>后来我想的还是再增加几个我想打的平台，所以要先大改一下结构。</p>
-</li>
-<li><p>我遇到的一个问题，有些操作可能大多平台都有，但是从性质上来说的访问层级不是很适合在公共层级。比如判断提交结果，我的想法是，要么放在最接近用户交互的层次上，要么放在具体实现里，总之不要放在用户和具体实现的中间共用交互中。还没有写更多oj支持，还不知道这样的想法是更好还是更遭</p>
-</li>
-<li><p>第二是属性归类，和方法外置，比如结果是对是错，不要放在contest层，应该直接丢在result 的model里，而判断丢在外层，写入丢在具体实现</p>
-</li>
-<li><p>上面几个问题是，层级划分 和 重复代码的处理如果出现冲突应该怎么办。我的另一个支援的办法是，更多model，增加type hint,增加与层级无关的util，比如像原本提供的网络访问，我还提供了 oj名字 类名，支持的类，lang的接近静态获取的类</p>
-</li>
-<li><p>做一些常量提取，还没完成，还有一些残留</p>
-</li>
-<li><p>尝试增加自动化测试，首先是以前没有相关经验，还不知道多少合适，已经调通过一次，但是遵循 建议先 测试样例，后代码的写法，写得我反而更难受了，测过了一波后，决定先放弃，还是先纯编码的方式。最后再补上测试</p>
-</li>
-<li><p>受到cf-tool的启发，考虑动态获取结果，因为cf的api不会获取进度，所以要么分析网页(idne之前用过类似的)，要么就通过websocket却获取,暂时未实现</p>
-</li>
-<li><p>受到cf-tool的启发，决定之后采用更舒适的配置方式？ 去增加一个config.py, 尚未实现，也就有考虑是否有必要加入sqlite，还是继续json</p>
-</li>
-<li><p>在json设计读取中 采用 类和json之间转换，减少字符串操作。</p>
-</li>
-<li><p>感觉cf-tool的自动更新，没必要</p>
-</li>
-<li><p>atcoder的题目名称和url真的毒瘤XD TODO</p>
-</li>
-<li><p>还要再增加 problem.py支持</p>
-</li>
-<li><p>其中有一点体验是，你其实是要把各种不同的oj，接入进来再开放给用户调用你的接口，所以在公用部分，我的设计喜欢尽量松（Base部分），因为如果把实现具体化到各个OJ里，那么最多也就重复代码多，不太会因为未来OJ的特殊改动原来其它OJ的代码，如果放在更表层（也不是Base），大概是Core的部分，那么这里可以大不了加一点if处理一下特殊情况。总之觉得在Base处丢过多东西总是不太妥当,毕竟我无法预知未来的OJ的格式</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>crawler</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>js 基础&amp;进阶 速查笔记</title>
     <url>/Blog/19-04-19-jsmore1/</url>
     <content><![CDATA[<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><p>个人笔记！不是文档！大家 尽量减少个人文档行为，多做公共wiki和文档翻译！</p>
@@ -6130,6 +6038,98 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
       </categories>
       <tags>
         <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>oiTerminal</title>
+    <url>/Blog/19-05-03-oiTerminal/</url>
+    <content><![CDATA[<p><a href="https://github.com/CroMarmot/oiTerminal">oiTerminal</a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>能够通过命令行 打oj比赛</p>
+<h1 id="开发进度"><a href="#开发进度" class="headerlink" title="开发进度"></a>开发进度</h1><ul>
+<li>codeforces 已经完全支持 分析题目，上传，获取评测结果</li>
+<li>其它oj准备开工</li>
+</ul>
+<p> 对任意oj都支持本地的代码测试了</p>
+<h1 id="相关项目"><a href="#相关项目" class="headerlink" title="相关项目"></a>相关项目</h1><p><a href="https://github.com/xalanq/cf-tool">cf-tool</a></p>
+<p><a href="https://github.com/endiliey/idne">idne</a></p>
+<p><a href="https://github.com/CroMarmot/cfterminal">cfTerminal</a></p>
+<p><a href="https://github.com/VirtualJudge/spider">spider</a></p>
+<h1 id="开发过程中的一些想法"><a href="#开发过程中的一些想法" class="headerlink" title="开发过程中的一些想法"></a>开发过程中的一些想法</h1><p>首先 cfTerminal 是基于idne开发的</p>
+<span id="more"></span>
+
+<p>而本仓库也是收到 spider 启发而开发的</p>
+<h2 id="idne-gt-cfTerminal"><a href="#idne-gt-cfTerminal" class="headerlink" title="idne -&gt; cfTerminal"></a>idne <code>-&gt;</code> cfTerminal</h2><p>robobrower 把我们需要的浏览器模拟完成了，感谢！这也是这个仓库运行起来的体验比oiTerminal稳定，实际是因为网络环境不太好的时候，oiTerminal会报网络错误</p>
+<p>idne 上次阅读有些久了，没太多印象了。</p>
+<ol>
+<li><p>大概有重排列一下它的代码，修复了time使用的问题，修复了不能提交比赛时代码的问题。</p>
+</li>
+<li><p>idne 有一个缺点是，用户每次都要多输入很多信息，以及每次都需要运行“环境命令”,通过从用户使用的角度反向思考，改动了接受的参数，并且通过复制脚本省去环境命令</p>
+</li>
+<li><p>如果使用过idne，你可以发现，结果文件都放在项目根目录了，既没有.gitignore,也感觉有点乱。解决的方法是 全丢到dist文件夹里，并且让<code>config.json</code>不进版本，所以创造了模板<code>_config.json</code></p>
+</li>
+<li><p>解决了一下 新出的题目名，原来都是单字母，现在出现了 <code>D1</code>,<code>D2</code>这种题目名</p>
+</li>
+<li><p>原来是靠拼接字符串生成的测试shell脚本XD，然后我改成了 接受参数的通用shell脚本</p>
+</li>
+<li><p>简化了依赖，虽然不必要，用argparse代替click,毕竟原来就稍微用了一下</p>
+</li>
+<li><p>把上面 复制测试和提交文件，改为了 用软链接。</p>
+</li>
+<li><p>设计了language.json 简单键值对，可以 控制来做多语言</p>
+</li>
+</ol>
+<p>然后这样可用度很高了，我就没啥动力继续改下去了。</p>
+<h2 id="spider-gt-oiTerminal"><a href="#spider-gt-oiTerminal" class="headerlink" title="spider -&gt; oiTerminal"></a>spider -&gt; oiTerminal</h2><p>本身spider那个项目就是一个支持很多oj的项目</p>
+<p>感觉我主要做的是删代码XD，然后移动代码。</p>
+<ol>
+<li><p>首先还是说毕竟本身不是用于打比赛的，我把题目分析样例数据和测试的部分移动了过来</p>
+</li>
+<li><p>我想尽力 支持跨平台用py代替sh，但实际代码中还有调用linux命令的，例如cat，例如diff，XD，不过我转念一想，现在不是都有ubuntu on windows了吗，还有啥支持原生windows的必要，2333 现在是py不是sh了</p>
+</li>
+<li><p>做一些用户使用的工具，目前新做的中最有用的就是<code>lang.py</code>可以查看本地支持的语言，和远程的语言键值对(用于配置)</p>
+</li>
+<li><p>因为这边是基于一个Base设计的，我在第一轮修改的时候，也没有大改，主要增加我需要的功能为主</p>
+</li>
+<li><p>这里没有用特殊的浏览器，这里就靠纯获取+bs4来提取页面。</p>
+</li>
+<li><p>这里说是有cookie优化，实际只有提交部分有，并没有做本地cookie存储，未来可能会支持？</p>
+</li>
+<li><p>加个thread 分析题目，就几道题 也快不了多少</p>
+</li>
+<li><p>后来我想的还是再增加几个我想打的平台，所以要先大改一下结构。</p>
+</li>
+<li><p>我遇到的一个问题，有些操作可能大多平台都有，但是从性质上来说的访问层级不是很适合在公共层级。比如判断提交结果，我的想法是，要么放在最接近用户交互的层次上，要么放在具体实现里，总之不要放在用户和具体实现的中间共用交互中。还没有写更多oj支持，还不知道这样的想法是更好还是更遭</p>
+</li>
+<li><p>第二是属性归类，和方法外置，比如结果是对是错，不要放在contest层，应该直接丢在result 的model里，而判断丢在外层，写入丢在具体实现</p>
+</li>
+<li><p>上面几个问题是，层级划分 和 重复代码的处理如果出现冲突应该怎么办。我的另一个支援的办法是，更多model，增加type hint,增加与层级无关的util，比如像原本提供的网络访问，我还提供了 oj名字 类名，支持的类，lang的接近静态获取的类</p>
+</li>
+<li><p>做一些常量提取，还没完成，还有一些残留</p>
+</li>
+<li><p>尝试增加自动化测试，首先是以前没有相关经验，还不知道多少合适，已经调通过一次，但是遵循 建议先 测试样例，后代码的写法，写得我反而更难受了，测过了一波后，决定先放弃，还是先纯编码的方式。最后再补上测试</p>
+</li>
+<li><p>受到cf-tool的启发，考虑动态获取结果，因为cf的api不会获取进度，所以要么分析网页(idne之前用过类似的)，要么就通过websocket却获取,暂时未实现</p>
+</li>
+<li><p>受到cf-tool的启发，决定之后采用更舒适的配置方式？ 去增加一个config.py, 尚未实现，也就有考虑是否有必要加入sqlite，还是继续json</p>
+</li>
+<li><p>在json设计读取中 采用 类和json之间转换，减少字符串操作。</p>
+</li>
+<li><p>感觉cf-tool的自动更新，没必要</p>
+</li>
+<li><p>atcoder的题目名称和url真的毒瘤XD TODO</p>
+</li>
+<li><p>还要再增加 problem.py支持</p>
+</li>
+<li><p>其中有一点体验是，你其实是要把各种不同的oj，接入进来再开放给用户调用你的接口，所以在公用部分，我的设计喜欢尽量松（Base部分），因为如果把实现具体化到各个OJ里，那么最多也就重复代码多，不太会因为未来OJ的特殊改动原来其它OJ的代码，如果放在更表层（也不是Base），大概是Core的部分，那么这里可以大不了加一点if处理一下特殊情况。总之觉得在Base处丢过多东西总是不太妥当,毕竟我无法预知未来的OJ的格式</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>crawler</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -14479,6 +14479,10 @@ yarn dev -m
 <p><a href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">https://packaging.python.org/en/latest/tutorials/packaging-projects/</a></p>
 <p>包的下载量统计</p>
 <p><a href="https://pepy.tech/">https://pepy.tech/</a></p>
+<p>对于pip 的替换 poetry 比pipenv更好 <a href="https://blog.kyomind.tw/python-poetry/">https://blog.kyomind.tw/python-poetry/</a></p>
+<p><a href="https://blog.gslin.org/archives/2019/12/21/9347/pipenv-%E7%9A%84%E5%87%8B%E9%9B%B6%E8%88%87%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88-poetry/">https://blog.gslin.org/archives/2019/12/21/9347/pipenv-%E7%9A%84%E5%87%8B%E9%9B%B6%E8%88%87%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88-poetry/</a></p>
+<p><a href="https://greyli.com/do-not-use-pipenv/">https://greyli.com/do-not-use-pipenv/</a></p>
+<p>pythonhunter.org&#x2F;episodes&#x2F;ep15</p>
 ]]></content>
       <categories>
         <category>backend</category>
