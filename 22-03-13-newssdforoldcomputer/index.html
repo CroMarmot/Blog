@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
 
-    <meta name="description" content="带sudo的一定小心, 别选错盘了 工具推荐bcompare gparted 常用命令io测试 https:&#x2F;&#x2F;linuxreviews.org&#x2F;HOWTO_Test_Disk_I&#x2F;O_Performance#Testing_random_4K_reads 大块读fio --name TEST --eta-newline&#x3D;5s --filename&#x3D;temp.file --rw&#x3D;read --si">
+    <meta name="description" content="带sudo的一定小心, 别选错盘了 工具推荐bcompare gparted 常用命令io测试 https:&#x2F;&#x2F;linuxreviews.org&#x2F;HOWTO_Test_Disk_I&#x2F;O_Performance#Testing_random_4K_reads 大块读 1fio --name TEST --eta-newline&#x3D;5s --filename&#x3D;temp.file --rw&#x3D;read --">
 <meta property="og:type" content="article">
-<meta property="og:title" content="给老电脑换个ssd, cheatsheet">
+<meta property="og:title" content="Ubuntu下 给老电脑换个ssd">
 <meta property="og:url" content="https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/index.html">
 <meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
-<meta property="og:description" content="带sudo的一定小心, 别选错盘了 工具推荐bcompare gparted 常用命令io测试 https:&#x2F;&#x2F;linuxreviews.org&#x2F;HOWTO_Test_Disk_I&#x2F;O_Performance#Testing_random_4K_reads 大块读fio --name TEST --eta-newline&#x3D;5s --filename&#x3D;temp.file --rw&#x3D;read --si">
+<meta property="og:description" content="带sudo的一定小心, 别选错盘了 工具推荐bcompare gparted 常用命令io测试 https:&#x2F;&#x2F;linuxreviews.org&#x2F;HOWTO_Test_Disk_I&#x2F;O_Performance#Testing_random_4K_reads 大块读 1fio --name TEST --eta-newline&#x3D;5s --filename&#x3D;temp.file --rw&#x3D;read --">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-03-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-09T19:11:37.036Z">
+<meta property="article:modified_time" content="2023-05-22T07:42:20.962Z">
 <meta property="article:author" content="Cro-Marmot">
 <meta property="article:tag" content="ubuntu">
 <meta property="article:tag" content="ssd">
@@ -39,10 +39,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/","path":"22-03-13-newssdforoldcomputer/","title":"给老电脑换个ssd, cheatsheet"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/","path":"22-03-13-newssdforoldcomputer/","title":"Ubuntu下 给老电脑换个ssd"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>给老电脑换个ssd, cheatsheet | Cro-Marmot's Blog</title>
+<title>Ubuntu下 给老电脑换个ssd | Cro-Marmot's Blog</title>
   
 
 
@@ -246,12 +246,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="给老电脑换个ssd, cheatsheet | Cro-Marmot's Blog">
+      <meta itemprop="name" content="Ubuntu下 给老电脑换个ssd | Cro-Marmot's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          给老电脑换个ssd, cheatsheet
+          Ubuntu下 给老电脑换个ssd
         </h1>
 
         <div class="post-meta-container">
@@ -269,7 +269,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-05-10 03:11:37" itemprop="dateModified" datetime="2023-05-10T03:11:37+08:00">2023-05-10</time>
+      <time title="修改時間：2023-05-22 15:42:20" itemprop="dateModified" datetime="2023-05-22T15:42:20+08:00">2023-05-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -306,7 +306,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>921</span>
+      <span>1k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -329,19 +329,25 @@
 <p>gparted</p>
 <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>io测试</p>
 <p><a target="_blank" rel="noopener" href="https://linuxreviews.org/HOWTO_Test_Disk_I/O_Performance#Testing_random_4K_reads">https://linuxreviews.org/HOWTO_Test_Disk_I/O_Performance#Testing_random_4K_reads</a></p>
-<p>大块读<code>fio --name TEST --eta-newline=5s --filename=temp.file --rw=read --size=2g --io_size=10g --blocksize=1024k --ioengine=libaio --fsync=10000 --iodepth=32 --direct=1 --numjobs=1 --runtime=60 --group_reporting</code></p>
-<p>大块写<code>fio --name TEST --eta-newline=5s --filename=temp.file --rw=write --size=2g --io_size=10g --blocksize=1024k --ioengine=libaio --fsync=10000 --iodepth=32 --direct=1 --numjobs=1 --runtime=60 --group_reporting</code></p>
-<p>随机4K读<code>fio --name TEST --eta-newline=5s --filename=temp.file --rw=randread --size=2g --io_size=10g --blocksize=4k --ioengine=libaio --fsync=1 --iodepth=1 --direct=1 --numjobs=32 --runtime=60 --group_reporting</code></p>
+<p>大块读</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fio --name TEST --eta-newline=5s --filename=temp.file --rw=read --size=2g --io_size=10g --blocksize=1024k --ioengine=libaio --fsync=10000 --iodepth=32 --direct=1 --numjobs=1 --runtime=60 --group_reporting</span><br></pre></td></tr></table></figure>
+
+<p>大块写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fio --name TEST --eta-newline=5s --filename=temp.file --rw=write --size=2g --io_size=10g --blocksize=1024k --ioengine=libaio --fsync=10000 --iodepth=32 --direct=1 --numjobs=1 --runtime=60 --group_reporting</span><br></pre></td></tr></table></figure>
+
+<p>随机4K读</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fio --name TEST --eta-newline=5s --filename=temp.file --rw=randread --size=2g --io_size=10g --blocksize=4k --ioengine=libaio --fsync=1 --iodepth=1 --direct=1 --numjobs=32 --runtime=60 --group_reporting</span><br></pre></td></tr></table></figure>
+
 <span id="more"></span>
 
 <p>带进度拷贝</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync -aP &lt;源&gt; &lt;目标&gt;</span><br></pre></td></tr></table></figure>
 
-<p>磁盘情况查看</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+<p>磁盘使用情况查看</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h | grep -v tmpfs</span><br></pre></td></tr></table></figure>
 
-<p>动态观察</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">watch</span><br></pre></td></tr></table></figure>
+<p>查看是HDD还是SSD, 1表示HDD, 0表示SSD</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsblk -o name,rota</span><br></pre></td></tr></table></figure>
 
 <p>文件夹统计</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du --max-depth=1 -h</span><br></pre></td></tr></table></figure>
@@ -361,13 +367,13 @@
 <p>unmount时查看持有状态</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo fuser -mv /media/xxxxxx</span><br></pre></td></tr></table></figure>
 
-<p>分区编辑</p>
+<p>分区编辑, 或者系统的disks, 或者gparted</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo fdisk</span><br></pre></td></tr></table></figure>
 
 <p>uuid</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blkid</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo blkid | grep -v loop</span><br></pre></td></tr></table></figure>
 
-<p>启动时mount <code>/etc/fstab</code></p>
+<p>启动时mount: 修改<code>/etc/fstab</code></p>
 
     </div>
 
@@ -387,7 +393,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/" title="给老电脑换个ssd, cheatsheet">https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/</a>
+      <a href="https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/" title="Ubuntu下 给老电脑换个ssd">https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！

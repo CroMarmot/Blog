@@ -1438,7 +1438,7 @@
 
 <h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1><p>This README.md is used to testing all kinds of syntax of GitHub Flavored Markdown.</p>
 <hr>
-<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-119-x6c-x79-x72-x69-99-x73-x40-x31-x36-51-46-99-x6f-x6d"><a href="#E-mail-119-x6c-x79-x72-x69-99-x73-x40-x31-x36-51-46-99-x6f-x6d" class="headerlink" title="E-mail:&#119;&#x6c;&#x79;&#x72;&#x69;&#99;&#x73;&#x40;&#x31;&#x36;&#51;&#46;&#99;&#x6f;&#x6d;"></a>E-mail:<a href="mailto:&#119;&#x6c;&#x79;&#x72;&#x69;&#99;&#x73;&#x40;&#x31;&#x36;&#51;&#46;&#99;&#x6f;&#x6d;">&#119;&#x6c;&#x79;&#x72;&#x69;&#99;&#x73;&#x40;&#x31;&#x36;&#51;&#46;&#99;&#x6f;&#x6d;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-x77-x6c-x79-114-105-99-x73-x40-49-x36-x33-46-x63-111-109"><a href="#E-mail-x77-x6c-x79-114-105-99-x73-x40-49-x36-x33-46-x63-111-109" class="headerlink" title="E-mail:&#x77;&#x6c;&#x79;&#114;&#105;&#99;&#x73;&#x40;&#49;&#x36;&#x33;&#46;&#x63;&#111;&#109;"></a>E-mail:<a href="mailto:&#x77;&#x6c;&#x79;&#114;&#105;&#99;&#x73;&#x40;&#49;&#x36;&#x33;&#46;&#x63;&#111;&#109;">&#x77;&#x6c;&#x79;&#114;&#105;&#99;&#x73;&#x40;&#49;&#x36;&#x33;&#46;&#x63;&#111;&#109;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a name="index"/>目录</h2><ul>
 <li><a href="#line">横线</a></li>
 <li><a href="#title">标题</a></li>
@@ -11647,30 +11647,6 @@ export default &#123;
       </tags>
   </entry>
   <entry>
-    <title>highlight menu item when scrolling down to section</title>
-    <url>/Blog/20-11-09-scroll/</url>
-    <content><![CDATA[<p>对于css</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">html &#123;</span><br><span class="line">  scroll-behavior: smooth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>用id + hash的方式滚动</p>
-<p>对于js</p>
-<p>事件:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">window.addEventListener(&#x27;scroll&#x27;, callback);</span><br></pre></td></tr></table></figure>
-
-<p><code>throttle + js判断后 再增删 class</code></p>
-<p>详细：下面30k viewed的页面</p>
-<p><a href="https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section">https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section</a></p>
-]]></content>
-      <categories>
-        <category>frontend</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
-        <tag>scroll</tag>
-        <tag>context</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mkfifo sh nc</title>
     <url>/Blog/20-11-11-mkfifo-nc/</url>
     <content><![CDATA[<h1 id="mkpipe"><a href="#mkpipe" class="headerlink" title="mkpipe"></a>mkpipe</h1><p>众所周知</p>
@@ -11832,6 +11808,30 @@ export default &#123;
         <tag>docker</tag>
         <tag>devops</tag>
         <tag>k8s</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>highlight menu item when scrolling down to section</title>
+    <url>/Blog/20-11-09-scroll/</url>
+    <content><![CDATA[<p>对于css</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">html &#123;</span><br><span class="line">  scroll-behavior: smooth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用id + hash的方式滚动</p>
+<p>对于js</p>
+<p>事件:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">window.addEventListener(&#x27;scroll&#x27;, callback);</span><br></pre></td></tr></table></figure>
+
+<p><code>throttle + js判断后 再增删 class</code></p>
+<p>详细：下面30k viewed的页面</p>
+<p><a href="https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section">https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section</a></p>
+]]></content>
+      <categories>
+        <category>frontend</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>scroll</tag>
+        <tag>context</tag>
       </tags>
   </entry>
   <entry>
@@ -14090,26 +14090,32 @@ yarn dev -m
       </tags>
   </entry>
   <entry>
-    <title>给老电脑换个ssd, cheatsheet</title>
+    <title>Ubuntu下 给老电脑换个ssd</title>
     <url>/Blog/22-03-13-newssdforoldcomputer/</url>
     <content><![CDATA[<p><strong>带sudo的一定小心, 别选错盘了</strong></p>
 <h1 id="工具推荐"><a href="#工具推荐" class="headerlink" title="工具推荐"></a>工具推荐</h1><p>bcompare</p>
 <p>gparted</p>
 <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>io测试</p>
 <p><a href="https://linuxreviews.org/HOWTO_Test_Disk_I/O_Performance#Testing_random_4K_reads">https://linuxreviews.org/HOWTO_Test_Disk_I/O_Performance#Testing_random_4K_reads</a></p>
-<p>大块读<code>fio --name TEST --eta-newline=5s --filename=temp.file --rw=read --size=2g --io_size=10g --blocksize=1024k --ioengine=libaio --fsync=10000 --iodepth=32 --direct=1 --numjobs=1 --runtime=60 --group_reporting</code></p>
-<p>大块写<code>fio --name TEST --eta-newline=5s --filename=temp.file --rw=write --size=2g --io_size=10g --blocksize=1024k --ioengine=libaio --fsync=10000 --iodepth=32 --direct=1 --numjobs=1 --runtime=60 --group_reporting</code></p>
-<p>随机4K读<code>fio --name TEST --eta-newline=5s --filename=temp.file --rw=randread --size=2g --io_size=10g --blocksize=4k --ioengine=libaio --fsync=1 --iodepth=1 --direct=1 --numjobs=32 --runtime=60 --group_reporting</code></p>
+<p>大块读</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fio --name TEST --eta-newline=5s --filename=temp.file --rw=read --size=2g --io_size=10g --blocksize=1024k --ioengine=libaio --fsync=10000 --iodepth=32 --direct=1 --numjobs=1 --runtime=60 --group_reporting</span><br></pre></td></tr></table></figure>
+
+<p>大块写</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fio --name TEST --eta-newline=5s --filename=temp.file --rw=write --size=2g --io_size=10g --blocksize=1024k --ioengine=libaio --fsync=10000 --iodepth=32 --direct=1 --numjobs=1 --runtime=60 --group_reporting</span><br></pre></td></tr></table></figure>
+
+<p>随机4K读</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fio --name TEST --eta-newline=5s --filename=temp.file --rw=randread --size=2g --io_size=10g --blocksize=4k --ioengine=libaio --fsync=1 --iodepth=1 --direct=1 --numjobs=32 --runtime=60 --group_reporting</span><br></pre></td></tr></table></figure>
+
 <span id="more"></span>
 
 <p>带进度拷贝</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rsync -aP &lt;源&gt; &lt;目标&gt;</span><br></pre></td></tr></table></figure>
 
-<p>磁盘情况查看</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+<p>磁盘使用情况查看</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">df -h | grep -v tmpfs</span><br></pre></td></tr></table></figure>
 
-<p>动态观察</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">watch</span><br></pre></td></tr></table></figure>
+<p>查看是HDD还是SSD, 1表示HDD, 0表示SSD</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsblk -o name,rota</span><br></pre></td></tr></table></figure>
 
 <p>文件夹统计</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">du --max-depth=1 -h</span><br></pre></td></tr></table></figure>
@@ -14129,13 +14135,13 @@ yarn dev -m
 <p>unmount时查看持有状态</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo fuser -mv /media/xxxxxx</span><br></pre></td></tr></table></figure>
 
-<p>分区编辑</p>
+<p>分区编辑, 或者系统的disks, 或者gparted</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo fdisk</span><br></pre></td></tr></table></figure>
 
 <p>uuid</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">blkid</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo blkid | grep -v loop</span><br></pre></td></tr></table></figure>
 
-<p>启动时mount <code>/etc/fstab</code></p>
+<p>启动时mount: 修改<code>/etc/fstab</code></p>
 ]]></content>
       <categories>
         <category>backend</category>
