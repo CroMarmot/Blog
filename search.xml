@@ -1393,272 +1393,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello world</title>
-    <url>/Blog/16-06-02-Hello-World/</url>
-    <content><![CDATA[<p><a href="https://github.com/CroMarmot/Blog/blob/gh-pages/_posts/2016-06-02-Hello-World.md">点击这里查看在github上的效果</a></p>
-<p><a href="http://cromarmot.github.io/Blog/%E6%97%A5%E5%BF%97/Hello-World#code">点击这里查看在jekyll上的效果</a></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th align="left">Left-Aligned</th>
-<th align="center">Center Aligned</th>
-<th align="right">Right Aligned</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">lll</td>
-<td align="center">mmm</td>
-<td align="right">rrr</td>
-</tr>
-<tr>
-<td align="left">qwertyuiop</td>
-<td align="center">asdfghjkl</td>
-<td align="right">zxcvbnm</td>
-</tr>
-</tbody></table>
-<ul>
-<li><input disabled="" type="checkbox"> lab<ul>
-<li><input checked="" disabled="" type="checkbox"> lab1</li>
-<li><input checked="" disabled="" type="checkbox"> lab2</li>
-<li><input checked="" disabled="" type="checkbox"> lab3</li>
-<li><input checked="" disabled="" type="checkbox"> lab4</li>
-<li><input disabled="" type="checkbox"> lab5</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> a separate task</li>
-</ul>
-<p><img data-src="http://img4.duitang.com/uploads/item/201312/13/20131213221310_Yektr.thumb.700_0.jpeg" alt="南叔"></p>
-<ul>
-<li>Writer: <a href="http://cromarmot.github.io/">CroMarmot</a></li>
-<li>Reference: <a href="https://help.github.com/articles/writing-on-github/">writing-on-github</a></li>
-</ul>
-<h1 id="jekyll-高亮代码"><a href="#jekyll-高亮代码" class="headerlink" title="jekyll 高亮代码"></a>jekyll 高亮代码</h1><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//弃用?</span></span><br><span class="line">ruby</span><br><span class="line"></span><br><span class="line">&#123;% highlight ruby %&#125;</span><br><span class="line">def show</span><br><span class="line">  @widget = <span class="built_in">Widget</span>(params[:id])</span><br><span class="line">  respond_to <span class="keyword">do</span> |format|</span><br><span class="line">    format.html <span class="meta"># show.html.erb</span></span><br><span class="line">    format.json &#123; render json: @widget &#125;</span><br><span class="line">  end</span><br><span class="line">end</span><br><span class="line">&#123;% endhighlight %&#125;</span><br><span class="line"></span><br><span class="line">c++</span><br><span class="line"></span><br><span class="line">&#123;% highlight c++ linenos %&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  cout&lt;&lt;<span class="string">&quot;Hello World!&quot;</span>&lt;&lt;endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#123;% endhighlight %&#125;</span><br><span class="line"></span><br><span class="line">python</span><br><span class="line"></span><br><span class="line">&#123;% highlight python linenos %&#125;</span><br><span class="line">#!/usr/bin/python3</span><br><span class="line"># 计算面积函数</span><br><span class="line"><span class="function">def <span class="title">area</span><span class="params">(width, height)</span>:</span></span><br><span class="line"><span class="function">    return width * height</span></span><br><span class="line"><span class="function"> </span></span><br><span class="line"><span class="function">def print_welcome(name):</span></span><br><span class="line"><span class="function">    print(<span class="string">&quot;Welcome&quot;</span>, name)</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">print_welcome(<span class="string">&quot;Runoob&quot;</span>)</span></span><br><span class="line"><span class="function">w =</span> <span class="number">4</span></span><br><span class="line">h = <span class="number">5</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;width =&quot;</span>, w, <span class="string">&quot; height =&quot;</span>, h, <span class="string">&quot; area =&quot;</span>, <span class="built_in">area</span>(w, h))</span><br><span class="line"></span><br><span class="line">&#123;% endhighlight %&#125;</span><br><span class="line"></span><br><span class="line">php</span><br><span class="line"></span><br><span class="line">&#123;% highlight php linenos %&#125;</span><br><span class="line">&lt;?</span><br><span class="line"><span class="keyword">for</span> ($i=<span class="number">1</span>; $i&lt;=<span class="number">5</span>; $i++)</span><br><span class="line">&#123;</span><br><span class="line">  echo <span class="string">&quot;The number is &quot;</span> . $i . <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line">&#123;% endhighlight %&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1><p>This README.md is used to testing all kinds of syntax of GitHub Flavored Markdown.</p>
-<hr>
-<h3 id="Author-Jelly"><a href="#Author-Jelly" class="headerlink" title="Author:Jelly"></a>Author:Jelly</h3><h3 id="E-mail-x77-x6c-x79-114-105-99-x73-x40-49-x36-x33-46-x63-111-109"><a href="#E-mail-x77-x6c-x79-114-105-99-x73-x40-49-x36-x33-46-x63-111-109" class="headerlink" title="E-mail:&#x77;&#x6c;&#x79;&#114;&#105;&#99;&#x73;&#x40;&#49;&#x36;&#x33;&#46;&#x63;&#111;&#109;"></a>E-mail:<a href="mailto:&#x77;&#x6c;&#x79;&#114;&#105;&#99;&#x73;&#x40;&#49;&#x36;&#x33;&#46;&#x63;&#111;&#109;">&#x77;&#x6c;&#x79;&#114;&#105;&#99;&#x73;&#x40;&#49;&#x36;&#x33;&#46;&#x63;&#111;&#109;</a></h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a name="index"/>目录</h2><ul>
-<li><a href="#line">横线</a></li>
-<li><a href="#title">标题</a></li>
-<li><a href="#text">显示文本</a><ul>
-<li>普通文本</li>
-<li>单行文本</li>
-<li>多行文本</li>
-<li>部分文字高亮</li>
-</ul>
-</li>
-<li><a href="#link">超链接</a> <ul>
-<li>文字超链接<ul>
-<li>链接外部URL</li>
-<li>链接本仓库里的URL</li>
-<li>锚点</li>
-</ul>
-</li>
-<li><a href="#piclink">图片超链接</a></li>
-</ul>
-</li>
-<li><a href="#pic">显示图片</a><ul>
-<li>来源于网络的图片</li>
-<li>GitHub仓库中的图片</li>
-</ul>
-</li>
-<li><a href="#dot">列表</a></li>
-<li><a href="#symbol">符号包围</a></li>
-<li><a href="#code">代码高亮</a></li>
-</ul>
-<a name="line"/>
-## ***、---、___显示虚横线
-***
----
-___
- 
- 
- 
-<a name="title"/>
-# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题
-
-<h2 id="显示文本"><a href="#显示文本" class="headerlink" title="显示文本"></a><a name="text"/>显示文本</h2><h3 id="普通文本"><a href="#普通文本" class="headerlink" title="普通文本"></a>普通文本</h3><p>这是一段普通的文本，<br>直接回车不能换行，<br><br>要使用&lt;br&gt;</p>
-<p>  或者在回车以后，再加上两个空格。完成这种换行效果。</p>
-<h3 id="单行文本"><a href="#单行文本" class="headerlink" title="单行文本"></a>单行文本</h3><pre><code>Hello,大家好，我是果冻虾仁。
-</code></pre>
-<h3 id="多行文本"><a href="#多行文本" class="headerlink" title="多行文本"></a>多行文本</h3><pre><code>欢迎到访
-很高兴见到您
-祝您，早上好，中午好，下午好，晚安
-</code></pre>
-<h3 id="部分文字高亮"><a href="#部分文字高亮" class="headerlink" title="部分文字高亮"></a>部分文字高亮</h3><p>Thank <code>You</code> . Please <code>Call</code> Me <code>Coder</code></p>
-<h4 id="高亮功能更适合做一篇文章的tag"><a href="#高亮功能更适合做一篇文章的tag" class="headerlink" title="高亮功能更适合做一篇文章的tag"></a>高亮功能更适合做一篇文章的tag</h4><p>例如:<br><br><code>java</code> <code>网络编程</code> <code>Socket</code> <code>全双工</code></p>
-<h2 id="文字链接"><a href="#文字链接" class="headerlink" title="文字链接"></a><a name="link"/>文字链接</h2><h3 id="链接外部URL"><a href="#链接外部URL" class="headerlink" title="链接外部URL"></a>链接外部URL</h3><p><a href="http://blog.csdn.net/guodongxiaren/article/details/23690801" title="悬停显示">我的博客</a></p>
-<h3 id="链接本仓库里的URL"><a href="#链接本仓库里的URL" class="headerlink" title="链接本仓库里的URL"></a>链接本仓库里的URL</h3><p><a href="./Book">Book</a></p>
-<h3 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h3><p><a href="#index">点此回到目录</a></p>
-<h2 id="显示图片"><a href="#显示图片" class="headerlink" title="显示图片"></a><a name="pic"/>显示图片</h2><h3 id="来源于网络的图片"><a href="#来源于网络的图片" class="headerlink" title="来源于网络的图片"></a>来源于网络的图片</h3><p><img data-src="http://www.baidu.com/img/bdlogo.gif" alt="baidu" title="百度logo"></p>
-<h3 id="GitHub仓库中的图片"><a href="#GitHub仓库中的图片" class="headerlink" title="GitHub仓库中的图片"></a>GitHub仓库中的图片</h3><p><img data-src="https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif"></p>
-<h3 id="给图片加上超链接"><a href="#给图片加上超链接" class="headerlink" title="给图片加上超链接"></a><a name="piclink">给图片加上超链接</h3><p><a href="http://blog.csdn.net/guodongxiaren/article/details/23690801">![head]</a></p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a><a name="dot"/>列表</h2><h3 id="圆点列表"><a href="#圆点列表" class="headerlink" title="圆点列表"></a>圆点列表</h3><ul>
-<li>昵称：果冻虾仁</li>
-<li>别名：隔壁老王</li>
-<li>英文名：Jelly</li>
-</ul>
-<h3 id="更多圆点"><a href="#更多圆点" class="headerlink" title="更多圆点"></a>更多圆点</h3><ul>
-<li>编程语言<ul>
-<li>脚本语言<ul>
-<li>Python</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="复选框列表"><a href="#复选框列表" class="headerlink" title="复选框列表"></a>复选框列表</h3><ul>
-<li><input checked="" disabled="" type="checkbox"> C</li>
-<li><input checked="" disabled="" type="checkbox"> C++</li>
-<li><input checked="" disabled="" type="checkbox"> Java</li>
-<li><input checked="" disabled="" type="checkbox"> Qt</li>
-<li><input checked="" disabled="" type="checkbox"> Android</li>
-<li><input disabled="" type="checkbox"> C#</li>
-<li><input disabled="" type="checkbox"> .NET</li>
-</ul>
-<h2 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a><a name="symbol"/>缩进</h2><h3 id="用于列表"><a href="#用于列表" class="headerlink" title="用于列表"></a>用于列表</h3><blockquote>
-<p>数据结构</p>
-<blockquote>
-<p>树</p>
-<blockquote>
-<p>二叉树</p>
-<blockquote>
-<p>平衡二叉树</p>
-<blockquote>
-<p>满二叉树</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<h3 id="用于引用："><a href="#用于引用：" class="headerlink" title="用于引用："></a>用于引用：</h3><h4 id="文本摘自《深入理解计算机系统》P27"><a href="#文本摘自《深入理解计算机系统》P27" class="headerlink" title="文本摘自《深入理解计算机系统》P27"></a>文本摘自《深入理解计算机系统》P27</h4><p>　令人吃惊的是，在哪种字节顺序是合适的这个问题上，人们表现得非常情绪化。实际上术语“little endian”（小端）和“big endian”（大端）出自Jonathan Swift的《格利佛游记》一书，其中交战的两个派别无法就应该从哪一端打开一个半熟的鸡蛋达成一致。因此，争论沦为关于社会政治的争论。只要选择了一种规则并且始终如一的坚持，其实对于哪种字节排序的选择都是任意的。</p>
-<blockquote>
-<p><b>“端”（endian）的起源</b><br><br>以下是Jonathan Swift在1726年关于大小端之争历史的描述：<br><br>“……下面我要告诉你的是，Lilliput和Blefuscu这两大强国在过去36个月里一直在苦战。战争开始是由于以下的原因：我们大家都认为，吃鸡蛋前，原始的方法是打破鸡蛋较大的一端，可是当今的皇帝的祖父小时候吃鸡蛋，一次按古法打鸡蛋时碰巧将一个手指弄破了，因此他的父亲，当时的皇帝，就下了一道敕令，命令全体臣民吃鸡蛋时打破较小的一端，违令者重罚。”</p>
-</blockquote>
-<h2 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a><a name="code"/>代码高亮</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[]args)</span>&#123;&#125; <span class="comment">//Java</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> <span class="comment">//C</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;hello GitHub&quot;</span><span class="comment">#Bash</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;myH1&quot;</span>).<span class="property">innerHTML</span>=<span class="string">&quot;Welcome to my Homepage&quot;</span>; <span class="comment">//javascipt</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">string &amp;<span class="keyword">operator</span>+(<span class="type">const</span> string&amp; A,<span class="type">const</span> string&amp; B) <span class="comment">//cpp</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="插入表格"><a href="#插入表格" class="headerlink" title="插入表格"></a>插入表格</h2><table>
-<thead>
-<tr>
-<th>First Header</th>
-<th>Second Header</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>First Header</th>
-<th>Second Header</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Help</td>
-<td>Display the help window.</td>
-</tr>
-<tr>
-<td>Close</td>
-<td>Closes a window</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Help</td>
-<td><del>Display the</del> help window.</td>
-</tr>
-<tr>
-<td>Close</td>
-<td><em>Closes</em> a window</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">Left-Aligned</th>
-<th align="center">Center Aligned</th>
-<th align="right">Right Aligned</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">col 3 is</td>
-<td align="center">some wordy text</td>
-<td align="right">$1600</td>
-</tr>
-<tr>
-<td align="left">col 2 is</td>
-<td align="center">centered</td>
-<td align="right">$12</td>
-</tr>
-<tr>
-<td align="left">zebra stripes</td>
-<td align="center">are neat</td>
-<td align="right">$1</td>
-</tr>
-</tbody></table>
-<p>公式测试</p>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-
-<p>$$<br>\Gamma(z) &#x3D; \int_0^\infty t^{z-1}e^{-t}dt,.<br>$$</p>
-<p>$\Gamma(z) &#x3D; \int_0^\infty t^{z-1}e^{-t}dt,.$</p>
-<h3 id="UML-diagrams"><a href="#UML-diagrams" class="headerlink" title="UML diagrams"></a>UML diagrams</h3><p>You can also render sequence diagrams like this:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
-
-<p>And flow charts like this:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">st=&gt;start: Start</span><br><span class="line">e=&gt;end</span><br><span class="line">op=&gt;operation: My Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>nodejs mongodb angularjs 个人笔记</title>
     <url>/Blog/17-01-21-node-mongo-angularjs/</url>
     <content><![CDATA[<h1 id="mongodb-学习记录"><a href="#mongodb-学习记录" class="headerlink" title="mongodb 学习记录"></a>mongodb 学习记录</h1><h2 id="本文依赖"><a href="#本文依赖" class="headerlink" title="本文依赖"></a>本文依赖</h2><p><code>nodejs</code></p>
@@ -3908,6 +3642,21 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
       <tags>
         <tag>java</tag>
         <tag>jvm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cocaine Addiction Uses Same Brain Paths as Salt Cravings</title>
+    <url>/Blog/19-02-18-Cocaine_Addiction_Uses_Same_Brain_Paths_as_Salt_Cravings/</url>
+    <content><![CDATA[<h1 id="Cocaine-Addiction-Uses-Same-Brain-Paths-as-Salt-Cravings"><a href="#Cocaine-Addiction-Uses-Same-Brain-Paths-as-Salt-Cravings" class="headerlink" title="Cocaine Addiction Uses Same Brain Paths as Salt Cravings"></a>Cocaine Addiction Uses Same Brain Paths as Salt Cravings</h1><p><a href="https://news.nationalgeographic.com/news/2011/07/110719-salt-cocaine-cravings-addiction-genes-brains-science/">原文链接</a></p>
+<p>首先是 小白鼠在盐耗尽的时候，给它盐水，其基因调控模式可见方式开始逆转</p>
+<p>但 对于上瘾的驱动因素 尚未知，因为 健康本能（盐分需求）到 杀死人的疾病（对可卡因上瘾）之间还是没有研究到其神经驱动因素的具体的异同。</p>
+<p>我之前倒是有想过，假设历来人类以及其它生物都是几乎没有盐分摄入的，那么是不是有一天有人发现了盐，盐也会成为“毒品”？</p>
+]]></content>
+      <categories>
+        <category>news</category>
+      </categories>
+      <tags>
+        <tag>news</tag>
       </tags>
   </entry>
   <entry>
@@ -10917,9 +10666,9 @@ export default &#123;
         <category>linux</category>
       </categories>
       <tags>
+        <tag>backend</tag>
         <tag>system</tag>
         <tag>computer</tag>
-        <tag>backend</tag>
         <tag>io</tag>
         <tag>select</tag>
         <tag>poll</tag>
@@ -11286,9 +11035,9 @@ export default &#123;
         <category>frontend</category>
       </categories>
       <tags>
+        <tag>test</tag>
         <tag>js</tag>
         <tag>Angular2+</tag>
-        <tag>test</tag>
         <tag>karma</tag>
       </tags>
   </entry>
@@ -11647,6 +11396,30 @@ export default &#123;
       </tags>
   </entry>
   <entry>
+    <title>highlight menu item when scrolling down to section</title>
+    <url>/Blog/20-11-09-scroll/</url>
+    <content><![CDATA[<p>对于css</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">html &#123;</span><br><span class="line">  scroll-behavior: smooth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用id + hash的方式滚动</p>
+<p>对于js</p>
+<p>事件:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">window.addEventListener(&#x27;scroll&#x27;, callback);</span><br></pre></td></tr></table></figure>
+
+<p><code>throttle + js判断后 再增删 class</code></p>
+<p>详细：下面30k viewed的页面</p>
+<p><a href="https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section">https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section</a></p>
+]]></content>
+      <categories>
+        <category>frontend</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>scroll</tag>
+        <tag>context</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mkfifo sh nc</title>
     <url>/Blog/20-11-11-mkfifo-nc/</url>
     <content><![CDATA[<h1 id="mkpipe"><a href="#mkpipe" class="headerlink" title="mkpipe"></a>mkpipe</h1><p>众所周知</p>
@@ -11808,30 +11581,6 @@ export default &#123;
         <tag>docker</tag>
         <tag>devops</tag>
         <tag>k8s</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>highlight menu item when scrolling down to section</title>
-    <url>/Blog/20-11-09-scroll/</url>
-    <content><![CDATA[<p>对于css</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">html &#123;</span><br><span class="line">  scroll-behavior: smooth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>用id + hash的方式滚动</p>
-<p>对于js</p>
-<p>事件:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">window.addEventListener(&#x27;scroll&#x27;, callback);</span><br></pre></td></tr></table></figure>
-
-<p><code>throttle + js判断后 再增删 class</code></p>
-<p>详细：下面30k viewed的页面</p>
-<p><a href="https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section">https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section</a></p>
-]]></content>
-      <categories>
-        <category>frontend</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
-        <tag>scroll</tag>
-        <tag>context</tag>
       </tags>
   </entry>
   <entry>
@@ -14665,8 +14414,8 @@ yarn dev -m
         <category>python3</category>
       </categories>
       <tags>
-        <tag>python3</tag>
         <tag>backend</tag>
+        <tag>python3</tag>
         <tag>pip</tag>
         <tag>setuptool</tag>
       </tags>
