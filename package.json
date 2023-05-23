@@ -1,6 +1,6 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "cromarmotBlog",
+  "version": "0.23.05",
   "private": true,
   "scripts": {
     "build": "hexo generate",
@@ -9,7 +9,7 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "6.2.0"
+    "version": "6.3.0"
   },
   "dependencies": {
     "hexo": "^6.3.0",

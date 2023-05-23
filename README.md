@@ -16,3 +16,7 @@ hexo s
 ```bash
 hexo build
 ```
+
+# git config
+
+git config --add remote.origin.fetch '^refs/heads/gh-pages'
