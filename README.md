@@ -17,6 +17,11 @@ hexo s
 hexo build
 ```
 
-# git config
+# git
 
+```
 git config --add remote.origin.fetch '^refs/heads/gh-pages'
+
+git submodule init
+git submodule update
+```
