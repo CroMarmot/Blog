@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
-
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
@@ -16,9 +15,9 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
 
     <meta name="description" content="同步多路IO复用 CODE五个子进程 2000本地端口SOCK_STREAM的demo 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828">
 <meta property="og:type" content="article">
@@ -28,7 +27,7 @@
 <meta property="og:description" content="同步多路IO复用 CODE五个子进程 2000本地端口SOCK_STREAM的demo 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2019-12-27T03:20:14.000Z">
-<meta property="article:modified_time" content="2023-05-22T22:14:43.008Z">
+<meta property="article:modified_time" content="2023-05-23T10:19:27.975Z">
 <meta property="article:author" content="Cro-Marmot">
 <meta property="article:tag" content="backend">
 <meta property="article:tag" content="system">
@@ -37,7 +36,7 @@
 <meta property="article:tag" content="select">
 <meta property="article:tag" content="poll">
 <meta property="article:tag" content="epoll">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="&lt;twitter:card&gt;">
 
 
 <link rel="canonical" href="https://cromarmot.github.io/Blog/19-12-27-select-poll-epoll/">
@@ -54,6 +53,9 @@
 
 
 
+
+
+
   <noscript>
     <link rel="stylesheet" href="/Blog/css/noscript.css">
   </noscript>
@@ -64,8 +66,8 @@
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切換導航欄" role="button">
         <span class="toggle-line"></span>
@@ -84,7 +86,7 @@
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
         <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
@@ -126,15 +128,9 @@
     </div>
   </div>
 
-</div>
+</header>
         
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
   <aside class="sidebar">
 
     <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
@@ -155,13 +151,13 @@
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
       src="https://avatars.githubusercontent.com/u/24691835?v=4">
   <p class="site-author-name" itemprop="name">Cro-Marmot</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/Blog/archives/">
@@ -181,51 +177,39 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author site-overview-item animated">
+  <div class="links-of-author animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
-  </div>
-
-
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
-        </li>
-    </ul>
   </div>
 
         </div>
       </div>
     </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
 
     
-  <div class="back-to-top" role="button" aria-label="回到頂端">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-  <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
 
+    </div>
 
     <div class="main-inner post posts-expand">
 
@@ -274,7 +258,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-05-23 06:14:43" itemprop="dateModified" datetime="2023-05-23T06:14:43+08:00">2023-05-23</time>
+      <time title="修改時間：2023-05-23 18:19:27" itemprop="dateModified" datetime="2023-05-23T18:19:27+08:00">2023-05-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -311,7 +295,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>7.6k</span>
+      <span>1.9k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -328,8 +312,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-        <p>同步多路IO复用</p>
+    <div class="post-body" itemprop="articleBody"><p>同步多路IO复用</p>
 <h1 id="CODE"><a href="#CODE" class="headerlink" title="CODE"></a>CODE</h1><p>五个子进程 2000本地端口<code>SOCK_STREAM</code>的demo</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;wait.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;signal.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/select.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;poll.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/epoll.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAXBUF 256</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CHILD 5</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">child_process</span><span class="params">(<span class="type">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="built_in">sleep</span>(<span class="number">2</span>);</span><br><span class="line">  <span class="type">char</span> msg[MAXBUF];</span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">sockaddr_in</span> addr = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">  <span class="type">int</span> sockfd,num=<span class="number">1</span>;</span><br><span class="line">  <span class="built_in">srandom</span>(<span class="built_in">getpid</span>());</span><br><span class="line">  <span class="comment">/* Create socket and connect to server */</span></span><br><span class="line">  sockfd = <span class="built_in">socket</span>(AF_INET, SOCK_STREAM, <span class="number">0</span>);</span><br><span class="line">  addr.sin_family = AF_INET;</span><br><span class="line">  addr.sin_port = <span class="built_in">htons</span>(<span class="number">2000</span>);</span><br><span class="line">  addr.sin_addr.s_addr = <span class="built_in">inet_addr</span>(<span class="string">&quot;127.0.0.1&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">connect</span>(sockfd, (<span class="keyword">struct</span> sockaddr*)&amp;addr, <span class="built_in">sizeof</span>(addr));</span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;child &#123;%d&#125; connected \n&quot;</span>, <span class="built_in">getpid</span>());</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="type">int</span> sl = (<span class="built_in">random</span>() % <span class="number">10</span> ) +  <span class="number">1</span>;</span><br><span class="line">    num++;</span><br><span class="line">    <span class="built_in">sleep</span>(sl);</span><br><span class="line">    <span class="built_in">sprintf</span> (msg, <span class="string">&quot;Test message %d from client %d&quot;</span>, num, <span class="built_in">getpid</span>());</span><br><span class="line">    <span class="built_in">write</span>(sockfd, msg, <span class="built_in">strlen</span>(msg));	<span class="comment">/* Send message -&gt; 127.0.0.1:2000 */</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">selectDemo</span><span class="params">(<span class="type">int</span> sockfd)</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> fds[CHILD];</span><br><span class="line">  fd_set rset;</span><br><span class="line">  <span class="type">socklen_t</span> maxfd=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;CHILD;i++) &#123;</span><br><span class="line">    fds[i] = <span class="built_in">accept</span>(sockfd,<span class="literal">NULL</span>,<span class="literal">NULL</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fds[%d]=%d\n&quot;</span>,i,fds[i]);</span><br><span class="line">    <span class="keyword">if</span>(fds[i] &gt; maxfd)</span><br><span class="line">      maxfd = fds[i];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="built_in">FD_ZERO</span>(&amp;rset);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i&lt; CHILD; i++ ) &#123;</span><br><span class="line">      <span class="built_in">FD_SET</span>(fds[i],&amp;rset);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;round again&quot;</span>);</span><br><span class="line">    <span class="built_in">select</span>(maxfd+<span class="number">1</span>, &amp;rset, <span class="literal">NULL</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>); <span class="comment">// 返回值是 ready的个数 &gt;= 0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;CHILD;i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">FD_ISSET</span>(fds[i], &amp;rset))&#123;</span><br><span class="line">        <span class="type">char</span> buffer[MAXBUF];</span><br><span class="line">        <span class="type">int</span> n = <span class="built_in">read</span>(fds[i], buffer, MAXBUF);</span><br><span class="line">        buffer[n] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">        <span class="built_in">puts</span>(buffer); <span class="comment">// 主进程把子进程的内容打印</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pollDemo</span><span class="params">(<span class="type">int</span> sockfd)</span></span>&#123;</span><br><span class="line">  pollfd pollfds[CHILD]; <span class="comment">// 这里变成了 数组，因此长度不再受到限制</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;CHILD;i++)&#123;</span><br><span class="line">    pollfds[i].fd = <span class="built_in">accept</span>(sockfd,<span class="literal">NULL</span>,<span class="literal">NULL</span>);</span><br><span class="line">    pollfds[i].events = POLLIN;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">sleep</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;round again&quot;</span>);</span><br><span class="line">    <span class="built_in">poll</span>(pollfds, CHILD, <span class="number">50000</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;CHILD;i++) &#123; <span class="comment">// 但这里检查状态时 依然是 轮询</span></span><br><span class="line">      <span class="keyword">if</span> (pollfds[i].revents &amp; POLLIN)&#123;</span><br><span class="line">        pollfds[i].revents = <span class="number">0</span>; <span class="comment">// 不需要每次 把所有的重设置到set里，只需要把已经就绪的状态恢复掉</span></span><br><span class="line">        <span class="type">char</span> buffer[MAXBUF];</span><br><span class="line">        <span class="type">int</span> n = <span class="built_in">read</span>(pollfds[i].fd, buffer, MAXBUF);</span><br><span class="line">        buffer[n] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">        <span class="built_in">puts</span>(buffer);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">epollDemo</span><span class="params">(<span class="type">int</span> sockfd)</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> epfd = <span class="built_in">epoll_create</span>(<span class="number">233</span>); <span class="comment">// create a context in the kernel 文档说 只要是正值就行 具体值被忽略了</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;CHILD;i++) &#123;</span><br><span class="line">    <span class="type">static</span> <span class="keyword">struct</span> <span class="title class_">epoll_event</span> ev; <span class="comment">// 注意这里是static</span></span><br><span class="line">    ev.data.fd = <span class="built_in">accept</span>(sockfd,<span class="literal">NULL</span>,<span class="literal">NULL</span>); <span class="comment">// 这也可以 自定义其它的data值</span></span><br><span class="line">    ev.events = EPOLLIN; <span class="comment">// 这里还可以设置 EPOLLET 的bit位 启用edge-triggered</span></span><br><span class="line">    <span class="built_in">epoll_ctl</span>(epfd, EPOLL_CTL_ADD, ev.data.fd, &amp;ev); <span class="comment">// add and remove file descriptors to/from the context using epoll_ctl</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;round again&quot;</span>);</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">epoll_event</span> events[CHILD];</span><br><span class="line">    <span class="type">int</span> nfds = <span class="built_in">epoll_wait</span>(epfd, events, CHILD, <span class="number">50000</span>); <span class="comment">// 把就绪的写入到events中 写了nfds个</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nfds;i++) &#123; <span class="comment">// 遍历的都是就绪的</span></span><br><span class="line">      <span class="type">char</span> buffer[MAXBUF];</span><br><span class="line">      <span class="type">int</span> n = <span class="built_in">read</span>(events[i].data.fd, buffer, MAXBUF);</span><br><span class="line">      buffer[n] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">      <span class="built_in">puts</span>(buffer);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> sockfd;</span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">sockaddr_in</span> addr;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;CHILD;i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(fork() == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="built_in">child_process</span>(); <span class="comment">// 子进程</span></span><br><span class="line">      <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 主进程</span></span><br><span class="line"></span><br><span class="line">  sockfd = <span class="built_in">socket</span>(AF_INET, SOCK_STREAM, <span class="number">0</span>);</span><br><span class="line">  <span class="built_in">memset</span>(&amp;addr, <span class="number">0</span>, <span class="built_in">sizeof</span> (addr));</span><br><span class="line">  addr.sin_family = AF_INET;</span><br><span class="line">  addr.sin_port = <span class="built_in">htons</span>(<span class="number">2000</span>);</span><br><span class="line">  addr.sin_addr.s_addr = INADDR_ANY;</span><br><span class="line">  <span class="built_in">bind</span>(sockfd,(<span class="keyword">struct</span> sockaddr*)&amp;addr ,<span class="built_in">sizeof</span>(addr));</span><br><span class="line">  <span class="built_in">listen</span> (sockfd, CHILD);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 三种 demo 解除注释 使用</span></span><br><span class="line">  <span class="comment">// selectDemo(sockfd);</span></span><br><span class="line">  <span class="comment">// pollDemo(sockfd);</span></span><br><span class="line">  <span class="comment">// epollDemo(sockfd);</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -407,8 +390,6 @@
     
     
     
-      
-
 
     <footer class="post-footer">
           
@@ -423,7 +404,7 @@
       <a href="https://cromarmot.github.io/Blog/19-12-27-select-poll-epoll/" title="select&#x2F;poll&#x2F;epoll">https://cromarmot.github.io/Blog/19-12-27-select-poll-epoll/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+      <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
   </li>
 </ul>
 </div>
@@ -486,13 +467,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">690k</span>
+    <span title="總字數">219k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">10:27</span>
+    <span title="所需總閱讀時間">13:17</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
@@ -502,14 +483,33 @@
   </footer>
 
   
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
 
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
 <script src="/Blog/js/third-party/search/local-search.js"></script>
+
 
 
 
@@ -526,7 +526,7 @@
 <script src="/Blog/js/third-party/math/mathjax.js"></script>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.2.0/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
   <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/19-12-27-select-poll-epoll/"}</script>
   <script src="/Blog/js/third-party/quicklink.js"></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
