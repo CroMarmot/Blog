@@ -134,3 +134,15 @@ vue 页面 直接动效炸掉
 
 https://neteasecloudmusicapi-docs.4everland.app/#/?id=neteasecloudmusicapi
 
+
+# https://github.com/v2rayA/v2rayA
+
+commit hash 696992270743b7ad395fc63879bd4a32f10301a3
+
+```
+cd gui
+yarn
+vue add typescript
+
+Error: Cannot find module '@vue/cli-plugin-router/generator/template/src/views/Home.vue' from '/home/cromarmot/Documents/github/v2rayA/gui/node_modules/@vue/cli-plugin-typescript/generator/template/src/views'
+```
