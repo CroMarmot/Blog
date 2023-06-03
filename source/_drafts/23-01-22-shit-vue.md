@@ -146,3 +146,5 @@ vue add typescript
 
 Error: Cannot find module '@vue/cli-plugin-router/generator/template/src/views/Home.vue' from '/home/cromarmot/Documents/github/v2rayA/gui/node_modules/@vue/cli-plugin-typescript/generator/template/src/views'
 ```
+
+然而这个项目不论是源码还是依赖 都比我的一个ng项目小，然而开发环境中,多次使用的 vue serve 依然20s 2mb,作为对比我的ng项目是16ms,10mb
