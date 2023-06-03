@@ -385,9 +385,9 @@
         <category>security</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>rowhammer</tag>
         <tag>security</tag>
+        <tag>js</tag>
         <tag>ram</tag>
       </tags>
   </entry>
@@ -6057,8 +6057,8 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
         <category>vue2</category>
       </categories>
       <tags>
-        <tag>vue2</tag>
         <tag>js</tag>
+        <tag>vue2</tag>
         <tag>vue3</tag>
       </tags>
   </entry>
@@ -9542,8 +9542,8 @@ base: __dirname,
       </categories>
       <tags>
         <tag>vue2</tag>
-        <tag>router</tag>
         <tag>source code</tag>
+        <tag>router</tag>
       </tags>
   </entry>
   <entry>
@@ -10610,9 +10610,9 @@ export default &#123;
         <category>linux</category>
       </categories>
       <tags>
-        <tag>backend</tag>
         <tag>system</tag>
         <tag>computer</tag>
+        <tag>backend</tag>
         <tag>io</tag>
         <tag>select</tag>
         <tag>poll</tag>
@@ -10792,8 +10792,8 @@ export default &#123;
         <category>vue2</category>
       </categories>
       <tags>
-        <tag>vue2</tag>
         <tag>js</tag>
+        <tag>vue2</tag>
         <tag>v-model</tag>
       </tags>
   </entry>
@@ -10979,9 +10979,9 @@ export default &#123;
         <category>frontend</category>
       </categories>
       <tags>
-        <tag>test</tag>
         <tag>js</tag>
         <tag>Angular2+</tag>
+        <tag>test</tag>
         <tag>karma</tag>
       </tags>
   </entry>
@@ -12855,8 +12855,8 @@ export default &#123;
         <category>vue2</category>
       </categories>
       <tags>
-        <tag>vue2</tag>
         <tag>js</tag>
+        <tag>vue2</tag>
         <tag>source code</tag>
       </tags>
   </entry>
@@ -13574,6 +13574,67 @@ export default &#123;
       </tags>
   </entry>
   <entry>
+    <title>前端资料链接</title>
+    <url>/Blog/21-11-22-frontEndRoadmap/</url>
+    <content><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>不论是面试也好，培训新人也好，自己总结也好，做个这些子集的超集。这里尽量给一手资料的链接，和一些公共维护的文档，也建议大家少看博客这类二手资料&#x2F;非公共资料。</p>
+<h1 id="RoadMap"><a href="#RoadMap" class="headerlink" title="RoadMap"></a>RoadMap</h1><h2 id="前端基础"><a href="#前端基础" class="headerlink" title="前端基础"></a>前端基础</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML#tools">HTML 与 语义化 HTML</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS">css 与 css3</a></p>
+<ul>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex">flex</a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media">@media</a></p>
+</li>
+</ul>
+<p><a href="https://zh.javascript.info/">js</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">js mdn</a></p>
+<h2 id="基本开发技能"><a href="#基本开发技能" class="headerlink" title="基本开发技能"></a>基本开发技能</h2><p><a href="https://git-scm.com/book/zh/v2/">git</a></p>
+<p>如何使用 google 搜索&#x2F;《提问的智慧》</p>
+<p>linux&#x2F;wsl&#x2F;常用 linux 命令</p>
+<p>基本数据结构和算法(<a href="https://oi-wiki.org/">https://oi-wiki.org/</a> , codeforces.com 1900 分以下的题)</p>
+<p><a href="https://www.runoob.com/design-pattern/design-pattern-tutorial.html">设计模式</a></p>
+<h2 id="前端包工具"><a href="#前端包工具" class="headerlink" title="前端包工具"></a>前端包工具</h2><p><a href="https://www.npmjs.com/">npm</a>&#x2F;<a href="https://yarnpkg.com/">yarn</a> , <a href="https://github.com/nvm-sh/nvm/blob/master/README.md">nvm</a></p>
+<p><a href="https://webpack.js.org/">Webpack</a>&#x2F;<a href="https://rollupjs.org/guide/en/">Rollup</a>&#x2F;<a href="https://parceljs.org/">Parcel</a></p>
+<p><a href="https://angular.io/cli">Angular CLI</a>&#x2F;<a href="https://nuxtjs.org/">Nuxt</a>&#x2F;<a href="https://nextjs.org/">Next</a>&#x2F;<a href="https://www.gatsbyjs.com/">Gatsby</a>&#x2F;<a href="https://create-react-app.dev/">CRA</a></p>
+<p><a href="https://docs.bazel.build/versions/main/build-javascript.html">Bazel</a></p>
+<p><a href="https://gulpjs.com/">gulp</a>&#x2F;npm scripts</p>
+<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><p><a href="https://sass-lang.com/">sass</a>&#x2F;<a href="https://lesscss.org/">less</a>&#x2F;<a href="https://postcss.org/">postcss</a></p>
+<p><a href="https://tailwindcss.com/">tailwind</a></p>
+<p><a href="https://material.angular.io/">Angular Material</a>&#x2F;<a href="https://element.eleme.cn/">Element UI</a>&#x2F;<a href="https://ant.design/">Ant Design</a></p>
+<h2 id="代码风格"><a href="#代码风格" class="headerlink" title="代码风格"></a>代码风格</h2><p><a href="https://angular.cn/guide/styleguide">Angular Styleguide</a>&#x2F;<a href="https://vuejs.org/v2/style-guide/">Vue Styleguide</a>&#x2F;<a href="https://reactjs.org/docs/getting-started.html">Reactjs advanced guides</a></p>
+<p><a href="https://angular.io/guide/schematics">Angular Schematics</a></p>
+<p><a href="https://eslint.org/">eslint</a>&#x2F;<a href="https://prettier.io/">prettier</a>&#x2F;<a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">git hooks</a></p>
+<h2 id="三方基础"><a href="#三方基础" class="headerlink" title="三方基础"></a>三方基础</h2><p><a href="https://www.typescriptlang.org/">TypeScript</a></p>
+<p><a href="https://rxjs.dev/">RxJs</a></p>
+<h2 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h2><p><a href="https://facebook.github.io/flux/">Flux</a>&#x2F;<a href="https://ngrx.io/">@ngrx</a>&#x2F;<a href="https://angular.io/guide/architecture-services">Angular Services</a>&#x2F;<a href="https://vuex.vuejs.org/">Vuex</a>&#x2F;<a href="https://react-redux.js.org/">Redux</a></p>
+<h2 id="PWA"><a href="#PWA" class="headerlink" title="PWA"></a>PWA</h2><p><a href="https://angular.io/guide/service-worker-getting-started">@angular&#x2F;pwa</a>&#x2F;<a href="https://pwa.nuxtjs.org/">Nuxt pwa</a>&#x2F;<a href="https://developers.google.com/web/tools/workbox/guides/get-started">Workbox</a></p>
+<h2 id="Router"><a href="#Router" class="headerlink" title="Router"></a>Router</h2><p><a href="https://router.vuejs.org/guide/">Vue router</a> &#x2F; <a href="https://angular.io/guide/router">Angular router</a> &#x2F; <a href="https://reactrouter.com/">React router</a></p>
+<h2 id="非浏览器"><a href="#非浏览器" class="headerlink" title="非浏览器"></a>非浏览器</h2><p><a href="https://ionicframework.com/">Ionic</a>&#x2F;<a href="https://reactnative.dev/">React Native</a>&#x2F;<a href="https://www.electronjs.org/">Electron</a></p>
+<p>SSR</p>
+<p><a href="https://flutter.dev/">Flutter</a></p>
+<p><a href="https://webassembly.org/">WASM</a></p>
+<h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><p>单元:<a href="https://jasmine.github.io/">Jasmine</a>&#x2F;<a href="https://karma-runner.github.io/latest/index.html">Karma</a>&#x2F;<a href="https://jestjs.io/">Jest</a></p>
+<p>e2e:</p>
+<h2 id="Util"><a href="#Util" class="headerlink" title="Util"></a>Util</h2><p>日期 <a href="https://dayjs.fenxianglu.cn/category/parse.html">dayjs</a>&#x2F;<a href="https://momentjs.com/">Momentsjs</a></p>
+<p>轮播 <a href="https://swiperjs.com/">swiper</a></p>
+<p>图表 <a href="https://echarts.apache.org/en/index.html">echarts</a></p>
+<p>条形码 <a href="https://github.com/lindell/JsBarcode">jsbarcode</a></p>
+<p>二维码 <a href="https://github.com/soldair/node-qrcode#api">qrcode</a></p>
+<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><p><img data-src="https://ares.decipherzone.com/blog-manager/uploads/ckeditor_frontend-developer-roadmap.png" alt="2021 frontend roadmap"></p>
+<h1 id="常用知识"><a href="#常用知识" class="headerlink" title="常用知识"></a>常用知识</h1><h2 id="异步通信"><a href="#异步通信" class="headerlink" title="异步通信"></a>异步通信</h2><p><a href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function">callback</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">async&#x2F;await</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">Observer</a></p>
+<p><a href="https://rxjs-dev.firebaseapp.com/">RxJs</a></p>
+]]></content>
+      <categories>
+        <category>frontend</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>Angular2+</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>currying 加法</title>
     <url>/Blog/21-12-06-currying-add/</url>
     <content><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>一个支持 任意多参数，可以柯里化的加法函数</p>
@@ -13722,67 +13783,6 @@ export default &#123;
       <tags>
         <tag>js</tag>
         <tag>豆瓣</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端资料链接</title>
-    <url>/Blog/21-11-22-frontEndRoadmap/</url>
-    <content><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>不论是面试也好，培训新人也好，自己总结也好，做个这些子集的超集。这里尽量给一手资料的链接，和一些公共维护的文档，也建议大家少看博客这类二手资料&#x2F;非公共资料。</p>
-<h1 id="RoadMap"><a href="#RoadMap" class="headerlink" title="RoadMap"></a>RoadMap</h1><h2 id="前端基础"><a href="#前端基础" class="headerlink" title="前端基础"></a>前端基础</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML#tools">HTML 与 语义化 HTML</a></p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS">css 与 css3</a></p>
-<ul>
-<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex">flex</a></p>
-</li>
-<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media">@media</a></p>
-</li>
-</ul>
-<p><a href="https://zh.javascript.info/">js</a></p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">js mdn</a></p>
-<h2 id="基本开发技能"><a href="#基本开发技能" class="headerlink" title="基本开发技能"></a>基本开发技能</h2><p><a href="https://git-scm.com/book/zh/v2/">git</a></p>
-<p>如何使用 google 搜索&#x2F;《提问的智慧》</p>
-<p>linux&#x2F;wsl&#x2F;常用 linux 命令</p>
-<p>基本数据结构和算法(<a href="https://oi-wiki.org/">https://oi-wiki.org/</a> , codeforces.com 1900 分以下的题)</p>
-<p><a href="https://www.runoob.com/design-pattern/design-pattern-tutorial.html">设计模式</a></p>
-<h2 id="前端包工具"><a href="#前端包工具" class="headerlink" title="前端包工具"></a>前端包工具</h2><p><a href="https://www.npmjs.com/">npm</a>&#x2F;<a href="https://yarnpkg.com/">yarn</a> , <a href="https://github.com/nvm-sh/nvm/blob/master/README.md">nvm</a></p>
-<p><a href="https://webpack.js.org/">Webpack</a>&#x2F;<a href="https://rollupjs.org/guide/en/">Rollup</a>&#x2F;<a href="https://parceljs.org/">Parcel</a></p>
-<p><a href="https://angular.io/cli">Angular CLI</a>&#x2F;<a href="https://nuxtjs.org/">Nuxt</a>&#x2F;<a href="https://nextjs.org/">Next</a>&#x2F;<a href="https://www.gatsbyjs.com/">Gatsby</a>&#x2F;<a href="https://create-react-app.dev/">CRA</a></p>
-<p><a href="https://docs.bazel.build/versions/main/build-javascript.html">Bazel</a></p>
-<p><a href="https://gulpjs.com/">gulp</a>&#x2F;npm scripts</p>
-<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><p><a href="https://sass-lang.com/">sass</a>&#x2F;<a href="https://lesscss.org/">less</a>&#x2F;<a href="https://postcss.org/">postcss</a></p>
-<p><a href="https://tailwindcss.com/">tailwind</a></p>
-<p><a href="https://material.angular.io/">Angular Material</a>&#x2F;<a href="https://element.eleme.cn/">Element UI</a>&#x2F;<a href="https://ant.design/">Ant Design</a></p>
-<h2 id="代码风格"><a href="#代码风格" class="headerlink" title="代码风格"></a>代码风格</h2><p><a href="https://angular.cn/guide/styleguide">Angular Styleguide</a>&#x2F;<a href="https://vuejs.org/v2/style-guide/">Vue Styleguide</a>&#x2F;<a href="https://reactjs.org/docs/getting-started.html">Reactjs advanced guides</a></p>
-<p><a href="https://angular.io/guide/schematics">Angular Schematics</a></p>
-<p><a href="https://eslint.org/">eslint</a>&#x2F;<a href="https://prettier.io/">prettier</a>&#x2F;<a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">git hooks</a></p>
-<h2 id="三方基础"><a href="#三方基础" class="headerlink" title="三方基础"></a>三方基础</h2><p><a href="https://www.typescriptlang.org/">TypeScript</a></p>
-<p><a href="https://rxjs.dev/">RxJs</a></p>
-<h2 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h2><p><a href="https://facebook.github.io/flux/">Flux</a>&#x2F;<a href="https://ngrx.io/">@ngrx</a>&#x2F;<a href="https://angular.io/guide/architecture-services">Angular Services</a>&#x2F;<a href="https://vuex.vuejs.org/">Vuex</a>&#x2F;<a href="https://react-redux.js.org/">Redux</a></p>
-<h2 id="PWA"><a href="#PWA" class="headerlink" title="PWA"></a>PWA</h2><p><a href="https://angular.io/guide/service-worker-getting-started">@angular&#x2F;pwa</a>&#x2F;<a href="https://pwa.nuxtjs.org/">Nuxt pwa</a>&#x2F;<a href="https://developers.google.com/web/tools/workbox/guides/get-started">Workbox</a></p>
-<h2 id="Router"><a href="#Router" class="headerlink" title="Router"></a>Router</h2><p><a href="https://router.vuejs.org/guide/">Vue router</a> &#x2F; <a href="https://angular.io/guide/router">Angular router</a> &#x2F; <a href="https://reactrouter.com/">React router</a></p>
-<h2 id="非浏览器"><a href="#非浏览器" class="headerlink" title="非浏览器"></a>非浏览器</h2><p><a href="https://ionicframework.com/">Ionic</a>&#x2F;<a href="https://reactnative.dev/">React Native</a>&#x2F;<a href="https://www.electronjs.org/">Electron</a></p>
-<p>SSR</p>
-<p><a href="https://flutter.dev/">Flutter</a></p>
-<p><a href="https://webassembly.org/">WASM</a></p>
-<h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><p>单元:<a href="https://jasmine.github.io/">Jasmine</a>&#x2F;<a href="https://karma-runner.github.io/latest/index.html">Karma</a>&#x2F;<a href="https://jestjs.io/">Jest</a></p>
-<p>e2e:</p>
-<h2 id="Util"><a href="#Util" class="headerlink" title="Util"></a>Util</h2><p>日期 <a href="https://dayjs.fenxianglu.cn/category/parse.html">dayjs</a>&#x2F;<a href="https://momentjs.com/">Momentsjs</a></p>
-<p>轮播 <a href="https://swiperjs.com/">swiper</a></p>
-<p>图表 <a href="https://echarts.apache.org/en/index.html">echarts</a></p>
-<p>条形码 <a href="https://github.com/lindell/JsBarcode">jsbarcode</a></p>
-<p>二维码 <a href="https://github.com/soldair/node-qrcode#api">qrcode</a></p>
-<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><p><img data-src="https://ares.decipherzone.com/blog-manager/uploads/ckeditor_frontend-developer-roadmap.png" alt="2021 frontend roadmap"></p>
-<h1 id="常用知识"><a href="#常用知识" class="headerlink" title="常用知识"></a>常用知识</h1><h2 id="异步通信"><a href="#异步通信" class="headerlink" title="异步通信"></a>异步通信</h2><p><a href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function">callback</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">async&#x2F;await</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">Observer</a></p>
-<p><a href="https://rxjs-dev.firebaseapp.com/">RxJs</a></p>
-]]></content>
-      <categories>
-        <category>frontend</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>Angular2+</tag>
       </tags>
   </entry>
   <entry>
