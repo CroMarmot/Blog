@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="vercel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vercel">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/23-08-15-vercel/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="vercel">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://vercel.com/_next/image?url=https://assets.vercel.com/image/upload/v1689795055/docs-assets/static/docs/concepts/functions/edge-middleware-light.png&w=1200&q=75&dpl=dpl_5FwmAYaj4H7c9BzGMPiG4QRp1pm4">
+<meta property="article:published_time" content="2023-08-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-08-28T03:54:37.410Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="vercel">
+<meta property="article:tag" content="serverless">
+<meta name="twitter:card" content="&lt;twitter:card&gt;">
+<meta name="twitter:image" content="https://vercel.com/_next/image?url=https://assets.vercel.com/image/upload/v1689795055/docs-assets/static/docs/concepts/functions/edge-middleware-light.png&w=1200&q=75&dpl=dpl_5FwmAYaj4H7c9BzGMPiG4QRp1pm4">
+
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/23-08-15-vercel/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/23-08-15-vercel/","path":"23-08-15-vercel/","title":"Vercel"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Vercel | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">131</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">36</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">151</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E5%A4%84"><span class="nav-text">用处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%90%E8%AF%84%E4%B8%80%E4%B8%8B"><span class="nav-text">锐评一下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vercel-cli"><span class="nav-text">Vercel cli</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Edge-Function"><span class="nav-text">Edge Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Serverless-Function"><span class="nav-text">Serverless Function</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">131</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">151</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/23-08-15-vercel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Vercel | Cro-Marmot's Blog">
+      <meta itemprop="description" content="vercel">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Vercel
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2023-08-15 00:00:00" itemprop="dateCreated datePublished" datetime="2023-08-15T00:00:00+08:00">2023-08-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/23-08-15-vercel/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="23-08-15-vercel/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>4 分鐘</span>
+    </span>
+</div>
+
+            <div class="post-description">vercel</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><a target="_blank" rel="noopener" href="https://www.netlify.com/">https://www.netlify.com/</a></p>
+<p><a target="_blank" rel="noopener" href="https://vercel.com/docs/getting-started-with-vercel">https://vercel.com/docs/getting-started-with-vercel</a></p>
+<h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>“无服务”前端部署,serverless</p>
+<p>其实是你提供</p>
+<ul>
+<li>“前端源代码”</li>
+<li>“构建过程” 有的在vercel页面配置,也可以你的命令行脚本</li>
+<li>“edge&#x2F;serverless function”</li>
+</ul>
+<p>它负责:</p>
+<ul>
+<li>源代码的构建(可以与github等平台关联,自动触发,也可以cli触发)</li>
+<li>并服务构建后的静态内容</li>
+<li>所有对edge&#x2F;serverless function的请求再运行零时的后台代码</li>
+</ul>
+<h2 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h2><p>支持常见的流行框架: Angular,Next.js,Nuxt.js,Hexo, <a target="_blank" rel="noopener" href="https://vercel.com/docs/frameworks">https://vercel.com/docs/frameworks</a></p>
+<p>基于现成模板: <a target="_blank" rel="noopener" href="https://vercel.com/templates">https://vercel.com/templates</a></p>
+<p>或者 仓库或者vercel cli</p>
+<p>进阶: <a target="_blank" rel="noopener" href="https://vercel.com/docs/getting-started-with-vercel/next-steps">https://vercel.com/docs/getting-started-with-vercel/next-steps</a></p>
+<h2 id="锐评一下"><a href="#锐评一下" class="headerlink" title="锐评一下"></a>锐评一下</h2><ul>
+<li>如果只是简单的个人静态博客, github-pages其实就够用了(而如果没有这类网站,则需要自己买服务器,域名,SSL证书,CDN加速等)</li>
+<li>而这里的serverless另一个概念就是,没有核心服务(计算资源的调度、弹性伸缩、负载均衡、运维等),而可以有一些”还是需要服务器”的edge&#x2F;serverless function(当用户的请求到来的时候会触发云服务为它分配一个容器运行，然后用完即毁，不会保留状态), 不过它也提供了DB,其实类似的产品,微信小程序算一个</li>
+<li>然后作为配套工具,提供了vercel cli,vercel for git</li>
+<li>然而现实是,例如private submodule(<a target="_blank" rel="noopener" href="https://github.com/orgs/vercel/discussions/44),%E8%BF%99%E4%BA%9B%E4%BD%A0%E6%80%BB%E9%9C%80%E8%A6%81%E9%9D%99%E6%80%81%E8%84%9A%E6%9C%AC%E4%B8%80%E7%B1%BB%E7%9A%84%E5%8E%BB%E5%A4%84%E7%90%86,%E8%80%8C%E5%88%B0%E5%A4%B4%E6%9D%A5%22%E6%89%80%E8%B0%93%E7%9A%84%E6%A1%86%E6%9E%B6%E6%94%AF%E6%8C%81%22%E5%B9%B6%E4%B8%8D%E7%8E%B0%E5%AE%9E,%E4%BD%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E5%BE%88%E5%A4%9A%E6%9C%80%E7%BB%88%E8%BF%98%E6%98%AF%E8%84%9A%E6%9C%AC,%E8%BF%99%E6%A0%B7%E5%AE%83%E5%81%9A%E4%B8%80%E5%8D%8A,%E4%BD%A0%E5%81%9A%E4%B8%80%E5%8D%8A%E7%9A%84%E8%B4%A3%E4%BB%BB%E5%88%86%E6%95%A3,%E8%BF%98%E4%B8%8D%E5%A6%82%E6%9C%AC%E5%9C%B0%E5%AE%8C%E6%88%90(%E6%88%96%E8%80%85%E6%9C%AC%E5%9C%B0docker%E9%87%8C)%E5%AE%8C%E6%88%90,%E5%8F%AA%E9%9C%80%E8%A6%81%E6%8E%A8">https://github.com/orgs/vercel/discussions/44),这些你总需要静态脚本一类的去处理,而到头来&quot;所谓的框架支持&quot;并不现实,你自定义的很多最终还是脚本,这样它做一半,你做一半的责任分散,还不如本地完成(或者本地docker里)完成,只需要推</a> 静态内容更符合 唯一责任.</li>
+</ul>
+<h2 id="Vercel-cli"><a href="#Vercel-cli" class="headerlink" title="Vercel cli"></a>Vercel cli</h2><p>node依然建议使用nvm管理, 用yarn取代npm</p>
+<p><a target="_blank" rel="noopener" href="https://vercel.com/docs/cli">https://vercel.com/docs/cli</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">add cli</span></span><br><span class="line">yarn global add vercel@latest</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">create project</span></span><br><span class="line">npx create-next-app@latest</span><br><span class="line"></span><br><span class="line">✔ Would you like to use TypeScript? … Yes  </span><br><span class="line">✔ Would you like to use ESLint? … Yes  </span><br><span class="line">✔ Would you like to use Tailwind CSS? … No</span><br><span class="line">✔ Would you like to use `src/` directory? … Yes  </span><br><span class="line">✔ Would you like to use App Router? (recommended) … Yes  </span><br><span class="line">✔ Would you like to customize the default import alias? … No</span><br></pre></td></tr></table></figure>
+
+<h2 id="Edge-Function"><a href="#Edge-Function" class="headerlink" title="Edge Function"></a>Edge Function</h2><p><a target="_blank" rel="noopener" href="https://vercel.com/blog/edge-functions-generally-available">https://vercel.com/blog/edge-functions-generally-available</a></p>
+<p><a target="_blank" rel="noopener" href="https://vercel.com/docs/functions/edge-functions/quickstart">https://vercel.com/docs/functions/edge-functions/quickstart</a></p>
+<ul>
+<li>创建 edge function</li>
+<li>用vercel cli部署</li>
+</ul>
+<hr>
+<p>和serverless function相比</p>
+<ul>
+<li>相同点:<ul>
+<li>都是在vercel提供的服务器里执行而不是用户端</li>
+</ul>
+</li>
+<li>不同点:<ul>
+<li>serverless function是早期方案,有冷启动问题,不少基于docker的方案,Edge function会在尽量靠近用户的服务器中执行,甚至可以Next.js的SSR</li>
+<li>edge function支持ESM,wasm 而 serverless function 支持Node.js,Go, Ruby, Python</li>
+<li>edge function global-first,而 serverless function region-specific,</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>文件 <code>./src/app/api/edge-function-example/route.ts</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">NextResponse</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;next/server&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">type</span> &#123; <span class="title class_">NextRequest</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;next/server&#x27;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> runtime = <span class="string">&#x27;edge&#x27;</span>; <span class="comment">// &#x27;nodejs&#x27; is the default</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">GET</span>(<span class="params">request: NextRequest</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">NextResponse</span>.<span class="title function_">json</span>(</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">body</span>: request.<span class="property">body</span>,</span><br><span class="line">      <span class="attr">query</span>: request.<span class="property">nextUrl</span>.<span class="property">search</span>,</span><br><span class="line">      <span class="attr">cookies</span>: request.<span class="property">cookies</span>.<span class="title function_">getAll</span>(),</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">status</span>: <span class="number">200</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>本地测试, 启动服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn run next dev</span><br></pre></td></tr></table></figure>
+
+<p>访问 <a target="_blank" rel="noopener" href="http://localhost:3000/api/edge-function-example?query=123">http://localhost:3000/api/edge-function-example?query=123</a> 不是404基本就是成功了</p>
+<hr>
+<p>可以干嘛呢, 例如ChatGPT中中间转发, 但是可能还需要学一下<a target="_blank" rel="noopener" href="https://vercel.com/docs/functions/edge-functions/streaming">Edge Streaming</a></p>
+<hr>
+<p>edge middleware <a target="_blank" rel="noopener" href="https://vercel.com/docs/functions/edge-middleware/quickstart">https://vercel.com/docs/functions/edge-middleware/quickstart</a><br><img data-src="https://vercel.com/_next/image?url=https://assets.vercel.com/image/upload/v1689795055/docs-assets/static/docs/concepts/functions/edge-middleware-light.png&w=1200&q=75&dpl=dpl_5FwmAYaj4H7c9BzGMPiG4QRp1pm4" alt="Edge middleware"></p>
+<hr>
+<p>价格上 目前看起来 Hobby免费的, 1million的量</p>
+<p><a target="_blank" rel="noopener" href="https://vercel.com/docs/functions/edge-middleware/usage-and-pricing">https://vercel.com/docs/functions/edge-middleware/usage-and-pricing</a></p>
+<h2 id="Serverless-Function"><a href="#Serverless-Function" class="headerlink" title="Serverless Function"></a>Serverless Function</h2><p>文件 <code>src/app/api/serverless-example/route.ts</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">NextResponse</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;next/server&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">type</span> &#123; <span class="title class_">NextRequest</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;next/server&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">GET</span>(<span class="params">request: NextRequest</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">NextResponse</span>.<span class="title function_">json</span>(</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">body</span>: request.<span class="property">body</span>,</span><br><span class="line">      <span class="attr">path</span>: request.<span class="property">nextUrl</span>.<span class="property">pathname</span>,</span><br><span class="line">      <span class="attr">query</span>: request.<span class="property">nextUrl</span>.<span class="property">search</span>,</span><br><span class="line">      <span class="attr">cookies</span>: request.<span class="property">cookies</span>.<span class="title function_">getAll</span>(),</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">status</span>: <span class="number">200</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其实可以看到主要的区别就是 runtime 不一样</p>
+<p>本地测试 <code>yarn run next dev</code>, 访问 <a target="_blank" rel="noopener" href="http://localhost:3000/api/edge-function-example?query=123">http://localhost:3000/api/edge-function-example?query=123</a> 不是404基本就是成功了</p>
+<hr>
+<p>而serverless还支持python&#x2F;go&#x2F;ruby</p>
+<p>python的例子<code>./api/index.py</code> (注意不在 <code>./src/app</code>下,而是直接最顶层)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> http.server <span class="keyword">import</span> BaseHTTPRequestHandler</span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">handler</span>(<span class="title class_ inherited__">BaseHTTPRequestHandler</span>):</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">do_GET</span>(<span class="params">self</span>):</span><br><span class="line">        self.send_response(<span class="number">200</span>)</span><br><span class="line">        self.send_header(<span class="string">&#x27;Content-type&#x27;</span>,<span class="string">&#x27;text/plain&#x27;</span>)</span><br><span class="line">        self.end_headers()</span><br><span class="line">        self.wfile.write(<span class="string">&#x27;Hello, world!&#x27;</span>.encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<p>本地 测试</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vercel dev</span><br></pre></td></tr></table></figure>
+
+<p>然而 报错了<code>Error: spawn ~/.cache/com.vercel.fun/runtimes/python3/bootstrap EACCES</code> </p>
+<p>解决方案: <code>chmod +x ~/.cache/com.vercel.fun/runtimes/python3/bootstrap</code> , <a target="_blank" rel="noopener" href="https://github.com/orgs/vercel/discussions/2524">https://github.com/orgs/vercel/discussions/2524</a></p>
+<p>再访问<a target="_blank" rel="noopener" href="http://localhost:3000/api">http://localhost:3000/api</a>非404即可</p>
+<hr>
+<p>然后 如果你的python有依赖,可以<code>requirements.txt</code>里写,也可以<code>Pipfile</code></p>
+<hr>
+<p>Flask 的例子</p>
+<p>文件<code>requirements.txt</code></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Flask==2.2.2</span><br></pre></td></tr></table></figure>
+
+<p>同样文件 <code>./api/index.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">home</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Hello, World!&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/about&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">about</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;About&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>在非Next的python项目中 可能还需要 <code>vercel.json</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;rewrites&quot;: [</span><br><span class="line">    &#123; &quot;source&quot;: &quot;/(.*)&quot;, &quot;destination&quot;: &quot;/api/index&quot; &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>于是乎, 就可以用vercel+flask+bs4等等来做一个自己用的小爬虫了,虽然在有自己服务器情况下不需要,有本地电脑也可以做,但是android&#x2F;ios上想做个简单自用的带服务的网页,vercel目前的Hobby免费用量还是非常充足的, <a target="_blank" rel="noopener" href="https://vercel.com/dashboard/usage">https://vercel.com/dashboard/usage</a></p>
+<hr>
+<p>国内腾讯有个Webify,但看上去还是只有静态支持, <a target="_blank" rel="noopener" href="https://webify.cloudbase.net/docs/migrating/vercel">https://webify.cloudbase.net/docs/migrating/vercel</a> ,并不支持edge&#x2F;serverless function, 再不然就还是自己买服务器了, 所以国内的核心问题还是监管问题,而不是技术问题</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/23-08-15-vercel/" title="Vercel">https://cromarmot.github.io/Blog/23-08-15-vercel/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Blog/tags/vercel/" rel="tag"><i class="fa fa-tag"></i> vercel</a>
+              <a href="/Blog/tags/serverless/" rel="tag"><i class="fa fa-tag"></i> serverless</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/23-07-25-python-log/" rel="prev" title="Python3 logging best? practice">
+                  <i class="fa fa-chevron-left"></i> Python3 logging best? practice
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">232k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">14:05</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/23-08-15-vercel/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

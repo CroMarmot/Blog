@@ -84,7 +84,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">127</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">35</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">147</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">131</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">36</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">151</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -149,18 +149,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/Blog/archives/">
-          <span class="site-state-item-count">127</span>
+          <span class="site-state-item-count">131</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/Blog/categories/">
-        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Blog/tags/">
-        <span class="site-state-item-count">147</span>
+        <span class="site-state-item-count">151</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -209,6 +209,524 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-11-11-mkfifo-nc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/20-11-11-mkfifo-nc/" class="post-title-link" itemprop="url">mkfifo sh nc</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-11-11 21:58:14" itemprop="dateCreated datePublished" datetime="2020-11-11T21:58:14+08:00">2020-11-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/" itemprop="url" rel="index"><span itemprop="name">software</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-11-11-mkfifo-nc/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-11-11-mkfifo-nc/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>304</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="mkpipe"><a href="#mkpipe" class="headerlink" title="mkpipe"></a>mkpipe</h1><p>众所周知</p>
+<p><code>ls | grep hey</code>中的竖线是pipe，</p>
+<p>同样，我们可以用mkfifo创建命名的管道</p>
+<p>创建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfifo /tmp/pipedemo</span><br></pre></td></tr></table></figure>
+
+<p>输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls &gt; /tmp/pipedemo</span><br></pre></td></tr></table></figure>
+
+<p>读出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &lt; /tmp/pipedemo</span><br></pre></td></tr></table></figure>
+
+<p>输入和读出不用保证执行顺序</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/20-11-11-mkfifo-nc/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-11-09-scroll/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/20-11-09-scroll/" class="post-title-link" itemprop="url">highlight menu item when scrolling down to section</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-11-09 21:58:14" itemprop="dateCreated datePublished" datetime="2020-11-09T21:58:14+08:00">2020-11-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-11-09-scroll/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-11-09-scroll/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>53</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>对于css</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">html &#123;</span><br><span class="line">  scroll-behavior: smooth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用id + hash的方式滚动</p>
+<p>对于js</p>
+<p>事件:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&#x27;scroll&#x27;, callback);</span><br></pre></td></tr></table></figure>
+
+<p><code>throttle + js判断后 再增删 class</code></p>
+<p>详细：下面30k viewed的页面</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section">https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-11-09-call/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/20-11-09-call/" class="post-title-link" itemprop="url">call this</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-11-09 16:58:14" itemprop="dateCreated datePublished" datetime="2020-11-09T16:58:14+08:00">2020-11-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-11-09-call/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-11-09-call/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>121</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>直接上代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>)&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;fn print&#x27;</span>)&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn1</span>(<span class="params"></span>)&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;fn1 print&#x27;</span>)&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fnthis</span>(<span class="params"></span>)&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fn.<span class="property">call</span> == <span class="title class_">Function</span>.<span class="property">call</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fn.<span class="property">call</span>.<span class="property">call</span> == <span class="title class_">Function</span>.<span class="property">call</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Function</span>.<span class="property">call</span>.<span class="property">call</span> == <span class="title class_">Function</span>.<span class="property">call</span>)</span><br><span class="line"></span><br><span class="line">fn.<span class="title function_">call</span>(fn1)</span><br><span class="line">fn.<span class="property">call</span>.<span class="title function_">call</span>(fn1)</span><br><span class="line"><span class="title class_">Function</span>.<span class="title function_">call</span>(fn1)</span><br><span class="line"><span class="title class_">Function</span>.<span class="property">call</span>.<span class="title function_">call</span>(fn1)</span><br><span class="line"></span><br><span class="line">fn.<span class="title function_">call</span>(fnthis)</span><br><span class="line">fn.<span class="property">call</span>.<span class="title function_">call</span>(fnthis)</span><br><span class="line"><span class="title class_">Function</span>.<span class="title function_">call</span>(fnthis)</span><br><span class="line"><span class="title class_">Function</span>.<span class="property">call</span>.<span class="title function_">call</span>(fnthis)</span><br></pre></td></tr></table></figure>
+
+<p>根据mdn上的call的文档</p>
+<p><code>function.call(thisArg, arg1, arg2, ...)</code></p>
+<p>所以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fn.call(fn1) // 调用fn函数，在函数执行中的 this = fn1，</span><br><span class="line">fn.call.call(fn1) // 调用Function.call函数，在函数执行中的 this = fn1，</span><br><span class="line">Function.call(fn1) // 调用Function.call函数，但是是参数传递了fn1,而不是this = fn1</span><br><span class="line">Function.call.call(fn1) // 和第二个相同</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-09-21-tasks-microtasks-queues-and-schedules/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/20-09-21-tasks-microtasks-queues-and-schedules/" class="post-title-link" itemprop="url">宏任务 微任务</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-09-21 16:58:14" itemprop="dateCreated datePublished" datetime="2020-09-21T16:58:14+08:00">2020-09-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/20-09-21-tasks-microtasks-queues-and-schedules/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-09-21-tasks-microtasks-queues-and-schedules/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>352</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>setTimeout 启动的宏任务</p>
+<p>promise(以及await的写法) 和 observer 都是微任务</p>
+<p>执行是单线程，当宏任务执行完后，把所有等待的微任务执行后，才会执行下一个宏任务。</p>
+<p>然后作者举例了一个稍微特殊一点的，html的事件冒泡，父子元素都有点击事件。</p>
+<ul>
+<li><p>鼠标点击子元素。分发是靠浏览器分发，对于js的任务是两个click。</p>
+</li>
+<li><p>代码调用子元素点击事件，也会触发冒泡，但是对于js的任务是 这个调用代码。</p>
+</li>
+</ul>
+<p>因此上面两种看似相同的点击会有不同的执行顺序。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/">https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/</a></p>
+<p>有精力建议，直接看上面原文，作者的demo做得很好的！</p>
+<p>以外的话 还有mdn的文档看</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide">https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide</a></p>
+<p><a target="_blank" rel="noopener" href="https://zh.javascript.info/event-loop">https://zh.javascript.info/event-loop</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/25915634/difference-between-microtask-and-macrotask-within-an-event-loop-context">https://stackoverflow.com/questions/25915634/difference-between-microtask-and-macrotask-within-an-event-loop-context</a></p>
+<p>对于不应该阻塞事件循环的耗时长的繁重计算任务，我们可以使用 Web Workers。<a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/workers.html">https://html.spec.whatwg.org/multipage/workers.html</a></p>
+<p>这是在另一个并行线程中运行代码的方式。</p>
+<p>Web Workers 可以与主线程交换消息，但是它们具有自己的变量和事件循环。</p>
+<p>Web Workers 没有访问 DOM 的权限，因此，它们对于同时使用多个 CPU 内核的计算非常有用。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-08-28-redisinit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -245,7 +763,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -381,7 +899,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -506,7 +1024,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -643,7 +1161,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -769,7 +1287,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -888,7 +1406,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1002,605 +1520,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-07-06-karma/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/20-07-06-karma/" class="post-title-link" itemprop="url">karma</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2020-07-06 11:20:14" itemprop="dateCreated datePublished" datetime="2020-07-06T11:20:14+08:00">2020-07-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-07-06-karma/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-07-06-karma/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>609</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>2 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><p>目前看到angular2+ 官方的使用是 karma + jasmine</p>
-<p>Can I use Karma with testing framework X?</p>
-<p>Yes. There are plugins for most of the common testing frameworks (such as Jasmine, Mocha, QUnit). If there is no plugin for the testing framework you like, go ahead and write one. It is simple - you can start by looking into the source code of the existing ones.</p>
-<p>karma创建一个web server。</p>
-<p>浏览器通过手动方位 karma server 监听的地址(默认9876),或者自动让karma 知道运行哪个browsers，来让浏览器可以被捕获</p>
-<p>可用的列表<a target="_blank" rel="noopener" href="http://karma-runner.github.io/5.0/config/browsers.html">http://karma-runner.github.io/5.0/config/browsers.html</a></p>
-<h1 id="karma-能力"><a href="#karma-能力" class="headerlink" title="karma 能力"></a>karma 能力</h1><p>见下面 paper的pdf内容</p>
-<p>在真实环境中测试</p>
-<p>支持远程控制</p>
-<p>执行速度快</p>
-<p>可以跟第三方 IDE 进行交互</p>
-<p>支持 ci 服务</p>
-<p>高扩展性，支持插件开发</p>
-<p>支持调试</p>
-<h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><p>paper 3.1的表</p>
-<p><img data-src="http://gtms04.alicdn.com/tps/i4/TB1eweqLXXXXXbvaXXX0ucn3VXX-964-384.png#alt=tests_tools_comparison" alt="阿里云"></p>
-<h1 id="主要目标"><a href="#主要目标" class="headerlink" title="主要目标"></a>主要目标</h1><p>paper 2.1</p>
-<ol>
-<li><p>真实设备上运行测试</p>
-</li>
-<li><p>远程控制</p>
-</li>
-<li><p>高效, 无缝隙使用流程</p>
-</li>
-<li><p>Integration with IDEs and text editors</p>
-</li>
-<li><p>Integration with CI Servers</p>
-</li>
-<li><p>扩展性</p>
-</li>
-<li><p>Debugging</p>
-</li>
-</ol>
-<p>包含 client&#x2F;server,基于Http 通信</p>
-<h1 id="设计和分析"><a href="#设计和分析" class="headerlink" title="设计和分析"></a>设计和分析</h1><p>Chapter 4</p>
-<ul>
-<li><p>速度</p>
-</li>
-<li><p>可靠性</p>
-</li>
-<li><p>在真实浏览器上测试 并</p>
-</li>
-<li><p>seamless workflow</p>
-</li>
-</ul>
-<h1 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h1><p>paper 4.1</p>
-<p>监听文件</p>
-<p>与 client 进行通讯</p>
-<p>向开发者输出测试结果</p>
-<p>提供 client 端所需的资源文件</p>
-<h2 id="Manager"><a href="#Manager" class="headerlink" title="Manager"></a>Manager</h2><p>跟client双向通讯，例如开始和结束测试，收集测试结果</p>
-<h2 id="Web-Server"><a href="#Web-Server" class="headerlink" title="Web Server"></a>Web Server</h2><p>Web Server, 给客户端提供静态资源文件</p>
-<h2 id="Reporter"><a href="#Reporter" class="headerlink" title="Reporter"></a>Reporter</h2><p>给开发者输出报告</p>
-<h2 id="File-System-Watcher"><a href="#File-System-Watcher" class="headerlink" title="File System Watcher"></a>File System Watcher</h2><p>检测变化并通知client，类似 一些热更新之类的？</p>
-<h1 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h1><p>可以 多client 对1个server</p>
-<h2 id="Manager-1"><a href="#Manager-1" class="headerlink" title="Manager"></a>Manager</h2><p>和server双向通信</p>
-<h2 id="Testing-Framework"><a href="#Testing-Framework" class="headerlink" title="Testing Framework"></a>Testing Framework</h2><p>框架内自己没有，可以用很多三方的framework，例如上面的jasmine</p>
-<h2 id="Tests-and-Code-under-Test"><a href="#Tests-and-Code-under-Test" class="headerlink" title="Tests and Code under Test"></a>Tests and Code under Test</h2><p>这是开发者编写的内容了</p>
-<p>…….我感觉阿里社区里面那个翻译也不错。。可以不用继续啃英文了</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>测试的代码 全部在客户端运行，这个客户端是真实的客户端，它可以是chrome,firefox等等</p>
-<p>karma主要的工作是支撑测试的提供，例如静态文件服务，文件变化监听等，而具体代码测试内容是在karma启动的客户端(浏览器)中，依靠用户编写的测试代码和第三方测试框架完成的。</p>
-<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a target="_blank" rel="noopener" href="http://karma-runner.github.io/5.0/intro/how-it-works.html">http://karma-runner.github.io/5.0/intro/how-it-works.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/karma-runner/karma/master/thesis.pdf">https://raw.githubusercontent.com/karma-runner/karma/master/thesis.pdf</a></p>
-<p><a target="_blank" rel="noopener" href="https://fed.taobao.org/blog/taofed/do71ct/karma-origin/">https://fed.taobao.org/blog/taofed/do71ct/karma-origin/</a></p>
-<p><a target="_blank" rel="noopener" href="https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347">https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-06-03-rust-really-fast/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/20-06-03-rust-really-fast/" class="post-title-link" itemprop="url">rust真的快</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2020-06-03 11:20:14" itemprop="dateCreated datePublished" datetime="2020-06-03T11:20:14+08:00">2020-06-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/backend/rust/" itemprop="url" rel="index"><span itemprop="name">rust</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-06-03-rust-really-fast/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-06-03-rust-really-fast/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>612</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>2 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="ProjectEuler-74-题"><a href="#ProjectEuler-74-题" class="headerlink" title="ProjectEuler 74 题"></a>ProjectEuler 74 题</h1><p><a target="_blank" rel="noopener" href="https://projecteuler.net/problem=74">https://projecteuler.net/problem=74</a></p>
-<p>用rust写了一遍,觉得根据常识1e6数据量，应该1s内随便跑，结果5s+，</p>
-<p>就换成C++写了一遍，发现是因为rust没开O2？开了以后还真就和C++差不多的时间</p>
-<h2 id="rust-版本"><a href="#rust-版本" class="headerlink" title="rust 版本"></a>rust 版本</h2><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::collections::HashMap;</span><br><span class="line"><span class="keyword">const</span> N:<span class="type">usize</span> = <span class="number">1_000_000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">next_value</span>(<span class="keyword">mut</span> value:<span class="type">usize</span>,fac:&amp;[<span class="type">usize</span>]) <span class="punctuation">-&gt;</span> <span class="type">usize</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">sum</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> value != <span class="number">0</span> &#123;</span><br><span class="line">        sum += fac[value%<span class="number">10</span>];</span><br><span class="line">        value/=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">dfs</span>(</span><br><span class="line">    fac:&amp;[<span class="type">usize</span>],</span><br><span class="line">    ans:&amp;<span class="keyword">mut</span> HashMap&lt;<span class="type">usize</span>,<span class="type">usize</span>&gt;,</span><br><span class="line">    dep:&amp;<span class="keyword">mut</span> HashMap&lt;<span class="type">usize</span>,<span class="type">usize</span>&gt;,</span><br><span class="line">    value:<span class="type">usize</span></span><br><span class="line">    ) <span class="punctuation">-&gt;</span> (<span class="type">usize</span>,<span class="type">usize</span>) &#123; <span class="comment">// dep, len</span></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">nv</span> = <span class="title function_ invoke__">next_value</span>(value,fac);</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">next_dep</span> = dep.<span class="title function_ invoke__">get</span>(&amp;value).<span class="title function_ invoke__">unwrap</span>() + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">match</span> dep.<span class="title function_ invoke__">get</span>(&amp;nv) &#123;</span><br><span class="line">        <span class="title function_ invoke__">Some</span>(rs) =&gt; &#123;</span><br><span class="line">            <span class="comment">// println!(&quot;&#123;&#125; =&gt; &#123;&#125;&quot;,value,next_dep - rs);</span></span><br><span class="line">            ans.<span class="title function_ invoke__">insert</span>(value,next_dep - rs);</span><br><span class="line">            <span class="title function_ invoke__">return</span> (*rs,next_dep - rs);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="literal">None</span> =&gt; &#123;</span><br><span class="line">            <span class="keyword">match</span> ans.<span class="title function_ invoke__">get</span>(&amp;nv) &#123;</span><br><span class="line">                <span class="title function_ invoke__">Some</span>(res) =&gt; &#123;</span><br><span class="line">                    <span class="keyword">let</span> <span class="variable">newres</span>= (*res) + <span class="number">1</span>;</span><br><span class="line">                    <span class="comment">// println!(&quot;&#123;&#125; =&gt; &#123;&#125;&quot;,value,newres);</span></span><br><span class="line">                    ans.<span class="title function_ invoke__">insert</span>(value,newres);</span><br><span class="line">                    <span class="title function_ invoke__">return</span> (next_dep,newres);</span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="literal">None</span> =&gt; &#123;</span><br><span class="line">                    dep.<span class="title function_ invoke__">insert</span>(nv,next_dep);</span><br><span class="line">                    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">ret</span> = <span class="title function_ invoke__">dfs</span>(fac,ans,dep,nv);</span><br><span class="line">                    <span class="keyword">if</span> next_dep &lt;= ret.<span class="number">0</span>  &#123;</span><br><span class="line">                        ret.<span class="number">1</span> += <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">// println!(&quot;&#123;&#125; =&gt; &#123;&#125;&quot;,value,ret.1);</span></span><br><span class="line">                    ans.<span class="title function_ invoke__">insert</span>(value,ret.<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">return</span> ret;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">main</span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">fac</span> = [<span class="number">0</span>;<span class="number">11</span>];</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">ans</span> = HashMap::<span class="title function_ invoke__">new</span>();</span><br><span class="line">    fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="number">1</span>..<span class="number">11</span>&#123;</span><br><span class="line">        fac[i] = fac[i-<span class="number">1</span>]*i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="number">1</span>..N+<span class="number">1</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ans.<span class="title function_ invoke__">contains_key</span>(&amp;i) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">dep</span> = HashMap::<span class="title function_ invoke__">new</span>();</span><br><span class="line">        dep.<span class="title function_ invoke__">insert</span>(i,<span class="number">0</span>);</span><br><span class="line">        <span class="title function_ invoke__">dfs</span>(&amp;fac,&amp;<span class="keyword">mut</span> ans,&amp;<span class="keyword">mut</span> dep,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">cnt</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="title function_ invoke__">for</span> (k, v) <span class="keyword">in</span> &amp;ans &#123;</span><br><span class="line">        <span class="keyword">if</span> *v &gt;= <span class="number">60</span> &amp;&amp; *k &lt;= N &#123;</span><br><span class="line">            cnt+=<span class="number">1</span>;</span><br><span class="line">            <span class="comment">// println!(&quot;&#123;&#125;: \&quot;&#123;&#125;\&quot;&quot;, k, v);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;&#125;&quot;</span>,cnt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="C-版本"><a href="#C-版本" class="headerlink" title="C++版本"></a>C++版本</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ten5 100000+10</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MOD 1000000007</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rep(i,a,n) for (uint i=a;i&lt;n;i++)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> iif(c,t,f) ((c)?(t):(f))</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> per(i,a,n) for (int i=n-1;i&gt;=a;i--)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> mp make_pair</span></span><br><span class="line"><span class="type">const</span> <span class="type">double</span> pi = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> uint N = <span class="number">1&#x27;000&#x27;000</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">uint <span class="title">next_value</span><span class="params">(uint value,uint *fac)</span> </span>&#123;</span><br><span class="line">    uint sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(value != <span class="number">0</span>)&#123;</span><br><span class="line">        sum += fac[value%<span class="number">10</span>];</span><br><span class="line">        value/=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">pair&lt;uint,uint&gt; <span class="title">dfs</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">    uint *fac,</span></span></span><br><span class="line"><span class="params"><span class="function">    unordered_map&lt;uint,uint&gt; &amp;ans,</span></span></span><br><span class="line"><span class="params"><span class="function">    unordered_map&lt;uint,uint&gt; dep,</span></span></span><br><span class="line"><span class="params"><span class="function">    uint value</span></span></span><br><span class="line"><span class="params"><span class="function">    )</span> </span>&#123; <span class="comment">// dep, len</span></span><br><span class="line">    uint nv = <span class="built_in">next_value</span>(value,fac);</span><br><span class="line">    uint next_dep = dep[value] + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(dep.<span class="built_in">count</span>(nv))&#123;</span><br><span class="line">      <span class="keyword">auto</span> rs = dep[nv];</span><br><span class="line">      <span class="comment">// printf(&quot;%d =&gt; %d\n&quot;,value,next_dep - rs);</span></span><br><span class="line">      ans[value] = next_dep - rs;</span><br><span class="line">      <span class="keyword">return</span> &#123;rs,next_dep - rs&#125;;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">if</span>(ans.<span class="built_in">count</span>(nv)) &#123;</span><br><span class="line">        <span class="keyword">auto</span> res = ans[nv];</span><br><span class="line">        <span class="keyword">auto</span> newres= res + <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// printf(&quot;%d =&gt; %d\n&quot;,value,newres);</span></span><br><span class="line">        ans[value] = newres;</span><br><span class="line">        <span class="keyword">return</span> &#123;next_dep,newres&#125;;</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        dep[nv] = next_dep;</span><br><span class="line">        <span class="keyword">auto</span> ret = <span class="built_in">dfs</span>(fac,ans,dep,nv);</span><br><span class="line">        <span class="keyword">if</span>(next_dep &lt;= ret.first)&#123;</span><br><span class="line">          ret.second += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// printf(&quot;%d =&gt; %d\n&quot;,value,ret.second);</span></span><br><span class="line">        ans[value] = ret.second;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    uint fac[<span class="number">11</span>];</span><br><span class="line">    unordered_map&lt;uint,uint&gt; ans;</span><br><span class="line">    fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">rep</span>(i,<span class="number">1</span>,<span class="number">11</span>)&#123;</span><br><span class="line">        fac[i] = fac[i<span class="number">-1</span>]*i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">rep</span>(i,<span class="number">1</span>,N+<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(ans.<span class="built_in">count</span>(i))&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        unordered_map&lt;uint,uint&gt; dep;</span><br><span class="line">        dep[i] = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">dfs</span>(fac,ans,dep,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">auto</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> [k,v]: ans) &#123;</span><br><span class="line">        <span class="keyword">if</span>( v &gt;= <span class="number">60</span> &amp;&amp; k &lt;= N )&#123;</span><br><span class="line">            cnt+=<span class="number">1</span>;</span><br><span class="line">            <span class="comment">// println!(&quot;&#123;&#125;: \&quot;&#123;&#125;\&quot;&quot;, k, v);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,cnt);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>rust不带<code>-O2</code> 大概<code>5s+</code>,带了和<code>C++</code>相近都是<code>0.3s</code>左右, 真的快</p>
-<h1 id="env"><a href="#env" class="headerlink" title="env"></a>env</h1><p>Intel Core i7-7700HQ @ 8x 3.8GHz</p>
-<p><code>!clang++ -o &quot;%&lt;&quot; &quot;%&quot; -std=gnu++17 -O2 -g -Wall -Wcomma</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">clang version 6.0.0-1ubuntu2 (tags/RELEASE_600/final)</span><br><span class="line">Target: x86_64-pc-linux-gnu</span><br><span class="line">Thread model: posix</span><br></pre></td></tr></table></figure>
-
-<p><code>!rustc &quot;%&quot; -O</code></p>
-<p><code>rustc 1.43.1 (8d69840ab 2020-05-04)</code></p>
-<h1 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h1><p>rust写好的代码转换成C++是真的轻松，C++转换成rust就会很累（除非各种 as，unwrap</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-05-25-npm-registry/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/20-05-25-npm-registry/" class="post-title-link" itemprop="url">npm registry</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2020-05-25 11:20:14" itemprop="dateCreated datePublished" datetime="2020-05-25T11:20:14+08:00">2020-05-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-05-25-npm-registry/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-05-25-npm-registry/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>327</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="npm发布仓库"><a href="#npm发布仓库" class="headerlink" title="npm发布仓库"></a>npm发布仓库</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li>注册账户 <a target="_blank" rel="noopener" href="https://www.npmjs.com/signup">https://www.npmjs.com/signup</a></li>
-<li>命令行登录 <code>npm login</code></li>
-<li>建立github仓库</li>
-<li>初始化仓库 <code>npm init</code></li>
-<li>编写代码</li>
-<li>发布<code>npm publish</code> &amp; github仓库更新</li>
-</ol>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>如果是之前用taobao的镜像，记得发布时 更改设置为官方地址</p>
-<p>个人建议一些“没有建设意义”的仓库，就不要去抢名字了，带上自己的scope发布</p>
-<p>发布前** 记得清理敏感信息**，似乎npm虽然可以unpublish但是,不能重置版本号 <a target="_blank" rel="noopener" href="https://www.npmjs.com/policies/unpublish">https://www.npmjs.com/policies/unpublish</a></p>
-<h3 id="生成类发布"><a href="#生成类发布" class="headerlink" title="生成类发布"></a>生成类发布</h3><p>例如源码是用typescript写的，发布要发布编译后的文件，但是git中不会跟踪。</p>
-<p>不建议使用<code>.npmignore</code> (会使<code>.gitignore</code>在publish时无效)，建议的是在<code>package.json</code>中增加<code>&quot;files&quot;:[&quot;dist/**/*&quot;]</code>这样的白名单</p>
-<h2 id="本地调试"><a href="#本地调试" class="headerlink" title="本地调试"></a>本地调试</h2><p>例如</p>
-<p>在开发的库中构建后调用<code>yarn link</code> 会提示<code>success Registered &quot;@cromarmot/isNumberOne&quot;</code></p>
-<p>在用来测试的文件夹中 调用 <code>yarn link &quot;@cromarmot/isNumberOne&quot;</code> 即可使用</p>
-<p>取消link：把上面link替换为unlink,使用对应的<code>yarn unlink</code>命令即可</p>
-<p>link以后，代码更新只需要编译原来的库代码，不需要重新link</p>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>一个基于莫比乌丝反演的数字1判断</p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/@cromarmot/is-number-one">https://www.npmjs.com/package/@cromarmot/is-number-one</a></p>
-<h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><p><a target="_blank" rel="noopener" href="https://docs.npmjs.com/">https://docs.npmjs.com/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/20-05-21-vue-v-model-domProps/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/20-05-21-vue-v-model-domProps/" class="post-title-link" itemprop="url">vue vmodel domprops</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2020-05-21 11:20:14" itemprop="dateCreated datePublished" datetime="2020-05-21T11:20:14+08:00">2020-05-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/frontend/vue2/" itemprop="url" rel="index"><span itemprop="name">vue2</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/20-05-21-vue-v-model-domProps/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20-05-21-vue-v-model-domProps/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>783</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>3 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>在业务页面 希望对输入框进行额外操作，例如 当输入长度大于 10则截取到前10位</p>
-<p>BUG产生，业务页面写了如下的代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">data()&#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    someInputValue:&#x27;&#x27;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">watch:&#123;</span><br><span class="line">  someInputValue(newVal)&#123;</span><br><span class="line">    this.someInputValue = newVal.substr(0,10);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后 前技术经理写的输入框 却可以一直输入</p>
-<p>我用render函数 写的没有问题</p>
-<p>直接裸的input也没问题</p>
-<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p>加了一堆console，基本确定bug的原理是</p>
-<ol>
-<li>内部输入更新</li>
-<li>触发组件emit</li>
-<li>业务页面得到超过长度的值</li>
-<li>修改为只有长度为10的值</li>
-<li>通过props传递给组件</li>
-<li>触发组件内对value的watch (这次能成功</li>
-<li>用户继续输入</li>
-<li>触发组件emit</li>
-<li>业务页面得到超过长度的值</li>
-<li>修改为只有长度为10的值</li>
-<li>通过props传递给组件</li>
-<li>没有触发组件内对value的watch</li>
-</ol>
-<h1 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h1><p>官方直接<code>input</code>能用，但不知道是怎么封装的</p>
-<p>我封装的是参考<code>https://cn.vuejs.org/v2/guide/render-function.html#v-model</code>的</p>
-<p>然而,如果你直接尝试上面所写的你会发现并不如愿</p>
-<p>没有使用watch，而是使用<code>domProps</code></p>
-<p>我封装的是参考<code>https://cn.vuejs.org/v2/guide/render-function.html#v-model</code>的没有使用watch，而是使用<code>domProps</code></p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>直接的话就是用<code>domProps</code> 但是有个问题，如果使用者</p>
-<p>另外的话，我本来实现的是会提供一个接受过滤函数的props，业务层可以传递过滤函数而不是通过外部watch</p>
-<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>目前看起来，双向绑定就应该做全，不要单向使用。</p>
-<p>有些时候不设置默认值？</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;v-model&lt;/h1&gt;</span><br><span class="line">    &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">      &lt;div&gt; input(默认)&lt;input v-model=&quot;x1&quot;&gt; &#123;&#123; x1 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input2(官方文档)&lt;Input2 v-model=&quot;x2&quot; /&gt;  &#123;&#123; x2 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input3(我)&lt;Input3 v-model=&quot;x3&quot; /&gt;      &#123;&#123; x3 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input4(历史遗留代码)&lt;Input4 v-model=&quot;x4&quot; /&gt;      &#123;&#123; x4 &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;h1&gt;@input only&lt;/h1&gt;</span><br><span class="line">    &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">      &lt;div&gt;input(默认)&lt;input @input=&quot;(e)=&gt;&#123;input1 = e.target.value;&#125;&quot;&gt;    &#123;&#123; input1 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input2(官方)&lt;Input2 @input=&quot;(v)=&gt;&#123;input2=v;&#125;&quot; /&gt;    &#123;&#123; input2 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input3(我)&lt;Input3 @input=&quot;(v)=&gt;&#123;input3=v;&#125;&quot; /&gt;    &#123;&#123; input3 &#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;Input4(历史遗留代码)&lt;Input4 @input=&quot;(v)=&gt;&#123;input4=v;&#125;&quot; /&gt;    &#123;&#123; input4 &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    Input3: &#123;</span><br><span class="line">      name: &#x27;FormInputJsx&#x27;,</span><br><span class="line">      // inheritAttrs: false,</span><br><span class="line">      props: &#123;</span><br><span class="line">        inputFilter: &#123;</span><br><span class="line">          type: Function,</span><br><span class="line">          default: null</span><br><span class="line">        &#125;,</span><br><span class="line">        // 传入类型</span><br><span class="line">        value: String</span><br><span class="line">      &#125;,</span><br><span class="line">      data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          valueIn: this.value</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      methods: &#123;</span><br><span class="line">        updateValue(value) &#123;</span><br><span class="line">          let newVal = value</span><br><span class="line">          if (this.inputFilter) &#123;</span><br><span class="line">            newVal = this.inputFilter(newVal)</span><br><span class="line">          &#125;</span><br><span class="line">          // this.valueIn = newVal</span><br><span class="line">          // if (this.$refs.input.value !== this.valueIn) &#123;</span><br><span class="line">          //   this.$refs.input.value = this.valueIn</span><br><span class="line">          // &#125;</span><br><span class="line">          this.$emit(&#x27;input&#x27;, newVal)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      render(h) &#123;</span><br><span class="line">        const inputConfig = &#123;</span><br><span class="line">          ref: &#x27;input&#x27;,</span><br><span class="line">          // input 原始属性不改动 自动下发-</span><br><span class="line">          // attrs: Object.assign(&#123; ...this.$attrs &#125;),</span><br><span class="line">          on: Object.assign(&#123; ...this.$listeners &#125;, &#123;</span><br><span class="line">            input: event =&gt; this.updateValue(event.target.value) // 输入框改变</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        if (typeof this.value !== &#x27;undefined&#x27;) &#123;</span><br><span class="line">          inputConfig.domProps = &#123;</span><br><span class="line">            value: this.value</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return h(&#x27;input&#x27;, inputConfig)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Input4: &#123;</span><br><span class="line">      render(h) &#123;</span><br><span class="line">        const self = this</span><br><span class="line">        return h(&#x27;input&#x27;, &#123;</span><br><span class="line">          domProps: &#123;</span><br><span class="line">            value: self.value</span><br><span class="line">          &#125;,</span><br><span class="line">          on: &#123;</span><br><span class="line">            input (event) &#123;</span><br><span class="line">              self.Amount = event.target.value</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      props: &#123;</span><br><span class="line">        value: &#123;</span><br><span class="line">          type: String,</span><br><span class="line">          default: &#x27;&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          Amount: &#x27;&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      watch: &#123;</span><br><span class="line">        value(newVal) &#123;</span><br><span class="line">          this.Amount = newVal</span><br><span class="line">        &#125;,</span><br><span class="line">        Amount(newVal) &#123;</span><br><span class="line">          // 从前截取 不带$</span><br><span class="line">          this.Amount = newVal.match(/^\d*(\.?\d&#123;0,2&#125;)/g)[0] || &#x27;&#x27;</span><br><span class="line">          if (isNaN(this.Amount)) &#123;</span><br><span class="line">            this.Amount = &#x27;&#x27;</span><br><span class="line">          &#125;</span><br><span class="line">          this.$emit(&#x27;input&#x27;, this.Amount)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    Input2: &#123;</span><br><span class="line">      props: [&#x27;value&#x27;],</span><br><span class="line">      render (createElement) &#123;</span><br><span class="line">        const self = this</span><br><span class="line">        return createElement(&#x27;input&#x27;, &#123;</span><br><span class="line">          domProps: &#123;</span><br><span class="line">            value: self.value</span><br><span class="line">          &#125;,</span><br><span class="line">          on: &#123;</span><br><span class="line">            input (event) &#123;</span><br><span class="line">              self.$emit(&#x27;input&#x27;, event.target.value)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      x1: &#x27;&#x27;,</span><br><span class="line">      x2: &#x27;&#x27;,</span><br><span class="line">      x3: &#x27;&#x27;,</span><br><span class="line">      x4: &#x27;&#x27;,</span><br><span class="line">      input1: &#x27;&#x27;,</span><br><span class="line">      input2: &#x27;&#x27;,</span><br><span class="line">      input3: &#x27;&#x27;,</span><br><span class="line">      input4: &#x27;&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    x1(nv) &#123;</span><br><span class="line">      this.x1 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x2(nv) &#123;</span><br><span class="line">      this.x2 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x3(nv) &#123;</span><br><span class="line">      this.x3 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    x4(nv) &#123;</span><br><span class="line">      this.x4 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input1(nv) &#123;</span><br><span class="line">      this.input1 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input2(nv) &#123;</span><br><span class="line">      this.input2 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input3(nv) &#123;</span><br><span class="line">      this.input3 = nv.substr(0, 3)</span><br><span class="line">    &#125;,</span><br><span class="line">    input4(nv) &#123;</span><br><span class="line">      this.input4 = nv.substr(0, 3)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.row&#123;</span><br><span class="line">  display:flex;</span><br><span class="line">  flex-direction:column;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/render-function.html#v-model">vue render v-model</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/vuejs/vue/pull/9331">vue pull requests 9331</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/Blog/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/2/">2</a><a class="page-number" href="/Blog/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/Blog/page/6/">6</a><a class="page-number" href="/Blog/page/8/">8</a><a class="page-number" href="/Blog/page/12/">12</a><a class="page-number" href="/Blog/page/13/">13</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/Blog/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/Blog/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/2/">2</a><a class="page-number" href="/Blog/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/Blog/page/6/">6</a><a class="page-number" href="/Blog/page/8/">8</a><a class="page-number" href="/Blog/page/12/">12</a><a class="page-number" href="/Blog/page/14/">14</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/Blog/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -1623,13 +1544,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">219k</span>
+    <span title="總字數">232k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">13:17</span>
+    <span title="所需總閱讀時間">14:05</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動

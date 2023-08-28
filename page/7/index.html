@@ -84,7 +84,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">127</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">35</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">147</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">131</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">36</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">151</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -149,18 +149,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/Blog/archives/">
-          <span class="site-state-item-count">127</span>
+          <span class="site-state-item-count">131</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/Blog/categories/">
-        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Blog/tags/">
-        <span class="site-state-item-count">147</span>
+        <span class="site-state-item-count">151</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -209,6 +209,674 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-12-27-select-poll-epoll/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/19-12-27-select-poll-epoll/" class="post-title-link" itemprop="url">select/poll/epoll</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2019-12-27 11:20:14" itemprop="dateCreated datePublished" datetime="2019-12-27T11:20:14+08:00">2019-12-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/" itemprop="url" rel="index"><span itemprop="name">software</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-12-27-select-poll-epoll/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-12-27-select-poll-epoll/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>7 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>同步多路IO复用</p>
+<h1 id="CODE"><a href="#CODE" class="headerlink" title="CODE"></a>CODE</h1><p>五个子进程 2000本地端口<code>SOCK_STREAM</code>的demo</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;wait.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;signal.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/select.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;poll.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/epoll.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAXBUF 256</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CHILD 5</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">child_process</span><span class="params">(<span class="type">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="built_in">sleep</span>(<span class="number">2</span>);</span><br><span class="line">  <span class="type">char</span> msg[MAXBUF];</span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">sockaddr_in</span> addr = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">  <span class="type">int</span> sockfd,num=<span class="number">1</span>;</span><br><span class="line">  <span class="built_in">srandom</span>(<span class="built_in">getpid</span>());</span><br><span class="line">  <span class="comment">/* Create socket and connect to server */</span></span><br><span class="line">  sockfd = <span class="built_in">socket</span>(AF_INET, SOCK_STREAM, <span class="number">0</span>);</span><br><span class="line">  addr.sin_family = AF_INET;</span><br><span class="line">  addr.sin_port = <span class="built_in">htons</span>(<span class="number">2000</span>);</span><br><span class="line">  addr.sin_addr.s_addr = <span class="built_in">inet_addr</span>(<span class="string">&quot;127.0.0.1&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">connect</span>(sockfd, (<span class="keyword">struct</span> sockaddr*)&amp;addr, <span class="built_in">sizeof</span>(addr));</span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;child &#123;%d&#125; connected \n&quot;</span>, <span class="built_in">getpid</span>());</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="type">int</span> sl = (<span class="built_in">random</span>() % <span class="number">10</span> ) +  <span class="number">1</span>;</span><br><span class="line">    num++;</span><br><span class="line">    <span class="built_in">sleep</span>(sl);</span><br><span class="line">    <span class="built_in">sprintf</span> (msg, <span class="string">&quot;Test message %d from client %d&quot;</span>, num, <span class="built_in">getpid</span>());</span><br><span class="line">    <span class="built_in">write</span>(sockfd, msg, <span class="built_in">strlen</span>(msg));	<span class="comment">/* Send message -&gt; 127.0.0.1:2000 */</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">selectDemo</span><span class="params">(<span class="type">int</span> sockfd)</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> fds[CHILD];</span><br><span class="line">  fd_set rset;</span><br><span class="line">  <span class="type">socklen_t</span> maxfd=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;CHILD;i++) &#123;</span><br><span class="line">    fds[i] = <span class="built_in">accept</span>(sockfd,<span class="literal">NULL</span>,<span class="literal">NULL</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fds[%d]=%d\n&quot;</span>,i,fds[i]);</span><br><span class="line">    <span class="keyword">if</span>(fds[i] &gt; maxfd)</span><br><span class="line">      maxfd = fds[i];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="built_in">FD_ZERO</span>(&amp;rset);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i&lt; CHILD; i++ ) &#123;</span><br><span class="line">      <span class="built_in">FD_SET</span>(fds[i],&amp;rset);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;round again&quot;</span>);</span><br><span class="line">    <span class="built_in">select</span>(maxfd+<span class="number">1</span>, &amp;rset, <span class="literal">NULL</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>); <span class="comment">// 返回值是 ready的个数 &gt;= 0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;CHILD;i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">FD_ISSET</span>(fds[i], &amp;rset))&#123;</span><br><span class="line">        <span class="type">char</span> buffer[MAXBUF];</span><br><span class="line">        <span class="type">int</span> n = <span class="built_in">read</span>(fds[i], buffer, MAXBUF);</span><br><span class="line">        buffer[n] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">        <span class="built_in">puts</span>(buffer); <span class="comment">// 主进程把子进程的内容打印</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pollDemo</span><span class="params">(<span class="type">int</span> sockfd)</span></span>&#123;</span><br><span class="line">  pollfd pollfds[CHILD]; <span class="comment">// 这里变成了 数组，因此长度不再受到限制</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;CHILD;i++)&#123;</span><br><span class="line">    pollfds[i].fd = <span class="built_in">accept</span>(sockfd,<span class="literal">NULL</span>,<span class="literal">NULL</span>);</span><br><span class="line">    pollfds[i].events = POLLIN;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">sleep</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;round again&quot;</span>);</span><br><span class="line">    <span class="built_in">poll</span>(pollfds, CHILD, <span class="number">50000</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;CHILD;i++) &#123; <span class="comment">// 但这里检查状态时 依然是 轮询</span></span><br><span class="line">      <span class="keyword">if</span> (pollfds[i].revents &amp; POLLIN)&#123;</span><br><span class="line">        pollfds[i].revents = <span class="number">0</span>; <span class="comment">// 不需要每次 把所有的重设置到set里，只需要把已经就绪的状态恢复掉</span></span><br><span class="line">        <span class="type">char</span> buffer[MAXBUF];</span><br><span class="line">        <span class="type">int</span> n = <span class="built_in">read</span>(pollfds[i].fd, buffer, MAXBUF);</span><br><span class="line">        buffer[n] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">        <span class="built_in">puts</span>(buffer);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">epollDemo</span><span class="params">(<span class="type">int</span> sockfd)</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> epfd = <span class="built_in">epoll_create</span>(<span class="number">233</span>); <span class="comment">// create a context in the kernel 文档说 只要是正值就行 具体值被忽略了</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;CHILD;i++) &#123;</span><br><span class="line">    <span class="type">static</span> <span class="keyword">struct</span> <span class="title class_">epoll_event</span> ev; <span class="comment">// 注意这里是static</span></span><br><span class="line">    ev.data.fd = <span class="built_in">accept</span>(sockfd,<span class="literal">NULL</span>,<span class="literal">NULL</span>); <span class="comment">// 这也可以 自定义其它的data值</span></span><br><span class="line">    ev.events = EPOLLIN; <span class="comment">// 这里还可以设置 EPOLLET 的bit位 启用edge-triggered</span></span><br><span class="line">    <span class="built_in">epoll_ctl</span>(epfd, EPOLL_CTL_ADD, ev.data.fd, &amp;ev); <span class="comment">// add and remove file descriptors to/from the context using epoll_ctl</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;round again&quot;</span>);</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">epoll_event</span> events[CHILD];</span><br><span class="line">    <span class="type">int</span> nfds = <span class="built_in">epoll_wait</span>(epfd, events, CHILD, <span class="number">50000</span>); <span class="comment">// 把就绪的写入到events中 写了nfds个</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nfds;i++) &#123; <span class="comment">// 遍历的都是就绪的</span></span><br><span class="line">      <span class="type">char</span> buffer[MAXBUF];</span><br><span class="line">      <span class="type">int</span> n = <span class="built_in">read</span>(events[i].data.fd, buffer, MAXBUF);</span><br><span class="line">      buffer[n] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">      <span class="built_in">puts</span>(buffer);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> sockfd;</span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">sockaddr_in</span> addr;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;CHILD;i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(fork() == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="built_in">child_process</span>(); <span class="comment">// 子进程</span></span><br><span class="line">      <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 主进程</span></span><br><span class="line"></span><br><span class="line">  sockfd = <span class="built_in">socket</span>(AF_INET, SOCK_STREAM, <span class="number">0</span>);</span><br><span class="line">  <span class="built_in">memset</span>(&amp;addr, <span class="number">0</span>, <span class="built_in">sizeof</span> (addr));</span><br><span class="line">  addr.sin_family = AF_INET;</span><br><span class="line">  addr.sin_port = <span class="built_in">htons</span>(<span class="number">2000</span>);</span><br><span class="line">  addr.sin_addr.s_addr = INADDR_ANY;</span><br><span class="line">  <span class="built_in">bind</span>(sockfd,(<span class="keyword">struct</span> sockaddr*)&amp;addr ,<span class="built_in">sizeof</span>(addr));</span><br><span class="line">  <span class="built_in">listen</span> (sockfd, CHILD);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 三种 demo 解除注释 使用</span></span><br><span class="line">  <span class="comment">// selectDemo(sockfd);</span></span><br><span class="line">  <span class="comment">// pollDemo(sockfd);</span></span><br><span class="line">  <span class="comment">// epollDemo(sockfd);</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="select"><a href="#select" class="headerlink" title="select"></a>select</h1><p><code>man 2 select</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">select</span><span class="params">(<span class="type">int</span> nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, <span class="keyword">struct</span> timeval *timeout)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">FD_CLR</span><span class="params">(<span class="type">int</span> fd, fd_set *set)</span></span>; <span class="comment">// 从set中移除fd</span></span><br><span class="line"><span class="function"><span class="type">int</span>  <span class="title">FD_ISSET</span><span class="params">(<span class="type">int</span> fd, fd_set *set)</span></span>; <span class="comment">// 测试set中是否设置fd</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">FD_SET</span><span class="params">(<span class="type">int</span> fd, fd_set *set)</span></span>; <span class="comment">// 在set中设置fd</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">FD_ZERO</span><span class="params">(fd_set *set)</span></span>; <span class="comment">// fd zero</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">pselect</span><span class="params">(<span class="type">int</span> nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, <span class="type">const</span> <span class="keyword">struct</span> timespec *timeout, <span class="type">const</span> <span class="type">sigset_t</span> *sigmask)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>nfds</code> should be set to the highest-numbered file descriptor in any of the three  sets,  plus  1. The indicated file descriptors in each set are checked, up to this limit (but see BUGS).</p>
+<p>Three independent sets of file descriptors are watched.</p>
+<p>The file descriptors listed in <code>readfds</code> will be watched to see if characters become available for reading (more precisely, to see if  a read  will not block; in particular, a file descriptor is also ready on end-of-file).</p>
+<p>The file descriptors in <code>writefds</code> will be watched to see if space is available for write (though a  large write may still block).</p>
+<p>The file descriptors in <code>exceptfds</code> will be watched for exceptional conditions.  (For examples of some exceptional  conditions,  see  the  discussion  of  <code>POLLPRI</code>  in <code>poll(2)</code>.)</p>
+<p>The time structures involved are defined in <code>&lt;sys/time.h&gt;</code> and look like</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">timeval</span> &#123;</span><br><span class="line">    <span class="type">long</span>    tv_sec;         <span class="comment">/* seconds */</span></span><br><span class="line">    <span class="type">long</span>    tv_usec;        <span class="comment">/* microseconds */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>and</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">timespec</span> &#123;</span><br><span class="line">    <span class="type">long</span>    tv_sec;         <span class="comment">/* seconds */</span></span><br><span class="line">    <span class="type">long</span>    tv_nsec;        <span class="comment">/* nanoseconds */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以看到有时 会多个fd同时 就绪，</p>
+<p>并且每次select后需要 再走一边<code>FD_ZERO</code> -&gt; <code>FD_SET</code></p>
+<p>当就绪(或者超时)的时候，需要for所有的fd用<code>FD_ISSET</code>来判断就绪状态</p>
+<p>单个进程能够监视的文件描述符的数量存在最大限制，它由<code>FD_SETSIZE</code>设置通常为1024，最大数量可以通过修改宏定义甚至重新编译内核的方式来满足。</p>
+<p><a target="_blank" rel="noopener" href="https://sites.uclouvain.be/SystInfo/usr/include/sys/select.h.html">select.h</a></p>
+<p>内核&#x2F;用户空间的拷贝问题，select需要维护一个用来存放大量fd的数据结构，这样会使得用户空间和内核空间在传递该结构时复制开销大。</p>
+<p>轮询扫描: 也就是for+<code>FD_ISSET</code></p>
+<p>水平触发:应用程序如果没有完成对一个已经就绪的文件描述符进行IO,那么之后再次select调用还是会将这些文件描述符通知进程。</p>
+<h1 id="poll"><a href="#poll" class="headerlink" title="poll"></a>poll</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">poll</span><span class="params">(<span class="keyword">struct</span> pollfd *fds, <span class="type">nfds_t</span> nfds, <span class="type">int</span> timeout)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">pollfd</span> &#123;</span><br><span class="line">    <span class="type">int</span>   fd;         <span class="comment">/* file descriptor */</span></span><br><span class="line">    <span class="type">short</span> events;     <span class="comment">/* requested events */</span></span><br><span class="line">    <span class="type">short</span> revents;    <span class="comment">/* returned events */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>采用<code>数组指针</code>+<code>长度</code>的参数形式</p>
+<p>返回值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">On success, a positive number is returned; this is the number of</span><br><span class="line">structures which have nonzero revents fields (in other words, those</span><br><span class="line">descriptors with events or errors reported).  A value of 0 indicates</span><br><span class="line">that the call timed out and no file descriptors were ready.  On</span><br><span class="line">error, -1 is returned, and errno is set appropriately.</span><br></pre></td></tr></table></figure>
+
+<p>水平触发</p>
+<p>其和select不同的地方：采用数组的方式替换原有<code>fd_set</code>数据结构,而使其没有连接数的限制。</p>
+<p>虽然也是轮询，但是假设是单个fd,但fd的值很大的情况下，poll就会比select效率好</p>
+<p>上面看到了只需要一次初始化，和恢复已经就绪的fd,不需要每次初始化</p>
+<p>可移植性:<code>select( ) is more portable, as some Unix systems do not support poll( )</code></p>
+<h1 id="epoll"><a href="#epoll" class="headerlink" title="epoll"></a>epoll</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">epoll_create</span><span class="params">(<span class="type">int</span> size)</span></span>; <span class="comment">// Since Linux 2.6.8, the size argument is ignored, but must be greater than zero;</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">epoll_ctl</span><span class="params">(<span class="type">int</span> epfd, <span class="type">int</span> op, <span class="type">int</span> fd, <span class="keyword">struct</span> epoll_event *event)</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">epoll_wait</span><span class="params">(<span class="type">int</span> epfd, <span class="keyword">struct</span> epoll_event *events,<span class="type">int</span> maxevents, <span class="type">int</span> timeout)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">union</span> <span class="title class_">epoll_data</span> &#123;</span><br><span class="line">    <span class="type">void</span>        *ptr;</span><br><span class="line">    <span class="type">int</span>          fd;</span><br><span class="line">    <span class="type">uint32_t</span>     u32;</span><br><span class="line">    <span class="type">uint64_t</span>     u64;</span><br><span class="line">&#125; <span class="type">epoll_data_t</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">epoll_event</span> &#123;</span><br><span class="line">    <span class="type">uint32_t</span>     events;      <span class="comment">/* Epoll events */</span></span><br><span class="line">    <span class="type">epoll_data_t</span> data;        <span class="comment">/* User data variable */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>前面两种，都是 user space设置，要用时调用 select&#x2F;poll 进入 kernel 态</p>
+<ul>
+<li>create a context in the kernel using <code>epoll_create</code></li>
+<li>add and remove file descriptors to&#x2F;from the context using <code>epoll_ctl</code></li>
+<li>wait for events in the context using <code>epoll_wait</code> ,据说这里做了内存映射优化</li>
+</ul>
+<p><code>epoll_ctl</code>这里要有fd参数，<code>epoll_event</code>中也有<code>epoll_data</code> 中有<code>fd</code></p>
+<p>然而 里面的<code>epoll_data</code>是个<code>union</code>也就是调用者自己喜欢放什么就放什么,不论是下面的fd还是</p>
+<p>Level-triggered(默认) and edge-triggered</p>
+<p>LT模式：若就绪的事件一次没有处理完要做的事件，就会一直去处理。即就会将没有处理完的事件继续放回到就绪队列之中（即那个内核中的链表），一直进行处理。 </p>
+<p>ET模式：就绪的事件只能处理一次，若没有处理完会在下次的其它事件就绪时再进行处理。而若以后再也没有就绪的事件，那么剩余的那部分数据也会随之而丢失。 </p>
+<p>由此可见：ET模式的效率比LT模式的效率要高很多。只是如果使用ET模式，就要保证每次进行数据处理时，要将其处理完，不能造成数据丢失，这样对编写代码的人要求就比较高。 <br>注意：ET模式只支持非阻塞的读写：为了保证数据的完整性。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>上面的函数都有一些保证<code>原子性</code>的操作函数，例如<code>pselect</code>,<code>epoll_pwait</code>等</p>
+<p>例如<code>epoll_pwait()</code>等价于</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">sigset_t</span> origmask;</span><br><span class="line"></span><br><span class="line"><span class="built_in">pthread_sigmask</span>(SIG_SETMASK, &amp;sigmask, &amp;origmask);</span><br><span class="line">ready = <span class="built_in">epoll_wait</span>(epfd, &amp;events, maxevents, timeout);</span><br><span class="line"><span class="built_in">pthread_sigmask</span>(SIG_SETMASK, &amp;origmask, <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>有的地方说</p>
+</blockquote>
+<p>表面上看epoll的性能最好，但是在连接数少并且连接都十分活跃的情况下，select和poll的性能可能比epoll好，毕竟epoll的通知机制需要很多函数回调</p>
+<h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><p><a target="_blank" rel="noopener" href="http://man7.org/linux/man-pages/man2/listen.2.html">man 2 listen</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.man7.org/linux/man-pages/man2/read.2.html">man 2 read</a></p>
+<p><a target="_blank" rel="noopener" href="http://man7.org/linux/man-pages/man2/select.2.html">man 2 select</a></p>
+<p><a target="_blank" rel="noopener" href="http://man7.org/linux/man-pages/man2/poll.2.html">man 2 poll</a></p>
+<p><a target="_blank" rel="noopener" href="http://man7.org/linux/man-pages/man2/poll.2.html">man 7 epoll</a></p>
+<p><a target="_blank" rel="noopener" href="http://man7.org/linux/man-pages/man2/epoll_create.2.html">man 2 epoll_create</a></p>
+<p><a target="_blank" rel="noopener" href="http://man7.org/linux/man-pages/man2/epoll_ctl.2.html">man 2 epoll_ctl</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.ulduzsoft.com/2014/01/select-poll-epoll-practical-difference-for-system-architects/">http://www.ulduzsoft.com/2014/01/select-poll-epoll-practical-difference-for-system-architects/</a></p>
+<p><a target="_blank" rel="noopener" href="https://devarea.com/linux-io-multiplexing-select-vs-poll-vs-epoll/">https://devarea.com/linux-io-multiplexing-select-vs-poll-vs-epoll/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_71/rzab6/poll.htm">Using poll() instead of select()</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_71/rzab6/xasynchi0.htm">Example: Using asynchronous I&#x2F;O</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_71/rzab6/xnonblock.htm">Example: Nonblocking I&#x2F;O and select()</a></p>
+<p><a target="_blank" rel="noopener" href="https://medium.com/@copyconstruct/the-method-to-epolls-madness-d9d2d6378642">The method to epoll’s madness</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-12-20-netrelative/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/19-12-20-netrelative/" class="post-title-link" itemprop="url">net/ping/virus scan</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2019-12-20 11:20:14" itemprop="dateCreated datePublished" datetime="2019-12-20T11:20:14+08:00">2019-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/" itemprop="url" rel="index"><span itemprop="name">software</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-12-20-netrelative/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-12-20-netrelative/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>65</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="disable-ping"><a href="#disable-ping" class="headerlink" title="disable ping"></a>disable ping</h1><p><code>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all</code></p>
+<p><code>/etc/sysctl.conf</code> 追加</p>
+<p><code>net.ipv4.icmp_echo_ignore_all = 1</code></p>
+<h1 id="list-running-program"><a href="#list-running-program" class="headerlink" title="list running program"></a>list running program</h1><p><code>ps -ef  |  awk &#39;$8~/^\// &#123;for(i=8;i&lt;=NF;i++)printf $i&quot; &quot;; print &quot;&quot; &#125;&#39; | sort | uniq</code></p>
+<h1 id="port-and-net"><a href="#port-and-net" class="headerlink" title="port and net"></a>port and net</h1><p><code>lsof -i</code></p>
+<p><code>ifconfig</code> the value of <code>TX bytes</code></p>
+<p><code>hethogs</code></p>
+<h1 id="clamav"><a href="#clamav" class="headerlink" title="clamav"></a>clamav</h1><p><code>clamscan -r -i /home/ -l  /var/log/clamscan.log</code></p>
+<p><code>freshclam</code> before use</p>
+<p><code>clamtk</code> for ui</p>
+<h1 id="relative"><a href="#relative" class="headerlink" title="relative"></a>relative</h1><p>awk</p>
+<p>anti virus</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-12-16-mpaas-password/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/19-12-16-mpaas-password/" class="post-title-link" itemprop="url">mpaas password</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2019-12-16 11:20:14" itemprop="dateCreated datePublished" datetime="2019-12-16T11:20:14+08:00">2019-12-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/" itemprop="url" rel="index"><span itemprop="name">software</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/encrypt/" itemprop="url" rel="index"><span itemprop="name">encrypt</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-12-16-mpaas-password/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-12-16-mpaas-password/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>103</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">JSEncrypt</span> = <span class="built_in">require</span>(<span class="string">&#x27;node-jsencrypt&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> encrypt;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">rsa</span>(<span class="params">pwd, publicKey</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!encrypt) &#123;</span><br><span class="line">        encrypt = <span class="keyword">new</span> <span class="title class_">JSEncrypt</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!pwd || <span class="keyword">typeof</span> pwd !== <span class="string">&#x27;string&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> newPwd = pwd;</span><br><span class="line">    <span class="keyword">if</span> (newPwd.<span class="property">length</span> &gt; <span class="number">230</span>) &#123;</span><br><span class="line">        newPwd = newPwd.<span class="title function_">substr</span>(<span class="number">0</span>, <span class="number">230</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    encrypt.<span class="title function_">setPublicKey</span>(publicKey);</span><br><span class="line">    <span class="keyword">let</span> result = encrypt.<span class="title function_">encrypt</span>(newPwd);</span><br><span class="line">    <span class="keyword">let</span> tryTimes = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (result.<span class="property">length</span> !== <span class="number">344</span>) &#123;</span><br><span class="line">        <span class="comment">// 如果加密后的字符串长度不是344，后端必然解密失败</span></span><br><span class="line">        result = encrypt.<span class="title function_">encrypt</span>(newPwd);</span><br><span class="line">        <span class="keyword">if</span> (tryTimes &gt; <span class="number">10</span>) &#123;</span><br><span class="line">            <span class="comment">// 最多重试十次</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        tryTimes += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> pk = <span class="string">&#x27;publicKey&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> pwd = <span class="string">&#x27;密码&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">rsa</span>(pwd,pk));</span><br></pre></td></tr></table></figure>
+
+<p><code>tcpdump -S -e -vv -i wlo1 host xx.xx.xx.xx</code></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-11-25-vue-node-protobuf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/19-11-25-vue-node-protobuf/" class="post-title-link" itemprop="url">vue-node-protobuf</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2019-11-25 11:20:14" itemprop="dateCreated datePublished" datetime="2019-11-25T11:20:14+08:00">2019-11-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-11-25-vue-node-protobuf/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-11-25-vue-node-protobuf/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>541</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>2 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><p><code>yarn add protobuf cors protobufjs</code></p>
+<p>生成js</p>
+<p><code>pbjs -t static-module -w es6 -o ./proto/msgProto.js ./proto/message.proto</code></p>
+<p>运行server:<code>node index.js</code></p>
+<h1 id="代码清单"><a href="#代码清单" class="headerlink" title="代码清单"></a>代码清单</h1><h2 id="proto-x2F-message-proto"><a href="#proto-x2F-message-proto" class="headerlink" title="proto&#x2F;message.proto"></a>proto&#x2F;message.proto</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">message Message &#123;</span><br><span class="line">    required string text = 1;</span><br><span class="line">    required string lang = 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="server代码index-js"><a href="#server代码index-js" class="headerlink" title="server代码index.js"></a>server代码index.js</h2><p>注意修改<code>let protoFolderName = &#39;../&#39;</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">// https://protobufjs.github.io/protobuf.js/</span><br><span class="line"></span><br><span class="line">const path = require(&#x27;path&#x27;)</span><br><span class="line">const express = require(&#x27;express&#x27;)</span><br><span class="line">const cors = require(&#x27;cors&#x27;)</span><br><span class="line">const app = express()</span><br><span class="line">app.use(cors())</span><br><span class="line">const messages = [</span><br><span class="line">  &#123;text: &#x27;hey&#x27;, lang: &#x27;english&#x27;&#125;,</span><br><span class="line">  &#123;text: &#x27;isänme&#x27;, lang: &#x27;tatar&#x27;&#125;,</span><br><span class="line">  &#123;text: &#x27;hej&#x27;, lang: &#x27;swedish&#x27;&#125;</span><br><span class="line">];</span><br><span class="line">let protoFolderName = &#x27;../&#x27;</span><br><span class="line">app.use (function(req, res, next) &#123;</span><br><span class="line">  if (!req.is(&#x27;application/octet-stream&#x27;))&#123;</span><br><span class="line">    return next()</span><br><span class="line">  &#125;</span><br><span class="line">  var data = [] // List of Buffer objects</span><br><span class="line">  req.on(&#x27;data&#x27;, function(chunk) &#123;</span><br><span class="line">    data.push(chunk) // Append Buffer object</span><br><span class="line">  &#125;)</span><br><span class="line">  req.on(&#x27;end&#x27;, function() &#123;</span><br><span class="line">    if (data.length &lt;= 0 ) return next()</span><br><span class="line">    data = Buffer.concat(data) // Make one large Buffer of it</span><br><span class="line">    console.log(&#x27;Received buffer&#x27;, data)</span><br><span class="line">    req.raw = data</span><br><span class="line">    next()</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">let ProtoBuf = require(&#x27;protobufjs&#x27;)</span><br><span class="line">let root = ProtoBuf.loadSync(</span><br><span class="line">  path.join(__dirname,</span><br><span class="line">    protoFolderName,</span><br><span class="line">    &#x27;message.proto&#x27;)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">let Message = root.lookupType(&quot;Message&quot;);</span><br><span class="line"></span><br><span class="line">app.get(&#x27;/api/messages&#x27;, (req, res, next)=&gt;&#123;</span><br><span class="line">  let msg = Message.create(messages[Math.round(Math.random()*2)])</span><br><span class="line">  console.log(&#x27;Encode and decode: &#x27;, Message.decode(Message.encode(msg).finish()))</span><br><span class="line">  console.log(&#x27;Buffer we are sending: &#x27;, Message.encode(msg).finish())</span><br><span class="line">  // res.send(msg.encode().toBuffer(), &#x27;binary&#x27;) // alternative</span><br><span class="line">  res.send(Message.encode(msg).finish())</span><br><span class="line">  // res.send(Buffer.from(msg.toArrayBuffer()), &#x27;binary&#x27;) // alternative</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.post(&#x27;/api/messages&#x27;, (req, res, next)=&gt;&#123;</span><br><span class="line">  if (req.raw) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">      // Decode the Message</span><br><span class="line">      let msg = Message.decode(req.raw)</span><br><span class="line">      console.log(&#x27;Received &quot;%s&quot; in %s&#x27;, msg.text, msg.lang)</span><br><span class="line">      console.log(&#x27;Received :&#x27;,msg);</span><br><span class="line"></span><br><span class="line">      msg = Message.create(messages[Math.round(Math.random()*2)])</span><br><span class="line">      console.log(&#x27;Encode and decode: &#x27;, Message.decode(Message.encode(msg).finish()))</span><br><span class="line">      console.log(&#x27;Buffer we are sending: &#x27;, Message.encode(msg).finish())</span><br><span class="line">      // res.send(msg.encode().toBuffer(), &#x27;binary&#x27;) // alternative</span><br><span class="line">      res.send(Message.encode(msg).finish())</span><br><span class="line">    &#125; catch (err) &#123;</span><br><span class="line">      console.log(&#x27;Processing failed:&#x27;, err)</span><br><span class="line">      next(err)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    console.log(&quot;Not binary data&quot;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.all(&#x27;*&#x27;, (req, res)=&gt;&#123;</span><br><span class="line">  res.status(400).send(&#x27;Not supported&#x27;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const PORT=3001;</span><br><span class="line">app.listen(PORT,()=&gt;&#123;</span><br><span class="line">  console.log(`app listening on port $&#123;PORT&#125;!`);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="vue-代码"><a href="#vue-代码" class="headerlink" title="vue 代码"></a>vue 代码</h2><pre><code>&lt;template&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &#123;&#123; msg &#125;&#125;
+    &lt;button @click=&quot;postProtobuf()&quot;&gt;
+      post
+    &lt;/button&gt;
+    &lt;button @click=&quot;getProtobuf()&quot;&gt;
+      get
+    &lt;/button&gt;
+    &lt;code&gt;
+      proto生成js &quot;proto2js&quot;: &quot;pbjs -t static-module -w es6 -o ./proto/msgProto.js ./proto/message.proto&quot;,
+    &lt;/code&gt;
+    &lt;code&gt;
+      proto生成ts &quot;js2ts&quot;: &quot;pbts -o ./proto/msgProto.d.ts ./proto/msgProto.js&quot;,
+    &lt;/code&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+/* eslint-disable new-cap */
+import * as msgProto from &#39;~/proto/msgProto.js&#39;
+
+export default &#123;
+  components: &#123;&#125;,
+  data() &#123;
+    return &#123;
+      val: process.env.baseUrl,
+      msg: &#123;&#125;
+    &#125;
+  &#125;,
+  mounted() &#123;
+  &#125;,
+  methods: &#123;
+    getProtobuf() &#123;
+      this.$axios.get(
+        &#39;http://127.0.0.1:3001/api/messages&#39;,
+        &#123; responseType: &#39;arraybuffer&#39; &#125;
+      ).then((response) =&gt; &#123;
+        console.log(&#39;Response from the server: &#39;, response)
+        const data = new Uint8Array(response.data) // important !
+        const ret = msgProto.Message.decode(data)
+        console.log(&#39;Decoded message&#39;, ret)
+        this.msg = ret.toJSON()
+      &#125;)
+    &#125;,
+    postProtobuf() &#123;
+      const msg = new msgProto.Message(&#123; text: &#39;yx xr&#39;, lang: &#39;slang&#39; &#125;)
+      const buffer = msgProto.Message.encode(msg).finish()
+      console.log(&#39;de(en(msg))&#39;, msgProto.Message.decode(buffer))
+      console.log(&#39;send:&#39;, msg)
+      console.log(&#39;send buffer:&#39;, buffer)
+      this.$axios.$post(
+        &#39;http://127.0.0.1:3001/api/messages&#39;,
+        buffer,
+        &#123;
+          headers: &#123; &#39;Content-Type&#39;: &#39;application/octet-stream&#39; &#125;,
+          responseType: &#39;arraybuffer&#39;
+        &#125;
+      ).then((response) =&gt; &#123;
+        console.log(&#39;Response from the server: &#39;, response)
+        const data = new Uint8Array(response) // important !
+        const ret = msgProto.Message.decode(data)
+        console.log(&#39;Decoded message&#39;, ret)
+        this.msg = ret.toJSON()
+      &#125;).catch(function(response) &#123;
+        console.log(response)
+      &#125;)
+    &#125;
+  &#125;
+&#125;
+&lt;/script&gt;
+
+&lt;style&gt;
+.container &#123;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+&#125;
+
+.title &#123;
+  font-family: &#39;Quicksand&#39;, &#39;Source Sans Pro&#39;, -apple-system, BlinkMacSystemFont,
+  &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px;
+&#125;
+
+.subtitle &#123;
+  font-weight: 300;
+  font-size: 42px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+&#125;
+
+.links &#123;
+  padding-top: 15px;
+&#125;
+&lt;/style&gt;
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-10-29-gulp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -245,7 +913,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -455,7 +1123,7 @@ Local version: 4.0.2
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -575,7 +1243,7 @@ Local version: 4.0.2
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -760,7 +1428,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -892,7 +1560,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1027,7 +1695,7 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1145,557 +1813,8 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-27-Dont_follow_RxJS_Best_Practices/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/19-09-27-Dont_follow_RxJS_Best_Practices/" class="post-title-link" itemprop="url">别遵循RxJS的最佳实践</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2019-09-27 01:01:01" itemprop="dateCreated datePublished" datetime="2019-09-27T01:01:01+08:00">2019-09-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/frontend/Angular/" itemprop="url" rel="index"><span itemprop="name">Angular</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-09-27-Dont_follow_RxJS_Best_Practices/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-27-Dont_follow_RxJS_Best_Practices/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>2.6k</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>9 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p><a target="_blank" rel="noopener" href="https://dev.to/nikpoltoratsky/don-t-follow-rxjs-best-practices-4893#pass-streams-to-children">英文原文</a></p>
-<p><a href="/Blog/19-06-27-rxjs/">rxjs入门</a></p>
-<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>如今,越来越多开发者开始学 RxJs, 并跟随最佳实践正确使用它。但是完全不必要,那些所谓的最佳实践，需要学一些新的内容，并且在你的项目中增加额外的代码。</p>
-<p>更多的是，使用最佳实践，是冒着创建好的代码库和让你的队友高兴的风险! 🌈</p>
-<p>Stop being a gray mass! 打破常规，停止使用最佳实践</p>
-<p>下面我将想你介绍，怎么改造那些所谓的最佳实践代码.</p>
-<ul>
-<li>不要unsubscribe</li>
-<li>嵌套使用Subscribe</li>
-<li>不要使用 纯函数</li>
-<li>手动subscribe，不要使用 async pipe</li>
-<li>向你的服务暴露subjects</li>
-<li>始终对子组件传递流</li>
-<li>宝石图? 并不适合你</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/19-09-27-Dont_follow_RxJS_Best_Practices/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-23-redhat_gitlabserver_update/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/19-09-23-redhat_gitlabserver_update/" class="post-title-link" itemprop="url">redhat7 + gitlab-ce版本更新 11.6->12.2</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2019-09-23 15:09:01" itemprop="dateCreated datePublished" datetime="2019-09-23T15:09:01+08:00">2019-09-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/software/" itemprop="url" rel="index"><span itemprop="name">software</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/software/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-09-23-redhat_gitlabserver_update/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-23-redhat_gitlabserver_update/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>4 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><p>模拟生产环境 尝试 升级 gitlab-ce 从 11.6 到 12.2, 以及尝试模拟之前产生的错误</p>
-<p>官方说 先要到<code>11.11.X</code>再到<code>12.X</code></p>
-<p>物料准备</p>
-<p>vmware on Ubuntu 18.04 LTS</p>
-<p>gitlab-ce-11.6.5-ce.0.el6.x86_64.rpm</p>
-<p>gitlab-ce-11.11.0-ce.0.el6.x86_64.rpm</p>
-<p>gitlab-ce-12.2.5-ce.0.el7.x86_64.rpm</p>
-<p>rhel-server-7.7-x86_64-dvd.iso</p>
-<h1 id="Install-OS"><a href="#Install-OS" class="headerlink" title="Install OS"></a>Install OS</h1><p><a target="_blank" rel="noopener" href="https://access.redhat.com/downloads/content/69/ver=/rhel---7/7.7/x86_64/product-software">https://access.redhat.com/downloads/content/69/ver=/rhel---7/7.7/x86_64/product-software</a></p>
-<p>注册 下载 安装</p>
-<p>需要注意的是 下4GB左右的 而不是boot.iso</p>
-<blockquote>
-<p>为什么是7 不是8(当前最新)</p>
-</blockquote>
-<p>因为想和某个生产环境保持一致 尝试 模拟某些操作</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/19-09-23-redhat_gitlabserver_update/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-20-gitbiguselessfile/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/19-09-20-gitbiguselessfile/" class="post-title-link" itemprop="url">git 在历史版本中 完全移除文件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2019-09-20 15:09:01" itemprop="dateCreated datePublished" datetime="2019-09-20T15:09:01+08:00">2019-09-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/software/" itemprop="url" rel="index"><span itemprop="name">software</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/software/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-09-20-gitbiguselessfile/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-20-gitbiguselessfile/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>430</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>2 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="How"><a href="#How" class="headerlink" title="How"></a>How</h1><p>参考</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/amiezhang/p/11337095.html">https://www.cnblogs.com/amiezhang/p/11337095.html</a></p>
-<p>上面链接都有讲</p>
-<p>按照文件大小排序前100:</p>
-<p><code>git rev-list --objects --all | grep &quot;$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -100 | awk &#39;&#123;print$1&#125;&#39;)&quot;</code></p>
-<p><code>git filter-branch --force --index-filter &#39;git rm --cached --ignore-unmatch 文件名&#39; --prune-empty --tag-name-filter cat -- --all</code></p>
-<p><code>git filter-branch --index-filter</code> 让每个提交的文件都复制到索引(<code>.git/index</code>)中</p>
-<p>然后运行过滤器命令：<code>git rm --cached --ignore-unmatch</code> 文件名 ，让每个提交都删除掉“文件名”文件</p>
-<p>然后<code>--prune-empty</code>把空的提交“修剪”掉</p>
-<p>然后<code>--tag-name-filter cat</code>把每个tag保持原名字，指向修改后的对应提交</p>
-<p>最后<code>-- --all</code>将所有ref（包括branch、tag）都执行上面的重写</p>
-<p><code>git for-each-ref --format=&#39;delete %(refname)&#39; refs/original | git update-ref --stdin</code></p>
-<p><code>git reflog expire --expire=now --all</code></p>
-<p><code>git gc --prune=now</code></p>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ol>
-<li><p>上面的文件名可以写通配符号</p>
-</li>
-<li><p>众所周知只要我加到git中过的，即使把分支删了，也可以从reflog中找到，但这里 有 清除reflog所以 想要这样做的，要么 单独开文件夹搞，要么 确定 reflog都不会再用</p>
-</li>
-<li><p>什么时候使用? 使用频率不应高，因为 这种操作无疑是会对 分支重写，也就完全不同的commit hash,所以最后push都会带上–force, 目前能想到场景,比如 不必要的大文件,如不小心提交的下下来的打包后文件,大zip.也有场景 比如 很多分支前 不小心提交了一个涉密的文件。 当然push force以后 所有用仓库的人要想继续用只有去新的分支里搞了，已经被别人下的还会在别人硬盘里</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-15-A_Brief_History_of_Tomorrow/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/19-09-15-A_Brief_History_of_Tomorrow/" class="post-title-link" itemprop="url">未来简史 阅读笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2019-09-15 15:09:01" itemprop="dateCreated datePublished" datetime="2019-09-15T15:09:01+08:00">2019-09-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/notes/" itemprop="url" rel="index"><span itemprop="name">notes</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/notes/book/" itemprop="url" rel="index"><span itemprop="name">book</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-09-15-A_Brief_History_of_Tomorrow/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-15-A_Brief_History_of_Tomorrow/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>1.7k</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>6 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>19-08-22  -&gt; 19-09-15</p>
-</blockquote>
-<p>ISBN:9787508672069</p>
-<h1 id="Main"><a href="#Main" class="headerlink" title="Main"></a>Main</h1><p>回顾历史，发现很多现在有的，都是由各种其它混杂原因的组合</p>
-<p>历史解决了三大 饥荒 瘟疫 战争</p>
-<p>将可能考虑新的问题 永生 快乐</p>
-<p>历史的解决问题的贡献，很多也用于人类升级</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/19-09-15-A_Brief_History_of_Tomorrow/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/Blog/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/4/">4</a><a class="page-number" href="/Blog/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/Blog/page/8/">8</a><a class="page-number" href="/Blog/page/10/">10</a><a class="page-number" href="/Blog/page/13/">13</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/Blog/page/8/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/Blog/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/4/">4</a><a class="page-number" href="/Blog/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/Blog/page/8/">8</a><a class="page-number" href="/Blog/page/10/">10</a><a class="page-number" href="/Blog/page/14/">14</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/Blog/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -1718,13 +1837,13 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">219k</span>
+    <span title="總字數">232k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">13:17</span>
+    <span title="所需總閱讀時間">14:05</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動

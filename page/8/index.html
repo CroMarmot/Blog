@@ -84,7 +84,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">127</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">35</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">147</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">131</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">36</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">151</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -149,18 +149,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/Blog/archives/">
-          <span class="site-state-item-count">127</span>
+          <span class="site-state-item-count">131</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/Blog/categories/">
-        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Blog/tags/">
-        <span class="site-state-item-count">147</span>
+        <span class="site-state-item-count">151</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -209,6 +209,555 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-27-Dont_follow_RxJS_Best_Practices/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/19-09-27-Dont_follow_RxJS_Best_Practices/" class="post-title-link" itemprop="url">别遵循RxJS的最佳实践</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2019-09-27 01:01:01" itemprop="dateCreated datePublished" datetime="2019-09-27T01:01:01+08:00">2019-09-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/Angular/" itemprop="url" rel="index"><span itemprop="name">Angular</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-09-27-Dont_follow_RxJS_Best_Practices/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-27-Dont_follow_RxJS_Best_Practices/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.6k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>9 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p><a target="_blank" rel="noopener" href="https://dev.to/nikpoltoratsky/don-t-follow-rxjs-best-practices-4893#pass-streams-to-children">英文原文</a></p>
+<p><a href="/Blog/19-06-27-rxjs/">rxjs入门</a></p>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>如今,越来越多开发者开始学 RxJs, 并跟随最佳实践正确使用它。但是完全不必要,那些所谓的最佳实践，需要学一些新的内容，并且在你的项目中增加额外的代码。</p>
+<p>更多的是，使用最佳实践，是冒着创建好的代码库和让你的队友高兴的风险! 🌈</p>
+<p>Stop being a gray mass! 打破常规，停止使用最佳实践</p>
+<p>下面我将想你介绍，怎么改造那些所谓的最佳实践代码.</p>
+<ul>
+<li>不要unsubscribe</li>
+<li>嵌套使用Subscribe</li>
+<li>不要使用 纯函数</li>
+<li>手动subscribe，不要使用 async pipe</li>
+<li>向你的服务暴露subjects</li>
+<li>始终对子组件传递流</li>
+<li>宝石图? 并不适合你</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/19-09-27-Dont_follow_RxJS_Best_Practices/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-23-redhat_gitlabserver_update/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/19-09-23-redhat_gitlabserver_update/" class="post-title-link" itemprop="url">redhat7 + gitlab-ce版本更新 11.6->12.2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2019-09-23 15:09:01" itemprop="dateCreated datePublished" datetime="2019-09-23T15:09:01+08:00">2019-09-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/" itemprop="url" rel="index"><span itemprop="name">software</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-09-23-redhat_gitlabserver_update/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-23-redhat_gitlabserver_update/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>4 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><p>模拟生产环境 尝试 升级 gitlab-ce 从 11.6 到 12.2, 以及尝试模拟之前产生的错误</p>
+<p>官方说 先要到<code>11.11.X</code>再到<code>12.X</code></p>
+<p>物料准备</p>
+<p>vmware on Ubuntu 18.04 LTS</p>
+<p>gitlab-ce-11.6.5-ce.0.el6.x86_64.rpm</p>
+<p>gitlab-ce-11.11.0-ce.0.el6.x86_64.rpm</p>
+<p>gitlab-ce-12.2.5-ce.0.el7.x86_64.rpm</p>
+<p>rhel-server-7.7-x86_64-dvd.iso</p>
+<h1 id="Install-OS"><a href="#Install-OS" class="headerlink" title="Install OS"></a>Install OS</h1><p><a target="_blank" rel="noopener" href="https://access.redhat.com/downloads/content/69/ver=/rhel---7/7.7/x86_64/product-software">https://access.redhat.com/downloads/content/69/ver=/rhel---7/7.7/x86_64/product-software</a></p>
+<p>注册 下载 安装</p>
+<p>需要注意的是 下4GB左右的 而不是boot.iso</p>
+<blockquote>
+<p>为什么是7 不是8(当前最新)</p>
+</blockquote>
+<p>因为想和某个生产环境保持一致 尝试 模拟某些操作</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/19-09-23-redhat_gitlabserver_update/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-20-gitbiguselessfile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/19-09-20-gitbiguselessfile/" class="post-title-link" itemprop="url">git 在历史版本中 完全移除文件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2019-09-20 15:09:01" itemprop="dateCreated datePublished" datetime="2019-09-20T15:09:01+08:00">2019-09-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/" itemprop="url" rel="index"><span itemprop="name">software</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/software/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-09-20-gitbiguselessfile/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-20-gitbiguselessfile/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>430</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>2 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="How"><a href="#How" class="headerlink" title="How"></a>How</h1><p>参考</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/amiezhang/p/11337095.html">https://www.cnblogs.com/amiezhang/p/11337095.html</a></p>
+<p>上面链接都有讲</p>
+<p>按照文件大小排序前100:</p>
+<p><code>git rev-list --objects --all | grep &quot;$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -100 | awk &#39;&#123;print$1&#125;&#39;)&quot;</code></p>
+<p><code>git filter-branch --force --index-filter &#39;git rm --cached --ignore-unmatch 文件名&#39; --prune-empty --tag-name-filter cat -- --all</code></p>
+<p><code>git filter-branch --index-filter</code> 让每个提交的文件都复制到索引(<code>.git/index</code>)中</p>
+<p>然后运行过滤器命令：<code>git rm --cached --ignore-unmatch</code> 文件名 ，让每个提交都删除掉“文件名”文件</p>
+<p>然后<code>--prune-empty</code>把空的提交“修剪”掉</p>
+<p>然后<code>--tag-name-filter cat</code>把每个tag保持原名字，指向修改后的对应提交</p>
+<p>最后<code>-- --all</code>将所有ref（包括branch、tag）都执行上面的重写</p>
+<p><code>git for-each-ref --format=&#39;delete %(refname)&#39; refs/original | git update-ref --stdin</code></p>
+<p><code>git reflog expire --expire=now --all</code></p>
+<p><code>git gc --prune=now</code></p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ol>
+<li><p>上面的文件名可以写通配符号</p>
+</li>
+<li><p>众所周知只要我加到git中过的，即使把分支删了，也可以从reflog中找到，但这里 有 清除reflog所以 想要这样做的，要么 单独开文件夹搞，要么 确定 reflog都不会再用</p>
+</li>
+<li><p>什么时候使用? 使用频率不应高，因为 这种操作无疑是会对 分支重写，也就完全不同的commit hash,所以最后push都会带上–force, 目前能想到场景,比如 不必要的大文件,如不小心提交的下下来的打包后文件,大zip.也有场景 比如 很多分支前 不小心提交了一个涉密的文件。 当然push force以后 所有用仓库的人要想继续用只有去新的分支里搞了，已经被别人下的还会在别人硬盘里</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-15-A_Brief_History_of_Tomorrow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/19-09-15-A_Brief_History_of_Tomorrow/" class="post-title-link" itemprop="url">未来简史 阅读笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2019-09-15 15:09:01" itemprop="dateCreated datePublished" datetime="2019-09-15T15:09:01+08:00">2019-09-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/notes/" itemprop="url" rel="index"><span itemprop="name">notes</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/notes/book/" itemprop="url" rel="index"><span itemprop="name">book</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/19-09-15-A_Brief_History_of_Tomorrow/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-09-15-A_Brief_History_of_Tomorrow/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>6 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>19-08-22  -&gt; 19-09-15</p>
+</blockquote>
+<p>ISBN:9787508672069</p>
+<h1 id="Main"><a href="#Main" class="headerlink" title="Main"></a>Main</h1><p>回顾历史，发现很多现在有的，都是由各种其它混杂原因的组合</p>
+<p>历史解决了三大 饥荒 瘟疫 战争</p>
+<p>将可能考虑新的问题 永生 快乐</p>
+<p>历史的解决问题的贡献，很多也用于人类升级</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/19-09-15-A_Brief_History_of_Tomorrow/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-09-04-vuemsgbox/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -245,7 +794,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -427,7 +976,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -573,7 +1122,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1293,7 +1842,7 @@ base: __dirname,
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1715,7 +2264,7 @@ base: __dirname,
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1844,7 +2393,7 @@ base: __dirname,
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1953,627 +2502,8 @@ base: __dirname,
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-07-26-jenkins/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/19-07-26-jenkins/" class="post-title-link" itemprop="url">jenkins 入门尝试</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2019-07-26 01:01:01" itemprop="dateCreated datePublished" datetime="2019-07-26T01:01:01+08:00">2019-07-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/backend/devops/" itemprop="url" rel="index"><span itemprop="name">devops</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-07-26-jenkins/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-07-26-jenkins/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>1.3k</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>5 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><p>作为被factorio洗脑的人 看到 自动化 自动化 自动化 就会激动</p>
-<h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><p>首先你需要 java 8(jre&#x2F;jdk),docker</p>
-<p>这两个我之前都安装过了</p>
-<p>然后下载jenkins: <a target="_blank" rel="noopener" href="https://jenkins.io/zh/download/">https://jenkins.io/zh/download/</a></p>
-<p>运行命令<code>java -jar jenkins.war --httpPort=8080</code></p>
-<p>打开网页<code>http://localhost:8080</code></p>
-<p>输入终端里展示的密码 –&gt; 下一步 –&gt; 等待安装git等一系列工具 –&gt; 创建管理员用户&#96;–&gt; 实例配置(我发现有不少网页开发工具都有意无意的避开了8080端口 这里我直接默认) –&gt;开始使用</p>
-<p>我这边最后一步以后白屏了，但是从Network看似乎没有资源卡着，于是我把服务先杀掉再启动一遍，可以进入jenkins了23333</p>
-<h1 id="Hell-world"><a href="#Hell-world" class="headerlink" title="Hell world"></a>Hell world</h1><p>单击 New Item</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/19-07-26-jenkins/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-07-25-vsc_extension/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/19-07-25-vsc_extension/" class="post-title-link" itemprop="url">vsc extension 入门尝试</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2019-07-25 01:01:01" itemprop="dateCreated datePublished" datetime="2019-07-25T01:01:01+08:00">2019-07-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/software/" itemprop="url" rel="index"><span itemprop="name">software</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/software/ide/" itemprop="url" rel="index"><span itemprop="name">ide</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-07-25-vsc_extension/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-07-25-vsc_extension/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>263</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="开始-amp-安装"><a href="#开始-amp-安装" class="headerlink" title="开始 &amp; 安装"></a>开始 &amp; 安装</h1><h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p><a target="_blank" rel="noopener" href="https://code.visualstudio.com/api/get-started/your-first-extension">https://code.visualstudio.com/api/get-started/your-first-extension</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode-extension-samples">https://github.com/microsoft/vscode-extension-samples</a></p>
-<h2 id="install-amp-Run"><a href="#install-amp-Run" class="headerlink" title="install &amp; Run"></a>install &amp; Run</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yo generator-code</span><br><span class="line">yo code</span><br></pre></td></tr></table></figure>
-
-<p>选择你希望的选项</p>
-<p><code>code ./新建目录</code></p>
-<p>按<code>F5</code>启动</p>
-<p>按<code>Ctrl+Shift+P</code>输入<code>Hello world</code>回车</p>
-<p>当你修改了代码后，在新打开的窗口<code>Ctrl+Shift+P</code>再输入<code>Reload Window</code>就重新加载了代码</p>
-<h1 id="解剖"><a href="#解剖" class="headerlink" title="解剖"></a>解剖</h1><p>看<code>package.json</code></p>
-<ul>
-<li><p>注册 <code>onCommand</code> Activation Event:<code>onCommand:extension.helloWorld</code> ,so the extension becomes activated when user runs the <code>Hello World</code> command.</p>
-</li>
-<li><p>使用<code>contributes.commands</code> Contribution Point 来让<code>Hello World</code>命令 在Command Palette 可用，并且绑定到命令id<code>extension.helloWorld</code></p>
-</li>
-<li><p>使用<code>commands.registerCommand</code>的VS Code API绑定到已注册的命令ID <code>extension.helloWorld</code></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://code.visualstudio.com/api/references/activation-events">Activation Events</a>: events upon which your extension becomes active.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://code.visualstudio.com/api/references/contribution-points">Contribution Points</a>: static declarations that you make in the package.json Extension Manifest to extend VS Code.</p>
-</li>
-<li><p>VS Code API: 代码中API，可以在你的extension代码中调起</p>
-</li>
-</ul>
-<p>其它配置文件</p>
-<ul>
-<li><code>launch.json</code> used to configure VS Code Debugging</li>
-<li><code>tasks.json</code> for defining VS Code Tasks</li>
-<li><code>tsconfig.json</code> consult the TypeScript Handbook</li>
-</ul>
-<p>package.json</p>
-<p>vsc使用 <code>&lt;publisher&gt;.&lt;name&gt;</code>作为一个插件的<code>unique ID</code></p>
-<h1 id="tree-view"><a href="#tree-view" class="headerlink" title="tree-view"></a>tree-view</h1><p>emmmmmm 看了一会代码 发现有文档 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/api/extension-guides/tree-view">https://code.visualstudio.com/api/extension-guides/tree-view</a></p>
-<p>直接看文档吧…</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-07-08-gitlabserver/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/19-07-08-gitlabserver/" class="post-title-link" itemprop="url">gitlab server 搭建</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2019-07-08 01:01:01" itemprop="dateCreated datePublished" datetime="2019-07-08T01:01:01+08:00">2019-07-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/software/" itemprop="url" rel="index"><span itemprop="name">software</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/software/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-07-08-gitlabserver/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-07-08-gitlabserver/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>890</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>3 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><p>可以在私有环境下使用。如果想用非私有，现成的，可以考虑<a target="_blank" rel="noopener" href="https://github.com/">https://github.com</a> 或 <a target="_blank" rel="noopener" href="https://gitlab.com/">https://gitlab.com</a></p>
-<h1 id="手工安装-docker-ce"><a href="#手工安装-docker-ce" class="headerlink" title="手工安装 docker-ce"></a>手工安装 <code>docker-ce</code></h1><blockquote>
-<p>安装依赖</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ca-certificates curl openssh-server postfix</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>安装 gitlab-ce</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash</span><br><span class="line">sudo apt install gitlab-ce</span><br></pre></td></tr></table></figure>
-
-<p>注: 国内有不少镜像源 例如<code>https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/</code>，国内镜像会快很多，可以替换上面生成的<code>/etc/apt/sources.list.d/gitlab_gitlab-ce.list</code>中的路径</p>
-<p><code>sudo gitlab-ctl reconfigure</code></p>
-<p>按理说这里就可以用了</p>
-<blockquote>
-<p>你需要设置root的密码，和新建一个用户以及(设置该用户的密码)</p>
-</blockquote>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>然而 因为我本地apache服务和原来开启的nginx服务，有80冲突和原来nginx服务冲突(？)，导致我找问题找了很久很久[我似乎也没看到报错</p>
-<blockquote>
-<p>修改 <code>sudo vim /etc/gitlab/gitlab.rb</code></p>
-</blockquote>
-<p>中的<code>external_url</code> 为你的domain名称+port,如<code>http://192.168.1.51:8081</code></p>
-<p>最后我停掉两个服务再重启 <code>gitlab</code>就好了</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 未使用了 如果本身还有nginx据说可以配一下</span></span><br><span class="line"><span class="comment"># nginx listen_port 配置</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">修改</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">`/etc/gitlab/gitlab.rb`</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">找到`nginx[&#x27;listen_port&#x27;]`修改为</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">nginx[&#x27;listen_port&#x27;] = 8081</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">再执行`sudo gitlab-ctl reconfigure`</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">访问`你的domain:8081`即可</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="gitlab-on-docker"><a href="#gitlab-on-docker" class="headerlink" title="gitlab on docker"></a>gitlab on docker</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --detach --name gitlab \</span><br><span class="line">  --hostname gitlab.example.com \</span><br><span class="line">  --publish 30080:30080 \</span><br><span class="line">  --publish 30022:22 \</span><br><span class="line">  --<span class="built_in">env</span> GITLAB_OMNIBUS_CONFIG=<span class="string">&quot;external_url &#x27;http://gitlab.example.com:30080&#x27;; gitlab_rails[&#x27;gitlab_shell_ssh_port&#x27;]=30022;&quot;</span> \</span><br><span class="line">  gitlab/gitlab-ce:latest</span><br></pre></td></tr></table></figure>
-
-<p>好了 ssh 30022和http 30080都ok,docker真香了</p>
-<p><a target="_blank" rel="noopener" href="https://developer.ibm.com/code/2017/07/13/step-step-guide-running-gitlab-ce-docker/">https://developer.ibm.com/code/2017/07/13/step-step-guide-running-gitlab-ce-docker/</a></p>
-<p><a target="_blank" rel="noopener" href="https://docs.gitlab.com/omnibus/docker/README.html">https://docs.gitlab.com/omnibus/docker/README.html</a></p>
-<h1 id="问题-仓库通过ssh的git-clone报错"><a href="#问题-仓库通过ssh的git-clone报错" class="headerlink" title="问题:仓库通过ssh的git clone报错"></a>问题:仓库通过ssh的git clone报错</h1><p><code>http</code>的<code>clone</code>可用</p>
-<p>而<code>ssh</code>的<code>clone</code>报错: <code>fatal: protocol error: bad line length character: Welc</code></p>
-<p>gihub上很多说<code>sed -i &#39;s/session\s\+required\s\+pam_loginuid.so/# \0/&#39; /etc/pam.d/sshd</code> 就是注释掉 也没用(也restart 过)</p>
-<blockquote>
-<p>问题排查</p>
-</blockquote>
-<p>网上有很多 pam的 校验关闭都没有用</p>
-<p>然后 通过<code>ssh -vvv git@&lt;ip&gt;</code>得到<code>Exit status 254</code>,对应也是没有搜到可行方案,但感觉距离问题近了些</p>
-<p>查看<code>/var/log/auth.log</code>发现</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Aug 20 14:24:03 RBEST systemd: pam_unix(systemd-user:session): session opened for user git by (uid=0)</span><br><span class="line">Aug 20 14:24:03 RBEST systemd-logind[941]: New session 170 of user git.</span><br><span class="line">Aug 20 14:24:03 RBEST sshd[16070]: error: PAM: pam_open_session(): Module is unknown</span><br><span class="line">Aug 20 14:24:03 RBEST sshd[16148]: Received disconnect from 192.168.1.51 port 48618:11: disconnected by user</span><br><span class="line">Aug 20 14:24:03 RBEST sshd[16148]: Disconnected from user git 192.168.1.51 port 48618</span><br><span class="line">Aug 20 14:24:03 RBEST systemd-logind[941]: Removed session 170.</span><br></pre></td></tr></table></figure>
-
-<p>这个error也搜不到对应的</p>
-<p>鸽了！ 用 docker来搞</p>
-<p>docker的方法测试</p>
-<p><code>ssh -vvv git@gitlab.example.com -p 30022</code>的exit code 是0 所以感觉还是 本地的ssh相关的东西配置有问题</p>
-<h2 id="修复-重装试试"><a href="#修复-重装试试" class="headerlink" title="修复(重装试试)"></a>修复(重装试试)</h2><p>上面我得到的信息是</p>
-<ol>
-<li>ssh git@应该是成功登录了 但是没有和gitlab联系上</li>
-<li>docker里看 只用简单配置 就应该能用</li>
-<li>我尝试新开了个空白虚拟机，装一遍gitlab是能用的</li>
-</ol>
-<p>于是按照<a target="_blank" rel="noopener" href="https://askubuntu.com/a/824723/653605%E6%8A%8A">https://askubuntu.com/a/824723/653605把</a> gitlab完全删除 再重装就好了？喵喵喵，虽然现在能用了，可是之前究竟是什么问题。</p>
-<h1 id="TODO-email"><a href="#TODO-email" class="headerlink" title="TODO email"></a>TODO email</h1><p><a target="_blank" rel="noopener" href="https://docs.gitlab.com/omnibus/settings/nginx.html">https://docs.gitlab.com/omnibus/settings/nginx.html</a></p>
-<h1 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h1><p>权限管理 <a target="_blank" rel="noopener" href="https://docs.gitlab.com/ee/administration/#user-settings-and-permissions">https://docs.gitlab.com/ee/administration/#user-settings-and-permissions</a></p>
-<p>用root权限用户登陆</p>
-<blockquote>
-<p><code>&lt;你的地址&gt;/admin/application_settings</code></p>
-</blockquote>
-<p>可见和可访问性</p>
-<p>的Restricted visibility levelsx限制为 内部和私有</p>
-<p>关闭了为所有项目默认 runner和默认CI&#x2F;CD</p>
-<h1 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h1><p><code>/etc/gitlab/gitlab.rb</code> 设置</p>
-<p><code>external_url &#39;https://gitlab.xxx.com&#39;</code></p>
-<p>以及</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">letsencrypt[&#x27;enable&#x27;] = true</span><br><span class="line">letsencrypt[&#x27;contact_emails&#x27;] = [&#x27;你的email&#x27;]</span><br></pre></td></tr></table></figure>
-
-<p>再<code>gitlab-ctl reconfigure</code>就可以自动生成证书并且 启用https了</p>
-<h1 id="内存占用过大"><a href="#内存占用过大" class="headerlink" title="内存占用过大"></a>内存占用过大</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unicorn[&#x27;worker_timeout&#x27;] = 60</span><br><span class="line">unicorn[&#x27;worker_processes&#x27;] = 2</span><br></pre></td></tr></table></figure>
-
-<p>也有其它git server :<code>https://gogs.io/</code></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://about.gitlab.com/">https://about.gitlab.com/</a></p>
-<p><a target="_blank" rel="noopener" href="https://hub.docker.com/r/gitlab/gitlab-ce/">https://hub.docker.com/r/gitlab/gitlab-ce/</a></p>
-<p><a target="_blank" rel="noopener" href="https://gitlab.com/gitlab-org/gitlab-foss/-/issues/25840">https://gitlab.com/gitlab-org/gitlab-foss/-/issues/25840</a></p>
-<p><a target="_blank" rel="noopener" href="https://docs.gitlab.com/omnibus/settings/unicorn.html">https://docs.gitlab.com/omnibus/settings/unicorn.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/19-06-27-rxjs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/19-06-27-rxjs/" class="post-title-link" itemprop="url">RxJS文档 阅读笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2019-06-27 01:01:01" itemprop="dateCreated datePublished" datetime="2019-06-27T01:01:01+08:00">2019-06-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/19-06-27-rxjs/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="19-06-27-rxjs/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>3.7k</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>13 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="知识依赖"><a href="#知识依赖" class="headerlink" title="知识依赖"></a>知识依赖</h1><ol start="0">
-<li>基本的js语法</li>
-<li>基本的nodejs用法</li>
-<li>Promise用法</li>
-</ol>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>我想用nodejs直接跑rxjs，然而它并不支持es6的import，尝试了<code>--experimental-modules</code>依然有报错</p>
-<h2 id="方案1-在线编辑器"><a href="#方案1-在线编辑器" class="headerlink" title="方案1 在线编辑器"></a>方案1 在线编辑器</h2><p><code>https://rxjs-dev.firebaseapp.com/guide/observable</code> 在上面代码点击右上角的<code>Edit in StackBlitx</code></p>
-<h2 id="方案2-nodejs-rxjs-ES6"><a href="#方案2-nodejs-rxjs-ES6" class="headerlink" title="方案2 nodejs + rxjs + ES6"></a>方案2 nodejs + rxjs + ES6</h2><p><code>https://github.com/standard-things/esm</code></p>
-<p>安装:<code>npm install esm rxjs</code></p>
-<p>带上<code>esm</code>运行</p>
-<p><code>node -r esm index.js</code></p>
-<h2 id="方案3-webpack-rxjs-ES6"><a href="#方案3-webpack-rxjs-ES6" class="headerlink" title="方案3 webpack + rxjs + ES6"></a>方案3 webpack + rxjs + ES6</h2><p>创建文件夹 并初始化</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> rxjsdemo &amp;&amp; <span class="built_in">cd</span> rxjsdemo</span><br><span class="line">npx webpack-cli init</span><br></pre></td></tr></table></figure>
-
-<p>这样选择</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">? Will your application have multiple bundles? No</span><br><span class="line">? Which will be your application entry point? index</span><br><span class="line">? In which folder do you want to store your generated bundles? dist</span><br><span class="line">? Will you use one of the below JS solutions? ES6</span><br><span class="line">? Will you use one of the below CSS solutions? No</span><br></pre></td></tr></table></figure>
-
-<p>然后运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev rxjs</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Subject</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; interval &#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> <span class="title class_">Subject</span>();</span><br><span class="line"></span><br><span class="line">subject.<span class="title function_">subscribe</span>(&#123;</span><br><span class="line">  <span class="attr">next</span>: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`observerA: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line">subject.<span class="title function_">subscribe</span>(&#123;</span><br><span class="line">  <span class="attr">next</span>: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`observerB: <span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.<span class="title function_">next</span>(<span class="number">1</span>);</span><br><span class="line">subject.<span class="title function_">next</span>(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> observable = <span class="title function_">interval</span>(<span class="number">1000</span>);</span><br><span class="line"><span class="keyword">const</span> subscription = observable.<span class="title function_">subscribe</span>(<span class="function"><span class="params">x</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(x));</span><br></pre></td></tr></table></figure>
-
-<p>运行<code>npm start</code>在打开的网页查看<code>console</code>是否正常输出， 忽略红字，能输出如下即可</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">observerA: 1</span><br><span class="line">observerB: 1</span><br><span class="line">observerA: 2</span><br><span class="line">observerB: 2</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/19-06-27-rxjs/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/Blog/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/5/">5</a><a class="page-number" href="/Blog/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/Blog/page/9/">9</a><a class="page-number" href="/Blog/page/11/">11</a><a class="page-number" href="/Blog/page/13/">13</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/Blog/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/Blog/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/Blog/">1</a><a class="page-number" href="/Blog/page/5/">5</a><a class="page-number" href="/Blog/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/Blog/page/9/">9</a><a class="page-number" href="/Blog/page/11/">11</a><a class="page-number" href="/Blog/page/14/">14</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/Blog/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -2596,13 +2526,13 @@ base: __dirname,
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">219k</span>
+    <span title="總字數">232k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">13:17</span>
+    <span title="所需總閱讀時間">14:05</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動

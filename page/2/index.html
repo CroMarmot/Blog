@@ -84,7 +84,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">127</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">35</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">147</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">131</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">36</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">151</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -149,18 +149,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/Blog/archives/">
-          <span class="site-state-item-count">127</span>
+          <span class="site-state-item-count">131</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/Blog/categories/">
-        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Blog/tags/">
-        <span class="site-state-item-count">147</span>
+        <span class="site-state-item-count">151</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -209,6 +209,525 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/22-09-08-fuck-pip/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/22-09-08-fuck-pip/" class="post-title-link" itemprop="url">ubuntu + pip + setuptool bug 体验</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-09-08 00:00:00" itemprop="dateCreated datePublished" datetime="2022-09-08T00:00:00+08:00">2022-09-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/backend/python3/" itemprop="url" rel="index"><span itemprop="name">python3</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/22-09-08-fuck-pip/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="22-09-08-fuck-pip/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>810</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="第一次被pip搞了几个小时"><a href="#第一次被pip搞了几个小时" class="headerlink" title="第一次被pip搞了几个小时"></a>第一次被pip搞了几个小时</h1><p>壮着胆子,在Ubuntu 22.10还没发布前,把系统从20.04.5升级到了22.04.1, 以我从12-&gt;14,14-&gt;16,16-&gt;18,18-&gt;20多年的经验来看, 这次竟然没问题! 厉害了, 以前每次升级都会炸点东西, 然后最终还是重装式升级, 这次竟然没啥严重的炸掉</p>
+<p>然后<code>pip3 install -e .</code>出问题了</p>
+<p>先是报没权限,但看报的路径,没往用户目录下写,在写root, 作为一个胆小的人, 向来杜绝777的</p>
+<p>翻了半天google和github</p>
+<p>看到一个<a target="_blank" rel="noopener" href="https://github.com/pypa/pip/issues/7953#issuecomment-645133255">方案</a>:<code>setup.py</code>中加上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import site</span><br><span class="line">import sys</span><br><span class="line">site.ENABLE_USER_SITE = &quot;--user&quot; in sys.argv[1:]</span><br></pre></td></tr></table></figure>
+
+<p>加完以后, 恩 是没有问题了</p>
+<p>然后报错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">× python setup.py develop did not run successfully.</span><br><span class="line">│ exit code: 1</span><br><span class="line">╰─&gt; [29 lines of output]</span><br><span class="line">    running develop</span><br><span class="line">    /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.</span><br><span class="line">      warnings.warn(</span><br><span class="line">    Traceback (most recent call last):</span><br><span class="line">      File &quot;&lt;string&gt;&quot;, line 2, in &lt;module&gt;</span><br><span class="line">      File &quot;&lt;pip-setuptools-caller&gt;&quot;, line 34, in &lt;module&gt;</span><br><span class="line">      File &quot;/home/cromarmot/Documents/computer/oiTerminalv2dev/setup.py&quot;, line 6, in &lt;module&gt;</span><br><span class="line">        setup()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/__init__.py&quot;, line 153, in setup</span><br><span class="line">        return distutils.core.setup(**attrs)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/core.py&quot;, line 148, in setup</span><br><span class="line">        return run_commands(dist)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/core.py&quot;, line 163, in run_commands</span><br><span class="line">        dist.run_commands()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/dist.py&quot;, line 967, in run_commands</span><br><span class="line">        self.run_command(cmd)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/dist.py&quot;, line 985, in run_command</span><br><span class="line">        cmd_obj.ensure_finalized()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/cmd.py&quot;, line 107, in ensure_finalized</span><br><span class="line">        self.finalize_options()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/develop.py&quot;, line 52, in finalize_options</span><br><span class="line">        easy_install.finalize_options(self)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&quot;, line 270, in finalize_options</span><br><span class="line">        self._fix_install_dir_for_user_site()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&quot;, line 400, in _fix_install_dir_for_user_site</span><br><span class="line">        self.select_scheme(scheme_name)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&quot;, line 741, in select_scheme</span><br><span class="line">        scheme = INSTALL_SCHEMES[name]</span><br><span class="line">    KeyError: &#x27;unix_user&#x27;</span><br><span class="line">    [end of output]</span><br></pre></td></tr></table></figure>
+
+<p>又搜,发现的确是setuptools有bug,然后<a target="_blank" rel="noopener" href="https://github.com/pypa/setuptools/issues/2938#issuecomment-998293346">60.0.2修复了</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/22-09-08-fuck-pip/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/22-08-15-static-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/22-08-15-static-blog/" class="post-title-link" itemprop="url">Hexo Static Blog in 2022</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-08-15 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-15T00:00:00+08:00">2022-08-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/framework/" itemprop="url" rel="index"><span itemprop="name">framework</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/22-08-15-static-blog/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="22-08-15-static-blog/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.3k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>8 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="写在-2022-年的-静态博客选择"><a href="#写在-2022-年的-静态博客选择" class="headerlink" title="写在 2022 年的 静态博客选择"></a>写在 2022 年的 静态博客选择</h1><h2 id="调研"><a href="#调研" class="headerlink" title="调研"></a>调研</h2><p>用了Hexo很久了,期间也有不少其它产品, 也试了试这些框架</p>
+<p>对于我, 核心需求是markdown + code高亮 + tex + rss支持, 操作期望是0代码, 可以简单yaml配置,和复制配置的配置行为, 然后有个基本不错的theme, 最好能支持二进制分页</p>
+<p>毕竟主要产出在markdown而不是搭建</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/22-08-15-static-blog/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/22-07-23-python-setuptools/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/22-07-23-python-setuptools/" class="post-title-link" itemprop="url">python3 setuptools 发包</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-07-23 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-23T00:00:00+08:00">2022-07-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/backend/python3/" itemprop="url" rel="index"><span itemprop="name">python3</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/22-07-23-python-setuptools/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="22-07-23-python-setuptools/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>665</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>2 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Step-by-Step"><a href="#Step-by-Step" class="headerlink" title="Step by Step"></a>Step by Step</h1><p>install build</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade build</span><br></pre></td></tr></table></figure>
+
+<h2 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h2><p>提供<code>pyproject.toml</code>文件, 包含<code>build-system</code> section</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[build-system]</span><br><span class="line">requires = [&quot;setuptools&quot;]</span><br><span class="line">build-backend = &quot;setuptools.build_meta&quot;</span><br><span class="line"></span><br><span class="line">[project]</span><br><span class="line">name = &quot;yourname-packagename&quot;</span><br><span class="line">version = &quot;0.0.1&quot;</span><br><span class="line">dependencies = [</span><br><span class="line">    &quot;requests&quot;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/22-07-23-python-setuptools/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/22-06-30-ts-cheatsheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/22-06-30-ts-cheatsheet/" class="post-title-link" itemprop="url">TS Cheat Sheet</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-06-30 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-30T00:00:00+08:00">2022-06-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/frontend/typescript/" itemprop="url" rel="index"><span itemprop="name">typescript</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/22-06-30-ts-cheatsheet/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="22-06-30-ts-cheatsheet/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>10 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="TS-Cheat-Sheet"><a href="#TS-Cheat-Sheet" class="headerlink" title="TS Cheat Sheet"></a>TS Cheat Sheet</h1><h2 id="为什么写这篇"><a href="#为什么写这篇" class="headerlink" title="为什么写这篇"></a>为什么写这篇</h2><p><a target="_blank" rel="noopener" href="https://github.com/type-challenges/type-challenges">antfu的题目</a> 大多就是基础方法+递归, issues充斥着重复内容, 最开始还有点TS的味道, 后面完全变成了只有基础方法, 组合出一个东西, 感觉这个更适合作为递归练习题, 而不是TS练习题 (没有数值强行用数组拼接+length, 等等</p>
+<p>TS有文档,是英文的,难以用中文检索</p>
+<p>本篇呢,是cheatsheet,不是document,把实际会用到常用的一些列出来+一些场景描述</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/22-06-30-ts-cheatsheet/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/22-03-13-newssdforoldcomputer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -245,7 +764,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -382,7 +901,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -526,7 +1045,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -653,7 +1172,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -772,7 +1291,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -934,7 +1453,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
+      <time title="修改時間：2023-08-28 11:54:37" itemprop="dateModified" datetime="2023-08-28T11:54:37+08:00">2023-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1025,642 +1544,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-09-02-vue-transition/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/21-09-02-vue-transition/" class="post-title-link" itemprop="url">Vue transition</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2021-09-02 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-02T00:00:00+08:00">2021-09-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/frontend/vue2/" itemprop="url" rel="index"><span itemprop="name">vue2</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/21-09-02-vue-transition/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-09-02-vue-transition/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>247</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="对于transition的一个核心问题是时间哪里来的"><a href="#对于transition的一个核心问题是时间哪里来的" class="headerlink" title="对于transition的一个核心问题是时间哪里来的"></a>对于transition的一个核心问题是时间哪里来的</h1><p>因为name这些感觉能拿到, 拼接也就当然</p>
-<p>而 transition包裹的内部元素销毁，如果能拿到时间，那其实跟keep-alive 原理类似，在时间以后再销毁即可</p>
-<p>然而我们并没有传递一个时间给元素，它却能知道时间</p>
-<h1 id="source-code"><a href="#source-code" class="headerlink" title="source code"></a>source code</h1><h2 id="vue2"><a href="#vue2" class="headerlink" title="vue2"></a>vue2</h2><p><code>src/platforms/web/runtime/transition-util.js</code></p>
-<p>中</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">export</span> function <span class="title">getTransitionInfo</span> <span class="params">(el: Element, expectedType?: ?string)</span>: &#123;</span></span><br><span class="line">  type: ?string;</span><br><span class="line">  propCount: number;</span><br><span class="line">  timeout: number;</span><br><span class="line">  hasTransform: boolean;</span><br><span class="line">&#125; &#123;</span><br><span class="line">  <span class="type">const</span> styles: any = window.<span class="built_in">getComputedStyle</span>(el)</span><br><span class="line">  <span class="comment">// JSDOM may return undefined for transition properties</span></span><br><span class="line">  <span class="type">const</span> transitionDelays: Array&lt;string&gt; = (styles[transitionProp + <span class="string">&#x27;Delay&#x27;</span>] || <span class="string">&#x27;&#x27;).split(&#x27;</span>, <span class="string">&#x27;)</span></span><br><span class="line"><span class="string">  const transitionDurations: Array&lt;string&gt; = (styles[transitionProp + &#x27;</span>Duration<span class="number">&#x27;</span>] || <span class="string">&#x27;&#x27;).split(&#x27;</span>, <span class="string">&#x27;)</span></span><br><span class="line"><span class="string">  const transitionTimeout: number = getTimeout(transitionDelays, transitionDurations)</span></span><br><span class="line"><span class="string">  const animationDelays: Array&lt;string&gt; = (styles[animationProp + &#x27;</span>Delay<span class="number">&#x27;</span>] || <span class="string">&#x27;&#x27;).split(&#x27;</span>, <span class="string">&#x27;)</span></span><br><span class="line"><span class="string">  const animationDurations: Array&lt;string&gt; = (styles[animationProp + &#x27;</span>Duration<span class="number">&#x27;</span>] || <span class="string">&#x27;&#x27;).split(&#x27;</span>, <span class="string">&#x27;)</span></span><br><span class="line"><span class="string">  const animationTimeout: number = getTimeout(animationDelays, animationDurations)</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="vue3"><a href="#vue3" class="headerlink" title="vue3"></a>vue3</h2><p><code>packages/runtime-dom/src/components/Transition.ts</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">export function getTransitionInfo(</span><br><span class="line">  el: Element,</span><br><span class="line">  expectedType?: TransitionProps[&#x27;type&#x27;]</span><br><span class="line">): CSSTransitionInfo &#123;</span><br><span class="line">  const styles: any = window.getComputedStyle(el)</span><br><span class="line">  // JSDOM may return undefined for transition properties</span><br><span class="line">  const getStyleProperties = (key: string) =&gt; (styles[key] || &#x27;&#x27;).split(&#x27;, &#x27;)</span><br><span class="line">  const transitionDelays = getStyleProperties(TRANSITION + &#x27;Delay&#x27;)</span><br><span class="line">  const transitionDurations = getStyleProperties(TRANSITION + &#x27;Duration&#x27;)</span><br><span class="line">  const transitionTimeout = getTimeout(transitionDelays, transitionDurations)</span><br><span class="line">  const animationDelays = getStyleProperties(ANIMATION + &#x27;Delay&#x27;)</span><br><span class="line">  const animationDurations = getStyleProperties(ANIMATION + &#x27;Duration&#x27;)</span><br><span class="line">  const animationTimeout = getTimeout(animationDelays, animationDurations)</span><br></pre></td></tr></table></figure>
-
-<h2 id="所以"><a href="#所以" class="headerlink" title="所以"></a>所以</h2><p>核心是<code>window.getComputedStyle</code></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-07-06-dockerharbor/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/21-07-06-dockerharbor/" class="post-title-link" itemprop="url">Docker Harbor on Ubuntu 20 on WSL2</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2021-07-06 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-06T00:00:00+08:00">2021-07-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/backend/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/21-07-06-dockerharbor/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-07-06-dockerharbor/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>336</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Docker-Harbor"><a href="#Docker-Harbor" class="headerlink" title="Docker Harbor"></a>Docker Harbor</h1><p>简单说，可以搭本地&#x2F;局域网 docker仓库</p>
-<h1 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h1><p>Ubuntu 或 其它linux 或 Ubuntu on WSL2</p>
-<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>安装docker:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install docker.io docker-compose</span><br></pre></td></tr></table></figure>
-
-<h1 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h1><p>经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2 <strong>私有</strong>的目录下</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/goharbor/harbor/releases">https://github.com/goharbor/harbor/releases</a></p>
-<p>解压</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvzf harbor-offline-installer-*.tgz &amp;&amp; cd harbor</span><br></pre></td></tr></table></figure>
-
-<h1 id="SSL等配置"><a href="#SSL等配置" class="headerlink" title="SSL等配置"></a>SSL等配置</h1><p>这玩意一定要SSL, 这里用自签</p>
-<p>ip查看</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig | grep inet</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/21-07-06-dockerharbor/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-07-05-migrate2win/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/21-07-05-migrate2win/" class="post-title-link" itemprop="url">迁移到win</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2021-07-05 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-05T00:00:00+08:00">2021-07-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/software/" itemprop="url" rel="index"><span itemprop="name">software</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/21-07-05-migrate2win/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-07-05-migrate2win/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>937</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>3 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="apt"><a href="#apt" class="headerlink" title="apt"></a>apt</h1><p>怀念 Debian apt 的好, 在windows上腾讯软件管家成了我的“apt”</p>
-<h1 id="以下是一些问题记录"><a href="#以下是一些问题记录" class="headerlink" title="以下是一些问题记录"></a>以下是一些问题记录</h1><h1 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h1><p>set <code>git bash</code> as default terminal</p>
-<h1 id="windows-terminal"><a href="#windows-terminal" class="headerlink" title="windows terminal"></a>windows terminal</h1><p>windows terminal 双击点击鼠标选择 在单词和行选择切换,而非空格分割和行之间切换</p>
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/60441221/double-click-to-select-text-in-windows-terminal-selects-only-one-word">https://stackoverflow.com/questions/60441221/double-click-to-select-text-in-windows-terminal-selects-only-one-word</a></p>
-<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><strong>更应该 不要 win和wsl共用磁盘</strong></p>
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes">https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes</a></p>
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/50096060/how-to-switch-branch-when-filename-case-changes">https://stackoverflow.com/questions/50096060/how-to-switch-branch-when-filename-case-changes</a></p>
-<p>git bash ssh-keygen (same as linux)</p>
-<p>wsl2 里 默认编辑器</p>
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits">https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits</a></p>
-<p>中文乱码：log commit信息, diff 文件内容, 文件名</p>
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window">https://stackoverflow.com/questions/22827239/how-to-make-git-properly-display-utf-8-encoded-pathnames-in-the-console-window</a></p>
-<p><a target="_blank" rel="noopener" href="https://gist.github.com/xkyii/1079783/3e77453c05f6bcbce133fd0ba128686683f75bf8">https://gist.github.com/xkyii/1079783/3e77453c05f6bcbce133fd0ba128686683f75bf8</a></p>
-<p>win10有个Beta版本的区域utf-8设置，开了以后很多软件都是乱码，包括微信小程序开发工具,哎，</p>
-<h1 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h1><p>account sync</p>
-<p>default browser( <a target="_blank" rel="noopener" href="https://github.com/da2x/EdgeDeflector">https://github.com/da2x/EdgeDeflector</a>  )</p>
-<h1 id="firefox"><a href="#firefox" class="headerlink" title="firefox"></a>firefox</h1><p>国内外登录地址一个有.cn 一个没有，所以不同地址相同邮箱账号不同, 选择firefox 官方 developer 版本+ win x64 版本+English版本</p>
-<p><a target="_blank" rel="noopener" href="https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-developer">https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-developer</a></p>
-<h1 id="Python-被windows商店劫持"><a href="#Python-被windows商店劫持" class="headerlink" title="Python 被windows商店劫持"></a>Python 被windows商店劫持</h1><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python">https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/21-07-05-migrate2win/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/21-05-31-reactjs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
-      <meta itemprop="name" content="Cro-Marmot">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Cro-Marmot's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/21-05-31-reactjs/" class="post-title-link" itemprop="url">react js 笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2021-05-31 00:00:00" itemprop="dateCreated datePublished" datetime="2021-05-31T00:00:00+08:00">2021-05-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-06-04 03:57:16" itemprop="dateModified" datetime="2023-06-04T03:57:16+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">frontend</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/frontend/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/Blog/21-05-31-reactjs/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="21-05-31-reactjs/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>2.1k</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>8 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>一点总结提炼</p>
-<h1 id="Thinking-in-react"><a href="#Thinking-in-react" class="headerlink" title="Thinking in react"></a>Thinking in react</h1><p><a target="_blank" rel="noopener" href="https://reactjs.org/docs/thinking-in-react.html">https://reactjs.org/docs/thinking-in-react.html</a></p>
-<ol>
-<li>从UI和后台获得设计稿和接口以及接口返回</li>
-<li>单一功能原则 组件层级划分</li>
-<li>编写静态html(无用户交互,官方上面没有,仅结构,无样式?)</li>
-<li>转换成静态react(无用户交互,无state,仅展示,数据流均为父向子)</li>
-<li>最小(且完整)的state状态,其它的内容全部由这些state产生, (例如保存数组,而不需要专门保存数组长度的变量), 主要完成的内容是 <strong>单向数据流与state</strong>,注意:父组件传递的不应该是state,随时间推移的不应该是state, 能由其它state计算得到的不应该存储</li>
-<li>反向数据流</li>
-</ol>
-<p>有一点不同的是, 真实开发中, 可能不会一个业务+组件同时提供. 思考顺序会变为,开发组件,再开发业务,而上面的思路其实也是有效的. 而对组件开发的思路比较像是, 先考虑出入参数,就像思考函数一样,考虑它的复用性以及编码迭代改版的设计性</p>
-<h1 id="props-vs-state"><a href="#props-vs-state" class="headerlink" title="props vs state"></a>props vs state</h1><p><a target="_blank" rel="noopener" href="https://reactjs.org/docs/faq-state.html#what-is-the-difference-between-state-and-props">https://reactjs.org/docs/faq-state.html#what-is-the-difference-between-state-and-props</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/uberVU/react-guide/blob/master/props-vs-state.md">https://github.com/uberVU/react-guide/blob/master/props-vs-state.md</a></p>
-<p><a target="_blank" rel="noopener" href="https://lucybain.com/blog/2016/react-state-vs-pros/">https://lucybain.com/blog/2016/react-state-vs-pros/</a></p>
-<p>props: 外部传递给组件, 应该看成只读的, 传递回调函数</p>
-<p>state: 组件内部自己管理, 初始状态主要由客户事件变化, setState异步(一般传递函数, 这是实现细节,注意官方文档说不要依赖这种实现,相关问题可以看最近发生的rust的二分搜索引发的问题(与react无关))</p>
-<p>相同点: 纯js对象, 变化触发更新, 相同的(props,state)输入输出应该是恒定的(for就有问题?)</p>
-<p>?? state不可由子组件修改, props, state不应太多?</p>
-<hr>
-<p>就目前项目实践的感受,对于业务开发, 基本只有业务层关联的(顶层)需要state,而基础组件内都不持有state,主要是事件触发和props渲染.</p>
-<h1 id="setState-非同步的一些举例"><a href="#setState-非同步的一些举例" class="headerlink" title="setState 非同步的一些举例"></a>setState 非同步的一些举例</h1><p><a target="_blank" rel="noopener" href="https://github.com/facebook/react/issues/11527#issuecomment-360199710">https://github.com/facebook/react/issues/11527#issuecomment-360199710</a></p>
-<p>即使 state同步,props是不同步的, react的props 是只读不会变的,和vue是对象引用不同</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">state触发</span><br><span class="line">props 触发</span><br><span class="line">state触发</span><br><span class="line">props 触发 // 这种情况 可能是老的props,而真实的props或许已经更新了</span><br><span class="line">state触发</span><br></pre></td></tr></table></figure>
-
-<p>为了说明不是理论上的,然后还翻出了多个历史issue</p>
-<h1 id="Flux-单向数据流"><a href="#Flux-单向数据流" class="headerlink" title="Flux 单向数据流"></a>Flux 单向数据流</h1><p><a target="_blank" rel="noopener" href="https://facebook.github.io/flux/docs/in-depth-overview">https://facebook.github.io/flux/docs/in-depth-overview</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=nYkdrAPrdcw&list=PLb0IAmt7-GS188xDYE-u1ShQmFFGbrk0v&t=621s&ab_channel=FacebookDevelopers">https://www.youtube.com/watch?v=nYkdrAPrdcw&amp;list=PLb0IAmt7-GS188xDYE-u1ShQmFFGbrk0v&amp;t=621s&amp;ab_channel=FacebookDevelopers</a></p>
-<p><a target="_blank" rel="noopener" href="https://facebook.github.io/flux/docs/overview">https://facebook.github.io/flux/docs/overview</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/facebook/flux/tree/master/examples">https://github.com/facebook/flux/tree/master/examples</a></p>
-<p><a target="_blank" rel="noopener" href="https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207">https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207</a></p>
-<p>action -&gt; dispatcher -&gt; store -&gt; view -&gt; action</p>
-<p>action: type + payload</p>
-<p>dispatcher(同步), 可以waitFor 等待其它dispatcher</p>
-<p>store: 数据储存 更新view</p>
-<p>controller view &amp; view: store变化被通知,让view把数据渲染</p>
-<blockquote>
-<p>执行流程</p>
-</blockquote>
-<p>初始state数据</p>
-<p>state去dispatcher “订阅”?</p>
-<p>controller view 从state获取数据,给view渲染</p>
-<p>controller view 去store “订阅”?</p>
-<blockquote>
-<p>用户事件</p>
-</blockquote>
-<p>view 通知 action, 或其它Action</p>
-<p>action 通知dispatcher</p>
-<p>dispatcher 给对应的store</p>
-<p>store内部处理,如果需要更新state,更新完以后,通知controller view , 根据 type 分发</p>
-<p>controller view获取新state并通知view渲染</p>
-<p>从根本上讲,仅从上述的角度来看, 根本在规范了流程和代码位置, 对于新进入的开发来说, 能直接通过代码,知道各个层级的内容. 本质上解决的更多是一个软件工程的质量管理工程经验得到解决方案, 甚至可以脱离redux到不同的框架内使用. 相对于MVC是 给MVC内部调用关系错综复杂的解决方案</p>
-<p>从另一个角度讲, 只能通过触发Action来修改store里的内容</p>
-<p>单元测试更容易!</p>
-<p>从其它技术来讲,现在有rxjs, 直接描述关系式的开发,和vue这样的自己实现的reactive的关系式描述开发, 当然也有 rxjs + flux 的方案</p>
-<p>不过facebook说他们的消息显示1 的更新问题,现在还有不少应用持续有这种bug :-)</p>
-<p>然后看youtube视频上小姐姐的展示,实际上再回想开发, 这里的数据流的每一条线,实际上是多条线</p>
-<h1 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h1><p><code>npx create-react-app redux-ts-demo --template redux-typescript</code></p>
-<blockquote>
-<p>redux有可以与react无关单独使用的<code>redux core</code>, 也就是一个具体的flux实现?</p>
-</blockquote>
-<p>官方的 <a target="_blank" rel="noopener" href="https://redux.js.org/introduction/getting-started#basic-example">Basic Example</a> 里能看到</p>
-<p>用户实现reducer, 提供 createStore(reducer), subscribe(fn), getState(), dispatch()</p>
-<blockquote>
-<p>有<code>@reduxjs/toolkit</code></p>
-</blockquote>
-<p>提供 createSlice(提供导出 acitions,reducer), configureStore(替代上面的 createStore, reducer可以单个或者store的map)</p>
-<p>其它getState,subscribe,dispatch上面有的还是有</p>
-<p>同样要用户实现reducer,不过写法可以像是操作state(之所以说像是,是因为它并不是真的更改,而是toolkit内Immer去做的变化检测一类,也要注意因为只有这里用Immer,所以只能在createSlice或createReducer里面这样写)</p>
-<p>Redux Slices: A “slice” is a collection of Redux reducer logic and actions for a single feature in your app</p>
-<p>这个角度是对root state的划分,</p>
-<p>同时简化了reducer和actions的写法,并且在ts加持下能不再靠字符串(或额外自己写控制)保持一致</p>
-<p>reducer规则:</p>
-<ol>
-<li>计算结果应该只由old state和 action的传入相关(也就是不依赖 其它变量), 纯函数能让它”可以预测”易测试,更加工程友好</li>
-<li>不修改现有state,而是产生新的修改后的state</li>
-<li>不应该有异步或其它副作用</li>
-</ol>
-<p>time-travel debugging 也是一个特点</p>
-<blockquote>
-<p>thunks 异步, 直接使用是<code>redux-thunk</code>,现有的toolkit里<code>configureStore</code>能简化</p>
-</blockquote>
-<p>外部是包裹,返回thunk函数, 中间是异步</p>
-<p>内部是调用dispatch 和 getState</p>
-<p>官方demo( async+await看起来就很自然舒服了, 对于外部调用thunk的包裹, 也是直接和同步调用看上去类似,fetchUserById()</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the outside &quot;thunk creator&quot; function</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">fetchUserById</span> = userId =&gt; &#123;</span><br><span class="line">  <span class="comment">// the inside &quot;thunk function&quot;</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">async</span> (dispatch, getState) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// make an async call in the thunk</span></span><br><span class="line">      <span class="keyword">const</span> user = <span class="keyword">await</span> userAPI.<span class="title function_">fetchById</span>(userId)</span><br><span class="line">      <span class="comment">// dispatch an action when we get the response back</span></span><br><span class="line">      <span class="title function_">dispatch</span>(<span class="title function_">userLoaded</span>(user))</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">      <span class="comment">// If something went wrong, handle it here</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>import &#123; useSelector, useDispatch &#125; from &#39;react-redux&#39; </code> 可以 解决把redux中的state用在react里和调用redux里的dispatch ( 作为对比默认是useState</p>
-<p>官方说, 还是通过使用react提供的useState和useEffect,来构建自己的逻辑</p>
-<p>在ts demo生成的模板里是</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export const useAppDispatch = () =&gt; useDispatch&lt;AppDispatch&gt;();</span><br><span class="line">export const useAppSelector: TypedUseSelectorHook&lt;RootState&gt; = useSelector;</span><br></pre></td></tr></table></figure>
-
-<p>官方<code>export const selectCount = (state: RootState) =&gt; state.counter.value;</code></p>
-<p>并且注释说,也可以不定义直接在使用的地方写<code>useSelector((state) =&gt; state.counter.value)</code></p>
-<p>你也可以不完全是暴露值,也可以是函数处理映射后<code>const countPlusTwo = useSelector(state =&gt; state.counter.value + 2)</code></p>
-<p>The answer is NO. Global state that is needed across the app should go in the Redux store. State that’s only needed in one place should be kept in component state.</p>
-<p>提供了+1,+n,条件+2,异步+的四种demo</p>
-<blockquote>
-<p>总结</p>
-</blockquote>
-<p>redux基本是一个flux的实现</p>
-<p><code>@reactjs/toolkit</code> 简化了redux中 actions,reducer 编写和使用</p>
-<p>thunk: 异步的 </p>
-<h1 id="对比Vue"><a href="#对比Vue" class="headerlink" title="对比Vue"></a>对比Vue</h1><p>TODO 三个框架的工程解决方案和实际产出对比</p>
-<ol>
-<li>props, Vue也提供,但是没有强制限死为只读,导致接手的不少前端经理的代码还有修改props的行为, 而即使不是因为代码也会因为用户操作,没有对应的vm更改时,展示的页面不是”vm渲染的”, 最常见的就是input只传value</li>
-<li>Vue凡是要渲染的 都是data&#x2F;computed&#x2F;props, 但对于这种完全, 其实没有静态的划分,虽然可以通过const配置 + js语法引入到data里</li>
-<li>回调和emit的区别就是需要忽略时的体验了</li>
-<li>flux&#x2F;redux vs vuex, vuex(以我的视角vuex一定上是为了仿照其它框架的解决产物,其设计理念一定程度上和vue本身是相互违背的, vuex完成了简单共享js完成不了的动态触发(其实核心是调用了Vue.data), 提供了 mutation&#x2F;actions 看上去划分了 同步异步, 也可以devtools调试, 也可以有插件支持,但就我看目前的开发来说,很多很多只是使用了 数据共享这一点, 而vue的简单设计理念,在我看来更适合直接等号而不是修改需要调用函数,+声明化的使用,剩下的就是module和这里无关, 所以vuex本质是一个vue reactive + flux 的类似实现)</li>
-</ol>
-<h1 id="延伸阅读"><a href="#延伸阅读" class="headerlink" title="延伸阅读"></a>延伸阅读</h1><p><a target="_blank" rel="noopener" href="https://github.com/type-challenges/type-challenges">ts</a></p>
-<p><a target="_blank" rel="noopener" href="https://immerjs.github.io/immer/">Immer</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/Blog/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/Blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/Blog/page/3/">3</a><a class="page-number" href="/Blog/page/5/">5</a><a class="page-number" href="/Blog/page/9/">9</a><a class="page-number" href="/Blog/page/13/">13</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/Blog/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/Blog/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/Blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/Blog/page/3/">3</a><a class="page-number" href="/Blog/page/5/">5</a><a class="page-number" href="/Blog/page/9/">9</a><a class="page-number" href="/Blog/page/14/">14</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/Blog/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -1683,13 +1568,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">219k</span>
+    <span title="總字數">232k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">13:17</span>
+    <span title="所需總閱讀時間">14:05</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
