@@ -60,6 +60,8 @@ rxjs白送的 combinelatest pipe take,初学rxjs都会, vue的响应式原理怎
 
 bilibili 播放视频完后重播，前5秒会卡住
 
+2023-03-17 跳转时,同时点视频bug, https://www.bilibili.com/video/BV1qo4y1B7kF
+
 2023-05-02
 
 bilibili 投票弹出层放缩下是炸的

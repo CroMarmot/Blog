@@ -39,7 +39,7 @@ int main() {
 
 > Q2
 
-```
+```cpp
 #include <iostream>
 #include <string>
 void f(const std::string &) { std::cout << 1; }
@@ -56,7 +56,7 @@ int main() {
 
 > Q3
 
-```
+```cpp
 #include <iostream>
 void f(int) { std::cout << 1; }
 void f(unsigned) { std::cout << 2; }
@@ -70,7 +70,7 @@ int main() {
 
 > Q4
 
-```
+```cpp
 #include <iostream>
 
 void f(float) { std::cout << 1; }
@@ -86,7 +86,7 @@ int main() {
 
 > Q115
 
-```
+```cpp
 #include <iostream>
 
 void f(int) { std::cout << "i"; }
@@ -102,7 +102,7 @@ int main() {
 
 > Q24
 
-```
+```cpp
 #include <iostream>
 #include <limits>
 
@@ -116,7 +116,7 @@ unsigned integers overflow是well defined behaviour, 虽然可以用clang++的�
 
 > Q25
 
-```
+```cpp
 #include <iostream>
 #include <limits>
 
@@ -130,7 +130,7 @@ integers overflow 是未定义行为
 
 > Q26
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -144,7 +144,7 @@ int main() {
 
 > Q30
 
-```
+```cpp
 #include <iostream>
 struct X {
   X() { std::cout << "X"; }
@@ -157,7 +157,7 @@ int main() { X x(); }
 
 > Q31
 
-```
+```cpp
 #include <iostream>
 
 struct X {
@@ -179,7 +179,7 @@ int main() {
 
 > Q37
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -194,7 +194,7 @@ a是`int`,`decltype(a)`则也是`int`
 
 > Q38
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -209,7 +209,7 @@ decltype, 加了括号，且是lvalue, 所以是`int &`
 
 > Q41
 
-```
+```cpp
 #include <iostream>
 int main() {
   std::cout << 1["ABC"];
@@ -220,7 +220,7 @@ C++中数组与汇编的关系, `E1[E2] = *((E1)+(E2))`
 
 > Q241
 
-```
+```cpp
 #include <iostream>
 #include <type_traits>
 
@@ -244,7 +244,7 @@ int main() {
 
 > Q153
 
-```
+```cpp
 #include <iostream>
 int main() {
     char* str = "X";
@@ -258,7 +258,7 @@ http://dev.krzaq.cc/stop-assigning-string-literals-to-char-star-already/
 
 > Q120
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -274,7 +274,7 @@ int main() {
 
 > Q244
 
-```
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -293,7 +293,7 @@ int main() {
 
 > Q159
 
-```
+```cpp
 #include <iostream>
 
 int i;
@@ -312,7 +312,7 @@ int main() {
 
 > Q277
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -324,7 +324,7 @@ int main() {
 
 > Q313
 
-```
+```cpp
 #include <iostream>
 
 void f(float &&) { std::cout << "f"; }
@@ -354,7 +354,7 @@ void g<float, int>(float && __v0, int && __v1) {
 
 > Q161
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -377,7 +377,7 @@ int main() {
 
 > Q236
 
-```
+```cpp
 #include <iostream>
 
 struct Foo {
@@ -399,7 +399,7 @@ int main() {
 
 > Q279
 
-```
+```cpp
 #include <iostream>
 #include <variant>
 
@@ -426,7 +426,7 @@ variant可以粗略看成会自动析构的union, 这里使用了C,没有用D, `
 
 > Q332
 
-```
+```cpp
 #include <iostream>
 
 struct S {
@@ -446,7 +446,7 @@ int main() {
 
 > Q147
 
-```
+```cpp
 #include<iostream>
 
 int main(){
@@ -461,7 +461,7 @@ int main(){
 
 > Q179
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -476,7 +476,7 @@ int main() {
 
 > Q107
 
-```
+```cpp
 #include <iostream>
 #include <vector>
 
@@ -494,7 +494,7 @@ int main() {
 
 > Q259
 
-```
+```cpp
 #include <iostream>
 
 void f(unsigned int) { std::cout << "u"; }
@@ -512,7 +512,7 @@ int main() {
 
 > Q197
 
-```
+```cpp
 #include <iostream>
 
 int j = 1;
@@ -528,7 +528,7 @@ i指向了全局的j,而后面的`j`是局部的
 
 > Q129
 
-```
+```cpp
 #include <vector>
 #include <iostream>
 
@@ -544,7 +544,7 @@ int main() {
 
 > Q205
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -560,7 +560,7 @@ int main() {
 
 > Q273
 
-```
+```cpp
 #include <iostream>
 
 struct A {
@@ -578,7 +578,7 @@ sizeof 在编译时期，就被转换了，因此编译后根本没有new A
 
 > Q227
 
-```
+```cpp
 #include <iostream>
 
 using Func = int();
@@ -597,7 +597,7 @@ int main() {
 
 > Q207
 
-```
+```cpp
 #include <iostream>
 #include <map>
 using namespace std;
@@ -610,7 +610,7 @@ int main() {
 
 > Q347
 
-```
+```cpp
 #include <iostream>
 #include <type_traits>
 
@@ -643,7 +643,7 @@ int main()
 
 > Q248
 
-```
+```cpp
 #include <algorithm>
 #include <iostream>
 
@@ -665,7 +665,7 @@ int main() {
 
 > Q196
 
-```
+```cpp
 #include <iostream>
 
 namespace x {
@@ -690,7 +690,7 @@ int main() {
 
 > Q287
 
-```
+```cpp
 #include <string>
 #include <iostream>
 
@@ -709,7 +709,7 @@ int main() {
 
 > Q233
 
-```
+```cpp
 #include <type_traits>
 #include <iostream>
 
@@ -732,7 +732,7 @@ int main() {
 
 > Q291
 
-```
+```cpp
 #include <iostream>
 
 int _global = 1;
@@ -748,7 +748,7 @@ int main() {
 
 > Q289
 
-```
+```cpp
 #include <iostream>
 
 void f(int a = []() { static int b = 1; return b++; }())
@@ -767,7 +767,7 @@ int main()
 
 > Q151
 
-```
+```cpp
 #include <iostream>
 #include <type_traits>
 
@@ -781,7 +781,7 @@ It is implementation-defined whether a char object can hold negative values.
 
 > Q152
 
-```
+```cpp
 #include <iostream>
 #include <type_traits>
 
@@ -811,7 +811,7 @@ char/unsigned char/signed char需要足够大存下unsigned char, 但不一定�
 
 > Q251
 
-```
+```cpp
 #include <iostream>
 
 template<class T>
@@ -833,7 +833,7 @@ int main() {
 
 > Q106
 
-```
+```cpp
 #include <iostream>
 
 extern "C" int x;
@@ -851,7 +851,7 @@ x是声明,y是定义, x未被定义，编译器可以选择报告错误，所�
 
 > Q191
 
-```
+```cpp
 #include<iostream>
 
 namespace A{
@@ -875,7 +875,7 @@ int main(){
 
 > Q198
 
-```
+```cpp
 #include <iostream>
 
 namespace A {
@@ -899,7 +899,7 @@ int main() {
 
 > Q220
 
-```
+```cpp
 #include <iostream>
 
 bool f() { std::cout << 'f'; return false; }
@@ -914,7 +914,7 @@ int main() {
 
 > Q174
 
-```
+```cpp
 #include<iostream>
 
 void f(int& a, const int& b) {
@@ -933,7 +933,7 @@ const 只保证不能通过当前这个来修改，并不保证指向的不被�
 
 > Q125
 
-```
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -954,7 +954,7 @@ int main() {
 
 > Q118
 
-```
+```cpp
 #include <iostream>
 
 void print(char const *str) { std::cout << str; }
@@ -971,7 +971,7 @@ int main() {
 
 > Q335
 
-```
+```cpp
 #include <cstddef>
 #include <iostream>
 
@@ -996,7 +996,7 @@ a和`nullptr`很清晰， 但是对于NULL 有的编译器用long 有的用int�
 
 > 135
 
-```
+```cpp
 #include <iostream>
 #include <map>
 using namespace std;
@@ -1014,7 +1014,7 @@ int被转换成bool
 
 > Q105
 
-```
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -1039,7 +1039,7 @@ goto 会对 跳转之间的初始化的进行 destruction, 而不论从汇编角
 
 > Q219
 
-```
+```cpp
 #include <iostream>
 
 template<typename T>
@@ -1063,7 +1063,7 @@ int main() {
 
 > Q286
 
-```
+```cpp
 #include<iostream>
 
 int main()
@@ -1080,7 +1080,7 @@ int main()
 > Q206
 
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -1093,7 +1093,7 @@ int main() {
 
 > Q254
 
-```
+```cpp
 #include <iostream>
 #include <type_traits>
 
@@ -1148,7 +1148,7 @@ int main() {
 
 > Q276
 
-```
+```cpp
 #include <iostream>
 
 auto sum(int i)
@@ -1169,7 +1169,7 @@ auto 需要所有分支返回类型相同，已知i是int, 从而直接对于未
 
 > Q144
 
-```
+```cpp
 #include <iostream>
 #include <limits>
 
@@ -1219,7 +1219,7 @@ typeid 返回的是const std::type_info 类型的左值, 但两次返回并不�
 
 > Q188
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -1269,7 +1269,7 @@ int main()
 
 > Q113
 
-```
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -1299,7 +1299,7 @@ int main() {
 
 > Q338
 
-```
+```cpp
 #include <type_traits>
 #include <iostream>
 #include <string>
@@ -1323,7 +1323,7 @@ int main()
 
 > Q337
 
-```
+```cpp
 #include <iostream>
 #include <type_traits>
 
@@ -1343,7 +1343,7 @@ decltype( const char的数组) = const char(&)[14]
 
 > Q148
 
-```
+```cpp
 #include <iostream>
 
 volatile int a;
@@ -1357,7 +1357,7 @@ volatile 首先意义是 可能程序外的其它程序/硬件 会对这个内�
 
 > Q119
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -1370,7 +1370,7 @@ int main() {
 
 > Q238
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -1382,7 +1382,7 @@ int main() {
 
 > Q193
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -1418,7 +1418,7 @@ int main() {
 
 override不是保留字(final也不是)，它们只有特殊上下文才有特殊用处，因此上面也可以改成
 
-```
+```cpp
 #include <iostream>
 
 struct foo {};
@@ -1461,7 +1461,7 @@ int main(){
 
 > Q293
 
-```
+```cpp
 #include <iostream>
 
 int main(int argc, char* argv[]) {
@@ -1473,7 +1473,7 @@ int main(int argc, char* argv[]) {
 
 > Q140
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1506,7 +1506,7 @@ sizeof 是编译时，参数 int arr[]和int * arr等价, sizeof指针只有指�
 
 > Q121
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -1559,7 +1559,7 @@ lambda是lambda一种特殊的，并不是`function<void(int)>` 但是可以转�
 
 另一个就是C++20 中支持辅助
 
-```
+```cpp
 template <typename T>
 struct type_identity
 {
@@ -1602,7 +1602,7 @@ int main()
 
 > Q186
 
-```
+```cpp
 #include <iostream>
 #include <typeinfo>
 
@@ -1637,7 +1637,7 @@ int main() {
 
 > Q235
 
-```
+```cpp
 #include <initializer_list>
 #include <iostream>
 
@@ -1661,7 +1661,7 @@ i对c拷贝构造, 而在传递`std::initializer_list`时不会对里面的元�
 
 > Q252
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -1674,7 +1674,7 @@ char 与 int的转换成ascii
 
 > Q192
 
-```
+```cpp
 #include <vector>
 #include <iostream>
 
@@ -1746,7 +1746,7 @@ https://en.cppreference.com/w/cpp/language/types#Properties
 
 > Q278
 
-```
+```cpp
 #include <iostream>
 #include <tuple>
 
@@ -1783,7 +1783,7 @@ int main() {
 
 > Q242
 
-```
+```cpp
 #include <iostream>
 #include <type_traits>
 
@@ -1829,7 +1829,7 @@ f(i),T=int&, forward返回 `static_cast<int&&&>(t)`, lvalue
 
 注: Reference collapsing: int&&& above collapsed to int&
 
-```
+```cpp
 int i;
 typedef int& LRI;
 typedef int&& RRI;
@@ -1906,11 +1906,45 @@ def f(x = h()): pass;
 f();f();
 ```
 
+> Q127
+
+```cpp
+#include <iostream>
+#include <type_traits>
+
+using namespace std;
+
+int main()
+{
+  int i, &j = i;
+  [=]
+  {
+    cout << is_same<decltype    ((j)),     int         >::value
+         << is_same<decltype   (((j))),    int      &  >::value
+         << is_same<decltype  ((((j)))),   int const&  >::value
+         << is_same<decltype (((((j))))),  int      && >::value
+         << is_same<decltype((((((j)))))), int const&& >::value;
+  }();
+}
+```
+
+lambda.capture 中 decltype((x)) 其中x是一个可能是括号内的id表达式，它命名了一个自动存储期限的实体，被视为x被转化为对封闭类型的相应数据成员的访问
+
+多余的括号 被忽略了
+
+然而实际上gcc目前还是错误的输出01000, https://gcc.gnu.org/bugzilla/show_bug.cgi?id=63192
+
+然后这里的`[=]`也决定了j不会是引用，而是copy
+
+然后这里没有`mutable`(会在lambda的独有上下文持续持有 变量 https://stackoverflow.com/a/54819746/6616436)所以lambda是一个const lambda
+
+decltype的表达式是一个括号内的lvalue表达式, decltype(e)表示的类型是(...)T&，其中T是e的类型,由于表达式出现在一个const成员函数中，所以表达式是const，decltype((j))表示int const& (reference (&) to a constant (const) int. The integer can't be modified through the reference.)
+
 # 类
 
 > Q5
 
-```
+```cpp
 #include <iostream>
 
 struct A {
@@ -1938,7 +1972,7 @@ int main() {
 
 > Q7
 
-```
+```cpp
 #include <iostream>
 
 class A {
@@ -1989,7 +2023,7 @@ int main() {
 
 > Q8
 
-```
+```cpp
 #include <iostream>
 
 class A {
@@ -2014,7 +2048,7 @@ int main() {
 
 > Q13
 
-```
+```cpp
 #include <iostream>
 
 class A {
@@ -2046,7 +2080,7 @@ A不是`constexpr` 因此是dynamic, 它可能在main之前初始化，也可能
 
 > Q14
 
-```
+```cpp
 #include <iostream>
 
 class A {
@@ -2080,7 +2114,7 @@ int main() {
 
 > Q15
 
-```
+```cpp
 #include <iostream>
 #include <exception>
 
@@ -2121,7 +2155,7 @@ int main() {
 
 > Q16
 
-```
+```cpp
 #include <iostream>
 
 class A {
@@ -2144,7 +2178,7 @@ int main() { B b; }
 
 > Q17
 
-```
+```cpp
 #include <iostream>
 
 class A {
@@ -2166,7 +2200,7 @@ int main() { B b; }
 
 > Q27
 
-```
+```cpp
 #include <iostream>
 
 struct A {
@@ -2195,7 +2229,7 @@ int main() {
 
 > Q28
 
-```
+```cpp
 #include <iostream>
 
 struct A {
@@ -2216,7 +2250,7 @@ C++11 standard, §8.5/6, 虽然函数中`int x[2]`不会初始化到0,但是对�
 
 > Q29
 
-```
+```cpp
 #include <iostream>
 
 struct A {
@@ -2240,7 +2274,7 @@ constructors 和destructors 中不会考虑 virtual, 而bar虽然本身不是vir
 
 > Q23
 
-```
+```cpp
 #include <iostream>
 
 struct X {
@@ -2262,7 +2296,7 @@ int main() {
 
 > Q33
 
-```
+```cpp
 #include <iostream>
 
 struct GeneralException {
@@ -2289,7 +2323,7 @@ int main() {
 
 > Q42
 
-```
+```cpp
 #include <initializer_list>
 #include <iostream>
 
@@ -2313,7 +2347,7 @@ int main(int argc, char *argv[]) {
 
 > Q44
 
-```
+```cpp
 #include <iostream>
 struct X {
   virtual void f() const { std::cout << "X"; }
@@ -2338,7 +2372,7 @@ int main() {
 
 > Q52
 
-```
+```cpp
 #include <iostream>
 
 class A;
@@ -2366,7 +2400,7 @@ B中要friend A 的函数, 需要在之前知道A中有这个函数，不仅仅�
 
 > Q133
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -2409,7 +2443,7 @@ int main()
 
 > Q307
 
-```
+```cpp
 #include <iostream>
 
 struct S
@@ -2433,7 +2467,7 @@ s的x会从 空的initializer list调用 拷贝构造, 如果初始列表没有�
 
 > Q187
 
-```
+```cpp
 #include <iostream>
 
 struct C {
@@ -2452,7 +2486,7 @@ int main() {
 
 > Q283
 
-```
+```cpp
 #include <iostream>
 
 class show_id
@@ -2473,7 +2507,7 @@ delete 和 new对称，所以保持destruct和construct的顺序是反的,
 
 > Q190
 
-```
+```cpp
 #include <iostream>
 
 struct A {
@@ -2492,7 +2526,7 @@ int main() {
 
 > Q140
 
-```
+```cpp
 #include <iostream>
 #include <memory>
 #include <vector>
@@ -2533,7 +2567,7 @@ int main() {
 
 > Q184
 
-```
+```cpp
 #include <iostream>
 
 struct Base {
@@ -2555,7 +2589,7 @@ int main() {
 
 > Q130
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -2591,7 +2625,7 @@ int main ()
 
 > Q158
 
-```
+```cpp
 #include <iostream>
 #include <vector>
 
@@ -2611,7 +2645,7 @@ vector默认初始化调用的是`T()`
 
 > Q160
 
-```
+```cpp
 #include <iostream>
 
 struct A {
@@ -2636,7 +2670,7 @@ int main () {
 
 > Q162
 
-```
+```cpp
 #include <iostream>
 
 void f()
@@ -2675,7 +2709,7 @@ https://stackoverflow.com/questions/4643074/why-do-i-have-to-access-template-bas
 
 > Q318
 
-```
+```cpp
 #include <iostream>
 
 struct S {
@@ -2696,7 +2730,7 @@ A conversion function is never used to convert a (possibly cv-qualified) object 
 
 > Q131
 
-```
+```cpp
 #include <iostream>
 
 class C {
@@ -2719,7 +2753,7 @@ int main() {
 
 > Q296
 
-```
+```cpp
 #include <iostream>
 
 struct S {
@@ -2738,7 +2772,7 @@ int main() {
 
 > Q126
 
-```
+```cpp
 #include<iostream>
 
 int foo()
@@ -2767,7 +2801,7 @@ int main()
 
 > Q225
 
-```
+```cpp
 #include <iostream>
 
 struct X {
@@ -2889,7 +2923,7 @@ int main()
 
 > Q163
 
-```
+```cpp
 #include <iostream>
 
 class A {
@@ -2912,7 +2946,7 @@ int main() {
 
 auto bar = a.getFoo(); 中 auto的推断 和 下面模板推断过程相同
 
-```
+```cpp
 template<typename T> void f(T t);
 f(a.getFoo());
 ```
@@ -2921,7 +2955,7 @@ f(a.getFoo());
 
 > Q284
 
-```
+```cpp
 #include <iostream>
 #include <string>
 
@@ -2935,7 +2969,7 @@ auto main() -> int {
 
 > Q243
 
-```
+```cpp
 #include <iostream>
 
 template <typename T>
@@ -3041,7 +3075,7 @@ int main() {
 
 > Q230
 
-```
+```cpp
 #include <iostream>
 
 struct X {
@@ -3126,11 +3160,46 @@ return 语句用 glvalue/prvalue 来拷贝构造初始化，如果拷贝初始�
 因此no copy 也 no move
 
 
+> Q295
+
+```cpp
+#include <iostream>
+
+char a[2] = "0";
+
+struct a_string {
+   a_string() { *a='1'; }
+   ~a_string() { *a='0'; }
+   const char* c_str() const { return a; }
+};
+
+void print(const char* s) { std::cout << s; }
+a_string make_string() { return a_string{}; }
+
+int main() {
+   a_string s1 = make_string();
+   print(s1.c_str());
+
+   const char* s2 = make_string().c_str();
+   print(s2);
+
+   print(make_string().c_str());
+}
+```
+
+创建都创建的了，就是什么时候销毁的
+
+有名字的，等待函数结束
+
+匿名的在执行后失去引用会销毁
+
+而第三个，问题是在print调用前还是print调用后销毁，根据规则是 evaluating full-expression 后销毁
+
 # 循环
 
 > Q6
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -3147,7 +3216,7 @@ int main() {
 
 > Q9
 
-```
+```cpp
 #include <iostream>
 
 int f(int &a, int &b) {
@@ -3170,7 +3239,7 @@ int main() {
 
 > Q11
 
-```
+```cpp
 #include <iostream>
 int a;
 int main () {
@@ -3182,7 +3251,7 @@ int main () {
 
 > Q12
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -3197,7 +3266,7 @@ static local变量初始化0
 
 > Q35
 
-```
+```cpp
 #include <iostream>
 #include <vector>
 
@@ -3214,7 +3283,7 @@ vector初始化写法 `(size,value)` 和 List-initialization
 
 > Q48
 
-```
+```cpp
 #include <iostream>
 #include <string>
 #include <future>
@@ -3237,7 +3306,7 @@ async返回的在行末尾 destructor, 所以一定有序
 
 > Q340
 
-```
+```cpp
 #include <future>
 #include <iostream>
 
@@ -3260,7 +3329,7 @@ promise 只能get_future一次，否则throw exception
 
 > Q339
 
-```
+```cpp
 #include <future>
 #include <iostream>
 
@@ -3283,7 +3352,7 @@ get只能一次，否则是undefined behaviour, (大多数实现是 throw except
 
 > Q49
 
-```
+```cpp
 #include <iostream>
 
 class C {
@@ -3308,7 +3377,7 @@ int main() {
 
 > Q281
 
-```
+```cpp
 #include <iostream>
 
 class C
@@ -3336,7 +3405,7 @@ https://blog.knatten.org/2018/03/09/lvalues-rvalues-glvalues-prvalues-xvalues-he
 
 > Q217
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -3351,7 +3420,7 @@ int main() {
 
 > Q249
 
-```
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -3369,7 +3438,7 @@ int main() {
 
 > Q112
 
-```
+```cpp
 #include <iostream>
 #include <utility>
 
@@ -3399,7 +3468,7 @@ int main()
 
 > Q178
 
-```
+```cpp
 #include <iostream>
 
 int main() {
@@ -3417,7 +3486,7 @@ int main() {
 
 > Q226
 
-```
+```cpp
 #include <iostream>
 #include <utility>
 
@@ -3445,7 +3514,7 @@ int main() {
 
 > Q195
 
-```
+```cpp
 #include <iostream>
 #include <cstddef>
 #include <type_traits>
@@ -3459,7 +3528,7 @@ int main() {
 
 > Q116
 
-```
+```cpp
 #include <iostream>
 #include <utility>
 
@@ -3487,7 +3556,7 @@ https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers
 
 > Q208
 
-```
+```cpp
 #include <iostream>
 #include <map>
 using namespace std;
@@ -3515,7 +3584,7 @@ int main() {
 
 > Q265
 
-```
+```cpp
 #include <iostream>
 
 void f(char*&&) { std::cout << 1; }
@@ -3534,7 +3603,7 @@ int main() {
 
 > Q261
 
-```
+```cpp
 #include <iostream>
 #include <sstream>
 
@@ -3554,7 +3623,7 @@ int main() {
 
 > Q239
 
-```
+```cpp
 #include <stdexcept>
 #include <iostream>
 
