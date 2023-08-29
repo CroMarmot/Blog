@@ -27,7 +27,7 @@
 <meta property="og:description" content="问题那么多面经在说引用计数, 循环引用会无法gc,而以我对jvm python等多个有gc语言的了解，js 再怎么也不至于就是个引用计数 否则循环引用早爆了 1234567891011121314151617181920function foo() &amp;#123;  var a &#x3D; &amp;#123;&amp;#125;;  function bar() &amp;#123;    console.log(a);  &amp;#">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2023-02-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-08-29T04:15:55.075Z">
+<meta property="article:modified_time" content="2023-08-29T04:17:20.022Z">
 <meta property="article:author" content="Cro-Marmot">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="&lt;twitter:card&gt;">
@@ -252,7 +252,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-08-29 12:15:55" itemprop="dateModified" datetime="2023-08-29T12:15:55+08:00">2023-08-29</time>
+      <time title="修改時間：2023-08-29 12:17:20" itemprop="dateModified" datetime="2023-08-29T12:17:20+08:00">2023-08-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -285,7 +285,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>195</span>
+      <span>196</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -308,6 +308,8 @@
 
 <p><code>chrome performance 点垃圾桶 进行gc</code>, 然后再执行</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(wm1);</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
 
 <p>狗都知道循环引用也可以gc掉, 只要没有持有的引用链跟上来.</p>
 <p>我不理解几行代码就可以验证的事情可以一传十,十传百. 真的面试是文科靠背诵, 不靠逻辑是吧。</p>
