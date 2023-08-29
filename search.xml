@@ -16056,6 +16056,8 @@ export default &#123;
 <li>并服务构建后的静态内容</li>
 <li>所有对edge&#x2F;serverless function的请求再运行零时的后台代码</li>
 </ul>
+<span id="more"></span>
+
 <h2 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h2><p>支持常见的流行框架: Angular,Next.js,Nuxt.js,Hexo, <a href="https://vercel.com/docs/frameworks">https://vercel.com/docs/frameworks</a></p>
 <p>基于现成模板: <a href="https://vercel.com/templates">https://vercel.com/templates</a></p>
 <p>或者 仓库或者vercel cli</p>
@@ -16139,6 +16141,8 @@ export default &#123;
 <p>于是乎, 就可以用vercel+flask+bs4等等来做一个自己用的小爬虫了,虽然在有自己服务器情况下不需要,有本地电脑也可以做,但是android&#x2F;ios上想做个简单自用的带服务的网页,vercel目前的Hobby免费用量还是非常充足的, <a href="https://vercel.com/dashboard/usage">https://vercel.com/dashboard/usage</a></p>
 <hr>
 <p>国内腾讯有个Webify,但看上去还是只有静态支持, <a href="https://webify.cloudbase.net/docs/migrating/vercel">https://webify.cloudbase.net/docs/migrating/vercel</a> ,并不支持edge&#x2F;serverless function, 再不然就还是自己买服务器了, 所以国内的核心问题还是监管问题,而不是技术问题</p>
+<h2 id="实际例子"><a href="#实际例子" class="headerlink" title="实际例子"></a>实际例子</h2><p><a href="https://py-cromarmot.vercel.app/cp/atcoder/cromarmot.svg">https://py-cromarmot.vercel.app/cp/atcoder/cromarmot.svg</a></p>
+<p><img data-src="https://py-cromarmot.vercel.app/cp/atcoder/cromarmot.svg" alt="atcoder svg"></p>
 ]]></content>
       <categories>
         <category>frontend</category>
@@ -16146,6 +16150,182 @@ export default &#123;
       <tags>
         <tag>vercel</tag>
         <tag>serverless</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cofig with ini,xml,json,yaml,toml</title>
+    <url>/Blog/23-08-29-config/</url>
+    <content><![CDATA[<p>TLDR: 选TOML类型</p>
+<span id="more"></span>
+
+<h2 id="关于参数"><a href="#关于参数" class="headerlink" title="关于参数"></a>关于参数</h2><p>众所周知, 写代码有的东西 可能会变</p>
+<p>而 常用的方法有, 写死, 写死但是一个全局的变量, 接受环境变量, 接受命令行参数, 接受接口参数, 接受配置文件</p>
+<p>对于 参数优先级</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">命令行参数(api参数)</span><br><span class="line">命令行指定的配置文件</span><br><span class="line">环境变量</span><br><span class="line">本地配置文件(如果存在), (当前目录,当前project目录)</span><br><span class="line">全局配置文件(如果存在), (当前用户根目录,PATH目录)</span><br><span class="line">内置默认值</span><br></pre></td></tr></table></figure>
+
+<p>就python的cli程序而言</p>
+<p>那么对于 命令行参数,有 argparse&#x2F;click&#x2F;自己解析argc,argv</p>
+<p>环境变量 有 <code>os.getenv()</code></p>
+<p>内置默认值, 怎么写其实都行</p>
+<p>那么本文主要关注的是, 配置文件</p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="同语言"><a href="#同语言" class="headerlink" title="同语言"></a>同语言</h3><p>对于python的配置文件, 其实完全可以用python来写, 也就是用同语言直接来写,同理ts的软件的配置可以用ts来写,</p>
+<p>优点是,支持了复杂性,易读(本身是逻辑语言),而且如果本身用户也是 从编码层面使用会很方便</p>
+<p>缺点是,对于简单的配置不必要,用户不需要学相应的语言,有些语言是编译语言, 而如果真的是这种情况,可能你更需要的是开发一个配置管理界面,而不是考虑配置文件格式?</p>
+<hr>
+<p>而其它配置文件, 如果层级缺失, 当工程变大时, 多个配置项的交叉发生时,容易出现 “配置的表述” 和 “期望的逻辑” 之间的 不一致, 这个时候你还需要去理解工具的工作原理, 反而把本来只需要理解配置的工作扩大成理解工具了</p>
+<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p>其实除了 同语言,其它都是”简单的配置文件”了, 而关于模块化,应该是工具关心的不是格式关心的?</p>
+<ul>
+<li>环境变量(1979)<ul>
+<li><a href="https://en.wikipedia.org/wiki/Environment_variable">https://en.wikipedia.org/wiki/Environment_variable</a></li>
+<li>你可以在~&#x2F;.bashrc 中source其它的文件,实现”模块化”</li>
+<li>同样注释 是使用的shell的注释</li>
+</ul>
+</li>
+<li>ini(1981), initialization<ul>
+<li><a href="https://en.wikipedia.org/wiki/INI_file">https://en.wikipedia.org/wiki/INI_file</a></li>
+<li>其中wiki里 parser的部分可以看到不同parser的支持程度不同</li>
+<li>虽然有支持section nesting的parser, 但是 书写上还是 Key&#x2F;Value的形式, 在书写上看不见层级</li>
+<li>另外虽然configparser提供了getboolean&#x2F;getint&#x2F;getfloat, 但实际上 直接读取还是字符串</li>
+</ul>
+</li>
+<li>xml(1996), Extensible Markup Language<ul>
+<li><a href="https://en.wikipedia.org/wiki/XML">https://en.wikipedia.org/wiki/XML</a></li>
+<li>层级!层级!层级!</li>
+<li>主要就是靠start-tag&#x2F;end-tag</li>
+<li>而本质上还是没有类型规范</li>
+<li>同时还有 字符串转义的问题</li>
+</ul>
+</li>
+<li>json(2000), JavaScript Object Notation<ul>
+<li><a href="https://en.wikipedia.org/wiki/JSON">https://en.wikipedia.org/wiki/JSON</a></li>
+<li>类型!类型!类型!</li>
+<li>从名字可以看出和js有关,而这关联性,让它的类型系统更明确了</li>
+<li>有了 (string,number,object(字典),array,boolean,null),同时python和其它语言也有支持的库</li>
+<li>而且从书写上讲, 上面的start-tag&#x2F;end-tag需要重复的内容,这里书写上更简洁了</li>
+<li>然后不能注释,也是问题所在,虽然现在有jsonc可以写注释了,例如tsconfig.json中可以了,但是还没有变成默认标准</li>
+<li>同样,因为有了 花括号 双引号这些,你可以一定程度上多行写成一行</li>
+</ul>
+</li>
+<li>yaml(2001),yet another markup language<ul>
+<li><a href="https://yaml.org/">https://yaml.org/</a></li>
+<li>书写上可以比json少不少 可见字符,(花括号,双引号)</li>
+<li>类型上多了date&#x2F;timestamp</li>
+<li>还提供了inheritance&#x2F;reference, 的操作符号 <code>&amp;/*/&lt;&lt;</code></li>
+<li>然而经常被大家说的还是 yaml的类型, 单引号,双引号,无引号都可以是字符串, 然而如果有一天,一个人想把 版本号 3.10.3(字符串) 改成 3.10 那么这将是浮点类型 而不是字符串</li>
+<li>很依赖于缩进</li>
+</ul>
+</li>
+<li>toml(2013), Tom’s Obvious Minimal Language<ul>
+<li><a href="https://toml.io/en/">https://toml.io/en/</a></li>
+<li>在yaml的类型上多了table</li>
+<li>比yaml的类型系统的书写更精确</li>
+<li>不依赖缩进,而层级可以自由选择是否tab,也可以链式写法</li>
+</ul>
+</li>
+<li>custom<ul>
+<li>proxychains</li>
+<li>apt</li>
+<li>nginx</li>
+<li>有自己的语法,和特殊的支持,有的因为历史原因,有的自己东西做大了可以自己实现解析器,而conf也可以是ini格式</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>-</th>
+<th>环境变量</th>
+<th>同语言</th>
+<th>ini</th>
+<th>xml</th>
+<th>json</th>
+<th>yaml</th>
+<th>toml</th>
+<th>custom</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>层级支持</td>
+<td>❌</td>
+<td>✅</td>
+<td>半支持</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>?</td>
+</tr>
+<tr>
+<td>类型系统</td>
+<td>字符串</td>
+<td>同语言</td>
+<td>字符串</td>
+<td>字符串</td>
+<td>string,number,map,array,bool,null</td>
+<td>比json多date,timestamp</td>
+<td>比yaml多了table,而类型描述的书写更精确</td>
+<td>?</td>
+</tr>
+<tr>
+<td>注释支持</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>?</td>
+</tr>
+<tr>
+<td>现有工具</td>
+<td><code>os.getenv()</code></td>
+<td>不需要额外工具</td>
+<td>configparser</td>
+<td>xml</td>
+<td>json</td>
+<td>pyyaml</td>
+<td>tomllib</td>
+<td>?</td>
+</tr>
+<tr>
+<td>实际例子</td>
+<td>http_proxy</td>
+<td>flask config,webpack.config.js</td>
+<td>desktop.ini,setup.ini</td>
+<td>pom.xml</td>
+<td>前端配置,前端RESTFUL接口</td>
+<td>docker compose,github actions,jenkins</td>
+<td>pyproject.toml</td>
+<td><code>/etc/proxychains.conf</code>,<code>/etc/apt/sources.list</code>,<code>/etc/nginx/sites-available/default</code></td>
+</tr>
+<tr>
+<td>其它</td>
+<td>-</td>
+<td>非编译语言会采用</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>类型书写不够明确,引用感觉多余</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h2 id="锐评"><a href="#锐评" class="headerlink" title="锐评"></a>锐评</h2><p>当一个配置文件提供层级,但是相关软件滥用层级时,不是配置文件的问题,是软件设计的问题</p>
+<p>另外,当配置出错时,你的程序也应该提示配置错误会更好,而不是简单的炸掉</p>
+<p>有的时候可能同时采取多个,例如同时支持命令行参数+环境变量+配置文件, 但配置文件就不要多个类型了,求求了</p>
+<p>其实从功能上讲, json+注释+日期类型 就很理想了, yaml的 引用感觉太重了,到这种程度就还不如直接用your language,或者用户配置面板, 而除了功能以外,就是书写上了, toml 可以说即精确又小巧</p>
+]]></content>
+      <categories>
+        <category>backend</category>
+      </categories>
+      <tags>
+        <tag>json</tag>
+        <tag>config</tag>
+        <tag>ini</tag>
+        <tag>xml</tag>
+        <tag>yaml</tag>
+        <tag>toml</tag>
       </tags>
   </entry>
 </search>
