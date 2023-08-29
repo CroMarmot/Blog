@@ -14348,13 +14348,9 @@ export default &#123;
 <h2 id="学一手-py-隔离环境测试"><a href="#学一手-py-隔离环境测试" class="headerlink" title="学一手 py 隔离环境测试"></a>学一手 py 隔离环境测试</h2><p>虽然我一般习惯是用venv</p>
 <hr>
 <p>本机+virtualenv</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/nschloe/setuptools-UNKNOWN-bug.git</span><br><span class="line"><span class="built_in">cd</span> setuptools-UNKNOWN-bug</span><br><span class="line"></span><br><span class="line">virtualenv -p python3.10 .venv</span><br><span class="line">.venv/bin/python -m pip install .</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">docker</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>docker run –rm -it python:3.10-bullseye &#x2F;bin&#x2F;bash</p>
-</blockquote>
-<p>cd &#x2F;tmp<br>git clone <a href="https://github.com/nschloe/setuptools-UNKNOWN-bug.git">https://github.com/nschloe/setuptools-UNKNOWN-bug.git</a><br>cd setuptools-UNKNOWN-bug<br>pip install .</p>
-<pre><code>
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/nschloe/setuptools-UNKNOWN-bug.git</span><br><span class="line"><span class="built_in">cd</span> setuptools-UNKNOWN-bug</span><br><span class="line"></span><br><span class="line">virtualenv -p python3.10 .venv</span><br><span class="line">.venv/bin/python -m pip install .</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">docker</span><br><span class="line"></span><br><span class="line">&gt; docker run --<span class="built_in">rm</span> -it python:3.10-bullseye /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/nschloe/setuptools-UNKNOWN-bug.git</span><br><span class="line"><span class="built_in">cd</span> setuptools-UNKNOWN-bug</span><br><span class="line">pip install .</span><br></pre></td></tr></table></figure>
+
+
 ]]></content>
       <categories>
         <category>backend</category>
