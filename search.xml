@@ -14714,6 +14714,8 @@ export default &#123;
 <li>使用了现代化vscode(可以vim插件支持vim快捷键)</li>
 <li>性能不差</li>
 </ul>
+<span id="more"></span>
+
 <h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p><strong>2023年了,我以前还会给点官方文档的链接，现在不论是google还是newbing都可以瞬间得到官方文档链接，所以直接给keywords</strong></p>
 <ul>
 <li>例如python2&#x2F;pthon3&#x2F;clang++&#x2F;g++&#x2F;nodejs(nvm)&#x2F;…在不同系统下的安装, win,debian,archlinux,macos</li>
@@ -15908,6 +15910,8 @@ export default &#123;
 <li>安装<code>Linux/Windows/Android</code>同步软件, 例如Syncthing, 解决 电脑和手机之间的同步</li>
 <li>通过<code>F-Droid</code>安装音乐播放器<code>Retro</code>(支持动态lrc) (有的手机系统自带的音乐播放器也能播放本地的)</li>
 </ul>
+<span id="more"></span>
+
 <h1 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>例如开发者模式，linux adb等等</p>
 <h3 id="Android-wifi-adb"><a href="#Android-wifi-adb" class="headerlink" title="Android wifi adb"></a>Android wifi adb</h3><ul>
 <li>手机打开对应开关 和 匹配code</li>
