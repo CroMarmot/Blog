@@ -131,7 +131,6 @@ virtualenv -p python3.10 .venv
 
 docker
 
-```
 > docker run --rm -it python:3.10-bullseye /bin/bash
 
 cd /tmp
