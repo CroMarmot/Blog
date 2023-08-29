@@ -5,6 +5,8 @@ tags: [python3, setuptools]
 category: [backend,python3]
 ---
 
+TLDR: setuptools在2023的体验的确比不上新工具hatching
+
 # Step by Step
 
 install build

@@ -6,6 +6,8 @@ category: [software, linux]
 description: develop env with vscode in docker
 ---
 
+TLDR: 有可实施性,但是作为更简单的方案是像我现在这样直接用Ubuntu
+
 # 背景
 
 众所周知，在以前，通过vim+ssh可以容易的远端开发, 并且当我的主系统一直是Ubuntu时，连vmware里，连windows的wsl2里的linux都十分容易
