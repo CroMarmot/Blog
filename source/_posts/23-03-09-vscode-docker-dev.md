@@ -21,6 +21,8 @@ description: develop env with vscode in docker
 - 使用了现代化vscode(可以vim插件支持vim快捷键)
 - 性能不差
 
+<!--more-->
+
 # 开始
 
 ## 前置知识

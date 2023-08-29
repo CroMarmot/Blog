@@ -16,6 +16,8 @@ description: A solution
 - 安装`Linux/Windows/Android`同步软件, 例如Syncthing, 解决 电脑和手机之间的同步
 - 通过`F-Droid`安装音乐播放器`Retro`(支持动态lrc) (有的手机系统自带的音乐播放器也能播放本地的)
 
+<!--more-->
+
 # 细节
 
 ## 准备
