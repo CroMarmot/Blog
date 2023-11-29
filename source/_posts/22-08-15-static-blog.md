@@ -12,9 +12,11 @@ mathjax: true
 
 用了Hexo很久了,期间也有不少其它产品, 也试了试这些框架
 
-对于我, 核心需求是markdown + code高亮 + tex + rss支持, 操作期望是0代码, 可以简单yaml配置,和复制配置的配置行为, 然后有个基本不错的theme, 最好能支持二进制分页
+对于我, 核心需求是markdown + code高亮 + tex + rss + 二进制分页+tags+category 支持, 操作期望是0代码, 可以简单yaml/toml配置,和复制配置的配置行为, 然后有个基本不错的theme
 
 毕竟主要产出在markdown而不是搭建
+
+本地方案是 obsidian/vscode/vim 就可以了
 
 <!-- more -->
 
@@ -38,13 +40,21 @@ mathjax: true
 
 > hugo
 
-这个很倾向, 看到有基于这个做的 < 150 行代码 的 支持code + tex的theme很不错 https://github.com/yihui/hugo-xmin , 有个我本地的小问题是, hugo官方只给了基于homebrew的安装, 没有apt/pip/npm 之类的安装, 我本地linux, 为了一个hugo去装个homebrew让我还是有点不能接受, 如果mac的话应该就很好了, 以及我看oi-wiki 就是基于hugo搭建的
+这个很倾向, 看到有基于这个做的 < 150 行代码 的 支持code + tex的theme很不错 <https://github.com/yihui/hugo-xmin> , 有个我本地的小问题是, hugo官方只给了基于homebrew的安装, 没有apt/pip/npm 之类的安装, 我本地linux, 为了一个hugo去装个homebrew让我还是有点不能接受, 如果mac的话应该就很好了, 以及我看oi-wiki 就是基于hugo搭建的
+
+> mkdocs
+
+也算是不错，python做的，问题是核心组件的支持似乎并不多，很多功能是theme自己实现的，而theme有的就是半开源的，有些常用功能还要付费，那种**功能插拔的体验上是弱于hexo**，加上配置是yaml，本身弱于toml，而且插件很多层级不规范难阅读，也就是当你要换theme时开箱即换的可能性很低
+
+有一个优点是如果你本身使用python 的click有对应的库可用
 
 > hexo
 
 很老的一个了,之前一直用的, 缺点是感觉有点渐渐年久失修了(大版本到更新了不少), 文档有点对不上代码了, 没法"升级", 但是可以新建一个然后移动所有markdown , 外加本身有支持 tex, code高亮, rss以及二进制翻页i的插件
 
-比如 现在已经version 6 了, 然后官方 https://hexo.io/docs/setup 的package.json 还在 `"hexo": "^3.8.0"`, (其实我本地的还真就3.8.0), 然后几个star很多和我之前用的theme 已经很久没有更新维护了,(虽然好像也真不需要多少维护
+比如 现在已经version 6 了, 然后官方 <https://hexo.io/docs/setup> 的package.json 还在 `"hexo": "^3.8.0"`, (其实我本地的还真就3.8.0), 然后几个star很多和我之前用的theme 已经很久没有更新维护了,(虽然好像也真不需要多少维护
+
+也有缺点是做成过于静态了，对于首次打开体验好，对于更新和反复打开消耗就大了，配置也是yaml还没支持toml
 
 ---
 
@@ -82,13 +92,12 @@ hexo g
 
 ### 数学tex支持(MathJax)
 
-https://theme-next.js.org/docs/third-party-services/math-equations.html?highlight=katex
+<https://theme-next.js.org/docs/third-party-services/math-equations.html?highlight=katex>
 
 ```bash
 yarn remove hexo-renderer-marked
 yarn add hexo-renderer-pandoc
 ```
-
 
 ```diff theme/next/_config.yml
  math:
@@ -131,7 +140,6 @@ yarn add hexo-generator-searchdb
 
 ### Disqus 评论支持
 
-
 ```diff theme/next/_config.yml
  # Disqus
  # For more information: https://disqus.com
@@ -147,7 +155,6 @@ yarn add hexo-generator-searchdb
 ```bash
 yarn add hexo-generator-feed
 ```
-
 
 ```diff _config.yml
 +feed:
@@ -287,14 +294,13 @@ password: hello
 ---
 ```
 
-具体见 https://github.com/D0n9X1n/hexo-blog-encrypt
+具体见 <https://github.com/D0n9X1n/hexo-blog-encrypt>
 
 已知问题，直接解密后latex无法渲染， 需要刷新网页，或修修改代码: [相关Issue](https://github.com/D0n9X1n/hexo-blog-encrypt/issues/22)
 
 next theme下 没有目录.....
 
 ### 杂项
-
 
 ```diff _config.yml
 index 3bc8a42..0599fdd 100644
@@ -522,4 +528,3 @@ index 3bc8a42..0599fdd 100644
    # Default (true) will initialize quicklink after the load event fires.
    delay: true
 ```
-
