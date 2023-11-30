@@ -6,7 +6,7 @@
   <link href="https://cromarmot.github.io/Blog/atom.xml" rel="self"/>
   
   <link href="https://cromarmot.github.io/Blog/"/>
-  <updated>2023-11-29T15:27:22.863Z</updated>
+  <updated>2023-11-30T14:48:47.037Z</updated>
   <id>https://cromarmot.github.io/Blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://cromarmot.github.io/Blog/23-08-29-config/"/>
     <id>https://cromarmot.github.io/Blog/23-08-29-config/</id>
     <published>2023-08-28T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.037Z</updated>
     
     
     <summary type="html">不同配置文件的差异</summary>
@@ -50,7 +50,7 @@
     <link href="https://cromarmot.github.io/Blog/23-08-15-vercel/"/>
     <id>https://cromarmot.github.io/Blog/23-08-15-vercel/</id>
     <published>2023-08-14T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">vercel 的 静态文件服务 与 服务器支持动态函数</summary>
@@ -71,7 +71,7 @@
     <link href="https://cromarmot.github.io/Blog/23-07-25-python-log/"/>
     <id>https://cromarmot.github.io/Blog/23-07-25-python-log/</id>
     <published>2023-07-24T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">python3 logging 最佳实践</summary>
@@ -92,7 +92,7 @@
     <link href="https://cromarmot.github.io/Blog/23-05-01-android-offline-music/"/>
     <id>https://cromarmot.github.io/Blog/23-05-01-android-offline-music/</id>
     <published>2023-04-30T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">A solution</summary>
@@ -117,7 +117,7 @@
     <link href="https://cromarmot.github.io/Blog/23-04-13-cppquiz/"/>
     <id>https://cromarmot.github.io/Blog/23-04-13-cppquiz/</id>
     <published>2023-04-12T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">C++ Quiz</summary>
@@ -138,7 +138,7 @@
     <link href="https://cromarmot.github.io/Blog/23-03-09-vscode-docker-dev/"/>
     <id>https://cromarmot.github.io/Blog/23-03-09-vscode-docker-dev/</id>
     <published>2023-03-08T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">develop env with vscode in docker</summary>
@@ -163,7 +163,7 @@
     <link href="https://cromarmot.github.io/Blog/23-02-22-sh/"/>
     <id>https://cromarmot.github.io/Blog/23-02-22-sh/</id>
     <published>2023-02-21T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">/bin/sh, bash, dash, zsh, dash</summary>
@@ -186,7 +186,7 @@
     <link href="https://cromarmot.github.io/Blog/23-02-16-js_gc/"/>
     <id>https://cromarmot.github.io/Blog/23-02-16-js_gc/</id>
     <published>2023-02-15T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;那么多&lt;code&gt;面经&lt;/code&gt;在说引用计数, 循环引用会无法gc,而以我对jvm python等多个有gc语言的了解，js 再怎么也不至于就是个引用计数&lt;/p&gt;
@@ -210,7 +210,7 @@
     <link href="https://cromarmot.github.io/Blog/22-11-11-nextjs/"/>
     <id>https://cromarmot.github.io/Blog/22-11-11-nextjs/</id>
     <published>2022-11-10T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/CroMarmot/ReactDemo/commits/master&quot;&gt;https://github.com/CroMarmot/ReactDemo/commits/master&lt;/a&gt;&lt;/p&gt;
@@ -274,7 +274,7 @@
     <link href="https://cromarmot.github.io/Blog/22-10-25-cors/"/>
     <id>https://cromarmot.github.io/Blog/22-10-25-cors/</id>
     <published>2022-10-24T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;CORS&quot;&gt;&lt;a href=&quot;#CORS&quot; class=&quot;headerlink&quot; title=&quot;CORS&quot;&gt;&lt;/a&gt;CORS&lt;/h1&gt;&lt;p&gt;The server is responsible for reporting the allowed origins. The web browser is responsible for enforcing that requests are only sent from allowed domains.&lt;/p&gt;
@@ -297,7 +297,7 @@
     <link href="https://cromarmot.github.io/Blog/22-09-14-vim8/"/>
     <id>https://cromarmot.github.io/Blog/22-09-14-vim8/</id>
     <published>2022-09-13T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;历史&quot;&gt;&lt;a href=&quot;#历史&quot; class=&quot;headerlink&quot; title=&quot;历史&quot;&gt;&lt;/a&gt;历史&lt;/h1&gt;&lt;p&gt;我也是用了 spf13-vim + vundle 有七八年了, 之中还用过Pathogen 之类的&lt;/p&gt;
@@ -323,7 +323,7 @@
     <link href="https://cromarmot.github.io/Blog/22-09-08-fuck-pip/"/>
     <id>https://cromarmot.github.io/Blog/22-09-08-fuck-pip/</id>
     <published>2022-09-07T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;第一次被pip搞了几个小时&quot;&gt;&lt;a href=&quot;#第一次被pip搞了几个小时&quot; class=&quot;headerlink&quot; title=&quot;第一次被pip搞了几个小时&quot;&gt;&lt;/a&gt;第一次被pip搞了几个小时&lt;/h1&gt;&lt;p&gt;壮着胆子,在Ubuntu 22.10还没发布前,把系统从20.04.5升级到了22.04.1, 以我从12-&amp;gt;14,14-&amp;gt;16,16-&amp;gt;18,18-&amp;gt;20多年的经验来看, 这次竟然没问题! 厉害了, 以前每次升级都会炸点东西, 然后最终还是重装式升级, 这次竟然没啥严重的炸掉&lt;/p&gt;
@@ -361,7 +361,7 @@
     <link href="https://cromarmot.github.io/Blog/22-08-15-static-blog/"/>
     <id>https://cromarmot.github.io/Blog/22-08-15-static-blog/</id>
     <published>2022-08-14T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;写在-2022-年的-静态博客选择&quot;&gt;&lt;a href=&quot;#写在-2022-年的-静态博客选择&quot; class=&quot;headerlink&quot; title=&quot;写在 2022 年的 静态博客选择&quot;&gt;&lt;/a&gt;写在 2022 年的 静态博客选择&lt;/h1&gt;&lt;h2 id=&quot;调研&quot;&gt;&lt;a href=&quot;#调研&quot; class=&quot;headerlink&quot; title=&quot;调研&quot;&gt;&lt;/a&gt;调研&lt;/h2&gt;&lt;p&gt;用了Hexo很久了,期间也有不少其它产品, 也试了试这些框架&lt;/p&gt;
@@ -385,7 +385,7 @@
     <link href="https://cromarmot.github.io/Blog/22-07-23-python-setuptools/"/>
     <id>https://cromarmot.github.io/Blog/22-07-23-python-setuptools/</id>
     <published>2022-07-22T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">&lt;p&gt;TLDR: setuptools在2023的体验的确比不上新工具hatching&lt;/p&gt;
@@ -413,7 +413,7 @@
     <link href="https://cromarmot.github.io/Blog/22-06-30-ts-cheatsheet/"/>
     <id>https://cromarmot.github.io/Blog/22-06-30-ts-cheatsheet/</id>
     <published>2022-06-29T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;TS-Cheat-Sheet&quot;&gt;&lt;a href=&quot;#TS-Cheat-Sheet&quot; class=&quot;headerlink&quot; title=&quot;TS Cheat Sheet&quot;&gt;&lt;/a&gt;TS Cheat Sheet&lt;/h1&gt;&lt;h2 id=&quot;为什么写这篇&quot;&gt;&lt;a href=&quot;#为什么写这篇&quot; class=&quot;headerlink&quot; title=&quot;为什么写这篇&quot;&gt;&lt;/a&gt;为什么写这篇&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/type-challenges/type-challenges&quot;&gt;antfu的题目&lt;/a&gt; 大多就是基础方法+递归, issues充斥着重复内容, 最开始还有点TS的味道, 后面完全变成了只有基础方法, 组合出一个东西, 感觉这个更适合作为递归练习题, 而不是TS练习题 (没有数值强行用数组拼接+length, 等等&lt;/p&gt;
@@ -436,7 +436,7 @@
     <link href="https://cromarmot.github.io/Blog/22-03-13-new_ssd_old_computer/"/>
     <id>https://cromarmot.github.io/Blog/22-03-13-new_ssd_old_computer/</id>
     <published>2022-03-12T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.859Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;带sudo的一定小心, 别选错盘了&lt;/strong&gt;&lt;/p&gt;
@@ -471,7 +471,7 @@
     <link href="https://cromarmot.github.io/Blog/23-03-10-ng-zone/"/>
     <id>https://cromarmot.github.io/Blog/23-03-10-ng-zone/</id>
     <published>2022-03-09T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.863Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">how zone support ng change detection</summary>
@@ -494,7 +494,7 @@
     <link href="https://cromarmot.github.io/Blog/21-12-21-anti-douban/"/>
     <id>https://cromarmot.github.io/Blog/21-12-21-anti-douban/</id>
     <published>2021-12-20T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.859Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;个人的网页需要一些书目数据，印象中，老的豆瓣直接是页面还是接口，能获直接取到，可以作为爬虫入门练手&lt;/p&gt;
@@ -521,7 +521,7 @@
     <link href="https://cromarmot.github.io/Blog/21-12-06-currying-add/"/>
     <id>https://cromarmot.github.io/Blog/21-12-06-currying-add/</id>
     <published>2021-12-05T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.859Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
       
@@ -547,7 +547,7 @@
     <link href="https://cromarmot.github.io/Blog/21-11-22-frontEndRoadmap/"/>
     <id>https://cromarmot.github.io/Blog/21-11-22-frontEndRoadmap/</id>
     <published>2021-11-21T16:00:00.000Z</published>
-    <updated>2023-11-29T15:27:22.859Z</updated>
+    <updated>2023-11-30T14:48:47.033Z</updated>
     
     
       
