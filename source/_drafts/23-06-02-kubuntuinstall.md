@@ -1,8 +1,11 @@
 ---
 title: Kubuntu 22.04 install
 date: 2023-06-02
-tags: [cpp]
-category: [backend,cpp]
+tags:
+  - cplusplus
+category:
+  - backend
+  - cpp
 description: kubuntu install
 ---
 iso torrent and sha256sum: http://cdimage.ubuntu.com/kubuntu/releases/22.04.2/release/

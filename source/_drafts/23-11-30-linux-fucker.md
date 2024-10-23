@@ -1,8 +1,12 @@
 ---
 title: Linux fucker
 date: 2023-11-30
-tags: [cpp]
-category: [backend,cpp]
+tags:
+  - cplusplus
+  - linux
+category:
+  - backend
+  - cpp
 description: fuck linux
 ---
 

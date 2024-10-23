@@ -1,8 +1,11 @@
 ---
 title: Cpp Quiz
 date: 2023-04-13
-tags: [cpp]
-category: [backend,cpp]
+tags:
+  - cplusplus
+category:
+  - backend
+  - cpp
 description: C++ Quiz
 ---
 
