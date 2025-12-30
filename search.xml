@@ -1544,6 +1544,62 @@
       </tags>
   </entry>
   <entry>
+    <title>four smart ptr</title>
+    <url>/Blog/17-02-21-four-smart-ptr/</url>
+    <content><![CDATA[<h1 id="四种指针"><a href="#四种指针" class="headerlink" title="四种指针"></a>四种指针</h1><p><a href="http://www.cnblogs.com/TenosDoIt/p/3456704.html">参考文</a></p>
+<hr>
+<h2 id="个人整理"><a href="#个人整理" class="headerlink" title="个人整理"></a>个人整理</h2><p>四个智能指针: <code>auto_ptr</code>, <code>shared_ptr</code>, <code>weak_ptr</code>, <code>unique_ptr</code> 其中后三个是c++11支持，并且第一个已经被c++11弃用。</p>
+<h3 id="用于测试的结构体"><a href="#用于测试的结构体" class="headerlink" title="用于测试的结构体"></a>用于测试的结构体</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">public:</span><br><span class="line">    Test(<span class="built_in">string</span> s)</span><br><span class="line">    &#123;</span><br><span class="line">        str = s;</span><br><span class="line">       <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;Test creat\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ~Test()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;Test delete:&quot;</span>&lt;&lt;str&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">string</span>&amp; <span class="title function_">getStr</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">void</span> <span class="title function_">setStr</span><span class="params">(<span class="built_in">string</span> s)</span></span><br><span class="line">    &#123;</span><br><span class="line">        str = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">void</span> <span class="title function_">print</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;str&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    <span class="built_in">string</span> str;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="auto-ptr"><a href="#auto-ptr" class="headerlink" title="auto_ptr"></a><a href="http://www.cplusplus.com/reference/memory/auto_ptr/">auto_ptr</a></h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">auto_ptr</span>&lt;Test&gt; <span class="title function_">ptest</span><span class="params">(new Test(<span class="string">&quot;123&quot;</span>))</span>;</span><br><span class="line">    ptest-&gt;setStr(<span class="string">&quot;hello 0&quot;</span>);</span><br><span class="line">    ptest-&gt;print();</span><br><span class="line">    ptest.get()-&gt;print();</span><br><span class="line">    ptest-&gt;getStr() += <span class="string">&quot;world !&quot;</span>;</span><br><span class="line">    (*ptest).print();</span><br><span class="line">    ptest.reset(new Test(<span class="string">&quot;567&quot;</span>));</span><br><span class="line">    ptest-&gt;print();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">auto_ptr</span>&lt;Test&gt; <span class="title function_">ptest</span><span class="params">(new Test(<span class="string">&quot;789&quot;</span>))</span>;</span><br><span class="line">    <span class="built_in">auto_ptr</span>&lt;Test&gt; <span class="title function_">ptest2</span><span class="params">(new Test(<span class="string">&quot;JQK&quot;</span>))</span>;</span><br><span class="line">    ptest2 = ptest;</span><br><span class="line">    ptest2-&gt;print();</span><br><span class="line">    <span class="keyword">if</span>(ptest.get() == <span class="literal">NULL</span>)<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;ptest = NULL\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Test creat</span><br><span class="line">hello 0</span><br><span class="line">hello 0</span><br><span class="line">hello 0world !</span><br><span class="line">Test creat</span><br><span class="line">Test delete:hello 0world !</span><br><span class="line">567</span><br><span class="line">Test creat</span><br><span class="line">Test creat</span><br><span class="line">Test delete:JQK</span><br><span class="line">789</span><br><span class="line">Test delete:789</span><br><span class="line">Test delete:567</span><br></pre></td></tr></table></figure>
+
+<h2 id="unique-ptr"><a href="#unique-ptr" class="headerlink" title="unique_ptr"></a><a href="http://www.cplusplus.com/reference/memory/unique_ptr/">unique_ptr</a></h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">unique_ptr</span>&lt;Test&gt; <span class="title function_">fun</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">unique_ptr</span>&lt;Test&gt;(new Test(<span class="string">&quot;789&quot;</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">unique_ptr</span>&lt;Test&gt; <span class="title function_">ptest</span><span class="params">(new Test(<span class="string">&quot;123&quot;</span>))</span>;</span><br><span class="line">    <span class="built_in">unique_ptr</span>&lt;Test&gt; <span class="title function_">ptest2</span><span class="params">(new Test(<span class="string">&quot;456&quot;</span>))</span>;</span><br><span class="line">    ptest-&gt;print();</span><br><span class="line">    ptest2 = <span class="built_in">std</span>::move(ptest);<span class="comment">//不能直接ptest2 = ptest</span></span><br><span class="line">    <span class="keyword">if</span>(ptest == <span class="literal">NULL</span>)<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;ptest = NULL\n&quot;</span>;</span><br><span class="line">    Test* p = ptest2.release();</span><br><span class="line">    p-&gt;print();</span><br><span class="line">    ptest.reset(p);</span><br><span class="line">    ptest-&gt;print();</span><br><span class="line">    ptest2 = fun(); <span class="comment">//这里可以用=，因为使用了移动构造函数</span></span><br><span class="line">    ptest2-&gt;print();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Test creat</span><br><span class="line">Test creat</span><br><span class="line">123</span><br><span class="line">Test delete:456</span><br><span class="line">ptest = NULL</span><br><span class="line">123</span><br><span class="line">123</span><br><span class="line">Test creat</span><br><span class="line">789</span><br><span class="line">Test delete:789</span><br><span class="line">Test delete:123</span><br></pre></td></tr></table></figure>
+
+<h2 id="share-ptr"><a href="#share-ptr" class="headerlink" title="share_ptr"></a><a href="http://www.cplusplus.com/reference/memory/shared_ptr/">share_ptr</a></h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">shared_ptr</span>&lt;Test&gt; <span class="title function_">ptest</span><span class="params">(new Test(<span class="string">&quot;123&quot;</span>))</span>;</span><br><span class="line">    <span class="built_in">shared_ptr</span>&lt;Test&gt; <span class="title function_">ptest2</span><span class="params">(new Test(<span class="string">&quot;456&quot;</span>))</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ptest2-&gt;getStr()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ptest2.use_count()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    ptest = ptest2;<span class="comment">//&quot;456&quot;引用次数加1，“123”销毁</span></span><br><span class="line">    ptest-&gt;print();</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ptest2.use_count()&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//2</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ptest.use_count()&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//2</span></span><br><span class="line">    ptest.reset();</span><br><span class="line">    ptest2.reset();<span class="comment">//此时“456”销毁</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;done !\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Test creat</span><br><span class="line">Test creat</span><br><span class="line">456</span><br><span class="line">1</span><br><span class="line">Test delete:123</span><br><span class="line">456</span><br><span class="line">2</span><br><span class="line">2</span><br><span class="line">Test delete:456</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>总结</p>
+<p><code>auto_ptr</code> </p>
+<ul>
+<li>手动释放<strong>资源</strong> <code>.reset()</code></li>
+<li>将指针置空,返回<strong>资源</strong>控制权 <code>.release()</code></li>
+<li>用 <code>.get()==NULL</code> 判断是否为空</li>
+</ul>
+<p><code>unique_ptr</code></p>
+<ul>
+<li>和<code>auto_ptr</code>相似</li>
+<li>不能使用两个智能指针赋值操作，应该使用<code>std::move</code></li>
+<li>可以直接用if(ptest &#x3D;&#x3D; NULL)来判断是否空指针</li>
+</ul>
+<p><code>share_ptr</code></p>
+<ul>
+<li>使用计数机制来表明资源被几个指针共享,<code>.use_count()</code>来查看资源的所有者个数</li>
+<li>没有release</li>
+</ul>
+<p><code>weak_ptr</code></p>
+<ul>
+<li>weak_ptr是用来解决shared_ptr相互引用时的死锁问题,如果说两个shared_ptr相互引用,那么这两个指针的引用计数永远不可能下降为0,资源永远不会释放。它是对对象的一种弱引用，不会增加对象的引用计数，和shared_ptr之间可以相互转化，shared_ptr可以直接赋值给它，它可以通过调用lock函数来获得shared_ptr。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>backend</category>
+        <category>cpp</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+        <tag>smart ptr</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>linux 为什么比 windows 更安全</title>
     <url>/Blog/17-02-15-Why-Linux-Is-More-Secure-Than-Windows/</url>
     <content><![CDATA[<p>很久以前就有听说这个命题</p>
@@ -1613,62 +1669,6 @@
       </tags>
   </entry>
   <entry>
-    <title>four smart ptr</title>
-    <url>/Blog/17-02-21-four-smart-ptr/</url>
-    <content><![CDATA[<h1 id="四种指针"><a href="#四种指针" class="headerlink" title="四种指针"></a>四种指针</h1><p><a href="http://www.cnblogs.com/TenosDoIt/p/3456704.html">参考文</a></p>
-<hr>
-<h2 id="个人整理"><a href="#个人整理" class="headerlink" title="个人整理"></a>个人整理</h2><p>四个智能指针: <code>auto_ptr</code>, <code>shared_ptr</code>, <code>weak_ptr</code>, <code>unique_ptr</code> 其中后三个是c++11支持，并且第一个已经被c++11弃用。</p>
-<h3 id="用于测试的结构体"><a href="#用于测试的结构体" class="headerlink" title="用于测试的结构体"></a>用于测试的结构体</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">public:</span><br><span class="line">    Test(<span class="built_in">string</span> s)</span><br><span class="line">    &#123;</span><br><span class="line">        str = s;</span><br><span class="line">       <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;Test creat\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ~Test()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;Test delete:&quot;</span>&lt;&lt;str&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">string</span>&amp; <span class="title function_">getStr</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">void</span> <span class="title function_">setStr</span><span class="params">(<span class="built_in">string</span> s)</span></span><br><span class="line">    &#123;</span><br><span class="line">        str = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">void</span> <span class="title function_">print</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;str&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    <span class="built_in">string</span> str;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="auto-ptr"><a href="#auto-ptr" class="headerlink" title="auto_ptr"></a><a href="http://www.cplusplus.com/reference/memory/auto_ptr/">auto_ptr</a></h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">auto_ptr</span>&lt;Test&gt; <span class="title function_">ptest</span><span class="params">(new Test(<span class="string">&quot;123&quot;</span>))</span>;</span><br><span class="line">    ptest-&gt;setStr(<span class="string">&quot;hello 0&quot;</span>);</span><br><span class="line">    ptest-&gt;print();</span><br><span class="line">    ptest.get()-&gt;print();</span><br><span class="line">    ptest-&gt;getStr() += <span class="string">&quot;world !&quot;</span>;</span><br><span class="line">    (*ptest).print();</span><br><span class="line">    ptest.reset(new Test(<span class="string">&quot;567&quot;</span>));</span><br><span class="line">    ptest-&gt;print();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">auto_ptr</span>&lt;Test&gt; <span class="title function_">ptest</span><span class="params">(new Test(<span class="string">&quot;789&quot;</span>))</span>;</span><br><span class="line">    <span class="built_in">auto_ptr</span>&lt;Test&gt; <span class="title function_">ptest2</span><span class="params">(new Test(<span class="string">&quot;JQK&quot;</span>))</span>;</span><br><span class="line">    ptest2 = ptest;</span><br><span class="line">    ptest2-&gt;print();</span><br><span class="line">    <span class="keyword">if</span>(ptest.get() == <span class="literal">NULL</span>)<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;ptest = NULL\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Test creat</span><br><span class="line">hello 0</span><br><span class="line">hello 0</span><br><span class="line">hello 0world !</span><br><span class="line">Test creat</span><br><span class="line">Test delete:hello 0world !</span><br><span class="line">567</span><br><span class="line">Test creat</span><br><span class="line">Test creat</span><br><span class="line">Test delete:JQK</span><br><span class="line">789</span><br><span class="line">Test delete:789</span><br><span class="line">Test delete:567</span><br></pre></td></tr></table></figure>
-
-<h2 id="unique-ptr"><a href="#unique-ptr" class="headerlink" title="unique_ptr"></a><a href="http://www.cplusplus.com/reference/memory/unique_ptr/">unique_ptr</a></h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">unique_ptr</span>&lt;Test&gt; <span class="title function_">fun</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">unique_ptr</span>&lt;Test&gt;(new Test(<span class="string">&quot;789&quot;</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">unique_ptr</span>&lt;Test&gt; <span class="title function_">ptest</span><span class="params">(new Test(<span class="string">&quot;123&quot;</span>))</span>;</span><br><span class="line">    <span class="built_in">unique_ptr</span>&lt;Test&gt; <span class="title function_">ptest2</span><span class="params">(new Test(<span class="string">&quot;456&quot;</span>))</span>;</span><br><span class="line">    ptest-&gt;print();</span><br><span class="line">    ptest2 = <span class="built_in">std</span>::move(ptest);<span class="comment">//不能直接ptest2 = ptest</span></span><br><span class="line">    <span class="keyword">if</span>(ptest == <span class="literal">NULL</span>)<span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;ptest = NULL\n&quot;</span>;</span><br><span class="line">    Test* p = ptest2.release();</span><br><span class="line">    p-&gt;print();</span><br><span class="line">    ptest.reset(p);</span><br><span class="line">    ptest-&gt;print();</span><br><span class="line">    ptest2 = fun(); <span class="comment">//这里可以用=，因为使用了移动构造函数</span></span><br><span class="line">    ptest2-&gt;print();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Test creat</span><br><span class="line">Test creat</span><br><span class="line">123</span><br><span class="line">Test delete:456</span><br><span class="line">ptest = NULL</span><br><span class="line">123</span><br><span class="line">123</span><br><span class="line">Test creat</span><br><span class="line">789</span><br><span class="line">Test delete:789</span><br><span class="line">Test delete:123</span><br></pre></td></tr></table></figure>
-
-<h2 id="share-ptr"><a href="#share-ptr" class="headerlink" title="share_ptr"></a><a href="http://www.cplusplus.com/reference/memory/shared_ptr/">share_ptr</a></h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">shared_ptr</span>&lt;Test&gt; <span class="title function_">ptest</span><span class="params">(new Test(<span class="string">&quot;123&quot;</span>))</span>;</span><br><span class="line">    <span class="built_in">shared_ptr</span>&lt;Test&gt; <span class="title function_">ptest2</span><span class="params">(new Test(<span class="string">&quot;456&quot;</span>))</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ptest2-&gt;getStr()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ptest2.use_count()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    ptest = ptest2;<span class="comment">//&quot;456&quot;引用次数加1，“123”销毁</span></span><br><span class="line">    ptest-&gt;print();</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ptest2.use_count()&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//2</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ptest.use_count()&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//2</span></span><br><span class="line">    ptest.reset();</span><br><span class="line">    ptest2.reset();<span class="comment">//此时“456”销毁</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;done !\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>输出</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Test creat</span><br><span class="line">Test creat</span><br><span class="line">456</span><br><span class="line">1</span><br><span class="line">Test delete:123</span><br><span class="line">456</span><br><span class="line">2</span><br><span class="line">2</span><br><span class="line">Test delete:456</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>总结</p>
-<p><code>auto_ptr</code> </p>
-<ul>
-<li>手动释放<strong>资源</strong> <code>.reset()</code></li>
-<li>将指针置空,返回<strong>资源</strong>控制权 <code>.release()</code></li>
-<li>用 <code>.get()==NULL</code> 判断是否为空</li>
-</ul>
-<p><code>unique_ptr</code></p>
-<ul>
-<li>和<code>auto_ptr</code>相似</li>
-<li>不能使用两个智能指针赋值操作，应该使用<code>std::move</code></li>
-<li>可以直接用if(ptest &#x3D;&#x3D; NULL)来判断是否空指针</li>
-</ul>
-<p><code>share_ptr</code></p>
-<ul>
-<li>使用计数机制来表明资源被几个指针共享,<code>.use_count()</code>来查看资源的所有者个数</li>
-<li>没有release</li>
-</ul>
-<p><code>weak_ptr</code></p>
-<ul>
-<li>weak_ptr是用来解决shared_ptr相互引用时的死锁问题,如果说两个shared_ptr相互引用,那么这两个指针的引用计数永远不可能下降为0,资源永远不会释放。它是对对象的一种弱引用，不会增加对象的引用计数，和shared_ptr之间可以相互转化，shared_ptr可以直接赋值给它，它可以通过调用lock函数来获得shared_ptr。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>backend</category>
-        <category>cpp</category>
-      </categories>
-      <tags>
-        <tag>c++</tag>
-        <tag>smart ptr</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>weibo搜索爬虫</title>
     <url>/Blog/17-03-14-collectWeiboDataByKeyword/</url>
     <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># coding: utf-8</span><br><span class="line"></span><br><span class="line">__version__ = &#x27;1.1.0&#x27;</span><br><span class="line">__author__ = &#x27;Zhu Jianqi (heloowird@gmail.com)&#x27;</span><br><span class="line"></span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">以关键词收集新浪微博</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">import requests</span><br><span class="line">import wx</span><br><span class="line">import csv</span><br><span class="line">import codecs</span><br><span class="line">import sys</span><br><span class="line">import urllib</span><br><span class="line">import urllib2</span><br><span class="line">import re</span><br><span class="line">import json</span><br><span class="line">import hashlib</span><br><span class="line">import os</span><br><span class="line">import time</span><br><span class="line">import datetime</span><br><span class="line">import random</span><br><span class="line">from lxml import etree</span><br><span class="line">import logging</span><br><span class="line">import gzip</span><br><span class="line">from StringIO import StringIO</span><br><span class="line"></span><br><span class="line">class CollectData():</span><br><span class="line">    &quot;&quot;&quot;数据收集类</span><br><span class="line">        利用微博高级搜索功能，按关键字搜集一定时间范围内的微博。</span><br><span class="line"></span><br><span class="line">        大体思路：构造URL，爬取网页，然后解析网页中的微博ID。后续利用微博API进行数据入库。本程序只负责收集微博的ID。</span><br><span class="line"></span><br><span class="line">        登陆新浪微博，进入高级搜索，输入关键字”空气污染“，选择”实时“，时间为”2013-07-02-2:2013-07-09-2“，地区为”北京“，之后发送请求会发现地址栏变为如下：</span><br><span class="line">        http://s.weibo.com/wb/%25E7%25A9%25BA%25E6%25B0%2594%25E6%25B1%25A1%25E6%259F%2593&amp;xsort=time&amp;region=custom:11:1000&amp;timescope=custom:2013-07-02-2:2013-07-09-2&amp;Refer=g</span><br><span class="line"></span><br><span class="line">        是不是很长，其实很简单。</span><br><span class="line">            固定地址部分：http://s.weibo.com/wb/</span><br><span class="line">            关键字二次UTF-8编码：%25E7%25A9%25BA%25E6%25B0%2594%25E6%25B1%25A1%25E6%259F%2593</span><br><span class="line">            排序为“实时”：xsort=time</span><br><span class="line">            搜索地区：region=custom:11:1000</span><br><span class="line">            搜索时间范围：timescope=custom:2013-07-02-2:2013-07-09-2</span><br><span class="line">            可忽略项：Refer=g</span><br><span class="line">            显示类似微博：nodup=1    注：这个选项可多收集微博，建议加上。默认不加此参数，省略了部分相似微博。</span><br><span class="line">            某次请求的页数：page=1</span><br><span class="line"></span><br><span class="line">        另外，高级搜索最多返回50页微博，那么时间间隔设置最小为宜。所以该类设置为搜集一定时间段内最多50页微博。</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    def __init__(self, keyword, startTime, savedir, interval=&#x27;50&#x27;, flag=True, begin_url_per = &quot;http://s.weibo.com/weibo/&quot;):</span><br><span class="line">        self.begin_url_per = begin_url_per  #设置固定地址部分，默认为&quot;http://s.weibo.com/weibo/&quot;，或者&quot;http://s.weibo.com/wb/&quot;</span><br><span class="line">        self.setKeyword(keyword)    #设置关键字</span><br><span class="line">        self.setStartTimescope(startTime)   #设置搜索的开始时间</span><br><span class="line">        # self.setRegion(region)  #设置搜索区域</span><br><span class="line">        self.setSave_dir(savedir)   #设置结果的存储目录</span><br><span class="line">        self.setInterval(interval)  #设置邻近网页请求之间的基础时间间隔（注意：过于频繁会被认为是机器人）</span><br><span class="line">        self.setFlag(flag)  #设置</span><br><span class="line">        self.logger = logging.getLogger(&#x27;main.CollectData&#x27;) #初始化日志</span><br><span class="line"></span><br><span class="line">    ##设置关键字</span><br><span class="line">    ##关键字需解码</span><br><span class="line">    def setKeyword(self, keyword):</span><br><span class="line">        #self.keyword = keyword.decode(&#x27;GBK&#x27;).encode(&quot;utf-8&quot;)</span><br><span class="line">        self.keyword = keyword</span><br><span class="line">        print &#x27;twice encode:&#x27;,self.getKeyWord()</span><br><span class="line"></span><br><span class="line">    ##设置起始范围，间隔为1小时</span><br><span class="line">    ##格式为：yyyy-mm-dd-HH</span><br><span class="line">    def setStartTimescope(self, startTime):</span><br><span class="line">        if not (startTime == &#x27;-&#x27;):</span><br><span class="line">            self.timescope = startTime + &quot;:&quot; + startTime</span><br><span class="line">        else:</span><br><span class="line">            self.timescope = &#x27;-&#x27;</span><br><span class="line"></span><br><span class="line">    # ##设置搜索地区</span><br><span class="line">    # def setRegion(self, region):</span><br><span class="line">    #     self.region = region</span><br><span class="line"></span><br><span class="line">    ##设置结果的存储目录</span><br><span class="line">    def setSave_dir(self, save_dir):</span><br><span class="line">        self.save_dir = save_dir</span><br><span class="line">        if not os.path.exists(self.save_dir):</span><br><span class="line">            os.mkdir(self.save_dir)</span><br><span class="line"></span><br><span class="line">    ##设置邻近网页请求之间的基础时间间隔</span><br><span class="line">    def setInterval(self, interval):</span><br><span class="line">        self.interval = int(interval)</span><br><span class="line"></span><br><span class="line">    ##设置是否被认为机器人的标志。若为False，需要进入页面，手动输入验证码</span><br><span class="line">    def setFlag(self, flag):</span><br><span class="line">        self.flag = flag</span><br><span class="line"></span><br><span class="line">    ##构建URL</span><br><span class="line">    def getURL(self):</span><br><span class="line">        return self.begin_url_per+self.getKeyWord()+&quot;&amp;typeall=1&amp;suball=1&quot;+&quot;&amp;timescope=custom:&quot;+self.timescope+&quot;&amp;page=&quot;</span><br><span class="line"></span><br><span class="line">    ##关键字需要进行两次urlencode</span><br><span class="line">    def getKeyWord(self):</span><br><span class="line">        once = urllib.urlencode(&#123;&quot;kw&quot;:self.keyword&#125;)[3:]</span><br><span class="line">        return urllib.urlencode(&#123;&quot;kw&quot;:once&#125;)[3:]</span><br><span class="line"></span><br><span class="line">    ##爬取一次请求中的所有网页，最多返回50页</span><br><span class="line">    def download(self, url, maxTryNum=4):</span><br><span class="line">        csvFile = open(self.save_dir + os.sep + &quot;weibo_kanbing.csv&quot;, &quot;ab&quot;)  #向结果文件中写微博ID</span><br><span class="line">        csvFile.write(codecs.BOM_UTF8)</span><br><span class="line">        content = csv.writer(csvFile, dialect=&#x27;excel&#x27;)</span><br><span class="line">        headers = &#123;&#x27;User-Agent&#x27;: &#x27;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36&#x27;&#125;</span><br><span class="line">        cookie = &#123;&#x27;SINAGLOBAL&#x27;:&#x27;3726160468139.8677.1489128973894&#x27;, &#x27;un&#x27;:&#x27;18621677460&#x27;, &#x27;wvr&#x27;:&#x27;6&#x27;, &#x27;SWB&#x27;:&#x27;usrmdinst_12&#x27;, &#x27;SCF&#x27;:&#x27;At4nsWXnBTiLQgwnhEdGW1ipfDRoyBYdEIpm4KN7_ZN3C0BxRlQeyX0sHoQOK6bDqLR6HeBBiwo6wRFXfObIvnc.&#x27;, &#x27;SUB&#x27;:&#x27;_2A251wx_bDeRxGeNP7FIR9yjFwzyIHXVWuXYTrDV8PUNbmtBeLRjVkW8ia3o1WnWjknWq3t_Uh0UkKzBqsg..&#x27;, &#x27;SUBP&#x27;:&#x27;0033WrSXqPxfM725Ws9jqgMF55529P9D9Wh_ODAX.pd3QJ6U3yvqGKET5JpX5KMhUgL.Fo-pS057S0q41h52dJLoIEUBBEXLxKqL1hnL1KnLxK-LBKeLB-zLxK-L1K5L1K2LxK-L12qLBoet&#x27;, &#x27;SUHB&#x27;:&#x27;0vJ4Ss25HO1Ohu&#x27;, &#x27;ALF&#x27;:&#x27;1521001227&#x27;, &#x27;SSOLoginState&#x27;:&#x27;1489465228&#x27;, &#x27;_s_tentry&#x27;:&#x27;login.sina.com.cn&#x27;, &#x27;Apache&#x27;:&#x27;7301168373695.357.1489465207066&#x27;, &#x27;ULV&#x27;:&#x27;1489465207130:8:8:5:7301168373695.357.1489465207066:1489412710557&#x27;, &#x27;UOR&#x27;:&#x27;,,login.sina.com.cn&#x27;, &#x27;WBStorage&#x27;:&#x27;02e13baf68409715|undefined&#x27;&#125;</span><br><span class="line"></span><br><span class="line">        hasMore = True  #某次请求可能少于50页，设置标记，判断是否还有下一页</span><br><span class="line">        isCaught = False    #某次请求被认为是机器人，设置标记，判断是否被抓住。抓住后，需要复制log中的文件，进入页面，输入验证码</span><br><span class="line">        filter = set([])    #过滤重复的微博ID</span><br><span class="line"></span><br><span class="line">        i = 1   #记录本次请求所返回的页数</span><br><span class="line">        while hasMore and i &lt; 51 and (not isCaught):    #最多返回50页，对每页进行解析，并写入结果文件</span><br><span class="line">            source_url = url + str(i)   #构建某页的URL</span><br><span class="line">            data = &#x27;&#x27;   #存储该页的网页数据</span><br><span class="line">            goon = True #网络中断标记</span><br><span class="line"></span><br><span class="line">            ##网络不好的情况，试着尝试请求三次</span><br><span class="line">            for tryNum in range(maxTryNum):</span><br><span class="line">                try:</span><br><span class="line">                    # set header http://stackoverflow.com/questions/385262/how-do-i-send-a-custom-header-with-urllib2-in-a-http-request</span><br><span class="line">                    # see this http://stackoverflow.com/questions/1653591/python-urllib2-response-header , so you can see &#x27;gzip&#x27; in response header with urllib2.urlopen(URL).info()</span><br><span class="line">                    # and this http://stackoverflow.com/questions/3947120/does-python-urllib2-automatically-uncompress-gzip-data-fetched-from-webpage teach you how to decode gzip</span><br><span class="line">                    #</span><br><span class="line">                    #r = requests.get(source_url, cookies=cookie, headers=headers, timeout=12)</span><br><span class="line">                    send_headers = &#123;</span><br><span class="line">                            &quot;Accept&quot;:&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&quot;,</span><br><span class="line">                            &quot;Accept-Encoding&quot;:&quot;gzip, deflate, sdch&quot;,</span><br><span class="line">                            &quot;Accept-Language&quot;:&quot;zh-CN,zh;q=0.8,en;q=0.6&quot;,</span><br><span class="line">                            &quot;Cache-Control&quot;:&quot;no-cache&quot;,</span><br><span class="line">                            &quot;Connection&quot;:&quot;keep-alive&quot;,</span><br><span class="line">                            #&quot;Cookie&quot;:&quot;cookies here&quot;</span><br><span class="line">                            &quot;Host&quot;:&quot;s.weibo.com&quot;,</span><br><span class="line">                            &quot;Pragma&quot;:&quot;no-cache&quot;,</span><br><span class="line">                            &quot;Referer&quot;:&quot;http://s.weibo.com/&quot;,</span><br><span class="line">                            &quot;Upgrade-Insecure-Requests&quot;:&quot;1&quot;,</span><br><span class="line">                            &quot;User-Agent&quot;:&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36&quot;</span><br><span class="line">                            &#125;</span><br><span class="line">                    req = urllib2.Request(source_url , headers=send_headers)</span><br><span class="line">                    r = urllib2.urlopen(req)</span><br><span class="line">                    if r.info().get(&#x27;Content-Encoding&#x27;) == &#x27;gzip&#x27;:</span><br><span class="line">                        buf = StringIO(r.read())</span><br><span class="line">                        f = gzip.GzipFile(fileobj=buf)</span><br><span class="line">                        html = f.read()</span><br><span class="line">                    else:</span><br><span class="line">                        html = r.read()</span><br><span class="line">                    data = html</span><br><span class="line">                    #print data</span><br><span class="line">                    break</span><br><span class="line">                except:</span><br><span class="line">                    if tryNum &lt; (maxTryNum-1):</span><br><span class="line">                        time.sleep(10)</span><br><span class="line">                    else:</span><br><span class="line">                        print &#x27;Internet Connect Error!&#x27;</span><br><span class="line">                        self.logger.error(&#x27;Internet Connect Error!&#x27;)</span><br><span class="line">                        self.logger.info(&#x27;filePath: &#x27; + self.save_dir)</span><br><span class="line">                        self.logger.info(&#x27;url: &#x27; + source_url)</span><br><span class="line">                        self.logger.info(&#x27;fileNum: &#x27; + str(fileNum))</span><br><span class="line">                        self.logger.info(&#x27;page: &#x27; + str(i))</span><br><span class="line">                        self.flag = False</span><br><span class="line">                        goon = False</span><br><span class="line">                        break</span><br><span class="line">            if goon:</span><br><span class="line">                lines = data.splitlines()</span><br><span class="line">                isCaught = True</span><br><span class="line">                for line in lines:</span><br><span class="line">                    ## 判断是否有微博内容，出现这一行，则说明没有被认为是机器人</span><br><span class="line">                    if line.startswith(&#x27;&lt;script&gt;STK &amp;&amp; STK.pageletM &amp;&amp; STK.pageletM.view(&#123;&quot;pid&quot;:&quot;pl_weibo_direct&quot;&#x27;):</span><br><span class="line">                        isCaught = False</span><br><span class="line">                        n = line.find(&#x27;html&quot;:&quot;&#x27;)</span><br><span class="line">                        if n &gt; 0:</span><br><span class="line">                            j = line[n + 7: -12].encode(&quot;utf-8&quot;).decode(&#x27;unicode_escape&#x27;).encode(&quot;utf-8&quot;).replace(&quot;\\&quot;, &quot;&quot;).decode(&#x27;utf-8&#x27;)</span><br><span class="line">                            ## 没有更多结果页面</span><br><span class="line">                            if (j.find(&#x27;&lt;div class=&quot;search_noresult&quot;&gt;&#x27;) &gt; 0):</span><br><span class="line">                                hasMore = False</span><br><span class="line">                            ## 有结果的页面</span><br><span class="line">                            else:</span><br><span class="line">                                page = etree.HTML(j)</span><br><span class="line">                                comment_box = page.xpath(&quot;//div[@action-type=\&quot;feed_list_item\&quot;]&quot;)</span><br><span class="line">                                for each_comment in comment_box:</span><br><span class="line">                                    comment_time = each_comment.xpath(&quot;.//div[@class=\&quot;feed_from W_textb\&quot;]/a/@title&quot;)</span><br><span class="line">                                    comment_text_list = each_comment.xpath(&quot;.//p[@class=&#x27;comment_txt&#x27;]&quot;)</span><br><span class="line">                                    comment_text = []</span><br><span class="line">                                    for eachtext in comment_text_list:</span><br><span class="line">                                        comment_text = &#x27;r&#x27;.join(eachtext.xpath(&quot;.//text()&quot;))</span><br><span class="line">                                        comment_text = comment_text.replace(&#x27; &#x27;,&#x27;&#x27;).replace(&#x27;\n&#x27;, &#x27;&#x27;).replace(&#x27;\r&#x27;, &#x27; &#x27;)</span><br><span class="line">                                        comment_text = comment_text.encode(&#x27;utf8&#x27;)</span><br><span class="line">                                        if (comment_text != &#x27;None&#x27; and comment_text not in filter):</span><br><span class="line">                                            filter.add(comment_text)</span><br><span class="line">                                            content.writerow([comment_time[0], comment_text])</span><br><span class="line">                                # weibo = page.xpath(&quot;//div[@class=\&quot;feed_from W_textb\&quot;])</span><br><span class="line">                                # for weibo_time, weibo_content in weibo:</span><br><span class="line">                                #     weibo_time = weibo_time.xpath(&quot;./[@class=\&quot;feed_from W_textb\&quot;]/a/@title&quot;)</span><br><span class="line">                                #     concept = &#x27;r&#x27;.join(weibo_content.xpath(&quot;./text()&quot;))</span><br><span class="line">                                #     concept = concept.replace(&#x27; &#x27;,&#x27;&#x27;).replace(&#x27;\n&#x27;,&#x27;&#x27;).replace(&#x27;\r&#x27;,&#x27; &#x27;)</span><br><span class="line">                                #     concept = concept.encode(&#x27;utf8&#x27;)</span><br><span class="line">                                #     if (concept != &#x27;None&#x27; and concept not in filter):</span><br><span class="line">                                #         filter.add(concept)</span><br><span class="line">                                #         content.writerow([weibo_time, concept])</span><br><span class="line"></span><br><span class="line">                                # dls_id = page.xpath(&quot;//div[@class=\&quot;feed_from W_textb\&quot;]/a/@title&quot;)</span><br><span class="line">                                # for dl_id in dls_id:</span><br><span class="line">                                #     # mid = str(dl_id.attrib.get(&#x27;nick-name&#x27;))</span><br><span class="line">                                #     dl_id = dl_id.encode(&#x27;utf8&#x27;)</span><br><span class="line">                                #     if (dl_id != &#x27;None&#x27; and dl_id not in mid_filter):</span><br><span class="line">                                #         mid_filter.add(dl_id)</span><br><span class="line">                                #         content.writerow([dl_id])</span><br><span class="line">                                #</span><br><span class="line">                                # dls_text = page.xpath(&quot;//p[@class=&#x27;comment_txt&#x27;]&quot;)</span><br><span class="line">                                # for dl_text in dls_text:</span><br><span class="line">                                #     concept = &#x27;r&#x27;.join(dl_text.xpath(&quot;./text()&quot;))</span><br><span class="line">                                #     concept = concept.replace(&#x27; &#x27;,&#x27;&#x27;).replace(&#x27;\n&#x27;,&#x27;&#x27;).replace(&#x27;\r&#x27;,&#x27; &#x27;)</span><br><span class="line">                                #     concept = concept.encode(&#x27;utf8&#x27;)</span><br><span class="line">                                #     if (concept != &#x27;None&#x27; and concept not in mid_filter):</span><br><span class="line">                                #         mid_filter.add(concept)</span><br><span class="line">                                #         content.writerow([concept])</span><br><span class="line">                                        # content.writerow(&#x27;\n&#x27;)</span><br><span class="line">                                    # if (concept != &#x27;None&#x27; and concept not in mid_filter):</span><br><span class="line">                                    #     mid_filter.add(concept)</span><br><span class="line">                                    #     content.write(concept)</span><br><span class="line">                                    #     content.write(&#x27;\n&#x27;)</span><br><span class="line">                                    # print concept</span><br><span class="line">                                    # print &quot;----------------------&quot;</span><br><span class="line">                        break</span><br><span class="line">                lines = None</span><br><span class="line">                ## 处理被认为是机器人的情况</span><br><span class="line">                if isCaught:</span><br><span class="line">                    print &#x27;Be Caught!&#x27;</span><br><span class="line">                    self.logger.error(&#x27;Be Caught Error!&#x27;)</span><br><span class="line">                    self.logger.info(&#x27;filePath: &#x27; + self.save_dir)</span><br><span class="line">                    self.logger.info(&#x27;url: &#x27; + source_url)</span><br><span class="line">                    self.logger.info(&#x27;fileNum: &#x27; + str(fileNum))</span><br><span class="line">                    self.logger.info(&#x27;page:&#x27; + str(i))</span><br><span class="line">                    data = None</span><br><span class="line">                    self.flag = False</span><br><span class="line">                    break</span><br><span class="line">                ## 没有更多结果，结束该次请求，跳到下一个请求</span><br><span class="line">                if not hasMore:</span><br><span class="line">                    print &#x27;No More Results!&#x27;</span><br><span class="line">                    if i == 1:</span><br><span class="line">                        time.sleep(random.randint(55,75))</span><br><span class="line">                    else:</span><br><span class="line">                        time.sleep(15)</span><br><span class="line">                    data = None</span><br><span class="line">                    break</span><br><span class="line">                i += 1</span><br><span class="line">                ## 设置两个邻近URL请求之间的随机休眠时间，防止Be Caught。目前没有模拟登陆</span><br><span class="line">                # sleeptime_one = random.randint(self.interval-30,self.interval-10)</span><br><span class="line">                # sleeptime_two = random.randint(self.interval+10,self.interval+30)</span><br><span class="line">                # if i%2 == 0:</span><br><span class="line">                #     sleeptime = sleeptime_two</span><br><span class="line">                # else:</span><br><span class="line">                #     sleeptime = sleeptime_one</span><br><span class="line">                # print &#x27;sleeping &#x27; + str(sleeptime) + &#x27; seconds...&#x27;</span><br><span class="line">                # time.sleep(sleeptime)</span><br><span class="line">            else:</span><br><span class="line">                break</span><br><span class="line">        csvFile.close()</span><br><span class="line">        csvFile = None</span><br><span class="line"></span><br><span class="line">    ##改变搜索的时间范围，有利于获取最多的数据</span><br><span class="line">    def getTimescope(self, perTimescope, hours):</span><br><span class="line">        if not (perTimescope==&#x27;-&#x27;):</span><br><span class="line">            times_list = perTimescope.split(&#x27;:&#x27;)</span><br><span class="line">            start_datetime = datetime.datetime.fromtimestamp(time.mktime(time.strptime(times_list[-1],&quot;%Y-%m-%d-%H&quot;)))</span><br><span class="line">            start_new_datetime = start_datetime + datetime.timedelta(seconds = 3600)</span><br><span class="line">            end_new_datetime = start_new_datetime + datetime.timedelta(seconds = 3600*(hours-1))</span><br><span class="line">            start_str = start_new_datetime.strftime(&quot;%Y-%m-%d-%H&quot;)</span><br><span class="line">            end_str = end_new_datetime.strftime(&quot;%Y-%m-%d-%H&quot;)</span><br><span class="line">            return start_str + &quot;:&quot; + end_str</span><br><span class="line">        else:</span><br><span class="line">            return &#x27;-&#x27;</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    logger = logging.getLogger(&#x27;main&#x27;)</span><br><span class="line">    logFile = &#x27;./collect.log&#x27;</span><br><span class="line">    logger.setLevel(logging.DEBUG)</span><br><span class="line">    filehandler = logging.FileHandler(logFile)</span><br><span class="line">    formatter = logging.Formatter(&#x27;%(asctime)s - %(name)s - %(levelname)s: %(message)s&#x27;)</span><br><span class="line">    filehandler.setFormatter(formatter)</span><br><span class="line">    logger.addHandler(filehandler)</span><br><span class="line"></span><br><span class="line">    while True:</span><br><span class="line">        ## 接受键盘输入</span><br><span class="line">        keyword = raw_input(&#x27;Enter the keyword(type \&#x27;quit\&#x27; to exit ):&#x27;)</span><br><span class="line">        if keyword == &#x27;quit&#x27;:</span><br><span class="line">            sys.exit()</span><br><span class="line">        startTime = raw_input(&#x27;Enter the start time(Format:YYYY-mm-dd-HH):&#x27;)</span><br><span class="line">        # region = raw_input(&#x27;Enter the region([BJ]11:1000,[SH]31:1000,[GZ]44:1,[CD]51:1):&#x27;)</span><br><span class="line">        savedir = raw_input(&#x27;Enter the save directory(Like C://data//):&#x27;)</span><br><span class="line">        interval = raw_input(&#x27;Enter the time interval( &gt;30 and deafult:50):&#x27;)</span><br><span class="line"></span><br><span class="line">        ##实例化收集类，收集指定关键字和起始时间的微博</span><br><span class="line">        cd = CollectData(keyword, startTime, savedir, interval)</span><br><span class="line">        while cd.flag:</span><br><span class="line">            print cd.timescope</span><br><span class="line">            logger.info(cd.timescope)</span><br><span class="line">            url = cd.getURL()</span><br><span class="line">            cd.download(url)</span><br><span class="line">            cd.timescope = cd.getTimescope(cd.timescope,1)  #改变搜索的时间，到下一个小时</span><br><span class="line">        else:</span><br><span class="line">            cd = None</span><br><span class="line">            print &#x27;-----------------------------------------------------&#x27;</span><br><span class="line">            print &#x27;-----------------------------------------------------&#x27;</span><br><span class="line">    else:</span><br><span class="line">        logger.removeHandler(filehandler)</span><br><span class="line">        logger = None</span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
@@ -1733,6 +1733,26 @@
       </tags>
   </entry>
   <entry>
+    <title>javase</title>
+    <url>/Blog/17-04-23-javase/</url>
+    <content><![CDATA[<p><a href="https://docs.oracle.com/javase/8/docs/api/">官方文档</a></p>
+<p>总的图 来自实验楼<code>https://www.shiyanlou.com/courses/109</code></p>
+<p><img data-src="https://dn-anything-about-doc.qbox.me/document-uid79144labid1085timestamp1435475423685.png?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="实验楼"></p>
+<p><code>java.lang</code>不需要import</p>
+<p>String 内部不可变，StringBuffer 内部可变</p>
+<p>看到下面这图我 哇的一声就哭了</p>
+<p><img data-src="https://dn-anything-about-doc.qbox.me/userid46108labid863time1429495366116?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="设计模式之间关系"></p>
+]]></content>
+      <categories>
+        <category>backend</category>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>article</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java 整理</title>
     <url>/Blog/17-04-22-Java_2008/</url>
     <content><![CDATA[<h1 id="Java-整理"><a href="#Java-整理" class="headerlink" title="Java 整理"></a>Java 整理</h1><p><a href="http://www.studytonight.com/java/overview-of-java.php">core java</a></p>
@@ -1778,26 +1798,6 @@
         <category>java</category>
       </categories>
       <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>javase</title>
-    <url>/Blog/17-04-23-javase/</url>
-    <content><![CDATA[<p><a href="https://docs.oracle.com/javase/8/docs/api/">官方文档</a></p>
-<p>总的图 来自实验楼<code>https://www.shiyanlou.com/courses/109</code></p>
-<p><img data-src="https://dn-anything-about-doc.qbox.me/document-uid79144labid1085timestamp1435475423685.png?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="实验楼"></p>
-<p><code>java.lang</code>不需要import</p>
-<p>String 内部不可变，StringBuffer 内部可变</p>
-<p>看到下面这图我 哇的一声就哭了</p>
-<p><img data-src="https://dn-anything-about-doc.qbox.me/userid46108labid863time1429495366116?watermark/1/image/aHR0cDovL3N5bC1zdGF0aWMucWluaXVkbi5jb20vaW1nL3dhdGVybWFyay5wbmc=/dissolve/60/gravity/SouthEast/dx/0/dy/10" alt="设计模式之间关系"></p>
-]]></content>
-      <categories>
-        <category>backend</category>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>article</tag>
         <tag>java</tag>
       </tags>
   </entry>
@@ -2328,6 +2328,111 @@
       </tags>
   </entry>
   <entry>
+    <title>离散数学教程四川大学出版个人整理</title>
+    <url>/Blog/17-06-22-Discrete-Mathematics-Tutorial-scu/</url>
+    <content><![CDATA[<h1 id="总评"><a href="#总评" class="headerlink" title="总评"></a>总评</h1><p>整理开始日期:2017-06-21</p>
+<p>整理结束日期:2017-06-22</p>
+<h2 id="第1章-命题逻辑"><a href="#第1章-命题逻辑" class="headerlink" title="第1章 命题逻辑"></a>第1章 命题逻辑</h2><p>~ 否定命题</p>
+<p>∧  合取命题 and</p>
+<p>∨  析取命题 or</p>
+<p>→  条件命题</p>
+<p>P→ Q &#x3D; ~P∨ Q</p>
+<p>P↑ Q &#x3D; ~(P∧ Q)</p>
+<p>P↓ Q &#x3D; ~(P∨ Q)</p>
+<p>T 永真式 重言式 可满足公式</p>
+<p>F 不可满足公式</p>
+<p>不同取值让不同命题有相同结果 则 命题等价</p>
+<p>子公式等价替换后保持等价A(A1)&#x3D;A(A2) 如果A1&#x3D;A2</p>
+<p>可互推则双条件命题为永真</p>
+<p><code>A*</code>与 A处处真值表为反为A的对偶式</p>
+<p>$A\cup B&#x3D;{x\in A\bigvee x\in B}$</p>
+<p>析取 子句</p>
+<p>合取 合取范式</p>
+<p>凡不是永真的，命题公式都存在与之等价的主合取范式</p>
+<p>CP规则</p>
+<p>右箭头上加c表示推的否定</p>
+<h2 id="第2章-一阶谓词逻辑"><a href="#第2章-一阶谓词逻辑" class="headerlink" title="第2章 一阶谓词逻辑"></a>第2章 一阶谓词逻辑</h2><p>A是人 PEOPLE(A)</p>
+<p>x大于y GREATER-THAN(x,y)</p>
+<p>∀ 任意</p>
+<p>∃ 存在</p>
+<p><del>(∀ x)P(x) &#x3D; (∃ x)[</del>P(x)]</p>
+<p><del>(∃ x)P(x) &#x3D; (∀ x)[</del>P(x)]</p>
+<p>Skolem 将合取范式的所有存在用函数与任意进行替换(∀ x)(∀ y)(∃ z)P(z) &#x3D; (∀ x)(∀ y)P(f(x,y))</p>
+<p>∃ x ∀ y →  ∀ y ∃ x</p>
+<h2 id="第3章-集合及其运算"><a href="#第3章-集合及其运算" class="headerlink" title="第3章 集合及其运算"></a>第3章 集合及其运算</h2><p>$A\cup B&#x3D;{x\in A\bigvee x\in B}$</p>
+<p>$A\cap B&#x3D;{x\in A\bigwedge x\in B}$</p>
+<p>$A\bigoplus B&#x3D;{x\in A - B\bigvee x\in B - A}$</p>
+<p>2^A&#x3D;{ X | X \subseteq A}$</p>
+<p>运算$\times$为集合的直径 不满足交换律 结合律</p>
+<p>形式语言</p>
+<h2 id="第4章-初等数论和证明方法"><a href="#第4章-初等数论和证明方法" class="headerlink" title="第4章 初等数论和证明方法"></a>第4章 初等数论和证明方法</h2><p>n&#x3D;d×k -&gt; d | n</p>
+<p>最大公因子gcd，最小公倍数lcm</p>
+<p>数学归纳法</p>
+<h2 id="第5章-二元关系"><a href="#第5章-二元关系" class="headerlink" title="第5章 二元关系"></a>第5章 二元关系</h2><p>R 关系 {(A的元素,B的元素)} 也可以画成矩阵表示</p>
+<p>性质(自反 对称 可传递)对应的现象({(x,x)} {(x,y)(y,x)} {(x,y) (y,z) (x,z)})</p>
+<p>关系的运算 $\cup \cap \bigoplus$</p>
+<p>同时有 自反 对称 可传递 为等价关系</p>
+<p>同时有 自反 反对称 传递 为偏序关系 如整除，有最小值的偏序集为良序</p>
+<h2 id="第6章-函数"><a href="#第6章-函数" class="headerlink" title="第6章 函数"></a>第6章 函数</h2><p>f: X→ Y</p>
+<p>单射、满射、双射</p>
+<p>$\pi_1\circ \pi_2 &#x3D; \pi_1(\pi_2())$</p>
+<p>循环的积</p>
+<p>与自然数集N等势的为可数集</p>
+<p>集合的基数card()</p>
+<p>阿列夫 &#x3D;。&#x3D;</p>
+<p>f(x)&#x3D;O(g(x))不能写成O(g(x))&#x3D;f(x) 表示f(x)的上界,f(x) &lt;&#x3D;M |g(x)|</p>
+<h2 id="第7章-基本计数方法"><a href="#第7章-基本计数方法" class="headerlink" title="第7章 基本计数方法"></a>第7章 基本计数方法</h2><p>排列计数，组合计数</p>
+<p>圆排列！！</p>
+<p>组合恒等式!!!</p>
+<p>容斥原理</p>
+<p>抽屉原理&#x2F;鸽巢原理</p>
+<h2 id="第8章-生成函数和递推关系"><a href="#第8章-生成函数和递推关系" class="headerlink" title="第8章 生成函数和递推关系"></a>第8章 生成函数和递推关系</h2><p>定义 生成函数!!!!!!!!!!!!! (排列的生成函数 组合的生成函数)</p>
+<p>递推关系及其解 差分方程</p>
+<p>递推关系和生成函数 6666666</p>
+<h2 id="第9章-无向图和有向图"><a href="#第9章-无向图和有向图" class="headerlink" title="第9章 无向图和有向图"></a>第9章 无向图和有向图</h2><p>V为节点 E为边 度 sum(每个点度)&#x3D;2倍边数</p>
+<p>G(V,E)</p>
+<p>定义…</p>
+<p>图的矩阵表示</p>
+<p>独立集 点团 极图，布尔表达式 析取范式，诱导子图？？</p>
+<p>图的着色？？</p>
+<h2 id="第10章-基本图类和算法"><a href="#第10章-基本图类和算法" class="headerlink" title="第10章 基本图类和算法"></a>第10章 基本图类和算法</h2><p>树与生成树</p>
+<p>每个连通图都含有生成树，图的任何割集至少与树有一个公共边，图的圈至少与树有一个公共边</p>
+<p>如果有向图G的图是树，则称G为有向树</p>
+<p>平面图(画为平面图可以让连线没有额外焦点)和对偶图</p>
+<p>面数为f的连通平面图G(n,m) 有n-m+f&#x3D;2</p>
+<p>阶数大于2的(n,m)连通平面图 m&lt;&#x3D;3n-6,至少存在一个度不超过5的结点</p>
+<p>Kuratowski 定理</p>
+<p>欧拉图及其应用</p>
+<p>哈密顿图及其应用</p>
+<p>图的匹配与匈牙利算法</p>
+<p>网络无环又有向权图</p>
+<h2 id="第11章-群和环"><a href="#第11章-群和环" class="headerlink" title="第11章 群和环"></a>第11章 群和环</h2><p>群 环 域 格 和 布尔代数是典型的系统</p>
+<p>运算与代数系统</p>
+<p>集合的二元运算 封闭的 可交换的 可结合的 可分配的 吸收率</p>
+<p>常见的代数系统 $&lt;Z,+&gt;$,$&lt;Q,+,*&gt;$</p>
+<p>封闭 广群</p>
+<p>广群+可结合 半群</p>
+<p>群 和 子群</p>
+<p>群&#x3D;有逆元的含幺半群 </p>
+<p>群的运算满足交换律则为交换群&#x2F;Abel群 充要条件 $a,b \in G, (a\cdot b)^2&#x3D;a^2\cdot b^2$</p>
+<p>陪集与拉格朗日定理</p>
+<p>同态与同构</p>
+<p>环和域</p>
+<p>群码</p>
+<h2 id="第12章-格与布尔代数"><a href="#第12章-格与布尔代数" class="headerlink" title="第12章 格与布尔代数"></a>第12章 格与布尔代数</h2><p>格 交换 结合 吸收</p>
+<p>格的性质和同态，逆关系 互为 对偶 </p>
+<p>分配格和有补格</p>
+<p>格+分配+有界+有补 &#x3D; 布尔格</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+        <category>book</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>自然哲学的数学原理个人整理(Give up)</title>
     <url>/Blog/17-06-22-Mathematical_Principles_of_natural_Philosophy/</url>
     <content><![CDATA[<h1 id="总评"><a href="#总评" class="headerlink" title="总评"></a>总评</h1><p>整理开始日期:2017-06-22</p>
@@ -2466,111 +2571,6 @@
       </categories>
       <tags>
         <tag>math</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>离散数学教程四川大学出版个人整理</title>
-    <url>/Blog/17-06-22-Discrete-Mathematics-Tutorial-scu/</url>
-    <content><![CDATA[<h1 id="总评"><a href="#总评" class="headerlink" title="总评"></a>总评</h1><p>整理开始日期:2017-06-21</p>
-<p>整理结束日期:2017-06-22</p>
-<h2 id="第1章-命题逻辑"><a href="#第1章-命题逻辑" class="headerlink" title="第1章 命题逻辑"></a>第1章 命题逻辑</h2><p>~ 否定命题</p>
-<p>∧  合取命题 and</p>
-<p>∨  析取命题 or</p>
-<p>→  条件命题</p>
-<p>P→ Q &#x3D; ~P∨ Q</p>
-<p>P↑ Q &#x3D; ~(P∧ Q)</p>
-<p>P↓ Q &#x3D; ~(P∨ Q)</p>
-<p>T 永真式 重言式 可满足公式</p>
-<p>F 不可满足公式</p>
-<p>不同取值让不同命题有相同结果 则 命题等价</p>
-<p>子公式等价替换后保持等价A(A1)&#x3D;A(A2) 如果A1&#x3D;A2</p>
-<p>可互推则双条件命题为永真</p>
-<p><code>A*</code>与 A处处真值表为反为A的对偶式</p>
-<p>$A\cup B&#x3D;{x\in A\bigvee x\in B}$</p>
-<p>析取 子句</p>
-<p>合取 合取范式</p>
-<p>凡不是永真的，命题公式都存在与之等价的主合取范式</p>
-<p>CP规则</p>
-<p>右箭头上加c表示推的否定</p>
-<h2 id="第2章-一阶谓词逻辑"><a href="#第2章-一阶谓词逻辑" class="headerlink" title="第2章 一阶谓词逻辑"></a>第2章 一阶谓词逻辑</h2><p>A是人 PEOPLE(A)</p>
-<p>x大于y GREATER-THAN(x,y)</p>
-<p>∀ 任意</p>
-<p>∃ 存在</p>
-<p><del>(∀ x)P(x) &#x3D; (∃ x)[</del>P(x)]</p>
-<p><del>(∃ x)P(x) &#x3D; (∀ x)[</del>P(x)]</p>
-<p>Skolem 将合取范式的所有存在用函数与任意进行替换(∀ x)(∀ y)(∃ z)P(z) &#x3D; (∀ x)(∀ y)P(f(x,y))</p>
-<p>∃ x ∀ y →  ∀ y ∃ x</p>
-<h2 id="第3章-集合及其运算"><a href="#第3章-集合及其运算" class="headerlink" title="第3章 集合及其运算"></a>第3章 集合及其运算</h2><p>$A\cup B&#x3D;{x\in A\bigvee x\in B}$</p>
-<p>$A\cap B&#x3D;{x\in A\bigwedge x\in B}$</p>
-<p>$A\bigoplus B&#x3D;{x\in A - B\bigvee x\in B - A}$</p>
-<p>2^A&#x3D;{ X | X \subseteq A}$</p>
-<p>运算$\times$为集合的直径 不满足交换律 结合律</p>
-<p>形式语言</p>
-<h2 id="第4章-初等数论和证明方法"><a href="#第4章-初等数论和证明方法" class="headerlink" title="第4章 初等数论和证明方法"></a>第4章 初等数论和证明方法</h2><p>n&#x3D;d×k -&gt; d | n</p>
-<p>最大公因子gcd，最小公倍数lcm</p>
-<p>数学归纳法</p>
-<h2 id="第5章-二元关系"><a href="#第5章-二元关系" class="headerlink" title="第5章 二元关系"></a>第5章 二元关系</h2><p>R 关系 {(A的元素,B的元素)} 也可以画成矩阵表示</p>
-<p>性质(自反 对称 可传递)对应的现象({(x,x)} {(x,y)(y,x)} {(x,y) (y,z) (x,z)})</p>
-<p>关系的运算 $\cup \cap \bigoplus$</p>
-<p>同时有 自反 对称 可传递 为等价关系</p>
-<p>同时有 自反 反对称 传递 为偏序关系 如整除，有最小值的偏序集为良序</p>
-<h2 id="第6章-函数"><a href="#第6章-函数" class="headerlink" title="第6章 函数"></a>第6章 函数</h2><p>f: X→ Y</p>
-<p>单射、满射、双射</p>
-<p>$\pi_1\circ \pi_2 &#x3D; \pi_1(\pi_2())$</p>
-<p>循环的积</p>
-<p>与自然数集N等势的为可数集</p>
-<p>集合的基数card()</p>
-<p>阿列夫 &#x3D;。&#x3D;</p>
-<p>f(x)&#x3D;O(g(x))不能写成O(g(x))&#x3D;f(x) 表示f(x)的上界,f(x) &lt;&#x3D;M |g(x)|</p>
-<h2 id="第7章-基本计数方法"><a href="#第7章-基本计数方法" class="headerlink" title="第7章 基本计数方法"></a>第7章 基本计数方法</h2><p>排列计数，组合计数</p>
-<p>圆排列！！</p>
-<p>组合恒等式!!!</p>
-<p>容斥原理</p>
-<p>抽屉原理&#x2F;鸽巢原理</p>
-<h2 id="第8章-生成函数和递推关系"><a href="#第8章-生成函数和递推关系" class="headerlink" title="第8章 生成函数和递推关系"></a>第8章 生成函数和递推关系</h2><p>定义 生成函数!!!!!!!!!!!!! (排列的生成函数 组合的生成函数)</p>
-<p>递推关系及其解 差分方程</p>
-<p>递推关系和生成函数 6666666</p>
-<h2 id="第9章-无向图和有向图"><a href="#第9章-无向图和有向图" class="headerlink" title="第9章 无向图和有向图"></a>第9章 无向图和有向图</h2><p>V为节点 E为边 度 sum(每个点度)&#x3D;2倍边数</p>
-<p>G(V,E)</p>
-<p>定义…</p>
-<p>图的矩阵表示</p>
-<p>独立集 点团 极图，布尔表达式 析取范式，诱导子图？？</p>
-<p>图的着色？？</p>
-<h2 id="第10章-基本图类和算法"><a href="#第10章-基本图类和算法" class="headerlink" title="第10章 基本图类和算法"></a>第10章 基本图类和算法</h2><p>树与生成树</p>
-<p>每个连通图都含有生成树，图的任何割集至少与树有一个公共边，图的圈至少与树有一个公共边</p>
-<p>如果有向图G的图是树，则称G为有向树</p>
-<p>平面图(画为平面图可以让连线没有额外焦点)和对偶图</p>
-<p>面数为f的连通平面图G(n,m) 有n-m+f&#x3D;2</p>
-<p>阶数大于2的(n,m)连通平面图 m&lt;&#x3D;3n-6,至少存在一个度不超过5的结点</p>
-<p>Kuratowski 定理</p>
-<p>欧拉图及其应用</p>
-<p>哈密顿图及其应用</p>
-<p>图的匹配与匈牙利算法</p>
-<p>网络无环又有向权图</p>
-<h2 id="第11章-群和环"><a href="#第11章-群和环" class="headerlink" title="第11章 群和环"></a>第11章 群和环</h2><p>群 环 域 格 和 布尔代数是典型的系统</p>
-<p>运算与代数系统</p>
-<p>集合的二元运算 封闭的 可交换的 可结合的 可分配的 吸收率</p>
-<p>常见的代数系统 $&lt;Z,+&gt;$,$&lt;Q,+,*&gt;$</p>
-<p>封闭 广群</p>
-<p>广群+可结合 半群</p>
-<p>群 和 子群</p>
-<p>群&#x3D;有逆元的含幺半群 </p>
-<p>群的运算满足交换律则为交换群&#x2F;Abel群 充要条件 $a,b \in G, (a\cdot b)^2&#x3D;a^2\cdot b^2$</p>
-<p>陪集与拉格朗日定理</p>
-<p>同态与同构</p>
-<p>环和域</p>
-<p>群码</p>
-<h2 id="第12章-格与布尔代数"><a href="#第12章-格与布尔代数" class="headerlink" title="第12章 格与布尔代数"></a>第12章 格与布尔代数</h2><p>格 交换 结合 吸收</p>
-<p>格的性质和同态，逆关系 互为 对偶 </p>
-<p>分配格和有补格</p>
-<p>格+分配+有界+有补 &#x3D; 布尔格</p>
-]]></content>
-      <categories>
-        <category>notes</category>
-        <category>book</category>
-      </categories>
-      <tags>
-        <tag>algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -2722,6 +2722,18 @@
       </tags>
   </entry>
   <entry>
+    <title>why use crawler</title>
+    <url>/Blog/17-09-26-why-use-crawler/</url>
+    <content><![CDATA[<p>I found that I was no longer willing to write the crawler program, more often use jquery output page link, and then wget to download, this will be faster.</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>docker</title>
     <url>/Blog/17-09-20-Docker/</url>
     <content><![CDATA[<p>关于docker的介绍以及初级使用 在各个网上都能搜到了</p>
@@ -2851,18 +2863,6 @@
       </categories>
       <tags>
         <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>why use crawler</title>
-    <url>/Blog/17-09-26-why-use-crawler/</url>
-    <content><![CDATA[<p>I found that I was no longer willing to write the crawler program, more often use jquery output page link, and then wget to download, this will be faster.</p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -5985,38 +5985,6 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
       </tags>
   </entry>
   <entry>
-    <title>material学习</title>
-    <url>/Blog/19-06-11-material/</url>
-    <content><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://material.io/collections/developer-tutorials/#web">https://material.io/collections/developer-tutorials/#web</a></p>
-<p>很早就有人说过了material，不过在那时，1是不太能阅读英文文档，2是没有实际的需要，也没有要用的想法，没有阅读</p>
-<p>下面是个人整理 (大概需要的前置知识 node基本+html+js+css</p>
-<h1 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h1><p>跨平台，好看的，google出的ui标准 </p>
-<h1 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h1><p><code>git clone https://github.com/material-components/material-components-web-codelabs</code></p>
-<p>安装所有ui</p>
-<p><code>npm install material-components-web</code></p>
-<p>从文档和操作上来看 需要做3件事</p>
-<ol>
-<li>引入css 如<code>@import &quot;@material/textfield/mdc-text-field&quot;;</code></li>
-<li>在html的元素上 给对应的class</li>
-<li>js里引入组件和 对相应元素进行处理,如下</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">MDCTextField</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;@material/textfield&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> username = <span class="keyword">new</span> <span class="title class_">MDCTextField</span>(<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.username&#x27;</span>));</span><br></pre></td></tr></table></figure>
-
-<p>demo101 102里介绍了 输入框，按钮，图片，列表</p>
-<p>然后103 介绍了一些，theme(例如主题颜色)，subtitle(typography),elevation(实际是阴影效果 用来让页面元素有高低感觉),<code>mdc-image-list--masonry</code>非等长图片排列</p>
-<p>demo111 介绍了，如何对一个原来写过的原始工程，修改成Material Components的样式(基本就是 npm引入，js引入，css引入，换class，加js</p>
-<p>demo112 介绍了一个react工程上 改为material components</p>
-<p>最后 目前看下来 angular+material 最多star的是<a href="https://material.angular.io/">https://material.angular.io</a></p>
-]]></content>
-      <categories>
-        <category>frontend</category>
-      </categories>
-      <tags>
-        <tag>Angular2+</tag>
-        <tag>material design</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TDD 测试驱动开发</title>
     <url>/Blog/19-06-10-TDD/</url>
     <content><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.cigniti.com/blog/7-best-practices-for-agile-test-driven-development/">https://www.cigniti.com/blog/7-best-practices-for-agile-test-driven-development/</a></p>
@@ -6079,6 +6047,105 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
       <tags>
         <tag>test</tag>
         <tag>TDD</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue声明式交互能力 &amp; vue3.0 进展</title>
+    <url>/Blog/19-06-13-vue-declarative/</url>
+    <content><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.bilibili.com/video/av37345007?from=search&seid=12943305398860809438">https://www.bilibili.com/video/av37345007?from=search&amp;seid=12943305398860809438</a></p>
+<p><a href="https://www.bilibili.com/video/av55286346?from=search&seid=13529674123410117444">https://www.bilibili.com/video/av55286346?from=search&amp;seid=13529674123410117444</a></p>
+<h1 id="吹什么"><a href="#吹什么" class="headerlink" title="吹什么"></a>吹什么</h1><p>vue的 声明式写法，最常见讲是computed</p>
+<p>比如<code>0 js代码</code> ，直接组件实现 阶乘，斐波那契数列的计算</p>
+<p>和 命令式相比，</p>
+<p>历史发展向讲解</p>
+<p>就 应用程序 实体举例</p>
+<p>跨语言啊交互举例 <a href="https://weex.apache.org/zh/docs/components/recycle-list.html">recycle-list</a></p>
+<p>简单说 原来的命令式 比较常用的是 事件-&gt;执行的代码</p>
+<p>现在 实现 大概是 数据 &#x3D; 构成来源</p>
+<h1 id="vue3"><a href="#vue3" class="headerlink" title="vue3"></a>vue3</h1><p>chrome devTools 周活用户90万 &#x2F; react的160万</p>
+<p>what’s target?</p>
+<span id="more"></span>
+
+<ul>
+<li>更小</li>
+<li>更快(重点)</li>
+<li>加强TS支持(重点)</li>
+<li>加强API设计一致性</li>
+<li>提高自身可维护性</li>
+<li>开放更多底层功能</li>
+</ul>
+<h2 id="更快"><a href="#更快" class="headerlink" title="更快"></a>更快</h2><p>数据变动检测:</p>
+<p>Object.defineProperty -&gt; Proxy (es6)</p>
+<hr>
+<p>用TS重写了Virtual DOM</p>
+<p>编译时优化</p>
+<p>Slot 默认便以为函数</p>
+<p>单例vnode工厂，设计一致的函数参数</p>
+<p>vdom 监测 设计改动</p>
+<p>原来是整个遍历，大多数情况16ms完成整个更新(传统情况)</p>
+<p>react，难在 代码中 提取 究竟哪个数据变化会影响 函数重算 ，方案CPU时间分片</p>
+<p>参考svelte框架， 强限制+静态编译<code>-&gt;</code>不需要virtual DOM 的代码，性能强,但 底线只能用模板,编译后代码体积大，但速度快</p>
+<p>vue3:兼容2，手写render function,其次 最大化利用模板信息</p>
+<p>直接 分析模板 把 动静结合 分离分析动态和静态的块[放弃可能存在的 原生js改动 html的检测？]</p>
+<p>做的benchmark 约6x快</p>
+<h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h2><p>之前Class API …然后被放弃了</p>
+<p>Function-based API 对比 Class API</p>
+<ul>
+<li>更好的TypeScript 类型推导，这样js写法 基本是 ts写法(不需要多余类型声明)</li>
+<li>tree-shaking !!!!!!!!!!!!!!!!!效果更好,</li>
+<li>写法 函数变量名更容易被压缩[编译优化]</li>
+<li>逻辑复用:</li>
+</ul>
+<p> 2.0方案 Mixins(缺点 多mixins时，命名空间 模板 数据 来源不清晰,)</p>
+<p>react: higher-order components 高阶组件(多个高阶组件 也有同样问题{命名空间冲突，数据来源不清晰，无额外的组件实例性能消耗})</p>
+<p>作用域插槽:(没有命名空间冲突，数据来源清晰,额外的组件实例性能消耗) 如<code>v-slot</code></p>
+<p>最新的 函数式 复用,+函数返回 解构,{没有命名空间冲突,数据来源清晰，无额外的组件实例性能消耗}</p>
+<p>和 react Hooks 对比:</p>
+<ul>
+<li>vue 只在初始化时调用(值可追踪),没有闭包变量问题，没有 内存 gc压力问题</li>
+</ul>
+<h1 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h1><p><a href="https://segmentfault.com/a/1190000012794598?utm_source=tag-newest">tree-shaking</a></p>
+]]></content>
+      <categories>
+        <category>frontend</category>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>js</tag>
+        <tag>vue3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>material学习</title>
+    <url>/Blog/19-06-11-material/</url>
+    <content><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://material.io/collections/developer-tutorials/#web">https://material.io/collections/developer-tutorials/#web</a></p>
+<p>很早就有人说过了material，不过在那时，1是不太能阅读英文文档，2是没有实际的需要，也没有要用的想法，没有阅读</p>
+<p>下面是个人整理 (大概需要的前置知识 node基本+html+js+css</p>
+<h1 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h1><p>跨平台，好看的，google出的ui标准 </p>
+<h1 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h1><p><code>git clone https://github.com/material-components/material-components-web-codelabs</code></p>
+<p>安装所有ui</p>
+<p><code>npm install material-components-web</code></p>
+<p>从文档和操作上来看 需要做3件事</p>
+<ol>
+<li>引入css 如<code>@import &quot;@material/textfield/mdc-text-field&quot;;</code></li>
+<li>在html的元素上 给对应的class</li>
+<li>js里引入组件和 对相应元素进行处理,如下</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">MDCTextField</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;@material/textfield&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> username = <span class="keyword">new</span> <span class="title class_">MDCTextField</span>(<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.username&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<p>demo101 102里介绍了 输入框，按钮，图片，列表</p>
+<p>然后103 介绍了一些，theme(例如主题颜色)，subtitle(typography),elevation(实际是阴影效果 用来让页面元素有高低感觉),<code>mdc-image-list--masonry</code>非等长图片排列</p>
+<p>demo111 介绍了，如何对一个原来写过的原始工程，修改成Material Components的样式(基本就是 npm引入，js引入，css引入，换class，加js</p>
+<p>demo112 介绍了一个react工程上 改为material components</p>
+<p>最后 目前看下来 angular+material 最多star的是<a href="https://material.angular.io/">https://material.angular.io</a></p>
+]]></content>
+      <categories>
+        <category>frontend</category>
+      </categories>
+      <tags>
+        <tag>Angular2+</tag>
+        <tag>material design</tag>
       </tags>
   </entry>
   <entry>
@@ -9609,120 +9676,6 @@ base: __dirname,
       </tags>
   </entry>
   <entry>
-    <title>eleme vue msgbox 简单看看实现原理</title>
-    <url>/Blog/19-09-04-vuemsgbox/</url>
-    <content><![CDATA[<h1 id="依赖版本"><a href="#依赖版本" class="headerlink" title="依赖版本"></a>依赖版本</h1><p>element-ui 版本 10592d12ea981912165542920160669fd8874bd9</p>
-<p>文档 <a href="https://element.eleme.io/#/zh-CN/component/message-box">https://element.eleme.io/#/zh-CN/component/message-box</a></p>
-<h1 id="要解决的问题"><a href="#要解决的问题" class="headerlink" title="要解决的问题"></a>要解决的问题</h1><p>像是</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$msgbox(options)</span><br><span class="line">$alert(message, title, options) 或 $alert(message, options)</span><br><span class="line">$confirm(message, title, options) 或 $confirm(message, options)</span><br><span class="line">$prompt(message, title, options) 或 $prompt(message, options)</span><br></pre></td></tr></table></figure>
-
-<p>这样的api是怎么实现的</p>
-<h1 id="代码阅读"><a href="#代码阅读" class="headerlink" title="代码阅读"></a>代码阅读</h1><p>大概看一眼怎么搞的</p>
-<p><code>src/index.js</code> 看 这些方法 ,都是来自 <code>import MessageBox from &#39;../packages/message-box/index.js&#39;;</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$msgbox</span> = <span class="title class_">MessageBox</span>;</span><br><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$alert</span> = <span class="title class_">MessageBox</span>.<span class="property">alert</span>;</span><br><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$confirm</span> = <span class="title class_">MessageBox</span>.<span class="property">confirm</span>;</span><br><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$prompt</span> = <span class="title class_">MessageBox</span>.<span class="property">prompt</span>;</span><br></pre></td></tr></table></figure>
-
-<p>那么看 <code>packages/message-box/src</code>文件夹</p>
-<p>两个文件 <code>main.js</code>和 <code>main.vue</code></p>
-<p><code>main.vue</code>瞄一眼,都是我们常见的写法</p>
-<p><code>main.js</code>，看这些方法 最后 都是 调用 <code>MessageBox(配置参数)</code>的形式调用</p>
-<p>再看<code>const MessageBox = function(options, callback) &#123;</code>的实现</p>
-<p>都是 先<code>msgQueue.push(配置参数) + showNextMsg()</code></p>
-<p><code>msgQueue</code>和 <code>showNextMsg</code>,分别是个数组，和从数组中<code>shift()</code> 取出值 进行具体展示执行</p>
-<p>然后 看 <code>showNextMsg()</code> </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if (!instance) &#123;</span><br><span class="line">  initInstance();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const initInstance = () =&gt; &#123;</span><br><span class="line">  instance = new MessageBoxConstructor(&#123;</span><br><span class="line">    el: document.createElement(&#x27;div&#x27;)</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  instance.callback = defaultCallback;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>和</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const MessageBoxConstructor = Vue.extend(msgboxVue);</span><br></pre></td></tr></table></figure>
-
-<p>说明了基本这就是 工厂模式+单例模式+<code>Vue.extend</code>来创建弹框单例,所以我们页面上不需要写什么,就能直接调用</p>
-<p>然后这些<code>confirm</code>调用过程 也就是对这个单例的参数改动 比如控制样式 数据 显示之类的</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
-<li>用户调用 <code>$msgbox</code></li>
-<li>调用到<code>packages/message-box/src/main.js</code>的 <code>MessageBox(options,callback)</code></li>
-<li><code>MessageBox(options,callback)</code>通过 数组 + 数组.shift,依次提取数据展示</li>
-<li>对于展示的实例 是 通过 <code>Vue.extend(packages/message-box/src/main.vue)</code> + 工厂单例来产生的一个实例</li>
-<li>他们 搞了一个<code>element/examples/components/demo-block.vue</code> 可以在<code>markdown</code>写示例代码,并且在网页上查看 可以运行 66666</li>
-</ol>
-<blockquote>
-<p>那常见的问题可能有说，连续调用2此带有回调函数的<code>$msgbox</code>会怎样</p>
-</blockquote>
-<p>我们可以看<code>showNextMsg()</code>实现</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//得到 instance</span></span><br><span class="line">  <span class="keyword">if</span> (!instance.<span class="property">visible</span> || instance.<span class="property">closeTimer</span>) &#123;</span><br><span class="line"> <span class="comment">//...</span></span><br><span class="line">      <span class="keyword">let</span> oldCb = instance.<span class="property">callback</span>;</span><br><span class="line">      instance.<span class="property">callback</span> = <span class="function">(<span class="params">action, instance</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">oldCb</span>(action, instance);</span><br><span class="line">        <span class="title function_">showNextMsg</span>();</span><br><span class="line">      &#125;;</span><br><span class="line">      <span class="comment">//...</span></span><br><span class="line">      <span class="title class_">Vue</span>.<span class="title function_">nextTick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        instance.<span class="property">visible</span> = <span class="literal">true</span>;</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="comment">//...</span></span><br></pre></td></tr></table></figure>
-
-
-<p>意思就是如果我们同步调用两个，</p>
-<ul>
-<li>因为我们visible设置为true是 异步里发生的,那么 这两个调用时 visible默认都是false,所以 只会最后一个生效</li>
-<li>如果我们异步调用两次msgbox,那么 后一个调用 会在<code>!visible</code>的地方为false,不会直接触发，但是因为设计了msgQueue,因此 会放在数组中，然后看到 上面的callback,会在调用oldCb以后 再调用showNextMsg,所以会在对话框回调以后 再回调 那个时刻，msgQueue里首个 并从数组中移除</li>
-</ul>
-<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><blockquote>
-<p>总流程实现</p>
-</blockquote>
-<p>也就是方法是<code>src/index.js</code>: <code>Vue.prototype.方法名 = 方法函数</code> 来让全局可用</p>
-<p>通过 <code>document.createElement(&#39;div&#39;)</code> 和 全局变量, 创建绑定维护对应的单例实例.</p>
-<p>这样就实现了 任何页面,不需要写组件,就能<code>this.方法名(参数)</code> 来弹窗</p>
-<p>适用场景,不需要业务定UI,否则需要页面<code>v-slot</code>之类插入业务内容</p>
-<blockquote>
-<p>参数设计(核心参数与可选参数与回调)</p>
-</blockquote>
-<p>核心参数是函数的直接参数</p>
-<p>可选参数组合成一个对象,提供默认值</p>
-<p>回调既有成功也有失败,随是promise,总觉得用reject来做取消和关闭其实不太好, 可以全resolve走自定义状态</p>
-<p>提供一定的重载实现</p>
-<blockquote>
-<p>内部具体</p>
-</blockquote>
-<p>队列, 同步异步, callback持有</p>
-]]></content>
-      <categories>
-        <category>frontend</category>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>msgbox</tag>
-        <tag>element-ui</tag>
-        <tag>alert</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git 在历史版本中 完全移除文件</title>
-    <url>/Blog/19-09-20-gitbiguselessfile/</url>
-    <content><![CDATA[<h1 id="How"><a href="#How" class="headerlink" title="How"></a>How</h1><p>参考</p>
-<p><a href="https://www.cnblogs.com/amiezhang/p/11337095.html">https://www.cnblogs.com/amiezhang/p/11337095.html</a></p>
-<p>上面链接都有讲</p>
-<p>按照文件大小排序前100:</p>
-<p><code>git rev-list --objects --all | grep &quot;$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -100 | awk &#39;&#123;print$1&#125;&#39;)&quot;</code></p>
-<p><code>git filter-branch --force --index-filter &#39;git rm --cached --ignore-unmatch 文件名&#39; --prune-empty --tag-name-filter cat -- --all</code></p>
-<p><code>git filter-branch --index-filter</code> 让每个提交的文件都复制到索引(<code>.git/index</code>)中</p>
-<p>然后运行过滤器命令：<code>git rm --cached --ignore-unmatch</code> 文件名 ，让每个提交都删除掉“文件名”文件</p>
-<p>然后<code>--prune-empty</code>把空的提交“修剪”掉</p>
-<p>然后<code>--tag-name-filter cat</code>把每个tag保持原名字，指向修改后的对应提交</p>
-<p>最后<code>-- --all</code>将所有ref（包括branch、tag）都执行上面的重写</p>
-<p><code>git for-each-ref --format=&#39;delete %(refname)&#39; refs/original | git update-ref --stdin</code></p>
-<p><code>git reflog expire --expire=now --all</code></p>
-<p><code>git gc --prune=now</code></p>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ol>
-<li><p>上面的文件名可以写通配符号</p>
-</li>
-<li><p>众所周知只要我加到git中过的，即使把分支删了，也可以从reflog中找到，但这里 有 清除reflog所以 想要这样做的，要么 单独开文件夹搞，要么 确定 reflog都不会再用</p>
-</li>
-<li><p>什么时候使用? 使用频率不应高，因为 这种操作无疑是会对 分支重写，也就完全不同的commit hash,所以最后push都会带上–force, 目前能想到场景,比如 不必要的大文件,如不小心提交的下下来的打包后文件,大zip.也有场景 比如 很多分支前 不小心提交了一个涉密的文件。 当然push force以后 所有用仓库的人要想继续用只有去新的分支里搞了，已经被别人下的还会在别人硬盘里</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>software</category>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>未来简史 阅读笔记</title>
     <url>/Blog/19-09-15-A_Brief_History_of_Tomorrow/</url>
     <content><![CDATA[<blockquote>
@@ -9842,6 +9795,120 @@ base: __dirname,
         <tag>life</tag>
         <tag>future</tag>
         <tag>plan</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>eleme vue msgbox 简单看看实现原理</title>
+    <url>/Blog/19-09-04-vuemsgbox/</url>
+    <content><![CDATA[<h1 id="依赖版本"><a href="#依赖版本" class="headerlink" title="依赖版本"></a>依赖版本</h1><p>element-ui 版本 10592d12ea981912165542920160669fd8874bd9</p>
+<p>文档 <a href="https://element.eleme.io/#/zh-CN/component/message-box">https://element.eleme.io/#/zh-CN/component/message-box</a></p>
+<h1 id="要解决的问题"><a href="#要解决的问题" class="headerlink" title="要解决的问题"></a>要解决的问题</h1><p>像是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$msgbox(options)</span><br><span class="line">$alert(message, title, options) 或 $alert(message, options)</span><br><span class="line">$confirm(message, title, options) 或 $confirm(message, options)</span><br><span class="line">$prompt(message, title, options) 或 $prompt(message, options)</span><br></pre></td></tr></table></figure>
+
+<p>这样的api是怎么实现的</p>
+<h1 id="代码阅读"><a href="#代码阅读" class="headerlink" title="代码阅读"></a>代码阅读</h1><p>大概看一眼怎么搞的</p>
+<p><code>src/index.js</code> 看 这些方法 ,都是来自 <code>import MessageBox from &#39;../packages/message-box/index.js&#39;;</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$msgbox</span> = <span class="title class_">MessageBox</span>;</span><br><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$alert</span> = <span class="title class_">MessageBox</span>.<span class="property">alert</span>;</span><br><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$confirm</span> = <span class="title class_">MessageBox</span>.<span class="property">confirm</span>;</span><br><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$prompt</span> = <span class="title class_">MessageBox</span>.<span class="property">prompt</span>;</span><br></pre></td></tr></table></figure>
+
+<p>那么看 <code>packages/message-box/src</code>文件夹</p>
+<p>两个文件 <code>main.js</code>和 <code>main.vue</code></p>
+<p><code>main.vue</code>瞄一眼,都是我们常见的写法</p>
+<p><code>main.js</code>，看这些方法 最后 都是 调用 <code>MessageBox(配置参数)</code>的形式调用</p>
+<p>再看<code>const MessageBox = function(options, callback) &#123;</code>的实现</p>
+<p>都是 先<code>msgQueue.push(配置参数) + showNextMsg()</code></p>
+<p><code>msgQueue</code>和 <code>showNextMsg</code>,分别是个数组，和从数组中<code>shift()</code> 取出值 进行具体展示执行</p>
+<p>然后 看 <code>showNextMsg()</code> </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if (!instance) &#123;</span><br><span class="line">  initInstance();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const initInstance = () =&gt; &#123;</span><br><span class="line">  instance = new MessageBoxConstructor(&#123;</span><br><span class="line">    el: document.createElement(&#x27;div&#x27;)</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  instance.callback = defaultCallback;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>和</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const MessageBoxConstructor = Vue.extend(msgboxVue);</span><br></pre></td></tr></table></figure>
+
+<p>说明了基本这就是 工厂模式+单例模式+<code>Vue.extend</code>来创建弹框单例,所以我们页面上不需要写什么,就能直接调用</p>
+<p>然后这些<code>confirm</code>调用过程 也就是对这个单例的参数改动 比如控制样式 数据 显示之类的</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
+<li>用户调用 <code>$msgbox</code></li>
+<li>调用到<code>packages/message-box/src/main.js</code>的 <code>MessageBox(options,callback)</code></li>
+<li><code>MessageBox(options,callback)</code>通过 数组 + 数组.shift,依次提取数据展示</li>
+<li>对于展示的实例 是 通过 <code>Vue.extend(packages/message-box/src/main.vue)</code> + 工厂单例来产生的一个实例</li>
+<li>他们 搞了一个<code>element/examples/components/demo-block.vue</code> 可以在<code>markdown</code>写示例代码,并且在网页上查看 可以运行 66666</li>
+</ol>
+<blockquote>
+<p>那常见的问题可能有说，连续调用2此带有回调函数的<code>$msgbox</code>会怎样</p>
+</blockquote>
+<p>我们可以看<code>showNextMsg()</code>实现</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//得到 instance</span></span><br><span class="line">  <span class="keyword">if</span> (!instance.<span class="property">visible</span> || instance.<span class="property">closeTimer</span>) &#123;</span><br><span class="line"> <span class="comment">//...</span></span><br><span class="line">      <span class="keyword">let</span> oldCb = instance.<span class="property">callback</span>;</span><br><span class="line">      instance.<span class="property">callback</span> = <span class="function">(<span class="params">action, instance</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">oldCb</span>(action, instance);</span><br><span class="line">        <span class="title function_">showNextMsg</span>();</span><br><span class="line">      &#125;;</span><br><span class="line">      <span class="comment">//...</span></span><br><span class="line">      <span class="title class_">Vue</span>.<span class="title function_">nextTick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        instance.<span class="property">visible</span> = <span class="literal">true</span>;</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="comment">//...</span></span><br></pre></td></tr></table></figure>
+
+
+<p>意思就是如果我们同步调用两个，</p>
+<ul>
+<li>因为我们visible设置为true是 异步里发生的,那么 这两个调用时 visible默认都是false,所以 只会最后一个生效</li>
+<li>如果我们异步调用两次msgbox,那么 后一个调用 会在<code>!visible</code>的地方为false,不会直接触发，但是因为设计了msgQueue,因此 会放在数组中，然后看到 上面的callback,会在调用oldCb以后 再调用showNextMsg,所以会在对话框回调以后 再回调 那个时刻，msgQueue里首个 并从数组中移除</li>
+</ul>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>总流程实现</p>
+</blockquote>
+<p>也就是方法是<code>src/index.js</code>: <code>Vue.prototype.方法名 = 方法函数</code> 来让全局可用</p>
+<p>通过 <code>document.createElement(&#39;div&#39;)</code> 和 全局变量, 创建绑定维护对应的单例实例.</p>
+<p>这样就实现了 任何页面,不需要写组件,就能<code>this.方法名(参数)</code> 来弹窗</p>
+<p>适用场景,不需要业务定UI,否则需要页面<code>v-slot</code>之类插入业务内容</p>
+<blockquote>
+<p>参数设计(核心参数与可选参数与回调)</p>
+</blockquote>
+<p>核心参数是函数的直接参数</p>
+<p>可选参数组合成一个对象,提供默认值</p>
+<p>回调既有成功也有失败,随是promise,总觉得用reject来做取消和关闭其实不太好, 可以全resolve走自定义状态</p>
+<p>提供一定的重载实现</p>
+<blockquote>
+<p>内部具体</p>
+</blockquote>
+<p>队列, 同步异步, callback持有</p>
+]]></content>
+      <categories>
+        <category>frontend</category>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>msgbox</tag>
+        <tag>element-ui</tag>
+        <tag>alert</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git 在历史版本中 完全移除文件</title>
+    <url>/Blog/19-09-20-gitbiguselessfile/</url>
+    <content><![CDATA[<h1 id="How"><a href="#How" class="headerlink" title="How"></a>How</h1><p>参考</p>
+<p><a href="https://www.cnblogs.com/amiezhang/p/11337095.html">https://www.cnblogs.com/amiezhang/p/11337095.html</a></p>
+<p>上面链接都有讲</p>
+<p>按照文件大小排序前100:</p>
+<p><code>git rev-list --objects --all | grep &quot;$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -100 | awk &#39;&#123;print$1&#125;&#39;)&quot;</code></p>
+<p><code>git filter-branch --force --index-filter &#39;git rm --cached --ignore-unmatch 文件名&#39; --prune-empty --tag-name-filter cat -- --all</code></p>
+<p><code>git filter-branch --index-filter</code> 让每个提交的文件都复制到索引(<code>.git/index</code>)中</p>
+<p>然后运行过滤器命令：<code>git rm --cached --ignore-unmatch</code> 文件名 ，让每个提交都删除掉“文件名”文件</p>
+<p>然后<code>--prune-empty</code>把空的提交“修剪”掉</p>
+<p>然后<code>--tag-name-filter cat</code>把每个tag保持原名字，指向修改后的对应提交</p>
+<p>最后<code>-- --all</code>将所有ref（包括branch、tag）都执行上面的重写</p>
+<p><code>git for-each-ref --format=&#39;delete %(refname)&#39; refs/original | git update-ref --stdin</code></p>
+<p><code>git reflog expire --expire=now --all</code></p>
+<p><code>git gc --prune=now</code></p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ol>
+<li><p>上面的文件名可以写通配符号</p>
+</li>
+<li><p>众所周知只要我加到git中过的，即使把分支删了，也可以从reflog中找到，但这里 有 清除reflog所以 想要这样做的，要么 单独开文件夹搞，要么 确定 reflog都不会再用</p>
+</li>
+<li><p>什么时候使用? 使用频率不应高，因为 这种操作无疑是会对 分支重写，也就完全不同的commit hash,所以最后push都会带上–force, 目前能想到场景,比如 不必要的大文件,如不小心提交的下下来的打包后文件,大zip.也有场景 比如 很多分支前 不小心提交了一个涉密的文件。 当然push force以后 所有用仓库的人要想继续用只有去新的分支里搞了，已经被别人下的还会在别人硬盘里</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>software</category>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -10257,21 +10324,6 @@ MariaDB [(none)]&gt; FLUSH PRIVILEGES;
       </tags>
   </entry>
   <entry>
-    <title>single square brackets vs double square brackets in shell</title>
-    <url>/Blog/19-10-24-shell/</url>
-    <content><![CDATA[<h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p><a href="https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba">https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba</a></p>
-<p><a href="http://mywiki.wooledge.org/BashFAQ/031">http://mywiki.wooledge.org/BashFAQ/031</a></p>
-<p><a href="https://scriptingosx.com/2018/02/single-brackets-vs-double-brackets/">https://scriptingosx.com/2018/02/single-brackets-vs-double-brackets/</a></p>
-]]></content>
-      <categories>
-        <category>software</category>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>gulp 笔记</title>
     <url>/Blog/19-10-29-gulp/</url>
     <content><![CDATA[<h1 id="文档学习"><a href="#文档学习" class="headerlink" title="文档学习"></a>文档学习</h1><p>有中文看中文 :-)</p>
@@ -10377,6 +10429,21 @@ Local version: 4.0.2
       </categories>
       <tags>
         <tag>gulp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>single square brackets vs double square brackets in shell</title>
+    <url>/Blog/19-10-24-shell/</url>
+    <content><![CDATA[<h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p><a href="https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba">https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba</a></p>
+<p><a href="http://mywiki.wooledge.org/BashFAQ/031">http://mywiki.wooledge.org/BashFAQ/031</a></p>
+<p><a href="https://scriptingosx.com/2018/02/single-brackets-vs-double-brackets/">https://scriptingosx.com/2018/02/single-brackets-vs-double-brackets/</a></p>
+]]></content>
+      <categories>
+        <category>software</category>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
@@ -11469,6 +11536,33 @@ export default &#123;
       </tags>
   </entry>
   <entry>
+    <title>vue2 reactive基本原理demo</title>
+    <url>/Blog/21-01-13-reactive-demo/</url>
+    <content><![CDATA[<h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>以下代码均可以在nodejs和chrome的console里运行</p>
+<p>以下均未考虑兼容,空判断,父类属性,解除绑定, 多层关系, 循环调用,多次调用等</p>
+<h1 id="Step-1-接管赋值和取值"><a href="#Step-1-接管赋值和取值" class="headerlink" title="Step 1 接管赋值和取值"></a>Step 1 接管赋值和取值</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> demo = &#123;&#125;;</span><br><span class="line">demo.<span class="property">_dAtA</span> = &#123;&#125;;</span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(demo, <span class="string">&#x27;x&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">get</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> demo.<span class="property">_dAtA</span>[<span class="string">&#x27;x&#x27;</span>] * <span class="number">2</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">set</span>(<span class="params">val</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(val);</span><br><span class="line">    demo.<span class="property">_dAtA</span>[<span class="string">&#x27;x&#x27;</span>] = val;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">demo.<span class="property">x</span> = <span class="number">123</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(demo.<span class="property">x</span>)</span><br></pre></td></tr></table></figure>
+
+<p>专门做了个赋值取值不一致的乘2</p>
+<span id="more"></span>
+
+<h1 id="Step-2-函数订阅与触发"><a href="#Step-2-函数订阅与触发" class="headerlink" title="Step 2 函数订阅与触发"></a>Step 2 函数订阅与触发</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">  subs = []</span><br><span class="line">  <span class="title function_">sub</span>(<span class="params">fn</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="title function_">push</span>(fn)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">unsub</span>(<span class="params">fn</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="property">length</span> - <span class="number">1</span>;i &gt;= <span class="number">0</span> ;i--)&#123;</span><br><span class="line">      <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">subs</span>[i] === fn)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="title function_">splice</span>(i,<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">notify</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;nofity start&#x27;</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="property">length</span>; i ++)&#123;</span><br><span class="line">      (<span class="variable language_">this</span>.<span class="property">subs</span>[i])();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;nofity end&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> d = <span class="keyword">new</span> <span class="title class_">Demo</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">hello0</span> = (<span class="params"></span>)=&gt;&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello 0&#x27;</span>)&#125;</span><br><span class="line">d.<span class="title function_">sub</span>(hello0)</span><br><span class="line">d.<span class="title function_">notify</span>()</span><br><span class="line">d.<span class="title function_">unsub</span>(hello0)</span><br><span class="line">d.<span class="title function_">notify</span>()</span><br><span class="line"></span><br><span class="line">d.<span class="title function_">sub</span>(<span class="function">()=&gt;</span>&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello 1&#x27;</span>)&#125;)</span><br><span class="line">d.<span class="title function_">unsub</span>(<span class="function">()=&gt;</span>&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello 1&#x27;</span>)&#125;)</span><br><span class="line">d.<span class="title function_">notify</span>()</span><br></pre></td></tr></table></figure>
+
+<p>专门写了两种，对于函数指针不了解的，也可以通过这个理解一下</p>
+<h1 id="Step-3-data-computed"><a href="#Step-3-data-computed" class="headerlink" title="Step 3 data + computed"></a>Step 3 data + computed</h1><p>有了上面的基本工具，结合一下</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Sub</span>&#123;</span><br><span class="line">  subs = []</span><br><span class="line">  <span class="title function_">sub</span>(<span class="params">fn</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="title function_">push</span>(fn)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">notify</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">fn</span>=&gt;</span>&#123;<span class="title function_">fn</span>()&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// currentReactiveValue</span></span><br><span class="line"><span class="keyword">let</span> curV = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">defineReactive</span>(<span class="params">obj, key, value, db</span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> subs = <span class="keyword">new</span> <span class="title class_">Sub</span>();</span><br><span class="line">  obj[db][key] = value;</span><br><span class="line">  <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(obj, key, &#123;</span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(curV)&#123;</span><br><span class="line">        <span class="comment">// not bind self</span></span><br><span class="line">        <span class="keyword">if</span>(!(curV.<span class="property">vm</span> === obj &amp;&amp; curV.<span class="property">key</span> === key))&#123;</span><br><span class="line">          <span class="keyword">const</span> rv = curV;</span><br><span class="line">          subs.<span class="title function_">sub</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">            rv.<span class="property">vm</span>[rv.<span class="property">key</span>] = rv.<span class="title function_">fn</span>();</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`\t[info][<span class="subst">$&#123;rv.key&#125;</span>] set to [<span class="subst">$&#123;rv.vm[rv.key]&#125;</span>]`</span>);</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> obj[db][key];</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">set</span>(<span class="params">v</span>)&#123;</span><br><span class="line">      obj[db][key] = v</span><br><span class="line">      subs.<span class="title function_">notify</span>();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">defineComputed</span>(<span class="params">obj, key, fn</span>) &#123;</span><br><span class="line">  curV = &#123;<span class="attr">vm</span>: obj, key, <span class="attr">fn</span>: fn.<span class="title function_">bind</span>(obj)&#125;;</span><br><span class="line">  <span class="keyword">let</span> d = (fn.<span class="title function_">bind</span>(obj))();</span><br><span class="line">  <span class="title function_">defineReactive</span>(obj, key, d, <span class="string">&#x27;_computed&#x27;</span>);</span><br><span class="line">  curV = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">VDemo</span>&#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">config</span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> d = config.<span class="title function_">dAtA</span>();</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_data</span> = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> d) &#123;</span><br><span class="line">      <span class="title function_">defineReactive</span>(<span class="variable language_">this</span>, key, d[key], <span class="string">&#x27;_data&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_computed</span> = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> config.<span class="property">computed</span>)&#123;</span><br><span class="line">      <span class="title function_">defineComputed</span>(<span class="variable language_">this</span>, key, config.<span class="property">computed</span>[key])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> vDemo = <span class="keyword">new</span> <span class="title class_">VDemo</span>(&#123;</span><br><span class="line">  <span class="title function_">dAtA</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">vAl0</span>: <span class="string">&#x27;hey&#x27;</span>,</span><br><span class="line">      <span class="attr">vAl1</span>: <span class="string">&#x27;world&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">computed</span>: &#123;</span><br><span class="line">    <span class="title function_">x</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">vAl0</span> + <span class="string">&#x27; &#x27;</span> + <span class="variable language_">this</span>.<span class="property">vAl1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">y</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;y: &#x27;</span> + <span class="variable language_">this</span>.<span class="property">x</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo.<span class="property">vAl0</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo.<span class="property">vAl1</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo.<span class="property">x</span>)</span><br><span class="line">vDemo.<span class="property">vAl0</span> = <span class="string">&#x27;hello&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo.<span class="property">x</span>)</span><br><span class="line">vDemo.<span class="property">vAl1</span> = <span class="string">&#x27; ?&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo.<span class="property">x</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo.<span class="property">x</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo)</span><br></pre></td></tr></table></figure>
+
+<p>这样，改变值，依赖的值就会自动跟着变化，而在依赖的值不变时，不会多次调用函数。</p>
+<h1 id="相关文档"><a href="#相关文档" class="headerlink" title="相关文档"></a>相关文档</h1><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty</a></p>
+]]></content>
+      <categories>
+        <category>frontend</category>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>chrome inspect 404</title>
     <url>/Blog/20-12-14-chromium-inspect/</url>
     <content><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p><code>chrome://inspect</code> 调试android 打开404</p>
@@ -11494,30 +11588,29 @@ export default &#123;
       </tags>
   </entry>
   <entry>
-    <title>vue2 reactive基本原理demo</title>
-    <url>/Blog/21-01-13-reactive-demo/</url>
-    <content><![CDATA[<h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>以下代码均可以在nodejs和chrome的console里运行</p>
-<p>以下均未考虑兼容,空判断,父类属性,解除绑定, 多层关系, 循环调用,多次调用等</p>
-<h1 id="Step-1-接管赋值和取值"><a href="#Step-1-接管赋值和取值" class="headerlink" title="Step 1 接管赋值和取值"></a>Step 1 接管赋值和取值</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> demo = &#123;&#125;;</span><br><span class="line">demo.<span class="property">_dAtA</span> = &#123;&#125;;</span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(demo, <span class="string">&#x27;x&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">get</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> demo.<span class="property">_dAtA</span>[<span class="string">&#x27;x&#x27;</span>] * <span class="number">2</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">set</span>(<span class="params">val</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(val);</span><br><span class="line">    demo.<span class="property">_dAtA</span>[<span class="string">&#x27;x&#x27;</span>] = val;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">demo.<span class="property">x</span> = <span class="number">123</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(demo.<span class="property">x</span>)</span><br></pre></td></tr></table></figure>
+    <title>k8s</title>
+    <url>/Blog/21-01-21-k8s/</url>
+    <content><![CDATA[<h1 id="Install-minikube"><a href="#Install-minikube" class="headerlink" title="Install minikube"></a>Install minikube</h1><p><a href="https://minikube.sigs.k8s.io/docs/start/">https://minikube.sigs.k8s.io/docs/start/</a></p>
+<p>Debian:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb</span><br><span class="line">sudo dpkg -i minikube_latest_amd64.deb</span><br></pre></td></tr></table></figure>
 
-<p>专门做了个赋值取值不一致的乘2</p>
-<span id="more"></span>
+<p>start your cluster</p>
+<p><code>minikube start</code></p>
+<h1 id="install-kubectl"><a href="#install-kubectl" class="headerlink" title="install kubectl"></a>install kubectl</h1><p>下载<code>curl -LO &quot;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&quot;</code></p>
+<p>下载sha256: <code>curl -LO &quot;https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256&quot;</code></p>
+<p>校验sha256: <code>echo &quot;$(&lt;kubectl.sha256) kubectl&quot; | sha256sum --check</code></p>
+<p><a href="https://kubernetes.io/zh/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux">https://kubernetes.io/zh/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -LO &quot;https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl&quot;</span><br><span class="line">chmod +x ./kubectl</span><br><span class="line">sudo mv ./kubectl /usr/local/bin/kubectl</span><br><span class="line">kubectl version --client</span><br><span class="line">kubectl cluster-info</span><br></pre></td></tr></table></figure>
 
-<h1 id="Step-2-函数订阅与触发"><a href="#Step-2-函数订阅与触发" class="headerlink" title="Step 2 函数订阅与触发"></a>Step 2 函数订阅与触发</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">  subs = []</span><br><span class="line">  <span class="title function_">sub</span>(<span class="params">fn</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="title function_">push</span>(fn)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">unsub</span>(<span class="params">fn</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="property">length</span> - <span class="number">1</span>;i &gt;= <span class="number">0</span> ;i--)&#123;</span><br><span class="line">      <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">subs</span>[i] === fn)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="title function_">splice</span>(i,<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">notify</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;nofity start&#x27;</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="property">length</span>; i ++)&#123;</span><br><span class="line">      (<span class="variable language_">this</span>.<span class="property">subs</span>[i])();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;nofity end&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> d = <span class="keyword">new</span> <span class="title class_">Demo</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">hello0</span> = (<span class="params"></span>)=&gt;&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello 0&#x27;</span>)&#125;</span><br><span class="line">d.<span class="title function_">sub</span>(hello0)</span><br><span class="line">d.<span class="title function_">notify</span>()</span><br><span class="line">d.<span class="title function_">unsub</span>(hello0)</span><br><span class="line">d.<span class="title function_">notify</span>()</span><br><span class="line"></span><br><span class="line">d.<span class="title function_">sub</span>(<span class="function">()=&gt;</span>&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello 1&#x27;</span>)&#125;)</span><br><span class="line">d.<span class="title function_">unsub</span>(<span class="function">()=&gt;</span>&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello 1&#x27;</span>)&#125;)</span><br><span class="line">d.<span class="title function_">notify</span>()</span><br></pre></td></tr></table></figure>
-
-<p>专门写了两种，对于函数指针不了解的，也可以通过这个理解一下</p>
-<h1 id="Step-3-data-computed"><a href="#Step-3-data-computed" class="headerlink" title="Step 3 data + computed"></a>Step 3 data + computed</h1><p>有了上面的基本工具，结合一下</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Sub</span>&#123;</span><br><span class="line">  subs = []</span><br><span class="line">  <span class="title function_">sub</span>(<span class="params">fn</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="title function_">push</span>(fn)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">notify</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">subs</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">fn</span>=&gt;</span>&#123;<span class="title function_">fn</span>()&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// currentReactiveValue</span></span><br><span class="line"><span class="keyword">let</span> curV = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">defineReactive</span>(<span class="params">obj, key, value, db</span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> subs = <span class="keyword">new</span> <span class="title class_">Sub</span>();</span><br><span class="line">  obj[db][key] = value;</span><br><span class="line">  <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(obj, key, &#123;</span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(curV)&#123;</span><br><span class="line">        <span class="comment">// not bind self</span></span><br><span class="line">        <span class="keyword">if</span>(!(curV.<span class="property">vm</span> === obj &amp;&amp; curV.<span class="property">key</span> === key))&#123;</span><br><span class="line">          <span class="keyword">const</span> rv = curV;</span><br><span class="line">          subs.<span class="title function_">sub</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">            rv.<span class="property">vm</span>[rv.<span class="property">key</span>] = rv.<span class="title function_">fn</span>();</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`\t[info][<span class="subst">$&#123;rv.key&#125;</span>] set to [<span class="subst">$&#123;rv.vm[rv.key]&#125;</span>]`</span>);</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> obj[db][key];</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">set</span>(<span class="params">v</span>)&#123;</span><br><span class="line">      obj[db][key] = v</span><br><span class="line">      subs.<span class="title function_">notify</span>();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">defineComputed</span>(<span class="params">obj, key, fn</span>) &#123;</span><br><span class="line">  curV = &#123;<span class="attr">vm</span>: obj, key, <span class="attr">fn</span>: fn.<span class="title function_">bind</span>(obj)&#125;;</span><br><span class="line">  <span class="keyword">let</span> d = (fn.<span class="title function_">bind</span>(obj))();</span><br><span class="line">  <span class="title function_">defineReactive</span>(obj, key, d, <span class="string">&#x27;_computed&#x27;</span>);</span><br><span class="line">  curV = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">VDemo</span>&#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">config</span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> d = config.<span class="title function_">dAtA</span>();</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_data</span> = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> d) &#123;</span><br><span class="line">      <span class="title function_">defineReactive</span>(<span class="variable language_">this</span>, key, d[key], <span class="string">&#x27;_data&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_computed</span> = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> config.<span class="property">computed</span>)&#123;</span><br><span class="line">      <span class="title function_">defineComputed</span>(<span class="variable language_">this</span>, key, config.<span class="property">computed</span>[key])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> vDemo = <span class="keyword">new</span> <span class="title class_">VDemo</span>(&#123;</span><br><span class="line">  <span class="title function_">dAtA</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">vAl0</span>: <span class="string">&#x27;hey&#x27;</span>,</span><br><span class="line">      <span class="attr">vAl1</span>: <span class="string">&#x27;world&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">computed</span>: &#123;</span><br><span class="line">    <span class="title function_">x</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">vAl0</span> + <span class="string">&#x27; &#x27;</span> + <span class="variable language_">this</span>.<span class="property">vAl1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">y</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;y: &#x27;</span> + <span class="variable language_">this</span>.<span class="property">x</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo.<span class="property">vAl0</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo.<span class="property">vAl1</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo.<span class="property">x</span>)</span><br><span class="line">vDemo.<span class="property">vAl0</span> = <span class="string">&#x27;hello&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo.<span class="property">x</span>)</span><br><span class="line">vDemo.<span class="property">vAl1</span> = <span class="string">&#x27; ?&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo.<span class="property">x</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo.<span class="property">x</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(vDemo)</span><br></pre></td></tr></table></figure>
-
-<p>这样，改变值，依赖的值就会自动跟着变化，而在依赖的值不变时，不会多次调用函数。</p>
-<h1 id="相关文档"><a href="#相关文档" class="headerlink" title="相关文档"></a>相关文档</h1><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty</a></p>
+<h1 id="安装-minikube"><a href="#安装-minikube" class="headerlink" title="安装 minikube"></a>安装 minikube</h1><p><a href="https://minikube.sigs.k8s.io/docs/start/">https://minikube.sigs.k8s.io/docs/start/</a></p>
 ]]></content>
       <categories>
-        <category>frontend</category>
-        <category>vue2</category>
+        <category>backend</category>
       </categories>
       <tags>
-        <tag>vue2</tag>
+        <tag>docker</tag>
+        <tag>devops</tag>
+        <tag>k8s</tag>
       </tags>
   </entry>
   <entry>
@@ -11580,99 +11673,6 @@ export default &#123;
         <tag>Angular2+</tag>
         <tag>react</tag>
         <tag>recursive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>k8s</title>
-    <url>/Blog/21-01-21-k8s/</url>
-    <content><![CDATA[<h1 id="Install-minikube"><a href="#Install-minikube" class="headerlink" title="Install minikube"></a>Install minikube</h1><p><a href="https://minikube.sigs.k8s.io/docs/start/">https://minikube.sigs.k8s.io/docs/start/</a></p>
-<p>Debian:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb</span><br><span class="line">sudo dpkg -i minikube_latest_amd64.deb</span><br></pre></td></tr></table></figure>
-
-<p>start your cluster</p>
-<p><code>minikube start</code></p>
-<h1 id="install-kubectl"><a href="#install-kubectl" class="headerlink" title="install kubectl"></a>install kubectl</h1><p>下载<code>curl -LO &quot;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&quot;</code></p>
-<p>下载sha256: <code>curl -LO &quot;https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256&quot;</code></p>
-<p>校验sha256: <code>echo &quot;$(&lt;kubectl.sha256) kubectl&quot; | sha256sum --check</code></p>
-<p><a href="https://kubernetes.io/zh/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux">https://kubernetes.io/zh/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -LO &quot;https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl&quot;</span><br><span class="line">chmod +x ./kubectl</span><br><span class="line">sudo mv ./kubectl /usr/local/bin/kubectl</span><br><span class="line">kubectl version --client</span><br><span class="line">kubectl cluster-info</span><br></pre></td></tr></table></figure>
-
-<h1 id="安装-minikube"><a href="#安装-minikube" class="headerlink" title="安装 minikube"></a>安装 minikube</h1><p><a href="https://minikube.sigs.k8s.io/docs/start/">https://minikube.sigs.k8s.io/docs/start/</a></p>
-]]></content>
-      <categories>
-        <category>backend</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-        <tag>devops</tag>
-        <tag>k8s</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue声明式交互能力 &amp; vue3.0 进展</title>
-    <url>/Blog/19-06-13-vue-declarative/</url>
-    <content><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.bilibili.com/video/av37345007?from=search&seid=12943305398860809438">https://www.bilibili.com/video/av37345007?from=search&amp;seid=12943305398860809438</a></p>
-<p><a href="https://www.bilibili.com/video/av55286346?from=search&seid=13529674123410117444">https://www.bilibili.com/video/av55286346?from=search&amp;seid=13529674123410117444</a></p>
-<h1 id="吹什么"><a href="#吹什么" class="headerlink" title="吹什么"></a>吹什么</h1><p>vue的 声明式写法，最常见讲是computed</p>
-<p>比如<code>0 js代码</code> ，直接组件实现 阶乘，斐波那契数列的计算</p>
-<p>和 命令式相比，</p>
-<p>历史发展向讲解</p>
-<p>就 应用程序 实体举例</p>
-<p>跨语言啊交互举例 <a href="https://weex.apache.org/zh/docs/components/recycle-list.html">recycle-list</a></p>
-<p>简单说 原来的命令式 比较常用的是 事件-&gt;执行的代码</p>
-<p>现在 实现 大概是 数据 &#x3D; 构成来源</p>
-<h1 id="vue3"><a href="#vue3" class="headerlink" title="vue3"></a>vue3</h1><p>chrome devTools 周活用户90万 &#x2F; react的160万</p>
-<p>what’s target?</p>
-<span id="more"></span>
-
-<ul>
-<li>更小</li>
-<li>更快(重点)</li>
-<li>加强TS支持(重点)</li>
-<li>加强API设计一致性</li>
-<li>提高自身可维护性</li>
-<li>开放更多底层功能</li>
-</ul>
-<h2 id="更快"><a href="#更快" class="headerlink" title="更快"></a>更快</h2><p>数据变动检测:</p>
-<p>Object.defineProperty -&gt; Proxy (es6)</p>
-<hr>
-<p>用TS重写了Virtual DOM</p>
-<p>编译时优化</p>
-<p>Slot 默认便以为函数</p>
-<p>单例vnode工厂，设计一致的函数参数</p>
-<p>vdom 监测 设计改动</p>
-<p>原来是整个遍历，大多数情况16ms完成整个更新(传统情况)</p>
-<p>react，难在 代码中 提取 究竟哪个数据变化会影响 函数重算 ，方案CPU时间分片</p>
-<p>参考svelte框架， 强限制+静态编译<code>-&gt;</code>不需要virtual DOM 的代码，性能强,但 底线只能用模板,编译后代码体积大，但速度快</p>
-<p>vue3:兼容2，手写render function,其次 最大化利用模板信息</p>
-<p>直接 分析模板 把 动静结合 分离分析动态和静态的块[放弃可能存在的 原生js改动 html的检测？]</p>
-<p>做的benchmark 约6x快</p>
-<h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h2><p>之前Class API …然后被放弃了</p>
-<p>Function-based API 对比 Class API</p>
-<ul>
-<li>更好的TypeScript 类型推导，这样js写法 基本是 ts写法(不需要多余类型声明)</li>
-<li>tree-shaking !!!!!!!!!!!!!!!!!效果更好,</li>
-<li>写法 函数变量名更容易被压缩[编译优化]</li>
-<li>逻辑复用:</li>
-</ul>
-<p> 2.0方案 Mixins(缺点 多mixins时，命名空间 模板 数据 来源不清晰,)</p>
-<p>react: higher-order components 高阶组件(多个高阶组件 也有同样问题{命名空间冲突，数据来源不清晰，无额外的组件实例性能消耗})</p>
-<p>作用域插槽:(没有命名空间冲突，数据来源清晰,额外的组件实例性能消耗) 如<code>v-slot</code></p>
-<p>最新的 函数式 复用,+函数返回 解构,{没有命名空间冲突,数据来源清晰，无额外的组件实例性能消耗}</p>
-<p>和 react Hooks 对比:</p>
-<ul>
-<li>vue 只在初始化时调用(值可追踪),没有闭包变量问题，没有 内存 gc压力问题</li>
-</ul>
-<h1 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h1><p><a href="https://segmentfault.com/a/1190000012794598?utm_source=tag-newest">tree-shaking</a></p>
-]]></content>
-      <categories>
-        <category>frontend</category>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>js</tag>
-        <tag>vue3</tag>
       </tags>
   </entry>
   <entry>
@@ -14455,6 +14455,44 @@ export default &#123;
       </tags>
   </entry>
   <entry>
+    <title>CORS Demos</title>
+    <url>/Blog/22-10-25-cors/</url>
+    <content><![CDATA[<h1 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h1><p>The server is responsible for reporting the allowed origins. The web browser is responsible for enforcing that requests are only sent from allowed domains.</p>
+<p><img data-src="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/preflight_correct.png"></p>
+<h2 id="Capture"><a href="#Capture" class="headerlink" title="Capture"></a>Capture</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tcpdump -i lo <span class="string">&#x27;port 5000&#x27;</span> -vv -x -X</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="In-browser-console"><a href="#In-browser-console" class="headerlink" title="In browser console"></a>In browser console</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fetch(<span class="string">&quot;http://127.0.0.1:5000&quot;</span>).<span class="keyword">then</span>(result=&gt;console.log(result))</span><br><span class="line">fetch(<span class="string">&quot;http://127.0.0.1:5000/xxx&quot;</span>,&#123;method: <span class="string">&quot;POST&quot;</span>,credentials:<span class="string">&quot;include&quot;</span>&#125;).<span class="keyword">then</span>(result=&gt;console.log(result))</span><br></pre></td></tr></table></figure>
+
+<h2 id="With-curl"><a href="#With-curl" class="headerlink" title="With curl"></a>With curl</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -X POST -H <span class="string">&quot;Origin: https://www.baidu.com&quot;</span> http://127.0.0.1:5000/xxx</span><br></pre></td></tr></table></figure>
+
+<h2 id="With-static-html"><a href="#With-static-html" class="headerlink" title="With static html"></a>With static html</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;header&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">  &lt;/header&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      const xhr = new XMLHttpRequest();</span><br><span class="line">      const url = &#x27;http://127.0.0.1:5000/xxx&#x27;;</span><br><span class="line">      xhr.open(&#x27;POST&#x27;, url);</span><br><span class="line">      xhr.send();</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Python-with-flask-flask-cors"><a href="#Python-with-flask-flask-cors" class="headerlink" title="Python with flask flask-cors"></a>Python with flask flask-cors</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> flask_demo</span><br><span class="line">python3 -m venv venv</span><br><span class="line">. venv/bin/active</span><br><span class="line">pip install flask flask-cors</span><br><span class="line">python3 app.py</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"><span class="keyword">from</span> flask_cors <span class="keyword">import</span> CORS</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="comment"># CORS(app) &lt;-----------------------</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello_world</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;execute&quot;</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;&lt;p&gt;Hello, World!&lt;/p&gt;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/xxx&quot;</span>,methods = [<span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">post_test</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;execute&quot;</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;yyyyyy&quot;</span></span><br><span class="line"></span><br><span class="line">app.run(host=<span class="string">&#x27;0.0.0.0&#x27;</span>, port=<span class="number">5000</span>, debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Nodejs-express"><a href="#Nodejs-express" class="headerlink" title="Nodejs express"></a>Nodejs express</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> express_demo</span><br><span class="line">yarn</span><br><span class="line">node app.js</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> cors = <span class="built_in">require</span>(<span class="string">&#x27;cors&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>()</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">5000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// app.use(cors()) &lt;----------------------------</span></span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;execute&quot;</span>);</span><br><span class="line">  res.<span class="title function_">send</span>(<span class="string">&#x27;Hello World!&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/xxx&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;execute&quot;</span>);</span><br><span class="line">  res.<span class="title function_">send</span>(<span class="string">&#x27;yyyyyyyy&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(port, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Example app listening on port <span class="subst">$&#123;port&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="OutPut"><a href="#OutPut" class="headerlink" title="OutPut"></a>OutPut</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IP (tos 0x0, ttl 64, id 30245, offset 0, flags [DF], proto TCP (6), length 72)</span><br><span class="line">    localhost.5000 &gt; localhost.45592: Flags [P.], cksum 0xfe3c (incorrect -&gt; 0xdb33), seq 174:194, ack 537, win 512, options [nop,nop,TS val 3514469229 ecr 3514469229], length 20</span><br><span class="line">	0x0000:  4500 0048 7625 4000 4006 c688 7f00 0001  E..Hv%@.@.......</span><br><span class="line">	0x0010:  7f00 0001 1388 b218 a3e6 4bd5 50ac 8872  ..........K.P..r</span><br><span class="line">	0x0020:  8018 0200 fe3c 0000 0101 080a d17a 8b6d  .....&lt;.......z.m</span><br><span class="line">	0x0030:  d17a 8b6d 3c70 3e48 656c 6c6f 2c20 576f  .z.m&lt;p&gt;Hello,.Wo</span><br><span class="line">	0x0040:  726c 6421 3c2f 703e                      rld!&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">IP (tos 0x0, ttl 64, id 10609, offset 0, flags [DF], proto TCP (6), length 58)</span><br><span class="line">    localhost.5000 &gt; localhost.33622: Flags [P.], cksum 0xfe2e (incorrect -&gt; 0xa0e0), seq 173:179, ack 784, win 512, options [nop,nop,TS val 3515041534 ecr 3515041534], length 6</span><br><span class="line">	0x0000:  4500 003a 2971 4000 4006 134b 7f00 0001  E..:)q@.@..K....</span><br><span class="line">	0x0010:  7f00 0001 1388 8356 edfc 5eb6 696a eb5f  .......V..^.ij._</span><br><span class="line">	0x0020:  8018 0200 fe2e 0000 0101 080a d183 46fe  ..............F.</span><br><span class="line">	0x0030:  d183 46fe 7979 7979 7979                 ..F.yyyyyy</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>跨域依然被发送, 且服务器会执行和返回, 只是当不满足时, 加了credentials:”include”也不会带cookie, 浏览器也不展示结果</p>
+<p>同时可以看flask-cors 的源码 发现只改了headers</p>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS</a></p>
+<p><a href="https://github.com/corydolphin/flask-cors/blob/5c2a16274d9684d9d5475cab283559678278d7ab/flask_cors/core.py#L224-L252">https://github.com/corydolphin/flask-cors/blob/5c2a16274d9684d9d5475cab283559678278d7ab/flask_cors/core.py#L224-L252</a></p>
+]]></content>
+      <categories>
+        <category>frontend</category>
+        <category>CORS</category>
+      </categories>
+      <tags>
+        <tag>CORS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vim8 插件升级</title>
     <url>/Blog/22-09-14-vim8/</url>
     <content><![CDATA[<h1 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h1><p>我也是用了 spf13-vim + vundle 有七八年了, 之中还用过Pathogen 之类的</p>
@@ -14491,44 +14529,6 @@ export default &#123;
       </categories>
       <tags>
         <tag>vim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CORS Demos</title>
-    <url>/Blog/22-10-25-cors/</url>
-    <content><![CDATA[<h1 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h1><p>The server is responsible for reporting the allowed origins. The web browser is responsible for enforcing that requests are only sent from allowed domains.</p>
-<p><img data-src="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/preflight_correct.png"></p>
-<h2 id="Capture"><a href="#Capture" class="headerlink" title="Capture"></a>Capture</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tcpdump -i lo <span class="string">&#x27;port 5000&#x27;</span> -vv -x -X</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="In-browser-console"><a href="#In-browser-console" class="headerlink" title="In browser console"></a>In browser console</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fetch(<span class="string">&quot;http://127.0.0.1:5000&quot;</span>).<span class="keyword">then</span>(result=&gt;console.log(result))</span><br><span class="line">fetch(<span class="string">&quot;http://127.0.0.1:5000/xxx&quot;</span>,&#123;method: <span class="string">&quot;POST&quot;</span>,credentials:<span class="string">&quot;include&quot;</span>&#125;).<span class="keyword">then</span>(result=&gt;console.log(result))</span><br></pre></td></tr></table></figure>
-
-<h2 id="With-curl"><a href="#With-curl" class="headerlink" title="With curl"></a>With curl</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -X POST -H <span class="string">&quot;Origin: https://www.baidu.com&quot;</span> http://127.0.0.1:5000/xxx</span><br></pre></td></tr></table></figure>
-
-<h2 id="With-static-html"><a href="#With-static-html" class="headerlink" title="With static html"></a>With static html</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;header&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">  &lt;/header&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      const xhr = new XMLHttpRequest();</span><br><span class="line">      const url = &#x27;http://127.0.0.1:5000/xxx&#x27;;</span><br><span class="line">      xhr.open(&#x27;POST&#x27;, url);</span><br><span class="line">      xhr.send();</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Python-with-flask-flask-cors"><a href="#Python-with-flask-flask-cors" class="headerlink" title="Python with flask flask-cors"></a>Python with flask flask-cors</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> flask_demo</span><br><span class="line">python3 -m venv venv</span><br><span class="line">. venv/bin/active</span><br><span class="line">pip install flask flask-cors</span><br><span class="line">python3 app.py</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"><span class="keyword">from</span> flask_cors <span class="keyword">import</span> CORS</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="comment"># CORS(app) &lt;-----------------------</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello_world</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;execute&quot;</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;&lt;p&gt;Hello, World!&lt;/p&gt;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/xxx&quot;</span>,methods = [<span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">post_test</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;execute&quot;</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;yyyyyy&quot;</span></span><br><span class="line"></span><br><span class="line">app.run(host=<span class="string">&#x27;0.0.0.0&#x27;</span>, port=<span class="number">5000</span>, debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="Nodejs-express"><a href="#Nodejs-express" class="headerlink" title="Nodejs express"></a>Nodejs express</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> express_demo</span><br><span class="line">yarn</span><br><span class="line">node app.js</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> cors = <span class="built_in">require</span>(<span class="string">&#x27;cors&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>()</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">5000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// app.use(cors()) &lt;----------------------------</span></span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;execute&quot;</span>);</span><br><span class="line">  res.<span class="title function_">send</span>(<span class="string">&#x27;Hello World!&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/xxx&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;execute&quot;</span>);</span><br><span class="line">  res.<span class="title function_">send</span>(<span class="string">&#x27;yyyyyyyy&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(port, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Example app listening on port <span class="subst">$&#123;port&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="OutPut"><a href="#OutPut" class="headerlink" title="OutPut"></a>OutPut</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IP (tos 0x0, ttl 64, id 30245, offset 0, flags [DF], proto TCP (6), length 72)</span><br><span class="line">    localhost.5000 &gt; localhost.45592: Flags [P.], cksum 0xfe3c (incorrect -&gt; 0xdb33), seq 174:194, ack 537, win 512, options [nop,nop,TS val 3514469229 ecr 3514469229], length 20</span><br><span class="line">	0x0000:  4500 0048 7625 4000 4006 c688 7f00 0001  E..Hv%@.@.......</span><br><span class="line">	0x0010:  7f00 0001 1388 b218 a3e6 4bd5 50ac 8872  ..........K.P..r</span><br><span class="line">	0x0020:  8018 0200 fe3c 0000 0101 080a d17a 8b6d  .....&lt;.......z.m</span><br><span class="line">	0x0030:  d17a 8b6d 3c70 3e48 656c 6c6f 2c20 576f  .z.m&lt;p&gt;Hello,.Wo</span><br><span class="line">	0x0040:  726c 6421 3c2f 703e                      rld!&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">IP (tos 0x0, ttl 64, id 10609, offset 0, flags [DF], proto TCP (6), length 58)</span><br><span class="line">    localhost.5000 &gt; localhost.33622: Flags [P.], cksum 0xfe2e (incorrect -&gt; 0xa0e0), seq 173:179, ack 784, win 512, options [nop,nop,TS val 3515041534 ecr 3515041534], length 6</span><br><span class="line">	0x0000:  4500 003a 2971 4000 4006 134b 7f00 0001  E..:)q@.@..K....</span><br><span class="line">	0x0010:  7f00 0001 1388 8356 edfc 5eb6 696a eb5f  .......V..^.ij._</span><br><span class="line">	0x0020:  8018 0200 fe2e 0000 0101 080a d183 46fe  ..............F.</span><br><span class="line">	0x0030:  d183 46fe 7979 7979 7979                 ..F.yyyyyy</span><br></pre></td></tr></table></figure>
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>跨域依然被发送, 且服务器会执行和返回, 只是当不满足时, 加了credentials:”include”也不会带cookie, 浏览器也不展示结果</p>
-<p>同时可以看flask-cors 的源码 发现只改了headers</p>
-<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS</a></p>
-<p><a href="https://github.com/corydolphin/flask-cors/blob/5c2a16274d9684d9d5475cab283559678278d7ab/flask_cors/core.py#L224-L252">https://github.com/corydolphin/flask-cors/blob/5c2a16274d9684d9d5475cab283559678278d7ab/flask_cors/core.py#L224-L252</a></p>
-]]></content>
-      <categories>
-        <category>frontend</category>
-        <category>CORS</category>
-      </categories>
-      <tags>
-        <tag>CORS</tag>
       </tags>
   </entry>
   <entry>
@@ -14926,6 +14926,149 @@ export default &#123;
       <tags>
         <tag>Angular</tag>
         <tag>change detection</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android offline music</title>
+    <url>/Blog/23-05-01-android-offline-music/</url>
+    <content><![CDATA[<p>TLDR: 实践起来能获取和播放不少的歌,但还是有大量的歌在匹配和下载中有问题,所以还是不是一个”完美”的解决方案</p>
+<p>众所周知 服务器只是别人的电脑， 在经历，小说&#x2F;电影&#x2F;音乐&#x2F;文字 多次不同应用里不可靠时，最终回到原点还是本地离线方案</p>
+<h1 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h1><p>工作流: 电脑负责下载, 使用电脑-手机同步，手机离线播放</p>
+<ul>
+<li>安装<code>F-Droid</code></li>
+<li>安装<code>Linux/Windows/Android</code>同步软件, 例如Syncthing, 解决 电脑和手机之间的同步</li>
+<li>通过<code>F-Droid</code>安装音乐播放器<code>Retro</code>(支持动态lrc) (有的手机系统自带的音乐播放器也能播放本地的)</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>例如开发者模式，linux adb等等</p>
+<h3 id="Android-wifi-adb"><a href="#Android-wifi-adb" class="headerlink" title="Android wifi adb"></a>Android wifi adb</h3><ul>
+<li>手机打开对应开关 和 匹配code</li>
+<li>配对 <code>adb pair &lt;ip:pair port&gt; &lt;pair code&gt;</code> 例如<code>192.168.101.7:40421 204623</code></li>
+<li>链接 <code>adb connet &lt;ip:connect port&gt;</code> 例如<code>192.168.101.7:41659</code></li>
+<li>查看 <code>adb devices</code></li>
+</ul>
+<h3 id="F-Droid"><a href="#F-Droid" class="headerlink" title="F-Droid"></a>F-Droid</h3><p>免费和开源软件 (FOSS) Android 应用程序的存储库</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://f-droid.org/F-Droid.apk</span><br><span class="line">adb install F-Droid.apk</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件夹同步"><a href="#文件夹同步" class="headerlink" title="文件夹同步"></a>文件夹同步</h2><h3 id="Syncthing"><a href="#Syncthing" class="headerlink" title="Syncthing"></a>Syncthing</h3><p><a href="https://syncthing.net/">https://syncthing.net/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg</span><br><span class="line">echo &quot;deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install syncthing</span><br></pre></td></tr></table></figure>
+
+<p>再启动它 和 使用web-ui 即可</p>
+<p><strong>防火墙注意放开 22000(默认端口), 关闭<code>NAT穿透</code>,<code>全局发现</code>,<code>启用中继</code></strong></p>
+<hr>
+<p>然后通过F-Droid在 Android上 安装Syncthing, 同样手机上设置 关闭<code>NAT穿透</code>,<code>全局发现</code>,<code>启用中继</code>, 这样就都走局域网</p>
+<p>连接设备:</p>
+<ul>
+<li>电脑上<code>操作-&gt;显示ID</code></li>
+<li>手机上<code>设备-&gt; +号 -&gt; 设备标识 扫电脑上的二维码</code></li>
+</ul>
+<p>同步文件夹:</p>
+<ul>
+<li>电脑上, <code>文件夹-&gt; 添加文件夹 -&gt; 输入文件夹标签，修改文件夹路径, 复制文件夹ID, 共享tab里勾上手机，点击 保存</code></li>
+<li>手机上, <code>文件夹-&gt; +号 -&gt; 输入文件夹标签，修改文件夹ID和上面的复制的文件夹ID一样，选择手机中放置的目录，勾选电脑共享的id，确认即可</code></li>
+</ul>
+<p>在文件夹版本控制上用简单控制似乎够了</p>
+<p>测试</p>
+<ul>
+<li>新建文件看能否同步即可</li>
+</ul>
+<h3 id="注"><a href="#注" class="headerlink" title="注"></a>注</h3><p>也尝试过OwnCloud，本身设计上还是一个server多client的方式，而Syncthing是以文件夹唯一ID的形式</p>
+<h2 id="音乐下载"><a href="#音乐下载" class="headerlink" title="音乐下载"></a>音乐下载</h2><p>期望</p>
+<ul>
+<li>维护meta列表</li>
+<li>列表批量下载</li>
+<li>单个下载</li>
+</ul>
+<p>因为版权问题，各种开源的也在动态的出现和被封掉，而歌曲有的来自网易云，有的是QQ音乐, 有的是Youtube</p>
+<p>所以 其实 这里没有一个什么“稳定”的解决方案，只有暂时可用的方案</p>
+<p>例如<code>youtube-dl</code></p>
+<p>关于维护歌单，可靠的办法还是git + csv(歌手+歌名+(平台) ) 去做尽量精准匹配, 来源可以从现有的歌单抓取</p>
+<p>然后只需要 一个精确匹配的下载工具即可</p>
+<p><strong>这里有很坑的地方，不同平台可能大小写不同，歌名加了各种括号（Remix）,歌手是合作的顺序不同合作列表不全分割符号不同，中英文歌手名不同，括号里的东西不同</strong></p>
+<hr>
+<p>目前工作流</p>
+<ul>
+<li>脚本对playlist拉取到csv</li>
+<li>脚本对csv中精确匹配下载</li>
+</ul>
+<p>问题: 部分<code>vip</code>歌曲会下载成功，但只有十几秒</p>
+<h3 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h3><p>eyeD3 可以命令行查看歌曲信息</p>
+<p><a href="https://eyed3.readthedocs.io/en/latest/">https://eyed3.readthedocs.io/en/latest/</a></p>
+<h2 id="音乐播放"><a href="#音乐播放" class="headerlink" title="音乐播放"></a>音乐播放</h2><p>期望</p>
+<ul>
+<li>基本功能 进度条，前一首，后一首，歌单</li>
+<li>随机播放, 单曲循环，列表循环</li>
+<li>歌词展示</li>
+<li>可选: 播放次数统计，切歌统计，专辑封面</li>
+</ul>
+<p>Retro music player:</p>
+<p><a href="https://github.com/RetroMusicPlayer/RetroMusicPlayer">https://github.com/RetroMusicPlayer/RetroMusicPlayer</a></p>
+]]></content>
+      <categories>
+        <category>android</category>
+        <category>app</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+        <tag>music</tag>
+        <tag>offline</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python3 logging best? practice</title>
+    <url>/Blog/23-07-25-python-log/</url>
+    <content><![CDATA[<p>众所周知, 常用的输出有print,而调bug有logging, 用起来就是 info&#x2F;debug&#x2F;warning&#x2F;error</p>
+<p>但还有一些常见的问题</p>
+<ul>
+<li>在命令行输出一些,在日志文件输出一些,两边等级和格式不同</li>
+<li>希望日至记录 时间&#x2F;文件&#x2F;输出的行数&#x2F;上下文</li>
+<li>直接使用的软件的logging 和 库的logging有什么不同</li>
+<li>想重定向所用的库的logging, 调整库的logging的等级是否可行</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><p>常见的命令行工具的交互是 stdout, 而”没有用”的额外信息是stderr, logging默认就是到他stderr很好</p>
+<hr>
+<p>首先层级 有 print, 和logging的info&#x2F;warning&#x2F;error,exception&#x2F;critical</p>
+<hr>
+<p>通过format参数进行格式 控制, 这里可以查到 所有可选参数 <a href="https://docs.python.org/3.10/library/logging.html#logrecord-attributes">https://docs.python.org/3.10/library/logging.html#logrecord-attributes</a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 例子</span></span><br><span class="line">logging.basicConfig(level=logging.DEBUG, <span class="built_in">format</span>=<span class="string">&#x27;[%(asctime)s][%(name)s %(levelname)s][%(threadName)s][%(filename)s %(funcName)s %(lineno)d]:%(message)s&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://docs.python.org/3.10/_images/logging_flow.png" alt="logging flow"></p>
+<p>常用 Logger.setLevel&#x2F;addHandler&#x2F;addFilter</p>
+<p>getLogger, 以 <code>.</code>分割的 层级名称, 如果子层级logger没有设定level则会向父级别找</p>
+<p>有用的Handlers: <a href="https://docs.python.org/3.10/howto/logging.html#useful-handlers">https://docs.python.org/3.10/howto/logging.html#useful-handlers</a> 例如StreamHandler 和FileHandler</p>
+<p>对于 多线程,日志大,可以考虑rotatingFilehandler&#x2F;timedrotatingFilehandler</p>
+<p>对于 多进程, sockethanlder+日志收集服务器 &#x2F; datagramhandler</p>
+<hr>
+<p>cookbook 建议的是对于同一个代码中</p>
+<p>顶层 <code>logger = logging.getLogger(&#39;spam_application&#39;)</code></p>
+<p>辅助的module是 <code>module_logger = logging.getLogger(&#39;spam_application.auxiliary&#39;)</code></p>
+<p>这样只需要在顶层的<code>logger</code>上addHandler增加想要的handler即可</p>
+<hr>
+<p>flask 采用的是 根据传递的app.name 来作为logging.getLogger的key</p>
+<p>所以类似的, 作为纯函数库,可以考虑传递名称,或者传递logger</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#: Log messages to :func:`~flask.logging.wsgi_errors_stream` with the format</span></span><br><span class="line"><span class="comment">#: ``[%(asctime)s] %(levelname)s in %(module)s: %(message)s``.</span></span><br><span class="line">default_handler = logging.StreamHandler(wsgi_errors_stream)  <span class="comment"># type: ignore</span></span><br><span class="line">default_handler.setFormatter(</span><br><span class="line">    logging.Formatter(<span class="string">&quot;[%(asctime)s] %(levelname)s in %(module)s: %(message)s&quot;</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_logger</span>(<span class="params">app: Flask</span>) -&gt; logging.Logger:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Get the Flask app&#x27;s logger and configure it if needed.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    The logger name will be the same as</span></span><br><span class="line"><span class="string">    :attr:`app.import_name &lt;flask.Flask.name&gt;`.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    When :attr:`~flask.Flask.debug` is enabled, set the logger level to</span></span><br><span class="line"><span class="string">    :data:`logging.DEBUG` if it is not set.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    If there is no handler for the logger&#x27;s effective level, add a</span></span><br><span class="line"><span class="string">    :class:`~logging.StreamHandler` for</span></span><br><span class="line"><span class="string">    :func:`~flask.logging.wsgi_errors_stream` with a basic format.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    logger = logging.getLogger(app.name)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> app.debug <span class="keyword">and</span> <span class="keyword">not</span> logger.level:</span><br><span class="line">        logger.setLevel(logging.DEBUG)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> has_level_handler(logger):</span><br><span class="line">        logger.addHandler(default_handler)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> logger</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>回到最初的问题</p>
+<ul>
+<li>在命令行输出一些,在日志文件输出一些,两边等级和格式不同: 通过多个handler解决</li>
+<li>希望日至记录 时间&#x2F;文件&#x2F;输出的行数&#x2F;上下文: 通过format解决</li>
+<li>直接使用的软件的logging 和 库的logging有什么不同: 软件的一般会指定basicConfig或者顶层的handler, 而库的一般通过调用者传递logger的name,可以库自己配一些logger</li>
+<li>想重定向所用的库的logging, 调整库的logging的等级是否可行: 需要库支持logger name传递,然后利用logging本身提供的 点分割层级,控制顶层即可</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://docs.python.org/3.10/howto/logging.html">https://docs.python.org/3.10/howto/logging.html</a></p>
+<p><a href="https://docs.python.org/3.10/howto/logging-cookbook.html">https://docs.python.org/3.10/howto/logging-cookbook.html</a></p>
+<p><a href="https://github.com/pallets/flask/blob/main/src/flask/logging.py">https://github.com/pallets/flask/blob/main/src/flask/logging.py</a></p>
+]]></content>
+      <categories>
+        <category>python3</category>
+      </categories>
+      <tags>
+        <tag>python3</tag>
+        <tag>logging</tag>
       </tags>
   </entry>
   <entry>
@@ -15991,149 +16134,6 @@ export default &#123;
       </categories>
       <tags>
         <tag>cplusplus</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android offline music</title>
-    <url>/Blog/23-05-01-android-offline-music/</url>
-    <content><![CDATA[<p>TLDR: 实践起来能获取和播放不少的歌,但还是有大量的歌在匹配和下载中有问题,所以还是不是一个”完美”的解决方案</p>
-<p>众所周知 服务器只是别人的电脑， 在经历，小说&#x2F;电影&#x2F;音乐&#x2F;文字 多次不同应用里不可靠时，最终回到原点还是本地离线方案</p>
-<h1 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h1><p>工作流: 电脑负责下载, 使用电脑-手机同步，手机离线播放</p>
-<ul>
-<li>安装<code>F-Droid</code></li>
-<li>安装<code>Linux/Windows/Android</code>同步软件, 例如Syncthing, 解决 电脑和手机之间的同步</li>
-<li>通过<code>F-Droid</code>安装音乐播放器<code>Retro</code>(支持动态lrc) (有的手机系统自带的音乐播放器也能播放本地的)</li>
-</ul>
-<span id="more"></span>
-
-<h1 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>例如开发者模式，linux adb等等</p>
-<h3 id="Android-wifi-adb"><a href="#Android-wifi-adb" class="headerlink" title="Android wifi adb"></a>Android wifi adb</h3><ul>
-<li>手机打开对应开关 和 匹配code</li>
-<li>配对 <code>adb pair &lt;ip:pair port&gt; &lt;pair code&gt;</code> 例如<code>192.168.101.7:40421 204623</code></li>
-<li>链接 <code>adb connet &lt;ip:connect port&gt;</code> 例如<code>192.168.101.7:41659</code></li>
-<li>查看 <code>adb devices</code></li>
-</ul>
-<h3 id="F-Droid"><a href="#F-Droid" class="headerlink" title="F-Droid"></a>F-Droid</h3><p>免费和开源软件 (FOSS) Android 应用程序的存储库</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://f-droid.org/F-Droid.apk</span><br><span class="line">adb install F-Droid.apk</span><br></pre></td></tr></table></figure>
-
-<h2 id="文件夹同步"><a href="#文件夹同步" class="headerlink" title="文件夹同步"></a>文件夹同步</h2><h3 id="Syncthing"><a href="#Syncthing" class="headerlink" title="Syncthing"></a>Syncthing</h3><p><a href="https://syncthing.net/">https://syncthing.net/</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg</span><br><span class="line">echo &quot;deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install syncthing</span><br></pre></td></tr></table></figure>
-
-<p>再启动它 和 使用web-ui 即可</p>
-<p><strong>防火墙注意放开 22000(默认端口), 关闭<code>NAT穿透</code>,<code>全局发现</code>,<code>启用中继</code></strong></p>
-<hr>
-<p>然后通过F-Droid在 Android上 安装Syncthing, 同样手机上设置 关闭<code>NAT穿透</code>,<code>全局发现</code>,<code>启用中继</code>, 这样就都走局域网</p>
-<p>连接设备:</p>
-<ul>
-<li>电脑上<code>操作-&gt;显示ID</code></li>
-<li>手机上<code>设备-&gt; +号 -&gt; 设备标识 扫电脑上的二维码</code></li>
-</ul>
-<p>同步文件夹:</p>
-<ul>
-<li>电脑上, <code>文件夹-&gt; 添加文件夹 -&gt; 输入文件夹标签，修改文件夹路径, 复制文件夹ID, 共享tab里勾上手机，点击 保存</code></li>
-<li>手机上, <code>文件夹-&gt; +号 -&gt; 输入文件夹标签，修改文件夹ID和上面的复制的文件夹ID一样，选择手机中放置的目录，勾选电脑共享的id，确认即可</code></li>
-</ul>
-<p>在文件夹版本控制上用简单控制似乎够了</p>
-<p>测试</p>
-<ul>
-<li>新建文件看能否同步即可</li>
-</ul>
-<h3 id="注"><a href="#注" class="headerlink" title="注"></a>注</h3><p>也尝试过OwnCloud，本身设计上还是一个server多client的方式，而Syncthing是以文件夹唯一ID的形式</p>
-<h2 id="音乐下载"><a href="#音乐下载" class="headerlink" title="音乐下载"></a>音乐下载</h2><p>期望</p>
-<ul>
-<li>维护meta列表</li>
-<li>列表批量下载</li>
-<li>单个下载</li>
-</ul>
-<p>因为版权问题，各种开源的也在动态的出现和被封掉，而歌曲有的来自网易云，有的是QQ音乐, 有的是Youtube</p>
-<p>所以 其实 这里没有一个什么“稳定”的解决方案，只有暂时可用的方案</p>
-<p>例如<code>youtube-dl</code></p>
-<p>关于维护歌单，可靠的办法还是git + csv(歌手+歌名+(平台) ) 去做尽量精准匹配, 来源可以从现有的歌单抓取</p>
-<p>然后只需要 一个精确匹配的下载工具即可</p>
-<p><strong>这里有很坑的地方，不同平台可能大小写不同，歌名加了各种括号（Remix）,歌手是合作的顺序不同合作列表不全分割符号不同，中英文歌手名不同，括号里的东西不同</strong></p>
-<hr>
-<p>目前工作流</p>
-<ul>
-<li>脚本对playlist拉取到csv</li>
-<li>脚本对csv中精确匹配下载</li>
-</ul>
-<p>问题: 部分<code>vip</code>歌曲会下载成功，但只有十几秒</p>
-<h3 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h3><p>eyeD3 可以命令行查看歌曲信息</p>
-<p><a href="https://eyed3.readthedocs.io/en/latest/">https://eyed3.readthedocs.io/en/latest/</a></p>
-<h2 id="音乐播放"><a href="#音乐播放" class="headerlink" title="音乐播放"></a>音乐播放</h2><p>期望</p>
-<ul>
-<li>基本功能 进度条，前一首，后一首，歌单</li>
-<li>随机播放, 单曲循环，列表循环</li>
-<li>歌词展示</li>
-<li>可选: 播放次数统计，切歌统计，专辑封面</li>
-</ul>
-<p>Retro music player:</p>
-<p><a href="https://github.com/RetroMusicPlayer/RetroMusicPlayer">https://github.com/RetroMusicPlayer/RetroMusicPlayer</a></p>
-]]></content>
-      <categories>
-        <category>android</category>
-        <category>app</category>
-      </categories>
-      <tags>
-        <tag>android</tag>
-        <tag>music</tag>
-        <tag>offline</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python3 logging best? practice</title>
-    <url>/Blog/23-07-25-python-log/</url>
-    <content><![CDATA[<p>众所周知, 常用的输出有print,而调bug有logging, 用起来就是 info&#x2F;debug&#x2F;warning&#x2F;error</p>
-<p>但还有一些常见的问题</p>
-<ul>
-<li>在命令行输出一些,在日志文件输出一些,两边等级和格式不同</li>
-<li>希望日至记录 时间&#x2F;文件&#x2F;输出的行数&#x2F;上下文</li>
-<li>直接使用的软件的logging 和 库的logging有什么不同</li>
-<li>想重定向所用的库的logging, 调整库的logging的等级是否可行</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><p>常见的命令行工具的交互是 stdout, 而”没有用”的额外信息是stderr, logging默认就是到他stderr很好</p>
-<hr>
-<p>首先层级 有 print, 和logging的info&#x2F;warning&#x2F;error,exception&#x2F;critical</p>
-<hr>
-<p>通过format参数进行格式 控制, 这里可以查到 所有可选参数 <a href="https://docs.python.org/3.10/library/logging.html#logrecord-attributes">https://docs.python.org/3.10/library/logging.html#logrecord-attributes</a></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 例子</span></span><br><span class="line">logging.basicConfig(level=logging.DEBUG, <span class="built_in">format</span>=<span class="string">&#x27;[%(asctime)s][%(name)s %(levelname)s][%(threadName)s][%(filename)s %(funcName)s %(lineno)d]:%(message)s&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://docs.python.org/3.10/_images/logging_flow.png" alt="logging flow"></p>
-<p>常用 Logger.setLevel&#x2F;addHandler&#x2F;addFilter</p>
-<p>getLogger, 以 <code>.</code>分割的 层级名称, 如果子层级logger没有设定level则会向父级别找</p>
-<p>有用的Handlers: <a href="https://docs.python.org/3.10/howto/logging.html#useful-handlers">https://docs.python.org/3.10/howto/logging.html#useful-handlers</a> 例如StreamHandler 和FileHandler</p>
-<p>对于 多线程,日志大,可以考虑rotatingFilehandler&#x2F;timedrotatingFilehandler</p>
-<p>对于 多进程, sockethanlder+日志收集服务器 &#x2F; datagramhandler</p>
-<hr>
-<p>cookbook 建议的是对于同一个代码中</p>
-<p>顶层 <code>logger = logging.getLogger(&#39;spam_application&#39;)</code></p>
-<p>辅助的module是 <code>module_logger = logging.getLogger(&#39;spam_application.auxiliary&#39;)</code></p>
-<p>这样只需要在顶层的<code>logger</code>上addHandler增加想要的handler即可</p>
-<hr>
-<p>flask 采用的是 根据传递的app.name 来作为logging.getLogger的key</p>
-<p>所以类似的, 作为纯函数库,可以考虑传递名称,或者传递logger</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#: Log messages to :func:`~flask.logging.wsgi_errors_stream` with the format</span></span><br><span class="line"><span class="comment">#: ``[%(asctime)s] %(levelname)s in %(module)s: %(message)s``.</span></span><br><span class="line">default_handler = logging.StreamHandler(wsgi_errors_stream)  <span class="comment"># type: ignore</span></span><br><span class="line">default_handler.setFormatter(</span><br><span class="line">    logging.Formatter(<span class="string">&quot;[%(asctime)s] %(levelname)s in %(module)s: %(message)s&quot;</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_logger</span>(<span class="params">app: Flask</span>) -&gt; logging.Logger:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Get the Flask app&#x27;s logger and configure it if needed.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    The logger name will be the same as</span></span><br><span class="line"><span class="string">    :attr:`app.import_name &lt;flask.Flask.name&gt;`.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    When :attr:`~flask.Flask.debug` is enabled, set the logger level to</span></span><br><span class="line"><span class="string">    :data:`logging.DEBUG` if it is not set.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    If there is no handler for the logger&#x27;s effective level, add a</span></span><br><span class="line"><span class="string">    :class:`~logging.StreamHandler` for</span></span><br><span class="line"><span class="string">    :func:`~flask.logging.wsgi_errors_stream` with a basic format.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    logger = logging.getLogger(app.name)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> app.debug <span class="keyword">and</span> <span class="keyword">not</span> logger.level:</span><br><span class="line">        logger.setLevel(logging.DEBUG)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> has_level_handler(logger):</span><br><span class="line">        logger.addHandler(default_handler)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> logger</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>回到最初的问题</p>
-<ul>
-<li>在命令行输出一些,在日志文件输出一些,两边等级和格式不同: 通过多个handler解决</li>
-<li>希望日至记录 时间&#x2F;文件&#x2F;输出的行数&#x2F;上下文: 通过format解决</li>
-<li>直接使用的软件的logging 和 库的logging有什么不同: 软件的一般会指定basicConfig或者顶层的handler, 而库的一般通过调用者传递logger的name,可以库自己配一些logger</li>
-<li>想重定向所用的库的logging, 调整库的logging的等级是否可行: 需要库支持logger name传递,然后利用logging本身提供的 点分割层级,控制顶层即可</li>
-</ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://docs.python.org/3.10/howto/logging.html">https://docs.python.org/3.10/howto/logging.html</a></p>
-<p><a href="https://docs.python.org/3.10/howto/logging-cookbook.html">https://docs.python.org/3.10/howto/logging-cookbook.html</a></p>
-<p><a href="https://github.com/pallets/flask/blob/main/src/flask/logging.py">https://github.com/pallets/flask/blob/main/src/flask/logging.py</a></p>
-]]></content>
-      <categories>
-        <category>python3</category>
-      </categories>
-      <tags>
-        <tag>python3</tag>
-        <tag>logging</tag>
       </tags>
   </entry>
   <entry>
