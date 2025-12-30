@@ -245,7 +245,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -321,7 +321,7 @@
 <p><strong>注意的是</strong> 状态一旦从pending变化后， 其它代码都会被忽略</p>
 <p>let promise &#x3D; new Promise(function(resolve, reject) {<br>  resolve(“done”);</p>
 <p>  reject(new Error(“…”)); &#x2F;&#x2F; 被忽略<br>  setTimeout(() &#x3D;&gt; resolve(“…”)); &#x2F;&#x2F; 被忽略<br>});</p>
-<h2 id="then-x2F-catch-结果处理"><a href="#then-x2F-catch-结果处理" class="headerlink" title="then&#x2F;catch 结果处理"></a>then&#x2F;catch 结果处理</h2><p>then返回的是一个promise对象（准确的说是带有then方法的对象）</p>
+<h2 id="then-catch-结果处理"><a href="#then-catch-结果处理" class="headerlink" title="then&#x2F;catch 结果处理"></a>then&#x2F;catch 结果处理</h2><p>then返回的是一个promise对象（准确的说是带有then方法的对象）</p>
 <p>then(处理resolve的结果的函数,处理reject状态的函数)</p>
 <p>then(处理resolve的结果的函数)</p>
 <p>then(null,处理reject状态的函数) || .catch(处理reject状态的函数)</p>
@@ -381,7 +381,7 @@
 
 
 <h2 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h2><p>相对于<code>Promise.all</code>类似,区别是只会等最快的完成</p>
-<h1 id="async-x2F-await"><a href="#async-x2F-await" class="headerlink" title="async&#x2F;await"></a>async&#x2F;await</h1><p>更舒适的方法使用promise</p>
+<h1 id="async-await"><a href="#async-await" class="headerlink" title="async&#x2F;await"></a>async&#x2F;await</h1><p>更舒适的方法使用promise</p>
 <h2 id="async"><a href="#async" class="headerlink" title="async"></a>async</h2><p>放在函数前，总会返回promise,如果不是则会把函数封装成promise</p>
 <h2 id="await"><a href="#await" class="headerlink" title="await"></a>await</h2><p>await 关键字使 JavaScript 等待，直到 promise 得到解决并返回其结果。</p>
 <p>不能在常规函数中使用 await,await 在顶层代码中无效, 我们需要将 await 代码封装在一个async 函数中</p>
@@ -453,7 +453,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -566,7 +566,7 @@
 </tr>
 </tbody></table>
 <p><strong>注</strong> 之所以说是表面的，实际上比如logger是有调用store里面的方法的，比如subscribe</p>
-<h1 id="代码阅读"><a href="#代码阅读" class="headerlink" title="代码阅读"></a>代码阅读</h1><h2 id="index-x2F-index-esm-js"><a href="#index-x2F-index-esm-js" class="headerlink" title="index&#x2F;index.esm.js"></a>index&#x2F;index.esm.js</h2><p>主要是方法导出</p>
+<h1 id="代码阅读"><a href="#代码阅读" class="headerlink" title="代码阅读"></a>代码阅读</h1><h2 id="index-index-esm-js"><a href="#index-index-esm-js" class="headerlink" title="index&#x2F;index.esm.js"></a>index&#x2F;index.esm.js</h2><p>主要是方法导出</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Store, install &#125; from &#x27;./store&#x27;</span><br><span class="line">import &#123; mapState, mapMutations, mapGetters, mapActions, createNamespacedHelpers &#125; from &#x27;./helpers&#x27;</span><br></pre></td></tr></table></figure>
 
 <h2 id="mixin-js"><a href="#mixin-js" class="headerlink" title="mixin.js"></a>mixin.js</h2><p>主要是按照vue的mixin规则，根绝vue版本，向vue里注入 vuex，也就是$store</p>
@@ -576,13 +576,13 @@
 
 <h2 id="util-js"><a href="#util-js" class="headerlink" title="util.js"></a>util.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">find</span> (list, f) <span class="comment">//list中f函数返回true的第一个值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">deepCopy</span> (obj, cache = []) <span class="comment">// 带有处理指针循环结构的 deepCopy</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">forEachValue</span> (obj, fn) <span class="comment">// 遍历obj的所有k-v</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">isObject</span> (obj)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">isPromise</span> (val)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">assert</span> (condition, msg)</span><br></pre></td></tr></table></figure>
 
-<h2 id="plugins-x2F"><a href="#plugins-x2F" class="headerlink" title="plugins&#x2F;"></a>plugins&#x2F;</h2><h3 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a>devtool</h3><p>目测是一些调试相关的钩子挂载，TODO</p>
+<h2 id="plugins"><a href="#plugins" class="headerlink" title="plugins&#x2F;"></a>plugins&#x2F;</h2><h3 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a>devtool</h3><p>目测是一些调试相关的钩子挂载，TODO</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target = <span class="keyword">typeof</span> <span class="variable language_">window</span> !== <span class="string">&#x27;undefined&#x27;</span></span><br><span class="line">  ? <span class="variable language_">window</span></span><br><span class="line">  : <span class="keyword">typeof</span> <span class="variable language_">global</span> !== <span class="string">&#x27;undefined&#x27;</span></span><br><span class="line">    ? <span class="variable language_">global</span></span><br><span class="line">    : &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> devtoolHook = target.<span class="property">__VUE_DEVTOOLS_GLOBAL_HOOK__</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">devtoolPlugin</span> (store) &#123;</span><br><span class="line">  <span class="keyword">if</span> (!devtoolHook) <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">  store.<span class="property">_devtoolHook</span> = devtoolHook</span><br><span class="line"></span><br><span class="line">  devtoolHook.<span class="title function_">emit</span>(<span class="string">&#x27;vuex:init&#x27;</span>, store)</span><br><span class="line"></span><br><span class="line">  devtoolHook.<span class="title function_">on</span>(<span class="string">&#x27;vuex:travel-to-state&#x27;</span>, <span class="function"><span class="params">targetState</span> =&gt;</span> &#123;</span><br><span class="line">    store.<span class="title function_">replaceState</span>(targetState)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  store.<span class="title function_">subscribe</span>(<span class="function">(<span class="params">mutation, state</span>) =&gt;</span> &#123;</span><br><span class="line">    devtoolHook.<span class="title function_">emit</span>(<span class="string">&#x27;vuex:mutation&#x27;</span>, mutation, state)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="logger"><a href="#logger" class="headerlink" title="logger"></a>logger</h3><p>嗯 第一行 <code>// Credits: borrowed code from fcomb/redux-logger</code></p>
 <p>借来的代码，依赖上 只用了util的deepCopy</p>
 <p>基本上是输出 state状况用于调试的</p>
-<h2 id="module-x2F"><a href="#module-x2F" class="headerlink" title="module&#x2F;"></a>module&#x2F;</h2><h3 id="module"><a href="#module" class="headerlink" title="module"></a>module</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Module:</span><br><span class="line">  constructor (rawModule, runtime) &#123;</span><br><span class="line">    this.runtime = runtime</span><br><span class="line">    this._children = Object.create(null)</span><br><span class="line">    this._rawModule = rawModule</span><br><span class="line">    const rawState = rawModule.state</span><br><span class="line">    this.state = (typeof rawState === &#x27;function&#x27; ? rawState() : rawState) || &#123;&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="module"><a href="#module" class="headerlink" title="module&#x2F;"></a>module&#x2F;</h2><h3 id="module-1"><a href="#module-1" class="headerlink" title="module"></a>module</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Module:</span><br><span class="line">  constructor (rawModule, runtime) &#123;</span><br><span class="line">    this.runtime = runtime</span><br><span class="line">    this._children = Object.create(null)</span><br><span class="line">    this._rawModule = rawModule</span><br><span class="line">    const rawState = rawModule.state</span><br><span class="line">    this.state = (typeof rawState === &#x27;function&#x27; ? rawState() : rawState) || &#123;&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 <p>child 操作:对<code>this._children</code>的增删</p>
 <p>update(rawModule):对namespaced,actions,mutations,getters 有则覆盖的更新</p>
@@ -774,7 +774,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -908,7 +908,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1025,7 +1025,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1883,7 +1883,7 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2010,7 +2010,7 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2124,7 +2124,7 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2361,7 +2361,7 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2511,7 +2511,7 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">

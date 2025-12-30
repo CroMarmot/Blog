@@ -27,7 +27,7 @@
 <meta property="og:description" content="oiTerminal 简介能够通过命令行 打oj比赛 开发进度 codeforces 已经完全支持 分析题目，上传，获取评测结果 其它oj准备开工   对任意oj都支持本地的代码测试了 相关项目cf-tool idne cfTerminal spider 开发过程中的一些想法首先 cfTerminal 是基于idne开发的">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2019-05-02T17:01:01.000Z">
-<meta property="article:modified_time" content="2025-12-30T15:23:41.123Z">
+<meta property="article:modified_time" content="2025-12-30T15:23:58.816Z">
 <meta property="article:author" content="Cro-Marmot">
 <meta property="article:tag" content="crawler">
 <meta property="article:tag" content="python">
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E8%BF%9B%E5%BA%A6"><span class="nav-text">开发进度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE"><span class="nav-text">相关项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95"><span class="nav-text">开发过程中的一些想法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#idne-gt-cfTerminal"><span class="nav-text">idne -&gt; cfTerminal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spider-gt-oiTerminal"><span class="nav-text">spider -&gt; oiTerminal</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E8%BF%9B%E5%BA%A6"><span class="nav-text">开发进度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE"><span class="nav-text">相关项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95"><span class="nav-text">开发过程中的一些想法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#idne-cfTerminal"><span class="nav-text">idne -&gt; cfTerminal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spider-oiTerminal"><span class="nav-text">spider -&gt; oiTerminal</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -253,7 +253,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -318,7 +318,7 @@
 <span id="more"></span>
 
 <p>而本仓库也是收到 spider 启发而开发的</p>
-<h2 id="idne-gt-cfTerminal"><a href="#idne-gt-cfTerminal" class="headerlink" title="idne -&gt; cfTerminal"></a>idne <code>-&gt;</code> cfTerminal</h2><p>robobrower 把我们需要的浏览器模拟完成了，感谢！这也是这个仓库运行起来的体验比oiTerminal稳定，实际是因为网络环境不太好的时候，oiTerminal会报网络错误</p>
+<h2 id="idne-cfTerminal"><a href="#idne-cfTerminal" class="headerlink" title="idne -&gt; cfTerminal"></a>idne <code>-&gt;</code> cfTerminal</h2><p>robobrower 把我们需要的浏览器模拟完成了，感谢！这也是这个仓库运行起来的体验比oiTerminal稳定，实际是因为网络环境不太好的时候，oiTerminal会报网络错误</p>
 <p>idne 上次阅读有些久了，没太多印象了。</p>
 <ol>
 <li><p>大概有重排列一下它的代码，修复了time使用的问题，修复了不能提交比赛时代码的问题。</p>
@@ -339,7 +339,7 @@
 </li>
 </ol>
 <p>然后这样可用度很高了，我就没啥动力继续改下去了。</p>
-<h2 id="spider-gt-oiTerminal"><a href="#spider-gt-oiTerminal" class="headerlink" title="spider -&gt; oiTerminal"></a>spider -&gt; oiTerminal</h2><p>本身spider那个项目就是一个支持很多oj的项目</p>
+<h2 id="spider-oiTerminal"><a href="#spider-oiTerminal" class="headerlink" title="spider -&gt; oiTerminal"></a>spider -&gt; oiTerminal</h2><p>本身spider那个项目就是一个支持很多oj的项目</p>
 <p>感觉我主要做的是删代码XD，然后移动代码。</p>
 <ol>
 <li><p>首先还是说毕竟本身不是用于打比赛的，我把题目分析样例数据和测试的部分移动了过来</p>

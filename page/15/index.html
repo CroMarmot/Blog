@@ -245,7 +245,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -437,7 +437,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -679,7 +679,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1043,7 +1043,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1116,7 +1116,7 @@
 <li>在一些桌面电脑测试,但它们有ECC – 能强力减轻这种bug</li>
 </ul>
 <p>DRAM badness by year <a target="_blank" rel="noopener" href="https://www.blackhat.com/docs/us-15/materials/us-15-Seaborn-Exploiting-The-DRAM-Rowhammer-Bug-To-Gain-Kernel-Privileges.pdf#12">graph</a></p>
-<h2 id="如何触发-x2F-触发方法"><a href="#如何触发-x2F-触发方法" class="headerlink" title="如何触发&#x2F;触发方法"></a>如何触发&#x2F;触发方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">code1a:</span><br><span class="line"> mov (X), %eax // Read from address X</span><br><span class="line"> mov (Y), %ebx // Read from address Y</span><br><span class="line"> clflush (X) // Flush cache for address X</span><br><span class="line"> clflush (Y) // Flush cache for address Y</span><br><span class="line"> // mfence // In CMU paper, but not actually needed</span><br><span class="line"> jmp code1a</span><br></pre></td></tr></table></figure>
+<h2 id="如何触发-触发方法"><a href="#如何触发-触发方法" class="headerlink" title="如何触发&#x2F;触发方法"></a>如何触发&#x2F;触发方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">code1a:</span><br><span class="line"> mov (X), %eax // Read from address X</span><br><span class="line"> mov (Y), %ebx // Read from address Y</span><br><span class="line"> clflush (X) // Flush cache for address X</span><br><span class="line"> clflush (Y) // Flush cache for address Y</span><br><span class="line"> // mfence // In CMU paper, but not actually needed</span><br><span class="line"> jmp code1a</span><br></pre></td></tr></table></figure>
 
 <p>必要条件1: 绕过cache 直接访问 →  x86 CLFLUSH 指令</p>
 <ul>
@@ -1220,7 +1220,7 @@
 <li>难度:易 在128ms(2倍行刷新时间)内 真实的产生这个bug ( 通过最大化行刷新时间间隔中的行激活 通过最大化造成坏行的机会(比如上面的一次多行))</li>
 <li>难度:较难 能利用(2-sided) ( 需要更多的物理地址知识)</li>
 </ul>
-<h2 id="如何利用-x2F-可利用性"><a href="#如何利用-x2F-可利用性" class="headerlink" title="如何利用&#x2F;可利用性"></a>如何利用&#x2F;可利用性</h2><p> 系统一直依赖内存</p>
+<h2 id="如何利用-可利用性"><a href="#如何利用-可利用性" class="headerlink" title="如何利用&#x2F;可利用性"></a>如何利用&#x2F;可利用性</h2><p> 系统一直依赖内存</p>
 <p> 两个利用的地方</p>
 <p> 本地(NaCl)的Chrome 沙箱</p>
 <ul>
@@ -1486,7 +1486,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1602,7 +1602,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1717,7 +1717,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-12-30 23:23:41" itemprop="dateModified" datetime="2025-12-30T23:23:41+08:00">2025-12-30</time>
+      <time title="修改時間：2025-12-30 23:23:58" itemprop="dateModified" datetime="2025-12-30T23:23:58+08:00">2025-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
