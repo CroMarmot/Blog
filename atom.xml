@@ -6,7 +6,7 @@
   <link href="https://cromarmot.github.io/Blog/atom.xml" rel="self"/>
   
   <link href="https://cromarmot.github.io/Blog/"/>
-  <updated>2024-10-23T09:56:42.983Z</updated>
+  <updated>2025-12-30T15:23:09.630Z</updated>
   <id>https://cromarmot.github.io/Blog/</id>
   
   <author>
@@ -17,11 +17,74 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python3 依赖注入</title>
+    <link href="https://cromarmot.github.io/Blog/25-04-27-py3DI/"/>
+    <id>https://cromarmot.github.io/Blog/25-04-27-py3DI/</id>
+    <published>2025-04-26T16:00:00.000Z</published>
+    <updated>2025-12-30T15:23:09.630Z</updated>
+    
+    
+    <summary type="html">python3 依赖注入</summary>
+    
+    
+    
+    <category term="backend" scheme="https://cromarmot.github.io/Blog/categories/backend/"/>
+    
+    
+    <category term="python3" scheme="https://cromarmot.github.io/Blog/tags/python3/"/>
+    
+    <category term="fastapi" scheme="https://cromarmot.github.io/Blog/tags/fastapi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python3 依赖注入</title>
+    <link href="https://cromarmot.github.io/Blog/25-05-01-selfhosted-notes/"/>
+    <id>https://cromarmot.github.io/Blog/25-05-01-selfhosted-notes/</id>
+    <published>2025-04-26T16:00:00.000Z</published>
+    <updated>2025-12-30T15:23:09.630Z</updated>
+    
+    
+    <summary type="html">python3 依赖注入</summary>
+    
+    
+    
+    <category term="backend" scheme="https://cromarmot.github.io/Blog/categories/backend/"/>
+    
+    
+    <category term="python3" scheme="https://cromarmot.github.io/Blog/tags/python3/"/>
+    
+    <category term="fastapi" scheme="https://cromarmot.github.io/Blog/tags/fastapi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>user password</title>
+    <link href="https://cromarmot.github.io/Blog/25-04-01-userpass/"/>
+    <id>https://cromarmot.github.io/Blog/25-04-01-userpass/</id>
+    <published>2025-03-31T16:00:00.000Z</published>
+    <updated>2025-12-30T15:23:09.630Z</updated>
+    
+    
+    <summary type="html">常见的用户名密码</summary>
+    
+    
+    
+    <category term="backend" scheme="https://cromarmot.github.io/Blog/categories/backend/"/>
+    
+    
+    <category term="加密" scheme="https://cromarmot.github.io/Blog/tags/%E5%8A%A0%E5%AF%86/"/>
+    
+    <category term="RSA" scheme="https://cromarmot.github.io/Blog/tags/RSA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Samba(Windows/Ubuntu)</title>
     <link href="https://cromarmot.github.io/Blog/24-08-27-samba/"/>
     <id>https://cromarmot.github.io/Blog/24-08-27-samba/</id>
     <published>2024-08-26T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
+    <updated>2025-12-30T15:23:09.630Z</updated>
     
     
     <summary type="html">samba搭建汇总</summary>
@@ -36,11 +99,241 @@
   </entry>
   
   <entry>
+    <title>Linux(user,group)</title>
+    <link href="https://cromarmot.github.io/Blog/24-12-07-linux_user_group/"/>
+    <id>https://cromarmot.github.io/Blog/24-12-07-linux_user_group/</id>
+    <published>2024-08-26T16:00:00.000Z</published>
+    <updated>2025-12-30T15:23:09.630Z</updated>
+    
+    
+    <summary type="html">linux用户和组</summary>
+    
+    
+    
+    <category term="backend" scheme="https://cromarmot.github.io/Blog/categories/backend/"/>
+    
+    
+    <category term="linux" scheme="https://cromarmot.github.io/Blog/tags/linux/"/>
+    
+    <category term="user" scheme="https://cromarmot.github.io/Blog/tags/user/"/>
+    
+    <category term="group" scheme="https://cromarmot.github.io/Blog/tags/group/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>宏观经济学 9长期中的真实经济</title>
+    <link href="https://cromarmot.github.io/Blog/books/principles_of_economics_9/"/>
+    <id>https://cromarmot.github.io/Blog/books/principles_of_economics_9/</id>
+    <published>2023-09-26T16:00:00.000Z</published>
+    <updated>2025-12-30T15:23:09.632Z</updated>
+    
+    
+    <summary type="html">生产与增长 储蓄，投资和金融体系 金融学的基本工具 失业</summary>
+    
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/categories/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/categories/book/economics/"/>
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/tags/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/tags/economics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>宏观经济学 8宏观经济学的数据</title>
+    <link href="https://cromarmot.github.io/Blog/books/principles_of_economics_8/"/>
+    <id>https://cromarmot.github.io/Blog/books/principles_of_economics_8/</id>
+    <published>2023-09-25T16:00:00.000Z</published>
+    <updated>2025-12-30T15:23:09.631Z</updated>
+    
+    
+    <summary type="html">一国收入的衡量 生活费用的衡量</summary>
+    
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/categories/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/categories/book/economics/"/>
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/tags/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/tags/economics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微观经济学 7深入研究的论题</title>
+    <link href="https://cromarmot.github.io/Blog/books/principles_of_economics_7/"/>
+    <id>https://cromarmot.github.io/Blog/books/principles_of_economics_7/</id>
+    <published>2023-09-24T16:00:00.000Z</published>
+    <updated>2025-12-30T15:23:09.631Z</updated>
+    
+    
+    <summary type="html">消费者选择理论 微观经济学前沿</summary>
+    
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/categories/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/categories/book/economics/"/>
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/tags/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/tags/economics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微观经济学 6劳动市场经济学</title>
+    <link href="https://cromarmot.github.io/Blog/books/principles_of_economics_6/"/>
+    <id>https://cromarmot.github.io/Blog/books/principles_of_economics_6/</id>
+    <published>2023-09-22T16:00:00.000Z</published>
+    <updated>2025-12-30T15:23:09.631Z</updated>
+    
+    
+    <summary type="html">生产要素市场 收入与歧视 收入不平等与贫困</summary>
+    
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/categories/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/categories/book/economics/"/>
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/tags/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/tags/economics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微观经济学 5企业行为与产业组织</title>
+    <link href="https://cromarmot.github.io/Blog/books/principles_of_economics_5/"/>
+    <id>https://cromarmot.github.io/Blog/books/principles_of_economics_5/</id>
+    <published>2023-09-21T16:00:00.000Z</published>
+    <updated>2025-12-30T15:23:09.631Z</updated>
+    
+    
+    <summary type="html">生产成本 竞争市场上的企业 垄断 垄断竞争 寡头</summary>
+    
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/categories/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/categories/book/economics/"/>
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/tags/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/tags/economics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微观经济学 4公共部门经济学</title>
+    <link href="https://cromarmot.github.io/Blog/books/principles_of_economics_4/"/>
+    <id>https://cromarmot.github.io/Blog/books/principles_of_economics_4/</id>
+    <published>2023-09-20T16:00:00.000Z</published>
+    <updated>2025-12-30T15:23:09.631Z</updated>
+    
+    
+    <summary type="html">外部性 公共物品和公共资源 税制的设计</summary>
+    
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/categories/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/categories/book/economics/"/>
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/tags/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/tags/economics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微观经济学 3市场和福利</title>
+    <link href="https://cromarmot.github.io/Blog/books/principles_of_economics_3/"/>
+    <id>https://cromarmot.github.io/Blog/books/principles_of_economics_3/</id>
+    <published>2023-09-19T16:00:00.000Z</published>
+    <updated>2025-12-30T15:23:09.631Z</updated>
+    
+    
+    <summary type="html">消费者，生产者与市场效率 应用：税收和代价 应用：国际贸易</summary>
+    
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/categories/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/categories/book/economics/"/>
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/tags/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/tags/economics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微观经济学 2市场如何运行</title>
+    <link href="https://cromarmot.github.io/Blog/books/principles_of_economics_2/"/>
+    <id>https://cromarmot.github.io/Blog/books/principles_of_economics_2/</id>
+    <published>2023-09-18T16:00:00.000Z</published>
+    <updated>2025-12-30T15:23:09.631Z</updated>
+    
+    
+    <summary type="html">供给与需求的市场力量 弹性及其应用 供给,需求与政府政策</summary>
+    
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/categories/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/categories/book/economics/"/>
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/tags/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/tags/economics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微观经济学 1导言</title>
+    <link href="https://cromarmot.github.io/Blog/books/principles_of_economics_1/"/>
+    <id>https://cromarmot.github.io/Blog/books/principles_of_economics_1/</id>
+    <published>2023-09-17T16:00:00.000Z</published>
+    <updated>2025-12-30T15:23:09.631Z</updated>
+    
+    
+    <summary type="html">经济学十大原理,像经济学家一样思考,相互依存性和贸易的好处</summary>
+    
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/categories/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/categories/book/economics/"/>
+    
+    
+    <category term="book" scheme="https://cromarmot.github.io/Blog/tags/book/"/>
+    
+    <category term="economics" scheme="https://cromarmot.github.io/Blog/tags/economics/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Cofig with ini,xml,json,yaml,toml</title>
     <link href="https://cromarmot.github.io/Blog/23-08-29-config/"/>
     <id>https://cromarmot.github.io/Blog/23-08-29-config/</id>
     <published>2023-08-28T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
+    <updated>2025-12-30T15:23:09.630Z</updated>
     
     
     <summary type="html">不同配置文件的差异</summary>
@@ -69,7 +362,7 @@
     <link href="https://cromarmot.github.io/Blog/23-08-15-vercel/"/>
     <id>https://cromarmot.github.io/Blog/23-08-15-vercel/</id>
     <published>2023-08-14T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
+    <updated>2025-12-30T15:23:09.630Z</updated>
     
     
     <summary type="html">vercel 的 静态文件服务 与 服务器支持动态函数</summary>
@@ -90,7 +383,7 @@
     <link href="https://cromarmot.github.io/Blog/23-07-25-python-log/"/>
     <id>https://cromarmot.github.io/Blog/23-07-25-python-log/</id>
     <published>2023-07-24T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
+    <updated>2025-12-30T15:23:09.630Z</updated>
     
     
     <summary type="html">python3 logging 最佳实践</summary>
@@ -111,7 +404,7 @@
     <link href="https://cromarmot.github.io/Blog/23-05-01-android-offline-music/"/>
     <id>https://cromarmot.github.io/Blog/23-05-01-android-offline-music/</id>
     <published>2023-04-30T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
+    <updated>2025-12-30T15:23:09.630Z</updated>
     
     
     <summary type="html">A solution</summary>
@@ -136,7 +429,7 @@
     <link href="https://cromarmot.github.io/Blog/23-04-13-cppquiz/"/>
     <id>https://cromarmot.github.io/Blog/23-04-13-cppquiz/</id>
     <published>2023-04-12T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
+    <updated>2025-12-30T15:23:09.630Z</updated>
     
     
     <summary type="html">C++ Quiz</summary>
@@ -157,7 +450,7 @@
     <link href="https://cromarmot.github.io/Blog/23-03-09-vscode-docker-dev/"/>
     <id>https://cromarmot.github.io/Blog/23-03-09-vscode-docker-dev/</id>
     <published>2023-03-08T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
+    <updated>2025-12-30T15:23:09.629Z</updated>
     
     
     <summary type="html">develop env with vscode in docker</summary>
@@ -174,390 +467,6 @@
     <category term="docker" scheme="https://cromarmot.github.io/Blog/tags/docker/"/>
     
     <category term="vscode" scheme="https://cromarmot.github.io/Blog/tags/vscode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux shell</title>
-    <link href="https://cromarmot.github.io/Blog/23-02-22-sh/"/>
-    <id>https://cromarmot.github.io/Blog/23-02-22-sh/</id>
-    <published>2023-02-21T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
-    
-    
-    <summary type="html">/bin/sh, bash, dash, zsh, dash</summary>
-    
-    
-    
-    <category term="software" scheme="https://cromarmot.github.io/Blog/categories/software/"/>
-    
-    <category term="linux" scheme="https://cromarmot.github.io/Blog/categories/software/linux/"/>
-    
-    
-    <category term="linux" scheme="https://cromarmot.github.io/Blog/tags/linux/"/>
-    
-    <category term="shell" scheme="https://cromarmot.github.io/Blog/tags/shell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS GC</title>
-    <link href="https://cromarmot.github.io/Blog/23-02-16-js_gc/"/>
-    <id>https://cromarmot.github.io/Blog/23-02-16-js_gc/</id>
-    <published>2023-02-15T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;那么多&lt;code&gt;面经&lt;/code&gt;在说引用计数, 循环引用会无法gc,而以我对jvm python等多个有gc语言的了解，js 再怎么也不至于就是个引用计数&lt;/p&gt;
-&lt;p&gt;否则循环引用早爆了&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title function_&quot;&gt;foo&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title function_&quot;&gt;bar&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;variable language_&quot;&gt;console&lt;/span&gt;.&lt;span class=&quot;title function_&quot;&gt;log&lt;/span&gt;(a);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  a.&lt;span class=&quot;property&quot;&gt;fn&lt;/span&gt; = bar;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; bar;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; wm1=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;title class_&quot;&gt;WeakMap&lt;/span&gt;();&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title function_&quot;&gt;f&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; b=&amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; a=&amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   a.&lt;span class=&quot;property&quot;&gt;x&lt;/span&gt; = a;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   wm1.&lt;span class=&quot;title function_&quot;&gt;set&lt;/span&gt;(a,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   wm1.&lt;span class=&quot;title function_&quot;&gt;set&lt;/span&gt;(b,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   wm1.&lt;span class=&quot;title function_&quot;&gt;set&lt;/span&gt;(&lt;span class=&quot;title function_&quot;&gt;foo&lt;/span&gt;(),&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   wm1.&lt;span class=&quot;title function_&quot;&gt;set&lt;/span&gt;(wm1,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;variable language_&quot;&gt;console&lt;/span&gt;.&lt;span class=&quot;title function_&quot;&gt;log&lt;/span&gt;(wm1.&lt;span class=&quot;title function_&quot;&gt;has&lt;/span&gt;(a));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;variable language_&quot;&gt;console&lt;/span&gt;.&lt;span class=&quot;title function_&quot;&gt;log&lt;/span&gt;(wm1.&lt;span class=&quot;title function_&quot;&gt;has&lt;/span&gt;(b));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;span class=&quot;title function_&quot;&gt;f&lt;/span&gt;();&lt;span class=&quot;variable language_&quot;&gt;console&lt;/span&gt;.&lt;span class=&quot;title function_&quot;&gt;log&lt;/span&gt;(wm1);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;code&gt;chrome performance 点垃圾桶 进行gc&lt;/code&gt;, 然后再执行&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable language_&quot;&gt;console&lt;/span&gt;.&lt;span class=&quot;title function_&quot;&gt;log&lt;/span&gt;(wm1);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/frontend/"/>
-    
-    
-    <category term="js" scheme="https://cromarmot.github.io/Blog/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nextjs and cheetsheat</title>
-    <link href="https://cromarmot.github.io/Blog/22-11-11-nextjs/"/>
-    <id>https://cromarmot.github.io/Blog/22-11-11-nextjs/</id>
-    <published>2022-11-10T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/CroMarmot/ReactDemo/commits/master&quot;&gt;https://github.com/CroMarmot/ReactDemo/commits/master&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Next&quot;&gt;&lt;a href=&quot;#Next&quot; class=&quot;headerlink&quot; title=&quot;Next&quot;&gt;&lt;/a&gt;Next&lt;/h1&gt;&lt;h2 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h2&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;功能&lt;/th&gt;
-&lt;th&gt;doc&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;Head&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/CroMarmot/ReactDemo/commit/00dc0b74d4363e3be39433647a63c3fbe8a96d66&quot;&gt;https://github.com/CroMarmot/ReactDemo/commit/00dc0b74d4363e3be39433647a63c3fbe8a96d66&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Script&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/CroMarmot/ReactDemo/commit/0cb1c2aac95b276a689bb49e31f7a147d78c159e&quot;&gt;https://github.com/CroMarmot/ReactDemo/commit/0cb1c2aac95b276a689bb49e31f7a147d78c159e&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;静态生成,Link,route,404&lt;/td&gt;
-&lt;td&gt;getStaticPaths getStaticProps&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;global css, module css&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/CroMarmot/ReactDemo/commit/bf504ce48b4b34a3c7ac3bba2d66e051e74c5476&quot;&gt;commit&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;static image&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/CroMarmot/ReactDemo/commit/0a826c74cef03573ced89c2eb36c70a763401fba&quot;&gt;https://github.com/CroMarmot/ReactDemo/commit/0a826c74cef03573ced89c2eb36c70a763401fba&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id=&quot;Vercel-部署&quot;&gt;&lt;a href=&quot;#Vercel-部署&quot; class=&quot;headerlink&quot; title=&quot;Vercel 部署&quot;&gt;&lt;/a&gt;Vercel 部署&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://vercel.com/new&quot;&gt;https://vercel.com/new&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Init&quot;&gt;&lt;a href=&quot;#Init&quot; class=&quot;headerlink&quot; title=&quot;Init&quot;&gt;&lt;/a&gt;Init&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://nextjs.org/learn/foundations/&quot;&gt;https://nextjs.org/learn/foundations/&lt;/a&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npx create-next-app@latest --ts&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h1 id=&quot;React&quot;&gt;&lt;a href=&quot;#React&quot; class=&quot;headerlink&quot; title=&quot;React&quot;&gt;&lt;/a&gt;React&lt;/h1&gt;&lt;p&gt;React use Babel to compile JSX&lt;/p&gt;
-&lt;h2 id=&quot;严格模式&quot;&gt;&lt;a href=&quot;#严格模式&quot; class=&quot;headerlink&quot; title=&quot;严格模式&quot;&gt;&lt;/a&gt;严格模式&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://zh-hans.reactjs.org/docs/strict-mode.html&quot;&gt;https://zh-hans.reactjs.org/docs/strict-mode.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;识别不安全的生命周期&lt;/p&gt;
-&lt;p&gt;关于使用过时字符串 ref API 的警告&lt;/p&gt;
-&lt;p&gt;关于使用废弃的 findDOMNode 方法的警告&lt;/p&gt;
-&lt;p&gt;检测意外的副作用&lt;/p&gt;
-&lt;p&gt;检测过时的 context API&lt;/p&gt;
-&lt;p&gt;确保可复用的状态&lt;/p&gt;
-&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;title class_&quot;&gt;React&lt;/span&gt;, &amp;#123; &lt;span class=&quot;title class_&quot;&gt;StrictMode&lt;/span&gt; &amp;#125; &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;#x27;react&amp;#x27;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;title class_&quot;&gt;ReactDOM&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;#x27;react-dom&amp;#x27;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title class_&quot;&gt;ReactDOM&lt;/span&gt;.&lt;span class=&quot;title function_&quot;&gt;render&lt;/span&gt;(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;language-xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;StrictMode&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;language-xml&quot;&gt;   &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;App&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;language-xml&quot;&gt; &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;StrictMode&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;variable language_&quot;&gt;document&lt;/span&gt;.&lt;span class=&quot;title function_&quot;&gt;getElementById&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&amp;#x27;root&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/frontend/"/>
-    
-    <category term="react" scheme="https://cromarmot.github.io/Blog/categories/frontend/react/"/>
-    
-    
-    <category term="react" scheme="https://cromarmot.github.io/Blog/tags/react/"/>
-    
-    <category term="nextjs" scheme="https://cromarmot.github.io/Blog/tags/nextjs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CORS Demos</title>
-    <link href="https://cromarmot.github.io/Blog/22-10-25-cors/"/>
-    <id>https://cromarmot.github.io/Blog/22-10-25-cors/</id>
-    <published>2022-10-24T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;CORS&quot;&gt;&lt;a href=&quot;#CORS&quot; class=&quot;headerlink&quot; title=&quot;CORS&quot;&gt;&lt;/a&gt;CORS&lt;/h1&gt;&lt;p&gt;The server is responsible for reporting the allowed origins. The web browser is responsible for enforcing that requests are only sent from allowed domains.&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/preflight_correct.png&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Capture&quot;&gt;&lt;a href=&quot;#Capture&quot; class=&quot;headerlink&quot; title=&quot;Capture&quot;&gt;&lt;/a&gt;Capture&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tcpdump -i lo &lt;span class=&quot;string&quot;&gt;&amp;#x27;port 5000&amp;#x27;&lt;/span&gt; -vv -x -X&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/frontend/"/>
-    
-    <category term="CORS" scheme="https://cromarmot.github.io/Blog/categories/frontend/CORS/"/>
-    
-    
-    <category term="CORS" scheme="https://cromarmot.github.io/Blog/tags/CORS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vim8 插件升级</title>
-    <link href="https://cromarmot.github.io/Blog/22-09-14-vim8/"/>
-    <id>https://cromarmot.github.io/Blog/22-09-14-vim8/</id>
-    <published>2022-09-13T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;历史&quot;&gt;&lt;a href=&quot;#历史&quot; class=&quot;headerlink&quot; title=&quot;历史&quot;&gt;&lt;/a&gt;历史&lt;/h1&gt;&lt;p&gt;我也是用了 spf13-vim + vundle 有七八年了, 之中还用过Pathogen 之类的&lt;/p&gt;
-&lt;p&gt;这次随着ubuntu $20&#92;to 22$的升级, 有不少之前的插件不支持vim8,不能用了, 虽然根据官网消息,似乎vim9已经出来了&lt;/p&gt;
-&lt;p&gt;vim8 也有自带的package管理方案&lt;code&gt;:h packages&lt;/code&gt;, 看起来需要自己用git维护, 而用vim-plug只需要维护vimrc, 而在8之上还有dein,minpac的插件管理工具&lt;/p&gt;
-&lt;p&gt;而且还有nvim和vscode+vim键位的一些解决方案&lt;/p&gt;
-&lt;p&gt;但我有点懒 宁愿多配配 也暂时没想着改习惯&lt;/p&gt;
-&lt;p&gt;本机是ubuntu, 就没管win和mac的, 其它的看各种工具的官方文档吧&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="backend" scheme="https://cromarmot.github.io/Blog/categories/backend/"/>
-    
-    <category term="vim" scheme="https://cromarmot.github.io/Blog/categories/backend/vim/"/>
-    
-    
-    <category term="vim" scheme="https://cromarmot.github.io/Blog/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu + pip + setuptool bug 体验</title>
-    <link href="https://cromarmot.github.io/Blog/22-09-08-fuck-pip/"/>
-    <id>https://cromarmot.github.io/Blog/22-09-08-fuck-pip/</id>
-    <published>2022-09-07T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;第一次被pip搞了几个小时&quot;&gt;&lt;a href=&quot;#第一次被pip搞了几个小时&quot; class=&quot;headerlink&quot; title=&quot;第一次被pip搞了几个小时&quot;&gt;&lt;/a&gt;第一次被pip搞了几个小时&lt;/h1&gt;&lt;p&gt;壮着胆子,在Ubuntu 22.10还没发布前,把系统从20.04.5升级到了22.04.1, 以我从12-&amp;gt;14,14-&amp;gt;16,16-&amp;gt;18,18-&amp;gt;20多年的经验来看, 这次竟然没问题! 厉害了, 以前每次升级都会炸点东西, 然后最终还是重装式升级, 这次竟然没啥严重的炸掉&lt;/p&gt;
-&lt;p&gt;然后&lt;code&gt;pip3 install -e .&lt;/code&gt;出问题了&lt;/p&gt;
-&lt;p&gt;先是报没权限,但看报的路径,没往用户目录下写,在写root, 作为一个胆小的人, 向来杜绝777的&lt;/p&gt;
-&lt;p&gt;翻了半天google和github&lt;/p&gt;
-&lt;p&gt;看到一个&lt;a href=&quot;https://github.com/pypa/pip/issues/7953#issuecomment-645133255&quot;&gt;方案&lt;/a&gt;:&lt;code&gt;setup.py&lt;/code&gt;中加上&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import site&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import sys&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;site.ENABLE_USER_SITE = &amp;quot;--user&amp;quot; in sys.argv[1:]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;加完以后, 恩 是没有问题了&lt;/p&gt;
-&lt;p&gt;然后报错&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;× python setup.py develop did not run successfully.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;│ exit code: 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;╰─&amp;gt; [29 lines of output]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    running develop&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      warnings.warn(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Traceback (most recent call last):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      File &amp;quot;&amp;lt;string&amp;gt;&amp;quot;, line 2, in &amp;lt;module&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      File &amp;quot;&amp;lt;pip-setuptools-caller&amp;gt;&amp;quot;, line 34, in &amp;lt;module&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      File &amp;quot;/home/cromarmot/Documents/computer/oiTerminalv2dev/setup.py&amp;quot;, line 6, in &amp;lt;module&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        setup()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      File &amp;quot;/usr/lib/python3/dist-packages/setuptools/__init__.py&amp;quot;, line 153, in setup&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        return distutils.core.setup(**attrs)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      File &amp;quot;/usr/lib/python3/dist-packages/setuptools/_distutils/core.py&amp;quot;, line 148, in setup&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        return run_commands(dist)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      File &amp;quot;/usr/lib/python3/dist-packages/setuptools/_distutils/core.py&amp;quot;, line 163, in run_commands&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        dist.run_commands()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      File &amp;quot;/usr/lib/python3/dist-packages/setuptools/_distutils/dist.py&amp;quot;, line 967, in run_commands&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        self.run_command(cmd)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      File &amp;quot;/usr/lib/python3/dist-packages/setuptools/_distutils/dist.py&amp;quot;, line 985, in run_command&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        cmd_obj.ensure_finalized()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      File &amp;quot;/usr/lib/python3/dist-packages/setuptools/_distutils/cmd.py&amp;quot;, line 107, in ensure_finalized&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        self.finalize_options()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      File &amp;quot;/usr/lib/python3/dist-packages/setuptools/command/develop.py&amp;quot;, line 52, in finalize_options&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        easy_install.finalize_options(self)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      File &amp;quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&amp;quot;, line 270, in finalize_options&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        self._fix_install_dir_for_user_site()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      File &amp;quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&amp;quot;, line 400, in _fix_install_dir_for_user_site&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        self.select_scheme(scheme_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      File &amp;quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&amp;quot;, line 741, in select_scheme&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        scheme = INSTALL_SCHEMES[name]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    KeyError: &amp;#x27;unix_user&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [end of output]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;又搜,发现的确是setuptools有bug,然后&lt;a href=&quot;https://github.com/pypa/setuptools/issues/2938#issuecomment-998293346&quot;&gt;60.0.2修复了&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="backend" scheme="https://cromarmot.github.io/Blog/categories/backend/"/>
-    
-    <category term="python3" scheme="https://cromarmot.github.io/Blog/categories/backend/python3/"/>
-    
-    
-    <category term="backend" scheme="https://cromarmot.github.io/Blog/tags/backend/"/>
-    
-    <category term="python3" scheme="https://cromarmot.github.io/Blog/tags/python3/"/>
-    
-    <category term="pip" scheme="https://cromarmot.github.io/Blog/tags/pip/"/>
-    
-    <category term="setuptool" scheme="https://cromarmot.github.io/Blog/tags/setuptool/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo Static Blog in 2022</title>
-    <link href="https://cromarmot.github.io/Blog/22-08-15-static-blog/"/>
-    <id>https://cromarmot.github.io/Blog/22-08-15-static-blog/</id>
-    <published>2022-08-14T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;写在-2022-年的-静态博客选择&quot;&gt;&lt;a href=&quot;#写在-2022-年的-静态博客选择&quot; class=&quot;headerlink&quot; title=&quot;写在 2022 年的 静态博客选择&quot;&gt;&lt;/a&gt;写在 2022 年的 静态博客选择&lt;/h1&gt;&lt;h2 id=&quot;调研&quot;&gt;&lt;a href=&quot;#调研&quot; class=&quot;headerlink&quot; title=&quot;调研&quot;&gt;&lt;/a&gt;调研&lt;/h2&gt;&lt;p&gt;用了Hexo很久了,期间也有不少其它产品, 也试了试这些框架&lt;/p&gt;
-&lt;p&gt;对于我, 核心需求是markdown + code高亮 + tex + rss + 二进制分页+tags+category 支持, 操作期望是0代码, 可以简单yaml&amp;#x2F;toml配置,和复制配置的配置行为, 然后有个基本不错的theme&lt;/p&gt;
-&lt;p&gt;毕竟主要产出在markdown而不是搭建&lt;/p&gt;
-&lt;p&gt;本地方案是 obsidian&amp;#x2F;vscode&amp;#x2F;vim 就可以了&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/frontend/"/>
-    
-    <category term="framework" scheme="https://cromarmot.github.io/Blog/categories/frontend/framework/"/>
-    
-    
-    <category term="static blog" scheme="https://cromarmot.github.io/Blog/tags/static-blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python3 setuptools 发包</title>
-    <link href="https://cromarmot.github.io/Blog/22-07-23-python-setuptools/"/>
-    <id>https://cromarmot.github.io/Blog/22-07-23-python-setuptools/</id>
-    <published>2022-07-22T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;TLDR: setuptools在2023的体验的确比不上新工具hatching&lt;/p&gt;
-&lt;h1 id=&quot;Step-by-Step&quot;&gt;&lt;a href=&quot;#Step-by-Step&quot; class=&quot;headerlink&quot; title=&quot;Step by Step&quot;&gt;&lt;/a&gt;Step by Step&lt;/h1&gt;&lt;p&gt;install build&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install --upgrade build&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;基础使用&quot;&gt;&lt;a href=&quot;#基础使用&quot; class=&quot;headerlink&quot; title=&quot;基础使用&quot;&gt;&lt;/a&gt;基础使用&lt;/h2&gt;&lt;p&gt;提供&lt;code&gt;pyproject.toml&lt;/code&gt;文件, 包含&lt;code&gt;build-system&lt;/code&gt; section&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[build-system]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;requires = [&amp;quot;setuptools&amp;quot;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;build-backend = &amp;quot;setuptools.build_meta&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[project]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;name = &amp;quot;yourname-packagename&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;version = &amp;quot;0.0.1&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dependencies = [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;requests&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="backend" scheme="https://cromarmot.github.io/Blog/categories/backend/"/>
-    
-    <category term="python3" scheme="https://cromarmot.github.io/Blog/categories/backend/python3/"/>
-    
-    
-    <category term="python3" scheme="https://cromarmot.github.io/Blog/tags/python3/"/>
-    
-    <category term="setuptools" scheme="https://cromarmot.github.io/Blog/tags/setuptools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TS Cheat Sheet</title>
-    <link href="https://cromarmot.github.io/Blog/22-06-30-ts-cheatsheet/"/>
-    <id>https://cromarmot.github.io/Blog/22-06-30-ts-cheatsheet/</id>
-    <published>2022-06-29T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;TS-Cheat-Sheet&quot;&gt;&lt;a href=&quot;#TS-Cheat-Sheet&quot; class=&quot;headerlink&quot; title=&quot;TS Cheat Sheet&quot;&gt;&lt;/a&gt;TS Cheat Sheet&lt;/h1&gt;&lt;h2 id=&quot;为什么写这篇&quot;&gt;&lt;a href=&quot;#为什么写这篇&quot; class=&quot;headerlink&quot; title=&quot;为什么写这篇&quot;&gt;&lt;/a&gt;为什么写这篇&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/type-challenges/type-challenges&quot;&gt;antfu的题目&lt;/a&gt; 大多就是基础方法+递归, issues充斥着重复内容, 最开始还有点TS的味道, 后面完全变成了只有基础方法, 组合出一个东西, 感觉这个更适合作为递归练习题, 而不是TS练习题 (没有数值强行用数组拼接+length, 等等&lt;/p&gt;
-&lt;p&gt;TS有文档,是英文的,难以用中文检索&lt;/p&gt;
-&lt;p&gt;本篇呢,是cheatsheet,不是document,把实际会用到常用的一些列出来+一些场景描述&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/frontend/"/>
-    
-    <category term="typescript" scheme="https://cromarmot.github.io/Blog/categories/frontend/typescript/"/>
-    
-    
-    <category term="typescript" scheme="https://cromarmot.github.io/Blog/tags/typescript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu下 给老电脑换个ssd</title>
-    <link href="https://cromarmot.github.io/Blog/22-03-13-new_ssd_old_computer/"/>
-    <id>https://cromarmot.github.io/Blog/22-03-13-new_ssd_old_computer/</id>
-    <published>2022-03-12T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;带sudo的一定小心, 别选错盘了&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&quot;工具推荐&quot;&gt;&lt;a href=&quot;#工具推荐&quot; class=&quot;headerlink&quot; title=&quot;工具推荐&quot;&gt;&lt;/a&gt;工具推荐&lt;/h1&gt;&lt;p&gt;bcompare&lt;/p&gt;
-&lt;p&gt;gparted&lt;/p&gt;
-&lt;h1 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h1&gt;&lt;p&gt;io测试&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://linuxreviews.org/HOWTO_Test_Disk_I/O_Performance#Testing_random_4K_reads&quot;&gt;https://linuxreviews.org/HOWTO_Test_Disk_I/O_Performance#Testing_random_4K_reads&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;大块读&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;fio --name TEST --eta-newline=5s --filename=temp.file --rw=read --size=2g --io_size=10g --blocksize=1024k --ioengine=libaio --fsync=10000 --iodepth=32 --direct=1 --numjobs=1 --runtime=60 --group_reporting&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;大块写&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;fio --name TEST --eta-newline=5s --filename=temp.file --rw=write --size=2g --io_size=10g --blocksize=1024k --ioengine=libaio --fsync=10000 --iodepth=32 --direct=1 --numjobs=1 --runtime=60 --group_reporting&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;随机4K读&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;fio --name TEST --eta-newline=5s --filename=temp.file --rw=randread --size=2g --io_size=10g --blocksize=4k --ioengine=libaio --fsync=1 --iodepth=1 --direct=1 --numjobs=32 --runtime=60 --group_reporting&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="backend" scheme="https://cromarmot.github.io/Blog/categories/backend/"/>
-    
-    <category term="ubuntu" scheme="https://cromarmot.github.io/Blog/categories/backend/ubuntu/"/>
-    
-    
-    <category term="ubuntu" scheme="https://cromarmot.github.io/Blog/tags/ubuntu/"/>
-    
-    <category term="ssd" scheme="https://cromarmot.github.io/Blog/tags/ssd/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ng zone</title>
-    <link href="https://cromarmot.github.io/Blog/23-03-10-ng-zone/"/>
-    <id>https://cromarmot.github.io/Blog/23-03-10-ng-zone/</id>
-    <published>2022-03-09T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
-    
-    
-    <summary type="html">how zone support ng change detection</summary>
-    
-    
-    
-    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/frontend/"/>
-    
-    <category term="Angular" scheme="https://cromarmot.github.io/Blog/categories/frontend/Angular/"/>
-    
-    
-    <category term="Angular" scheme="https://cromarmot.github.io/Blog/tags/Angular/"/>
-    
-    <category term="change detection" scheme="https://cromarmot.github.io/Blog/tags/change-detection/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>豆瓣页面数据解密</title>
-    <link href="https://cromarmot.github.io/Blog/21-12-21-anti-douban/"/>
-    <id>https://cromarmot.github.io/Blog/21-12-21-anti-douban/</id>
-    <published>2021-12-20T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;个人的网页需要一些书目数据，印象中，老的豆瓣直接是页面还是接口，能获直接取到，可以作为爬虫入门练手&lt;/p&gt;
-&lt;p&gt;然而前天一看，新版的豆瓣已经不明文返回数据了&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;https://search.douban.com/book/subject_search?search_text=%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0&amp;amp;cat=1001&lt;/code&gt;&lt;/p&gt;
-&lt;h1 id=&quot;预备知识&quot;&gt;&lt;a href=&quot;#预备知识&quot; class=&quot;headerlink&quot; title=&quot;预备知识&quot;&gt;&lt;/a&gt;预备知识&lt;/h1&gt;&lt;p&gt;&lt;code&gt;C++函数调用&lt;/code&gt;：这个知识点让你知道函数调用堆栈的常见设计&lt;/p&gt;
-&lt;p&gt;js调试：chrome断点，格式化代码，console，js基本语法，&lt;/p&gt;
-&lt;h1 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h1&gt;&lt;h2 id=&quot;定位数据来源&quot;&gt;&lt;a href=&quot;#定位数据来源&quot; class=&quot;headerlink&quot; title=&quot;定位数据来源&quot;&gt;&lt;/a&gt;定位数据来源&lt;/h2&gt;&lt;p&gt;一般来说 只要页面不用花里胡哨的技巧，比如把数据放在png里的话，一般来说，数据只会在&lt;code&gt;Fetch/XHR&lt;/code&gt;,&lt;code&gt;JS&lt;/code&gt;,&lt;code&gt;html&lt;/code&gt;，&lt;code&gt;ws&lt;/code&gt; 中&lt;/p&gt;
-&lt;p&gt;通过页面展示的&lt;code&gt;实变函数论&lt;/code&gt; 去上述类型中搜索，结果没有任何内容中直接包含数据&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/frontend/"/>
-    
-    
-    <category term="js" scheme="https://cromarmot.github.io/Blog/tags/js/"/>
-    
-    <category term="豆瓣" scheme="https://cromarmot.github.io/Blog/tags/%E8%B1%86%E7%93%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>currying 加法</title>
-    <link href="https://cromarmot.github.io/Blog/21-12-06-currying-add/"/>
-    <id>https://cromarmot.github.io/Blog/21-12-06-currying-add/</id>
-    <published>2021-12-05T16:00:00.000Z</published>
-    <updated>2024-10-23T09:56:42.983Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;一个支持 任意多参数，可以柯里化的加法函数&lt;/p&gt;
-&lt;h1 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="frontend" scheme="https://cromarmot.github.io/Blog/categories/frontend/"/>
-    
-    
-    <category term="js" scheme="https://cromarmot.github.io/Blog/tags/js/"/>
     
   </entry>
   

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="常见的用户名密码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="user password">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/25-04-01-userpass/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="常见的用户名密码">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-03-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-30T15:23:09.630Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="加密">
+<meta property="article:tag" content="RSA">
+<meta name="twitter:card" content="&lt;twitter:card&gt;">
+
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/25-04-01-userpass/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/25-04-01-userpass/","path":"25-04-01-userpass/","title":"user password"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>user password | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">147</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">39</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">162</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9F%E6%98%8E%E6%96%87%E4%BC%A0%E8%BE%93%EF%BC%88HTTP%EF%BC%89"><span class="nav-text">传统明文传输（HTTP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%8A%A0%E5%AF%86%E4%BC%A0%E8%BE%93%EF%BC%88HTTPS-x2F-TLS%EF%BC%89"><span class="nav-text">2. 加密传输（HTTPS&#x2F;TLS）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WiFi-%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE%EF%BC%9AWPA2-%E4%B8%8E-WPA3"><span class="nav-text">WiFi 安全协议：WPA2 与 WPA3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-WPA2%EF%BC%88%E5%9F%BA%E4%BA%8E-AES-CCMP-%E4%B8%8E%E5%9B%9B%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%89"><span class="nav-text">3.1 WPA2（基于 AES-CCMP 与四次握手）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-WPA3%EF%BC%88%E5%BC%95%E5%85%A5-SAE-%E4%B8%8E-Dragonfly-%E5%8D%8F%E8%AE%AE%EF%BC%89"><span class="nav-text">3.2 WPA3（引入 SAE 与 Dragonfly 协议）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E5%AE%89%E5%85%A8%E6%80%A7%E5%AF%B9%E6%AF%94%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%80%BB%E7%BB%93"><span class="nav-text">4. 安全性对比与数学总结</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">147</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">162</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/25-04-01-userpass/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="user password | Cro-Marmot's Blog">
+      <meta itemprop="description" content="常见的用户名密码">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          user password
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2025-04-01 00:00:00" itemprop="dateCreated datePublished" datetime="2025-04-01T00:00:00+08:00">2025-04-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2025-12-30 23:23:09" itemprop="dateModified" datetime="2025-12-30T23:23:09+08:00">2025-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/25-04-01-userpass/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="25-04-01-userpass/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>887</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
+
+            <div class="post-description">常见的用户名密码</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="传统明文传输（HTTP）"><a href="#传统明文传输（HTTP）" class="headerlink" title="传统明文传输（HTTP）"></a><strong>传统明文传输（HTTP）</strong></h2><p><strong>关键细节</strong><br>在早期 HTTP 协议中，用户名和密码以 ASCII 或 Unicode 编码直接传输，例如：</p>
+<ul>
+<li>用户输入：<code>username=alice</code>, <code>password=123456</code></li>
+<li>传输内容：<code>GET /login?username=alice&amp;password=123456 HTTP/1.1</code></li>
+</ul>
+<p><strong>攻击实例</strong>  </p>
+<ul>
+<li><strong>中间人攻击（MITM）</strong>：攻击者通过 ARP 欺骗截获数据包，直接获取明文。</li>
+<li><strong>Firesheep 工具</strong>：利用 WiFi 嗅探还原 Cookie，劫持会话。</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="2-加密传输（HTTPS-x2F-TLS）"><a href="#2-加密传输（HTTPS-x2F-TLS）" class="headerlink" title="2. 加密传输（HTTPS&#x2F;TLS）"></a><strong>2. 加密传输（HTTPS&#x2F;TLS）</strong></h2><p><strong>核心改进</strong><br>引入 TLS 协议，结合对称加密（AES）与非对称加密（RSA&#x2F;ECC），实现<strong>保密性</strong>与<strong>完整性</strong>。</p>
+<p><strong>数学原理</strong>  </p>
+<ol>
+<li><p><strong>密钥交换（RSA）</strong>  </p>
+<ul>
+<li>生成大素数$p, q$，计算$n &#x3D; pq$,$\phi(n) &#x3D; (p-1)(q-1)$。  </li>
+<li>选择$e$满足$\gcd(e, \phi(n)) &#x3D; 1$，计算$d \equiv e^{-1} \mod \phi(n)$。  </li>
+<li>公钥$(e, n)$加密：$c \equiv m^e \mod n$。  </li>
+<li>私钥$(d, n)$解密：$m \equiv c^d \mod n$。</li>
+</ul>
+</li>
+<li><p><strong>对称加密（AES）</strong>  </p>
+<ul>
+<li>将明文分块为 128 位，通过多轮非线性变换（S 盒、行移位、列混淆）生成密文。  </li>
+<li>数学基础：有限域$\text{GF}(2^8)$上的多项式运算。</li>
+</ul>
+</li>
+<li><p><strong>哈希函数（SHA-256）</strong>  </p>
+<ul>
+<li>输入分块为 512 位，通过压缩函数迭代：<br>$H_i &#x3D; \text{Compress}(H_{i-1}, M_i)$</li>
+<li>抗碰撞性依赖<strong>生日攻击复杂度</strong>$O(2^{n&#x2F;2})$，SHA-256 需$O(2^{128})$次操作。</li>
+</ul>
+</li>
+</ol>
+<p><strong>解决的问题</strong>  </p>
+<ul>
+<li>抵御窃听与篡改，通过混合加密降低计算开销。</li>
+</ul>
+<hr>
+<h2 id="WiFi-安全协议：WPA2-与-WPA3"><a href="#WiFi-安全协议：WPA2-与-WPA3" class="headerlink" title="WiFi 安全协议：WPA2 与 WPA3"></a><strong>WiFi 安全协议：WPA2 与 WPA3</strong></h2><h3 id="3-1-WPA2（基于-AES-CCMP-与四次握手）"><a href="#3-1-WPA2（基于-AES-CCMP-与四次握手）" class="headerlink" title="3.1 WPA2（基于 AES-CCMP 与四次握手）"></a><strong>3.1 WPA2（基于 AES-CCMP 与四次握手）</strong></h3><p><strong>四次握手流程</strong>  </p>
+<ul>
+<li>PSK(Wi-Fi密码)</li>
+<li>PMK(Pairwise Master Key)&#x3D;PBKDF2(PSK)</li>
+<li>接入点（AP）发送随机数$\text{ANonce}$。(AP Nonce) </li>
+<li>客户端生成$\text{SNonce}$ (Supplicant Nonce)，计算 PTK(Pairwise Transient Key)：<br>$\text{PTK} &#x3D; \text{PRF}(\text{PMK}, \text{ANonce}, \text{SNonce}, \text{MAC}<em>{AP}, \text{MAC}</em>{Client})$<br> （PRF 为伪随机函数，PMK 由预共享密码派生）  </li>
+<li>交换 MIC（Message Integrity Code）验证密钥一致性。</li>
+</ul>
+<p><strong>数学漏洞</strong>  </p>
+<ul>
+<li><strong>KRACK 攻击</strong>：利用四次握手重放，重置加密 Nonce，导致密钥重用。  </li>
+<li><strong>PMK 派生缺陷</strong>：若预共享密码熵低，易受离线字典攻击。</li>
+</ul>
+<h5 id="3-2-WPA3（引入-SAE-与-Dragonfly-协议）"><a href="#3-2-WPA3（引入-SAE-与-Dragonfly-协议）" class="headerlink" title="3.2 WPA3（引入 SAE 与 Dragonfly 协议）"></a><strong>3.2 WPA3（引入 SAE 与 Dragonfly 协议）</strong></h5><p><strong>SAE（Simultaneous Authentication of Equals）</strong>  </p>
+<ul>
+<li>基于椭圆曲线密码学（ECC），取代预共享密码。  </li>
+<li><strong>Dragonfly 握手</strong>：  <ol>
+<li>双方选择椭圆曲线$E: y^2 &#x3D; x^3 + ax + b$和基点$G$。  </li>
+<li>生成随机数$a, b$，计算承诺$P &#x3D; aG$,$Q &#x3D; bG$。  </li>
+<li>交换后计算共享密钥：<br>[<br>K &#x3D; a \cdot Q &#x3D; b \cdot P &#x3D; abG<br>]</li>
+</ol>
+</li>
+<li><strong>抗暴力破解</strong>：每次尝试需一次在线交互，复杂度为$O(2^n)$。</li>
+</ul>
+<p><strong>数学优势</strong>  </p>
+<ul>
+<li>椭圆曲线离散对数问题（ECDLP）：已知$P &#x3D; kG$，求$k$的复杂度为$O(\sqrt{n})$，远高于 RSA 的亚指数时间。  </li>
+<li><strong>前向保密</strong>：每次会话生成临时密钥，防止历史数据解密。</li>
+</ul>
+<hr>
+<h4 id="4-安全性对比与数学总结"><a href="#4-安全性对比与数学总结" class="headerlink" title="4. 安全性对比与数学总结"></a><strong>4. 安全性对比与数学总结</strong></h4><table>
+<thead>
+<tr>
+<th>协议</th>
+<th>核心数学原理</th>
+<th>改进点</th>
+<th>解决的问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>明文</td>
+<td>ASCII 编码</td>
+<td>无</td>
+<td>无</td>
+</tr>
+<tr>
+<td>HTTPS</td>
+<td>RSA + AES + SHA-256</td>
+<td>混合加密与哈希链</td>
+<td>中间人攻击、数据篡改</td>
+</tr>
+<tr>
+<td>WPA2</td>
+<td>AES-CCMP + PRF 函数</td>
+<td>四次握手实现密钥协商</td>
+<td>无线窃听</td>
+</tr>
+<tr>
+<td>WPA3</td>
+<td>ECC + SAE 协议</td>
+<td>前向保密与抗字典攻击</td>
+<td>KRACK 漏洞、离线破解</td>
+</tr>
+</tbody></table>
+<p><strong>未来方向</strong>  </p>
+<ul>
+<li><strong>后量子密码</strong>：如基于格的 NTRU 算法，抵御 Shor 算法攻击。  </li>
+<li><strong>零知识证明</strong>：实现无需传输密码的认证（如 ZK-SNARKs）。</li>
+</ul>
+<hr>
+<p>通过数学工具的不断升级，认证协议从明文到 WPA3 的演进，本质上是<strong>计算复杂性理论</strong>与<strong>密码学实践</strong>的结合。每一次改进均针对特定数学问题的破解难度提升，确保攻击成本远高于收益。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/25-04-01-userpass/" title="user password">https://cromarmot.github.io/Blog/25-04-01-userpass/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Blog/tags/%E5%8A%A0%E5%AF%86/" rel="tag"><i class="fa fa-tag"></i> 加密</a>
+              <a href="/Blog/tags/RSA/" rel="tag"><i class="fa fa-tag"></i> RSA</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/24-08-27-samba/" rel="prev" title="Samba(Windows/Ubuntu)">
+                  <i class="fa fa-chevron-left"></i> Samba(Windows/Ubuntu)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Blog/25-05-01-selfhosted-notes/" rel="next" title="python3 依赖注入">
+                  python3 依赖注入 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">271k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">16:24</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/25-04-01-userpass/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

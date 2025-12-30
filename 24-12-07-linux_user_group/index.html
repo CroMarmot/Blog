@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="linux用户和组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux(user,group)">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/24-12-07-linux_user_group/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="linux用户和组">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://www.redhat.com/rhdc/managed-files/styles/wysiwyg_full_width/private/sysadmin/2020-06/PAM_diagramm4.png.webp?itok=JW1jJKBz">
+<meta property="article:published_time" content="2024-08-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-30T15:23:09.630Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="user">
+<meta property="article:tag" content="group">
+<meta name="twitter:card" content="&lt;twitter:card&gt;">
+<meta name="twitter:image" content="https://www.redhat.com/rhdc/managed-files/styles/wysiwyg_full_width/private/sysadmin/2020-06/PAM_diagramm4.png.webp?itok=JW1jJKBz">
+
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/24-12-07-linux_user_group/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/24-12-07-linux_user_group/","path":"24-12-07-linux_user_group/","title":"Linux(user,group)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Linux(user,group) | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">147</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">39</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">162</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cheetsheat"><span class="nav-text">cheetsheat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x2F-etc-x2F-passwd-%EF%BC%88rw-r%E2%80%93r%E2%80%93%EF%BC%89"><span class="nav-text">&#x2F;etc&#x2F;passwd （rw-r–r–）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x2F-etc-x2F-shadow-rw-r%E2%80%94%E2%80%93"><span class="nav-text">&#x2F;etc&#x2F;shadow (rw-r—–)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9"><span class="nav-text">增删改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84groups-x2F-etc-x2F-group"><span class="nav-text">组groups  &#x2F;etc&#x2F;group</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#user%E4%B8%8Egroup"><span class="nav-text">user与group</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uid"><span class="nav-text">uid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-text">问题</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">147</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">162</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/24-12-07-linux_user_group/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Linux(user,group) | Cro-Marmot's Blog">
+      <meta itemprop="description" content="linux用户和组">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux(user,group)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-08-27 00:00:00" itemprop="dateCreated datePublished" datetime="2024-08-27T00:00:00+08:00">2024-08-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2025-12-30 23:23:09" itemprop="dateModified" datetime="2025-12-30T23:23:09+08:00">2025-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/backend/" itemprop="url" rel="index"><span itemprop="name">backend</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/24-12-07-linux_user_group/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="24-12-07-linux_user_group/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>6 分鐘</span>
+    </span>
+</div>
+
+            <div class="post-description">linux用户和组</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="cheetsheat"><a href="#cheetsheat" class="headerlink" title="cheetsheat"></a>cheetsheat</h2><p>增加用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">useradd -c &quot;注释&quot; 用户名</span><br><span class="line">useradd -c &quot;evariste.sakura&quot; esakura</span><br><span class="line">或者如果你需要管理学校的服务器，有很多同学需要使用这一台，那么可以</span><br><span class="line">useradd -c &quot;年份.班级.姓名&quot; 用户名</span><br><span class="line">useradd --create-home --uid 用户id --groups 组a 组b 用户名</span><br><span class="line">useradd -u 10600 -g 10600 -G sysadmin,helpdesk jdoe # 例如场景希望用户id和工号一致 但注意的是linux&lt;=2.4 最大是65536, 后面的也只有 2^32 = 4294967296 , 毕竟还不是字符串</span><br></pre></td></tr></table></figure>
+
+<p>设置密码 (管理员可以通过 &#x2F;etc&#x2F;security&#x2F;pwquality.conf 限制简单密码)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">passwd 用户名</span><br><span class="line">passwd esakura</span><br><span class="line"># 删除密码</span><br><span class="line">passwd -d 用户名</span><br></pre></td></tr></table></figure>
+
+<p>查看密码设置信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd -S sambauser  </span><br><span class="line">sambauser P 2024-10-26 0 99999 7 -1</span><br></pre></td></tr></table></figure>
+
+<p>删除用户(移除前 请备份 用户 home 目录的内容)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userdel -r 用户名</span><br></pre></td></tr></table></figure>
+
+<p>添加到组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod --append --groups 组名 用户名</span><br></pre></td></tr></table></figure>
+
+<p>登录信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w # 当前登录</span><br><span class="line">last # 登录记录</span><br></pre></td></tr></table></figure>
+
+<p>文件的 用户和组，读写执行修改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chown 用户:组 文件</span><br><span class="line"># 用户u组g其它o, 增加+减少-,读r写w执行x</span><br><span class="line">chmod ug+r 文件 # 例子</span><br></pre></td></tr></table></figure>
+
+<p>切换用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su - 用户名</span><br><span class="line">su - 用户名 --command 命令 # 用指定用户执行一条命令</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="x2F-etc-x2F-passwd-（rw-r–r–）"><a href="#x2F-etc-x2F-passwd-（rw-r–r–）" class="headerlink" title="&#x2F;etc&#x2F;passwd （rw-r–r–）"></a>&#x2F;etc&#x2F;passwd （rw-r–r–）</h2><p>包含，用户名，home 目录，默认shell, 用冒号分割</p>
+<p>格式<code>username:password:UID:GID:comment:home:shell</code></p>
+<p>例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">esakura:x:1000:1000:esakura:/home/esakura:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>这里可以看到 password 全都是x（看不到的</p>
+<p>然后UID&#x2F;GID是1000因为这是我创建的一个ubuntu用户</p>
+<ul>
+<li>例如我重新安装了系统，但是&#x2F;home是单独挂载的，那么，重装时不论用户名是怎样，它的权限对于&#x2F;home的来说 会有原来的1000账户的目录的权限</li>
+<li>小于1000的是预留给系统，服务和一些特殊账户的。普通用户的 &gt;&#x3D; 1000</li>
+<li>例如 root的uid&#x3D;0,gid&#x3D;0,它厉害是因为它的uid&#x2F;gid而不是因为它叫做root,也就是如果你把root改名，再另外建立一个root,那么有 额外权限的是 改名后的，而不是新的root</li>
+</ul>
+<h2 id="x2F-etc-x2F-shadow-rw-r—–"><a href="#x2F-etc-x2F-shadow-rw-r—–" class="headerlink" title="&#x2F;etc&#x2F;shadow (rw-r—–)"></a>&#x2F;etc&#x2F;shadow (rw-r—–)</h2><p>注意到权限上，也就是只有root和root组 可以读</p>
+<p>存储的 passwd 的 hash</p>
+<p><code>username:password:last password change:min:max:warning:inactive:expired</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root:!:20019:0:99999:7:::</span><br><span class="line">esakura:$y$j9T$36h2ltp8Tdd3315KoGx0N0$vsVnHQ7ysdFyIVACx0Ooctl9StoteFoR1bkfDNhx4m6:20019:0:99999:7:::</span><br></pre></td></tr></table></figure>
+
+<p>后面几段，是和密码修改有关的信息， 延伸阅读：</p>
+<ul>
+<li>The effects of adding users to a Linux system</li>
+<li>Forcing Linux system password changes with the chage command</li>
+</ul>
+<h2 id="增删改"><a href="#增删改" class="headerlink" title="增删改"></a>增删改</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useradd</span><br><span class="line">usermod</span><br><span class="line">userdel</span><br></pre></td></tr></table></figure>
+
+<p>Linux sysadmin basics: User account management</p>
+<p>延伸阅读， 可插拔 安全 模块</p>
+<ul>
+<li>How to enhance Linux user security with Pluggable Authentication Module settings <ul>
+<li><a target="_blank" rel="noopener" href="https://www.redhat.com/en/blog/linux-security-pam">https://www.redhat.com/en/blog/linux-security-pam</a> 实现一些更复杂的安全验证机制</li>
+</ul>
+</li>
+<li>An introduction to Pluggable Authentication Modules in Linux<ul>
+<li><a target="_blank" rel="noopener" href="https://www.redhat.com/en/blog/pluggable-authentication-modules-pam">https://www.redhat.com/en/blog/pluggable-authentication-modules-pam</a></li>
+</ul>
+</li>
+<li>例如 ssh,cockpit 就是一种PAM<ul>
+<li>有一些会有 ui配置界面，而不只是配置文件</li>
+</ul>
+</li>
+<li><img data-src="https://www.redhat.com/rhdc/managed-files/styles/wysiwyg_full_width/private/sysadmin/2020-06/PAM_diagramm4.png.webp?itok=JW1jJKBz"></li>
+</ul>
+<p>login 程序流程概览（过程中其他pam_ 模块也能参与）</p>
+<ul>
+<li>使用 <code>libpam</code>验证 调用，询问“Is this user who they say they are?”<ul>
+<li><code>pam_unix</code> 负责检查 本地账户authentication</li>
+</ul>
+</li>
+<li>使用 <code>libpam</code>验证调用，询问<code>is this user allowed to connect?</code><ul>
+<li><code>pam_unix</code> 完成相关检查（例如 密码是否过期）</li>
+</ul>
+</li>
+<li>使用<code>libpam</code> 调用 密码相关<ul>
+<li><code>pam_unix</code> 写入 本地 shadow file</li>
+</ul>
+</li>
+<li>如果还成功了，那么会创建 session, 使用<code>libpam</code>发起 session 调用<ul>
+<li><code>pam_unix</code> 写一个 登录 timestamp to the <code>wtmp</code>文件，其它modules 启用X11 authentication</li>
+</ul>
+</li>
+</ul>
+<p><strong>&#x2F;usr&#x2F;lib64&#x2F;security</strong>  </p>
+<ul>
+<li>执行各种检查的 PAM 库集合。 这些模块中的大多数都有手册页面来解释使用情况和可用选项。</li>
+</ul>
+<p><strong>&#x2F;etc&#x2F;pam.d</strong></p>
+<ul>
+<li>用于调用 libpam 的应用程序的配置文件集。 这些文件定义了检查哪些模块、使用哪些选项、以何种顺序进行以及如何处理检查结果。 这些文件可能会在安装应用程序时添加到系统中，并经常被其他实用程序编辑。 </li>
+<li>由于所有应用程序都要进行多项检查，因此这些文件还可能包含包含语句，以调用该目录中的其他配置文件。 大多数共享模块都存在于用于本地身份验证的 system-auth 文件和用于监听远程连接的应用程序的 password-auth 文件中。</li>
+</ul>
+<p><strong>&#x2F;etc&#x2F;security</strong>  </p>
+<ul>
+<li>特定模块的附加配置文件集合。 某些模块（如 pam_access 和 pam_time）允许额外的检查粒度。 当应用程序配置文件调用这些模块时，将使用相应补充配置文件中的附加信息完成检查。 其他模块，如 pam_pwquality，通过将所有选项放在一个单独的文件中，而不是应用程序配置文件中的模块行，使其他实用程序更容易修改配置。</li>
+</ul>
+<p><strong>&#x2F;var&#x2F;log&#x2F;secure</strong>  </p>
+<ul>
+<li>大多数安全和身份验证错误都会报告到此日志文件中。 在此文件上配置了权限以限制访问。</li>
+</ul>
+<h2 id="组groups-x2F-etc-x2F-group"><a href="#组groups-x2F-etc-x2F-group" class="headerlink" title="组groups  &#x2F;etc&#x2F;group"></a>组groups  &#x2F;etc&#x2F;group</h2><p>格式:  <code>groupname:password:GID:group members</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root:x:0:</span><br><span class="line">esakura:x:1000:</span><br><span class="line">docker:x:987:esakura</span><br></pre></td></tr></table></figure>
+
+<p>增删改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">groupadd</span><br><span class="line">groupmod</span><br><span class="line">groupdel</span><br></pre></td></tr></table></figure>
+
+<h2 id="user与group"><a href="#user与group" class="headerlink" title="user与group"></a>user与group</h2><p><code>id</code> 查看用户的组信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">id esakura    </span><br><span class="line">uid=1000(esakura) gid=1000(esakura) groups=4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),114(lpadmin),988(sambashare),987(docker),1000(esakura)  </span><br><span class="line"></span><br><span class="line">id sambauser  </span><br><span class="line">uid=1001(sambauser) gid=1001(sambauser) groups=1001(sambauser)</span><br></pre></td></tr></table></figure>
+
+<p>管理 usermod</p>
+<h2 id="uid"><a href="#uid" class="headerlink" title="uid"></a>uid</h2><ul>
+<li>root 用户和组的 uid 和 gid 通常为 0，1-99 之间的 ID 也保留给其他系统账户使用。</li>
+<li>ID 99 之后的情况因操作系统而异。 <ul>
+<li>例如，有些 *nix 系统会将 100-499 保留给动态系统配置（如安装的软件包需要 uid&#x2F;gid），并从 500 开始分配标准用户账户的 uid 和 gid 号。 </li>
+<li>其他系统则为动态系统分配预留 100-999，并从 1000 及以上开始分配标准用户账户。(比如我现在的ubuntu)</li>
+</ul>
+</li>
+</ul>
+<p>如果一个 程序的 uid:gid &#x3D; 1000:1000, 当前用户 是 1001:1001, 然后这个程序所有人都能运行， 那么程序在被运行时的uid:gid 是 发起运行的用户的uid:gid 而不是文件自身的uid:gid</p>
+<ul>
+<li>所以文件</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.redhat.com/en/blog/linux-user-group-management">https://www.redhat.com/en/blog/linux-user-group-management</a> 这里面很多外置链接失效了</p>
+<p><a target="_blank" rel="noopener" href="https://www.redhat.com/en/blog/linux-user-account-management">https://www.redhat.com/en/blog/linux-user-account-management</a></p>
+<ul>
+<li>passwd还可以锁定解锁密码，设置最小lifetime最大lifetime</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">passwd -e 用户名 # 下次登录时 过期密码</span><br><span class="line">passwd -n &lt;天数&gt; 用户名 # 至少多少天才能修改密码</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.redhat.com/en/blog/user-account-gid-uid">https://www.redhat.com/en/blog/user-account-gid-uid</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">文件 /etc/login.defs</span><br><span class="line">PASS_MIN_DAYS 1</span><br><span class="line">可以 让修改最小间隔为1天， 避免有的用户短时间从 密码A -&gt; 密码B -&gt; 密码A（原来的样子） 来绕过一些“更换密码要求”的安全策略</span><br><span class="line">PASS_MAX_DAYS 60 </span><br><span class="line">要求两个月要换一次密码</span><br><span class="line">FAIL_DELAY 4</span><br><span class="line">可以失败登录会有4秒惩罚，来避免爆破</span><br><span class="line">UMASK 077</span><br><span class="line">可以让新文件的创建mask都是600, 对应的如果022,那么创建的新文件mask都是644</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li>有办法建立层级系统吗?</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/24-12-07-linux_user_group/" title="Linux(user,group)">https://cromarmot.github.io/Blog/24-12-07-linux_user_group/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Blog/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              <a href="/Blog/tags/user/" rel="tag"><i class="fa fa-tag"></i> user</a>
+              <a href="/Blog/tags/group/" rel="tag"><i class="fa fa-tag"></i> group</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/books/principles_of_economics_9/" rel="prev" title="宏观经济学 9长期中的真实经济">
+                  <i class="fa fa-chevron-left"></i> 宏观经济学 9长期中的真实经济
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Blog/24-08-27-samba/" rel="next" title="Samba(Windows/Ubuntu)">
+                  Samba(Windows/Ubuntu) <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">271k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">16:24</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/24-12-07-linux_user_group/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

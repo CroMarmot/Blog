@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="googlea0cb77247135ae4c.html">
+
+<link rel="stylesheet" href="/Blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cromarmot.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta name="description" content="消费者，生产者与市场效率 应用：税收和代价 应用：国际贸易">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微观经济学 3市场和福利">
+<meta property="og:url" content="https://cromarmot.github.io/Blog/books/principles_of_economics_3/index.html">
+<meta property="og:site_name" content="Cro-Marmot&#39;s Blog">
+<meta property="og:description" content="消费者，生产者与市场效率 应用：税收和代价 应用：国际贸易">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://picx.zhimg.com/80/v2-9dd3b6ab5c32d30f80901c3217779672_720w.webp?source=1def8aca">
+<meta property="og:image" content="https://picx.zhimg.com/80/v2-2b9b3b4bec21712aa07d2e84f78da948_720w.webp?source=1def8aca">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-0471df8dfe9e6d4454463a8b91092036_1440w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-4972362b59d83605123f4db84330468b_1440w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-cd67af0683a4819a048d89573d39f22f_1440w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-b99b90f039e1dbc4d6c994c80e293a50_1440w.webp">
+<meta property="article:published_time" content="2023-09-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-30T15:23:09.631Z">
+<meta property="article:author" content="Cro-Marmot">
+<meta property="article:tag" content="book">
+<meta property="article:tag" content="economics">
+<meta name="twitter:card" content="&lt;twitter:card&gt;">
+<meta name="twitter:image" content="https://picx.zhimg.com/80/v2-9dd3b6ab5c32d30f80901c3217779672_720w.webp?source=1def8aca">
+
+
+<link rel="canonical" href="https://cromarmot.github.io/Blog/books/principles_of_economics_3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://cromarmot.github.io/Blog/books/principles_of_economics_3/","path":"books/principles_of_economics_3/","title":"微观经济学 3市场和福利"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>微观经济学 3市场和福利 | Cro-Marmot's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/Blog/atom.xml" title="Cro-Marmot's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Cro-Marmot's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">147</span></a></li><li class="menu-item menu-item-yearmonth"><a href="/Blog/yearmonth/" rel="section"><i class="fa fa-calendar-days fa-fw"></i>年月</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-shapes fa-fw"></i>分類<span class="badge">39</span></a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">162</span></a></li><li class="menu-item menu-item-rss"><a href="/Blog/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>rss</a></li><li class="menu-item menu-item-about"><a href="/Blog/20-07-13-rsa/#contact" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%82%E5%9C%BA%E5%92%8C%E7%A6%8F%E5%88%A9"><span class="nav-text">市场和福利</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E6%B6%88%E8%B4%B9%E8%80%85%EF%BC%8C%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E5%B8%82%E5%9C%BA%E6%95%88%E7%8E%87"><span class="nav-text">7 消费者，生产者与市场效率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-3-%E5%B8%82%E5%9C%BA%E6%95%88%E7%8E%87"><span class="nav-text">7.3 市场效率</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E5%BA%94%E7%94%A8%EF%BC%9A%E7%A8%8E%E6%94%B6%E5%92%8C%E4%BB%A3%E4%BB%B7"><span class="nav-text">8 应用：税收和代价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-%E5%BA%94%E7%94%A8%EF%BC%9A%E5%9B%BD%E9%99%85%E8%B4%B8%E6%98%93"><span class="nav-text">9 应用：国际贸易</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cro-Marmot"
+      src="https://avatars.githubusercontent.com/u/24691835?v=4">
+  <p class="site-author-name" itemprop="name">Cro-Marmot</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">147</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">162</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cromarmot" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cromarmot" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yexiaorain@gmail.com" title="E-Mail → mailto:yexiaorain@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://atcoder.jp/users/cromarmot" title="https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;cromarmot" rel="noopener" target="_blank">AtCoder</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://codeforces.com/profile/Cro-Marmot" title="https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Cro-Marmot" rel="noopener" target="_blank">Codeforces</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://cromarmot.github.io/Blog/books/principles_of_economics_3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/24691835?v=4">
+      <meta itemprop="name" content="Cro-Marmot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cro-Marmot's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="微观经济学 3市场和福利 | Cro-Marmot's Blog">
+      <meta itemprop="description" content="消费者，生产者与市场效率 应用：税收和代价 应用：国际贸易">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          微观经济学 3市场和福利
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2023-09-20 00:00:00" itemprop="dateCreated datePublished" datetime="2023-09-20T00:00:00+08:00">2023-09-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2025-12-30 23:23:09" itemprop="dateModified" datetime="2025-12-30T23:23:09+08:00">2025-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/book/" itemprop="url" rel="index"><span itemprop="name">book</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/book/economics/" itemprop="url" rel="index"><span itemprop="name">economics</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/Blog/books/principles_of_economics_3/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="books/principles_of_economics_3/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.9k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>11 分鐘</span>
+    </span>
+</div>
+
+            <div class="post-description">消费者，生产者与市场效率 应用：税收和代价 应用：国际贸易</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="市场和福利"><a href="#市场和福利" class="headerlink" title="市场和福利"></a>市场和福利</h2><h3 id="7-消费者，生产者与市场效率"><a href="#7-消费者，生产者与市场效率" class="headerlink" title="7 消费者，生产者与市场效率"></a>7 消费者，生产者与市场效率</h3><p>福利经济学：研究资源配置如何影响经济福利</p>
+<p>支付意愿：买者愿意为某种物品支付的最高量</p>
+<span id="more"></span>
+
+<p>消费者剩余：支付意愿 减去 实际支付</p>
+<p><img data-src="https://picx.zhimg.com/80/v2-9dd3b6ab5c32d30f80901c3217779672_720w.webp?source=1def8aca"></p>
+<p>（这样可以解释第一口可乐的价格？）</p>
+<p>需求表&#x2F;需求曲线</p>
+<p>消费剩余&#x3D;需求曲线与实际支付与纵坐标围成的面积： “自己感觉到的利益”</p>
+<p>实际价格变更，原来的消费者也会增加消费者剩余</p>
+<p>成本：卖者为了生产一种物品而必须放弃的所有东西的价值</p>
+<p>生产者剩余：买者出售一种物品得到的量 减去 其生产成本</p>
+<p><img data-src="https://picx.zhimg.com/80/v2-2b9b3b4bec21712aa07d2e84f78da948_720w.webp?source=1def8aca"></p>
+<p>怎么解释呢，不同生产者 生产用的成本不同，因此价格变化会导致 生产者的加入或退出，而为了达到均衡或者政府的政策价格，其中低生产成本的生产者 按照 市价卖出时获得的</p>
+<hr>
+<h4 id="7-3-市场效率"><a href="#7-3-市场效率" class="headerlink" title="7.3 市场效率"></a>7.3 市场效率</h4><p>消费者剩余 &#x3D; 买者的评价-买者的支付</p>
+<p>生产者剩余 &#x3D; 买者的得到-卖者的成本</p>
+<p>总剩余 &#x3D; 上面的和 &#x3D; 买者的评价 - 卖者的成本</p>
+<p>有效率的 &#x3D; 最大化的总剩余 &#x3D; 均衡点时</p>
+<p>平等： 社会成员中 平均地分配经济成果的性质</p>
+<p>这里的问题是：卖者的成本是 供给曲线吗？？？？？？？？</p>
+<p>1）自由市场把物品的供给分配给对这些物品评价最高的买者，这种评价用买者的支付意愿来衡量</p>
+<p>2）自由市场将物品的需求分配给能够以最低成本生产这些物品的卖者</p>
+<p>3）自由市场生产出使消费者剩余和生产者剩余的综合最大化的物品量</p>
+<p>这里就开始吹自由市场的好了，但是以数学的角度讲，永远不要忘了定义域和适用范围，那需要无垄断，非必须品，非组织行为，除了本身的市场行为无其它，如假新闻（味精），如文化情感压迫</p>
+<p>案例：人体器官市场是否应该存在：《一位母亲(susan stephens)的爱帮助挽救了两条生命》</p>
+<p>16% 经济学家不同意，27%经济学家不确定，57%经济学家同意 为了帮助延长 肾脏病患者的生命，应该先行建立一个实验性的有偿人类肾脏市场</p>
+<p>旧金山市的新电子停车计时器有助于平衡供求 停车位的供求，每两个月调整一次价格 控制到 正确的价格：是指在每个街区都可以保有一两个空的停车位的情况下，城市可以收取的最低价格</p>
+<p>“就社会平等层面而言是复杂的”，因为不同人收入不同，“一笔巨额的敲诈”，有人认为找到停车位是理所当然的，就像你去商店时理应买到新鲜的香蕉和苹果一样</p>
+<hr>
+<p>7.4 市场效率与市场失衡</p>
+<ol>
+<li><p>我们 的分析假设市场是完全竞争的。但在现实世界中，竞争有时远非完全竞争。在一些市场上，某个单个（或一小群）买者或买者可以控制市场价格，这种影响价格的能力被称为“市场势力”。市场势力可以使市场无效率，因为它会使价格和数量背离供求均衡</p>
+</li>
+<li><p>我们的分析假设，市场结果只影响参与市场的买者和卖者。</p>
+</li>
+</ol>
+<ul>
+<li>现实世界中，卖者和买者的决策有时会影响那些根本不参与市场的人。比如污染、农药的使用等。市场的这种副作用被称作【外部性】。</li>
+<li>【外部性】使市场福利不仅仅取决于买者的评价和卖者的成本。由于双方在交易时并没有考虑这种副作用，所以，从整个社会的角度来看，市场均衡可能是无效率的。</li>
+</ul>
+<p>当市场失灵时，公共政策有可能纠正这些问题并提高经济效率。微观经济学家花费许多精力去研究什么时候会发生市场失灵，</p>
+<p>尽管存在市场失灵的可能性，但市场中看不见的手仍然是极其重要的。</p>
+<hr>
+<p>所以我买东西觉得值和不值 是我的 支付意愿 与 实际价格的比较，而实际价格 可能是 市场的，也可能是商家的，如果是商家的还不好说，如果是市场的，那么就是 我在均衡点右下方</p>
+<p>关于 消费者剩余能否是负数: <a target="_blank" rel="noopener" href="https://www.quora.com/Can-consumer-surplus-be-negative#:~:text=No%2C%20a%20consumer%20only%20gives,their%20consumer%20surplus%20is%20positive.">quora</a>,<a target="_blank" rel="noopener" href="https://economics.stackexchange.com/questions/27829/can-consumer-surplus-be-negative-if-a-consumer-is-forced-to-make-a-purchase">stackexchange</a></p>
+<hr>
+<p>问题与应用： melissa用240美元购买了一个iphone,并得到了160美元的消费者剩余，如果iphone的价格是500美元她的消费剩余会是多少？</p>
+<p>这个题，如果真就纯做题上来说，肯定就要说 超过了就没有消费了。所以没有消费也没有剩余</p>
+<p>但我总觉得现实中就是可以为负数啊，因为“外部因素，例如广告的宣传”，但实际到手以后发现心里价值就是不值，就是亏了，甚至未来发新版的时候同样的价格就不会再购买了，那么对于当下的消费剩余就可以是负数啊，虽然这样的话 对于“需求曲线来说 就不对的”，所以经济学原理讲的需求曲线是会受到 广告虚假宣传影响移动的，而看“迹”不看心，也没有 例如“随机强制购买”这种事情，这类“不论怎样的，最终只看曲线”，再说就是 觉得亏了觉得不值，但对于这里的“需求曲线上”的来说，就是高于你的 购买欲望，甚至还说你有消费者剩余！？！？！？！？！？（也就是只看曲线 的前提还是 所有行为“都认为是理性的明智的”</p>
+<p>越想越草，可能还是词汇选取贴近现实导致的这种奇怪的感受吧，也就是广告即使300你也会去，但广告当前200,而你实际体验只有150,那么你并不是-50的消费者剩余，而是100的消费者剩余。从这个角度讲（steam的退货机制还是真的很好啊），虽然店家的这个行为可能影响未来的需求曲线，但对于当前曲线它就是这样</p>
+<h3 id="8-应用：税收和代价"><a href="#8-应用：税收和代价" class="headerlink" title="8 应用：税收和代价"></a>8 应用：税收和代价</h3><p>1776年 美国殖民地人民对英国 税收的愤怒引发了美国独立战争？</p>
+<p>考察税收如何影响福利。</p>
+<p>不纠缠 线的移动，而是看成税收是在买者和卖者得到的价格之间打入了一个楔子&#x3D;&gt;销量低于没有税收时的销量</p>
+<p>政府基于税收所得 &#x3D; 销量 * 税收规模（买卖价格差），例如道路警察公共教育 ，总剩余是包括了税收的</p>
+<p>无谓损失 &#x3D; 总剩余的损失：因此 买者和卖者因税收遭受的损失大于政府筹集到的收入（人们因为激励做出反应），（取消的交易）</p>
+<p>这就是 经济学书“想学习孤立分析，但是又不是孤立因素”感觉这块的东西还有很大的 解构空间啊，从实际上来讲，这里都不应该是税收，而应该是一个 “固定额外成本”，这样才能更在一个无外界影响的系统里研究问题，把一个会影响外部因素的税收放到孤立系统内，真的感觉是没那么合适</p>
+<p>税收引起的 无谓损失 是因为它使买者和卖者不能实现某些贸易的好处</p>
+<p><img data-src="https://pic3.zhimg.com/80/v2-0471df8dfe9e6d4454463a8b91092036_1440w.webp"></p>
+<p>根据之前的数学计算 弹性 在这里极端的想 就是 横坐标相对于纵坐标 的比例，所以 不论需求 供给， 在更有弹性时 同样的 纵向差  对应的横相差会更大，也就是导致 数量变化越明显（无谓损失越大，理想是趋于三角形，三角形 &#x3D; 1&#x2F;2 底 * 高，现在 底都是税收规模，而高大约是 底乘上 弹性，所以差不多是 1&#x2F;2 税收平方 乘弹性的样子）</p>
+<p>劳动税，社保税，医保税、</p>
+<p>劳动税（的边际税率（对最后一美元收入的征收 40%</p>
+<p>劳动税扭曲效应观点：鼓励工人减少工作时间，第二个賺錢人留在家里，老年人早退休，以及一些潜在的违法者从事地下经济活动</p>
+<p>随着 税收收入增加，无谓损失增加，税收先增后降（拉弗曲线）</p>
+<h3 id="9-应用：国际贸易"><a href="#9-应用：国际贸易" class="headerlink" title="9 应用：国际贸易"></a>9 应用：国际贸易</h3><p>考虑假想的纺织品市场</p>
+<p>问题：</p>
+<ul>
+<li>如果从无国际贸易变成有，那么国内纺织品市场的纺织品价格和纺织品销量会发生什么变动？</li>
+<li>谁将从纺织品的自由贸易中获益？谁将遭受损失？好处会大于损失吗？</li>
+<li>应该把关税（对纺织品进口征税）作为新贸易政策的一部分吗？</li>
+</ul>
+<p>世界价格：一种物品在世界市场上通行的价格</p>
+<p>如果进行世界贸易，是成为纺织品的进口国还是出口国？（是卖还是买），和世界价格比较？</p>
+<p>并且 假设（isoland 相对于世界其他国家相比 是一个小型经济（意味着isoland国的行为对世界市场的影响微不足道）isoland是 世界经济中的价格接受者）</p>
+<p><img data-src="https://pic4.zhimg.com/80/v2-4972362b59d83605123f4db84330468b_1440w.webp"></p>
+<p><img data-src="https://pic4.zhimg.com/80/v2-cd67af0683a4819a048d89573d39f22f_1440w.webp"></p>
+<p>出口国： 生产者情况变好，消费者情况变差</p>
+<p>进口国：生产者情况变差，消费者情况变好</p>
+<p>都是 总福利增加</p>
+<p>关税（tariff）： 对在国外生产而在国内销售的物品征收的一种税，</p>
+<p><img data-src="https://pic1.zhimg.com/80/v2-b99b90f039e1dbc4d6c994c80e293a50_1440w.webp"></p>
+<p>?????????????????????????????? 为什么书上说关税 对出口国没影响，低于 世界价格-关税的出口 会退出啊，国内还可以以低于世界价格购买啊</p>
+<p>对于进口，关税减少了进口量，并使国内市场向没有贸易时的均衡移动。</p>
+<p>关税同样有 无谓损失（deadweight loss)</p>
+<p>实际政策中 还有进口配额的政策&#x2F;进口许可证收费，类似于关税，对于进口过来说 都是提高价格，（相对于直接国际贸易）减少了国内消费福利， 增加生产者的福利</p>
+<p>国际贸易其它好处：</p>
+<p>增加了物品的多样性</p>
+<p>通过规模经济降低了成本</p>
+<p>促进了竞争</p>
+<p>加强了思想交流</p>
+<p>新闻摘录：把贸易作为经济发展的工具</p>
+<p>各种限制贸易的观点：</p>
+<p>9.3.1 工作岗位论，自由贸易的赢家应该补偿输家吗？ 这点上我也支持自由贸易</p>
+<p>9.3.2 国家安全论，这一点上对于特定物品 我也反对自由贸易</p>
+<p>9.3.3 幼稚产业论（保护初创产业），我也不认可 支持自由贸易</p>
+<p>9.3.4 不公平竞争论 （不同国家法制管制不同），认可其问题，但依然不会因为这点就不支持，不公平竞争核心还是政治因素，拒绝这样的贸易并不会更优</p>
+<p>9.3.5 作为讨价还价筹码的保护论（对于不同商品关税的谈判筹码）：单边（取消自己贸易限制），多边（世界贸易组织，贸易协定，可能做出更复杂更有政治优势的贸易政策）</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Cro-Marmot
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://cromarmot.github.io/Blog/books/principles_of_economics_3/" title="微观经济学 3市场和福利">https://cromarmot.github.io/Blog/books/principles_of_economics_3/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Blog/tags/book/" rel="tag"><i class="fa fa-tag"></i> book</a>
+              <a href="/Blog/tags/economics/" rel="tag"><i class="fa fa-tag"></i> economics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Blog/books/principles_of_economics_2/" rel="prev" title="微观经济学 2市场如何运行">
+                  <i class="fa fa-chevron-left"></i> 微观经济学 2市场如何运行
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Blog/books/principles_of_economics_4/" rel="next" title="微观经济学 4公共部门经济学">
+                  微观经济学 4公共部门经济学 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cro-Marmot</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">271k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">16:24</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/schemes/muse.js"></script><script src="/Blog/js/next-boot.js"></script><script src="/Blog/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/Blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://cromarmot.github.io/Blog/books/principles_of_economics_3/"}</script>
+  <script src="/Blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"cromarmot","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/Blog/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
