@@ -392,146 +392,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ml_ver2.md</title>
-    <url>/Blog/15-10-15-ml_ver2/</url>
-    <content><![CDATA[<blockquote>
-<p><strong>吐槽</strong></p>
-</blockquote>
-<blockquote>
-<p>竟然不能被jekyll 解析</p>
-</blockquote>
-<blockquote>
-<p>收到邮件说 两个花括号内的不能被解析</p>
-</blockquote>
-<blockquote>
-<p>然后我把所有三层括号换成了1个{</p>
-</blockquote>
-<h1 id="词法"><a href="#词法" class="headerlink" title="词法"></a>词法</h1><h2 id="字符和字符串"><a href="#字符和字符串" class="headerlink" title="字符和字符串"></a>字符和字符串</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;single character&gt; ::= &lt;input character&gt; except &#x27; and \</span><br><span class="line">&lt;character literal&gt; ::= &#x27; &lt;single character&gt; &#x27; | &#x27; &lt;escape sequence&gt; &#x27;</span><br><span class="line">&lt;string character&gt; ::= &lt;input character&gt; except &quot; and \ | &lt;escape character&gt;</span><br><span class="line">&lt;string characters&gt; ::= &lt;string character&gt; | &lt;string characters&gt; &lt;string character&gt;</span><br><span class="line">&lt;string literal&gt; ::= &quot; &lt;string characters&gt;? &quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;sign&gt; ::= &#x27;+&#x27; | &#x27;-&#x27;</span><br><span class="line">&lt;digit&gt; ::= &#x27;0&#x27; | &#x27;1&#x27; | &#x27;2&#x27; | &#x27;3&#x27; | &#x27;4&#x27; | &#x27;5&#x27; | &#x27;6&#x27; | &#x27;7&#x27; | &#x27;8&#x27; | &#x27;9&#x27; </span><br><span class="line">&lt;digits&gt; ::= &lt;digit&gt; &#123; &lt;digit&gt; &#125;</span><br><span class="line">&lt;unsigned integer&gt; ::= &lt;digits&gt;</span><br><span class="line">&lt;unsigned floating point literal&gt; ::= &lt;digits&gt; . &lt;digits&gt;</span><br><span class="line">&lt;unsigned number&gt; = &lt;unsigned integer&gt; | &lt;unsigned floating point literal&gt;</span><br><span class="line">&lt;signed integer&gt; ::= &lt;sign&gt;? &lt;unsigned integer&gt;</span><br><span class="line">&lt;signed floating point literal&gt; = &lt;sign&gt;? &lt;unsigned floating point literal&gt;</span><br><span class="line">&lt;signed number&gt; = &lt;signed integer&gt; | &lt;signed floating point literal&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;null literal&gt; ::= &#x27;_null&#x27;</span><br><span class="line">&lt;boolean literal&gt; ::= &#x27;_true&#x27; | &#x27;_false&#x27;</span><br><span class="line">&lt;word symbol&gt; ::= &#x27;_and&#x27; | &#x27;_or&#x27; | &#x27;_not&#x27; | &#x27;_public&#x27; | &#x27;_const&#x27; | &#x27;_class&#x27; | &#x27;_para&#x27; | &#x27;_var&#x27; | &#x27;_pro&#x27; | &#x27;_while&#x27;| &#x27;_for&#x27; | &#x27;_foreach&#x27; | &#x27;_func&#x27; | &#x27;_if&#x27; | &#x27;_in&#x27; | &#x27;_return&#x27; | &#x27;_beark&#x27; | &#x27;_papa&#x27; | &lt;null literal&gt; | &lt;boolean literal&gt; | &lt;basic type&gt;</span><br><span class="line">&lt;special symbol&gt; = &#x27;+&#x27; | &#x27;-&#x27; | &#x27;*&#x27; | &#x27;/&#x27; | &#x27;\&#x27; | &#x27;%&#x27; | &#x27;=&#x27; | &#x27;&lt;&#x27; | &#x27;&gt;&#x27; | &#x27;&lt;=&#x27; | &#x27;&gt;=&#x27; | &#x27;==&#x27; | &#x27;&lt;&gt;&#x27; | &#x27;(&#x27; | &#x27;)&#x27; | &#x27;[&#x27; | &#x27;]&#x27; | &#x27;&#123;&#x27; | &#x27;&#125;&#x27; | &#x27;.&#x27; | &#x27;,&#x27; | &#x27;;&#x27; | &#x27;&quot;&#x27; | &lt;word symbol&gt;</span><br><span class="line">&lt;letter&gt; = &#x27;a&#x27; | &#x27;b&#x27; | &#x27;c&#x27; | &#x27;d&#x27; | &#x27;e&#x27; | &#x27;f&#x27; | &#x27;g&#x27; | &#x27;h&#x27; | &#x27;i&#x27; | &#x27;j&#x27; | &#x27;k&#x27; | &#x27;l&#x27; | &#x27;m&#x27; | &#x27;n&#x27; | &#x27;o&#x27; | &#x27;p&#x27; | &#x27;q&#x27; | &#x27;r&#x27; | &#x27;s&#x27; | &#x27;t&#x27; | &#x27;u&#x27; | &#x27;v&#x27; | &#x27;w&#x27; | &#x27;x&#x27; | &#x27;y&#x27; | &#x27;z&#x27; | &#x27;A&#x27; | &#x27;B&#x27; | &#x27;C&#x27; | &#x27;D&#x27; | &#x27;E&#x27; | &#x27;F&#x27; | &#x27;G&#x27; | &#x27;H&#x27; | &#x27;I&#x27; | &#x27;J&#x27; | &#x27;K&#x27; | &#x27;L&#x27; | &#x27;M&#x27; | &#x27;N&#x27; | &#x27;O&#x27; | &#x27;P&#x27; | &#x27;Q&#x27; | &#x27;R&#x27; | &#x27;S&#x27; | &#x27;T&#x27; | &#x27;U&#x27; | &#x27;V&#x27; | &#x27;W&#x27; | &#x27;X&#x27; | &#x27;Y&#x27; | &#x27;Z&#x27;</span><br><span class="line">&lt;identifier&gt; = &lt;letter&gt; &#123; &lt;letter&gt; | &lt;digit&gt; &#125;</span><br><span class="line">&lt;directive&gt; = &lt;letter&gt; &#123; &lt;letter&gt; | &lt;digit&gt; &#125;</span><br><span class="line">&lt;user type&gt; ::= &lt;identifier&gt;</span><br><span class="line">&lt;simple type name&gt; ::= &lt;identifier&gt;</span><br><span class="line">&lt;expression name&gt; ::= &lt;identifier&gt; | &lt;ambiguous name&gt; . &lt;identifier&gt;</span><br><span class="line">&lt;method name&gt; ::= &lt;identifier&gt; | &lt;ambiguous name&gt;. &lt;identifier&gt;</span><br><span class="line">&lt;ambiguous name&gt;::= &lt;identifier&gt; | &lt;ambiguous name&gt;. &lt;identifier&gt;</span><br><span class="line">&lt;unsigned literal&gt; ::= &lt;unsigned number&gt; | &lt;boolean literal&gt; | &lt;character literal&gt; | &lt;string literal&gt; | &lt;null literal&gt;</span><br><span class="line">&lt;literal&gt; ::= &lt;signed number&gt; | &lt;boolean literal&gt; | &lt;character literal&gt; | &lt;string literal&gt; | &lt;null literal&gt;</span><br></pre></td></tr></table></figure>
-
-<p>#句法</p>
-<p>##语句</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;symbol&gt; ::= &lt;identifier&gt; | &lt;symbol&gt; ( &#x27;.&#x27;&lt;identifier&gt; | &#x27;[&#x27; &lt;unsigned integer&gt; &#x27;]&#x27;)*</span><br><span class="line">&lt;!-- sign???? --&gt;</span><br><span class="line">&lt;term&gt; ::= &lt;literal&gt; | &lt;symbol&gt; | &lt;term&gt; (&#x27;*&#x27; | &#x27;/&#x27;) &lt;term&gt; | &#x27;(&#x27;&lt;term&gt;&#x27;)&#x27; </span><br><span class="line">&lt;condition&gt; ::= &lt;term&gt; | &lt;condition&gt; (&#x27;+&#x27; | &#x27;-&#x27;) &lt;condition&gt; | &#x27;(&#x27; &lt;condition&gt; &#x27;)&#x27;</span><br><span class="line">&lt;compare&gt; ::= &lt;condition&gt; | &lt;compare&gt; (&#x27;==&#x27; | &#x27;&lt;&gt;&#x27; | &#x27;&gt;&#x27; | &#x27;&lt;&#x27; | &#x27;&gt;=&#x27; | &#x27;&lt;=&#x27; ) &lt;compare&gt; | &#x27;(&#x27; &lt;compare&gt; &#x27;)&#x27;</span><br><span class="line">&lt;expression&gt; ::= &lt;compare&gt; | &#x27;_not&#x27; &lt;expression&gt;  | &lt;expression&gt; (&#x27;_and&#x27; | &#x27;_or&#x27;) &lt;expression&gt; </span><br><span class="line">&lt;left value&gt; = &lt;symbol&gt;</span><br><span class="line">&lt;basic type&gt; ::= &#x27;_void&#x27; | &#x27;_int&#x27; | &#x27;_char&#x27; | &#x27;_double&#x27; | &#x27;_boolean&#x27; </span><br><span class="line">&lt;type&gt; ::= &lt;user type&gt; | &lt;basic type&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="控制"><a href="#控制" class="headerlink" title="控制"></a>控制</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;if statement&gt; ::= &#x27;_if(&#x27; &lt;expression&gt; &#x27;)&#123;&#x27; &lt;statement&gt; &#x27;&#125;&#123;&#x27; &lt;statement&gt; &#x27;&#125;&#x27;</span><br><span class="line">&lt;!-- break --&gt;</span><br><span class="line">&lt;for statement&gt; ::= &#x27;_for (&#x27; &lt;assignment block&gt;? &#x27;;&#x27; &lt;expression&gt;? &#x27;;&#x27; &lt;assignment block&gt;? &#x27;)&#123;&#x27;&lt;statement&gt;&#x27;&#125;&#x27;</span><br><span class="line">&lt;foreach statement&gt; ::= &#x27;_foreach (&#x27; &lt;var name&gt; &#x27;_in&#x27; &lt;array name&gt;&#x27;) &#123;&#x27;&lt;statement&gt;&#x27;&#125;&#x27;</span><br><span class="line">&lt;while statement&gt; ::= &#x27;_while (&#x27; &lt;expression&gt; &#x27;)&#123;&#x27; &lt;statement&gt;&#x27;&#125;&#x27; </span><br></pre></td></tr></table></figure>
-
-<p>##各个执行块</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;judge block&gt; ::= &lt;if statement&gt;</span><br><span class="line">&lt;cycle block&gt; ::= &lt;for statement&gt; | &lt;foreach statement&gt; | &lt;while statement&gt;</span><br><span class="line">&lt;call block&gt; ::= &lt;function name&gt; &#x27;(&#x27; (&lt;expression&gt; &#123; &#x27;,&#x27; &lt;expression&gt; &#125;)? &#x27;)&#x27;</span><br><span class="line">&lt;assignment block&gt; ::= &lt;left value&gt; &#x27;=&#x27; &lt;expression&gt; </span><br></pre></td></tr></table></figure>
-
-<p>##各个语句块</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;var name&gt; ::= &lt;identifier&gt; </span><br><span class="line">&lt;const name&gt; ::= &lt;identifier&gt;</span><br><span class="line">&lt;function name&gt; ::= &lt;identifier&gt;</span><br><span class="line">&lt;class name&gt; ::= &lt;identifier&gt;</span><br><span class="line">&lt;const definition&gt; ::= &lt;basic type&gt; &#x27; &#x27; &lt;const name&gt;  &#x27;=&#x27; &lt;literal&gt; &#x27;;&#x27;</span><br><span class="line">&lt;para definition&gt; ::= &lt;type&gt; &#x27;[]&#x27;? &lt;var name&gt; &#x27;;&#x27;</span><br><span class="line">&lt;var definition&gt; ::= &lt;type&gt; &#x27;[]&#x27;? &lt;var name&gt; &#123; &#x27;,&#x27;  &#x27;[]&#x27;? &lt;var name&gt; &#125; &#x27;;&#x27;</span><br><span class="line">&lt;statement sentence&gt; ::=  &lt;judge block&gt; | &lt;cycle block&gt; | &lt;call block&gt; | &lt;assignment block&gt; &#x27;;&#x27;</span><br><span class="line">&lt;statement&gt; ::=  &lt;statement sentence&gt;+ </span><br></pre></td></tr></table></figure>
-
-<p>##各个模块</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;const block&gt; ::= &#x27;_const&#123;&#x27; &lt;const definition&gt;+ &#x27;&#125;;&#x27;</span><br><span class="line">&lt;para block&gt; ::= &#x27;_para&#123;&#x27; &lt;para definition&gt;+ &#x27;&#125;;&#x27;</span><br><span class="line">&lt;var block&gt; ::= &#x27;_var&#123;&#x27; &lt;var definition&gt;+ &#x27;&#125;;&#x27;</span><br><span class="line">&lt;pro block&gt; ::= &#x27;_pro&#123;&#x27; &lt;statement&gt; &#x27;&#125;;&#x27;</span><br><span class="line">&lt;class block&gt; ::= &#x27;_class &lt;class name&gt;&#123;&#x27;(&#x27;_papa&#123;&#x27;&lt;class name&gt;&#x27;&#125;;&#x27;)? &lt;const block&gt;? &lt;var block&gt;? &lt;function unit&gt;+ &#x27;&#125;;&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>##各个单元</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;public unit&gt; ::= &#x27;_public&#123;&#x27; &lt;const block&gt;? &lt;class block&gt;* &lt;var block&gt;? &#x27;&#125;;&#x27;</span><br><span class="line">&lt;function unit&gt; ::= &#x27;_func &lt;type&gt; &lt;function name&gt;&#123;&#x27; &lt;const block&gt;? &lt;para block&gt;? &lt;var block&gt;? &lt;pro block&gt;?&#x27;&#125;;&#x27;</span><br><span class="line">&lt;main unit&gt; ::= &#x27;_main&#123;&#x27;&lt;const block&gt;? &lt;var block&gt;? &lt;pro block&gt;? &#x27;&#125;;&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>##最终code</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;compilation unit&gt; ::= &lt;public unit&gt;? &lt;function unit&gt;? &lt;main unit&gt;?</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h1><h2 id="Booleans"><a href="#Booleans" class="headerlink" title="Booleans"></a>Booleans</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_bool bianliang;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_true</span><br><span class="line">_false</span><br></pre></td></tr></table></figure>
-
-<h2 id="Numbers"><a href="#Numbers" class="headerlink" title="Numbers"></a>Numbers</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_int bianliang;</span><br><span class="line">_double bianliang;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">123</span><br><span class="line">-123</span><br><span class="line">12.3</span><br><span class="line">-12.3</span><br></pre></td></tr></table></figure>
-
-<h2 id="Characters"><a href="#Characters" class="headerlink" title="Characters"></a>Characters</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_char bianliang;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;1&#x27;</span><br><span class="line">&#x27;\t&#x27;</span><br><span class="line">&#x27;\&#x27;&#x27;</span><br><span class="line">&#x27;\\&#x27;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Strings"><a href="#Strings" class="headerlink" title="Strings"></a>Strings</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_char [] bianliang;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;&quot;</span><br><span class="line">&quot;1&quot;</span><br><span class="line">&quot;123&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Void"><a href="#Void" class="headerlink" title="Void"></a>Void</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_func _void f&#123;</span><br><span class="line">    return ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ??? --&gt;</span><br><span class="line">if(a == _null)&#123;&#125;&#123;&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="lists"><a href="#lists" class="headerlink" title="lists"></a>lists</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;type&gt; &#x27;[]&#x27; &lt;listname&gt;</span><br><span class="line">_int [] a;</span><br><span class="line">Symbols[&lt;unsigned integer&gt;]</span><br><span class="line">a[2]</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a>Symbols</h1><blockquote>
-<p>start with letter ,including letter and number, Not case sensitive</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bianliang</span><br><span class="line">feifeifeifeichangmeilidejutu12138</span><br></pre></td></tr></table></figure>
-
-<h1 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h1><table>
-<thead>
-<tr>
-<th>优先级</th>
-<th>运算符</th>
-<th>举例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>()</td>
-<td>(1+1)</td>
-</tr>
-<tr>
-<td>2</td>
-<td>* &#x2F;</td>
-<td>2*3</td>
-</tr>
-<tr>
-<td>3</td>
-<td>+ -</td>
-<td>2&#x3D;&#x3D;2</td>
-</tr>
-<tr>
-<td>4</td>
-<td>&gt; &lt; &gt;&#x3D; &lt;&#x3D; &#x3D;&#x3D; &lt;&gt;</td>
-<td>1+2&#x3D;&#x3D;2+1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>_and _not _or</td>
-<td>1&#x3D;&#x3D;1 _and 2&#x3D;&#x3D;2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>&#x3D;</td>
-<td>a&#x3D;1</td>
-</tr>
-</tbody></table>
-<h1 id="控制块"><a href="#控制块" class="headerlink" title="控制块"></a>控制块</h1><h2 id="选择块"><a href="#选择块" class="headerlink" title="选择块"></a>选择块</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_if(&lt;condition&gt;)&#123;true &lt;statements&gt;&#125;&#123;false &lt;statements&gt;&#125;;</span><br><span class="line">_if(1==1)&#123;a=1;&#125;&#123;&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="循环块"><a href="#循环块" class="headerlink" title="循环块"></a>循环块</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_for(&lt;for init&gt;;&lt;condition&gt;;&lt;for update&gt;)&#123;&lt;statements&gt;&#125;;</span><br><span class="line">_for(i=1;i&lt;5;i=i+1)&#123;a=a+i;_break;&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_foreach(&lt;item&gt; _in &lt;array&gt;)&#123;&lt;statements&gt;&#125;;</span><br><span class="line">_foreach(a _in b)&#123;s=s+a;&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_while(&lt;condition&gt;)&#123;&lt;statements&gt;&#125;;</span><br><span class="line">_while(1==1)&#123;a=a+1;_break;&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="break-from-for-or-while"><a href="#break-from-for-or-while" class="headerlink" title="break from _for or _while"></a>break from _for or _while</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_break;</span><br></pre></td></tr></table></figure>
-
-<h1 id="语句块"><a href="#语句块" class="headerlink" title="语句块"></a>语句块</h1><h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_const&#123;</span><br><span class="line">_int a = 2;</span><br><span class="line">_char b = &#x27;2&#x27;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_var&#123;</span><br><span class="line">_int a;</span><br><span class="line">_char b;</span><br><span class="line">_double c,d,e;</span><br><span class="line">_int [] c, [] d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="执行部分"><a href="#执行部分" class="headerlink" title="执行部分"></a>执行部分</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_pro&#123;</span><br><span class="line">&#123;&lt;control block&gt; | &lt;assignment block&gt;&#125;+</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_func _int f&#123;</span><br><span class="line">_const&#123;&#125;;</span><br><span class="line">_para&#123;</span><br><span class="line">_int [] a;</span><br><span class="line">_int b;</span><br><span class="line">_int c;</span><br><span class="line">&#125;</span><br><span class="line">_var&#123;&#125;;</span><br><span class="line">_pro&#123;&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h2><p>f(a,1,2)</p>
-<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_class yourclass&#123;</span><br><span class="line">_papa&#123;fulei&#125;;</span><br><span class="line">_const&#123;&#125;;</span><br><span class="line">_var&#123;&#125;;</span><br><span class="line">(_func &lt;type&gt; &lt;function name&gt;&#123;&#125;;)*</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yourclass a;</span><br><span class="line">yourclass [] a;</span><br></pre></td></tr></table></figure>
-
-<h2 id="调用-1"><a href="#调用-1" class="headerlink" title="调用"></a>调用</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a.f;</span><br><span class="line">a.q();</span><br><span class="line">a.p(1,2,3);</span><br></pre></td></tr></table></figure>
-
-<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#12138</span><br><span class="line"></span><br><span class="line">^#&#123;</span><br><span class="line">块注释</span><br><span class="line">^#&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="空语句"><a href="#空语句" class="headerlink" title="空语句"></a>空语句</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#125;</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="样例程序"><a href="#样例程序" class="headerlink" title="样例程序"></a>样例程序</h1><h2 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">_func _void quickSort&#123;</span><br><span class="line">    _para&#123;</span><br><span class="line">        _int [] s;</span><br><span class="line">        _int l</span><br><span class="line">        _int r;</span><br><span class="line">    &#125;;</span><br><span class="line">    _var&#123;</span><br><span class="line">        _int i;</span><br><span class="line">    &#125;;</span><br><span class="line">    _pro&#123;</span><br><span class="line">        _if (l&lt; r)&#123;</span><br><span class="line">            i = l;</span><br><span class="line">            j = r;</span><br><span class="line">            x = s[l];</span><br><span class="line">            _while (i &lt; j)&#123;</span><br><span class="line">                _while(i &lt; j _and s[j]&gt;= x)&#123;</span><br><span class="line">                    j=j<span class="number">-1</span>;</span><br><span class="line">                &#125;;</span><br><span class="line">                _if(i &lt; j)&#123;</span><br><span class="line">                    s[i] = s[j];</span><br><span class="line">                    i=i+<span class="number">1</span>;</span><br><span class="line">                &#125;&#123;&#125;;</span><br><span class="line">                _while(i &lt; j _and s[i]&lt; x)&#123;</span><br><span class="line">                    i=i+<span class="number">1</span>;</span><br><span class="line">                &#125;;</span><br><span class="line">                _if(i &lt; j)&#123;</span><br><span class="line">                    s[j] = s[i];</span><br><span class="line">                    j=j<span class="number">-1</span>;</span><br><span class="line">                &#125;&#123;&#125;;</span><br><span class="line">            &#125;;</span><br><span class="line">            s[i] = x;</span><br><span class="line">            quickSort(s, l, i - <span class="number">1</span>); </span><br><span class="line">            quickSort(s, i + <span class="number">1</span>, r);</span><br><span class="line">        &#125;&#123;&#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">_main&#123;</span><br><span class="line">    _const&#123;</span><br><span class="line">        _int printi <span class="number">0</span>;<span class="meta">#print int</span></span><br><span class="line">        _int prints <span class="number">1</span>;<span class="meta">#print string</span></span><br><span class="line">    &#125;;</span><br><span class="line">    _var&#123;</span><br><span class="line">        _int [] <span class="built_in">array</span>;</span><br><span class="line">        _int len,k;</span><br><span class="line">    &#125;;</span><br><span class="line">    _pro&#123;</span><br><span class="line">        <span class="built_in">array</span>[]=[<span class="number">34</span>,<span class="number">65</span>,<span class="number">12</span>,<span class="number">43</span>,<span class="number">67</span>,<span class="number">5</span>,<span class="number">78</span>,<span class="number">10</span>,<span class="number">3</span>,<span class="number">70</span>];</span><br><span class="line">        len = <span class="number">10</span>;<span class="meta">#len=sizeof(array)/sizeof(int);</span></span><br><span class="line">        print(prints,<span class="string">&quot;The orginal arrayare:\n&quot;</span>);</span><br><span class="line">        _for(k=<span class="number">0</span>;k&lt;len;k=k+<span class="number">1</span>)&#123;</span><br><span class="line">            print(printi,<span class="built_in">array</span>[k]);</span><br><span class="line">            print(prints,<span class="string">&quot;,&quot;</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">        print(prints,<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">        quickSort(<span class="built_in">array</span>,<span class="number">0</span>,len<span class="number">-1</span>);</span><br><span class="line">        print(prints,<span class="string">&quot;The sorted arrayare:\n&quot;</span>);</span><br><span class="line">        _for(k=<span class="number">0</span>;k&lt;len;k=k+<span class="number">1</span>)&#123;</span><br><span class="line">            print(printi,<span class="built_in">array</span>[k]);</span><br><span class="line">            print(prints,<span class="string">&quot;,&quot;</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">        print(prints,<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>c++</tag>
-        <tag>lang</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Rowhammer.js</title>
     <url>/Blog/15-07-24-Rowhammer.js_A_Remote_Software-Induced_Fault_Attack_in_JavaScript/</url>
     <content><![CDATA[<p><a href="https://arxiv.org/pdf/1507.06955v5.pdf">Rowhammer.js: A Remote Software-Induced Fault Attack in JavaScript</a>阅读整理 </p>
@@ -791,6 +651,146 @@
       </tags>
   </entry>
   <entry>
+    <title>ml_ver2.md</title>
+    <url>/Blog/15-10-15-ml_ver2/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>吐槽</strong></p>
+</blockquote>
+<blockquote>
+<p>竟然不能被jekyll 解析</p>
+</blockquote>
+<blockquote>
+<p>收到邮件说 两个花括号内的不能被解析</p>
+</blockquote>
+<blockquote>
+<p>然后我把所有三层括号换成了1个{</p>
+</blockquote>
+<h1 id="词法"><a href="#词法" class="headerlink" title="词法"></a>词法</h1><h2 id="字符和字符串"><a href="#字符和字符串" class="headerlink" title="字符和字符串"></a>字符和字符串</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;single character&gt; ::= &lt;input character&gt; except &#x27; and \</span><br><span class="line">&lt;character literal&gt; ::= &#x27; &lt;single character&gt; &#x27; | &#x27; &lt;escape sequence&gt; &#x27;</span><br><span class="line">&lt;string character&gt; ::= &lt;input character&gt; except &quot; and \ | &lt;escape character&gt;</span><br><span class="line">&lt;string characters&gt; ::= &lt;string character&gt; | &lt;string characters&gt; &lt;string character&gt;</span><br><span class="line">&lt;string literal&gt; ::= &quot; &lt;string characters&gt;? &quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;sign&gt; ::= &#x27;+&#x27; | &#x27;-&#x27;</span><br><span class="line">&lt;digit&gt; ::= &#x27;0&#x27; | &#x27;1&#x27; | &#x27;2&#x27; | &#x27;3&#x27; | &#x27;4&#x27; | &#x27;5&#x27; | &#x27;6&#x27; | &#x27;7&#x27; | &#x27;8&#x27; | &#x27;9&#x27; </span><br><span class="line">&lt;digits&gt; ::= &lt;digit&gt; &#123; &lt;digit&gt; &#125;</span><br><span class="line">&lt;unsigned integer&gt; ::= &lt;digits&gt;</span><br><span class="line">&lt;unsigned floating point literal&gt; ::= &lt;digits&gt; . &lt;digits&gt;</span><br><span class="line">&lt;unsigned number&gt; = &lt;unsigned integer&gt; | &lt;unsigned floating point literal&gt;</span><br><span class="line">&lt;signed integer&gt; ::= &lt;sign&gt;? &lt;unsigned integer&gt;</span><br><span class="line">&lt;signed floating point literal&gt; = &lt;sign&gt;? &lt;unsigned floating point literal&gt;</span><br><span class="line">&lt;signed number&gt; = &lt;signed integer&gt; | &lt;signed floating point literal&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;null literal&gt; ::= &#x27;_null&#x27;</span><br><span class="line">&lt;boolean literal&gt; ::= &#x27;_true&#x27; | &#x27;_false&#x27;</span><br><span class="line">&lt;word symbol&gt; ::= &#x27;_and&#x27; | &#x27;_or&#x27; | &#x27;_not&#x27; | &#x27;_public&#x27; | &#x27;_const&#x27; | &#x27;_class&#x27; | &#x27;_para&#x27; | &#x27;_var&#x27; | &#x27;_pro&#x27; | &#x27;_while&#x27;| &#x27;_for&#x27; | &#x27;_foreach&#x27; | &#x27;_func&#x27; | &#x27;_if&#x27; | &#x27;_in&#x27; | &#x27;_return&#x27; | &#x27;_beark&#x27; | &#x27;_papa&#x27; | &lt;null literal&gt; | &lt;boolean literal&gt; | &lt;basic type&gt;</span><br><span class="line">&lt;special symbol&gt; = &#x27;+&#x27; | &#x27;-&#x27; | &#x27;*&#x27; | &#x27;/&#x27; | &#x27;\&#x27; | &#x27;%&#x27; | &#x27;=&#x27; | &#x27;&lt;&#x27; | &#x27;&gt;&#x27; | &#x27;&lt;=&#x27; | &#x27;&gt;=&#x27; | &#x27;==&#x27; | &#x27;&lt;&gt;&#x27; | &#x27;(&#x27; | &#x27;)&#x27; | &#x27;[&#x27; | &#x27;]&#x27; | &#x27;&#123;&#x27; | &#x27;&#125;&#x27; | &#x27;.&#x27; | &#x27;,&#x27; | &#x27;;&#x27; | &#x27;&quot;&#x27; | &lt;word symbol&gt;</span><br><span class="line">&lt;letter&gt; = &#x27;a&#x27; | &#x27;b&#x27; | &#x27;c&#x27; | &#x27;d&#x27; | &#x27;e&#x27; | &#x27;f&#x27; | &#x27;g&#x27; | &#x27;h&#x27; | &#x27;i&#x27; | &#x27;j&#x27; | &#x27;k&#x27; | &#x27;l&#x27; | &#x27;m&#x27; | &#x27;n&#x27; | &#x27;o&#x27; | &#x27;p&#x27; | &#x27;q&#x27; | &#x27;r&#x27; | &#x27;s&#x27; | &#x27;t&#x27; | &#x27;u&#x27; | &#x27;v&#x27; | &#x27;w&#x27; | &#x27;x&#x27; | &#x27;y&#x27; | &#x27;z&#x27; | &#x27;A&#x27; | &#x27;B&#x27; | &#x27;C&#x27; | &#x27;D&#x27; | &#x27;E&#x27; | &#x27;F&#x27; | &#x27;G&#x27; | &#x27;H&#x27; | &#x27;I&#x27; | &#x27;J&#x27; | &#x27;K&#x27; | &#x27;L&#x27; | &#x27;M&#x27; | &#x27;N&#x27; | &#x27;O&#x27; | &#x27;P&#x27; | &#x27;Q&#x27; | &#x27;R&#x27; | &#x27;S&#x27; | &#x27;T&#x27; | &#x27;U&#x27; | &#x27;V&#x27; | &#x27;W&#x27; | &#x27;X&#x27; | &#x27;Y&#x27; | &#x27;Z&#x27;</span><br><span class="line">&lt;identifier&gt; = &lt;letter&gt; &#123; &lt;letter&gt; | &lt;digit&gt; &#125;</span><br><span class="line">&lt;directive&gt; = &lt;letter&gt; &#123; &lt;letter&gt; | &lt;digit&gt; &#125;</span><br><span class="line">&lt;user type&gt; ::= &lt;identifier&gt;</span><br><span class="line">&lt;simple type name&gt; ::= &lt;identifier&gt;</span><br><span class="line">&lt;expression name&gt; ::= &lt;identifier&gt; | &lt;ambiguous name&gt; . &lt;identifier&gt;</span><br><span class="line">&lt;method name&gt; ::= &lt;identifier&gt; | &lt;ambiguous name&gt;. &lt;identifier&gt;</span><br><span class="line">&lt;ambiguous name&gt;::= &lt;identifier&gt; | &lt;ambiguous name&gt;. &lt;identifier&gt;</span><br><span class="line">&lt;unsigned literal&gt; ::= &lt;unsigned number&gt; | &lt;boolean literal&gt; | &lt;character literal&gt; | &lt;string literal&gt; | &lt;null literal&gt;</span><br><span class="line">&lt;literal&gt; ::= &lt;signed number&gt; | &lt;boolean literal&gt; | &lt;character literal&gt; | &lt;string literal&gt; | &lt;null literal&gt;</span><br></pre></td></tr></table></figure>
+
+<p>#句法</p>
+<p>##语句</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;symbol&gt; ::= &lt;identifier&gt; | &lt;symbol&gt; ( &#x27;.&#x27;&lt;identifier&gt; | &#x27;[&#x27; &lt;unsigned integer&gt; &#x27;]&#x27;)*</span><br><span class="line">&lt;!-- sign???? --&gt;</span><br><span class="line">&lt;term&gt; ::= &lt;literal&gt; | &lt;symbol&gt; | &lt;term&gt; (&#x27;*&#x27; | &#x27;/&#x27;) &lt;term&gt; | &#x27;(&#x27;&lt;term&gt;&#x27;)&#x27; </span><br><span class="line">&lt;condition&gt; ::= &lt;term&gt; | &lt;condition&gt; (&#x27;+&#x27; | &#x27;-&#x27;) &lt;condition&gt; | &#x27;(&#x27; &lt;condition&gt; &#x27;)&#x27;</span><br><span class="line">&lt;compare&gt; ::= &lt;condition&gt; | &lt;compare&gt; (&#x27;==&#x27; | &#x27;&lt;&gt;&#x27; | &#x27;&gt;&#x27; | &#x27;&lt;&#x27; | &#x27;&gt;=&#x27; | &#x27;&lt;=&#x27; ) &lt;compare&gt; | &#x27;(&#x27; &lt;compare&gt; &#x27;)&#x27;</span><br><span class="line">&lt;expression&gt; ::= &lt;compare&gt; | &#x27;_not&#x27; &lt;expression&gt;  | &lt;expression&gt; (&#x27;_and&#x27; | &#x27;_or&#x27;) &lt;expression&gt; </span><br><span class="line">&lt;left value&gt; = &lt;symbol&gt;</span><br><span class="line">&lt;basic type&gt; ::= &#x27;_void&#x27; | &#x27;_int&#x27; | &#x27;_char&#x27; | &#x27;_double&#x27; | &#x27;_boolean&#x27; </span><br><span class="line">&lt;type&gt; ::= &lt;user type&gt; | &lt;basic type&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="控制"><a href="#控制" class="headerlink" title="控制"></a>控制</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;if statement&gt; ::= &#x27;_if(&#x27; &lt;expression&gt; &#x27;)&#123;&#x27; &lt;statement&gt; &#x27;&#125;&#123;&#x27; &lt;statement&gt; &#x27;&#125;&#x27;</span><br><span class="line">&lt;!-- break --&gt;</span><br><span class="line">&lt;for statement&gt; ::= &#x27;_for (&#x27; &lt;assignment block&gt;? &#x27;;&#x27; &lt;expression&gt;? &#x27;;&#x27; &lt;assignment block&gt;? &#x27;)&#123;&#x27;&lt;statement&gt;&#x27;&#125;&#x27;</span><br><span class="line">&lt;foreach statement&gt; ::= &#x27;_foreach (&#x27; &lt;var name&gt; &#x27;_in&#x27; &lt;array name&gt;&#x27;) &#123;&#x27;&lt;statement&gt;&#x27;&#125;&#x27;</span><br><span class="line">&lt;while statement&gt; ::= &#x27;_while (&#x27; &lt;expression&gt; &#x27;)&#123;&#x27; &lt;statement&gt;&#x27;&#125;&#x27; </span><br></pre></td></tr></table></figure>
+
+<p>##各个执行块</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;judge block&gt; ::= &lt;if statement&gt;</span><br><span class="line">&lt;cycle block&gt; ::= &lt;for statement&gt; | &lt;foreach statement&gt; | &lt;while statement&gt;</span><br><span class="line">&lt;call block&gt; ::= &lt;function name&gt; &#x27;(&#x27; (&lt;expression&gt; &#123; &#x27;,&#x27; &lt;expression&gt; &#125;)? &#x27;)&#x27;</span><br><span class="line">&lt;assignment block&gt; ::= &lt;left value&gt; &#x27;=&#x27; &lt;expression&gt; </span><br></pre></td></tr></table></figure>
+
+<p>##各个语句块</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;var name&gt; ::= &lt;identifier&gt; </span><br><span class="line">&lt;const name&gt; ::= &lt;identifier&gt;</span><br><span class="line">&lt;function name&gt; ::= &lt;identifier&gt;</span><br><span class="line">&lt;class name&gt; ::= &lt;identifier&gt;</span><br><span class="line">&lt;const definition&gt; ::= &lt;basic type&gt; &#x27; &#x27; &lt;const name&gt;  &#x27;=&#x27; &lt;literal&gt; &#x27;;&#x27;</span><br><span class="line">&lt;para definition&gt; ::= &lt;type&gt; &#x27;[]&#x27;? &lt;var name&gt; &#x27;;&#x27;</span><br><span class="line">&lt;var definition&gt; ::= &lt;type&gt; &#x27;[]&#x27;? &lt;var name&gt; &#123; &#x27;,&#x27;  &#x27;[]&#x27;? &lt;var name&gt; &#125; &#x27;;&#x27;</span><br><span class="line">&lt;statement sentence&gt; ::=  &lt;judge block&gt; | &lt;cycle block&gt; | &lt;call block&gt; | &lt;assignment block&gt; &#x27;;&#x27;</span><br><span class="line">&lt;statement&gt; ::=  &lt;statement sentence&gt;+ </span><br></pre></td></tr></table></figure>
+
+<p>##各个模块</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;const block&gt; ::= &#x27;_const&#123;&#x27; &lt;const definition&gt;+ &#x27;&#125;;&#x27;</span><br><span class="line">&lt;para block&gt; ::= &#x27;_para&#123;&#x27; &lt;para definition&gt;+ &#x27;&#125;;&#x27;</span><br><span class="line">&lt;var block&gt; ::= &#x27;_var&#123;&#x27; &lt;var definition&gt;+ &#x27;&#125;;&#x27;</span><br><span class="line">&lt;pro block&gt; ::= &#x27;_pro&#123;&#x27; &lt;statement&gt; &#x27;&#125;;&#x27;</span><br><span class="line">&lt;class block&gt; ::= &#x27;_class &lt;class name&gt;&#123;&#x27;(&#x27;_papa&#123;&#x27;&lt;class name&gt;&#x27;&#125;;&#x27;)? &lt;const block&gt;? &lt;var block&gt;? &lt;function unit&gt;+ &#x27;&#125;;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>##各个单元</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;public unit&gt; ::= &#x27;_public&#123;&#x27; &lt;const block&gt;? &lt;class block&gt;* &lt;var block&gt;? &#x27;&#125;;&#x27;</span><br><span class="line">&lt;function unit&gt; ::= &#x27;_func &lt;type&gt; &lt;function name&gt;&#123;&#x27; &lt;const block&gt;? &lt;para block&gt;? &lt;var block&gt;? &lt;pro block&gt;?&#x27;&#125;;&#x27;</span><br><span class="line">&lt;main unit&gt; ::= &#x27;_main&#123;&#x27;&lt;const block&gt;? &lt;var block&gt;? &lt;pro block&gt;? &#x27;&#125;;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>##最终code</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;compilation unit&gt; ::= &lt;public unit&gt;? &lt;function unit&gt;? &lt;main unit&gt;?</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h1><h2 id="Booleans"><a href="#Booleans" class="headerlink" title="Booleans"></a>Booleans</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_bool bianliang;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_true</span><br><span class="line">_false</span><br></pre></td></tr></table></figure>
+
+<h2 id="Numbers"><a href="#Numbers" class="headerlink" title="Numbers"></a>Numbers</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_int bianliang;</span><br><span class="line">_double bianliang;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">123</span><br><span class="line">-123</span><br><span class="line">12.3</span><br><span class="line">-12.3</span><br></pre></td></tr></table></figure>
+
+<h2 id="Characters"><a href="#Characters" class="headerlink" title="Characters"></a>Characters</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_char bianliang;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;1&#x27;</span><br><span class="line">&#x27;\t&#x27;</span><br><span class="line">&#x27;\&#x27;&#x27;</span><br><span class="line">&#x27;\\&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Strings"><a href="#Strings" class="headerlink" title="Strings"></a>Strings</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_char [] bianliang;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;&quot;</span><br><span class="line">&quot;1&quot;</span><br><span class="line">&quot;123&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Void"><a href="#Void" class="headerlink" title="Void"></a>Void</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_func _void f&#123;</span><br><span class="line">    return ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- ??? --&gt;</span><br><span class="line">if(a == _null)&#123;&#125;&#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="lists"><a href="#lists" class="headerlink" title="lists"></a>lists</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;type&gt; &#x27;[]&#x27; &lt;listname&gt;</span><br><span class="line">_int [] a;</span><br><span class="line">Symbols[&lt;unsigned integer&gt;]</span><br><span class="line">a[2]</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a>Symbols</h1><blockquote>
+<p>start with letter ,including letter and number, Not case sensitive</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bianliang</span><br><span class="line">feifeifeifeichangmeilidejutu12138</span><br></pre></td></tr></table></figure>
+
+<h1 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h1><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>运算符</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>()</td>
+<td>(1+1)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>* &#x2F;</td>
+<td>2*3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>+ -</td>
+<td>2&#x3D;&#x3D;2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&gt; &lt; &gt;&#x3D; &lt;&#x3D; &#x3D;&#x3D; &lt;&gt;</td>
+<td>1+2&#x3D;&#x3D;2+1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>_and _not _or</td>
+<td>1&#x3D;&#x3D;1 _and 2&#x3D;&#x3D;2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&#x3D;</td>
+<td>a&#x3D;1</td>
+</tr>
+</tbody></table>
+<h1 id="控制块"><a href="#控制块" class="headerlink" title="控制块"></a>控制块</h1><h2 id="选择块"><a href="#选择块" class="headerlink" title="选择块"></a>选择块</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_if(&lt;condition&gt;)&#123;true &lt;statements&gt;&#125;&#123;false &lt;statements&gt;&#125;;</span><br><span class="line">_if(1==1)&#123;a=1;&#125;&#123;&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="循环块"><a href="#循环块" class="headerlink" title="循环块"></a>循环块</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_for(&lt;for init&gt;;&lt;condition&gt;;&lt;for update&gt;)&#123;&lt;statements&gt;&#125;;</span><br><span class="line">_for(i=1;i&lt;5;i=i+1)&#123;a=a+i;_break;&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_foreach(&lt;item&gt; _in &lt;array&gt;)&#123;&lt;statements&gt;&#125;;</span><br><span class="line">_foreach(a _in b)&#123;s=s+a;&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_while(&lt;condition&gt;)&#123;&lt;statements&gt;&#125;;</span><br><span class="line">_while(1==1)&#123;a=a+1;_break;&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="break-from-for-or-while"><a href="#break-from-for-or-while" class="headerlink" title="break from _for or _while"></a>break from _for or _while</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_break;</span><br></pre></td></tr></table></figure>
+
+<h1 id="语句块"><a href="#语句块" class="headerlink" title="语句块"></a>语句块</h1><h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_const&#123;</span><br><span class="line">_int a = 2;</span><br><span class="line">_char b = &#x27;2&#x27;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_var&#123;</span><br><span class="line">_int a;</span><br><span class="line">_char b;</span><br><span class="line">_double c,d,e;</span><br><span class="line">_int [] c, [] d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="执行部分"><a href="#执行部分" class="headerlink" title="执行部分"></a>执行部分</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_pro&#123;</span><br><span class="line">&#123;&lt;control block&gt; | &lt;assignment block&gt;&#125;+</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_func _int f&#123;</span><br><span class="line">_const&#123;&#125;;</span><br><span class="line">_para&#123;</span><br><span class="line">_int [] a;</span><br><span class="line">_int b;</span><br><span class="line">_int c;</span><br><span class="line">&#125;</span><br><span class="line">_var&#123;&#125;;</span><br><span class="line">_pro&#123;&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h2><p>f(a,1,2)</p>
+<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_class yourclass&#123;</span><br><span class="line">_papa&#123;fulei&#125;;</span><br><span class="line">_const&#123;&#125;;</span><br><span class="line">_var&#123;&#125;;</span><br><span class="line">(_func &lt;type&gt; &lt;function name&gt;&#123;&#125;;)*</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yourclass a;</span><br><span class="line">yourclass [] a;</span><br></pre></td></tr></table></figure>
+
+<h2 id="调用-1"><a href="#调用-1" class="headerlink" title="调用"></a>调用</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a.f;</span><br><span class="line">a.q();</span><br><span class="line">a.p(1,2,3);</span><br></pre></td></tr></table></figure>
+
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#12138</span><br><span class="line"></span><br><span class="line">^#&#123;</span><br><span class="line">块注释</span><br><span class="line">^#&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="空语句"><a href="#空语句" class="headerlink" title="空语句"></a>空语句</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#125;</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="样例程序"><a href="#样例程序" class="headerlink" title="样例程序"></a>样例程序</h1><h2 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">_func _void quickSort&#123;</span><br><span class="line">    _para&#123;</span><br><span class="line">        _int [] s;</span><br><span class="line">        _int l</span><br><span class="line">        _int r;</span><br><span class="line">    &#125;;</span><br><span class="line">    _var&#123;</span><br><span class="line">        _int i;</span><br><span class="line">    &#125;;</span><br><span class="line">    _pro&#123;</span><br><span class="line">        _if (l&lt; r)&#123;</span><br><span class="line">            i = l;</span><br><span class="line">            j = r;</span><br><span class="line">            x = s[l];</span><br><span class="line">            _while (i &lt; j)&#123;</span><br><span class="line">                _while(i &lt; j _and s[j]&gt;= x)&#123;</span><br><span class="line">                    j=j<span class="number">-1</span>;</span><br><span class="line">                &#125;;</span><br><span class="line">                _if(i &lt; j)&#123;</span><br><span class="line">                    s[i] = s[j];</span><br><span class="line">                    i=i+<span class="number">1</span>;</span><br><span class="line">                &#125;&#123;&#125;;</span><br><span class="line">                _while(i &lt; j _and s[i]&lt; x)&#123;</span><br><span class="line">                    i=i+<span class="number">1</span>;</span><br><span class="line">                &#125;;</span><br><span class="line">                _if(i &lt; j)&#123;</span><br><span class="line">                    s[j] = s[i];</span><br><span class="line">                    j=j<span class="number">-1</span>;</span><br><span class="line">                &#125;&#123;&#125;;</span><br><span class="line">            &#125;;</span><br><span class="line">            s[i] = x;</span><br><span class="line">            quickSort(s, l, i - <span class="number">1</span>); </span><br><span class="line">            quickSort(s, i + <span class="number">1</span>, r);</span><br><span class="line">        &#125;&#123;&#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">_main&#123;</span><br><span class="line">    _const&#123;</span><br><span class="line">        _int printi <span class="number">0</span>;<span class="meta">#print int</span></span><br><span class="line">        _int prints <span class="number">1</span>;<span class="meta">#print string</span></span><br><span class="line">    &#125;;</span><br><span class="line">    _var&#123;</span><br><span class="line">        _int [] <span class="built_in">array</span>;</span><br><span class="line">        _int len,k;</span><br><span class="line">    &#125;;</span><br><span class="line">    _pro&#123;</span><br><span class="line">        <span class="built_in">array</span>[]=[<span class="number">34</span>,<span class="number">65</span>,<span class="number">12</span>,<span class="number">43</span>,<span class="number">67</span>,<span class="number">5</span>,<span class="number">78</span>,<span class="number">10</span>,<span class="number">3</span>,<span class="number">70</span>];</span><br><span class="line">        len = <span class="number">10</span>;<span class="meta">#len=sizeof(array)/sizeof(int);</span></span><br><span class="line">        print(prints,<span class="string">&quot;The orginal arrayare:\n&quot;</span>);</span><br><span class="line">        _for(k=<span class="number">0</span>;k&lt;len;k=k+<span class="number">1</span>)&#123;</span><br><span class="line">            print(printi,<span class="built_in">array</span>[k]);</span><br><span class="line">            print(prints,<span class="string">&quot;,&quot;</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">        print(prints,<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">        quickSort(<span class="built_in">array</span>,<span class="number">0</span>,len<span class="number">-1</span>);</span><br><span class="line">        print(prints,<span class="string">&quot;The sorted arrayare:\n&quot;</span>);</span><br><span class="line">        _for(k=<span class="number">0</span>;k&lt;len;k=k+<span class="number">1</span>)&#123;</span><br><span class="line">            print(printi,<span class="built_in">array</span>[k]);</span><br><span class="line">            print(prints,<span class="string">&quot;,&quot;</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">        print(prints,<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+        <tag>lang</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>sjx分布式 查询</title>
     <url>/Blog/16-01-01-sjx-rdf/</url>
     <content><![CDATA[<p>施佳鑫 orz</p>
@@ -876,68 +876,6 @@
       <tags>
         <tag>sparql</tag>
         <tag>rdf</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Trinity RDF</title>
-    <url>/Blog/16-01-03-trinity.rdf/</url>
-    <content><![CDATA[<p>dgraph engine for web scale rdf data</p>
-<h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><p>  现有的对于网络范围的RDF数据现有依然不是高效的,内部存储不用bitmap,other operations,</p>
-<h1 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h1><p>挑战:可扩展性(急切)和普遍性,需要分布式,现有依然三元组,join巨大中间结果,过大的开销 通常指数级 ,现有不支持更有意义的查询 仅仅对SPARQL优化</p>
-<p>作者的成就:分布式,处理billion even trillion triples ,不用 relational tables and bitmap matrices,build on top of a memory cloud,首先说 随机访问的情况下 用硬盘储存三元组不够优良 ,就算有好的索引也会因为额外的join操作,作为主要的查询中 耗时,in-memory graph exploration instead of join operations for SPARQL processing ,作为对比 之前的系统 孤立使用自己划分的三元组 没有用已有的 造成了很大的中间额外开销,介绍如何降低join 数量 如何降低中间过程的大小,并且就算没有足够好的划分 也有优秀的性能,我们允许大范围的图分析</p>
-<ol>
-<li>新的基于图表的管理RDF数据 ,有对于RDf 高效基于图查询 和 图分析 的可能性</li>
-<li>新的查询规范(相对于SPARQL)有效的提高性能 减少总监结果 和提高系统可扩展性</li>
-<li>新的价值模型 新的基数估计基数 分布式查询生成的优化算法 ,这些成果提供 在web 范围 RDF数据上 出色的性能</li>
-</ol>
-<p>Section 2  join操作 和 图探索 的区别. Section 3 Trinity.RDF 系统的架构. Section 4 how we model RDF data as native graphs. Section 5 describes SPARQL query processing techniques. Section 6 shows experimental results. We conclude in Section 8.</p>
-<h1 id="Join-vs-Graph-Exploration"><a href="#Join-vs-Graph-Exploration" class="headerlink" title="Join vs. Graph Exploration"></a>Join vs. Graph Exploration</h1><p>RDF and SPARQL 的介绍 和 缺点(join 耗费高 中间无用结果大)</p>
-<p>图探索 介绍方法 并说需要更高效的储存方式来适应这种方法 用native graph 会把原来的每次 读入O(log N)的时间复杂度降低为O(1) 需要搜索的顺序优化来 </p>
-<h1 id="System-Architecture"><a href="#System-Architecture" class="headerlink" title="System Architecture"></a>System Architecture</h1><p>就是图储存,并且完全存在内存里 (因为是分布式的所以才可以储存这么多)</p>
-<p>架构client,proxy,string server,trinity machine [看来陈榕老师就是按照这样的思路改的代码</p>
-<h1 id="Data-Modeling"><a href="#Data-Modeling" class="headerlink" title="Data Modeling"></a>Data Modeling</h1><p>(node-id, in-adjacency-list, out-adjacency-listi)</p>
-<p>讲图分割问题 对于自然图 用大度的点 连接点来决定放置未知 以及使用 in out<strong>间接id</strong>  可以有效减少发送数据交流量</p>
-<p>但是对于邻点少的来说用另一种方法更好 同一个点的in和out放在同一个机器上的方法</p>
-<p>还用了</p>
-<ul>
-<li>本地 谓词索引 sort all (predicate, node-id )</li>
-<li>全局的 谓词索引 (predicate, hsubject-list i , object-list i i)</li>
-</ul>
-<p>提供基本图操作</p>
-<ol>
-<li>LoadNodes(predicate, direction): Return nodes that have an incoming or outgoing edge labeled as predicate. 使用全局谓词索引</li>
-<li>LoadNeighborsOnMachine(node, direction, machine i): For a given node, return its incoming or outgoing neighbors that reside on machine i. 返回的是上面的间接id</li>
-<li>SelectByPredicate(nid, predicate): From a given partial adjacency list specified by nid, return nodes that are labeled with the given predicate.<br>Figure 4.<br>LoadNodes(l2 , out) finds n2 on machine 1, and n3 on machine 2. LoadNeighborsOnMachine(n0 , in, 1) returns the partial adjacency list’s id in1 , and SelectByP redicate(in1 , l2 ) returns n2 .</li>
-</ol>
-<h1 id="Query-Processing"><a href="#Query-Processing" class="headerlink" title="Query Processing"></a>Query Processing</h1><p>先把 查询Q拆分为 q1 q2 q3…qn，然后让它们并行寻找 再最后再和并</p>
-<h2 id="单个q的匹配方式"><a href="#单个q的匹配方式" class="headerlink" title="单个q的匹配方式"></a>单个q的匹配方式</h2><p>For a triple pattern q, our goal is to find all its matches R(q). Let P de[notes] the predicate in q, V denote the variables in q, and B(V ) denote the binding of V . If V is a free variable (not bound), we also use B(V ) to denote all possible values V can take.</p>
-<p>从 S 去找 O ,写作q→</p>
-<p>从 O 去找 S ,写作q←</p>
-<p>分为两个阶段</p>
-<p>src</p>
-<p>用LoadNodes(本机)找到基于 所有可能predicate 的所有可能的src </p>
-<p>对于所有可能src  在所有机器LoadNeighborsOnMachine(有远端操作)找<code>nid_i</code> 把结果M再发给所有机器</p>
-<p>tgt</p>
-<p>对于收到的结果M 的每一个(src,nid)</p>
-<p>找所有的可能的predicate</p>
-<p>用 SelectByPredicate(本机) 交 所有可能的tgt 得到R</p>
-<p>方案是 合并相邻 的操作来减少中间过程的损耗</p>
-<p>然后讲优化 也就是顺序优化</p>
-<p>注意到用了合并以后 前面j个操作 只要集合相同 那么结果与前面j个的内部顺序无关</p>
-<p>我们使用 启发式算法</p>
-<p>Heuristic 1. We expand a subgraph from its exploration point. We combine two subgraphs by connecting their exploration points.</p>
-<p>Property 1. We expand a subgraph or combine two subgraphs through an edge. The two nodes on both ends of the edge are valid exploration points in the new graph.</p>
-<p>Theorem 1. For a query graph G(V, E), the DP has time complexity O(n·|V |·|E|) where n is the number of connected subgraphs in G.</p>
-<p>Theorem 2. Any acyclic query Q with query graph G is guaranteed to have an exploration plan.</p>
-<p>Discussion. There are two cases we have not considered formally: i) G is cyclic, and ii) G contains a join on predicates.</p>
-]]></content>
-      <categories>
-        <category>backend</category>
-        <category>rdf</category>
-      </categories>
-      <tags>
-        <tag>rdf</tag>
-        <tag>graph</tag>
       </tags>
   </entry>
   <entry>
@@ -1113,6 +1051,68 @@
       <tags>
         <tag>rdf</tag>
         <tag>document</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Trinity RDF</title>
+    <url>/Blog/16-01-03-trinity.rdf/</url>
+    <content><![CDATA[<p>dgraph engine for web scale rdf data</p>
+<h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><p>  现有的对于网络范围的RDF数据现有依然不是高效的,内部存储不用bitmap,other operations,</p>
+<h1 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h1><p>挑战:可扩展性(急切)和普遍性,需要分布式,现有依然三元组,join巨大中间结果,过大的开销 通常指数级 ,现有不支持更有意义的查询 仅仅对SPARQL优化</p>
+<p>作者的成就:分布式,处理billion even trillion triples ,不用 relational tables and bitmap matrices,build on top of a memory cloud,首先说 随机访问的情况下 用硬盘储存三元组不够优良 ,就算有好的索引也会因为额外的join操作,作为主要的查询中 耗时,in-memory graph exploration instead of join operations for SPARQL processing ,作为对比 之前的系统 孤立使用自己划分的三元组 没有用已有的 造成了很大的中间额外开销,介绍如何降低join 数量 如何降低中间过程的大小,并且就算没有足够好的划分 也有优秀的性能,我们允许大范围的图分析</p>
+<ol>
+<li>新的基于图表的管理RDF数据 ,有对于RDf 高效基于图查询 和 图分析 的可能性</li>
+<li>新的查询规范(相对于SPARQL)有效的提高性能 减少总监结果 和提高系统可扩展性</li>
+<li>新的价值模型 新的基数估计基数 分布式查询生成的优化算法 ,这些成果提供 在web 范围 RDF数据上 出色的性能</li>
+</ol>
+<p>Section 2  join操作 和 图探索 的区别. Section 3 Trinity.RDF 系统的架构. Section 4 how we model RDF data as native graphs. Section 5 describes SPARQL query processing techniques. Section 6 shows experimental results. We conclude in Section 8.</p>
+<h1 id="Join-vs-Graph-Exploration"><a href="#Join-vs-Graph-Exploration" class="headerlink" title="Join vs. Graph Exploration"></a>Join vs. Graph Exploration</h1><p>RDF and SPARQL 的介绍 和 缺点(join 耗费高 中间无用结果大)</p>
+<p>图探索 介绍方法 并说需要更高效的储存方式来适应这种方法 用native graph 会把原来的每次 读入O(log N)的时间复杂度降低为O(1) 需要搜索的顺序优化来 </p>
+<h1 id="System-Architecture"><a href="#System-Architecture" class="headerlink" title="System Architecture"></a>System Architecture</h1><p>就是图储存,并且完全存在内存里 (因为是分布式的所以才可以储存这么多)</p>
+<p>架构client,proxy,string server,trinity machine [看来陈榕老师就是按照这样的思路改的代码</p>
+<h1 id="Data-Modeling"><a href="#Data-Modeling" class="headerlink" title="Data Modeling"></a>Data Modeling</h1><p>(node-id, in-adjacency-list, out-adjacency-listi)</p>
+<p>讲图分割问题 对于自然图 用大度的点 连接点来决定放置未知 以及使用 in out<strong>间接id</strong>  可以有效减少发送数据交流量</p>
+<p>但是对于邻点少的来说用另一种方法更好 同一个点的in和out放在同一个机器上的方法</p>
+<p>还用了</p>
+<ul>
+<li>本地 谓词索引 sort all (predicate, node-id )</li>
+<li>全局的 谓词索引 (predicate, hsubject-list i , object-list i i)</li>
+</ul>
+<p>提供基本图操作</p>
+<ol>
+<li>LoadNodes(predicate, direction): Return nodes that have an incoming or outgoing edge labeled as predicate. 使用全局谓词索引</li>
+<li>LoadNeighborsOnMachine(node, direction, machine i): For a given node, return its incoming or outgoing neighbors that reside on machine i. 返回的是上面的间接id</li>
+<li>SelectByPredicate(nid, predicate): From a given partial adjacency list specified by nid, return nodes that are labeled with the given predicate.<br>Figure 4.<br>LoadNodes(l2 , out) finds n2 on machine 1, and n3 on machine 2. LoadNeighborsOnMachine(n0 , in, 1) returns the partial adjacency list’s id in1 , and SelectByP redicate(in1 , l2 ) returns n2 .</li>
+</ol>
+<h1 id="Query-Processing"><a href="#Query-Processing" class="headerlink" title="Query Processing"></a>Query Processing</h1><p>先把 查询Q拆分为 q1 q2 q3…qn，然后让它们并行寻找 再最后再和并</p>
+<h2 id="单个q的匹配方式"><a href="#单个q的匹配方式" class="headerlink" title="单个q的匹配方式"></a>单个q的匹配方式</h2><p>For a triple pattern q, our goal is to find all its matches R(q). Let P de[notes] the predicate in q, V denote the variables in q, and B(V ) denote the binding of V . If V is a free variable (not bound), we also use B(V ) to denote all possible values V can take.</p>
+<p>从 S 去找 O ,写作q→</p>
+<p>从 O 去找 S ,写作q←</p>
+<p>分为两个阶段</p>
+<p>src</p>
+<p>用LoadNodes(本机)找到基于 所有可能predicate 的所有可能的src </p>
+<p>对于所有可能src  在所有机器LoadNeighborsOnMachine(有远端操作)找<code>nid_i</code> 把结果M再发给所有机器</p>
+<p>tgt</p>
+<p>对于收到的结果M 的每一个(src,nid)</p>
+<p>找所有的可能的predicate</p>
+<p>用 SelectByPredicate(本机) 交 所有可能的tgt 得到R</p>
+<p>方案是 合并相邻 的操作来减少中间过程的损耗</p>
+<p>然后讲优化 也就是顺序优化</p>
+<p>注意到用了合并以后 前面j个操作 只要集合相同 那么结果与前面j个的内部顺序无关</p>
+<p>我们使用 启发式算法</p>
+<p>Heuristic 1. We expand a subgraph from its exploration point. We combine two subgraphs by connecting their exploration points.</p>
+<p>Property 1. We expand a subgraph or combine two subgraphs through an edge. The two nodes on both ends of the edge are valid exploration points in the new graph.</p>
+<p>Theorem 1. For a query graph G(V, E), the DP has time complexity O(n·|V |·|E|) where n is the number of connected subgraphs in G.</p>
+<p>Theorem 2. Any acyclic query Q with query graph G is guaranteed to have an exploration plan.</p>
+<p>Discussion. There are two cases we have not considered formally: i) G is cyclic, and ii) G contains a join on predicates.</p>
+]]></content>
+      <categories>
+        <category>backend</category>
+        <category>rdf</category>
+      </categories>
+      <tags>
+        <tag>rdf</tag>
+        <tag>graph</tag>
       </tags>
   </entry>
   <entry>
@@ -2042,26 +2042,6 @@
       </tags>
   </entry>
   <entry>
-    <title>3Blue1Brown</title>
-    <url>/Blog/17-06-20-bilibilimath88461692/</url>
-    <content><![CDATA[<p><a href="http://space.bilibili.com/88461692#!/video">page</a></p>
-<p>从头刷到了从欧拉公式到初等群论了，&#x3D;。&#x3D;做点基于个人知识的笔记。</p>
-<p><strong>如果有大佬会，求大佬解答。</strong></p>
-<p><code>音乐与测度论有什么关系？</code>和<code>希尔伯特曲线：无限数学怎样应用于有限世界</code>中不是很理解的是：既然有理数的测度为0，那么为什么通过曲线覆盖空间。不过一维到二维的映射让我首次认识到这类曲线的一种用途。Orz</p>
-<p><a href="http://octave-online.net/">octave-online</a></p>
-<p>线代视屏收货蛮多的，主要在基变换的部分，但和ssj大佬用式子分析下来，虽然看上去是图像理解，可以说更多的还是让过程更复杂了。其中视频中没有讲在一起的有矩阵乘法的意义。以及我认为它把<code>[0 -1 ; 1 0]</code>称作旋转90°并不完全科学</p>
-<p>例如<code>[A]*[B]</code>矩阵AB相乘</p>
-<p>从右向左看，首先对原坐标系的基做B的变换，再做A的变换 其变换的视角是基于标准坐标系的，例如<code>[0 -1 ; 1 0]*[1 1 ; 0 1]</code></p>
-<p>先看<code>[1 1 ; 0 1]</code>是把 原来的基变为newx &#x3D; oldx,newy&#x3D;oldx+oldy,而左边的矩阵为视频中的逆时针转90°，这里都是基于 标准坐标系。</p>
-<p>从左向右看 首先newx&#x3D;oldy，newy&#x3D;-oldx，然后<code>[1 1 ; 0 1]</code>需要将视角转过来以新的基的视角进行<code>[1 1;0 1]</code>的变换，如果按照原坐标系进行变换得到的是<code>[1 -1; 1 0]</code></p>
-<p>第一次从图像上看到特征值和特征向量，抽象向量空间也是感觉棒棒哒。</p>
-<p>然后是群论没有看懂的是如何从加法群到乘法群就有了2^x的群，中间的乘法到幂的过度没理解。</p>
-]]></content>
-      <categories>
-        <category>math</category>
-      </categories>
-  </entry>
-  <entry>
     <title>emacs 笔记</title>
     <url>/Blog/17-05-16-learnemacs/</url>
     <content><![CDATA[<p>突然无聊 学学emacs [该记录用vim编写]</p>
@@ -2108,6 +2088,26 @@
         <tag>ide</tag>
         <tag>emacs</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>3Blue1Brown</title>
+    <url>/Blog/17-06-20-bilibilimath88461692/</url>
+    <content><![CDATA[<p><a href="http://space.bilibili.com/88461692#!/video">page</a></p>
+<p>从头刷到了从欧拉公式到初等群论了，&#x3D;。&#x3D;做点基于个人知识的笔记。</p>
+<p><strong>如果有大佬会，求大佬解答。</strong></p>
+<p><code>音乐与测度论有什么关系？</code>和<code>希尔伯特曲线：无限数学怎样应用于有限世界</code>中不是很理解的是：既然有理数的测度为0，那么为什么通过曲线覆盖空间。不过一维到二维的映射让我首次认识到这类曲线的一种用途。Orz</p>
+<p><a href="http://octave-online.net/">octave-online</a></p>
+<p>线代视屏收货蛮多的，主要在基变换的部分，但和ssj大佬用式子分析下来，虽然看上去是图像理解，可以说更多的还是让过程更复杂了。其中视频中没有讲在一起的有矩阵乘法的意义。以及我认为它把<code>[0 -1 ; 1 0]</code>称作旋转90°并不完全科学</p>
+<p>例如<code>[A]*[B]</code>矩阵AB相乘</p>
+<p>从右向左看，首先对原坐标系的基做B的变换，再做A的变换 其变换的视角是基于标准坐标系的，例如<code>[0 -1 ; 1 0]*[1 1 ; 0 1]</code></p>
+<p>先看<code>[1 1 ; 0 1]</code>是把 原来的基变为newx &#x3D; oldx,newy&#x3D;oldx+oldy,而左边的矩阵为视频中的逆时针转90°，这里都是基于 标准坐标系。</p>
+<p>从左向右看 首先newx&#x3D;oldy，newy&#x3D;-oldx，然后<code>[1 1 ; 0 1]</code>需要将视角转过来以新的基的视角进行<code>[1 1;0 1]</code>的变换，如果按照原坐标系进行变换得到的是<code>[1 -1; 1 0]</code></p>
+<p>第一次从图像上看到特征值和特征向量，抽象向量空间也是感觉棒棒哒。</p>
+<p>然后是群论没有看懂的是如何从加法群到乘法群就有了2^x的群，中间的乘法到幂的过度没理解。</p>
+]]></content>
+      <categories>
+        <category>math</category>
+      </categories>
   </entry>
   <entry>
     <title>编程之美个人整理</title>
@@ -2328,111 +2328,6 @@
       </tags>
   </entry>
   <entry>
-    <title>离散数学教程四川大学出版个人整理</title>
-    <url>/Blog/17-06-22-Discrete-Mathematics-Tutorial-scu/</url>
-    <content><![CDATA[<h1 id="总评"><a href="#总评" class="headerlink" title="总评"></a>总评</h1><p>整理开始日期:2017-06-21</p>
-<p>整理结束日期:2017-06-22</p>
-<h2 id="第1章-命题逻辑"><a href="#第1章-命题逻辑" class="headerlink" title="第1章 命题逻辑"></a>第1章 命题逻辑</h2><p>~ 否定命题</p>
-<p>∧  合取命题 and</p>
-<p>∨  析取命题 or</p>
-<p>→  条件命题</p>
-<p>P→ Q &#x3D; ~P∨ Q</p>
-<p>P↑ Q &#x3D; ~(P∧ Q)</p>
-<p>P↓ Q &#x3D; ~(P∨ Q)</p>
-<p>T 永真式 重言式 可满足公式</p>
-<p>F 不可满足公式</p>
-<p>不同取值让不同命题有相同结果 则 命题等价</p>
-<p>子公式等价替换后保持等价A(A1)&#x3D;A(A2) 如果A1&#x3D;A2</p>
-<p>可互推则双条件命题为永真</p>
-<p><code>A*</code>与 A处处真值表为反为A的对偶式</p>
-<p>$A\cup B&#x3D;{x\in A\bigvee x\in B}$</p>
-<p>析取 子句</p>
-<p>合取 合取范式</p>
-<p>凡不是永真的，命题公式都存在与之等价的主合取范式</p>
-<p>CP规则</p>
-<p>右箭头上加c表示推的否定</p>
-<h2 id="第2章-一阶谓词逻辑"><a href="#第2章-一阶谓词逻辑" class="headerlink" title="第2章 一阶谓词逻辑"></a>第2章 一阶谓词逻辑</h2><p>A是人 PEOPLE(A)</p>
-<p>x大于y GREATER-THAN(x,y)</p>
-<p>∀ 任意</p>
-<p>∃ 存在</p>
-<p><del>(∀ x)P(x) &#x3D; (∃ x)[</del>P(x)]</p>
-<p><del>(∃ x)P(x) &#x3D; (∀ x)[</del>P(x)]</p>
-<p>Skolem 将合取范式的所有存在用函数与任意进行替换(∀ x)(∀ y)(∃ z)P(z) &#x3D; (∀ x)(∀ y)P(f(x,y))</p>
-<p>∃ x ∀ y →  ∀ y ∃ x</p>
-<h2 id="第3章-集合及其运算"><a href="#第3章-集合及其运算" class="headerlink" title="第3章 集合及其运算"></a>第3章 集合及其运算</h2><p>$A\cup B&#x3D;{x\in A\bigvee x\in B}$</p>
-<p>$A\cap B&#x3D;{x\in A\bigwedge x\in B}$</p>
-<p>$A\bigoplus B&#x3D;{x\in A - B\bigvee x\in B - A}$</p>
-<p>2^A&#x3D;{ X | X \subseteq A}$</p>
-<p>运算$\times$为集合的直径 不满足交换律 结合律</p>
-<p>形式语言</p>
-<h2 id="第4章-初等数论和证明方法"><a href="#第4章-初等数论和证明方法" class="headerlink" title="第4章 初等数论和证明方法"></a>第4章 初等数论和证明方法</h2><p>n&#x3D;d×k -&gt; d | n</p>
-<p>最大公因子gcd，最小公倍数lcm</p>
-<p>数学归纳法</p>
-<h2 id="第5章-二元关系"><a href="#第5章-二元关系" class="headerlink" title="第5章 二元关系"></a>第5章 二元关系</h2><p>R 关系 {(A的元素,B的元素)} 也可以画成矩阵表示</p>
-<p>性质(自反 对称 可传递)对应的现象({(x,x)} {(x,y)(y,x)} {(x,y) (y,z) (x,z)})</p>
-<p>关系的运算 $\cup \cap \bigoplus$</p>
-<p>同时有 自反 对称 可传递 为等价关系</p>
-<p>同时有 自反 反对称 传递 为偏序关系 如整除，有最小值的偏序集为良序</p>
-<h2 id="第6章-函数"><a href="#第6章-函数" class="headerlink" title="第6章 函数"></a>第6章 函数</h2><p>f: X→ Y</p>
-<p>单射、满射、双射</p>
-<p>$\pi_1\circ \pi_2 &#x3D; \pi_1(\pi_2())$</p>
-<p>循环的积</p>
-<p>与自然数集N等势的为可数集</p>
-<p>集合的基数card()</p>
-<p>阿列夫 &#x3D;。&#x3D;</p>
-<p>f(x)&#x3D;O(g(x))不能写成O(g(x))&#x3D;f(x) 表示f(x)的上界,f(x) &lt;&#x3D;M |g(x)|</p>
-<h2 id="第7章-基本计数方法"><a href="#第7章-基本计数方法" class="headerlink" title="第7章 基本计数方法"></a>第7章 基本计数方法</h2><p>排列计数，组合计数</p>
-<p>圆排列！！</p>
-<p>组合恒等式!!!</p>
-<p>容斥原理</p>
-<p>抽屉原理&#x2F;鸽巢原理</p>
-<h2 id="第8章-生成函数和递推关系"><a href="#第8章-生成函数和递推关系" class="headerlink" title="第8章 生成函数和递推关系"></a>第8章 生成函数和递推关系</h2><p>定义 生成函数!!!!!!!!!!!!! (排列的生成函数 组合的生成函数)</p>
-<p>递推关系及其解 差分方程</p>
-<p>递推关系和生成函数 6666666</p>
-<h2 id="第9章-无向图和有向图"><a href="#第9章-无向图和有向图" class="headerlink" title="第9章 无向图和有向图"></a>第9章 无向图和有向图</h2><p>V为节点 E为边 度 sum(每个点度)&#x3D;2倍边数</p>
-<p>G(V,E)</p>
-<p>定义…</p>
-<p>图的矩阵表示</p>
-<p>独立集 点团 极图，布尔表达式 析取范式，诱导子图？？</p>
-<p>图的着色？？</p>
-<h2 id="第10章-基本图类和算法"><a href="#第10章-基本图类和算法" class="headerlink" title="第10章 基本图类和算法"></a>第10章 基本图类和算法</h2><p>树与生成树</p>
-<p>每个连通图都含有生成树，图的任何割集至少与树有一个公共边，图的圈至少与树有一个公共边</p>
-<p>如果有向图G的图是树，则称G为有向树</p>
-<p>平面图(画为平面图可以让连线没有额外焦点)和对偶图</p>
-<p>面数为f的连通平面图G(n,m) 有n-m+f&#x3D;2</p>
-<p>阶数大于2的(n,m)连通平面图 m&lt;&#x3D;3n-6,至少存在一个度不超过5的结点</p>
-<p>Kuratowski 定理</p>
-<p>欧拉图及其应用</p>
-<p>哈密顿图及其应用</p>
-<p>图的匹配与匈牙利算法</p>
-<p>网络无环又有向权图</p>
-<h2 id="第11章-群和环"><a href="#第11章-群和环" class="headerlink" title="第11章 群和环"></a>第11章 群和环</h2><p>群 环 域 格 和 布尔代数是典型的系统</p>
-<p>运算与代数系统</p>
-<p>集合的二元运算 封闭的 可交换的 可结合的 可分配的 吸收率</p>
-<p>常见的代数系统 $&lt;Z,+&gt;$,$&lt;Q,+,*&gt;$</p>
-<p>封闭 广群</p>
-<p>广群+可结合 半群</p>
-<p>群 和 子群</p>
-<p>群&#x3D;有逆元的含幺半群 </p>
-<p>群的运算满足交换律则为交换群&#x2F;Abel群 充要条件 $a,b \in G, (a\cdot b)^2&#x3D;a^2\cdot b^2$</p>
-<p>陪集与拉格朗日定理</p>
-<p>同态与同构</p>
-<p>环和域</p>
-<p>群码</p>
-<h2 id="第12章-格与布尔代数"><a href="#第12章-格与布尔代数" class="headerlink" title="第12章 格与布尔代数"></a>第12章 格与布尔代数</h2><p>格 交换 结合 吸收</p>
-<p>格的性质和同态，逆关系 互为 对偶 </p>
-<p>分配格和有补格</p>
-<p>格+分配+有界+有补 &#x3D; 布尔格</p>
-]]></content>
-      <categories>
-        <category>notes</category>
-        <category>book</category>
-      </categories>
-      <tags>
-        <tag>algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>自然哲学的数学原理个人整理(Give up)</title>
     <url>/Blog/17-06-22-Mathematical_Principles_of_natural_Philosophy/</url>
     <content><![CDATA[<h1 id="总评"><a href="#总评" class="headerlink" title="总评"></a>总评</h1><p>整理开始日期:2017-06-22</p>
@@ -2571,6 +2466,111 @@
       </categories>
       <tags>
         <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>离散数学教程四川大学出版个人整理</title>
+    <url>/Blog/17-06-22-Discrete-Mathematics-Tutorial-scu/</url>
+    <content><![CDATA[<h1 id="总评"><a href="#总评" class="headerlink" title="总评"></a>总评</h1><p>整理开始日期:2017-06-21</p>
+<p>整理结束日期:2017-06-22</p>
+<h2 id="第1章-命题逻辑"><a href="#第1章-命题逻辑" class="headerlink" title="第1章 命题逻辑"></a>第1章 命题逻辑</h2><p>~ 否定命题</p>
+<p>∧  合取命题 and</p>
+<p>∨  析取命题 or</p>
+<p>→  条件命题</p>
+<p>P→ Q &#x3D; ~P∨ Q</p>
+<p>P↑ Q &#x3D; ~(P∧ Q)</p>
+<p>P↓ Q &#x3D; ~(P∨ Q)</p>
+<p>T 永真式 重言式 可满足公式</p>
+<p>F 不可满足公式</p>
+<p>不同取值让不同命题有相同结果 则 命题等价</p>
+<p>子公式等价替换后保持等价A(A1)&#x3D;A(A2) 如果A1&#x3D;A2</p>
+<p>可互推则双条件命题为永真</p>
+<p><code>A*</code>与 A处处真值表为反为A的对偶式</p>
+<p>$A\cup B&#x3D;{x\in A\bigvee x\in B}$</p>
+<p>析取 子句</p>
+<p>合取 合取范式</p>
+<p>凡不是永真的，命题公式都存在与之等价的主合取范式</p>
+<p>CP规则</p>
+<p>右箭头上加c表示推的否定</p>
+<h2 id="第2章-一阶谓词逻辑"><a href="#第2章-一阶谓词逻辑" class="headerlink" title="第2章 一阶谓词逻辑"></a>第2章 一阶谓词逻辑</h2><p>A是人 PEOPLE(A)</p>
+<p>x大于y GREATER-THAN(x,y)</p>
+<p>∀ 任意</p>
+<p>∃ 存在</p>
+<p><del>(∀ x)P(x) &#x3D; (∃ x)[</del>P(x)]</p>
+<p><del>(∃ x)P(x) &#x3D; (∀ x)[</del>P(x)]</p>
+<p>Skolem 将合取范式的所有存在用函数与任意进行替换(∀ x)(∀ y)(∃ z)P(z) &#x3D; (∀ x)(∀ y)P(f(x,y))</p>
+<p>∃ x ∀ y →  ∀ y ∃ x</p>
+<h2 id="第3章-集合及其运算"><a href="#第3章-集合及其运算" class="headerlink" title="第3章 集合及其运算"></a>第3章 集合及其运算</h2><p>$A\cup B&#x3D;{x\in A\bigvee x\in B}$</p>
+<p>$A\cap B&#x3D;{x\in A\bigwedge x\in B}$</p>
+<p>$A\bigoplus B&#x3D;{x\in A - B\bigvee x\in B - A}$</p>
+<p>2^A&#x3D;{ X | X \subseteq A}$</p>
+<p>运算$\times$为集合的直径 不满足交换律 结合律</p>
+<p>形式语言</p>
+<h2 id="第4章-初等数论和证明方法"><a href="#第4章-初等数论和证明方法" class="headerlink" title="第4章 初等数论和证明方法"></a>第4章 初等数论和证明方法</h2><p>n&#x3D;d×k -&gt; d | n</p>
+<p>最大公因子gcd，最小公倍数lcm</p>
+<p>数学归纳法</p>
+<h2 id="第5章-二元关系"><a href="#第5章-二元关系" class="headerlink" title="第5章 二元关系"></a>第5章 二元关系</h2><p>R 关系 {(A的元素,B的元素)} 也可以画成矩阵表示</p>
+<p>性质(自反 对称 可传递)对应的现象({(x,x)} {(x,y)(y,x)} {(x,y) (y,z) (x,z)})</p>
+<p>关系的运算 $\cup \cap \bigoplus$</p>
+<p>同时有 自反 对称 可传递 为等价关系</p>
+<p>同时有 自反 反对称 传递 为偏序关系 如整除，有最小值的偏序集为良序</p>
+<h2 id="第6章-函数"><a href="#第6章-函数" class="headerlink" title="第6章 函数"></a>第6章 函数</h2><p>f: X→ Y</p>
+<p>单射、满射、双射</p>
+<p>$\pi_1\circ \pi_2 &#x3D; \pi_1(\pi_2())$</p>
+<p>循环的积</p>
+<p>与自然数集N等势的为可数集</p>
+<p>集合的基数card()</p>
+<p>阿列夫 &#x3D;。&#x3D;</p>
+<p>f(x)&#x3D;O(g(x))不能写成O(g(x))&#x3D;f(x) 表示f(x)的上界,f(x) &lt;&#x3D;M |g(x)|</p>
+<h2 id="第7章-基本计数方法"><a href="#第7章-基本计数方法" class="headerlink" title="第7章 基本计数方法"></a>第7章 基本计数方法</h2><p>排列计数，组合计数</p>
+<p>圆排列！！</p>
+<p>组合恒等式!!!</p>
+<p>容斥原理</p>
+<p>抽屉原理&#x2F;鸽巢原理</p>
+<h2 id="第8章-生成函数和递推关系"><a href="#第8章-生成函数和递推关系" class="headerlink" title="第8章 生成函数和递推关系"></a>第8章 生成函数和递推关系</h2><p>定义 生成函数!!!!!!!!!!!!! (排列的生成函数 组合的生成函数)</p>
+<p>递推关系及其解 差分方程</p>
+<p>递推关系和生成函数 6666666</p>
+<h2 id="第9章-无向图和有向图"><a href="#第9章-无向图和有向图" class="headerlink" title="第9章 无向图和有向图"></a>第9章 无向图和有向图</h2><p>V为节点 E为边 度 sum(每个点度)&#x3D;2倍边数</p>
+<p>G(V,E)</p>
+<p>定义…</p>
+<p>图的矩阵表示</p>
+<p>独立集 点团 极图，布尔表达式 析取范式，诱导子图？？</p>
+<p>图的着色？？</p>
+<h2 id="第10章-基本图类和算法"><a href="#第10章-基本图类和算法" class="headerlink" title="第10章 基本图类和算法"></a>第10章 基本图类和算法</h2><p>树与生成树</p>
+<p>每个连通图都含有生成树，图的任何割集至少与树有一个公共边，图的圈至少与树有一个公共边</p>
+<p>如果有向图G的图是树，则称G为有向树</p>
+<p>平面图(画为平面图可以让连线没有额外焦点)和对偶图</p>
+<p>面数为f的连通平面图G(n,m) 有n-m+f&#x3D;2</p>
+<p>阶数大于2的(n,m)连通平面图 m&lt;&#x3D;3n-6,至少存在一个度不超过5的结点</p>
+<p>Kuratowski 定理</p>
+<p>欧拉图及其应用</p>
+<p>哈密顿图及其应用</p>
+<p>图的匹配与匈牙利算法</p>
+<p>网络无环又有向权图</p>
+<h2 id="第11章-群和环"><a href="#第11章-群和环" class="headerlink" title="第11章 群和环"></a>第11章 群和环</h2><p>群 环 域 格 和 布尔代数是典型的系统</p>
+<p>运算与代数系统</p>
+<p>集合的二元运算 封闭的 可交换的 可结合的 可分配的 吸收率</p>
+<p>常见的代数系统 $&lt;Z,+&gt;$,$&lt;Q,+,*&gt;$</p>
+<p>封闭 广群</p>
+<p>广群+可结合 半群</p>
+<p>群 和 子群</p>
+<p>群&#x3D;有逆元的含幺半群 </p>
+<p>群的运算满足交换律则为交换群&#x2F;Abel群 充要条件 $a,b \in G, (a\cdot b)^2&#x3D;a^2\cdot b^2$</p>
+<p>陪集与拉格朗日定理</p>
+<p>同态与同构</p>
+<p>环和域</p>
+<p>群码</p>
+<h2 id="第12章-格与布尔代数"><a href="#第12章-格与布尔代数" class="headerlink" title="第12章 格与布尔代数"></a>第12章 格与布尔代数</h2><p>格 交换 结合 吸收</p>
+<p>格的性质和同态，逆关系 互为 对偶 </p>
+<p>分配格和有补格</p>
+<p>格+分配+有界+有补 &#x3D; 布尔格</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+        <category>book</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -2854,6 +2854,18 @@
       </tags>
   </entry>
   <entry>
+    <title>why use crawler</title>
+    <url>/Blog/17-09-26-why-use-crawler/</url>
+    <content><![CDATA[<p>I found that I was no longer willing to write the crawler program, more often use jquery output page link, and then wget to download, this will be faster.</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>quine</title>
     <url>/Blog/17-11-12-quine/</url>
     <content><![CDATA[<h1 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h1><h2 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h2><ol start="0">
@@ -2876,18 +2888,6 @@
       </categories>
       <tags>
         <tag>language</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>why use crawler</title>
-    <url>/Blog/17-09-26-why-use-crawler/</url>
-    <content><![CDATA[<p>I found that I was no longer willing to write the crawler program, more often use jquery output page link, and then wget to download, this will be faster.</p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -3908,22 +3908,6 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
       </tags>
   </entry>
   <entry>
-    <title>vue custom v-model</title>
-    <url>/Blog/19-04-01-vue-custom-v-model/</url>
-    <content><![CDATA[<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component">https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component</a></p>
-<p>To let our component support v-model two-way binding, I stated earlier that the component needs to accept a <code>value</code> prop and emit an <code>input</code> event.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">input</span>=<span class="string">&quot;handleInput&quot;</span> /&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">prop</span>: [<span class="string">&#x27;value&#x27;</span>],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  data () &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">content</span>: <span class="variable language_">this</span>.<span class="property">value</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">methods</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    handleInput (e) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">this</span>.$emit(<span class="string">&#x27;input&#x27;</span>, <span class="variable language_">this</span>.<span class="property">content</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>frontend</category>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>v-model</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>promises分析</title>
     <url>/Blog/19-03-22-promise/</url>
     <content><![CDATA[<p>个人其实建议阅读下方的参考链接<code>zh.javascript.info</code>,本篇整理的主要是基于个人已有经验进行提要，简化和再解释，不够完整</p>
@@ -4027,6 +4011,22 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
       </categories>
       <tags>
         <tag>promise</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue custom v-model</title>
+    <url>/Blog/19-04-01-vue-custom-v-model/</url>
+    <content><![CDATA[<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component">https://scotch.io/tutorials/add-v-model-support-to-custom-vuejs-component</a></p>
+<p>To let our component support v-model two-way binding, I stated earlier that the component needs to accept a <code>value</code> prop and emit an <code>input</code> event.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">input</span>=<span class="string">&quot;handleInput&quot;</span> /&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">prop</span>: [<span class="string">&#x27;value&#x27;</span>],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  data () &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">content</span>: <span class="variable language_">this</span>.<span class="property">value</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">methods</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    handleInput (e) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">this</span>.$emit(<span class="string">&#x27;input&#x27;</span>, <span class="variable language_">this</span>.<span class="property">content</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>frontend</category>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>v-model</tag>
       </tags>
   </entry>
   <entry>
@@ -5985,6 +5985,38 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
       </tags>
   </entry>
   <entry>
+    <title>material学习</title>
+    <url>/Blog/19-06-11-material/</url>
+    <content><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://material.io/collections/developer-tutorials/#web">https://material.io/collections/developer-tutorials/#web</a></p>
+<p>很早就有人说过了material，不过在那时，1是不太能阅读英文文档，2是没有实际的需要，也没有要用的想法，没有阅读</p>
+<p>下面是个人整理 (大概需要的前置知识 node基本+html+js+css</p>
+<h1 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h1><p>跨平台，好看的，google出的ui标准 </p>
+<h1 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h1><p><code>git clone https://github.com/material-components/material-components-web-codelabs</code></p>
+<p>安装所有ui</p>
+<p><code>npm install material-components-web</code></p>
+<p>从文档和操作上来看 需要做3件事</p>
+<ol>
+<li>引入css 如<code>@import &quot;@material/textfield/mdc-text-field&quot;;</code></li>
+<li>在html的元素上 给对应的class</li>
+<li>js里引入组件和 对相应元素进行处理,如下</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">MDCTextField</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;@material/textfield&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> username = <span class="keyword">new</span> <span class="title class_">MDCTextField</span>(<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.username&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<p>demo101 102里介绍了 输入框，按钮，图片，列表</p>
+<p>然后103 介绍了一些，theme(例如主题颜色)，subtitle(typography),elevation(实际是阴影效果 用来让页面元素有高低感觉),<code>mdc-image-list--masonry</code>非等长图片排列</p>
+<p>demo111 介绍了，如何对一个原来写过的原始工程，修改成Material Components的样式(基本就是 npm引入，js引入，css引入，换class，加js</p>
+<p>demo112 介绍了一个react工程上 改为material components</p>
+<p>最后 目前看下来 angular+material 最多star的是<a href="https://material.angular.io/">https://material.angular.io</a></p>
+]]></content>
+      <categories>
+        <category>frontend</category>
+      </categories>
+      <tags>
+        <tag>Angular2+</tag>
+        <tag>material design</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TDD 测试驱动开发</title>
     <url>/Blog/19-06-10-TDD/</url>
     <content><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.cigniti.com/blog/7-best-practices-for-agile-test-driven-development/">https://www.cigniti.com/blog/7-best-practices-for-agile-test-driven-development/</a></p>
@@ -6047,105 +6079,6 @@ ls /usr/lib/jvm/java-8-openjdk-amd64/src.zip
       <tags>
         <tag>test</tag>
         <tag>TDD</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>material学习</title>
-    <url>/Blog/19-06-11-material/</url>
-    <content><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://material.io/collections/developer-tutorials/#web">https://material.io/collections/developer-tutorials/#web</a></p>
-<p>很早就有人说过了material，不过在那时，1是不太能阅读英文文档，2是没有实际的需要，也没有要用的想法，没有阅读</p>
-<p>下面是个人整理 (大概需要的前置知识 node基本+html+js+css</p>
-<h1 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h1><p>跨平台，好看的，google出的ui标准 </p>
-<h1 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h1><p><code>git clone https://github.com/material-components/material-components-web-codelabs</code></p>
-<p>安装所有ui</p>
-<p><code>npm install material-components-web</code></p>
-<p>从文档和操作上来看 需要做3件事</p>
-<ol>
-<li>引入css 如<code>@import &quot;@material/textfield/mdc-text-field&quot;;</code></li>
-<li>在html的元素上 给对应的class</li>
-<li>js里引入组件和 对相应元素进行处理,如下</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">MDCTextField</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;@material/textfield&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> username = <span class="keyword">new</span> <span class="title class_">MDCTextField</span>(<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.username&#x27;</span>));</span><br></pre></td></tr></table></figure>
-
-<p>demo101 102里介绍了 输入框，按钮，图片，列表</p>
-<p>然后103 介绍了一些，theme(例如主题颜色)，subtitle(typography),elevation(实际是阴影效果 用来让页面元素有高低感觉),<code>mdc-image-list--masonry</code>非等长图片排列</p>
-<p>demo111 介绍了，如何对一个原来写过的原始工程，修改成Material Components的样式(基本就是 npm引入，js引入，css引入，换class，加js</p>
-<p>demo112 介绍了一个react工程上 改为material components</p>
-<p>最后 目前看下来 angular+material 最多star的是<a href="https://material.angular.io/">https://material.angular.io</a></p>
-]]></content>
-      <categories>
-        <category>frontend</category>
-      </categories>
-      <tags>
-        <tag>Angular2+</tag>
-        <tag>material design</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue声明式交互能力 &amp; vue3.0 进展</title>
-    <url>/Blog/19-06-13-vue-declarative/</url>
-    <content><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.bilibili.com/video/av37345007?from=search&seid=12943305398860809438">https://www.bilibili.com/video/av37345007?from=search&amp;seid=12943305398860809438</a></p>
-<p><a href="https://www.bilibili.com/video/av55286346?from=search&seid=13529674123410117444">https://www.bilibili.com/video/av55286346?from=search&amp;seid=13529674123410117444</a></p>
-<h1 id="吹什么"><a href="#吹什么" class="headerlink" title="吹什么"></a>吹什么</h1><p>vue的 声明式写法，最常见讲是computed</p>
-<p>比如<code>0 js代码</code> ，直接组件实现 阶乘，斐波那契数列的计算</p>
-<p>和 命令式相比，</p>
-<p>历史发展向讲解</p>
-<p>就 应用程序 实体举例</p>
-<p>跨语言啊交互举例 <a href="https://weex.apache.org/zh/docs/components/recycle-list.html">recycle-list</a></p>
-<p>简单说 原来的命令式 比较常用的是 事件-&gt;执行的代码</p>
-<p>现在 实现 大概是 数据 &#x3D; 构成来源</p>
-<h1 id="vue3"><a href="#vue3" class="headerlink" title="vue3"></a>vue3</h1><p>chrome devTools 周活用户90万 &#x2F; react的160万</p>
-<p>what’s target?</p>
-<span id="more"></span>
-
-<ul>
-<li>更小</li>
-<li>更快(重点)</li>
-<li>加强TS支持(重点)</li>
-<li>加强API设计一致性</li>
-<li>提高自身可维护性</li>
-<li>开放更多底层功能</li>
-</ul>
-<h2 id="更快"><a href="#更快" class="headerlink" title="更快"></a>更快</h2><p>数据变动检测:</p>
-<p>Object.defineProperty -&gt; Proxy (es6)</p>
-<hr>
-<p>用TS重写了Virtual DOM</p>
-<p>编译时优化</p>
-<p>Slot 默认便以为函数</p>
-<p>单例vnode工厂，设计一致的函数参数</p>
-<p>vdom 监测 设计改动</p>
-<p>原来是整个遍历，大多数情况16ms完成整个更新(传统情况)</p>
-<p>react，难在 代码中 提取 究竟哪个数据变化会影响 函数重算 ，方案CPU时间分片</p>
-<p>参考svelte框架， 强限制+静态编译<code>-&gt;</code>不需要virtual DOM 的代码，性能强,但 底线只能用模板,编译后代码体积大，但速度快</p>
-<p>vue3:兼容2，手写render function,其次 最大化利用模板信息</p>
-<p>直接 分析模板 把 动静结合 分离分析动态和静态的块[放弃可能存在的 原生js改动 html的检测？]</p>
-<p>做的benchmark 约6x快</p>
-<h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h2><p>之前Class API …然后被放弃了</p>
-<p>Function-based API 对比 Class API</p>
-<ul>
-<li>更好的TypeScript 类型推导，这样js写法 基本是 ts写法(不需要多余类型声明)</li>
-<li>tree-shaking !!!!!!!!!!!!!!!!!效果更好,</li>
-<li>写法 函数变量名更容易被压缩[编译优化]</li>
-<li>逻辑复用:</li>
-</ul>
-<p> 2.0方案 Mixins(缺点 多mixins时，命名空间 模板 数据 来源不清晰,)</p>
-<p>react: higher-order components 高阶组件(多个高阶组件 也有同样问题{命名空间冲突，数据来源不清晰，无额外的组件实例性能消耗})</p>
-<p>作用域插槽:(没有命名空间冲突，数据来源清晰,额外的组件实例性能消耗) 如<code>v-slot</code></p>
-<p>最新的 函数式 复用,+函数返回 解构,{没有命名空间冲突,数据来源清晰，无额外的组件实例性能消耗}</p>
-<p>和 react Hooks 对比:</p>
-<ul>
-<li>vue 只在初始化时调用(值可追踪),没有闭包变量问题，没有 内存 gc压力问题</li>
-</ul>
-<h1 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h1><p><a href="https://segmentfault.com/a/1190000012794598?utm_source=tag-newest">tree-shaking</a></p>
-]]></content>
-      <categories>
-        <category>frontend</category>
-        <category>vue2</category>
-      </categories>
-      <tags>
-        <tag>vue2</tag>
-        <tag>js</tag>
-        <tag>vue3</tag>
       </tags>
   </entry>
   <entry>
@@ -9756,6 +9689,40 @@ base: __dirname,
       </tags>
   </entry>
   <entry>
+    <title>git 在历史版本中 完全移除文件</title>
+    <url>/Blog/19-09-20-gitbiguselessfile/</url>
+    <content><![CDATA[<h1 id="How"><a href="#How" class="headerlink" title="How"></a>How</h1><p>参考</p>
+<p><a href="https://www.cnblogs.com/amiezhang/p/11337095.html">https://www.cnblogs.com/amiezhang/p/11337095.html</a></p>
+<p>上面链接都有讲</p>
+<p>按照文件大小排序前100:</p>
+<p><code>git rev-list --objects --all | grep &quot;$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -100 | awk &#39;&#123;print$1&#125;&#39;)&quot;</code></p>
+<p><code>git filter-branch --force --index-filter &#39;git rm --cached --ignore-unmatch 文件名&#39; --prune-empty --tag-name-filter cat -- --all</code></p>
+<p><code>git filter-branch --index-filter</code> 让每个提交的文件都复制到索引(<code>.git/index</code>)中</p>
+<p>然后运行过滤器命令：<code>git rm --cached --ignore-unmatch</code> 文件名 ，让每个提交都删除掉“文件名”文件</p>
+<p>然后<code>--prune-empty</code>把空的提交“修剪”掉</p>
+<p>然后<code>--tag-name-filter cat</code>把每个tag保持原名字，指向修改后的对应提交</p>
+<p>最后<code>-- --all</code>将所有ref（包括branch、tag）都执行上面的重写</p>
+<p><code>git for-each-ref --format=&#39;delete %(refname)&#39; refs/original | git update-ref --stdin</code></p>
+<p><code>git reflog expire --expire=now --all</code></p>
+<p><code>git gc --prune=now</code></p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ol>
+<li><p>上面的文件名可以写通配符号</p>
+</li>
+<li><p>众所周知只要我加到git中过的，即使把分支删了，也可以从reflog中找到，但这里 有 清除reflog所以 想要这样做的，要么 单独开文件夹搞，要么 确定 reflog都不会再用</p>
+</li>
+<li><p>什么时候使用? 使用频率不应高，因为 这种操作无疑是会对 分支重写，也就完全不同的commit hash,所以最后push都会带上–force, 目前能想到场景,比如 不必要的大文件,如不小心提交的下下来的打包后文件,大zip.也有场景 比如 很多分支前 不小心提交了一个涉密的文件。 当然push force以后 所有用仓库的人要想继续用只有去新的分支里搞了，已经被别人下的还会在别人硬盘里</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>software</category>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>未来简史 阅读笔记</title>
     <url>/Blog/19-09-15-A_Brief_History_of_Tomorrow/</url>
     <content><![CDATA[<blockquote>
@@ -9878,40 +9845,6 @@ base: __dirname,
       </tags>
   </entry>
   <entry>
-    <title>git 在历史版本中 完全移除文件</title>
-    <url>/Blog/19-09-20-gitbiguselessfile/</url>
-    <content><![CDATA[<h1 id="How"><a href="#How" class="headerlink" title="How"></a>How</h1><p>参考</p>
-<p><a href="https://www.cnblogs.com/amiezhang/p/11337095.html">https://www.cnblogs.com/amiezhang/p/11337095.html</a></p>
-<p>上面链接都有讲</p>
-<p>按照文件大小排序前100:</p>
-<p><code>git rev-list --objects --all | grep &quot;$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -100 | awk &#39;&#123;print$1&#125;&#39;)&quot;</code></p>
-<p><code>git filter-branch --force --index-filter &#39;git rm --cached --ignore-unmatch 文件名&#39; --prune-empty --tag-name-filter cat -- --all</code></p>
-<p><code>git filter-branch --index-filter</code> 让每个提交的文件都复制到索引(<code>.git/index</code>)中</p>
-<p>然后运行过滤器命令：<code>git rm --cached --ignore-unmatch</code> 文件名 ，让每个提交都删除掉“文件名”文件</p>
-<p>然后<code>--prune-empty</code>把空的提交“修剪”掉</p>
-<p>然后<code>--tag-name-filter cat</code>把每个tag保持原名字，指向修改后的对应提交</p>
-<p>最后<code>-- --all</code>将所有ref（包括branch、tag）都执行上面的重写</p>
-<p><code>git for-each-ref --format=&#39;delete %(refname)&#39; refs/original | git update-ref --stdin</code></p>
-<p><code>git reflog expire --expire=now --all</code></p>
-<p><code>git gc --prune=now</code></p>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ol>
-<li><p>上面的文件名可以写通配符号</p>
-</li>
-<li><p>众所周知只要我加到git中过的，即使把分支删了，也可以从reflog中找到，但这里 有 清除reflog所以 想要这样做的，要么 单独开文件夹搞，要么 确定 reflog都不会再用</p>
-</li>
-<li><p>什么时候使用? 使用频率不应高，因为 这种操作无疑是会对 分支重写，也就完全不同的commit hash,所以最后push都会带上–force, 目前能想到场景,比如 不必要的大文件,如不小心提交的下下来的打包后文件,大zip.也有场景 比如 很多分支前 不小心提交了一个涉密的文件。 当然push force以后 所有用仓库的人要想继续用只有去新的分支里搞了，已经被别人下的还会在别人硬盘里</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>software</category>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>redhat7 + gitlab-ce版本更新 11.6-&gt;12.2</title>
     <url>/Blog/19-09-23-redhat_gitlabserver_update/</url>
     <content><![CDATA[<h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><p>模拟生产环境 尝试 升级 gitlab-ce 从 11.6 到 12.2, 以及尝试模拟之前产生的错误</p>
@@ -9990,64 +9923,6 @@ base: __dirname,
         <tag>gitlab</tag>
         <tag>redhat</tag>
         <tag>update</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>闪耀暖暖 耗材计算器 rxjs + angular2+</title>
-    <url>/Blog/19-09-30-nikki4calc/</url>
-    <content><![CDATA[<h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p>闪耀暖暖的设计师 材料耗材计算器</p>
-<p>基于一个已经有的原生js 进行改造</p>
-<p>原来生 <a href="http://www.spongem.com/ajglz/tools/evalLevelUpCost.html">http://www.spongem.com/ajglz/tools/evalLevelUpCost.html</a></p>
-<h1 id="重构内容"><a href="#重构内容" class="headerlink" title="重构内容"></a>重构内容</h1><ol start="0">
-<li>首先把这个的源码 搞下来,比较无脑的操作</li>
-<li>然后开个module 配一下routing</li>
-<li>搞个component 然后把函数数据都搬进来</li>
-<li>把相关全局变量 改为 <code>this.</code></li>
-<li>修改原来的一些<code>$</code>方法 改为原生js,或者改为<code>[(ngModel)]</code>双向绑定，至此基本可以运行。</li>
-<li>解构一下用户输入和计算输出分别叫做<code>Class: CardBasic/Card -&gt; html:Card/CardOut</code> &#x2F;&#x2F; 好吧 这里变量名有点乱 现在看来</li>
-<li>引入<code>https://material.angular.io</code>的组件,稍微调整画风</li>
-<li>尝试搞一个computed,移除计算按钮, 改为 <code>get XXX</code>的方法</li>
-</ol>
-<p>这里遇到问题, 根据调试，页面上的调用会反复调用get方法, 大量重复不必要计算</p>
-<ol start="8">
-<li>解决方案1: 引入Ramda，建立两个cache 分别是计算结果 和 用户输入，用 Ramda的深比较和深拷贝完成少的计算次数</li>
-</ol>
-<p>写着还好，行数不多，就能实现，性能也好，但是问题是，相当于你依然要去关心的是，输出值输入值直接的具体关系才能写。</p>
-<ol start="9">
-<li>解决方案2: 引入rxjs，用Observable搞</li>
-</ol>
-<p>这里实践上有些问题</p>
-<ul>
-<li>双向绑定如何和<code>BehaviorSubject</code>绑定,最后用<code>(ngModelChange)</code>来 单向到 具体字段</li>
-<li>能否监听整个Class</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">of</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> a = &#123;<span class="attr">x</span>:<span class="number">1</span>,<span class="attr">y</span>:<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> a$ = <span class="title function_">of</span>(a);</span><br><span class="line">a$.<span class="title function_">subscribe</span>(<span class="variable language_">console</span>.<span class="property">log</span>);</span><br><span class="line">a.<span class="property">x</span>=<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-
-<p>例如这样 并不会因为修改了a的子字段而自动发送next</p>
-<p>搞了半天最后还是 感觉很 手工写依赖的输入</p>
-<p>这一块的实现主要如下</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 相当于所有用户输入的部分 都会对应一个emitter</span></span><br><span class="line">private <span class="attr">textEmitter</span>: <span class="title class_">Map</span>&lt;string, <span class="title class_">BehaviorSubject</span>&lt;string&gt;&gt; = <span class="keyword">new</span> <span class="title class_">Map</span>();</span><br><span class="line"><span class="comment">// 在初始化时 初始化它们并监听</span></span><br><span class="line">  <span class="comment">// initial textEmitter</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> <span class="variable language_">this</span>.<span class="property">card</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">textEmitter</span>.<span class="title function_">set</span>(key, <span class="keyword">new</span> <span class="title class_">BehaviorSubject</span>(<span class="variable language_">this</span>.<span class="property">card</span>[key]));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">obAllKeys</span>(<span class="variable language_">this</span>.<span class="property">textEmitter</span>)</span><br><span class="line">    .<span class="title function_">pipe</span>(</span><br><span class="line">      <span class="title function_">map</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 细粒度触发 全体计算</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;fire calc&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">cardOut</span>; <span class="comment">// 就是最开始写的get方法 触发过程中只 告诉说 &#x27;哎!我变了!&#x27; 即可</span></span><br><span class="line">      &#125;)</span><br><span class="line">    ).<span class="title function_">subscribe</span>(<span class="variable language_">this</span>.<span class="property">cardOut$</span>); <span class="comment">// 页面通过这个读取 是个 BehaviorSubject</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 做的个功能 监听一个类 的所有字段 对应的 textEmitter的Observable</span></span><br><span class="line"><span class="comment">// 做了一点防抖</span></span><br><span class="line"><span class="title function_">obAllKeys</span>(<span class="attr">emitter</span>: <span class="title class_">Map</span>&lt;string, <span class="title class_">BehaviorSubject</span>&lt;string&gt;&gt;): <span class="title class_">Observable</span>&lt;string&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">mergeOb</span>: <span class="title class_">Observable</span>&lt;string&gt; = <span class="keyword">new</span> <span class="title class_">BehaviorSubject</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">  emitter.<span class="title function_">forEach</span>(<span class="function">(<span class="params">emitValue, emitKey</span>) =&gt;</span> &#123;</span><br><span class="line">    mergeOb = <span class="title function_">merge</span>(mergeOb, <span class="comment">// 关于merge的使用考虑 最开始想过使用combineLatest 但是 问题是 我明明可以直接通过 页面双向绑定拿到 用户输入,所以其实只需要一个变更通知即可，再另一个 combineLatest感觉要配上flat 才能 自动 绑定所有key,不然是手写的所有key,而对应的下标再反向生成 对象,表示 是不是有更好的方法 没学到没搜到</span></span><br><span class="line">      emitValue.<span class="title function_">pipe</span>(</span><br><span class="line">        <span class="title function_">debounceTime</span>(<span class="variable language_">this</span>.<span class="property">debounceInterval</span>),</span><br><span class="line">        <span class="title function_">distinctUntilChanged</span>(),</span><br><span class="line">        <span class="title function_">map</span>(<span class="function">(<span class="params">v</span>) =&gt;</span> emitKey + v) <span class="comment">// 这个是避免 在段时间内 上次状态a,  改b 改a 改回最初的a 这样就不会触发改变</span></span><br><span class="line">      ));</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> mergeOb.<span class="title function_">pipe</span>(<span class="title function_">debounceTime</span>(<span class="variable language_">this</span>.<span class="property">debounceInterval</span>)); <span class="comment">// 按理说一次只会改动一个  这个是初次进入时 会有多个 当然 combineLatest 不会有这个问题</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 主要是和页面上的 输入绑定 具体就是 ngModelChange ,这一块的问题就是 写了 [(ngModel)] 又写了一遍这个绑定 光是key就要写两遍 还是字符串没法保证正确 靠的是下面的 调试强行保证部分</span></span><br><span class="line"><span class="title function_">onChange</span>(<span class="params">cardKey: string, value: string</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`onCardIdChange: <span class="subst">$&#123;cardKey&#125;</span> =&gt; <span class="subst">$&#123;value&#125;</span>`</span>);</span><br><span class="line">  <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">textEmitter</span>.<span class="title function_">has</span>(cardKey)) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">textEmitter</span>.<span class="title function_">get</span>(cardKey).<span class="title function_">next</span>(value);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123; <span class="comment">// 调试用</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&#x27;onChange&#x27;</span>, cardKey, value);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="10">
-<li>最后增加了一点 try catch,因为 不同的卡可选范围并不同，或者用户输入不合法会 爆红&#x3D;.&#x3D;只在 两个LevelVal里加了</li>
-</ol>
-<h1 id="最后结果"><a href="#最后结果" class="headerlink" title="最后结果"></a>最后结果</h1><p><a href="https://cromarmot.github.io/Debuq/#/nikki4/lvlup">https://cromarmot.github.io/Debuq/#/nikki4/lvlup</a></p>
-<p>如果打开看到404，保持页面，等待一会儿再刷新即可。因为有worker service</p>
-<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><p>比如搞成动态拉取</p>
-<p>计算函数再向纯函数靠拢啊</p>
-<p>怎么json 转换 Class 甚至 Map &#x2F;&#x2F; 搜了一会没搜到简洁的方案</p>
-<p>更好的双向绑定+BehaviorSubject 绑定?</p>
-<p>是否可能简化某部分代码</p>
-<p>输入控制 比如 现在其实可以输入 小数 和 范围以外的数</p>
-<p>比如因为还是有不少json 导致 typescript的 类型判断并不完整 虽然</p>
-]]></content>
-      <categories>
-        <category>frontend</category>
-        <category>Angular</category>
-      </categories>
-      <tags>
-        <tag>Angular2+</tag>
-        <tag>nikki4</tag>
       </tags>
   </entry>
   <entry>
@@ -10172,6 +10047,64 @@ base: __dirname,
         <tag>Angular2+</tag>
         <tag>rxjs</tag>
         <tag>observable</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>闪耀暖暖 耗材计算器 rxjs + angular2+</title>
+    <url>/Blog/19-09-30-nikki4calc/</url>
+    <content><![CDATA[<h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p>闪耀暖暖的设计师 材料耗材计算器</p>
+<p>基于一个已经有的原生js 进行改造</p>
+<p>原来生 <a href="http://www.spongem.com/ajglz/tools/evalLevelUpCost.html">http://www.spongem.com/ajglz/tools/evalLevelUpCost.html</a></p>
+<h1 id="重构内容"><a href="#重构内容" class="headerlink" title="重构内容"></a>重构内容</h1><ol start="0">
+<li>首先把这个的源码 搞下来,比较无脑的操作</li>
+<li>然后开个module 配一下routing</li>
+<li>搞个component 然后把函数数据都搬进来</li>
+<li>把相关全局变量 改为 <code>this.</code></li>
+<li>修改原来的一些<code>$</code>方法 改为原生js,或者改为<code>[(ngModel)]</code>双向绑定，至此基本可以运行。</li>
+<li>解构一下用户输入和计算输出分别叫做<code>Class: CardBasic/Card -&gt; html:Card/CardOut</code> &#x2F;&#x2F; 好吧 这里变量名有点乱 现在看来</li>
+<li>引入<code>https://material.angular.io</code>的组件,稍微调整画风</li>
+<li>尝试搞一个computed,移除计算按钮, 改为 <code>get XXX</code>的方法</li>
+</ol>
+<p>这里遇到问题, 根据调试，页面上的调用会反复调用get方法, 大量重复不必要计算</p>
+<ol start="8">
+<li>解决方案1: 引入Ramda，建立两个cache 分别是计算结果 和 用户输入，用 Ramda的深比较和深拷贝完成少的计算次数</li>
+</ol>
+<p>写着还好，行数不多，就能实现，性能也好，但是问题是，相当于你依然要去关心的是，输出值输入值直接的具体关系才能写。</p>
+<ol start="9">
+<li>解决方案2: 引入rxjs，用Observable搞</li>
+</ol>
+<p>这里实践上有些问题</p>
+<ul>
+<li>双向绑定如何和<code>BehaviorSubject</code>绑定,最后用<code>(ngModelChange)</code>来 单向到 具体字段</li>
+<li>能否监听整个Class</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">of</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> a = &#123;<span class="attr">x</span>:<span class="number">1</span>,<span class="attr">y</span>:<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> a$ = <span class="title function_">of</span>(a);</span><br><span class="line">a$.<span class="title function_">subscribe</span>(<span class="variable language_">console</span>.<span class="property">log</span>);</span><br><span class="line">a.<span class="property">x</span>=<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<p>例如这样 并不会因为修改了a的子字段而自动发送next</p>
+<p>搞了半天最后还是 感觉很 手工写依赖的输入</p>
+<p>这一块的实现主要如下</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 相当于所有用户输入的部分 都会对应一个emitter</span></span><br><span class="line">private <span class="attr">textEmitter</span>: <span class="title class_">Map</span>&lt;string, <span class="title class_">BehaviorSubject</span>&lt;string&gt;&gt; = <span class="keyword">new</span> <span class="title class_">Map</span>();</span><br><span class="line"><span class="comment">// 在初始化时 初始化它们并监听</span></span><br><span class="line">  <span class="comment">// initial textEmitter</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> <span class="variable language_">this</span>.<span class="property">card</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">textEmitter</span>.<span class="title function_">set</span>(key, <span class="keyword">new</span> <span class="title class_">BehaviorSubject</span>(<span class="variable language_">this</span>.<span class="property">card</span>[key]));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">obAllKeys</span>(<span class="variable language_">this</span>.<span class="property">textEmitter</span>)</span><br><span class="line">    .<span class="title function_">pipe</span>(</span><br><span class="line">      <span class="title function_">map</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 细粒度触发 全体计算</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;fire calc&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">cardOut</span>; <span class="comment">// 就是最开始写的get方法 触发过程中只 告诉说 &#x27;哎!我变了!&#x27; 即可</span></span><br><span class="line">      &#125;)</span><br><span class="line">    ).<span class="title function_">subscribe</span>(<span class="variable language_">this</span>.<span class="property">cardOut$</span>); <span class="comment">// 页面通过这个读取 是个 BehaviorSubject</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 做的个功能 监听一个类 的所有字段 对应的 textEmitter的Observable</span></span><br><span class="line"><span class="comment">// 做了一点防抖</span></span><br><span class="line"><span class="title function_">obAllKeys</span>(<span class="attr">emitter</span>: <span class="title class_">Map</span>&lt;string, <span class="title class_">BehaviorSubject</span>&lt;string&gt;&gt;): <span class="title class_">Observable</span>&lt;string&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">mergeOb</span>: <span class="title class_">Observable</span>&lt;string&gt; = <span class="keyword">new</span> <span class="title class_">BehaviorSubject</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">  emitter.<span class="title function_">forEach</span>(<span class="function">(<span class="params">emitValue, emitKey</span>) =&gt;</span> &#123;</span><br><span class="line">    mergeOb = <span class="title function_">merge</span>(mergeOb, <span class="comment">// 关于merge的使用考虑 最开始想过使用combineLatest 但是 问题是 我明明可以直接通过 页面双向绑定拿到 用户输入,所以其实只需要一个变更通知即可，再另一个 combineLatest感觉要配上flat 才能 自动 绑定所有key,不然是手写的所有key,而对应的下标再反向生成 对象,表示 是不是有更好的方法 没学到没搜到</span></span><br><span class="line">      emitValue.<span class="title function_">pipe</span>(</span><br><span class="line">        <span class="title function_">debounceTime</span>(<span class="variable language_">this</span>.<span class="property">debounceInterval</span>),</span><br><span class="line">        <span class="title function_">distinctUntilChanged</span>(),</span><br><span class="line">        <span class="title function_">map</span>(<span class="function">(<span class="params">v</span>) =&gt;</span> emitKey + v) <span class="comment">// 这个是避免 在段时间内 上次状态a,  改b 改a 改回最初的a 这样就不会触发改变</span></span><br><span class="line">      ));</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> mergeOb.<span class="title function_">pipe</span>(<span class="title function_">debounceTime</span>(<span class="variable language_">this</span>.<span class="property">debounceInterval</span>)); <span class="comment">// 按理说一次只会改动一个  这个是初次进入时 会有多个 当然 combineLatest 不会有这个问题</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 主要是和页面上的 输入绑定 具体就是 ngModelChange ,这一块的问题就是 写了 [(ngModel)] 又写了一遍这个绑定 光是key就要写两遍 还是字符串没法保证正确 靠的是下面的 调试强行保证部分</span></span><br><span class="line"><span class="title function_">onChange</span>(<span class="params">cardKey: string, value: string</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`onCardIdChange: <span class="subst">$&#123;cardKey&#125;</span> =&gt; <span class="subst">$&#123;value&#125;</span>`</span>);</span><br><span class="line">  <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">textEmitter</span>.<span class="title function_">has</span>(cardKey)) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">textEmitter</span>.<span class="title function_">get</span>(cardKey).<span class="title function_">next</span>(value);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123; <span class="comment">// 调试用</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&#x27;onChange&#x27;</span>, cardKey, value);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>最后增加了一点 try catch,因为 不同的卡可选范围并不同，或者用户输入不合法会 爆红&#x3D;.&#x3D;只在 两个LevelVal里加了</li>
+</ol>
+<h1 id="最后结果"><a href="#最后结果" class="headerlink" title="最后结果"></a>最后结果</h1><p><a href="https://cromarmot.github.io/Debuq/#/nikki4/lvlup">https://cromarmot.github.io/Debuq/#/nikki4/lvlup</a></p>
+<p>如果打开看到404，保持页面，等待一会儿再刷新即可。因为有worker service</p>
+<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><p>比如搞成动态拉取</p>
+<p>计算函数再向纯函数靠拢啊</p>
+<p>怎么json 转换 Class 甚至 Map &#x2F;&#x2F; 搜了一会没搜到简洁的方案</p>
+<p>更好的双向绑定+BehaviorSubject 绑定?</p>
+<p>是否可能简化某部分代码</p>
+<p>输入控制 比如 现在其实可以输入 小数 和 范围以外的数</p>
+<p>比如因为还是有不少json 导致 typescript的 类型判断并不完整 虽然</p>
+]]></content>
+      <categories>
+        <category>frontend</category>
+        <category>Angular</category>
+      </categories>
+      <tags>
+        <tag>Angular2+</tag>
+        <tag>nikki4</tag>
       </tags>
   </entry>
   <entry>
@@ -11588,32 +11521,6 @@ export default &#123;
       </tags>
   </entry>
   <entry>
-    <title>k8s</title>
-    <url>/Blog/21-01-21-k8s/</url>
-    <content><![CDATA[<h1 id="Install-minikube"><a href="#Install-minikube" class="headerlink" title="Install minikube"></a>Install minikube</h1><p><a href="https://minikube.sigs.k8s.io/docs/start/">https://minikube.sigs.k8s.io/docs/start/</a></p>
-<p>Debian:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb</span><br><span class="line">sudo dpkg -i minikube_latest_amd64.deb</span><br></pre></td></tr></table></figure>
-
-<p>start your cluster</p>
-<p><code>minikube start</code></p>
-<h1 id="install-kubectl"><a href="#install-kubectl" class="headerlink" title="install kubectl"></a>install kubectl</h1><p>下载<code>curl -LO &quot;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&quot;</code></p>
-<p>下载sha256: <code>curl -LO &quot;https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256&quot;</code></p>
-<p>校验sha256: <code>echo &quot;$(&lt;kubectl.sha256) kubectl&quot; | sha256sum --check</code></p>
-<p><a href="https://kubernetes.io/zh/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux">https://kubernetes.io/zh/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -LO &quot;https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl&quot;</span><br><span class="line">chmod +x ./kubectl</span><br><span class="line">sudo mv ./kubectl /usr/local/bin/kubectl</span><br><span class="line">kubectl version --client</span><br><span class="line">kubectl cluster-info</span><br></pre></td></tr></table></figure>
-
-<h1 id="安装-minikube"><a href="#安装-minikube" class="headerlink" title="安装 minikube"></a>安装 minikube</h1><p><a href="https://minikube.sigs.k8s.io/docs/start/">https://minikube.sigs.k8s.io/docs/start/</a></p>
-]]></content>
-      <categories>
-        <category>backend</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-        <tag>devops</tag>
-        <tag>k8s</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图灵完备？那做个二分vue/react/angular,递归组件Demo</title>
     <url>/Blog/21-02-02-Turing-complete/</url>
     <content><![CDATA[<h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>之前看vue conf有人用vue组件算阶乘说图灵完备，于是突发奇想用组件做做二分？</p>
@@ -11673,6 +11580,99 @@ export default &#123;
         <tag>Angular2+</tag>
         <tag>react</tag>
         <tag>recursive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>k8s</title>
+    <url>/Blog/21-01-21-k8s/</url>
+    <content><![CDATA[<h1 id="Install-minikube"><a href="#Install-minikube" class="headerlink" title="Install minikube"></a>Install minikube</h1><p><a href="https://minikube.sigs.k8s.io/docs/start/">https://minikube.sigs.k8s.io/docs/start/</a></p>
+<p>Debian:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb</span><br><span class="line">sudo dpkg -i minikube_latest_amd64.deb</span><br></pre></td></tr></table></figure>
+
+<p>start your cluster</p>
+<p><code>minikube start</code></p>
+<h1 id="install-kubectl"><a href="#install-kubectl" class="headerlink" title="install kubectl"></a>install kubectl</h1><p>下载<code>curl -LO &quot;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&quot;</code></p>
+<p>下载sha256: <code>curl -LO &quot;https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256&quot;</code></p>
+<p>校验sha256: <code>echo &quot;$(&lt;kubectl.sha256) kubectl&quot; | sha256sum --check</code></p>
+<p><a href="https://kubernetes.io/zh/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux">https://kubernetes.io/zh/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -LO &quot;https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl&quot;</span><br><span class="line">chmod +x ./kubectl</span><br><span class="line">sudo mv ./kubectl /usr/local/bin/kubectl</span><br><span class="line">kubectl version --client</span><br><span class="line">kubectl cluster-info</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装-minikube"><a href="#安装-minikube" class="headerlink" title="安装 minikube"></a>安装 minikube</h1><p><a href="https://minikube.sigs.k8s.io/docs/start/">https://minikube.sigs.k8s.io/docs/start/</a></p>
+]]></content>
+      <categories>
+        <category>backend</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>devops</tag>
+        <tag>k8s</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue声明式交互能力 &amp; vue3.0 进展</title>
+    <url>/Blog/19-06-13-vue-declarative/</url>
+    <content><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.bilibili.com/video/av37345007?from=search&seid=12943305398860809438">https://www.bilibili.com/video/av37345007?from=search&amp;seid=12943305398860809438</a></p>
+<p><a href="https://www.bilibili.com/video/av55286346?from=search&seid=13529674123410117444">https://www.bilibili.com/video/av55286346?from=search&amp;seid=13529674123410117444</a></p>
+<h1 id="吹什么"><a href="#吹什么" class="headerlink" title="吹什么"></a>吹什么</h1><p>vue的 声明式写法，最常见讲是computed</p>
+<p>比如<code>0 js代码</code> ，直接组件实现 阶乘，斐波那契数列的计算</p>
+<p>和 命令式相比，</p>
+<p>历史发展向讲解</p>
+<p>就 应用程序 实体举例</p>
+<p>跨语言啊交互举例 <a href="https://weex.apache.org/zh/docs/components/recycle-list.html">recycle-list</a></p>
+<p>简单说 原来的命令式 比较常用的是 事件-&gt;执行的代码</p>
+<p>现在 实现 大概是 数据 &#x3D; 构成来源</p>
+<h1 id="vue3"><a href="#vue3" class="headerlink" title="vue3"></a>vue3</h1><p>chrome devTools 周活用户90万 &#x2F; react的160万</p>
+<p>what’s target?</p>
+<span id="more"></span>
+
+<ul>
+<li>更小</li>
+<li>更快(重点)</li>
+<li>加强TS支持(重点)</li>
+<li>加强API设计一致性</li>
+<li>提高自身可维护性</li>
+<li>开放更多底层功能</li>
+</ul>
+<h2 id="更快"><a href="#更快" class="headerlink" title="更快"></a>更快</h2><p>数据变动检测:</p>
+<p>Object.defineProperty -&gt; Proxy (es6)</p>
+<hr>
+<p>用TS重写了Virtual DOM</p>
+<p>编译时优化</p>
+<p>Slot 默认便以为函数</p>
+<p>单例vnode工厂，设计一致的函数参数</p>
+<p>vdom 监测 设计改动</p>
+<p>原来是整个遍历，大多数情况16ms完成整个更新(传统情况)</p>
+<p>react，难在 代码中 提取 究竟哪个数据变化会影响 函数重算 ，方案CPU时间分片</p>
+<p>参考svelte框架， 强限制+静态编译<code>-&gt;</code>不需要virtual DOM 的代码，性能强,但 底线只能用模板,编译后代码体积大，但速度快</p>
+<p>vue3:兼容2，手写render function,其次 最大化利用模板信息</p>
+<p>直接 分析模板 把 动静结合 分离分析动态和静态的块[放弃可能存在的 原生js改动 html的检测？]</p>
+<p>做的benchmark 约6x快</p>
+<h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h2><p>之前Class API …然后被放弃了</p>
+<p>Function-based API 对比 Class API</p>
+<ul>
+<li>更好的TypeScript 类型推导，这样js写法 基本是 ts写法(不需要多余类型声明)</li>
+<li>tree-shaking !!!!!!!!!!!!!!!!!效果更好,</li>
+<li>写法 函数变量名更容易被压缩[编译优化]</li>
+<li>逻辑复用:</li>
+</ul>
+<p> 2.0方案 Mixins(缺点 多mixins时，命名空间 模板 数据 来源不清晰,)</p>
+<p>react: higher-order components 高阶组件(多个高阶组件 也有同样问题{命名空间冲突，数据来源不清晰，无额外的组件实例性能消耗})</p>
+<p>作用域插槽:(没有命名空间冲突，数据来源清晰,额外的组件实例性能消耗) 如<code>v-slot</code></p>
+<p>最新的 函数式 复用,+函数返回 解构,{没有命名空间冲突,数据来源清晰，无额外的组件实例性能消耗}</p>
+<p>和 react Hooks 对比:</p>
+<ul>
+<li>vue 只在初始化时调用(值可追踪),没有闭包变量问题，没有 内存 gc压力问题</li>
+</ul>
+<h1 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h1><p><a href="https://segmentfault.com/a/1190000012794598?utm_source=tag-newest">tree-shaking</a></p>
+]]></content>
+      <categories>
+        <category>frontend</category>
+        <category>vue2</category>
+      </categories>
+      <tags>
+        <tag>vue2</tag>
+        <tag>js</tag>
+        <tag>vue3</tag>
       </tags>
   </entry>
   <entry>
@@ -13478,52 +13478,6 @@ export default &#123;
       </tags>
   </entry>
   <entry>
-    <title>Docker Harbor on Ubuntu 20 on WSL2</title>
-    <url>/Blog/21-07-06-dockerharbor/</url>
-    <content><![CDATA[<h1 id="Docker-Harbor"><a href="#Docker-Harbor" class="headerlink" title="Docker Harbor"></a>Docker Harbor</h1><p>简单说，可以搭本地&#x2F;局域网 docker仓库</p>
-<h1 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h1><p>Ubuntu 或 其它linux 或 Ubuntu on WSL2</p>
-<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>安装docker:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install docker.io docker-compose</span><br></pre></td></tr></table></figure>
-
-<h1 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h1><p>经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2 <strong>私有</strong>的目录下</p>
-<p><a href="https://github.com/goharbor/harbor/releases">https://github.com/goharbor/harbor/releases</a></p>
-<p>解压</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar xvzf harbor-offline-installer-*.tgz &amp;&amp; cd harbor</span><br></pre></td></tr></table></figure>
-
-<h1 id="SSL等配置"><a href="#SSL等配置" class="headerlink" title="SSL等配置"></a>SSL等配置</h1><p>这玩意一定要SSL, 这里用自签</p>
-<p>ip查看</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ifconfig | grep inet</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<p><strong>注意替换成你的ip</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">YOURIP=192.168.1.203</span><br><span class="line">openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 3650 -out ca.crt</span><br><span class="line">openssl req -newkey rsa:4096 -nodes -sha256 -keyout <span class="variable">$YOURIP</span> -out <span class="variable">$YOURIP</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;subjectAltName = IP:<span class="variable">$YOURIP</span>&quot;</span> &gt; extfile.cnf</span><br><span class="line">openssl x509 -req -days 3650 -<span class="keyword">in</span> <span class="variable">$YOURIP</span> -CA ca.crt -CAkey ca.key -CAcreateserial -extfile extfile.cnf -out <span class="variable">$YOURIP</span></span><br><span class="line">sudo <span class="built_in">mkdir</span> -p /etc/docker/certs.d/<span class="variable">$YOURIP</span></span><br><span class="line">sudo <span class="built_in">cp</span> *.crt *.key /etc/docker/certs.d/<span class="variable">$YOURIP</span></span><br><span class="line">sed -i <span class="string">&quot;s/^hostname.*/hostname: <span class="variable">$YOURIP</span>/&quot;</span> harbor.yml</span><br><span class="line">sed -i <span class="string">&quot;s@^\(\s*certificate\).*@\1: /etc/docker/certs.d/<span class="variable">$YOURIP</span>/ca.crt@&quot;</span> harbor.yml</span><br><span class="line">sed -i <span class="string">&quot;s@^\(\s*private_key\).*@\1: /etc/docker/certs.d/<span class="variable">$YOURIP</span>/ca.key@&quot;</span> harbor.yml</span><br></pre></td></tr></table></figure>
-
-<p>如果有需要可以改动<code>harbor.yml</code>里面的端口配置</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ./install.sh --with-clair</span><br></pre></td></tr></table></figure>
-
-<h1 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h1><p>localhost:你设置的端口</p>
-<p>wsl2需要做以下映射</p>
-<p>powershell:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=443 connectaddress=172.28.52.88 </span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>其中listenport是对外部暴露的端口<br>connectport是你wsl2里的端口<br>connectaddr是wsl2的地址</p>
-</blockquote>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://goharbor.io/docs/latest/install-config">https://goharbor.io/docs/latest/install-config</a></p>
-<p><a href="https://thenewstack.io/tutorial-install-the-docker-harbor-registry-server-on-ubuntu-18-04/">https://thenewstack.io/tutorial-install-the-docker-harbor-registry-server-on-ubuntu-18-04/</a></p>
-<p><a href="https://docs.microsoft.com/en-us/windows/wsl/compare-versions#accessing-a-wsl-2-distribution-from-your-local-area-network-lan">https://docs.microsoft.com/en-us/windows/wsl/compare-versions#accessing-a-wsl-2-distribution-from-your-local-area-network-lan</a></p>
-]]></content>
-      <categories>
-        <category>backend</category>
-        <category>docker</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-        <tag>harbor</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>迁移到win</title>
     <url>/Blog/21-07-05-migrate2win/</url>
     <content><![CDATA[<h1 id="apt"><a href="#apt" class="headerlink" title="apt"></a>apt</h1><p>怀念 Debian apt 的好, 在windows上腾讯软件管家成了我的“apt”</p>
@@ -13604,6 +13558,52 @@ export default &#123;
       </tags>
   </entry>
   <entry>
+    <title>Docker Harbor on Ubuntu 20 on WSL2</title>
+    <url>/Blog/21-07-06-dockerharbor/</url>
+    <content><![CDATA[<h1 id="Docker-Harbor"><a href="#Docker-Harbor" class="headerlink" title="Docker Harbor"></a>Docker Harbor</h1><p>简单说，可以搭本地&#x2F;局域网 docker仓库</p>
+<h1 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h1><p>Ubuntu 或 其它linux 或 Ubuntu on WSL2</p>
+<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>安装docker:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install docker.io docker-compose</span><br></pre></td></tr></table></figure>
+
+<h1 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h1><p>经过历史经验教训 用WSL2的不要把包放在win的目录下，要放在wsl2 <strong>私有</strong>的目录下</p>
+<p><a href="https://github.com/goharbor/harbor/releases">https://github.com/goharbor/harbor/releases</a></p>
+<p>解压</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar xvzf harbor-offline-installer-*.tgz &amp;&amp; cd harbor</span><br></pre></td></tr></table></figure>
+
+<h1 id="SSL等配置"><a href="#SSL等配置" class="headerlink" title="SSL等配置"></a>SSL等配置</h1><p>这玩意一定要SSL, 这里用自签</p>
+<p>ip查看</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ifconfig | grep inet</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p><strong>注意替换成你的ip</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">YOURIP=192.168.1.203</span><br><span class="line">openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 3650 -out ca.crt</span><br><span class="line">openssl req -newkey rsa:4096 -nodes -sha256 -keyout <span class="variable">$YOURIP</span> -out <span class="variable">$YOURIP</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;subjectAltName = IP:<span class="variable">$YOURIP</span>&quot;</span> &gt; extfile.cnf</span><br><span class="line">openssl x509 -req -days 3650 -<span class="keyword">in</span> <span class="variable">$YOURIP</span> -CA ca.crt -CAkey ca.key -CAcreateserial -extfile extfile.cnf -out <span class="variable">$YOURIP</span></span><br><span class="line">sudo <span class="built_in">mkdir</span> -p /etc/docker/certs.d/<span class="variable">$YOURIP</span></span><br><span class="line">sudo <span class="built_in">cp</span> *.crt *.key /etc/docker/certs.d/<span class="variable">$YOURIP</span></span><br><span class="line">sed -i <span class="string">&quot;s/^hostname.*/hostname: <span class="variable">$YOURIP</span>/&quot;</span> harbor.yml</span><br><span class="line">sed -i <span class="string">&quot;s@^\(\s*certificate\).*@\1: /etc/docker/certs.d/<span class="variable">$YOURIP</span>/ca.crt@&quot;</span> harbor.yml</span><br><span class="line">sed -i <span class="string">&quot;s@^\(\s*private_key\).*@\1: /etc/docker/certs.d/<span class="variable">$YOURIP</span>/ca.key@&quot;</span> harbor.yml</span><br></pre></td></tr></table></figure>
+
+<p>如果有需要可以改动<code>harbor.yml</code>里面的端口配置</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ./install.sh --with-clair</span><br></pre></td></tr></table></figure>
+
+<h1 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h1><p>localhost:你设置的端口</p>
+<p>wsl2需要做以下映射</p>
+<p>powershell:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=443 connectaddress=172.28.52.88 </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其中listenport是对外部暴露的端口<br>connectport是你wsl2里的端口<br>connectaddr是wsl2的地址</p>
+</blockquote>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://goharbor.io/docs/latest/install-config">https://goharbor.io/docs/latest/install-config</a></p>
+<p><a href="https://thenewstack.io/tutorial-install-the-docker-harbor-registry-server-on-ubuntu-18-04/">https://thenewstack.io/tutorial-install-the-docker-harbor-registry-server-on-ubuntu-18-04/</a></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/wsl/compare-versions#accessing-a-wsl-2-distribution-from-your-local-area-network-lan">https://docs.microsoft.com/en-us/windows/wsl/compare-versions#accessing-a-wsl-2-distribution-from-your-local-area-network-lan</a></p>
+]]></content>
+      <categories>
+        <category>backend</category>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>harbor</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue transition</title>
     <url>/Blog/21-09-02-vue-transition/</url>
     <content><![CDATA[<h1 id="对于transition的一个核心问题是时间哪里来的"><a href="#对于transition的一个核心问题是时间哪里来的" class="headerlink" title="对于transition的一个核心问题是时间哪里来的"></a>对于transition的一个核心问题是时间哪里来的</h1><p>因为name这些感觉能拿到, 拼接也就当然</p>
@@ -13657,23 +13657,6 @@ export default &#123;
       <tags>
         <tag>git</tag>
         <tag>pull request</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>currying 加法</title>
-    <url>/Blog/21-12-06-currying-add/</url>
-    <content><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>一个支持 任意多参数，可以柯里化的加法函数</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>直接返回函数 保留已传内容的加和</p>
-<p>toString 支持输出值</p>
-<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">createF</span> = (<span class="params">v</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> b = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="title function_">createF</span>(v + [...<span class="variable language_">arguments</span>].<span class="title function_">reduce</span>(<span class="function">(<span class="params">s, cur</span>) =&gt;</span> s + cur, <span class="number">0</span>));</span><br><span class="line">    &#125;;</span><br><span class="line">    b.<span class="property">toString</span> = <span class="function">() =&gt;</span> v;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">createF</span>([...<span class="variable language_">arguments</span>].<span class="title function_">reduce</span>(<span class="function">(<span class="params">s, cur</span>) =&gt;</span> s + cur, <span class="number">0</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">add</span>(<span class="number">1</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>));</span><br><span class="line"><span class="keyword">const</span> x = <span class="title function_">add</span>(<span class="number">5</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">x</span>(<span class="number">6</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">x</span>(<span class="number">7</span>)(<span class="number">8</span>));</span><br><span class="line"><span class="keyword">const</span> y = <span class="title function_">x</span>(<span class="number">9</span>)(<span class="number">9</span>, <span class="number">10</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">y</span>());</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>frontend</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -13735,6 +13718,23 @@ export default &#123;
       <tags>
         <tag>vue2</tag>
         <tag>Angular2+</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>currying 加法</title>
+    <url>/Blog/21-12-06-currying-add/</url>
+    <content><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>一个支持 任意多参数，可以柯里化的加法函数</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>直接返回函数 保留已传内容的加和</p>
+<p>toString 支持输出值</p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">createF</span> = (<span class="params">v</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> b = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="title function_">createF</span>(v + [...<span class="variable language_">arguments</span>].<span class="title function_">reduce</span>(<span class="function">(<span class="params">s, cur</span>) =&gt;</span> s + cur, <span class="number">0</span>));</span><br><span class="line">    &#125;;</span><br><span class="line">    b.<span class="property">toString</span> = <span class="function">() =&gt;</span> v;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">createF</span>([...<span class="variable language_">arguments</span>].<span class="title function_">reduce</span>(<span class="function">(<span class="params">s, cur</span>) =&gt;</span> s + cur, <span class="number">0</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">add</span>(<span class="number">1</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>));</span><br><span class="line"><span class="keyword">const</span> x = <span class="title function_">add</span>(<span class="number">5</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">x</span>(<span class="number">6</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">x</span>(<span class="number">7</span>)(<span class="number">8</span>));</span><br><span class="line"><span class="keyword">const</span> y = <span class="title function_">x</span>(<span class="number">9</span>)(<span class="number">9</span>, <span class="number">10</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(+<span class="title function_">y</span>());</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>frontend</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -14283,62 +14283,6 @@ export default &#123;
       </tags>
   </entry>
   <entry>
-    <title>ubuntu + pip + setuptool bug 体验</title>
-    <url>/Blog/22-09-08-fuck-pip/</url>
-    <content><![CDATA[<h1 id="第一次被pip搞了几个小时"><a href="#第一次被pip搞了几个小时" class="headerlink" title="第一次被pip搞了几个小时"></a>第一次被pip搞了几个小时</h1><p>壮着胆子,在Ubuntu 22.10还没发布前,把系统从20.04.5升级到了22.04.1, 以我从12-&gt;14,14-&gt;16,16-&gt;18,18-&gt;20多年的经验来看, 这次竟然没问题! 厉害了, 以前每次升级都会炸点东西, 然后最终还是重装式升级, 这次竟然没啥严重的炸掉</p>
-<p>然后<code>pip3 install -e .</code>出问题了</p>
-<p>先是报没权限,但看报的路径,没往用户目录下写,在写root, 作为一个胆小的人, 向来杜绝777的</p>
-<p>翻了半天google和github</p>
-<p>看到一个<a href="https://github.com/pypa/pip/issues/7953#issuecomment-645133255">方案</a>:<code>setup.py</code>中加上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import site</span><br><span class="line">import sys</span><br><span class="line">site.ENABLE_USER_SITE = &quot;--user&quot; in sys.argv[1:]</span><br></pre></td></tr></table></figure>
-
-<p>加完以后, 恩 是没有问题了</p>
-<p>然后报错</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">× python setup.py develop did not run successfully.</span><br><span class="line">│ exit code: 1</span><br><span class="line">╰─&gt; [29 lines of output]</span><br><span class="line">    running develop</span><br><span class="line">    /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.</span><br><span class="line">      warnings.warn(</span><br><span class="line">    Traceback (most recent call last):</span><br><span class="line">      File &quot;&lt;string&gt;&quot;, line 2, in &lt;module&gt;</span><br><span class="line">      File &quot;&lt;pip-setuptools-caller&gt;&quot;, line 34, in &lt;module&gt;</span><br><span class="line">      File &quot;/home/cromarmot/Documents/computer/oiTerminalv2dev/setup.py&quot;, line 6, in &lt;module&gt;</span><br><span class="line">        setup()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/__init__.py&quot;, line 153, in setup</span><br><span class="line">        return distutils.core.setup(**attrs)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/core.py&quot;, line 148, in setup</span><br><span class="line">        return run_commands(dist)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/core.py&quot;, line 163, in run_commands</span><br><span class="line">        dist.run_commands()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/dist.py&quot;, line 967, in run_commands</span><br><span class="line">        self.run_command(cmd)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/dist.py&quot;, line 985, in run_command</span><br><span class="line">        cmd_obj.ensure_finalized()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/cmd.py&quot;, line 107, in ensure_finalized</span><br><span class="line">        self.finalize_options()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/develop.py&quot;, line 52, in finalize_options</span><br><span class="line">        easy_install.finalize_options(self)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&quot;, line 270, in finalize_options</span><br><span class="line">        self._fix_install_dir_for_user_site()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&quot;, line 400, in _fix_install_dir_for_user_site</span><br><span class="line">        self.select_scheme(scheme_name)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&quot;, line 741, in select_scheme</span><br><span class="line">        scheme = INSTALL_SCHEMES[name]</span><br><span class="line">    KeyError: &#x27;unix_user&#x27;</span><br><span class="line">    [end of output]</span><br></pre></td></tr></table></figure>
-
-<p>又搜,发现的确是setuptools有bug,然后<a href="https://github.com/pypa/setuptools/issues/2938#issuecomment-998293346">60.0.2修复了</a></p>
-<span id="more"></span>
-
-<p>我看了下<code>pip3 list | grep setuptools</code>, 版本是59</p>
-<p>升级了一下到65 依然不行</p>
-<p>而且上面的所有操作前后,只要是<code>venv</code>里,就没问题</p>
-<p>又搜了半天,一个发现是,似乎大家都是ubuntu</p>
-<hr>
-<p>另一问题是我注意到名称是UNKNOWN, 就去搜了下这个UNKNOWN</p>
-<p>后来看到<a href="https://github.com/pypa/setuptools/issues/3269#issuecomment-1100426325">这个issue</a></p>
-<p>还学到了一下py隔离环境快速搭建和测试, 她似乎也是<a href="https://github.com/pypa/setuptools/issues/3269#issuecomment-1100434792">venv可以但是外面不行</a></p>
-<p>然后我也跟着清理了一下dist和egg-info 都没用, 说查看pip, 我看了pip也是都是2.22.2</p>
-<p>老哥说 可能是 <a href="https://github.com/pypa/pip/issues/6264#issuecomment-1086882745">pypa&#x2F;pip#6264 (comment)</a></p>
-<p>也就是debian提供的</p>
-<p>让升级一下<code>/usr/local/lib/python3.10/dist-packages/setuptools</code></p>
-<p>然后,她通过把系统的<code>setuptools</code>给卸载了就好了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt purge python3-setuptools</span><br></pre></td></tr></table></figure>
-
-<h2 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h2><p>这样看起来是 setuptools 实际写了bug</p>
-<p>然后ubuntu目前apt里版本就正好是有bug的</p>
-<p>然后pip list的setuptools版本, 和执行install的版本竟然不一样???????</p>
-<p>这真是搞锤子</p>
-<p>看看linux的whereis which 都教了你们如何对多个公共同名的做处理的, 竟然pip还能有这个锅, 就离谱</p>
-<p>然后删除以后,连setup.py里加东西也不需要了</p>
-<h2 id="学一手-py-隔离环境测试"><a href="#学一手-py-隔离环境测试" class="headerlink" title="学一手 py 隔离环境测试"></a>学一手 py 隔离环境测试</h2><p>虽然我一般习惯是用venv</p>
-<hr>
-<p>本机+virtualenv</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/nschloe/setuptools-UNKNOWN-bug.git</span><br><span class="line"><span class="built_in">cd</span> setuptools-UNKNOWN-bug</span><br><span class="line"></span><br><span class="line">virtualenv -p python3.10 .venv</span><br><span class="line">.venv/bin/python -m pip install .</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">docker</span><br><span class="line"></span><br><span class="line">&gt; docker run --<span class="built_in">rm</span> -it python:3.10-bullseye /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/nschloe/setuptools-UNKNOWN-bug.git</span><br><span class="line"><span class="built_in">cd</span> setuptools-UNKNOWN-bug</span><br><span class="line">pip install .</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>backend</category>
-        <category>python3</category>
-      </categories>
-      <tags>
-        <tag>backend</tag>
-        <tag>python3</tag>
-        <tag>pip</tag>
-        <tag>setuptool</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo Static Blog in 2022</title>
     <url>/Blog/22-08-15-static-blog/</url>
     <content><![CDATA[<h1 id="写在-2022-年的-静态博客选择"><a href="#写在-2022-年的-静态博客选择" class="headerlink" title="写在 2022 年的 静态博客选择"></a>写在 2022 年的 静态博客选择</h1><h2 id="调研"><a href="#调研" class="headerlink" title="调研"></a>调研</h2><p>用了Hexo很久了,期间也有不少其它产品, 也试了试这些框架</p>
@@ -14452,6 +14396,62 @@ export default &#123;
       </categories>
       <tags>
         <tag>static blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ubuntu + pip + setuptool bug 体验</title>
+    <url>/Blog/22-09-08-fuck-pip/</url>
+    <content><![CDATA[<h1 id="第一次被pip搞了几个小时"><a href="#第一次被pip搞了几个小时" class="headerlink" title="第一次被pip搞了几个小时"></a>第一次被pip搞了几个小时</h1><p>壮着胆子,在Ubuntu 22.10还没发布前,把系统从20.04.5升级到了22.04.1, 以我从12-&gt;14,14-&gt;16,16-&gt;18,18-&gt;20多年的经验来看, 这次竟然没问题! 厉害了, 以前每次升级都会炸点东西, 然后最终还是重装式升级, 这次竟然没啥严重的炸掉</p>
+<p>然后<code>pip3 install -e .</code>出问题了</p>
+<p>先是报没权限,但看报的路径,没往用户目录下写,在写root, 作为一个胆小的人, 向来杜绝777的</p>
+<p>翻了半天google和github</p>
+<p>看到一个<a href="https://github.com/pypa/pip/issues/7953#issuecomment-645133255">方案</a>:<code>setup.py</code>中加上</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import site</span><br><span class="line">import sys</span><br><span class="line">site.ENABLE_USER_SITE = &quot;--user&quot; in sys.argv[1:]</span><br></pre></td></tr></table></figure>
+
+<p>加完以后, 恩 是没有问题了</p>
+<p>然后报错</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">× python setup.py develop did not run successfully.</span><br><span class="line">│ exit code: 1</span><br><span class="line">╰─&gt; [29 lines of output]</span><br><span class="line">    running develop</span><br><span class="line">    /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.</span><br><span class="line">      warnings.warn(</span><br><span class="line">    Traceback (most recent call last):</span><br><span class="line">      File &quot;&lt;string&gt;&quot;, line 2, in &lt;module&gt;</span><br><span class="line">      File &quot;&lt;pip-setuptools-caller&gt;&quot;, line 34, in &lt;module&gt;</span><br><span class="line">      File &quot;/home/cromarmot/Documents/computer/oiTerminalv2dev/setup.py&quot;, line 6, in &lt;module&gt;</span><br><span class="line">        setup()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/__init__.py&quot;, line 153, in setup</span><br><span class="line">        return distutils.core.setup(**attrs)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/core.py&quot;, line 148, in setup</span><br><span class="line">        return run_commands(dist)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/core.py&quot;, line 163, in run_commands</span><br><span class="line">        dist.run_commands()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/dist.py&quot;, line 967, in run_commands</span><br><span class="line">        self.run_command(cmd)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/dist.py&quot;, line 985, in run_command</span><br><span class="line">        cmd_obj.ensure_finalized()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/_distutils/cmd.py&quot;, line 107, in ensure_finalized</span><br><span class="line">        self.finalize_options()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/develop.py&quot;, line 52, in finalize_options</span><br><span class="line">        easy_install.finalize_options(self)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&quot;, line 270, in finalize_options</span><br><span class="line">        self._fix_install_dir_for_user_site()</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&quot;, line 400, in _fix_install_dir_for_user_site</span><br><span class="line">        self.select_scheme(scheme_name)</span><br><span class="line">      File &quot;/usr/lib/python3/dist-packages/setuptools/command/easy_install.py&quot;, line 741, in select_scheme</span><br><span class="line">        scheme = INSTALL_SCHEMES[name]</span><br><span class="line">    KeyError: &#x27;unix_user&#x27;</span><br><span class="line">    [end of output]</span><br></pre></td></tr></table></figure>
+
+<p>又搜,发现的确是setuptools有bug,然后<a href="https://github.com/pypa/setuptools/issues/2938#issuecomment-998293346">60.0.2修复了</a></p>
+<span id="more"></span>
+
+<p>我看了下<code>pip3 list | grep setuptools</code>, 版本是59</p>
+<p>升级了一下到65 依然不行</p>
+<p>而且上面的所有操作前后,只要是<code>venv</code>里,就没问题</p>
+<p>又搜了半天,一个发现是,似乎大家都是ubuntu</p>
+<hr>
+<p>另一问题是我注意到名称是UNKNOWN, 就去搜了下这个UNKNOWN</p>
+<p>后来看到<a href="https://github.com/pypa/setuptools/issues/3269#issuecomment-1100426325">这个issue</a></p>
+<p>还学到了一下py隔离环境快速搭建和测试, 她似乎也是<a href="https://github.com/pypa/setuptools/issues/3269#issuecomment-1100434792">venv可以但是外面不行</a></p>
+<p>然后我也跟着清理了一下dist和egg-info 都没用, 说查看pip, 我看了pip也是都是2.22.2</p>
+<p>老哥说 可能是 <a href="https://github.com/pypa/pip/issues/6264#issuecomment-1086882745">pypa&#x2F;pip#6264 (comment)</a></p>
+<p>也就是debian提供的</p>
+<p>让升级一下<code>/usr/local/lib/python3.10/dist-packages/setuptools</code></p>
+<p>然后,她通过把系统的<code>setuptools</code>给卸载了就好了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt purge python3-setuptools</span><br></pre></td></tr></table></figure>
+
+<h2 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h2><p>这样看起来是 setuptools 实际写了bug</p>
+<p>然后ubuntu目前apt里版本就正好是有bug的</p>
+<p>然后pip list的setuptools版本, 和执行install的版本竟然不一样???????</p>
+<p>这真是搞锤子</p>
+<p>看看linux的whereis which 都教了你们如何对多个公共同名的做处理的, 竟然pip还能有这个锅, 就离谱</p>
+<p>然后删除以后,连setup.py里加东西也不需要了</p>
+<h2 id="学一手-py-隔离环境测试"><a href="#学一手-py-隔离环境测试" class="headerlink" title="学一手 py 隔离环境测试"></a>学一手 py 隔离环境测试</h2><p>虽然我一般习惯是用venv</p>
+<hr>
+<p>本机+virtualenv</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/nschloe/setuptools-UNKNOWN-bug.git</span><br><span class="line"><span class="built_in">cd</span> setuptools-UNKNOWN-bug</span><br><span class="line"></span><br><span class="line">virtualenv -p python3.10 .venv</span><br><span class="line">.venv/bin/python -m pip install .</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">docker</span><br><span class="line"></span><br><span class="line">&gt; docker run --<span class="built_in">rm</span> -it python:3.10-bullseye /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/nschloe/setuptools-UNKNOWN-bug.git</span><br><span class="line"><span class="built_in">cd</span> setuptools-UNKNOWN-bug</span><br><span class="line">pip install .</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>backend</category>
+        <category>python3</category>
+      </categories>
+      <tags>
+        <tag>backend</tag>
+        <tag>python3</tag>
+        <tag>pip</tag>
+        <tag>setuptool</tag>
       </tags>
   </entry>
   <entry>
@@ -14795,45 +14795,6 @@ export default &#123;
       </tags>
   </entry>
   <entry>
-    <title>ng zone</title>
-    <url>/Blog/23-03-10-ng-zone/</url>
-    <content><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>众所周知, change detect要解决的事情，就是数据变化 触发 视图变化，而最常见的两个问题是如何探测变化，和如何减少不必要的更新</p>
-<p>vue用修改getter&#x2F;setter或proxy的方式 来完成依赖收集和变化通知，使用lazy watcher来减少更新</p>
-<p>svelte 采用编译时更改代码的行为, 避免检测</p>
-<p>react 采用setState函数调用 和 队列控制批量更新</p>
-<p>那ng呢</p>
-<h2 id="NgZone"><a href="#NgZone" class="headerlink" title="NgZone"></a>NgZone</h2><p>ng: 什么时候会有视图更新</p>
-<ul>
-<li>用户的操作事件: click&#x2F;change&#x2F;input</li>
-<li>去后台请求响应后</li>
-<li>Timers:</li>
-</ul>
-<hr>
-<p>zone.js 能够维持运行时上下文, zone有生命周期钩子, 且Monkey-patched了一些方法(<code>setInterval</code>,<code>alert</code>,<code>prompt</code>,<code>addEventListener</code>,<code>removeEventListener</code>)</p>
-<p>NgZone, 提供 <code>run(callback)/runOutsideAngular(callback)</code>, 分别用于当三方api中的异步回调想要修改内容时触发检查，和普通的操作中希望避开检查</p>
-<p>你还可以设置 <code>ChangeDetectionStrategy.OnPush</code>, 手动触发更新检查</p>
-<p>你也可以动态的通过ChangeDetectorRef进行检查的启用和停用</p>
-<p>甚至你可以 通过 module 中 <code>&#123; ngZone : &#39;noop&#39;&#125;</code> 去一定层级禁用它，然后自己实现响应式都可以</p>
-<p>而react是把数据与视图绑定的叫做state,没绑定的叫做ref</p>
-<h1 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h1><p>以渲染10000个可以draggle的svg作为例子, 通过cdr并不能完全避免检测，因为你的mouse move也会触发检测，只是没有变化发生而已</p>
-<p>而通过在mouseDown中的runOutsideAngular中给mousemove绑定，就可以实现mouse move 也不触发检测, 再在mouseUp中移除监听，并且通过this.zone.run触发更新检测</p>
-<p>而对于多个异步的调用过程，在zone的加持下也容易看到调用的“栈结构”</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.youtube.com/watch?v=3IqtmUscE_U">youtube zone</a></p>
-<p><a href="https://github.com/angular/angular/tree/main/packages/zone.js">https://github.com/angular/angular/tree/main/packages/zone.js</a></p>
-<p><a href="https://angular.io/guide/zone">https://angular.io/guide/zone</a></p>
-<p><a href="https://angular.io/api/core/ChangeDetectionStrategy">https://angular.io/api/core/ChangeDetectionStrategy</a></p>
-<p><a href="https://angular.io/api/core/ChangeDetectorRef">https://angular.io/api/core/ChangeDetectorRef</a></p>
-]]></content>
-      <categories>
-        <category>frontend</category>
-        <category>Angular</category>
-      </categories>
-      <tags>
-        <tag>Angular</tag>
-        <tag>change detection</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>dev in VSCode + docker</title>
     <url>/Blog/23-03-09-vscode-docker-dev/</url>
     <content><![CDATA[<p>TLDR: 有可实施性,但是作为更简单的方案是像我现在这样直接用Ubuntu</p>
@@ -14926,6 +14887,45 @@ export default &#123;
         <tag>linux</tag>
         <tag>docker</tag>
         <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ng zone</title>
+    <url>/Blog/23-03-10-ng-zone/</url>
+    <content><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>众所周知, change detect要解决的事情，就是数据变化 触发 视图变化，而最常见的两个问题是如何探测变化，和如何减少不必要的更新</p>
+<p>vue用修改getter&#x2F;setter或proxy的方式 来完成依赖收集和变化通知，使用lazy watcher来减少更新</p>
+<p>svelte 采用编译时更改代码的行为, 避免检测</p>
+<p>react 采用setState函数调用 和 队列控制批量更新</p>
+<p>那ng呢</p>
+<h2 id="NgZone"><a href="#NgZone" class="headerlink" title="NgZone"></a>NgZone</h2><p>ng: 什么时候会有视图更新</p>
+<ul>
+<li>用户的操作事件: click&#x2F;change&#x2F;input</li>
+<li>去后台请求响应后</li>
+<li>Timers:</li>
+</ul>
+<hr>
+<p>zone.js 能够维持运行时上下文, zone有生命周期钩子, 且Monkey-patched了一些方法(<code>setInterval</code>,<code>alert</code>,<code>prompt</code>,<code>addEventListener</code>,<code>removeEventListener</code>)</p>
+<p>NgZone, 提供 <code>run(callback)/runOutsideAngular(callback)</code>, 分别用于当三方api中的异步回调想要修改内容时触发检查，和普通的操作中希望避开检查</p>
+<p>你还可以设置 <code>ChangeDetectionStrategy.OnPush</code>, 手动触发更新检查</p>
+<p>你也可以动态的通过ChangeDetectorRef进行检查的启用和停用</p>
+<p>甚至你可以 通过 module 中 <code>&#123; ngZone : &#39;noop&#39;&#125;</code> 去一定层级禁用它，然后自己实现响应式都可以</p>
+<p>而react是把数据与视图绑定的叫做state,没绑定的叫做ref</p>
+<h1 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h1><p>以渲染10000个可以draggle的svg作为例子, 通过cdr并不能完全避免检测，因为你的mouse move也会触发检测，只是没有变化发生而已</p>
+<p>而通过在mouseDown中的runOutsideAngular中给mousemove绑定，就可以实现mouse move 也不触发检测, 再在mouseUp中移除监听，并且通过this.zone.run触发更新检测</p>
+<p>而对于多个异步的调用过程，在zone的加持下也容易看到调用的“栈结构”</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.youtube.com/watch?v=3IqtmUscE_U">youtube zone</a></p>
+<p><a href="https://github.com/angular/angular/tree/main/packages/zone.js">https://github.com/angular/angular/tree/main/packages/zone.js</a></p>
+<p><a href="https://angular.io/guide/zone">https://angular.io/guide/zone</a></p>
+<p><a href="https://angular.io/api/core/ChangeDetectionStrategy">https://angular.io/api/core/ChangeDetectionStrategy</a></p>
+<p><a href="https://angular.io/api/core/ChangeDetectorRef">https://angular.io/api/core/ChangeDetectorRef</a></p>
+]]></content>
+      <categories>
+        <category>frontend</category>
+        <category>Angular</category>
+      </categories>
+      <tags>
+        <tag>Angular</tag>
+        <tag>change detection</tag>
       </tags>
   </entry>
   <entry>
@@ -15994,62 +15994,6 @@ export default &#123;
       </tags>
   </entry>
   <entry>
-    <title>Python3 logging best? practice</title>
-    <url>/Blog/23-07-25-python-log/</url>
-    <content><![CDATA[<p>众所周知, 常用的输出有print,而调bug有logging, 用起来就是 info&#x2F;debug&#x2F;warning&#x2F;error</p>
-<p>但还有一些常见的问题</p>
-<ul>
-<li>在命令行输出一些,在日志文件输出一些,两边等级和格式不同</li>
-<li>希望日至记录 时间&#x2F;文件&#x2F;输出的行数&#x2F;上下文</li>
-<li>直接使用的软件的logging 和 库的logging有什么不同</li>
-<li>想重定向所用的库的logging, 调整库的logging的等级是否可行</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><p>常见的命令行工具的交互是 stdout, 而”没有用”的额外信息是stderr, logging默认就是到他stderr很好</p>
-<hr>
-<p>首先层级 有 print, 和logging的info&#x2F;warning&#x2F;error,exception&#x2F;critical</p>
-<hr>
-<p>通过format参数进行格式 控制, 这里可以查到 所有可选参数 <a href="https://docs.python.org/3.10/library/logging.html#logrecord-attributes">https://docs.python.org/3.10/library/logging.html#logrecord-attributes</a></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 例子</span></span><br><span class="line">logging.basicConfig(level=logging.DEBUG, <span class="built_in">format</span>=<span class="string">&#x27;[%(asctime)s][%(name)s %(levelname)s][%(threadName)s][%(filename)s %(funcName)s %(lineno)d]:%(message)s&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://docs.python.org/3.10/_images/logging_flow.png" alt="logging flow"></p>
-<p>常用 Logger.setLevel&#x2F;addHandler&#x2F;addFilter</p>
-<p>getLogger, 以 <code>.</code>分割的 层级名称, 如果子层级logger没有设定level则会向父级别找</p>
-<p>有用的Handlers: <a href="https://docs.python.org/3.10/howto/logging.html#useful-handlers">https://docs.python.org/3.10/howto/logging.html#useful-handlers</a> 例如StreamHandler 和FileHandler</p>
-<p>对于 多线程,日志大,可以考虑rotatingFilehandler&#x2F;timedrotatingFilehandler</p>
-<p>对于 多进程, sockethanlder+日志收集服务器 &#x2F; datagramhandler</p>
-<hr>
-<p>cookbook 建议的是对于同一个代码中</p>
-<p>顶层 <code>logger = logging.getLogger(&#39;spam_application&#39;)</code></p>
-<p>辅助的module是 <code>module_logger = logging.getLogger(&#39;spam_application.auxiliary&#39;)</code></p>
-<p>这样只需要在顶层的<code>logger</code>上addHandler增加想要的handler即可</p>
-<hr>
-<p>flask 采用的是 根据传递的app.name 来作为logging.getLogger的key</p>
-<p>所以类似的, 作为纯函数库,可以考虑传递名称,或者传递logger</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#: Log messages to :func:`~flask.logging.wsgi_errors_stream` with the format</span></span><br><span class="line"><span class="comment">#: ``[%(asctime)s] %(levelname)s in %(module)s: %(message)s``.</span></span><br><span class="line">default_handler = logging.StreamHandler(wsgi_errors_stream)  <span class="comment"># type: ignore</span></span><br><span class="line">default_handler.setFormatter(</span><br><span class="line">    logging.Formatter(<span class="string">&quot;[%(asctime)s] %(levelname)s in %(module)s: %(message)s&quot;</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_logger</span>(<span class="params">app: Flask</span>) -&gt; logging.Logger:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Get the Flask app&#x27;s logger and configure it if needed.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    The logger name will be the same as</span></span><br><span class="line"><span class="string">    :attr:`app.import_name &lt;flask.Flask.name&gt;`.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    When :attr:`~flask.Flask.debug` is enabled, set the logger level to</span></span><br><span class="line"><span class="string">    :data:`logging.DEBUG` if it is not set.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    If there is no handler for the logger&#x27;s effective level, add a</span></span><br><span class="line"><span class="string">    :class:`~logging.StreamHandler` for</span></span><br><span class="line"><span class="string">    :func:`~flask.logging.wsgi_errors_stream` with a basic format.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    logger = logging.getLogger(app.name)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> app.debug <span class="keyword">and</span> <span class="keyword">not</span> logger.level:</span><br><span class="line">        logger.setLevel(logging.DEBUG)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> has_level_handler(logger):</span><br><span class="line">        logger.addHandler(default_handler)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> logger</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>回到最初的问题</p>
-<ul>
-<li>在命令行输出一些,在日志文件输出一些,两边等级和格式不同: 通过多个handler解决</li>
-<li>希望日至记录 时间&#x2F;文件&#x2F;输出的行数&#x2F;上下文: 通过format解决</li>
-<li>直接使用的软件的logging 和 库的logging有什么不同: 软件的一般会指定basicConfig或者顶层的handler, 而库的一般通过调用者传递logger的name,可以库自己配一些logger</li>
-<li>想重定向所用的库的logging, 调整库的logging的等级是否可行: 需要库支持logger name传递,然后利用logging本身提供的 点分割层级,控制顶层即可</li>
-</ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://docs.python.org/3.10/howto/logging.html">https://docs.python.org/3.10/howto/logging.html</a></p>
-<p><a href="https://docs.python.org/3.10/howto/logging-cookbook.html">https://docs.python.org/3.10/howto/logging-cookbook.html</a></p>
-<p><a href="https://github.com/pallets/flask/blob/main/src/flask/logging.py">https://github.com/pallets/flask/blob/main/src/flask/logging.py</a></p>
-]]></content>
-      <categories>
-        <category>python3</category>
-      </categories>
-      <tags>
-        <tag>python3</tag>
-        <tag>logging</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Android offline music</title>
     <url>/Blog/23-05-01-android-offline-music/</url>
     <content><![CDATA[<p>TLDR: 实践起来能获取和播放不少的歌,但还是有大量的歌在匹配和下载中有问题,所以还是不是一个”完美”的解决方案</p>
@@ -16134,6 +16078,62 @@ export default &#123;
         <tag>android</tag>
         <tag>music</tag>
         <tag>offline</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python3 logging best? practice</title>
+    <url>/Blog/23-07-25-python-log/</url>
+    <content><![CDATA[<p>众所周知, 常用的输出有print,而调bug有logging, 用起来就是 info&#x2F;debug&#x2F;warning&#x2F;error</p>
+<p>但还有一些常见的问题</p>
+<ul>
+<li>在命令行输出一些,在日志文件输出一些,两边等级和格式不同</li>
+<li>希望日至记录 时间&#x2F;文件&#x2F;输出的行数&#x2F;上下文</li>
+<li>直接使用的软件的logging 和 库的logging有什么不同</li>
+<li>想重定向所用的库的logging, 调整库的logging的等级是否可行</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><p>常见的命令行工具的交互是 stdout, 而”没有用”的额外信息是stderr, logging默认就是到他stderr很好</p>
+<hr>
+<p>首先层级 有 print, 和logging的info&#x2F;warning&#x2F;error,exception&#x2F;critical</p>
+<hr>
+<p>通过format参数进行格式 控制, 这里可以查到 所有可选参数 <a href="https://docs.python.org/3.10/library/logging.html#logrecord-attributes">https://docs.python.org/3.10/library/logging.html#logrecord-attributes</a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 例子</span></span><br><span class="line">logging.basicConfig(level=logging.DEBUG, <span class="built_in">format</span>=<span class="string">&#x27;[%(asctime)s][%(name)s %(levelname)s][%(threadName)s][%(filename)s %(funcName)s %(lineno)d]:%(message)s&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://docs.python.org/3.10/_images/logging_flow.png" alt="logging flow"></p>
+<p>常用 Logger.setLevel&#x2F;addHandler&#x2F;addFilter</p>
+<p>getLogger, 以 <code>.</code>分割的 层级名称, 如果子层级logger没有设定level则会向父级别找</p>
+<p>有用的Handlers: <a href="https://docs.python.org/3.10/howto/logging.html#useful-handlers">https://docs.python.org/3.10/howto/logging.html#useful-handlers</a> 例如StreamHandler 和FileHandler</p>
+<p>对于 多线程,日志大,可以考虑rotatingFilehandler&#x2F;timedrotatingFilehandler</p>
+<p>对于 多进程, sockethanlder+日志收集服务器 &#x2F; datagramhandler</p>
+<hr>
+<p>cookbook 建议的是对于同一个代码中</p>
+<p>顶层 <code>logger = logging.getLogger(&#39;spam_application&#39;)</code></p>
+<p>辅助的module是 <code>module_logger = logging.getLogger(&#39;spam_application.auxiliary&#39;)</code></p>
+<p>这样只需要在顶层的<code>logger</code>上addHandler增加想要的handler即可</p>
+<hr>
+<p>flask 采用的是 根据传递的app.name 来作为logging.getLogger的key</p>
+<p>所以类似的, 作为纯函数库,可以考虑传递名称,或者传递logger</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#: Log messages to :func:`~flask.logging.wsgi_errors_stream` with the format</span></span><br><span class="line"><span class="comment">#: ``[%(asctime)s] %(levelname)s in %(module)s: %(message)s``.</span></span><br><span class="line">default_handler = logging.StreamHandler(wsgi_errors_stream)  <span class="comment"># type: ignore</span></span><br><span class="line">default_handler.setFormatter(</span><br><span class="line">    logging.Formatter(<span class="string">&quot;[%(asctime)s] %(levelname)s in %(module)s: %(message)s&quot;</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_logger</span>(<span class="params">app: Flask</span>) -&gt; logging.Logger:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Get the Flask app&#x27;s logger and configure it if needed.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    The logger name will be the same as</span></span><br><span class="line"><span class="string">    :attr:`app.import_name &lt;flask.Flask.name&gt;`.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    When :attr:`~flask.Flask.debug` is enabled, set the logger level to</span></span><br><span class="line"><span class="string">    :data:`logging.DEBUG` if it is not set.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    If there is no handler for the logger&#x27;s effective level, add a</span></span><br><span class="line"><span class="string">    :class:`~logging.StreamHandler` for</span></span><br><span class="line"><span class="string">    :func:`~flask.logging.wsgi_errors_stream` with a basic format.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    logger = logging.getLogger(app.name)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> app.debug <span class="keyword">and</span> <span class="keyword">not</span> logger.level:</span><br><span class="line">        logger.setLevel(logging.DEBUG)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> has_level_handler(logger):</span><br><span class="line">        logger.addHandler(default_handler)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> logger</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>回到最初的问题</p>
+<ul>
+<li>在命令行输出一些,在日志文件输出一些,两边等级和格式不同: 通过多个handler解决</li>
+<li>希望日至记录 时间&#x2F;文件&#x2F;输出的行数&#x2F;上下文: 通过format解决</li>
+<li>直接使用的软件的logging 和 库的logging有什么不同: 软件的一般会指定basicConfig或者顶层的handler, 而库的一般通过调用者传递logger的name,可以库自己配一些logger</li>
+<li>想重定向所用的库的logging, 调整库的logging的等级是否可行: 需要库支持logger name传递,然后利用logging本身提供的 点分割层级,控制顶层即可</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://docs.python.org/3.10/howto/logging.html">https://docs.python.org/3.10/howto/logging.html</a></p>
+<p><a href="https://docs.python.org/3.10/howto/logging-cookbook.html">https://docs.python.org/3.10/howto/logging-cookbook.html</a></p>
+<p><a href="https://github.com/pallets/flask/blob/main/src/flask/logging.py">https://github.com/pallets/flask/blob/main/src/flask/logging.py</a></p>
+]]></content>
+      <categories>
+        <category>python3</category>
+      </categories>
+      <tags>
+        <tag>python3</tag>
+        <tag>logging</tag>
       </tags>
   </entry>
   <entry>
@@ -17715,6 +17715,118 @@ export default &#123;
       </tags>
   </entry>
   <entry>
+    <title>宏观经济学 8宏观经济学的数据</title>
+    <url>/Blog/books/principles_of_economics_8/</url>
+    <content><![CDATA[<h2 id="宏观经济学的数据"><a href="#宏观经济学的数据" class="headerlink" title="宏观经济学的数据"></a>宏观经济学的数据</h2><p>用于监测整体经济发展的生产总量和物价总水平</p>
+<span id="more"></span>
+
+<h3 id="23-一国收入的衡量"><a href="#23-一国收入的衡量" class="headerlink" title="23 一国收入的衡量"></a>23 一国收入的衡量</h3><p>常见的衡量数据：</p>
+<ul>
+<li>gdp 所有人的总收入 国内生产总值</li>
+<li>通货膨胀货通货紧缩 平均物价上升或下降</li>
+<li>失业率 劳动力中失去工作的人所占的百分比</li>
+<li>零售额 商店的总销售额</li>
+<li>贸易赤字 美国与世界其他国家之间贸易的不平衡程度</li>
+</ul>
+<p>解决问题：</p>
+<ul>
+<li>为什么一些国家的平均收入高，而另一些国家的平均收入低</li>
+<li>为什么物价有时迅速上升，而在另一些时候则较为稳定</li>
+<li>为什么生产和就业在一些年份扩张，而在另一些年份则收缩</li>
+<li>如果可能的话，政府可以用什么方式来促进收入迅速增长，通货膨胀率降低和就业稳定呢？</li>
+</ul>
+<hr>
+<p>对于一个整体经济而言，收入必定等于支出。  （一次交易的买者在支出卖者在收入，这么想是的，但一个人 一个企业的支出 小于等于他的收入 这样想又很怪？所以有一个既有的存量“财产”，可以先发生 交易？）</p>
+<p>国内生产总值（gross domestic product), 某 一既定时期 一个国家内 生产的 所有 最终 物品与服务 的市场价值</p>
+<p>你无法比较苹果和橘子，但GDP正要这么做</p>
+<p>GDP不包括 非法生产与销售的东西，例如毒品，GDP也不包括家庭内生产和消费，从而没有进入市场的东西。你在杂货店买的蔬菜是GDP的一部分，但你在自己花园里种的蔬菜却不是</p>
+<p>A为B修剪草坪而进行支付是GDP一部分，但A和B结婚了修建草坪就不是了（不在市场上出售）</p>
+<p>制作贺卡的中间物品的纸张 不要重复计算价值（只计算 最终物品，但是注意如果生产的 中间没有消耗完成最终物品，其剩余部分还是要被计入？？（未来的年用完了呢）</p>
+<p>不包括历史生产的交易，二手车出售给另一个人时，二手车的价值不包括在GDP中</p>
+<p>按照地理范围划分 而不是 按照国籍划分？？？（那这里其实 也是强制 收入和支出相等，所以一个 A国人在B国工作，那么B国的用户消费的公司生产虽然是A贡献的，但是计入在B国中，他花钱时，又计入在他花钱时所在的国家</p>
+<p>常见时间跨度是 季度或年度（有倍率调整（与季度无关的商品），和季度调整（与季度有关的商品如圣诞树））</p>
+<p>其他指标</p>
+<ul>
+<li>国民生产总值（GNP），一国永久居民 （称为国民）所賺到的总收入，区别是以国民的国籍为统计单位</li>
+<li>国民生产净值（NNP） ，GNP总收入减去 折旧（固定资本消费）</li>
+<li>国民收入，和国民生产净值几乎相同</li>
+<li>个人收入：家庭和非公司制企业获得的收入。不包括留存收益（公司获得的但没有支付给其所有者的收入）</li>
+<li>个人可支配收入， 个人收入减去税收等</li>
+</ul>
+<p>虽然细节不同，但几乎说明了相同的经济状况</p>
+<p>GDP &#x3D; 消费（consumption,家庭物品服务支出）+投资（investment资本设备，存货和建筑物的指出，购买新住房，包括公司生产未卖出的产品（未来卖掉时这里是负的））+政府购买（government purchase，不包括税收的再分配中的补助贫困（转移支付），但包括雇佣政府工作人员，建设公共事物）+净出口（net export出口-进口）</p>
+<p>2015年 美国GDP（10亿美元） 17938&#x3D;12268消费+3018投资+3184政府购买+(-532)净出口，（有四舍五入），<a href="http://www.bea.gov/">http://www.bea.gov</a></p>
+<p>欧盟统计局 打算把许多非法收入纳入统计（卖淫业和非法毒品），不同国家对于不同 行为的非法定义不同，统计内容不同，因此gdp有还有统计上的个别差异，差异影响大约英国GDP增加100亿英镑</p>
+<p>法国决定 断言 是非自愿或无意的交易不计入GDP</p>
+<p>这里看出了GDP的几个问题，1是包括的内容 会从情感上排除，虽然可能对总量的影响是百分之一二左右，第二是完全的把“不能比较的东西”量化成经济，例如一个国家特有的技术体验&#x2F;商品，在其国家有“经济衡量的价值”，但这个体验&#x2F;商品，在其它国家无法用同样价格购买到，甚至任何价格都无法“合法购买到”，那么这个商品的对于GDP的贡献被量化成数字以后，会丢失这些信息。所以GDP其笼统和模糊性是存在的</p>
+<p>GDP增加：</p>
+<ul>
+<li>生产了更多的物品与服务</li>
+<li>以更高的价格销售物品与服务</li>
+</ul>
+<p>经济学家 希望能衡量 不受到价格变化的 物品与服务的总产量， “真实GDP的衡量指标（假设物价不变时）”</p>
+<p>GDP平减指数（deflator）&#x3D; 名义（nominal）GDP&#x2F;真实GDP（基年是前面“指定的”年的价格），（基年的平减指数总是100%）</p>
+<p>真实GDP作为衡量经济福利的指标要优于名义GDP。经济学家谈到经济的GDP时 他们通常是指真实的GDP？？？？？？？？？？？？？（对于大国度，或者跨国家，同样服务和商品的价格不同，要怎么计算真实GDP,这又不是只和年有关</p>
+<p>通货膨胀率&#x3D;$\frac{第二年平减指数-第一年平减指数}{第一年的平减指数}$</p>
+<p>？？？？？？这里有的问题就是 ，当国家之间形成货币状态的时候，如何衡量，首先 因为汇率关系，如果想表示的话，那就需要用本国货币的基年单位，再用基年的汇率？而如果时间跨度过大，生产的商品也完全不同了，那没有“基年价格”</p>
+<p>缺少有效的衡量工具，美国不少科技公司生产了不少提高效率的工具，免费的（打车，定位，翻译等等），但是从生产率统计上却没有反应出，技术进步带来的时间节约等不容易衡量，其改善的生活很难衡量，购买的商品后的使用频率和带来的效率提升很难衡量，家用电器对家务的贡献没有衡量</p>
+<p>Varian： “公正地说，当我们在这些非市场活动中采用了节约时间的技术时，所省下的时间就可用于以市场的基础的活动，而后者会反映在GDP中”</p>
+<p>肯尼迪1968： GDP并没有考虑到孩子的健康，他们受教育的质量，或者他们做游戏的快乐。它也没有包括我们的诗歌之美和婚姻稳定，以及我们关于公共问题争论的智慧和我们公务员的廉政。</p>
+<p>但GDP更高 能有更好医疗，更好教育体系，让更多公民去阅读和欣赏诗歌</p>
+<p>GDP并不是衡量福利的完美指标，例如享受闲暇，它漏掉了在家庭中的价值生产，义工做的生产，环境质量</p>
+<p><strong>就大多数情况——但不是所有情况而言，GDP是衡量经济福利的一个好指标。重要的是要记住GDP包括了什么，而又遗漏了什么</strong></p>
+<p>生活当然比GDP广泛得多，但是，很难用一个衡量指标来替代GDP,而且，我们也很难确定使用一个衡量指标就够了</p>
+<p>可能我们生活在一个多维度的世界里，因而我们必须习惯于处理一定数量的信息</p>
+<p>富裕国家的人看起来并没有贫穷国家的人更幸福？？？？</p>
+<p>GDP来衡量政策是否成功远远未尽如人意，每人每周工作120小时会极大地提高一国的人均GDP,但这绝不会使人们觉得更幸福。</p>
+<p>有经济学家提出，计入 更多福利指数（预期寿命，更多的闲暇时间和更低的不平等水平</p>
+<p>名义调查同样会失真：有孩子的人幸福感不如没孩子的人高，但人们还是选择要孩子——没有人会提倡通过集体不生育来提升幸福感</p>
+<h3 id="24-生活费用的衡量"><a href="#24-生活费用的衡量" class="headerlink" title="24 生活费用的衡量"></a>24 生活费用的衡量</h3><p>CPI（消费物价指数consumer price index）普通消费者所购买的物品与服务的总费用的衡量指标</p>
+<p>首先 确定哪些需要被统计</p>
+<p>CPI&#x3D;必需品价格和&#x2F;基年同样物品价格和</p>
+<p>通货膨胀率 &#x3D; （第二年CPI-第一年CPI）&#x2F;第一年CPI</p>
+<p>所以 上面有GDP（国内生产总值）的通货膨胀率，下面有CPI（消费物价指数）的通货膨胀率</p>
+<p>CPI里的组成（住房支出42%，交通支出16%，食物饮料15%，医疗8%，教育通信7%，休闲娱乐活动6%，服装，其他物品和服务）</p>
+<p>核心CPI 食物和能源之外的消费者物品与服务的总体费用的衡量指标</p>
+<p>PPI生产物价指数：企业所购买的一篮子物品与服务的费用的衡量指标</p>
+<p>CPI目的是衡量生活费用的变动。要确定为了保持生活水平不变，收入应该增加多少</p>
+<p>CPI的问题</p>
+<ul>
+<li>替代偏向，随着价格变化 必需品（例如水果替代）也会受到影响，也就是 哪些属于一篮子受到影响</li>
+<li>新物品的引进， 新物品的引进会让每一元更值钱（大商店的100元代金券 比 小商店的100元代金券 更有价值？？？？？？？？？？？？？？？？？？？？ 这个时候又不用货币衡量了？），（新物品带来的效率替代提升）</li>
+<li>无法衡量的质量变动</li>
+</ul>
+<p>美国劳工统计局采取了一些技术性变动以完善CPI</p>
+<p>因为 获取通货膨胀率 对 政府 人民 的经济决策都有影响，政府希望能精确的获取，然而花了很多精力，现实的方法其实不怎么样</p>
+<p>同时 价格几乎时时刻刻变化，而统计一年12次，现代是否能通过网上获取价格</p>
+<hr>
+<p><a href="https://www.zhihu.com/question/21348328">CPI和GDP平减指数有什么差别</a></p>
+<p>书上第8版 第36～38页</p>
+<p>企业或政府的购买在GDP里，不在CPI里</p>
+<p>GDP只是国内生产，进口消费在CPI里，不在GDP里</p>
+<p>这两个指数对经济中许多价格加总的方法。CPI给不同产品的价格分配固定的权重，而GDP平减指数分配变动的权重。换言之，CPI是用固定一篮子产品来计算的，而GDP平减指数允许一篮子产品在GDP组成成分变动时随时间推 移而变动。下面的例子说明了这两种方法有什么不同。假定一场严重霜冻毁坏了一国的橘子收成。橘子的产量下降到零，杂货店货架上剩下的橘子价格就会上升到天价。由于橘子不再是GDP的一部分（只有生产出商品或服务时才增加GDP，而销售属于一种转让行为，不产生GDP），橘子价格上升并不反映在GDP平减指数上。但是，由于CPI是用 包括橘子在内的固定一篮子产品计算的，橘子价格的上升就会引起CPI的大幅度上升。</p>
+<p>再或者说</p>
+<ul>
+<li>GDP平减是指数 生产的实际个数 会和实际一致，按照基年价格和现在价格，计算增长率</li>
+<li>而CPI是 实际的消费个数被指定（钦定的 权重），价格还是基年价格和现在价格，计算增长率</li>
+</ul>
+<p>他们是通货膨胀率的两个指标</p>
+<p>但也有一点是 都不是按“必要消费” 来评价通货膨胀率的，因此其个数 和权重问题就有上面说的那些（替代偏向，新物品的引进，无法衡量的质量变动）问题，例如同个商品的换代贬值</p>
+<p>由此引申出的问题是 比较历史的“薪水”，比较历史的“票房”，比较不同城市的“薪资”，“真实利率”与“名义利率”，通过“重新看基准”来比较，（矫正）</p>
+<p>指数化（indexation） ：根据法律或合同按照通货膨胀的影响对货币数量的自动调整</p>
+<hr>
+<p>至此也发现了，通货膨胀还是一个如何精算，如果和选指标的问题</p>
+]]></content>
+      <categories>
+        <category>book</category>
+        <category>economics</category>
+      </categories>
+      <tags>
+        <tag>book</tag>
+        <tag>economics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>宏观经济学 9长期中的真实经济</title>
     <url>/Blog/books/principles_of_economics_9/</url>
     <content><![CDATA[<h2 id="长期中的真实经济"><a href="#长期中的真实经济" class="headerlink" title="长期中的真实经济"></a>长期中的真实经济</h2><p>这几章描述了长期中决定关键真实变量的力量，这些变量包括GDP的增长，储蓄，投资，真实利率和失业</p>
@@ -17933,118 +18045,6 @@ export default &#123;
 <p>高工资：更好的健康状况，更少的流动率，工人素质会更高（求职者在选多个公司时会倾向于更高工资的公司），工人的努力程度</p>
 <hr>
 <p>总结：失业率受到各种情况的影响</p>
-]]></content>
-      <categories>
-        <category>book</category>
-        <category>economics</category>
-      </categories>
-      <tags>
-        <tag>book</tag>
-        <tag>economics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>宏观经济学 8宏观经济学的数据</title>
-    <url>/Blog/books/principles_of_economics_8/</url>
-    <content><![CDATA[<h2 id="宏观经济学的数据"><a href="#宏观经济学的数据" class="headerlink" title="宏观经济学的数据"></a>宏观经济学的数据</h2><p>用于监测整体经济发展的生产总量和物价总水平</p>
-<span id="more"></span>
-
-<h3 id="23-一国收入的衡量"><a href="#23-一国收入的衡量" class="headerlink" title="23 一国收入的衡量"></a>23 一国收入的衡量</h3><p>常见的衡量数据：</p>
-<ul>
-<li>gdp 所有人的总收入 国内生产总值</li>
-<li>通货膨胀货通货紧缩 平均物价上升或下降</li>
-<li>失业率 劳动力中失去工作的人所占的百分比</li>
-<li>零售额 商店的总销售额</li>
-<li>贸易赤字 美国与世界其他国家之间贸易的不平衡程度</li>
-</ul>
-<p>解决问题：</p>
-<ul>
-<li>为什么一些国家的平均收入高，而另一些国家的平均收入低</li>
-<li>为什么物价有时迅速上升，而在另一些时候则较为稳定</li>
-<li>为什么生产和就业在一些年份扩张，而在另一些年份则收缩</li>
-<li>如果可能的话，政府可以用什么方式来促进收入迅速增长，通货膨胀率降低和就业稳定呢？</li>
-</ul>
-<hr>
-<p>对于一个整体经济而言，收入必定等于支出。  （一次交易的买者在支出卖者在收入，这么想是的，但一个人 一个企业的支出 小于等于他的收入 这样想又很怪？所以有一个既有的存量“财产”，可以先发生 交易？）</p>
-<p>国内生产总值（gross domestic product), 某 一既定时期 一个国家内 生产的 所有 最终 物品与服务 的市场价值</p>
-<p>你无法比较苹果和橘子，但GDP正要这么做</p>
-<p>GDP不包括 非法生产与销售的东西，例如毒品，GDP也不包括家庭内生产和消费，从而没有进入市场的东西。你在杂货店买的蔬菜是GDP的一部分，但你在自己花园里种的蔬菜却不是</p>
-<p>A为B修剪草坪而进行支付是GDP一部分，但A和B结婚了修建草坪就不是了（不在市场上出售）</p>
-<p>制作贺卡的中间物品的纸张 不要重复计算价值（只计算 最终物品，但是注意如果生产的 中间没有消耗完成最终物品，其剩余部分还是要被计入？？（未来的年用完了呢）</p>
-<p>不包括历史生产的交易，二手车出售给另一个人时，二手车的价值不包括在GDP中</p>
-<p>按照地理范围划分 而不是 按照国籍划分？？？（那这里其实 也是强制 收入和支出相等，所以一个 A国人在B国工作，那么B国的用户消费的公司生产虽然是A贡献的，但是计入在B国中，他花钱时，又计入在他花钱时所在的国家</p>
-<p>常见时间跨度是 季度或年度（有倍率调整（与季度无关的商品），和季度调整（与季度有关的商品如圣诞树））</p>
-<p>其他指标</p>
-<ul>
-<li>国民生产总值（GNP），一国永久居民 （称为国民）所賺到的总收入，区别是以国民的国籍为统计单位</li>
-<li>国民生产净值（NNP） ，GNP总收入减去 折旧（固定资本消费）</li>
-<li>国民收入，和国民生产净值几乎相同</li>
-<li>个人收入：家庭和非公司制企业获得的收入。不包括留存收益（公司获得的但没有支付给其所有者的收入）</li>
-<li>个人可支配收入， 个人收入减去税收等</li>
-</ul>
-<p>虽然细节不同，但几乎说明了相同的经济状况</p>
-<p>GDP &#x3D; 消费（consumption,家庭物品服务支出）+投资（investment资本设备，存货和建筑物的指出，购买新住房，包括公司生产未卖出的产品（未来卖掉时这里是负的））+政府购买（government purchase，不包括税收的再分配中的补助贫困（转移支付），但包括雇佣政府工作人员，建设公共事物）+净出口（net export出口-进口）</p>
-<p>2015年 美国GDP（10亿美元） 17938&#x3D;12268消费+3018投资+3184政府购买+(-532)净出口，（有四舍五入），<a href="http://www.bea.gov/">http://www.bea.gov</a></p>
-<p>欧盟统计局 打算把许多非法收入纳入统计（卖淫业和非法毒品），不同国家对于不同 行为的非法定义不同，统计内容不同，因此gdp有还有统计上的个别差异，差异影响大约英国GDP增加100亿英镑</p>
-<p>法国决定 断言 是非自愿或无意的交易不计入GDP</p>
-<p>这里看出了GDP的几个问题，1是包括的内容 会从情感上排除，虽然可能对总量的影响是百分之一二左右，第二是完全的把“不能比较的东西”量化成经济，例如一个国家特有的技术体验&#x2F;商品，在其国家有“经济衡量的价值”，但这个体验&#x2F;商品，在其它国家无法用同样价格购买到，甚至任何价格都无法“合法购买到”，那么这个商品的对于GDP的贡献被量化成数字以后，会丢失这些信息。所以GDP其笼统和模糊性是存在的</p>
-<p>GDP增加：</p>
-<ul>
-<li>生产了更多的物品与服务</li>
-<li>以更高的价格销售物品与服务</li>
-</ul>
-<p>经济学家 希望能衡量 不受到价格变化的 物品与服务的总产量， “真实GDP的衡量指标（假设物价不变时）”</p>
-<p>GDP平减指数（deflator）&#x3D; 名义（nominal）GDP&#x2F;真实GDP（基年是前面“指定的”年的价格），（基年的平减指数总是100%）</p>
-<p>真实GDP作为衡量经济福利的指标要优于名义GDP。经济学家谈到经济的GDP时 他们通常是指真实的GDP？？？？？？？？？？？？？（对于大国度，或者跨国家，同样服务和商品的价格不同，要怎么计算真实GDP,这又不是只和年有关</p>
-<p>通货膨胀率&#x3D;$\frac{第二年平减指数-第一年平减指数}{第一年的平减指数}$</p>
-<p>？？？？？？这里有的问题就是 ，当国家之间形成货币状态的时候，如何衡量，首先 因为汇率关系，如果想表示的话，那就需要用本国货币的基年单位，再用基年的汇率？而如果时间跨度过大，生产的商品也完全不同了，那没有“基年价格”</p>
-<p>缺少有效的衡量工具，美国不少科技公司生产了不少提高效率的工具，免费的（打车，定位，翻译等等），但是从生产率统计上却没有反应出，技术进步带来的时间节约等不容易衡量，其改善的生活很难衡量，购买的商品后的使用频率和带来的效率提升很难衡量，家用电器对家务的贡献没有衡量</p>
-<p>Varian： “公正地说，当我们在这些非市场活动中采用了节约时间的技术时，所省下的时间就可用于以市场的基础的活动，而后者会反映在GDP中”</p>
-<p>肯尼迪1968： GDP并没有考虑到孩子的健康，他们受教育的质量，或者他们做游戏的快乐。它也没有包括我们的诗歌之美和婚姻稳定，以及我们关于公共问题争论的智慧和我们公务员的廉政。</p>
-<p>但GDP更高 能有更好医疗，更好教育体系，让更多公民去阅读和欣赏诗歌</p>
-<p>GDP并不是衡量福利的完美指标，例如享受闲暇，它漏掉了在家庭中的价值生产，义工做的生产，环境质量</p>
-<p><strong>就大多数情况——但不是所有情况而言，GDP是衡量经济福利的一个好指标。重要的是要记住GDP包括了什么，而又遗漏了什么</strong></p>
-<p>生活当然比GDP广泛得多，但是，很难用一个衡量指标来替代GDP,而且，我们也很难确定使用一个衡量指标就够了</p>
-<p>可能我们生活在一个多维度的世界里，因而我们必须习惯于处理一定数量的信息</p>
-<p>富裕国家的人看起来并没有贫穷国家的人更幸福？？？？</p>
-<p>GDP来衡量政策是否成功远远未尽如人意，每人每周工作120小时会极大地提高一国的人均GDP,但这绝不会使人们觉得更幸福。</p>
-<p>有经济学家提出，计入 更多福利指数（预期寿命，更多的闲暇时间和更低的不平等水平</p>
-<p>名义调查同样会失真：有孩子的人幸福感不如没孩子的人高，但人们还是选择要孩子——没有人会提倡通过集体不生育来提升幸福感</p>
-<h3 id="24-生活费用的衡量"><a href="#24-生活费用的衡量" class="headerlink" title="24 生活费用的衡量"></a>24 生活费用的衡量</h3><p>CPI（消费物价指数consumer price index）普通消费者所购买的物品与服务的总费用的衡量指标</p>
-<p>首先 确定哪些需要被统计</p>
-<p>CPI&#x3D;必需品价格和&#x2F;基年同样物品价格和</p>
-<p>通货膨胀率 &#x3D; （第二年CPI-第一年CPI）&#x2F;第一年CPI</p>
-<p>所以 上面有GDP（国内生产总值）的通货膨胀率，下面有CPI（消费物价指数）的通货膨胀率</p>
-<p>CPI里的组成（住房支出42%，交通支出16%，食物饮料15%，医疗8%，教育通信7%，休闲娱乐活动6%，服装，其他物品和服务）</p>
-<p>核心CPI 食物和能源之外的消费者物品与服务的总体费用的衡量指标</p>
-<p>PPI生产物价指数：企业所购买的一篮子物品与服务的费用的衡量指标</p>
-<p>CPI目的是衡量生活费用的变动。要确定为了保持生活水平不变，收入应该增加多少</p>
-<p>CPI的问题</p>
-<ul>
-<li>替代偏向，随着价格变化 必需品（例如水果替代）也会受到影响，也就是 哪些属于一篮子受到影响</li>
-<li>新物品的引进， 新物品的引进会让每一元更值钱（大商店的100元代金券 比 小商店的100元代金券 更有价值？？？？？？？？？？？？？？？？？？？？ 这个时候又不用货币衡量了？），（新物品带来的效率替代提升）</li>
-<li>无法衡量的质量变动</li>
-</ul>
-<p>美国劳工统计局采取了一些技术性变动以完善CPI</p>
-<p>因为 获取通货膨胀率 对 政府 人民 的经济决策都有影响，政府希望能精确的获取，然而花了很多精力，现实的方法其实不怎么样</p>
-<p>同时 价格几乎时时刻刻变化，而统计一年12次，现代是否能通过网上获取价格</p>
-<hr>
-<p><a href="https://www.zhihu.com/question/21348328">CPI和GDP平减指数有什么差别</a></p>
-<p>书上第8版 第36～38页</p>
-<p>企业或政府的购买在GDP里，不在CPI里</p>
-<p>GDP只是国内生产，进口消费在CPI里，不在GDP里</p>
-<p>这两个指数对经济中许多价格加总的方法。CPI给不同产品的价格分配固定的权重，而GDP平减指数分配变动的权重。换言之，CPI是用固定一篮子产品来计算的，而GDP平减指数允许一篮子产品在GDP组成成分变动时随时间推 移而变动。下面的例子说明了这两种方法有什么不同。假定一场严重霜冻毁坏了一国的橘子收成。橘子的产量下降到零，杂货店货架上剩下的橘子价格就会上升到天价。由于橘子不再是GDP的一部分（只有生产出商品或服务时才增加GDP，而销售属于一种转让行为，不产生GDP），橘子价格上升并不反映在GDP平减指数上。但是，由于CPI是用 包括橘子在内的固定一篮子产品计算的，橘子价格的上升就会引起CPI的大幅度上升。</p>
-<p>再或者说</p>
-<ul>
-<li>GDP平减是指数 生产的实际个数 会和实际一致，按照基年价格和现在价格，计算增长率</li>
-<li>而CPI是 实际的消费个数被指定（钦定的 权重），价格还是基年价格和现在价格，计算增长率</li>
-</ul>
-<p>他们是通货膨胀率的两个指标</p>
-<p>但也有一点是 都不是按“必要消费” 来评价通货膨胀率的，因此其个数 和权重问题就有上面说的那些（替代偏向，新物品的引进，无法衡量的质量变动）问题，例如同个商品的换代贬值</p>
-<p>由此引申出的问题是 比较历史的“薪水”，比较历史的“票房”，比较不同城市的“薪资”，“真实利率”与“名义利率”，通过“重新看基准”来比较，（矫正）</p>
-<p>指数化（indexation） ：根据法律或合同按照通货膨胀的影响对货币数量的自动调整</p>
-<hr>
-<p>至此也发现了，通货膨胀还是一个如何精算，如果和选指标的问题</p>
 ]]></content>
       <categories>
         <category>book</category>
