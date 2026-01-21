@@ -1,5 +1,5 @@
 ---
-title: python3 依赖注入
+title: Selfhosted Notes
 date: 2025-04-27
 tags:
   - python3 
